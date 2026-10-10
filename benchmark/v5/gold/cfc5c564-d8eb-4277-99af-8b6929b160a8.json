@@ -1,0 +1,71 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "cfc5c564-d8eb-4277-99af-8b6929b160a8",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "matched_clean_control",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_a6aa3275425d",
+   "canonicalProposition": "The candidate released the invoice-sync service to production on 3 October 2023 on a weekly release train, followed by a post-release check.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_6a484feb6cf6",
+    "src_f7243a301f07"
+   ],
+   "relevantRequirementIds": [
+    "req_2e4135ad56b8"
+   ],
+   "boundaryCategory": "documented_production_release",
+   "criticality": "noncritical",
+   "rationale": "The resume gives the release and its date, and the release notes show the post-release smoke tests and the production error-rate chart."
+  },
+  {
+   "atomicPropositionId": "prop_3e8470b1b876",
+   "canonicalProposition": "The candidate sat on the primary on-call rota for invoice-sync from October 2023 to June 2024.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_64de68f82e3e"
+   ],
+   "relevantRequirementIds": [
+    "req_e4c6004a80ec"
+   ],
+   "boundaryCategory": "verified_operational_duty",
+   "criticality": "noncritical",
+   "rationale": "The reference check records the former engineering manager's written confirmation of the on-call period."
+  },
+  {
+   "atomicPropositionId": "prop_b8cf686d2f65",
+   "canonicalProposition": "The candidate planned an expand-and-contract migration that split the invoices table, running both write paths side by side for a fortnight.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_373ed0e0f18a"
+   ],
+   "relevantRequirementIds": [
+    "req_0c4fce41d471"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the migration approach directly."
+  }
+ ],
+ "requirementStatus": {
+  "req_4d6c182d8634": "supported",
+  "req_0c4fce41d471": "partial_evidence",
+  "req_2e4135ad56b8": "supported",
+  "req_e4c6004a80ec": "supported",
+  "req_5068bb301644": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_9832d0ae2be5"
+ ],
+ "expectedGap": "The migration approach is documented, but whether it ran without any interruption to service is not stated.",
+ "expectedBoundaryNote": "Keep the production release with its date, release train and post-release check, keep the verified on-call period, and describe the hackathon connector as a sandbox prototype that was not taken forward.",
+ "permittedFollowUpTargets": [
+  "Ask whether the invoices-table migration caused any interruption to service and how the switch between write paths was monitored."
+ ],
+ "validClaimSignatures": [
+  "primary on-call rota",
+  "invoice-sync"
+ ]
+}

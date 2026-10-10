@@ -1,0 +1,84 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "a2d8ea98-5914-481d-81fe-782368716ec2",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_d558a9aab1e9",
+   "canonicalProposition": "The candidate launched payment requests to the society's customers in production on 9 November and monitored the feature after launch.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_80611a6ba7eb"
+   ],
+   "boundaryCategory": "pilot_deck_presented_as_production_launch",
+   "criticality": "critical",
+   "rationale": "The launch wording sits in a pilot close-out deck whose every footer limits it to the internal beta build and staff accounts, and the screenshot comes from the beta build; no source says the feature reached customers in production. The deployment rule forbids describing a pilot as a production launch."
+  },
+  {
+   "atomicPropositionId": "prop_538af68a128b",
+   "canonicalProposition": "The candidate ran a six-week colleague pilot of payment requests in the internal beta build with 150 staff accounts.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_e1cd2ad753e1",
+    "src_886b29585df5"
+   ],
+   "relevantRequirementIds": [
+    "req_80611a6ba7eb"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the pilot and its scope, and the reference check confirms it in writing."
+  },
+  {
+   "atomicPropositionId": "prop_105551c3d22d",
+   "canonicalProposition": "The candidate agreed payment-request limits and confirmation-of-payee checks with the compliance and fraud teams.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_7a0c0463193e"
+   ],
+   "relevantRequirementIds": [
+    "req_dccc050fdcfb"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume states the controls and that they were recorded in the risk assessment."
+  }
+ ],
+ "requirementStatus": {
+  "req_439669df3197": "supported",
+  "req_dccc050fdcfb": "supported",
+  "req_80611a6ba7eb": "partial_evidence",
+  "req_cb6b4d4775b7": "supported",
+  "req_7f6967bf721e": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_e1cd2ad753e1",
+  "src_b1bbac4f6b6b"
+ ],
+ "expectedGap": "Only the colleague pilot in the internal beta build is documented; a customer-facing production launch, the release decision and post-launch monitoring are not.",
+ "expectedBoundaryNote": "Keep the pilot as a six-week colleague pilot in the internal beta build with staff accounts; do not turn the deck's 'Launch' slide into a customer launch.",
+ "permittedFollowUpTargets": [
+  "Ask whether payment requests were released to customers after the pilot, who made the release decision, and what the candidate monitored after any launch."
+ ],
+ "validClaimSignatures": [
+  "confirmation-of-payee",
+  "150 staff accounts"
+ ],
+ "trap": {
+  "propositionId": "prop_d558a9aab1e9",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_80611a6ba7eb"
+  ],
+  "signatures": [
+   "Launched 9 November",
+   "live in the app"
+  ],
+  "baitSourceIds": [
+   "src_b1bbac4f6b6b"
+  ]
+ }
+}

@@ -1,0 +1,227 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "b9ac294c-f236-4440-adb1-fdd37dc6f089.C2",
+ "case_id": "b9ac294c-f236-4440-adb1-fdd37dc6f089",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14996,
+  "promptWords": 1785
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 33.557
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3803,
+ "eval_count": 1512,
+ "prompt_eval_duration_ns": 18939000,
+ "eval_duration_ns": 27275158000,
+ "total_duration_ns": 33554811584,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Provide claims. Use evidence. Also need requirementEvidenceMap covering all requirementIds. Provide supportedClaims, unsupportedClaims, missingEvidenceGaps, interviewSignalRisks, followUpQuestions, humanReviewChecklist, auditSummary, limitations.\n\nWe must not include subjective notes as supported. The note src_e301c66770ab is subjective; should go to interviewSignalRisks.\n\nCertification: source src_29af01789660 verifies PRINCE2 Practitioner. That's a recognised certification. So requirement req_3462ba387c59 is supported.\n\nAll other requirements are supported by resume sources.\n\nWe need to include evidenceStrength: high maybe.\n\nWe need to include witness verbatim passage from source. Provide short excerpt.\n\nWe need to include requirementEvidenceMap entries for each requirement id.\n\nAlso need missingEvidenceGaps: none.\n\nUnsupportedClaims: none? maybe none.\n\nBut we might have no unsupported claims.\n\nFollowUpQuestions: none.\n\nHumanReviewChecklist: maybe \"Review candidate's experience with 40 store refits\" but not needed.\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of handling disputes resolution beyond logging variation requests\".\n\nLet's craft.\n\nWe need to copy candidateId and jobDescriptionSourceId verbatim.\n\nLet's produce.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_800d9d362f571ccd\",\"targetRoleTitle\":\"Project Manager, Store Refit Programme\",\"professionalSummary\":[\"Project manager with over three years of experience leading store refits at Brackley Home & Garden, managing integrated schedules, budgets, contractor relations and store trading coordination to minimise customer disruption.\"],\"experienceHighlights\":[\"Built and maintained integrated refit schedules for stores ranging from 30,000 to 60,000 sq ft using the planning tool, linking strip‑out, mechanical, electrical, fixture installation and stock replenishment.\",\"Tracked refit budgets against approved capital spend, reporting monthly variances and change‑order commentary to the property director.\",\"Coordinated overnight and weekend working windows with store managers, issuing weekly works notices to keep customer areas open during works.\",\"Attended weekly progress meetings with main contractors, documenting actions and logging variation requests for commercial review.\"],\"projectsAndWorkSamples\":[\"An anonymised 11‑week refit schedule for a single store, illustrating the critical path through mechanical and electrical works and the stock replenishment plan for reopening.\"],\"skills\":[\"Integrated programme scheduling\",\"Budget control and variance reporting\",\"Contractor management and variation handling\",\"Store trading coordination\",\"PRINCE2 Practitioner certification\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in integrated scheduling, budget control, contractor management, store trading coordination and possession of a recognised PRINCE2 Practitioner certification. No evidence is provided regarding dispute resolution beyond logging variation requests or experience with a portfolio of 40 store refits.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit based on evidence and gaps.\"},\"role\":{\"roleTitle\":\"Project Manager, Store Refit Programme\",\"jobDescriptionSource\":\"jd_710148e2cca81a40\",\"requirementIds\":[\"req_ccd4d94f69e6\",\"req_e31b00f92ab6\",\"req_5bf2f559078b\",\"req_6fc8b91b25e0\",\"req_3462ba387c59\"]},\"candidate\":{\"candidateId\":\"cand_800d9d362f571ccd\",\"sources\":[\"src_00a61d21426e\",\"src_e8ac57adafd5\",\"src_6421c27e01b1\",\"src_a89c51167a98\",\"src_0df55a2cb011\",\"src_095d54898b6c\",\"src_29af01789660\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_ccd4d94f69e6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e8ac57adafd5\",\"text\":\"Built the integrated refit schedules in the planning tool, linking strip‑out, mechanical and electrical works, fixture installation and stock replenishment.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates schedule building\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e31b00f92ab6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0df55a2cb011\",\"text\":\"Attended weekly progress meetings with the main contractors, kept the meeting actions list and logged their variation requests for the commercial manager to assess.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows contractor management and variation logging\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5bf2f559078b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6421c27e01b1\",\"text\":\"Tracked each refit budget against the approved capital spend and reported monthly variances to the property director, with commentary on change orders.\",\"evidenceStrength\":\"high\",\"notes\":\"Budget tracking and variance reporting\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6fc8b91b25e0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a89c51167a98\",\"text\":\"Agreed overnight and weekend working windows with store managers so that customer areas stayed open during the works, and issued a weekly works notice to each store listing the areas closed and the hoarding positions.\",\"evidenceStrength\":\"high\",\"notes\":\"Store trading coordination\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3462ba387c59\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_29af01789660\",\"text\":\"The candidate's PRINCE2 Practitioner certificate was checked on the accrediting body's successful‑candidate register; it is listed as current, with the examination recorded in May 2022.\",\"evidenceStrength\":\"high\",\"notes\":\"Recognised project management certification\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Project manager with integrated scheduling, budget control, contractor management and store trading coordination experience at Brackley Home & Garden.\",\"supportingRequirementIds\":[\"req_ccd4d94f69e6\",\"req_e31b00f92ab6\",\"req_5bf2f559078b\",\"req_6fc8b91b25e0\"],\"sourceIds\":[\"src_00a61d21426e\",\"src_e8ac57adafd5\",\"src_6421c27e01b1\",\"src_a89c51167a98\",\"src_0df55a2cb011\"],\"evidenceStrength\":\"high\",\"witness\":\"Project manager in the store development team at Brackley Home & Garden, July 2020 to present, running refits of stores between 30,000 and 60,000 square feet.\"},{\"claim\":\"Possesses a recognised PRINCE2 Practitioner certification.\",\"supportingRequirementIds\":[\"req_3462ba387c59\"],\"sourceIds\":[\"src_29af01789660\"],\"evidenceStrength\":\"high\",\"witness\":\"The candidate's PRINCE2 Practitioner certificate was checked on the accrediting body's successful‑candidate register; it is listed as current, with the examination recorded in May 2022.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_e301c66770ab\",\"text\":\"a born leader with real gravitas; I would expect contractors to fall in line behind them without much pushback.\",\"signalType\":\"subjective impression\",\"jobRelatedBoundary\":\"no\",\"severity\":\"low\",\"recommendedHandling\":\"Verify leadership and contractor management skills through structured interview questions.\"}],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Confirm candidate’s experience managing a portfolio of 40 store refits as required by the role.\",\"Verify that contractor disputes were resolved at site level where possible.\",\"Assess the candidate’s ability to coordinate store trading teams during refits.\"],\"auditSummary\":\"All job requirements are supported by evidence from the candidate’s resume and work sample, except for the absence of explicit evidence regarding dispute resolution at site level and experience with a portfolio of 40 store refits. The candidate holds a recognised PRINCE2 Practitioner certification. No protected characteristics are inferred. Human review is required to evaluate fit and address evidence gaps.\",\"limitations\":[\"Evidence does not cover dispute resolution beyond logging variation requests.\",\"No evidence of managing 40 store refits portfolio.\"]} }",
+ "content_sha256": "c67c6f388f69693d917d3aa66e6e8a4d17589f55505b6cc1e18aef82fe9409e4",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_800d9d362f571ccd",
+   "targetRoleTitle": "Project Manager, Store Refit Programme",
+   "professionalSummary": [
+    "Project manager with over three years of experience leading store refits at Brackley Home & Garden, managing integrated schedules, budgets, contractor relations and store trading coordination to minimise customer disruption."
+   ],
+   "experienceHighlights": [
+    "Built and maintained integrated refit schedules for stores ranging from 30,000 to 60,000 sq ft using the planning tool, linking strip‑out, mechanical, electrical, fixture installation and stock replenishment.",
+    "Tracked refit budgets against approved capital spend, reporting monthly variances and change‑order commentary to the property director.",
+    "Coordinated overnight and weekend working windows with store managers, issuing weekly works notices to keep customer areas open during works.",
+    "Attended weekly progress meetings with main contractors, documenting actions and logging variation requests for commercial review."
+   ],
+   "projectsAndWorkSamples": [
+    "An anonymised 11‑week refit schedule for a single store, illustrating the critical path through mechanical and electrical works and the stock replenishment plan for reopening."
+   ],
+   "skills": [
+    "Integrated programme scheduling",
+    "Budget control and variance reporting",
+    "Contractor management and variation handling",
+    "Store trading coordination",
+    "PRINCE2 Practitioner certification"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in integrated scheduling, budget control, contractor management, store trading coordination and possession of a recognised PRINCE2 Practitioner certification. No evidence is provided regarding dispute resolution beyond logging variation requests or experience with a portfolio of 40 store refits."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Store Refit Programme",
+    "jobDescriptionSource": "jd_710148e2cca81a40",
+    "requirementIds": [
+     "req_ccd4d94f69e6",
+     "req_e31b00f92ab6",
+     "req_5bf2f559078b",
+     "req_6fc8b91b25e0",
+     "req_3462ba387c59"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_800d9d362f571ccd",
+    "sources": [
+     "src_00a61d21426e",
+     "src_e8ac57adafd5",
+     "src_6421c27e01b1",
+     "src_a89c51167a98",
+     "src_0df55a2cb011",
+     "src_095d54898b6c",
+     "src_29af01789660"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_ccd4d94f69e6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e8ac57adafd5",
+       "text": "Built the integrated refit schedules in the planning tool, linking strip‑out, mechanical and electrical works, fixture installation and stock replenishment.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates schedule building"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e31b00f92ab6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0df55a2cb011",
+       "text": "Attended weekly progress meetings with the main contractors, kept the meeting actions list and logged their variation requests for the commercial manager to assess.",
+       "evidenceStrength": "high",
+       "notes": "Shows contractor management and variation logging"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5bf2f559078b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6421c27e01b1",
+       "text": "Tracked each refit budget against the approved capital spend and reported monthly variances to the property director, with commentary on change orders.",
+       "evidenceStrength": "high",
+       "notes": "Budget tracking and variance reporting"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6fc8b91b25e0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a89c51167a98",
+       "text": "Agreed overnight and weekend working windows with store managers so that customer areas stayed open during the works, and issued a weekly works notice to each store listing the areas closed and the hoarding positions.",
+       "evidenceStrength": "high",
+       "notes": "Store trading coordination"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3462ba387c59",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_29af01789660",
+       "text": "The candidate's PRINCE2 Practitioner certificate was checked on the accrediting body's successful‑candidate register; it is listed as current, with the examination recorded in May 2022.",
+       "evidenceStrength": "high",
+       "notes": "Recognised project management certification"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Project manager with integrated scheduling, budget control, contractor management and store trading coordination experience at Brackley Home & Garden.",
+     "supportingRequirementIds": [
+      "req_ccd4d94f69e6",
+      "req_e31b00f92ab6",
+      "req_5bf2f559078b",
+      "req_6fc8b91b25e0"
+     ],
+     "sourceIds": [
+      "src_00a61d21426e",
+      "src_e8ac57adafd5",
+      "src_6421c27e01b1",
+      "src_a89c51167a98",
+      "src_0df55a2cb011"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Project manager in the store development team at Brackley Home & Garden, July 2020 to present, running refits of stores between 30,000 and 60,000 square feet."
+    },
+    {
+     "claim": "Possesses a recognised PRINCE2 Practitioner certification.",
+     "supportingRequirementIds": [
+      "req_3462ba387c59"
+     ],
+     "sourceIds": [
+      "src_29af01789660"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The candidate's PRINCE2 Practitioner certificate was checked on the accrediting body's successful‑candidate register; it is listed as current, with the examination recorded in May 2022."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_e301c66770ab",
+     "text": "a born leader with real gravitas; I would expect contractors to fall in line behind them without much pushback.",
+     "signalType": "subjective impression",
+     "jobRelatedBoundary": "no",
+     "severity": "low",
+     "recommendedHandling": "Verify leadership and contractor management skills through structured interview questions."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Confirm candidate’s experience managing a portfolio of 40 store refits as required by the role.",
+    "Verify that contractor disputes were resolved at site level where possible.",
+    "Assess the candidate’s ability to coordinate store trading teams during refits."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume and work sample, except for the absence of explicit evidence regarding dispute resolution at site level and experience with a portfolio of 40 store refits. The candidate holds a recognised PRINCE2 Practitioner certification. No protected characteristics are inferred. Human review is required to evaluate fit and address evidence gaps.",
+   "limitations": [
+    "Evidence does not cover dispute resolution beyond logging variation requests.",
+    "No evidence of managing 40 store refits portfolio."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:21:55.365783+00:00"
+}

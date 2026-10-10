@@ -1,0 +1,37 @@
+{
+ "caseId": "cbe8e5fc-91b2-4a2a-a269-7061d9b3f45d",
+ "roleTitle": "Credit Risk Data Scientist, Consumer Lending",
+ "jobDescription": "A consumer lender offers personal loans and point-of-sale finance online. The credit risk analytics team builds and monitors the application scorecards that inform lending decisions, prepares documentation for independent model validation and tracks how each scorecard performs once it is in use. The data scientist will develop scorecard features, run out-of-time validation, write model documentation and maintain the monitoring reports. Statements about effects on losses or delinquency must come from a cohort comparison with a defined observation window. The team works closely with the collections strategy team, the second-line model risk function and the product owners for each lending channel.",
+ "requirements": [
+  "Develops features and scorecards for consumer credit applications in Python or SAS.",
+  "Validates scorecards on out-of-time samples and reports discrimination and stability measures.",
+  "Writes model documentation that passes independent model validation.",
+  "Shows the effect of a scorecard on delinquency or losses from a cohort comparison with a defined observation window.",
+  "Maintains monthly scorecard monitoring reports, including population stability."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Engineered bureau and open-banking affordability features for the personal-loan application scorecard at Granby Finance, working in Python with logistic regression and weight-of-evidence binning."},
+  {"type": "resume", "text": "Validated the scorecard on an out-of-time sample of 2022 applications, reporting a Gini coefficient of 0.58 and a population stability index of 0.04 against the development sample."},
+  {"type": "resume", "text": "Rebuilt the application scorecard, which lowered 90-day delinquencies by 18 basis points and saved the business millions in charge-offs."},
+  {"type": "resume", "text": "Wrote the model development document for independent validation; the validation team closed its review with two minor findings, both resolved before sign-off."},
+  {"type": "resume", "text": "Produced the monthly monitoring pack for the scorecard, covering population stability, characteristic stability and approval rates by score band."},
+  {"type": "work_sample", "text": "Work sample: an excerpt of the model development document, with the variable list, binning tables for three features, the out-of-time results (Gini 0.58, PSI 0.04) and the validation team's closure memo."},
+  {"type": "note", "text": "HR verification note: employment at Granby Finance from November 2020 to March 2024, first as Credit Risk Analyst and then as Data Scientist, was confirmed in writing by Granby's people operations team."},
+  {"type": "note", "text": "Recruiter verification: the candidate's MSc in Statistics (2020) was confirmed through the awarding university's online degree verification service."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate validated the scorecard on an out-of-time sample of 2022 applications, reporting a Gini of 0.58 and a population stability index of 0.04.", "status": "supported", "sources": [2, 6], "requirements": [2], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The resume states the validation sample and measures, and the work sample shows the same results in the model document."},
+   {"text": "The candidate wrote the model development document, and independent validation closed its review with two minor findings resolved before sign-off.", "status": "supported", "sources": [4, 6], "requirements": [3], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the document and outcome, and the work sample includes the validation closure memo."},
+   {"text": "The candidate's rebuilt scorecard lowered 90-day delinquencies by 18 basis points and saved millions in charge-offs.", "status": "unsupported", "sources": [], "requirements": [4], "boundaryCategory": "causal_quantified_outcome_without_baseline", "criticality": "critical", "rationale": "The delinquency and charge-off effects are the candidate's own statement with no comparison cohort, baseline or observation window, and 'millions' is not a stated amount; under the quantification rule a figure without a defined baseline is not evidence and an outcome needs a source stating the attribution."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "insufficient_evidence", "supported"],
+  "trap": {"proposition": 3, "rule": "hrgene.unsupported_quantification", "requirements": [4], "signatures": ["18 basis points", "millions in charge-offs"], "bait": [3], "anywhere": []},
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "No cohort comparison, baseline or observation window supports the stated effect on delinquencies or charge-offs.",
+  "expectedBoundaryNote": "Keep the out-of-time validation measures, the documentation outcome and the monitoring work as documented; record the delinquency and charge-off effects as an unsupported claim with a follow-up about the cohorts and window.",
+  "followUpTargets": ["Ask which application cohorts were compared, over what observation window delinquency was measured, and how the charge-off amount was calculated."],
+  "validClaimSignatures": ["out-of-time sample", "monitoring pack"]
+ }
+}

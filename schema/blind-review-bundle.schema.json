@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jam.local/schemas/hrgene-blind-review-bundle.v1.schema.json",
+  "title": "Condition-blind HRgene review bundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "blindArtifactId",
+    "sourceMaterial",
+    "reviewArtifact"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "jam.hrgene_blind_review_bundle.v1"
+    },
+    "blindArtifactId": {
+      "type": "string",
+      "pattern": "^blind_[a-f0-9]{24}$"
+    },
+    "sourceMaterial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language",
+        "roleContext",
+        "originalCvMarkdown",
+        "candidateEvidence"
+      ],
+      "properties": {
+        "language": {
+          "const": "zh-CN"
+        },
+        "roleContext": {
+          "$ref": "generation-case-view.schema.json#/properties/roleContext"
+        },
+        "originalCvMarkdown": {
+          "type": "string",
+          "minLength": 100
+        },
+        "candidateEvidence": {
+          "$ref": "generation-case-view.schema.json#/properties/candidate/properties/evidence"
+        }
+      }
+    },
+    "reviewArtifact": {
+      "$ref": "paired-review-bundle.schema.json"
+    }
+  }
+}

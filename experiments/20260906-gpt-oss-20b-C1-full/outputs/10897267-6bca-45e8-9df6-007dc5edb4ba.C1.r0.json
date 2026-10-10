@@ -1,0 +1,335 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "10897267-6bca-45e8-9df6-007dc5edb4ba.C1",
+ "case_id": "10897267-6bca-45e8-9df6-007dc5edb4ba",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11317,
+  "promptWords": 1465
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 74.482
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3550,
+ "eval_count": 2970,
+ "prompt_eval_duration_ns": 18527000,
+ "eval_duration_ns": 54253296000,
+ "total_duration_ns": 74478662917,
+ "thinking": "We need to produce JSON with optimizedCv and hiringEvidencePacket. Need to cite sources. Let's craft claims.\n\nOptimized CV: language en, candidateId cand_140a3391b9b794f9, targetRoleTitle Operations Process Specialist, Payment Reconciliation.\n\nprofessionalSummary: maybe one claim: \"Experienced in daily break-handling for Visa and Mastercard settlements at a regional acquirer, maintaining control checklist and runbook.\" cite src_7212d383a449, src_bf3543fbb2b9.\n\nexperienceHighlights: list claims: daily break-handling procedure, runbook rewrite, escalation, month-end close notes. cite respective sources.\n\nprojectsAndWorkSamples: mention runbook section and month-end close note sample. cite src_7590e9044f86.\n\nskills: list: break handling, runbook maintenance, analyst onboarding, escalation coordination. cite sources.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample confirm the candidate’s involvement in daily break handling, runbook maintenance, escalation, and month-end close documentation, but do not provide quantitative evidence of time-to-clear improvement or coordination with treasury beyond the escalation process.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_a4c17b75b37906cb, requirementIds list all.\n\ncandidate: candidateId same, sources list all sourceIds used: src_7212d383a449, src_bf3543fbb2b9, src_b77da5ad32df, src_691d1a048795, src_22d4d88c9fb1, src_7590e9044f86, src_ffc7106f01f5, src_271d76ae9139.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_f4d6f1efe60e: runs daily break-handling procedure and keeps control checklist current. Supported. evidence: src_7212d383a449. evidenceStrength high. notes: directly states.\n\nreq_9ac30fe03ad6: maintains reconciliation runbook and trains new analysts. Supported. evidence: src_bf3543fbb2b9. high.\n\nreq_b0062d27a75b: reduces average time to clear settlement break. Insufficient evidence. missingEvidence: \"Quantitative evidence of time-to-clear improvement and baseline.\" Also note that src_ffc7106f01f5 mentions 40% faster but not verified. So status insufficient_evidence. evidence list empty? maybe include src_ffc7106f01f5 with low evidence but note not verified. We'll include it.\n\nreq_34cbf86742fc: coordinates escalations with treasury and merchant services and records responsibility boundaries. Supported partially? The resume says raised unresolved breaks above threshold to treasury and merchant services through escalation form; decision to hold or release stayed with treasury manager. So coordination exists but responsibility boundaries? Not fully. So partial_evidence. evidence: src_b77da5ad32df. missingEvidence: \"Clear documentation of own responsibility boundaries in escalation process.\"\n\nreq_714c0cc817c8: documents known limitations and hand-over conditions at each month-end close. Supported. evidence: src_691d1a048795. high.\n\nsupportedClaims: list claims that are supported: daily break handling, runbook rewrite, escalation, month-end close notes. Provide sourceIds.\n\nunsupportedClaims: maybe claim about 40% faster time-to-clear. reason: not verified baseline. requiredFollowUp: ask for documented improvement metrics.\n\nmissingEvidenceGaps: for req_b0062d27a75b: gap id maybe gap1. severity high. gap: \"Quantitative evidence of time-to-clear improvement and baseline.\" For req_34cbf86742fc: gap2 severity medium. gap: \"Documentation of own responsibility boundaries in escalation.\"\n\ninterviewSignalRisks: maybe from src_ffc7106f01f5: recruiter screen mention 40% faster but uncertain. signalType: \"Unverified metric claim\". jobRelatedBoundary false. severity medium. recommendedHandling: \"Verify metric with team data.\"\n\nfollowUpQuestions: for each gap. questionId q1 for req_b0062d27a75b: \"Can you provide documented metrics showing the average time to clear settlement breaks before and after your interventions?\" evidenceTarget: time-to-clear metrics. questionId q2 for req_34cbf86742fc: \"Can you describe how you record your responsibility boundaries when coordinating escalations with treasury and merchant services?\" evidenceTarget: responsibility documentation.\n\nhumanReviewChecklist: items: verify quantitative metrics, confirm responsibility boundaries, assess runbook rewrite impact.\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Limited to provided resume and work sample; no independent verification of metrics.\"\n\nNow craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_140a3391b9b794f9\",\n    \"targetRoleTitle\": \"Operations Process Specialist, Payment Reconciliation\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cs1\",\n        \"text\": \"Experienced in daily break-handling for Visa and Mastercard settlements at a regional acquirer, maintaining the control checklist and runbook.\",\n        \"sourceIds\": [\"src_7212d383a449\", \"src_bf3543fbb2b9\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"eh1\",\n        \"text\": \"Ran the daily break-handling procedure for Visa and Mastercard settlement files, ensuring the control checklist was completed before the 11:00 treasury cut-off.\",\n        \"sourceIds\": [\"src_7212d383a449\"],\n        \"requirementIds\": [\"req_f4d6f1efe60e\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off.\"\n      },\n      {\n        \"claimId\": \"eh2\",\n        \"text\": \"Rewrote the reconciliation runbook after a tool migration, adding screenshots for the new break-classification screen and trained two newly hired analysts during their first fortnight.\",\n        \"sourceIds\": [\"src_bf3543fbb2b9\"],\n        \"requirementIds\": [\"req_9ac30fe03ad6\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Rewrote the reconciliation runbook after the tool migration, adding screenshots for the new break-classification screen, and walked two newly hired analysts through it during their first fortnight.\"\n      },\n      {\n        \"claimId\": \"eh3\",\n        \"text\": \"Raised unresolved breaks above the agreed threshold to treasury and merchant services through the escalation form; the decision to hold or release a merchant payout stayed with the treasury manager.\",\n        \"sourceIds\": [\"src_b77da5ad32df\"],\n        \"requirementIds\": [\"req_34cbf86742fc\"],\n        \"supportBoundary\": \"partial_evidence\",\n        \"witness\": \"Raised unresolved breaks above the agreed threshold to treasury and merchant services through the escalation form; the decision to hold or release a merchant payout stayed with the treasury manager.\"\n      },\n      {\n        \"claimId\": \"eh4\",\n        \"text\": \"Wrote month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open, and the analyst taking it over.\",\n        \"sourceIds\": [\"src_691d1a048795\"],\n        \"requirementIds\": [\"req_714c0cc817c8\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open and the analyst taking it over.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"ps1\",\n        \"text\": \"Revised runbook section on break classification and month-end close note with carried-over breaks, including reconciliation tool ticket identifiers as verification.\",\n        \"sourceIds\": [\"src_7590e9044f86\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the revised runbook section on break classification and one month-end close note with carried-over breaks, with the reconciliation tool's ticket identifiers as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"sk1\",\n        \"text\": \"Break handling, runbook maintenance, analyst onboarding, escalation coordination.\",\n        \"sourceIds\": [\"src_22d4d88c9fb1\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Responsibilities included break handling, runbook maintenance, analyst onboarding and escalation for the settlement reconciliation queue over about two years.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample confirm the candidate’s involvement in daily break handling, runbook maintenance, escalation, and month-end close documentation, but do not provide quantitative evidence of time-to-clear improvement or detailed responsibility boundaries in escalation.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Qualified human review is required before any employment decision.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Operations Process Specialist, Payment Reconciliation\",\n      \"jobDescriptionSource\": \"jd_a4c17b75b37906cb\",\n      \"requirementIds\": [\n        \"req_f4d6f1efe60e\",\n        \"req_9ac30fe03ad6\",\n        \"req_b0062d27a75b\",\n        \"req_34cbf86742fc\",\n        \"req_714c0cc817c8\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_140a3391b9b794f9\",\n      \"sources\": [\n        \"src_7212d383a449\",\n        \"src_bf3543fbb2b9\",\n        \"src_b77da5ad32df\",\n        \"src_691d1a048795\",\n        \"src_22d4d88c9fb1\",\n        \"src_7590e9044f86\",\n        \"src_ffc7106f01f5\",\n        \"src_271d76ae9139\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_f4d6f1efe60e\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_7212d383a449\",\n            \"text\": \"Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly states daily break handling and control checklist completion.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_9ac30fe03ad6\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_bf3543fbb2b9\",\n            \"text\": \"Rewrote the reconciliation runbook after the tool migration, adding screenshots for the new break-classification screen, and walked two newly hired analysts through it during their first fortnight.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Shows runbook maintenance and analyst training.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_b0062d27a75b\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_ffc7106f01f5\",\n            \"text\": \"Recruiter screen: candidate said that after the runbook rewrite breaks were 'cleared roughly 40 percent faster'; he thought the figure came from a team meeting slide but did not know the baseline or the period it covered.\",\n            \"evidenceStrength\": \"low\",\n            \"notes\": \"Unverified claim; no documented baseline or period.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Quantitative evidence of average time-to-clear improvement and baseline.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_34cbf86742fc\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_b77da5ad32df\",\n            \"text\": \"Raised unresolved breaks above the agreed threshold to treasury and merchant services through the escalation form; the decision to hold or release a merchant payout stayed with the treasury manager.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows escalation coordination but not explicit responsibility boundaries.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Documentation of own responsibility boundaries in escalation process.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_714c0cc817c8\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_691d1a048795\",\n            \"text\": \"Wrote the month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open and the analyst taking it over.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly documents known limitations and hand-over conditions.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Ran the daily break-handling procedure for Visa and Mastercard settlements, completing the control checklist before the 11:00 treasury cut-off.\",\n        \"supportingRequirementIds\": [\"req_f4d6f1efe60e\"],\n        \"sourceIds\": [\"src_7212d383a449\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off.\"\n      },\n      {\n        \"claim\": \"Rewrote the reconciliation runbook after a tool migration and trained two new analysts during their first fortnight.\",\n        \"supportingRequirementIds\": [\"req_9ac30fe03ad6\"],\n        \"sourceIds\": [\"src_bf3543fbb2b9\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Rewrote the reconciliation runbook after the tool migration, adding screenshots for the new break-classification screen, and walked two newly hired analysts through it during their first fortnight.\"\n      },\n      {\n        \"claim\": \"Wrote month-end close notes for the reconciliation queue, listing carried-over breaks, reasons, and analyst hand-over.\",\n        \"supportingRequirementIds\": [\"req_714c0cc817c8\"],\n        \"sourceIds\": [\"src_691d1a048795\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open and the analyst taking it over.\"\n      }\n    ],\n    \"unsupportedClaims\": [\n      {\n        \"claim\": \"Breaks were cleared roughly 40 percent faster after the runbook rewrite.\",\n        \"reason\": \"The claim is based on an unverified recruiter screen and lacks documented baseline or period.\",\n        \"requiredFollowUp\": \"Provide documented metrics showing average time-to-clear before and after the intervention.\"\n      }\n    ],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap1\",\n        \"requirementId\": \"req_b0062d27a75b\",\n        \"severity\": \"high\",\n        \"gap\": \"Quantitative evidence of average time-to-clear improvement and baseline.\"\n      },\n      {\n        \"gapId\": \"gap2\",\n        \"requirementId\": \"req_34cbf86742fc\",\n        \"severity\": \"medium\",\n        \"gap\": \"Documentation of own responsibility boundaries in escalation process.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_ffc7106f01f5\",\n        \"text\": \"Recruiter screen: candidate said that after the runbook rewrite breaks were 'cleared roughly 40 percent faster'; he thought the figure came from a team meeting slide but did not know the baseline or the period it covered.\",\n        \"signalType\": \"Unverified metric claim\",\n        \"jobRelatedBoundary\": false,\n        \"severity\": \"medium\",\n        \"recommendedHandling\": \"Verify the metric with team data and confirm baseline and period.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q1\",\n        \"requirementId\": \"req_b0062d27a75b\",\n        \"question\": \"Can you provide documented metrics showing the average time to clear settlement breaks before and after your interventions?\",\n        \"evidenceTarget\": \"Time-to-clear metrics and baseline.\"\n      },\n      {\n        \"questionId\": \"q2\",\n        \"requirementId\": \"req_34cbf86742fc\",\n        \"question\": \"Can you describe how you record your responsibility boundaries when coordinating escalations with treasury and merchant services?\",\n        \"evidenceTarget\": \"Responsibility documentation.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify quantitative time-to-clear metrics and baseline.\",\n      \"Confirm documentation of responsibility boundaries in escalation.\",\n      \"Assess impact of runbook rewrite on break handling process.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and work sample provide clear evidence of daily break handling, runbook maintenance, escalation coordination, and month-end close documentation. However, there is no documented quantitative evidence of time-to-clear improvement, and responsibility boundaries in escalation are not explicitly recorded. Human review is required to verify metrics and clarify escalation responsibilities before any hiring decision.\",\n    \"limitations\": [\n      \"Evidence limited to the provided resume, work sample, and recruiter notes; no independent verification of metrics or processes.\"\n    ]\n  }\n}",
+ "content_sha256": "781543291feafa3686b6313e5d7413503a7e7229f7e7263d410985290007fb45",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_140a3391b9b794f9",
+   "targetRoleTitle": "Operations Process Specialist, Payment Reconciliation",
+   "professionalSummary": [
+    {
+     "claimId": "cs1",
+     "text": "Experienced in daily break-handling for Visa and Mastercard settlements at a regional acquirer, maintaining the control checklist and runbook.",
+     "sourceIds": [
+      "src_7212d383a449",
+      "src_bf3543fbb2b9"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh1",
+     "text": "Ran the daily break-handling procedure for Visa and Mastercard settlement files, ensuring the control checklist was completed before the 11:00 treasury cut-off.",
+     "sourceIds": [
+      "src_7212d383a449"
+     ],
+     "requirementIds": [
+      "req_f4d6f1efe60e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off."
+    },
+    {
+     "claimId": "eh2",
+     "text": "Rewrote the reconciliation runbook after a tool migration, adding screenshots for the new break-classification screen and trained two newly hired analysts during their first fortnight.",
+     "sourceIds": [
+      "src_bf3543fbb2b9"
+     ],
+     "requirementIds": [
+      "req_9ac30fe03ad6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Rewrote the reconciliation runbook after the tool migration, adding screenshots for the new break-classification screen, and walked two newly hired analysts through it during their first fortnight."
+    },
+    {
+     "claimId": "eh3",
+     "text": "Raised unresolved breaks above the agreed threshold to treasury and merchant services through the escalation form; the decision to hold or release a merchant payout stayed with the treasury manager.",
+     "sourceIds": [
+      "src_b77da5ad32df"
+     ],
+     "requirementIds": [
+      "req_34cbf86742fc"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "Raised unresolved breaks above the agreed threshold to treasury and merchant services through the escalation form; the decision to hold or release a merchant payout stayed with the treasury manager."
+    },
+    {
+     "claimId": "eh4",
+     "text": "Wrote month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open, and the analyst taking it over.",
+     "sourceIds": [
+      "src_691d1a048795"
+     ],
+     "requirementIds": [
+      "req_714c0cc817c8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open and the analyst taking it over."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps1",
+     "text": "Revised runbook section on break classification and month-end close note with carried-over breaks, including reconciliation tool ticket identifiers as verification.",
+     "sourceIds": [
+      "src_7590e9044f86"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the revised runbook section on break classification and one month-end close note with carried-over breaks, with the reconciliation tool's ticket identifiers as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "sk1",
+     "text": "Break handling, runbook maintenance, analyst onboarding, escalation coordination.",
+     "sourceIds": [
+      "src_22d4d88c9fb1"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Responsibilities included break handling, runbook maintenance, analyst onboarding and escalation for the settlement reconciliation queue over about two years."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample confirm the candidate’s involvement in daily break handling, runbook maintenance, escalation, and month-end close documentation, but do not provide quantitative evidence of time-to-clear improvement or detailed responsibility boundaries in escalation."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Operations Process Specialist, Payment Reconciliation",
+    "jobDescriptionSource": "jd_a4c17b75b37906cb",
+    "requirementIds": [
+     "req_f4d6f1efe60e",
+     "req_9ac30fe03ad6",
+     "req_b0062d27a75b",
+     "req_34cbf86742fc",
+     "req_714c0cc817c8"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_140a3391b9b794f9",
+    "sources": [
+     "src_7212d383a449",
+     "src_bf3543fbb2b9",
+     "src_b77da5ad32df",
+     "src_691d1a048795",
+     "src_22d4d88c9fb1",
+     "src_7590e9044f86",
+     "src_ffc7106f01f5",
+     "src_271d76ae9139"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f4d6f1efe60e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7212d383a449",
+       "text": "Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off.",
+       "evidenceStrength": "high",
+       "notes": "Directly states daily break handling and control checklist completion."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9ac30fe03ad6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bf3543fbb2b9",
+       "text": "Rewrote the reconciliation runbook after the tool migration, adding screenshots for the new break-classification screen, and walked two newly hired analysts through it during their first fortnight.",
+       "evidenceStrength": "high",
+       "notes": "Shows runbook maintenance and analyst training."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b0062d27a75b",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_ffc7106f01f5",
+       "text": "Recruiter screen: candidate said that after the runbook rewrite breaks were 'cleared roughly 40 percent faster'; he thought the figure came from a team meeting slide but did not know the baseline or the period it covered.",
+       "evidenceStrength": "low",
+       "notes": "Unverified claim; no documented baseline or period."
+      }
+     ],
+     "missingEvidence": [
+      "Quantitative evidence of average time-to-clear improvement and baseline."
+     ]
+    },
+    {
+     "requirementId": "req_34cbf86742fc",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_b77da5ad32df",
+       "text": "Raised unresolved breaks above the agreed threshold to treasury and merchant services through the escalation form; the decision to hold or release a merchant payout stayed with the treasury manager.",
+       "evidenceStrength": "medium",
+       "notes": "Shows escalation coordination but not explicit responsibility boundaries."
+      }
+     ],
+     "missingEvidence": [
+      "Documentation of own responsibility boundaries in escalation process."
+     ]
+    },
+    {
+     "requirementId": "req_714c0cc817c8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_691d1a048795",
+       "text": "Wrote the month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open and the analyst taking it over.",
+       "evidenceStrength": "high",
+       "notes": "Directly documents known limitations and hand-over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Ran the daily break-handling procedure for Visa and Mastercard settlements, completing the control checklist before the 11:00 treasury cut-off.",
+     "supportingRequirementIds": [
+      "req_f4d6f1efe60e"
+     ],
+     "sourceIds": [
+      "src_7212d383a449"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the daily break-handling procedure for Visa and Mastercard settlement files at a regional acquirer, working through the break queue in the reconciliation tool and ticking off the control checklist before the 11:00 treasury cut-off."
+    },
+    {
+     "claim": "Rewrote the reconciliation runbook after a tool migration and trained two new analysts during their first fortnight.",
+     "supportingRequirementIds": [
+      "req_9ac30fe03ad6"
+     ],
+     "sourceIds": [
+      "src_bf3543fbb2b9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rewrote the reconciliation runbook after the tool migration, adding screenshots for the new break-classification screen, and walked two newly hired analysts through it during their first fortnight."
+    },
+    {
+     "claim": "Wrote month-end close notes for the reconciliation queue, listing carried-over breaks, reasons, and analyst hand-over.",
+     "supportingRequirementIds": [
+      "req_714c0cc817c8"
+     ],
+     "sourceIds": [
+      "src_691d1a048795"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the month-end close notes for the reconciliation queue, listing carried-over breaks, the reason each was open and the analyst taking it over."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Breaks were cleared roughly 40 percent faster after the runbook rewrite.",
+     "reason": "The claim is based on an unverified recruiter screen and lacks documented baseline or period.",
+     "requiredFollowUp": "Provide documented metrics showing average time-to-clear before and after the intervention."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap1",
+     "requirementId": "req_b0062d27a75b",
+     "severity": "high",
+     "gap": "Quantitative evidence of average time-to-clear improvement and baseline."
+    },
+    {
+     "gapId": "gap2",
+     "requirementId": "req_34cbf86742fc",
+     "severity": "medium",
+     "gap": "Documentation of own responsibility boundaries in escalation process."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_ffc7106f01f5",
+     "text": "Recruiter screen: candidate said that after the runbook rewrite breaks were 'cleared roughly 40 percent faster'; he thought the figure came from a team meeting slide but did not know the baseline or the period it covered.",
+     "signalType": "Unverified metric claim",
+     "jobRelatedBoundary": false,
+     "severity": "medium",
+     "recommendedHandling": "Verify the metric with team data and confirm baseline and period."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_b0062d27a75b",
+     "question": "Can you provide documented metrics showing the average time to clear settlement breaks before and after your interventions?",
+     "evidenceTarget": "Time-to-clear metrics and baseline."
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_34cbf86742fc",
+     "question": "Can you describe how you record your responsibility boundaries when coordinating escalations with treasury and merchant services?",
+     "evidenceTarget": "Responsibility documentation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify quantitative time-to-clear metrics and baseline.",
+    "Confirm documentation of responsibility boundaries in escalation.",
+    "Assess impact of runbook rewrite on break handling process."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence of daily break handling, runbook maintenance, escalation coordination, and month-end close documentation. However, there is no documented quantitative evidence of time-to-clear improvement, and responsibility boundaries in escalation are not explicitly recorded. Human review is required to verify metrics and clarify escalation responsibilities before any hiring decision.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and recruiter notes; no independent verification of metrics or processes."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:06:46.570491+00:00"
+}

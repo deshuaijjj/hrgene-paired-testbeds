@@ -1,0 +1,261 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "d7ce5f4f-4800-4bf8-a8a1-5ce0129c1046.C2",
+ "case_id": "d7ce5f4f-4800-4bf8-a8a1-5ce0129c1046",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15361,
+  "promptWords": 1829
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 48.377
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4199,
+ "eval_count": 1975,
+ "prompt_eval_duration_ns": 19220000,
+ "eval_duration_ns": 36220894000,
+ "total_duration_ns": 48354274666,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use claims from resume. Ensure no unsupported claims. All claims must have source. No numbers not in source. The resume has numbers: 300 design-partner accounts, 11 findings, fortnightly, etc. Those are in source. Good.\n\nWe need optimizedCv with claims arrays. Each claim must have sourceIds. We can create claims like \"Ran passkey sign-in beta for 300 design-partner accounts in preview environment\" etc.\n\nEvidenceBoundary: one or two sentences on what materials establish.\n\nHiringEvidencePacket: decisionBoundary flags false, humanReviewRequired true.\n\nRole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\nCandidate: candidateId, sources list (all sourceIds used).\n\nRequirementEvidenceMap: for each requirement id, status and evidence entries.\n\nWe need to map each requirement to evidence.\n\nreq_3d1557775703: cross-team programmes with maintained plan and risk register. Evidence: src_f5585f6f2ee2 (kept plan and risk register across teams). Also src_05db3062b500? but that is beta run. So evidence: src_f5585f6f2ee2. status supported.\n\nreq_09e9fc209de6: coordinates security review. Evidence: src_983744c8aa2c. status supported.\n\nreq_059f1c475723: managed production launch of platform feature, including release approvals, launch-day coordination, post-launch incident handling. The resume does not mention production launch, only beta. So insufficient evidence. Gap: lack of evidence of production launch. Follow-up question: Did you manage a production launch? Provide details.\n\nreq_bb5d4dbf6ac8: runs beta or early-access programmes with customers and synthesises feedback. Evidence: src_05db3062b500 (beta run), src_44de6871a6a9 (gathered feedback). status supported.\n\nreq_ec0ce805c2fc: reports programme status to engineering and product leadership. Evidence: src_29efa8d33d3f (sent fortnightly status note). status supported.\n\nSo requirementEvidenceMap entries accordingly.\n\nsupportedClaims: list claims that support requirements. For each claim, include supportingRequirementIds, sourceIds, evidenceStrength high? maybe medium. witness: verbatim passage.\n\nWe need to quote verbatim passage from source. Use the text from resume lines.\n\nWe need to include sourceIds for each claim.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: for req_059f1c475723.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: for that requirement.\n\nHumanReviewChecklist: maybe \"Review evidence for production launch claim\" etc.\n\nAuditSummary: paragraph summarizing evidence and gaps.\n\nLimitations: maybe \"Limited to provided materials\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_680a6b4b32f30d1e\",\"targetRoleTitle\":\"Technical Program Manager, Identity Platform\",\"professionalSummary\":[\"Program Manager with experience leading cross‑team authentication programmes, maintaining detailed plans and risk registers, coordinating security reviews, and synthesising customer feedback.\"],\"experienceHighlights\":[\"Ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment, leading the programme across identity, mobile and support teams.\",\"Maintained the passkey programme plan and risk register, reviewing open risks at weekly meetings and keeping a decision log.\",\"Booked and tracked the security architecture review and external penetration test of the passkey flows, closing 11 findings before beta launch.\",\"Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, summarising top issues for the identity team each sprint.\",\"Sent fortnightly status notes to the VP of engineering and the identity product lead covering milestones, risks and decisions needed, archiving past notes.\"],\"projectsAndWorkSamples\":[\"Beta programme plan for passkey sign‑in, covering design‑partner enrolment, preview‑environment configuration, feedback channels and exit criteria for the beta; its section on general availability lists open questions such as support staffing and rollout order.\"],\"skills\":[\"Cross‑team programme management\",\"Risk register maintenance\",\"Security review coordination\",\"Beta programme execution\",\"Stakeholder communication\",\"Status reporting\"],\"evidenceBoundary\":\"The provided resume and supporting notes establish the candidate’s experience running cross‑team authentication beta programmes, maintaining plans and risk registers, coordinating security reviews, gathering and synthesising customer feedback, and reporting status to engineering and product leadership. They do not establish experience with a production launch of a platform feature.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess evidence gaps and confirm fit.\"},\"role\":{\"roleTitle\":\"Technical Program Manager, Identity Platform\",\"jobDescriptionSource\":\"jd_ebfc3aa92b93dcac\",\"requirementIds\":[\"req_3d1557775703\",\"req_09e9fc209de6\",\"req_059f1c475723\",\"req_bb5d4dbf6ac8\",\"req_ec0ce805c2fc\"]},\"candidate\":{\"candidateId\":\"cand_680a6b4b32f30d1e\",\"sources\":[\"src_05db3062b500\",\"src_f5585f6f2ee2\",\"src_983744c8aa2c\",\"src_44de6871a6a9\",\"src_29efa8d33d3f\",\"src_a4ab3b9ddc65\",\"src_0cfcdc2de8e5\",\"src_39d0426997cd\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_3d1557775703\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f5585f6f2ee2\",\"text\":\"Kept the passkey programme plan and risk register across the identity, mobile and support teams, reviewing open risks at a weekly 30-minute meeting, and kept the programme's decision log.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of plan and risk register maintenance across teams.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_09e9fc209de6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_983744c8aa2c\",\"text\":\"Booked and tracked the security architecture review and the external penetration test of the passkey flows, closing 11 findings with the identity engineers before the beta opened, and filed the test report in the security team's repository.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of security review coordination.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_059f1c475723\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence of managing a production launch of a platform feature, including release approvals, launch‑day coordination and post‑launch incident handling.\"]},{\"requirementId\":\"req_bb5d4dbf6ac8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_05db3062b500\",\"text\":\"Program Manager, Quayline Software: ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment; according to the head of product, passkeys went GA to every customer the following quarter.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of beta programme execution.\"},{\"sourceId\":\"src_44de6871a6a9\",\"text\":\"Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, and summarised the top issues for the identity team each sprint, ranked by the number of partners affected.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of feedback synthesis.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ec0ce805c2fc\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_29efa8d33d3f\",\"text\":\"Sent a fortnightly status note to the VP of engineering and the identity product lead covering milestones, risks and decisions needed, keeping an archive of past notes.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of status reporting to leadership.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment.\",\"supportingRequirementIds\":[\"req_bb5d4dbf6ac8\"],\"sourceIds\":[\"src_05db3062b500\"],\"evidenceStrength\":\"high\",\"witness\":\"Program Manager, Quayline Software: ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment; according to the head of product, passkeys went GA to every customer the following quarter.\"},{\"claim\":\"Maintained the passkey programme plan and risk register across the identity, mobile and support teams.\",\"supportingRequirementIds\":[\"req_3d1557775703\"],\"sourceIds\":[\"src_f5585f6f2ee2\"],\"evidenceStrength\":\"high\",\"witness\":\"Kept the passkey programme plan and risk register across the identity, mobile and support teams, reviewing open risks at a weekly 30-minute meeting, and kept the programme's decision log.\"},{\"claim\":\"Coordinated the security architecture review and external penetration test of the passkey flows, closing 11 findings before beta launch.\",\"supportingRequirementIds\":[\"req_09e9fc209de6\"],\"sourceIds\":[\"src_983744c8aa2c\"],\"evidenceStrength\":\"high\",\"witness\":\"Booked and tracked the security architecture review and the external penetration test of the passkey flows, closing 11 findings with the identity engineers before the beta opened, and filed the test report in the security team's repository.\"},{\"claim\":\"Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, summarising top issues for the identity team each sprint.\",\"supportingRequirementIds\":[\"req_bb5d4dbf6ac8\"],\"sourceIds\":[\"src_44de6871a6a9\"],\"evidenceStrength\":\"high\",\"witness\":\"Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, and summarised the top issues for the identity team each sprint, ranked by the number of partners affected.\"},{\"claim\":\"Sent fortnightly status notes to the VP of engineering and the identity product lead covering milestones, risks and decisions needed.\",\"supportingRequirementIds\":[\"req_ec0ce805c2fc\"],\"sourceIds\":[\"src_29efa8d33d3f\"],\"evidenceStrength\":\"high\",\"witness\":\"Sent a fortnightly status note to the VP of engineering and the identity product lead covering milestones, risks and decisions needed, keeping an archive of past notes.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_059f1c475723\",\"requirementId\":\"req_059f1c475723\",\"severity\":\"medium\",\"gap\":\"No evidence of managing a production launch of a platform feature, including release approvals, launch‑day coordination and post‑launch incident handling.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_059f1c475723\",\"requirementId\":\"req_059f1c475723\",\"question\":\"Can you describe a production launch you managed, including the release approval process, launch‑day coordination, and post‑launch incident handling?\",\"evidenceTarget\":\"Details of production launch responsibilities and outcomes.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s beta programme experience aligns with the cross‑team programme management expectations.\",\"Confirm the absence of production launch evidence and assess whether the candidate’s other experience compensates.\",\"Ensure that all claims are supported by the cited sources.\"],\"auditSummary\":\"The candidate’s resume and notes provide clear evidence of cross‑team programme management, risk register maintenance, security review coordination, beta programme execution, feedback synthesis, and status reporting. However, there is no evidence of managing a production launch of a platform feature, which is a required competency for the role. Human review is needed to evaluate whether the candidate’s other experience sufficiently covers this gap or if additional information is required.\",\"limitations\":[\"Evidence limited to the provided resume, work samples, and verification notes; no external references or independent verification of production launch experience.\"]} }",
+ "content_sha256": "07d8db5f5fba88a57954541f3acd8129e51ce7107aefc85c3a1b0289b0aeb4d7",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_680a6b4b32f30d1e",
+   "targetRoleTitle": "Technical Program Manager, Identity Platform",
+   "professionalSummary": [
+    "Program Manager with experience leading cross‑team authentication programmes, maintaining detailed plans and risk registers, coordinating security reviews, and synthesising customer feedback."
+   ],
+   "experienceHighlights": [
+    "Ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment, leading the programme across identity, mobile and support teams.",
+    "Maintained the passkey programme plan and risk register, reviewing open risks at weekly meetings and keeping a decision log.",
+    "Booked and tracked the security architecture review and external penetration test of the passkey flows, closing 11 findings before beta launch.",
+    "Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, summarising top issues for the identity team each sprint.",
+    "Sent fortnightly status notes to the VP of engineering and the identity product lead covering milestones, risks and decisions needed, archiving past notes."
+   ],
+   "projectsAndWorkSamples": [
+    "Beta programme plan for passkey sign‑in, covering design‑partner enrolment, preview‑environment configuration, feedback channels and exit criteria for the beta; its section on general availability lists open questions such as support staffing and rollout order."
+   ],
+   "skills": [
+    "Cross‑team programme management",
+    "Risk register maintenance",
+    "Security review coordination",
+    "Beta programme execution",
+    "Stakeholder communication",
+    "Status reporting"
+   ],
+   "evidenceBoundary": "The provided resume and supporting notes establish the candidate’s experience running cross‑team authentication beta programmes, maintaining plans and risk registers, coordinating security reviews, gathering and synthesising customer feedback, and reporting status to engineering and product leadership. They do not establish experience with a production launch of a platform feature."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess evidence gaps and confirm fit."
+   },
+   "role": {
+    "roleTitle": "Technical Program Manager, Identity Platform",
+    "jobDescriptionSource": "jd_ebfc3aa92b93dcac",
+    "requirementIds": [
+     "req_3d1557775703",
+     "req_09e9fc209de6",
+     "req_059f1c475723",
+     "req_bb5d4dbf6ac8",
+     "req_ec0ce805c2fc"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_680a6b4b32f30d1e",
+    "sources": [
+     "src_05db3062b500",
+     "src_f5585f6f2ee2",
+     "src_983744c8aa2c",
+     "src_44de6871a6a9",
+     "src_29efa8d33d3f",
+     "src_a4ab3b9ddc65",
+     "src_0cfcdc2de8e5",
+     "src_39d0426997cd"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_3d1557775703",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f5585f6f2ee2",
+       "text": "Kept the passkey programme plan and risk register across the identity, mobile and support teams, reviewing open risks at a weekly 30-minute meeting, and kept the programme's decision log.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of plan and risk register maintenance across teams."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_09e9fc209de6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_983744c8aa2c",
+       "text": "Booked and tracked the security architecture review and the external penetration test of the passkey flows, closing 11 findings with the identity engineers before the beta opened, and filed the test report in the security team's repository.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of security review coordination."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_059f1c475723",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence of managing a production launch of a platform feature, including release approvals, launch‑day coordination and post‑launch incident handling."
+     ]
+    },
+    {
+     "requirementId": "req_bb5d4dbf6ac8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_05db3062b500",
+       "text": "Program Manager, Quayline Software: ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment; according to the head of product, passkeys went GA to every customer the following quarter.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of beta programme execution."
+      },
+      {
+       "sourceId": "src_44de6871a6a9",
+       "text": "Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, and summarised the top issues for the identity team each sprint, ranked by the number of partners affected.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of feedback synthesis."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ec0ce805c2fc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_29efa8d33d3f",
+       "text": "Sent a fortnightly status note to the VP of engineering and the identity product lead covering milestones, risks and decisions needed, keeping an archive of past notes.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of status reporting to leadership."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment.",
+     "supportingRequirementIds": [
+      "req_bb5d4dbf6ac8"
+     ],
+     "sourceIds": [
+      "src_05db3062b500"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Program Manager, Quayline Software: ran the passkey sign‑in beta for 300 design‑partner accounts in the preview environment; according to the head of product, passkeys went GA to every customer the following quarter."
+    },
+    {
+     "claim": "Maintained the passkey programme plan and risk register across the identity, mobile and support teams.",
+     "supportingRequirementIds": [
+      "req_3d1557775703"
+     ],
+     "sourceIds": [
+      "src_f5585f6f2ee2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the passkey programme plan and risk register across the identity, mobile and support teams, reviewing open risks at a weekly 30-minute meeting, and kept the programme's decision log."
+    },
+    {
+     "claim": "Coordinated the security architecture review and external penetration test of the passkey flows, closing 11 findings before beta launch.",
+     "supportingRequirementIds": [
+      "req_09e9fc209de6"
+     ],
+     "sourceIds": [
+      "src_983744c8aa2c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Booked and tracked the security architecture review and the external penetration test of the passkey flows, closing 11 findings with the identity engineers before the beta opened, and filed the test report in the security team's repository."
+    },
+    {
+     "claim": "Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, summarising top issues for the identity team each sprint.",
+     "supportingRequirementIds": [
+      "req_bb5d4dbf6ac8"
+     ],
+     "sourceIds": [
+      "src_44de6871a6a9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Gathered beta feedback through fortnightly calls with design partners and a tagged feedback board, and summarised the top issues for the identity team each sprint, ranked by the number of partners affected."
+    },
+    {
+     "claim": "Sent fortnightly status notes to the VP of engineering and the identity product lead covering milestones, risks and decisions needed.",
+     "supportingRequirementIds": [
+      "req_ec0ce805c2fc"
+     ],
+     "sourceIds": [
+      "src_29efa8d33d3f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Sent a fortnightly status note to the VP of engineering and the identity product lead covering milestones, risks and decisions needed, keeping an archive of past notes."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_059f1c475723",
+     "requirementId": "req_059f1c475723",
+     "severity": "medium",
+     "gap": "No evidence of managing a production launch of a platform feature, including release approvals, launch‑day coordination and post‑launch incident handling."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_059f1c475723",
+     "requirementId": "req_059f1c475723",
+     "question": "Can you describe a production launch you managed, including the release approval process, launch‑day coordination, and post‑launch incident handling?",
+     "evidenceTarget": "Details of production launch responsibilities and outcomes."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s beta programme experience aligns with the cross‑team programme management expectations.",
+    "Confirm the absence of production launch evidence and assess whether the candidate’s other experience compensates.",
+    "Ensure that all claims are supported by the cited sources."
+   ],
+   "auditSummary": "The candidate’s resume and notes provide clear evidence of cross‑team programme management, risk register maintenance, security review coordination, beta programme execution, feedback synthesis, and status reporting. However, there is no evidence of managing a production launch of a platform feature, which is a required competency for the role. Human review is needed to evaluate whether the candidate’s other experience sufficiently covers this gap or if additional information is required.",
+   "limitations": [
+    "Evidence limited to the provided resume, work samples, and verification notes; no external references or independent verification of production launch experience."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:32:30.411182+00:00"
+}

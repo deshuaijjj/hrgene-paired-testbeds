@@ -1,0 +1,203 @@
+{
+ "request_id": "a2d8ea98-5914-481d-81fe-782368716ec2.C2",
+ "case_id": "a2d8ea98-5914-481d-81fe-782368716ec2",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "ran a six-week colleague pilot of payment requests in the internal beta build of the app with 15,000 staff accounts, gathering feedback through an in-app survey",
+     "sourceIds": [
+      "src_e1cd2ad753e1"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "ran a six-week colleague pilot of payment requests in the internal beta build of the app with 15,000 staff accounts, gathering feedback through an in-app survey",
+     "sourceId": "src_e1cd2ad753e1"
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "number(s) not stated by the cited sources: 15000",
+    "witness": {
+     "numbers": [
+      "15000"
+     ],
+     "sourceIds": [
+      "src_e1cd2ad753e1"
+     ],
+     "text": "The candidate ran a six-week colleague pilot of payment requests in the internal beta build of the app with 15,000 staff accounts, gathering feedback through an in-app survey."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0]",
+    "message": "number(s) not stated by the cited sources: 15000",
+    "witness": {
+     "numbers": [
+      "15000"
+     ],
+     "sourceIds": [
+      "src_e1cd2ad753e1"
+     ],
+     "text": "ran a six-week colleague pilot of payment requests in the internal beta build of the app with 15,000 staff accounts, gathering feedback through an in-app survey."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (launch, to production) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_80611a6ba7eb",
+     "family": "PRODUCTION",
+     "terms": [
+      "launch",
+      "to production"
+     ],
+     "sourceIds": [
+      "src_e1cd2ad753e1"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "requirement_qualification_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].status",
+    "message": "requirement marked supported but its qualification term(s) [SENIORITY] (senior) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_7f6967bf721e",
+     "family": "SENIORITY",
+     "terms": [
+      "senior"
+     ],
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

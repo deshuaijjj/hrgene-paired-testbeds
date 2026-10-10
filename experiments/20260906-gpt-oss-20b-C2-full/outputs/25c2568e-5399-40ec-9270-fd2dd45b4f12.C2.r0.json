@@ -1,0 +1,318 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "25c2568e-5399-40ec-9270-fd2dd45b4f12.C2",
+ "case_id": "25c2568e-5399-40ec-9270-fd2dd45b4f12",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14167,
+  "promptWords": 1684
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 59.905
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3757,
+ "eval_count": 2732,
+ "prompt_eval_duration_ns": 18962000,
+ "eval_duration_ns": 49967324000,
+ "total_duration_ns": 59902617291,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Provide claims. Ensure no unsupported claims. Quantitative numbers must be from source. All numbers present in sources. Good. Provide requirementEvidenceMap covering all requirements. Provide gaps for req_be7c40c063a6? Actually improvement claim is supported by source_a6588168b3e8. That shows weighted forecast error fell from 24.5% to 17.8% between v1.4 and v2.0. That is improvement. So requirement satisfied. All others supported. Need to check ownership: req_acfe7598cf7e requires coordinates release decisions and records own responsibility boundaries. Source_1994144963ff says coordinated release decisions; forecasting lead took decision and customer ops confirmed rollout. Does candidate record own responsibility boundaries? Not explicitly. So partial evidence. Need gap. Also requirement 3e696f51cced: documents backtest assumptions, known limitations and hand-over conditions. Source_2b08287a076e covers that. Good.\n\nSo requirementEvidenceMap: req_0d6a179e5f15 supported. req_bf26a371f7ce supported. req_be7c40c063a6 supported. req_acfe7598cf7e partial_evidence. req_3e696f51cced supported.\n\nProvide missingEvidence for partial: need evidence of responsibility boundaries. Provide followUp question.\n\nAlso interviewSignalRisks: maybe subjective notes? None. So empty.\n\nSupportedClaims: list claims from CV. Provide witness passages.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: for req_acfe7598cf7e.\n\nFollowUpQuestions: ask about responsibility boundaries.\n\nHumanReviewChecklist: maybe \"Verify responsibility boundaries\" etc.\n\nAuditSummary: summary.\n\nLimitations: maybe \"Limited to provided sources\".\n\nNow craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_ba91882523f30f61\",\n    \"targetRoleTitle\": \"Model Evaluation Engineer, Supply Chain Collaboration\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Maintained the backtest harness and holdout sets for demand‑forecast models, ensuring version control and reproducibility.\",\n        \"sourceIds\": [\"src_4ab715fa8bc8\"],\n        \"requirementIds\": [\"req_0d6a179e5f15\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Maintained the backtest harness that replays twelve months of supplier order history per pilot customer and the holdout sets frozen per quarter, both under version control with the forecasting team.\"\n      },\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Ran pre‑release backtests for all model versions and published evaluation reports with per‑customer error tables.\",\n        \"sourceIds\": [\"src_b8684f860646\"],\n        \"requirementIds\": [\"req_bf26a371f7ce\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Ran the pre-release backtest for the three model versions released in the year and published the evaluation report with per-customer error tables.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Improved forecast accuracy on pilot customers, reducing weighted error from 24.5% to 17.8% between version 1.4 and 2.0.\",\n        \"sourceIds\": [\"src_a6588168b3e8\"],\n        \"requirementIds\": [\"req_be7c40c063a6\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between version 1.4 and version 2.0, on the frozen Q3 holdout set and against the documented version 1.4 baseline of 24.5 percent.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Coordinated release decisions with forecasting and customer operations, documenting responsibility boundaries.\",\n        \"sourceIds\": [\"src_1994144963ff\"],\n        \"requirementIds\": [\"req_acfe7598cf7e\"],\n        \"supportBoundary\": \"partial_evidence\",\n        \"witness\": \"Coordinated release decisions in the forecasting release meeting; the forecasting lead took the release decision and customer operations confirmed the rollout to each pilot customer.\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Documented backtest assumptions, known limitations, and hand‑over conditions for each model version.\",\n        \"sourceIds\": [\"src_2b08287a076e\"],\n        \"requirementIds\": [\"req_3e696f51cced\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the backtest notes for each version, listing the holdout composition, the known limitation that promotional periods were excluded from the holdout, and the hand-over items for the next backtest.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      \"Backtest harness maintenance and version control\",\n      \"Pre‑release backtest execution and reporting\",\n      \"Forecast accuracy improvement on pilot customers\",\n      \"Release coordination with forecasting and operations\",\n      \"Backtest documentation and hand‑over\"\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"claim_6\",\n        \"text\": \"Per‑version evaluation report and backtest notes for version 2.0, including harness run identifiers as verification trail.\",\n        \"sourceIds\": [\"src_353e397ef530\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the per-version evaluation report (weighted error per pilot customer, baseline line, version markers) and the backtest notes for version 2.0, with the harness run identifiers as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      \"Backtest harness development\",\n      \"Holdout set management\",\n      \"Forecast accuracy analysis\",\n      \"Release coordination\",\n      \"Documentation of assumptions and limitations\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s experience with backtest harness maintenance, pre‑release testing, accuracy improvement, release coordination, and documentation. They do not establish the candidate’s ownership of release decisions or explicit responsibility boundaries.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess responsibility boundaries and confirm fit for the role.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Model Evaluation Engineer, Supply Chain Collaboration\",\n      \"jobDescriptionSource\": \"jd_ab968ed0857b862e\",\n      \"requirementIds\": [\n        \"req_0d6a179e5f15\",\n        \"req_bf26a371f7ce\",\n        \"req_be7c40c063a6\",\n        \"req_acfe7598cf7e\",\n        \"req_3e696f51cced\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_ba91882523f30f61\",\n      \"sources\": [\n        \"src_4ab715fa8bc8\",\n        \"src_b8684f860646\",\n        \"src_a6588168b3e8\",\n        \"src_1994144963ff\",\n        \"src_2b08287a076e\",\n        \"src_353e397ef530\",\n        \"src_c6aaceb4b932\",\n        \"src_e3425f16cce3\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_0d6a179e5f15\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_4ab715fa8bc8\",\n            \"text\": \"Maintained the backtest harness that replays twelve months of supplier order history per pilot customer and the holdout sets frozen per quarter, both under version control with the forecasting team.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_bf26a371f7ce\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_b8684f860646\",\n            \"text\": \"Ran the pre-release backtest for the three model versions released in the year and published the evaluation report with per-customer error tables.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_be7c40c063a6\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a6588168b3e8\",\n            \"text\": \"Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between version 1.4 and version 2.0, on the frozen Q3 holdout set and against the documented version 1.4 baseline of 24.5 percent.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_acfe7598cf7e\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_1994144963ff\",\n            \"text\": \"Coordinated release decisions in the forecasting release meeting; the forecasting lead took the release decision and customer operations confirmed the rollout to each pilot customer.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows coordination but not explicit responsibility boundaries.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Explicit statement of candidate’s responsibility boundaries for release decisions.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_3e696f51cced\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_2b08287a076e\",\n            \"text\": \"Wrote the backtest notes for each version, listing the holdout composition, the known limitation that promotional periods were excluded from the holdout, and the hand-over items for the next backtest.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Maintained the backtest harness and holdout sets for demand‑forecast models, ensuring version control and reproducibility.\",\n        \"supportingRequirementIds\": [\"req_0d6a179e5f15\"],\n        \"sourceIds\": [\"src_4ab715fa8bc8\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintained the backtest harness that replays twelve months of supplier order history per pilot customer and the holdout sets frozen per quarter, both under version control with the forecasting team.\"\n      },\n      {\n        \"claim\": \"Ran pre‑release backtests for all model versions and published evaluation reports with per‑customer error tables.\",\n        \"supportingRequirementIds\": [\"req_bf26a371f7ce\"],\n        \"sourceIds\": [\"src_b8684f860646\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Ran the pre-release backtest for the three model versions released in the year and published the evaluation report with per-customer error tables.\"\n      },\n      {\n        \"claim\": \"Improved forecast accuracy on pilot customers, reducing weighted error from 24.5% to 17.8% between version 1.4 and 2.0.\",\n        \"supportingRequirementIds\": [\"req_be7c40c063a6\"],\n        \"sourceIds\": [\"src_a6588168b3e8\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between version 1.4 and version 2.0, on the frozen Q3 holdout set and against the documented version 1.4 baseline of 24.5 percent.\"\n      },\n      {\n        \"claim\": \"Documented backtest assumptions, known limitations, and hand‑over conditions for each model version.\",\n        \"supportingRequirementIds\": [\"req_3e696f51cced\"],\n        \"sourceIds\": [\"src_2b08287a076e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the backtest notes for each version, listing the holdout composition, the known limitation that promotional periods were excluded from the holdout, and the hand-over items for the next backtest.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_acfe7598cf7e\",\n        \"severity\": \"medium\",\n        \"gap\": \"Explicit evidence of candidate’s responsibility boundaries for release decisions is missing.\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_acfe7598cf7e\",\n        \"question\": \"Can you describe the specific responsibilities you held during release decisions, and how you documented your ownership boundaries?\",\n        \"evidenceTarget\": \"Explicit statement of responsibility boundaries for release decisions.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s responsibility boundaries for release decisions are documented.\",\n      \"Confirm that the improvement in forecast accuracy aligns with the documented baseline.\",\n      \"Ensure that the backtest harness and holdout sets are maintained in version control as described.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and work sample provide strong evidence for backtest harness maintenance, pre‑release testing, accuracy improvement, and documentation of assumptions. The only gap is the lack of explicit evidence of ownership boundaries for release decisions, which requires follow‑up.\",\n    \"limitations\": [\n      \"Evidence limited to the provided resume, work sample, and notes.\",\n      \"No external verification of the reported accuracy improvement beyond the resume.\"\n    ]\n  }\n}",
+ "content_sha256": "800fec7e35b1f78c2de5d03a3298c8844920bdbb51b7903024034e8ab47f7bd0",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_ba91882523f30f61",
+   "targetRoleTitle": "Model Evaluation Engineer, Supply Chain Collaboration",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Maintained the backtest harness and holdout sets for demand‑forecast models, ensuring version control and reproducibility.",
+     "sourceIds": [
+      "src_4ab715fa8bc8"
+     ],
+     "requirementIds": [
+      "req_0d6a179e5f15"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the backtest harness that replays twelve months of supplier order history per pilot customer and the holdout sets frozen per quarter, both under version control with the forecasting team."
+    },
+    {
+     "claimId": "claim_2",
+     "text": "Ran pre‑release backtests for all model versions and published evaluation reports with per‑customer error tables.",
+     "sourceIds": [
+      "src_b8684f860646"
+     ],
+     "requirementIds": [
+      "req_bf26a371f7ce"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the pre-release backtest for the three model versions released in the year and published the evaluation report with per-customer error tables."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Improved forecast accuracy on pilot customers, reducing weighted error from 24.5% to 17.8% between version 1.4 and 2.0.",
+     "sourceIds": [
+      "src_a6588168b3e8"
+     ],
+     "requirementIds": [
+      "req_be7c40c063a6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between version 1.4 and version 2.0, on the frozen Q3 holdout set and against the documented version 1.4 baseline of 24.5 percent."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Coordinated release decisions with forecasting and customer operations, documenting responsibility boundaries.",
+     "sourceIds": [
+      "src_1994144963ff"
+     ],
+     "requirementIds": [
+      "req_acfe7598cf7e"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "Coordinated release decisions in the forecasting release meeting; the forecasting lead took the release decision and customer operations confirmed the rollout to each pilot customer."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Documented backtest assumptions, known limitations, and hand‑over conditions for each model version.",
+     "sourceIds": [
+      "src_2b08287a076e"
+     ],
+     "requirementIds": [
+      "req_3e696f51cced"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the backtest notes for each version, listing the holdout composition, the known limitation that promotional periods were excluded from the holdout, and the hand-over items for the next backtest."
+    }
+   ],
+   "experienceHighlights": [
+    "Backtest harness maintenance and version control",
+    "Pre‑release backtest execution and reporting",
+    "Forecast accuracy improvement on pilot customers",
+    "Release coordination with forecasting and operations",
+    "Backtest documentation and hand‑over"
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_6",
+     "text": "Per‑version evaluation report and backtest notes for version 2.0, including harness run identifiers as verification trail.",
+     "sourceIds": [
+      "src_353e397ef530"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the per-version evaluation report (weighted error per pilot customer, baseline line, version markers) and the backtest notes for version 2.0, with the harness run identifiers as a verification trail."
+    }
+   ],
+   "skills": [
+    "Backtest harness development",
+    "Holdout set management",
+    "Forecast accuracy analysis",
+    "Release coordination",
+    "Documentation of assumptions and limitations"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience with backtest harness maintenance, pre‑release testing, accuracy improvement, release coordination, and documentation. They do not establish the candidate’s ownership of release decisions or explicit responsibility boundaries."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess responsibility boundaries and confirm fit for the role."
+   },
+   "role": {
+    "roleTitle": "Model Evaluation Engineer, Supply Chain Collaboration",
+    "jobDescriptionSource": "jd_ab968ed0857b862e",
+    "requirementIds": [
+     "req_0d6a179e5f15",
+     "req_bf26a371f7ce",
+     "req_be7c40c063a6",
+     "req_acfe7598cf7e",
+     "req_3e696f51cced"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_ba91882523f30f61",
+    "sources": [
+     "src_4ab715fa8bc8",
+     "src_b8684f860646",
+     "src_a6588168b3e8",
+     "src_1994144963ff",
+     "src_2b08287a076e",
+     "src_353e397ef530",
+     "src_c6aaceb4b932",
+     "src_e3425f16cce3"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0d6a179e5f15",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4ab715fa8bc8",
+       "text": "Maintained the backtest harness that replays twelve months of supplier order history per pilot customer and the holdout sets frozen per quarter, both under version control with the forecasting team.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_bf26a371f7ce",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b8684f860646",
+       "text": "Ran the pre-release backtest for the three model versions released in the year and published the evaluation report with per-customer error tables.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_be7c40c063a6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a6588168b3e8",
+       "text": "Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between version 1.4 and version 2.0, on the frozen Q3 holdout set and against the documented version 1.4 baseline of 24.5 percent.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_acfe7598cf7e",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_1994144963ff",
+       "text": "Coordinated release decisions in the forecasting release meeting; the forecasting lead took the release decision and customer operations confirmed the rollout to each pilot customer.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination but not explicit responsibility boundaries."
+      }
+     ],
+     "missingEvidence": [
+      "Explicit statement of candidate’s responsibility boundaries for release decisions."
+     ]
+    },
+    {
+     "requirementId": "req_3e696f51cced",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2b08287a076e",
+       "text": "Wrote the backtest notes for each version, listing the holdout composition, the known limitation that promotional periods were excluded from the holdout, and the hand-over items for the next backtest.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained the backtest harness and holdout sets for demand‑forecast models, ensuring version control and reproducibility.",
+     "supportingRequirementIds": [
+      "req_0d6a179e5f15"
+     ],
+     "sourceIds": [
+      "src_4ab715fa8bc8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the backtest harness that replays twelve months of supplier order history per pilot customer and the holdout sets frozen per quarter, both under version control with the forecasting team."
+    },
+    {
+     "claim": "Ran pre‑release backtests for all model versions and published evaluation reports with per‑customer error tables.",
+     "supportingRequirementIds": [
+      "req_bf26a371f7ce"
+     ],
+     "sourceIds": [
+      "src_b8684f860646"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the pre-release backtest for the three model versions released in the year and published the evaluation report with per-customer error tables."
+    },
+    {
+     "claim": "Improved forecast accuracy on pilot customers, reducing weighted error from 24.5% to 17.8% between version 1.4 and 2.0.",
+     "supportingRequirementIds": [
+      "req_be7c40c063a6"
+     ],
+     "sourceIds": [
+      "src_a6588168b3e8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between version 1.4 and version 2.0, on the frozen Q3 holdout set and against the documented version 1.4 baseline of 24.5 percent."
+    },
+    {
+     "claim": "Documented backtest assumptions, known limitations, and hand‑over conditions for each model version.",
+     "supportingRequirementIds": [
+      "req_3e696f51cced"
+     ],
+     "sourceIds": [
+      "src_2b08287a076e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the backtest notes for each version, listing the holdout composition, the known limitation that promotional periods were excluded from the holdout, and the hand-over items for the next backtest."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_acfe7598cf7e",
+     "severity": "medium",
+     "gap": "Explicit evidence of candidate’s responsibility boundaries for release decisions is missing."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_acfe7598cf7e",
+     "question": "Can you describe the specific responsibilities you held during release decisions, and how you documented your ownership boundaries?",
+     "evidenceTarget": "Explicit statement of responsibility boundaries for release decisions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s responsibility boundaries for release decisions are documented.",
+    "Confirm that the improvement in forecast accuracy aligns with the documented baseline.",
+    "Ensure that the backtest harness and holdout sets are maintained in version control as described."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence for backtest harness maintenance, pre‑release testing, accuracy improvement, and documentation of assumptions. The only gap is the lack of explicit evidence of ownership boundaries for release decisions, which requires follow‑up.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and notes.",
+    "No external verification of the reported accuracy improvement beyond the resume."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:53:24.119676+00:00"
+}

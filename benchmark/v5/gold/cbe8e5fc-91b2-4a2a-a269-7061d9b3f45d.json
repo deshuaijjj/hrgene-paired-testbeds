@@ -1,0 +1,82 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "cbe8e5fc-91b2-4a2a-a269-7061d9b3f45d",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_50c8cef7be1c",
+   "canonicalProposition": "The candidate validated the scorecard on an out-of-time sample of 2022 applications, reporting a Gini of 0.58 and a population stability index of 0.04.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_0c5422c3d69d",
+    "src_389e132f4e67"
+   ],
+   "relevantRequirementIds": [
+    "req_fa95b9836507"
+   ],
+   "boundaryCategory": "quantified_result_with_defined_baseline",
+   "criticality": "noncritical",
+   "rationale": "The resume states the validation sample and measures, and the work sample shows the same results in the model document."
+  },
+  {
+   "atomicPropositionId": "prop_b5832e8dcb99",
+   "canonicalProposition": "The candidate wrote the model development document, and independent validation closed its review with two minor findings resolved before sign-off.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_d719e84d7094",
+    "src_389e132f4e67"
+   ],
+   "relevantRequirementIds": [
+    "req_77e0e0958a24"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the document and outcome, and the work sample includes the validation closure memo."
+  },
+  {
+   "atomicPropositionId": "prop_44627913fe76",
+   "canonicalProposition": "The candidate's rebuilt scorecard lowered 90-day delinquencies by 18 basis points and saved millions in charge-offs.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_c20d1d62e9a7"
+   ],
+   "boundaryCategory": "causal_quantified_outcome_without_baseline",
+   "criticality": "critical",
+   "rationale": "The delinquency and charge-off effects are the candidate's own statement with no comparison cohort, baseline or observation window, and 'millions' is not a stated amount; under the quantification rule a figure without a defined baseline is not evidence and an outcome needs a source stating the attribution."
+  }
+ ],
+ "requirementStatus": {
+  "req_f779497ce5f4": "supported",
+  "req_fa95b9836507": "supported",
+  "req_77e0e0958a24": "supported",
+  "req_c20d1d62e9a7": "insufficient_evidence",
+  "req_e9b5a86a5eb1": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No cohort comparison, baseline or observation window supports the stated effect on delinquencies or charge-offs.",
+ "expectedBoundaryNote": "Keep the out-of-time validation measures, the documentation outcome and the monitoring work as documented; record the delinquency and charge-off effects as an unsupported claim with a follow-up about the cohorts and window.",
+ "permittedFollowUpTargets": [
+  "Ask which application cohorts were compared, over what observation window delinquency was measured, and how the charge-off amount was calculated."
+ ],
+ "validClaimSignatures": [
+  "out-of-time sample",
+  "monitoring pack"
+ ],
+ "trap": {
+  "propositionId": "prop_44627913fe76",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_c20d1d62e9a7"
+  ],
+  "signatures": [
+   "18 basis points",
+   "millions in charge-offs"
+  ],
+  "baitSourceIds": [
+   "src_b40264bc6b3a"
+  ]
+ }
+}

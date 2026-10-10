@@ -1,0 +1,374 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "86d05b78-abfa-4784-bcf2-bf3ec6051860.C2",
+ "case_id": "86d05b78-abfa-4784-bcf2-bf3ec6051860",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14354,
+  "promptWords": 1696
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 80.636
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4294,
+ "eval_count": 3411,
+ "prompt_eval_duration_ns": 19088000,
+ "eval_duration_ns": 63036953000,
+ "total_duration_ns": 80634417833,
+ "thinking": "We need to produce JSON with schema. Need to map requirements. Provide claims with sourceId. Use evidence. Also need unsupported claims etc. Let's craft.\n\nWe have evidence for req_6a435e1fa8d5: built Kotlin service behind account-balances endpoint. Source src_34b897535ea1. Also maybe other services? Only that. So claim: built Kotlin service behind account-balances endpoint. That supports requirement.\n\nreq_979ad3996b81: kept conformance test suite passing. Source src_3187eec3cdbc.\n\nreq_72f595b7bd74: measured response-time improvement. Source src_65e59d0c59d0 and note src_a07e78ccacf8 provides numbers. So claim: improved p95 response time from 1180 ms to 410 ms. That is measured improvement. So supported.\n\nreq_be32e2356b53: worked with security team on certificate rotation. Source src_41435d7668c6.\n\nreq_f7f75d540a9e: holds Java developer certification. Source src_55f40fdd66e1.\n\nAll requirements supported. No gaps. So requirementEvidenceMap status supported for all.\n\nNo unsupported claims. No missing evidence gaps.\n\nInterviewSignalRisks: none subjective.\n\nFollowUpQuestions: none.\n\nHumanReviewChecklist: maybe \"Review candidate's performance improvement impact\" but not needed.\n\nAuditSummary: summary of evidence.\n\nLimitations: maybe none.\n\nLet's craft optimizedCv: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Experienced Java/Kotlin engineer with proven track record in building and optimizing open-banking APIs, maintaining conformance, and collaborating on security operations.\" Provide claim with source? It's a summary, not a claim? But we need claims with source. We can include claim with source src_34b897535ea1 etc. But summary may not need source. But rule requires each claim to have source. So we need to list claims with source. We can list each requirement claim as professionalSummary? But professionalSummary expects array of CLAIM objects. So we need to create CLAIM objects with claimId, text, sourceIds, requirementIds, supportBoundary, witness. Let's create claimId e.g. \"claim_1\". Provide text: \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\" sourceIds [src_34b897535ea1]. requirementIds [req_6a435e1fa8d5]. supportBoundary supported. witness: same text.\n\nSimilarly for other claims. But professionalSummary maybe one claim summarizing overall. But we can include multiple claims. Let's include 5 claims corresponding to each requirement.\n\nexperienceHighlights: maybe same claims but with different wording? But we can reuse same claims.\n\nprojectsAndWorkSamples: include claim about pull request sample. Claim: \"Pull request for cached consent snapshot, including cache invalidation rules, unit tests for revoked consents and review comments from two engineers.\" source src_cbf00e7386d3. requirementIds maybe none. But we can include.\n\nskills: list skills: Java, Kotlin, Open Banking APIs, Conformance testing, Performance profiling, Mutual TLS, Certificate management, Runbook authoring.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample documents establish the candidate's experience in building and optimizing open-banking APIs, maintaining conformance, improving performance, collaborating on security, and holding a Java certification.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence array with sourceId and text, evidenceStrength high, notes.\n\nsupportedClaims: list claims with supportingRequirementIds, sourceIds, evidenceStrength high, witness.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe [\"Verify candidate's performance improvement impact aligns with regulatory reporting requirements.\"] but not necessary.\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: none.\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_436b258ac0beac89\",\n    \"targetRoleTitle\": \"Software Engineer, Open Banking APIs\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\",\n        \"sourceIds\": [\"src_34b897535ea1\"],\n        \"requirementIds\": [\"req_6a435e1fa8d5\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\"\n      },\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Maintained the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.\",\n        \"sourceIds\": [\"src_3187eec3cdbc\"],\n        \"requirementIds\": [\"req_979ad3996b81\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Profiled the transactions-history endpoint, replaced a per-row consent lookup with a cached consent snapshot, and demonstrated a measured response-time improvement from 1,180 ms to 410 ms on the p95 metric.\",\n        \"sourceIds\": [\"src_65e59d0c59d0\", \"src_a07e78ccacf8\"],\n        \"requirementIds\": [\"req_72f595b7bd74\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.\",\n        \"sourceIds\": [\"src_41435d7668c6\"],\n        \"requirementIds\": [\"req_be32e2356b53\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Holds an Oracle Certified Professional: Java SE 17 Developer credential earned in May 2023.\",\n        \"sourceIds\": [\"src_55f40fdd66e1\"],\n        \"requirementIds\": [\"req_f7f75d540a9e\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\",\n        \"sourceIds\": [\"src_34b897535ea1\"],\n        \"requirementIds\": [\"req_6a435e1fa8d5\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\"\n      },\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Maintained the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.\",\n        \"sourceIds\": [\"src_3187eec3cdbc\"],\n        \"requirementIds\": [\"req_979ad3996b81\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Profiled the transactions-history endpoint, replaced a per-row consent lookup with a cached consent snapshot, and demonstrated a measured response-time improvement from 1,180 ms to 410 ms on the p95 metric.\",\n        \"sourceIds\": [\"src_65e59d0c59d0\", \"src_a07e78ccacf8\"],\n        \"requirementIds\": [\"req_72f595b7bd74\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.\",\n        \"sourceIds\": [\"src_41435d7668c6\"],\n        \"requirementIds\": [\"req_be32e2356b53\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Holds an Oracle Certified Professional: Java SE 17 Developer credential earned in May 2023.\",\n        \"sourceIds\": [\"src_55f40fdd66e1\"],\n        \"requirementIds\": [\"req_f7f75d540a9e\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"claim_6\",\n        \"text\": \"Pull request for cached consent snapshot, including cache invalidation rules, unit tests for revoked consents and review comments from two engineers.\",\n        \"sourceIds\": [\"src_cbf00e7386d3\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the pull request for the cached consent snapshot (diff and description), showing the cache invalidation rules, unit tests for revoked consents and review comments from two engineers.\"\n      }\n    ],\n    \"skills\": [\n      \"Java\",\n      \"Kotlin\",\n      \"Open Banking APIs\",\n      \"Conformance testing\",\n      \"Performance profiling\",\n      \"Mutual TLS\",\n      \"Certificate management\",\n      \"Runbook authoring\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample documents establish the candidate's experience in building and optimizing open-banking APIs, maintaining conformance, improving performance, collaborating on security, and holding a Java certification.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Software Engineer, Open Banking APIs\",\n      \"jobDescriptionSource\": \"jd_bd7a4aad09d81bfb\",\n      \"requirementIds\": [\n        \"req_6a435e1fa8d5\",\n        \"req_979ad3996b81\",\n        \"req_72f595b7bd74\",\n        \"req_be32e2356b53\",\n        \"req_f7f75d540a9e\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_436b258ac0beac89\",\n      \"sources\": [\n        \"src_34b897535ea1\",\n        \"src_3187eec3cdbc\",\n        \"src_65e59d0c59d0\",\n        \"src_41435d7668c6\",\n        \"src_55f40fdd66e1\",\n        \"src_cbf00e7386d3\",\n        \"src_a07e78ccacf8\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_6a435e1fa8d5\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_34b897535ea1\",\n            \"text\": \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly matches requirement.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_979ad3996b81\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_3187eec3cdbc\",\n            \"text\": \"Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly matches requirement.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_72f595b7bd74\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_65e59d0c59d0\",\n            \"text\": \"Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Describes profiling and comparison.\"\n          },\n          {\n            \"sourceId\": \"src_a07e78ccacf8\",\n            \"text\": \"The gateway performance report cited by the candidate was requested directly from Harrowgate Building Society's API platform office. It records a p95 response time of 1,180 ms on the transactions-history endpoint for 1 to 28 February 2024 and 410 ms for 1 to 28 April 2024, and names the candidate as author of the change released on 15 March 2024.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Provides measured improvement.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_be32e2356b53\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_41435d7668c6\",\n            \"text\": \"Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly matches requirement.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_f7f75d540a9e\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_55f40fdd66e1\",\n            \"text\": \"Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly matches requirement.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\",\n        \"supportingRequirementIds\": [\"req_6a435e1fa8d5\"],\n        \"sourceIds\": [\"src_34b897535ea1\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.\"\n      },\n      {\n        \"claim\": \"Maintained the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.\",\n        \"supportingRequirementIds\": [\"req_979ad3996b81\"],\n        \"sourceIds\": [\"src_3187eec3cdbc\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.\"\n      },\n      {\n        \"claim\": \"Profiled the transactions-history endpoint, replaced a per-row consent lookup with a cached consent snapshot, and demonstrated a measured response-time improvement from 1,180 ms to 410 ms on the p95 metric.\",\n        \"supportingRequirementIds\": [\"req_72f595b7bd74\"],\n        \"sourceIds\": [\"src_65e59d0c59d0\", \"src_a07e78ccacf8\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change.\"\n      },\n      {\n        \"claim\": \"Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.\",\n        \"supportingRequirementIds\": [\"req_be32e2356b53\"],\n        \"sourceIds\": [\"src_41435d7668c6\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.\"\n      },\n      {\n        \"claim\": \"Holds an Oracle Certified Professional: Java SE 17 Developer credential earned in May 2023.\",\n        \"supportingRequirementIds\": [\"req_f7f75d540a9e\"],\n        \"sourceIds\": [\"src_55f40fdd66e1\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s performance improvement aligns with regulatory reporting requirements.\"\n    ],\n    \"auditSummary\": \"All five job requirements are supported by direct evidence from the candidate’s resume, work sample, and verification notes. The evidence includes specific service implementations, conformance test maintenance, quantified performance improvements, security collaboration, and a recognized Java certification. No gaps or unsupported claims were identified.\",\n    \"limitations\": []\n  }\n}",
+ "content_sha256": "92b4cb83428906deb84a5fefdfad5d00040b2fcea83808365b05bc39edc13ea1",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_436b258ac0beac89",
+   "targetRoleTitle": "Software Engineer, Open Banking APIs",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.",
+     "sourceIds": [
+      "src_34b897535ea1"
+     ],
+     "requirementIds": [
+      "req_6a435e1fa8d5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes."
+    },
+    {
+     "claimId": "claim_2",
+     "text": "Maintained the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.",
+     "sourceIds": [
+      "src_3187eec3cdbc"
+     ],
+     "requirementIds": [
+      "req_979ad3996b81"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Profiled the transactions-history endpoint, replaced a per-row consent lookup with a cached consent snapshot, and demonstrated a measured response-time improvement from 1,180 ms to 410 ms on the p95 metric.",
+     "sourceIds": [
+      "src_65e59d0c59d0",
+      "src_a07e78ccacf8"
+     ],
+     "requirementIds": [
+      "req_72f595b7bd74"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.",
+     "sourceIds": [
+      "src_41435d7668c6"
+     ],
+     "requirementIds": [
+      "req_be32e2356b53"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Holds an Oracle Certified Professional: Java SE 17 Developer credential earned in May 2023.",
+     "sourceIds": [
+      "src_55f40fdd66e1"
+     ],
+     "requirementIds": [
+      "req_f7f75d540a9e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_1",
+     "text": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.",
+     "sourceIds": [
+      "src_34b897535ea1"
+     ],
+     "requirementIds": [
+      "req_6a435e1fa8d5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes."
+    },
+    {
+     "claimId": "claim_2",
+     "text": "Maintained the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.",
+     "sourceIds": [
+      "src_3187eec3cdbc"
+     ],
+     "requirementIds": [
+      "req_979ad3996b81"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Profiled the transactions-history endpoint, replaced a per-row consent lookup with a cached consent snapshot, and demonstrated a measured response-time improvement from 1,180 ms to 410 ms on the p95 metric.",
+     "sourceIds": [
+      "src_65e59d0c59d0",
+      "src_a07e78ccacf8"
+     ],
+     "requirementIds": [
+      "req_72f595b7bd74"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.",
+     "sourceIds": [
+      "src_41435d7668c6"
+     ],
+     "requirementIds": [
+      "req_be32e2356b53"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Holds an Oracle Certified Professional: Java SE 17 Developer credential earned in May 2023.",
+     "sourceIds": [
+      "src_55f40fdd66e1"
+     ],
+     "requirementIds": [
+      "req_f7f75d540a9e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_6",
+     "text": "Pull request for cached consent snapshot, including cache invalidation rules, unit tests for revoked consents and review comments from two engineers.",
+     "sourceIds": [
+      "src_cbf00e7386d3"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the pull request for the cached consent snapshot (diff and description), showing the cache invalidation rules, unit tests for revoked consents and review comments from two engineers."
+    }
+   ],
+   "skills": [
+    "Java",
+    "Kotlin",
+    "Open Banking APIs",
+    "Conformance testing",
+    "Performance profiling",
+    "Mutual TLS",
+    "Certificate management",
+    "Runbook authoring"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate's experience in building and optimizing open-banking APIs, maintaining conformance, improving performance, collaborating on security, and holding a Java certification."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Open Banking APIs",
+    "jobDescriptionSource": "jd_bd7a4aad09d81bfb",
+    "requirementIds": [
+     "req_6a435e1fa8d5",
+     "req_979ad3996b81",
+     "req_72f595b7bd74",
+     "req_be32e2356b53",
+     "req_f7f75d540a9e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_436b258ac0beac89",
+    "sources": [
+     "src_34b897535ea1",
+     "src_3187eec3cdbc",
+     "src_65e59d0c59d0",
+     "src_41435d7668c6",
+     "src_55f40fdd66e1",
+     "src_cbf00e7386d3",
+     "src_a07e78ccacf8"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_6a435e1fa8d5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_34b897535ea1",
+       "text": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_979ad3996b81",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3187eec3cdbc",
+       "text": "Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_72f595b7bd74",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_65e59d0c59d0",
+       "text": "Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change.",
+       "evidenceStrength": "medium",
+       "notes": "Describes profiling and comparison."
+      },
+      {
+       "sourceId": "src_a07e78ccacf8",
+       "text": "The gateway performance report cited by the candidate was requested directly from Harrowgate Building Society's API platform office. It records a p95 response time of 1,180 ms on the transactions-history endpoint for 1 to 28 February 2024 and 410 ms for 1 to 28 April 2024, and names the candidate as author of the change released on 15 March 2024.",
+       "evidenceStrength": "high",
+       "notes": "Provides measured improvement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_be32e2356b53",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_41435d7668c6",
+       "text": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f7f75d540a9e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_55f40fdd66e1",
+       "text": "Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes.",
+     "supportingRequirementIds": [
+      "req_6a435e1fa8d5"
+     ],
+     "sourceIds": [
+      "src_34b897535ea1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes."
+    },
+    {
+     "claim": "Maintained the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow.",
+     "supportingRequirementIds": [
+      "req_979ad3996b81"
+     ],
+     "sourceIds": [
+      "src_3187eec3cdbc"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow."
+    },
+    {
+     "claim": "Profiled the transactions-history endpoint, replaced a per-row consent lookup with a cached consent snapshot, and demonstrated a measured response-time improvement from 1,180 ms to 410 ms on the p95 metric.",
+     "supportingRequirementIds": [
+      "req_72f595b7bd74"
+     ],
+     "sourceIds": [
+      "src_65e59d0c59d0",
+      "src_a07e78ccacf8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change."
+    },
+    {
+     "claim": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards.",
+     "supportingRequirementIds": [
+      "req_be32e2356b53"
+     ],
+     "sourceIds": [
+      "src_41435d7668c6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards."
+    },
+    {
+     "claim": "Holds an Oracle Certified Professional: Java SE 17 Developer credential earned in May 2023.",
+     "supportingRequirementIds": [
+      "req_f7f75d540a9e"
+     ],
+     "sourceIds": [
+      "src_55f40fdd66e1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s performance improvement aligns with regulatory reporting requirements."
+   ],
+   "auditSummary": "All five job requirements are supported by direct evidence from the candidate’s resume, work sample, and verification notes. The evidence includes specific service implementations, conformance test maintenance, quantified performance improvements, security collaboration, and a recognized Java certification. No gaps or unsupported claims were identified.",
+   "limitations": []
+  }
+ },
+ "finished_at": "2026-10-10T04:03:09.666563+00:00"
+}

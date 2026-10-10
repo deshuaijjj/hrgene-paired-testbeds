@@ -1,0 +1,343 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "30b5e620-1ac6-44d7-a4d3-c99a9f5ba189.C2",
+ "case_id": "30b5e620-1ac6-44d7-a4d3-c99a9f5ba189",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14142,
+  "promptWords": 1696
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 70.343
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4154,
+ "eval_count": 2967,
+ "prompt_eval_duration_ns": 18879000,
+ "eval_duration_ns": 54827006000,
+ "total_duration_ns": 70341611250,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Provide claims. Ensure no unsupported claims. Use evidence. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Experienced ML engineer with expertise in retrieval and ranking models, feature engineering, A/B testing, and model monitoring.\" Need source. Use src_23f3c6621dc2 for training model, src_7b416700367f for feature pipelines, src_db5e464acd2f for A/B tests, src_83a012c14ae4 for monitoring. Provide evidence.\n\nexperienceHighlights: list claims: trained two-tower retrieval model, wrote Spark jobs for hourly features to Feast, designed A/B test plan, set up drift monitoring. Each with source.\n\nprojectsAndWorkSamples: include work sample experiment plan. source_1b67100a82fc.\n\nskills: retrieval models, ranking models, PyTorch, Spark, Feast, A/B testing, feature engineering, model monitoring.\n\nevidenceBoundary: \"The provided resume and work sample establish the candidate's experience in training retrieval/ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predictions. They do not establish controlled experiment reporting outcomes, ownership of model deployment, or production deployment details.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_edf9c6b5fca7: training and maintaining retrieval or ranking models. Evidence: src_23f3c6621dc2. status supported. missingEvidence none.\n\nreq_b645b1c3ed2f: builds and maintains feature pipelines that publish to a feature store. Evidence: src_7b416700367f. status supported.\n\nreq_9bdda32e30e2: designs online A/B tests with pre-declared primary metric together with product analysts. Evidence: src_db5e464acd2f. status supported.\n\nreq_b1225533685b: reports effect of a model change from controlled experiment with defined metric, control group and test window. Evidence: we have design but not results. So partial_evidence. missingEvidence: \"No evidence of reporting experiment results or effect measurement.\" Provide evidence entry for design but note incomplete.\n\nreq_224f6e641763: maintains monitoring for model inputs and prediction drift. Evidence: src_83a012c14ae4. status supported.\n\nsupportedClaims: maybe list claims that are supported: training model, feature pipelines, A/B test design, drift monitoring. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness verbatim.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: for req_b1225533685b: gap id maybe gap_1. severity medium. gap: lack of evidence of reporting experiment results.\n\ninterviewSignalRisks: maybe note from src_4fe2b5c25707 about informal coffee chat estimate 12% listening time. That's subjective. So include sourceId, text, signalType subjective, jobRelatedBoundary false? It's not job-related evidence. severity low. recommendedHandling: verify with data.\n\nfollowUpQuestions: for req_b1225533685b: question about reporting experiment results. Provide questionId q1.\n\nhumanReviewChecklist: items: verify controlled experiment reporting, confirm production deployment status, confirm model monitoring coverage.\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: list that evidence limited to resume and work sample, no outcome metrics, no deployment details.\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_ebfa27fe24fd5075\",\n    \"targetRoleTitle\": \"Machine Learning Engineer, Recommendations\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv1\",\n        \"text\": \"Experienced ML engineer with expertise in training retrieval and ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and prediction drift.\",\n        \"sourceIds\": [\"src_23f3c6621dc2\", \"src_7b416700367f\", \"src_db5e464acd2f\", \"src_83a012c14ae4\"],\n        \"requirementIds\": [\"req_edf9c6b5fca7\", \"req_b645b1c3ed2f\", \"req_9bdda32e30e2\", \"req_224f6e641763\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"cv2\",\n        \"text\": \"Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio.\",\n        \"sourceIds\": [\"src_23f3c6621dc2\"],\n        \"requirementIds\": [\"req_edf9c6b5fca7\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list.\"\n      },\n      {\n        \"claimId\": \"cv3\",\n        \"text\": \"Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.\",\n        \"sourceIds\": [\"src_7b416700367f\"],\n        \"requirementIds\": [\"req_b645b1c3ed2f\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.\"\n      },\n      {\n        \"claimId\": \"cv4\",\n        \"text\": \"Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.\",\n        \"sourceIds\": [\"src_db5e464acd2f\"],\n        \"requirementIds\": [\"req_9bdda32e30e2\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Designed the A/B test plan for the new ranking model with the product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.\"\n      },\n      {\n        \"claimId\": \"cv5\",\n        \"text\": \"Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.\",\n        \"sourceIds\": [\"src_83a012c14ae4\"],\n        \"requirementIds\": [\"req_224f6e641763\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"cv6\",\n        \"text\": \"Experiment plan for the ranking-model test, including hypothesis, primary and guardrail metrics, randomisation unit, sample-size calculation, and a three-week window.\",\n        \"sourceIds\": [\"src_1b67100a82fc\"],\n        \"requirementIds\": [\"req_9bdda32e30e2\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the experiment plan for the ranking-model test, listing the hypothesis, primary and guardrail metrics, the randomisation unit (user account), the sample-size calculation and the three-week window.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"cv7\",\n        \"text\": \"Retrieval and ranking models, PyTorch, Spark, Feast feature store, A/B testing, feature engineering, model monitoring\",\n        \"sourceIds\": [\"src_23f3c6621dc2\", \"src_7b416700367f\", \"src_db5e464acd2f\", \"src_83a012c14ae4\"],\n        \"requirementIds\": [\"req_edf9c6b5fca7\", \"req_b645b1c3ed2f\", \"req_9bdda32e30e2\", \"req_224f6e641763\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate's experience in training retrieval/ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predictions. They do not establish controlled experiment reporting outcomes, ownership of model deployment, or production deployment details.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Machine Learning Engineer, Recommendations\",\n      \"jobDescriptionSource\": \"jd_fab3f982d654672a\",\n      \"requirementIds\": [\n        \"req_edf9c6b5fca7\",\n        \"req_b645b1c3ed2f\",\n        \"req_9bdda32e30e2\",\n        \"req_b1225533685b\",\n        \"req_224f6e641763\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_ebfa27fe24fd5075\",\n      \"sources\": [\n        \"src_23f3c6621dc2\",\n        \"src_7b416700367f\",\n        \"src_db5e464acd2f\",\n        \"src_83a012c14ae4\",\n        \"src_fbb933447c2c\",\n        \"src_1b67100a82fc\",\n        \"src_660143671e7e\",\n        \"src_4fe2b5c25707\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_edf9c6b5fca7\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_23f3c6621dc2\",\n            \"text\": \"Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of model training.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_b645b1c3ed2f\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_7b416700367f\",\n            \"text\": \"Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of feature pipeline creation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_9bdda32e30e2\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_db5e464acd2f\",\n            \"text\": \"Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of test design.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_b1225533685b\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_db5e464acd2f\",\n            \"text\": \"Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Evidence of test design but no reporting of results.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"No evidence of reporting the effect of the model change from the controlled experiment.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_224f6e641763\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_83a012c14ae4\",\n            \"text\": \"Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of monitoring.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio.\",\n        \"supportingRequirementIds\": [\"req_edf9c6b5fca7\"],\n        \"sourceIds\": [\"src_23f3c6621dc2\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list.\"\n      },\n      {\n        \"claim\": \"Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store.\",\n        \"supportingRequirementIds\": [\"req_b645b1c3ed2f\"],\n        \"sourceIds\": [\"src_7b416700367f\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.\"\n      },\n      {\n        \"claim\": \"Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.\",\n        \"supportingRequirementIds\": [\"req_9bdda32e30e2\"],\n        \"sourceIds\": [\"src_db5e464acd2f\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.\"\n      },\n      {\n        \"claim\": \"Set up drift monitoring on the ten most important input features and on the score distribution.\",\n        \"supportingRequirementIds\": [\"req_224f6e641763\"],\n        \"sourceIds\": [\"src_83a012c14ae4\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_b1225533685b\",\n        \"severity\": \"medium\",\n        \"gap\": \"No evidence of reporting the effect of the model change from the controlled experiment.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_4fe2b5c25707\",\n        \"text\": \"the candidate mentioned that someone on the growth team had estimated the new ranking model 'probably added about 12% to listening time', and that the experiment readout was never shared with the candidate.\",\n        \"signalType\": \"subjective\",\n        \"jobRelatedBoundary\": false,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Verify with actual experiment results or data.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q1\",\n        \"requirementId\": \"req_b1225533685b\",\n        \"question\": \"Can you provide the results of the controlled experiment, including the effect size, confidence interval, and how the primary metric changed?\",\n        \"evidenceTarget\": \"Experiment results and reporting documentation.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Confirm that the candidate has experience reporting controlled experiment outcomes.\",\n      \"Verify whether the candidate has any production deployment responsibilities.\",\n      \"Assess the completeness of model monitoring coverage.\"\n    ],\n    \"auditSummary\": \"The candidate demonstrates clear experience in training retrieval/ranking models, building hourly feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predictions. Evidence gaps exist around reporting experiment outcomes, ownership of model deployment, and production deployment details. Subjective notes from informal conversations are flagged as interview signals and require verification.\",\n    \"limitations\": [\n      \"Evidence is limited to the resume and a single work sample; no outcome metrics or deployment logs are provided.\",\n      \"No direct evidence of controlled experiment reporting or production deployment responsibilities.\"\n    ]\n  }\n}",
+ "content_sha256": "2703d37025e288f769531655ab99efa518ad0c7c94f48ccc27da497f4ecce32c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_ebfa27fe24fd5075",
+   "targetRoleTitle": "Machine Learning Engineer, Recommendations",
+   "professionalSummary": [
+    {
+     "claimId": "cv1",
+     "text": "Experienced ML engineer with expertise in training retrieval and ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and prediction drift.",
+     "sourceIds": [
+      "src_23f3c6621dc2",
+      "src_7b416700367f",
+      "src_db5e464acd2f",
+      "src_83a012c14ae4"
+     ],
+     "requirementIds": [
+      "req_edf9c6b5fca7",
+      "req_b645b1c3ed2f",
+      "req_9bdda32e30e2",
+      "req_224f6e641763"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cv2",
+     "text": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio.",
+     "sourceIds": [
+      "src_23f3c6621dc2"
+     ],
+     "requirementIds": [
+      "req_edf9c6b5fca7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list."
+    },
+    {
+     "claimId": "cv3",
+     "text": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.",
+     "sourceIds": [
+      "src_7b416700367f"
+     ],
+     "requirementIds": [
+      "req_b645b1c3ed2f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run."
+    },
+    {
+     "claimId": "cv4",
+     "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+     "sourceIds": [
+      "src_db5e464acd2f"
+     ],
+     "requirementIds": [
+      "req_9bdda32e30e2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Designed the A/B test plan for the new ranking model with the product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window."
+    },
+    {
+     "claimId": "cv5",
+     "text": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.",
+     "sourceIds": [
+      "src_83a012c14ae4"
+     ],
+     "requirementIds": [
+      "req_224f6e641763"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv6",
+     "text": "Experiment plan for the ranking-model test, including hypothesis, primary and guardrail metrics, randomisation unit, sample-size calculation, and a three-week window.",
+     "sourceIds": [
+      "src_1b67100a82fc"
+     ],
+     "requirementIds": [
+      "req_9bdda32e30e2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the experiment plan for the ranking-model test, listing the hypothesis, primary and guardrail metrics, the randomisation unit (user account), the sample-size calculation and the three-week window."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv7",
+     "text": "Retrieval and ranking models, PyTorch, Spark, Feast feature store, A/B testing, feature engineering, model monitoring",
+     "sourceIds": [
+      "src_23f3c6621dc2",
+      "src_7b416700367f",
+      "src_db5e464acd2f",
+      "src_83a012c14ae4"
+     ],
+     "requirementIds": [
+      "req_edf9c6b5fca7",
+      "req_b645b1c3ed2f",
+      "req_9bdda32e30e2",
+      "req_224f6e641763"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate's experience in training retrieval/ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predictions. They do not establish controlled experiment reporting outcomes, ownership of model deployment, or production deployment details."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Recommendations",
+    "jobDescriptionSource": "jd_fab3f982d654672a",
+    "requirementIds": [
+     "req_edf9c6b5fca7",
+     "req_b645b1c3ed2f",
+     "req_9bdda32e30e2",
+     "req_b1225533685b",
+     "req_224f6e641763"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_ebfa27fe24fd5075",
+    "sources": [
+     "src_23f3c6621dc2",
+     "src_7b416700367f",
+     "src_db5e464acd2f",
+     "src_83a012c14ae4",
+     "src_fbb933447c2c",
+     "src_1b67100a82fc",
+     "src_660143671e7e",
+     "src_4fe2b5c25707"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_edf9c6b5fca7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_23f3c6621dc2",
+       "text": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of model training."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b645b1c3ed2f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7b416700367f",
+       "text": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of feature pipeline creation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9bdda32e30e2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_db5e464acd2f",
+       "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of test design."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b1225533685b",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_db5e464acd2f",
+       "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+       "evidenceStrength": "medium",
+       "notes": "Evidence of test design but no reporting of results."
+      }
+     ],
+     "missingEvidence": [
+      "No evidence of reporting the effect of the model change from the controlled experiment."
+     ]
+    },
+    {
+     "requirementId": "req_224f6e641763",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_83a012c14ae4",
+       "text": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of monitoring."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio.",
+     "supportingRequirementIds": [
+      "req_edf9c6b5fca7"
+     ],
+     "sourceIds": [
+      "src_23f3c6621dc2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list."
+    },
+    {
+     "claim": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store.",
+     "supportingRequirementIds": [
+      "req_b645b1c3ed2f"
+     ],
+     "sourceIds": [
+      "src_7b416700367f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run."
+    },
+    {
+     "claim": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+     "supportingRequirementIds": [
+      "req_9bdda32e30e2"
+     ],
+     "sourceIds": [
+      "src_db5e464acd2f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window."
+    },
+    {
+     "claim": "Set up drift monitoring on the ten most important input features and on the score distribution.",
+     "supportingRequirementIds": [
+      "req_224f6e641763"
+     ],
+     "sourceIds": [
+      "src_83a012c14ae4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_b1225533685b",
+     "severity": "medium",
+     "gap": "No evidence of reporting the effect of the model change from the controlled experiment."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_4fe2b5c25707",
+     "text": "the candidate mentioned that someone on the growth team had estimated the new ranking model 'probably added about 12% to listening time', and that the experiment readout was never shared with the candidate.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": false,
+     "severity": "low",
+     "recommendedHandling": "Verify with actual experiment results or data."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_b1225533685b",
+     "question": "Can you provide the results of the controlled experiment, including the effect size, confidence interval, and how the primary metric changed?",
+     "evidenceTarget": "Experiment results and reporting documentation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that the candidate has experience reporting controlled experiment outcomes.",
+    "Verify whether the candidate has any production deployment responsibilities.",
+    "Assess the completeness of model monitoring coverage."
+   ],
+   "auditSummary": "The candidate demonstrates clear experience in training retrieval/ranking models, building hourly feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predictions. Evidence gaps exist around reporting experiment outcomes, ownership of model deployment, and production deployment details. Subjective notes from informal conversations are flagged as interview signals and require verification.",
+   "limitations": [
+    "Evidence is limited to the resume and a single work sample; no outcome metrics or deployment logs are provided.",
+    "No direct evidence of controlled experiment reporting or production deployment responsibilities."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:34:16.517651+00:00"
+}

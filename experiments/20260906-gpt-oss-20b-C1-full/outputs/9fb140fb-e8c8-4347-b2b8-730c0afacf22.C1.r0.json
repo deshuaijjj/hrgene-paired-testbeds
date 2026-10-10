@@ -1,0 +1,187 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "9fb140fb-e8c8-4347-b2b8-730c0afacf22.C1",
+ "case_id": "9fb140fb-e8c8-4347-b2b8-730c0afacf22",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10949,
+  "promptWords": 1446
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 31.015
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2809,
+ "eval_count": 1351,
+ "prompt_eval_duration_ns": 17522000,
+ "eval_duration_ns": 23703067000,
+ "total_duration_ns": 31013797792,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claimId? Not required in optimizedCv. Just list claims. Provide evidenceBoundary sentence.\n\nThen hiringEvidencePacket with all fields. Need requirementEvidenceMap covering each requirement id.\n\nLet's map:\n\nreq_d8ade6374d39: Developed and maintained alert queue and case views. Source src_b894f36facfc. Supported.\n\nreq_0b1452c438f5: Owns component and e2e test suites. Source src_1b8f05f8e41e. Supported.\n\nreq_6abbc52a8ec8: Cuts alert-queue load time. Source src_aa58edb4842e. Supported.\n\nreq_60e8d7e32d9a: Coordinates API changes. Source src_abdc1ef94f4c. Supported.\n\nreq_461358061ae3: Documents known limitations and hand-over. Source src_62fb2a660c5c. Supported.\n\nAll supported. No gaps.\n\nUnsupportedClaims none.\n\nMissingEvidenceGaps none.\n\nInterviewSignalRisks none.\n\nFollowUpQuestions none.\n\nHumanReviewChecklist maybe include \"Review candidate's performance baseline context\" but since all supported, maybe empty.\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of production deployment context beyond what is stated\" but we have.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_9463a208c598a7c1\",\"targetRoleTitle\":\"Web Frontend Engineer, Transaction Monitoring\",\"professionalSummary\":[\"Developed and maintained the alert queue and case views of the compliance web application using TypeScript and Angular, including server‑side paging and column virtualisation that replaced the full‑queue download. (src_b894f36facfc)\",\"Owned the component test suite (Jest) and the end‑to‑end suite (Cypress) for the application, keeping both passing in the pipeline and adding a queue‑load smoke test that gates releases. (src_1b8f05f8e41e)\",\"Reduced median alert‑queue load time for analysts from 6.2 seconds to 1.4 seconds after the paging release, measured by real‑user monitoring over four weeks against the published baseline. (src_aa58edb4842e)\",\"Coordinated API changes with the backend team in the API review; the backend lead approved endpoint changes and the candidate adapted the views to the paged endpoints. (src_abdc1ef94f4c)\",\"Wrote release notes for each application release, documenting known limitations such as per‑page column sorting and hand‑over notes for frontend on‑call. (src_62fb2a660c5c)\"],\"experienceHighlights\":[\"Alert queue and case view development and maintenance (src_b894f36facfc)\",\"Component and end‑to‑end test suite ownership (src_1b8f05f8e41e)\",\"Load‑time reduction evidence (src_aa58edb4842e)\",\"API coordination with backend (src_abdc1ef94f4c)\",\"Release documentation and hand‑over (src_62fb2a660c5c)\"],\"projectsAndWorkSamples\":[\"Real‑user monitoring export of median queue load time per day for eight weeks, baseline line, paging release marker, and Cypress smoke test with pipeline run identifiers. (src_8b9385dd5087)\"],\"skills\":[\"TypeScript\",\"Angular\",\"Jest\",\"Cypress\",\"API coordination\",\"Release documentation\"],\"evidenceBoundary\":\"The provided resume and work sample sources establish the candidate’s development, testing, performance improvement, API coordination, and documentation activities as described; they do not provide evidence of broader ownership, leadership, or production deployment beyond what is stated.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Web Frontend Engineer, Transaction Monitoring\",\"jobDescriptionSource\":\"jd_3fc83e73da55eb77\",\"requirementIds\":[\"req_d8ade6374d39\",\"req_0b1452c438f5\",\"req_6abbc52a8ec8\",\"req_60e8d7e32d9a\",\"req_461358061ae3\"]},\"candidate\":{\"candidateId\":\"cand_9463a208c598a7c1\",\"sources\":[\"src_b894f36facfc\",\"src_1b8f05f8e41e\",\"src_aa58edb4842e\",\"src_abdc1ef94f4c\",\"src_62fb2a660c5c\",\"src_8b9385dd5087\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_d8ade6374d39\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b894f36facfc\",\"text\":\"Developed and maintained the alert queue and case views of the compliance web application (TypeScript, Angular), including the server-side paging and column virtualisation that replaced the full-queue download.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of development and maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0b1452c438f5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1b8f05f8e41e\",\"text\":\"Owned the component test suite (Jest) and the end-to-end suite (Cypress) for the application, keeping both passing in the pipeline and adding a queue-load smoke test that gates releases.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct ownership and maintenance of test suites.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6abbc52a8ec8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_aa58edb4842e\",\"text\":\"Median alert-queue load time for analysts fell from 6.2 seconds to 1.4 seconds after the paging release, measured by the application's real-user monitoring over the following four weeks against the published baseline of 6.2 seconds.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct measurement of load-time reduction.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_60e8d7e32d9a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_abdc1ef94f4c\",\"text\":\"Coordinated API changes with the backend team in the API review; the backend lead approved endpoint changes and I adapted the views to the paged endpoints.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct coordination with backend.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_461358061ae3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_62fb2a660c5c\",\"text\":\"Wrote the release notes for each application release, including the known limitation that column sorting was applied per page rather than across the whole queue, and the hand-over notes for the frontend on-call.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct documentation of limitations and hand-over.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[],\"auditSummary\":\"All job requirements are directly supported by the candidate’s resume and work sample sources. No evidence gaps or unsupported claims were identified. Qualified human review is recommended to confirm contextual fit and verify any additional organizational criteria.\",\"limitations\":[\"Evidence is limited to the candidate’s own statements and a single reference call; no independent third‑party verification of performance metrics beyond the cited real‑user monitoring data is provided.\"]}}",
+ "content_sha256": "1e2e754fdc021310783c6160abd63ec79937bbe39af44c1caebcb94d289d6ad3",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_9463a208c598a7c1",
+   "targetRoleTitle": "Web Frontend Engineer, Transaction Monitoring",
+   "professionalSummary": [
+    "Developed and maintained the alert queue and case views of the compliance web application using TypeScript and Angular, including server‑side paging and column virtualisation that replaced the full‑queue download. (src_b894f36facfc)",
+    "Owned the component test suite (Jest) and the end‑to‑end suite (Cypress) for the application, keeping both passing in the pipeline and adding a queue‑load smoke test that gates releases. (src_1b8f05f8e41e)",
+    "Reduced median alert‑queue load time for analysts from 6.2 seconds to 1.4 seconds after the paging release, measured by real‑user monitoring over four weeks against the published baseline. (src_aa58edb4842e)",
+    "Coordinated API changes with the backend team in the API review; the backend lead approved endpoint changes and the candidate adapted the views to the paged endpoints. (src_abdc1ef94f4c)",
+    "Wrote release notes for each application release, documenting known limitations such as per‑page column sorting and hand‑over notes for frontend on‑call. (src_62fb2a660c5c)"
+   ],
+   "experienceHighlights": [
+    "Alert queue and case view development and maintenance (src_b894f36facfc)",
+    "Component and end‑to‑end test suite ownership (src_1b8f05f8e41e)",
+    "Load‑time reduction evidence (src_aa58edb4842e)",
+    "API coordination with backend (src_abdc1ef94f4c)",
+    "Release documentation and hand‑over (src_62fb2a660c5c)"
+   ],
+   "projectsAndWorkSamples": [
+    "Real‑user monitoring export of median queue load time per day for eight weeks, baseline line, paging release marker, and Cypress smoke test with pipeline run identifiers. (src_8b9385dd5087)"
+   ],
+   "skills": [
+    "TypeScript",
+    "Angular",
+    "Jest",
+    "Cypress",
+    "API coordination",
+    "Release documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample sources establish the candidate’s development, testing, performance improvement, API coordination, and documentation activities as described; they do not provide evidence of broader ownership, leadership, or production deployment beyond what is stated."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Web Frontend Engineer, Transaction Monitoring",
+    "jobDescriptionSource": "jd_3fc83e73da55eb77",
+    "requirementIds": [
+     "req_d8ade6374d39",
+     "req_0b1452c438f5",
+     "req_6abbc52a8ec8",
+     "req_60e8d7e32d9a",
+     "req_461358061ae3"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_9463a208c598a7c1",
+    "sources": [
+     "src_b894f36facfc",
+     "src_1b8f05f8e41e",
+     "src_aa58edb4842e",
+     "src_abdc1ef94f4c",
+     "src_62fb2a660c5c",
+     "src_8b9385dd5087"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d8ade6374d39",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b894f36facfc",
+       "text": "Developed and maintained the alert queue and case views of the compliance web application (TypeScript, Angular), including the server-side paging and column virtualisation that replaced the full-queue download.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of development and maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0b1452c438f5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1b8f05f8e41e",
+       "text": "Owned the component test suite (Jest) and the end-to-end suite (Cypress) for the application, keeping both passing in the pipeline and adding a queue-load smoke test that gates releases.",
+       "evidenceStrength": "high",
+       "notes": "Direct ownership and maintenance of test suites."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6abbc52a8ec8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_aa58edb4842e",
+       "text": "Median alert-queue load time for analysts fell from 6.2 seconds to 1.4 seconds after the paging release, measured by the application's real-user monitoring over the following four weeks against the published baseline of 6.2 seconds.",
+       "evidenceStrength": "high",
+       "notes": "Direct measurement of load-time reduction."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_60e8d7e32d9a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_abdc1ef94f4c",
+       "text": "Coordinated API changes with the backend team in the API review; the backend lead approved endpoint changes and I adapted the views to the paged endpoints.",
+       "evidenceStrength": "high",
+       "notes": "Direct coordination with backend."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_461358061ae3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_62fb2a660c5c",
+       "text": "Wrote the release notes for each application release, including the known limitation that column sorting was applied per page rather than across the whole queue, and the hand-over notes for the frontend on-call.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation of limitations and hand-over."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "All job requirements are directly supported by the candidate’s resume and work sample sources. No evidence gaps or unsupported claims were identified. Qualified human review is recommended to confirm contextual fit and verify any additional organizational criteria.",
+   "limitations": [
+    "Evidence is limited to the candidate’s own statements and a single reference call; no independent third‑party verification of performance metrics beyond the cited real‑user monitoring data is provided."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:09:03.094763+00:00"
+}

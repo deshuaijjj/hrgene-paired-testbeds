@@ -1,0 +1,299 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "fbe3770d-0c14-47bf-b6f2-038027138ec5.C2",
+ "case_id": "fbe3770d-0c14-47bf-b6f2-038027138ec5",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15183,
+  "promptWords": 1825
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 69.351
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 5071,
+ "eval_count": 2176,
+ "prompt_eval_duration_ns": 19428000,
+ "eval_duration_ns": 40657078000,
+ "total_duration_ns": 69347460459,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Need to map requirements. Provide evidence. Also need unsupported claims etc. Let's craft.\n\nWe have evidence for req_bec0d5211065: schedule and RAID log built and updated. Sources src_6874e5283d2a. Also maybe src_6874e5283d2a includes schedule and RAID log. So supported.\n\nreq_7d1c03a9fc83: tracked vendor and installation partner against contract milestones. Sources src_a1250b9c3348.\n\nreq_3e24ece21762: delivered technology rollout into live trading at multiple sites, go-live sign-off and hypercare. We have trial but not live trading. The note src_98916ee8a8f1 says screens were switched on in all 64 pubs after trial. That indicates rollout into live trading? It's a note from referee. But it's a note, subjective. We should treat as interviewSignalRisk. So requirement partially evidence? We lack direct evidence of go-live sign-off and hypercare. So status insufficient_evidence. Gap: need evidence of go-live sign-off and hypercare at multiple sites.\n\nreq_e41960931de2: designs and runs site trials before wider rollout. Evidence: src_b805d270cb8b, src_b15263c3e1ca, src_c744dccadfa7, src_6aef1ae72c9a. So supported.\n\nreq_e9a611ea6700: holds recognised project-management certification. Evidence: src_681a6ca9cbdc. So supported.\n\nNow produce optimized CV: professionalSummary: claim about experience. Use evidence. Provide claims with sourceIds.\n\nWe must include claimId for each claim. Provide witness verbatim passage.\n\nLet's craft claims:\n\nclaim1: built schedule and RAID log for kitchen display screen project. source src_6874e5283d2a. witness: \"Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday.\"\n\nclaim2: tracked vendor and installation partner against contract milestones. source src_a1250b9c3348. witness: \"Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed.\"\n\nclaim3: set up ten-week trial of kitchen display screens in three pubs. source src_b805d270cb8b. witness: \"Set up a ten-week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only.\"\n\nclaim4: gathered feedback and summarised. source src_b15263c3e1ca. witness: \"Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station.\"\n\nclaim5: wrote trial close report with layout changes and costs. source src_c744dccadfa7. witness: \"Wrote the trial close report, setting out the screen-layout changes needed before any wider rollout, with costs for the hardware changes.\"\n\nclaim6: holds PRINCE2 Practitioner certificate. source src_681a6ca9cbdc. witness: \"the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current.\"\n\nAlso maybe claim about trial plan work sample. source src_6aef1ae72c9a. witness: \"Work sample: the trial plan for the kitchen display screens, naming the three trial pubs, the ten-week schedule, the weekday-only usage rule, the success measures and the criteria the operations director would use to decide on a wider rollout, signed by the operations director.\"\n\nNow evidenceBoundary: \"The provided materials establish the candidate’s experience in planning schedules, managing vendors, conducting site trials, and holding a PRINCE2 Practitioner certification, but do not provide direct evidence of live trading rollouts, go‑live sign‑off, or hypercare periods across multiple sites.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Human review required to assess gaps and verify unsubstantiated claims.\"\n\nrole: roleTitle \"Project Manager, Restaurant Technology\", jobDescriptionSource \"jd_43c668b958ffe864\", requirementIds list.\n\ncandidate: candidateId \"cand_a31dcf6a897adb2e\", sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_bec0d5211065: status supported. evidence: source src_6874e5283d2a, witness. missingEvidence empty.\n\nreq_7d1c03a9fc83: supported, evidence src_a1250b9c3348.\n\nreq_3e24ece21762: insufficient_evidence. evidence empty. missingEvidence: \"Direct evidence of go-live sign-off and hypercare at multiple sites.\" Also note interviewSignalRisk from src_98916ee8a8f1 but not evidence.\n\nreq_e41960931de2: supported evidence src_b805d270cb8b, src_b15263c3e1ca, src_c744dccadfa7, src_6aef1ae72c9a.\n\nreq_e9a611ea6700: supported evidence src_681a6ca9cbdc.\n\nsupportedClaims array: include claims that support requirements. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high? maybe medium. witness.\n\nunsupportedClaims: maybe claim about rollout into live trading across all 64 pubs? That is from note src_98916ee8a8f1. It's subjective. So unsupported claim: \"Screens were switched on in all 64 pubs after the trial.\" reason: note is subjective, no direct evidence. requiredFollowUp: request documentation of go-live sign-off and hypercare.\n\nmissingEvidenceGaps: for req_3e24ece21762: gapId maybe gap_1, requirementId, severity high, gap: \"Evidence of go-live sign-off and hypercare at multiple sites.\"\n\ninterviewSignalRisks: source src_98916ee8a8f1, text: \"the referee, a franchisee who worked with the candidate, reported hearing from head office that the screens were switched on in all 64 pubs after the trial and that 'the whole estate runs on them now'.\" signalType: \"subjective testimony\". jobRelatedBoundary: true. severity high. recommendedHandling: \"Verify with official rollout records and obtain signed go-live sign-offs.\"\n\nfollowUpQuestions: question about requirement 3: \"Can you provide documentation of go-live sign-off and hypercare for each site where the kitchen display screens were deployed?\" evidenceTarget: \"Official go-live sign-off forms and hypercare logs.\"\n\nhumanReviewChecklist: items: \"Review evidence for live trading rollout\", \"Verify certification status\", \"Assess gaps for requirement 3\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Limited to provided sources; no external verification of live rollout.\"\n\nNow produce JSON. Ensure all arrays. Use claimId unique. Let's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_a31dcf6a897adb2e\",\"targetRoleTitle\":\"Project Manager, Restaurant Technology\",\"professionalSummary\":[\"Experienced project coordinator with a proven track record in planning schedules, managing vendors, conducting multi‑site trials, and holding a PRINCE2 Practitioner certification. Demonstrated ability to build and maintain RAID logs, track contract milestones, and produce detailed trial reports that inform wider rollouts.\"],\"experienceHighlights\":[\"Built and maintained a schedule and RAID log for a kitchen display screen project, updating it weekly and sharing with the operations director.\",\"Tracked vendor and installation partner performance against contract milestones, resolving two late hardware deliveries.\",\"Designed and executed a ten‑week trial of kitchen display screens across three pubs, collecting and summarising feedback for operational decisions.\",\"Authored a comprehensive trial close report outlining layout changes and associated costs for a broader rollout.\",\"Held a recognised PRINCE2 Practitioner certification verified by the awarding body.\"],\"projectsAndWorkSamples\":[\"Trial plan for kitchen display screens, including schedule, usage rules, success measures, and decision criteria, signed by the operations director (source: src_6aef1ae72c9a).\"],\"skills\":[\"Project Planning\",\"RAID Log Management\",\"Vendor Management\",\"Site Trial Design\",\"Requirements Analysis\",\"PRINCE2 Practitioner\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience in planning schedules, managing vendors, conducting site trials, and holding a PRINCE2 Practitioner certification, but do not provide direct evidence of live trading rollouts, go‑live sign‑off, or hypercare periods across multiple sites.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess gaps and verify unsubstantiated claims.\"},\"role\":{\"roleTitle\":\"Project Manager, Restaurant Technology\",\"jobDescriptionSource\":\"jd_43c668b958ffe864\",\"requirementIds\":[\"req_bec0d5211065\",\"req_7d1c03a9fc83\",\"req_3e24ece21762\",\"req_e41960931de2\",\"req_e9a611ea6700\"]},\"candidate\":{\"candidateId\":\"cand_a31dcf6a897adb2e\",\"sources\":[\"src_6874e5283d2a\",\"src_a1250b9c3348\",\"src_b805d270cb8b\",\"src_b15263c3e1ca\",\"src_c744dccadfa7\",\"src_6aef1ae72c9a\",\"src_681a6ca9cbdc\",\"src_98916ee8a8f1\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_bec0d5211065\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6874e5283d2a\",\"text\":\"Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of schedule and RAID log creation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7d1c03a9fc83\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a1250b9c3348\",\"text\":\"Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of vendor milestone tracking.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3e24ece21762\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Direct evidence of go‑live sign‑off and hypercare at multiple sites.\"]},{\"requirementId\":\"req_e41960931de2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b805d270cb8b\",\"text\":\"Set up a ten‑week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only.\",\"evidenceStrength\":\"high\",\"notes\":\"Trial design and execution.\"},{\"sourceId\":\"src_b15263c3e1ca\",\"text\":\"Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station.\",\"evidenceStrength\":\"high\",\"notes\":\"Feedback collection.\"},{\"sourceId\":\"src_c744dccadfa7\",\"text\":\"Wrote the trial close report, setting out the screen‑layout changes needed before any wider rollout, with costs for the hardware changes.\",\"evidenceStrength\":\"high\",\"notes\":\"Trial close reporting.\"},{\"sourceId\":\"src_6aef1ae72c9a\",\"text\":\"Work sample: the trial plan for the kitchen display screens, naming the three trial pubs, the ten‑week schedule, the weekday‑only usage rule, the success measures and the criteria the operations director would use to decide on a wider rollout, signed by the operations director.\",\"evidenceStrength\":\"high\",\"notes\":\"Trial plan documentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e9a611ea6700\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_681a6ca9cbdc\",\"text\":\"the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current.\",\"evidenceStrength\":\"high\",\"notes\":\"Certification verification.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday.\",\"supportingRequirementIds\":[\"req_bec0d5211065\"],\"sourceIds\":[\"src_6874e5283d2a\"],\"evidenceStrength\":\"high\",\"witness\":\"Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday.\"},{\"claim\":\"Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed.\",\"supportingRequirementIds\":[\"req_7d1c03a9fc83\"],\"sourceIds\":[\"src_a1250b9c3348\"],\"evidenceStrength\":\"high\",\"witness\":\"Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed.\"},{\"claim\":\"Set up a ten‑week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only.\",\"supportingRequirementIds\":[\"req_e41960931de2\"],\"sourceIds\":[\"src_b805d270cb8b\"],\"evidenceStrength\":\"high\",\"witness\":\"Set up a ten‑week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only.\"},{\"claim\":\"Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station.\",\"supportingRequirementIds\":[\"req_e41960931de2\"],\"sourceIds\":[\"src_b15263c3e1ca\"],\"evidenceStrength\":\"high\",\"witness\":\"Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station.\"},{\"claim\":\"Wrote the trial close report, setting out the screen‑layout changes needed before any wider rollout, with costs for the hardware changes.\",\"supportingRequirementIds\":[\"req_e41960931de2\"],\"sourceIds\":[\"src_c744dccadfa7\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the trial close report, setting out the screen‑layout changes needed before any wider rollout, with costs for the hardware changes.\"},{\"claim\":\"The candidate holds a PRINCE2 Practitioner certification verified by the awarding body.\",\"supportingRequirementIds\":[\"req_e9a611ea6700\"],\"sourceIds\":[\"src_681a6ca9cbdc\"],\"evidenceStrength\":\"high\",\"witness\":\"the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current.\"}],\"unsupportedClaims\":[{\"claim\":\"Screens were switched on in all 64 pubs after the trial and the whole estate runs on them now.\",\"reason\":\"The statement is based on a subjective note from a referee and lacks direct documentation of go‑live sign‑off or hypercare.\",\"requiredFollowUp\":\"Request official rollout records, signed go‑live sign‑off forms, and hypercare logs for each site.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_3e24ece21762\",\"severity\":\"high\",\"gap\":\"Evidence of go‑live sign‑off and hypercare at multiple sites.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_98916ee8a8f1\",\"text\":\"the referee, a franchisee who worked with the candidate, reported hearing from head office that the screens were switched on in all 64 pubs after the trial and that 'the whole estate runs on them now'.\",\"signalType\":\"subjective testimony\",\"jobRelatedBoundary\":true,\"severity\":\"high\",\"recommendedHandling\":\"Verify with official rollout records and obtain signed go‑live sign‑off documents.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_3e24ece21762\",\"question\":\"Can you provide documentation of go‑live sign‑off and hypercare for each site where the kitchen display screens were deployed?\",\"evidenceTarget\":\"Official go‑live sign‑off forms and hypercare logs.\"}],\"humanReviewChecklist\":[\"Review evidence for live trading rollout\",\"Verify certification status\",\"Assess gaps for requirement 3\"],\"auditSummary\":\"The candidate demonstrates strong planning, vendor management, and trial execution skills, supported by multiple source citations. However, there is a critical evidence gap regarding live‑trading rollouts, go‑live sign‑off, and hypercare across multiple sites, which requires further verification. The PRINCE2 certification is confirmed. No protected characteristics are inferred.\",\"limitations\":[\"Limited to provided sources; no external verification of live rollout.\" ]}}",
+ "content_sha256": "36d70b53751f1125c2b774d560def15252a697fb9c3d7bfc7f8e2f8a4e491a66",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_a31dcf6a897adb2e",
+   "targetRoleTitle": "Project Manager, Restaurant Technology",
+   "professionalSummary": [
+    "Experienced project coordinator with a proven track record in planning schedules, managing vendors, conducting multi‑site trials, and holding a PRINCE2 Practitioner certification. Demonstrated ability to build and maintain RAID logs, track contract milestones, and produce detailed trial reports that inform wider rollouts."
+   ],
+   "experienceHighlights": [
+    "Built and maintained a schedule and RAID log for a kitchen display screen project, updating it weekly and sharing with the operations director.",
+    "Tracked vendor and installation partner performance against contract milestones, resolving two late hardware deliveries.",
+    "Designed and executed a ten‑week trial of kitchen display screens across three pubs, collecting and summarising feedback for operational decisions.",
+    "Authored a comprehensive trial close report outlining layout changes and associated costs for a broader rollout.",
+    "Held a recognised PRINCE2 Practitioner certification verified by the awarding body."
+   ],
+   "projectsAndWorkSamples": [
+    "Trial plan for kitchen display screens, including schedule, usage rules, success measures, and decision criteria, signed by the operations director (source: src_6aef1ae72c9a)."
+   ],
+   "skills": [
+    "Project Planning",
+    "RAID Log Management",
+    "Vendor Management",
+    "Site Trial Design",
+    "Requirements Analysis",
+    "PRINCE2 Practitioner"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in planning schedules, managing vendors, conducting site trials, and holding a PRINCE2 Practitioner certification, but do not provide direct evidence of live trading rollouts, go‑live sign‑off, or hypercare periods across multiple sites."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess gaps and verify unsubstantiated claims."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Restaurant Technology",
+    "jobDescriptionSource": "jd_43c668b958ffe864",
+    "requirementIds": [
+     "req_bec0d5211065",
+     "req_7d1c03a9fc83",
+     "req_3e24ece21762",
+     "req_e41960931de2",
+     "req_e9a611ea6700"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_a31dcf6a897adb2e",
+    "sources": [
+     "src_6874e5283d2a",
+     "src_a1250b9c3348",
+     "src_b805d270cb8b",
+     "src_b15263c3e1ca",
+     "src_c744dccadfa7",
+     "src_6aef1ae72c9a",
+     "src_681a6ca9cbdc",
+     "src_98916ee8a8f1"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bec0d5211065",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6874e5283d2a",
+       "text": "Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of schedule and RAID log creation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7d1c03a9fc83",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a1250b9c3348",
+       "text": "Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of vendor milestone tracking."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3e24ece21762",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Direct evidence of go‑live sign‑off and hypercare at multiple sites."
+     ]
+    },
+    {
+     "requirementId": "req_e41960931de2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b805d270cb8b",
+       "text": "Set up a ten‑week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only.",
+       "evidenceStrength": "high",
+       "notes": "Trial design and execution."
+      },
+      {
+       "sourceId": "src_b15263c3e1ca",
+       "text": "Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station.",
+       "evidenceStrength": "high",
+       "notes": "Feedback collection."
+      },
+      {
+       "sourceId": "src_c744dccadfa7",
+       "text": "Wrote the trial close report, setting out the screen‑layout changes needed before any wider rollout, with costs for the hardware changes.",
+       "evidenceStrength": "high",
+       "notes": "Trial close reporting."
+      },
+      {
+       "sourceId": "src_6aef1ae72c9a",
+       "text": "Work sample: the trial plan for the kitchen display screens, naming the three trial pubs, the ten‑week schedule, the weekday‑only usage rule, the success measures and the criteria the operations director would use to decide on a wider rollout, signed by the operations director.",
+       "evidenceStrength": "high",
+       "notes": "Trial plan documentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e9a611ea6700",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_681a6ca9cbdc",
+       "text": "the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current.",
+       "evidenceStrength": "high",
+       "notes": "Certification verification."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday.",
+     "supportingRequirementIds": [
+      "req_bec0d5211065"
+     ],
+     "sourceIds": [
+      "src_6874e5283d2a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday."
+    },
+    {
+     "claim": "Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed.",
+     "supportingRequirementIds": [
+      "req_7d1c03a9fc83"
+     ],
+     "sourceIds": [
+      "src_a1250b9c3348"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed."
+    },
+    {
+     "claim": "Set up a ten‑week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only.",
+     "supportingRequirementIds": [
+      "req_e41960931de2"
+     ],
+     "sourceIds": [
+      "src_b805d270cb8b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Set up a ten‑week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only."
+    },
+    {
+     "claim": "Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station.",
+     "supportingRequirementIds": [
+      "req_e41960931de2"
+     ],
+     "sourceIds": [
+      "src_b15263c3e1ca"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station."
+    },
+    {
+     "claim": "Wrote the trial close report, setting out the screen‑layout changes needed before any wider rollout, with costs for the hardware changes.",
+     "supportingRequirementIds": [
+      "req_e41960931de2"
+     ],
+     "sourceIds": [
+      "src_c744dccadfa7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the trial close report, setting out the screen‑layout changes needed before any wider rollout, with costs for the hardware changes."
+    },
+    {
+     "claim": "The candidate holds a PRINCE2 Practitioner certification verified by the awarding body.",
+     "supportingRequirementIds": [
+      "req_e9a611ea6700"
+     ],
+     "sourceIds": [
+      "src_681a6ca9cbdc"
+     ],
+     "evidenceStrength": "high",
+     "witness": "the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Screens were switched on in all 64 pubs after the trial and the whole estate runs on them now.",
+     "reason": "The statement is based on a subjective note from a referee and lacks direct documentation of go‑live sign‑off or hypercare.",
+     "requiredFollowUp": "Request official rollout records, signed go‑live sign‑off forms, and hypercare logs for each site."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_3e24ece21762",
+     "severity": "high",
+     "gap": "Evidence of go‑live sign‑off and hypercare at multiple sites."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_98916ee8a8f1",
+     "text": "the referee, a franchisee who worked with the candidate, reported hearing from head office that the screens were switched on in all 64 pubs after the trial and that 'the whole estate runs on them now'.",
+     "signalType": "subjective testimony",
+     "jobRelatedBoundary": true,
+     "severity": "high",
+     "recommendedHandling": "Verify with official rollout records and obtain signed go‑live sign‑off documents."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_3e24ece21762",
+     "question": "Can you provide documentation of go‑live sign‑off and hypercare for each site where the kitchen display screens were deployed?",
+     "evidenceTarget": "Official go‑live sign‑off forms and hypercare logs."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Review evidence for live trading rollout",
+    "Verify certification status",
+    "Assess gaps for requirement 3"
+   ],
+   "auditSummary": "The candidate demonstrates strong planning, vendor management, and trial execution skills, supported by multiple source citations. However, there is a critical evidence gap regarding live‑trading rollouts, go‑live sign‑off, and hypercare across multiple sites, which requires further verification. The PRINCE2 certification is confirmed. No protected characteristics are inferred.",
+   "limitations": [
+    "Limited to provided sources; no external verification of live rollout."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:50:08.038909+00:00"
+}

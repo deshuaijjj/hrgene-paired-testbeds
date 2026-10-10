@@ -1,0 +1,186 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "e0a361bf-21b6-46fc-ba1c-230732110218.C2",
+ "case_id": "e0a361bf-21b6-46fc-ba1c-230732110218",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14779,
+  "promptWords": 1760
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 30.657
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4074,
+ "eval_count": 1068,
+ "prompt_eval_duration_ns": 18940000,
+ "eval_duration_ns": 19303089000,
+ "total_duration_ns": 30654873625,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Let's craft claims.\n\nClaims: professionalSummary: maybe \"Senior Backend Engineer with 7+ years experience building billing services in Go, leading design reviews, and managing PostgreSQL schemas.\" Need source: src_3e73999bfd69, src_848be566215f, src_0b23de540470, src_387bc7d73493.\n\nExperienceHighlights: list proration service, migrations, design review, pairing. Use sources.\n\nProjectsAndWorkSamples: design document sample. source src_f9a0b9bf7f2e.\n\nSkills: Go, PostgreSQL, design reviews, on-call rotation? not evidence. On-call rotation not in sources. So maybe not claim.\n\nEvidenceBoundary: what materials establish: experience at Ardent, Go proration, migrations, design review, promotion to L5. Do not establish on-call rotation or month-end run.\n\nNow requirementEvidenceMap: list each requirement.\n\nreq_d19bd34ff0fe: designs and builds backend services for invoicing, proration or tax calculation in Go or Java. Evidence: src_3e73999bfd69 (proration service), src_0b23de540470 (tax calculation design). status supported.\n\nreq_3b41fad86c97: Works with PostgreSQL schemas and migrations for financial data. Evidence: src_848be566215f. supported.\n\nreq_992300da21ce: Has worked at senior engineer level, or an equivalent documented level, for at least two years. Evidence: src_387bc7d73493. supported.\n\nreq_b0300c33c28c: Leads design reviews for changes to the invoicing pipeline. Evidence: src_0b23de540470. supported.\n\nreq_8e9ec5cfe34e: Supports the month-end invoice run as part of the billing on-call rotation. No evidence. insufficient_evidence. missingEvidence: \"No evidence of participation in month-end invoice run or on-call rotation.\"\n\nUnsupportedClaims: maybe claim about on-call rotation. But we don't have claim. So none.\n\nMissingEvidenceGaps: for req_8e9ec5cfe34e.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: for req_8e9ec5cfe34e: \"Can you describe your involvement in the month-end invoice run and on-call rotation?\" evidenceTarget: details of on-call duties.\n\nHumanReviewChecklist: maybe \"Verify on-call rotation evidence, confirm senior level duration, confirm Go/Java experience.\"\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of month-end on-call rotation.\"\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_41da7711e839978b\",\"targetRoleTitle\":\"Senior Backend Engineer, Billing Platform\",\"professionalSummary\":[\"Senior Backend Engineer with 7+ years of experience building billing services in Go, leading design reviews, and managing PostgreSQL schemas for financial data.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess evidence gaps and confirm on-call rotation participation.\"},\"role\":{\"roleTitle\":\"Senior Backend Engineer, Billing Platform\",\"jobDescriptionSource\":\"jd_839f5288634dbd3c\",\"requirementIds\":[\"req_d19bd34ff0fe\",\"req_3b41fad86c97\",\"req_992300da21ce\",\"req_b0300c33c28c\",\"req_8e9ec5cfe34e\"]},\"candidate\":{\"candidateId\":\"cand_41da7711e839978b\",\"sources\":[\"src_3e73999bfd69\",\"src_848be566215f\",\"src_0b23de540470\",\"src_2fee6047ba19\",\"src_0170c84a9fa9\",\"src_f9a0b9bf7f2e\",\"src_387bc7d73493\",\"src_23092e5163d0\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_d19bd34ff0fe\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3e73999bfd69\",\"text\":\"built the proration service in Go that recalculates subscription charges when customers change plan mid-cycle\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of Go service design and implementation\"},{\"sourceId\":\"src_0b23de540470\",\"text\":\"Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of Go/Java service design and review\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3b41fad86c97\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_848be566215f\",\"text\":\"Wrote the PostgreSQL migrations that partitioned the invoice-line table by billing month and added a nightly reconciliation job comparing invoice totals with the payments ledger\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of PostgreSQL schema work\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_992300da21ce\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_387bc7d73493\",\"text\":\"Ardent Ledger's engineering director confirmed in writing that the candidate was promoted to level L5 (senior engineer) in April 2023 and held that level until leaving in July 2026, three years and four months in all\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of senior level duration\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b0300c33c28c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0b23de540470\",\"text\":\"Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off from the payments and finance-systems teams\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of leading design reviews\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_8e9ec5cfe34e\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No evidence of participation in month‑end invoice run or on‑call rotation\"]}],\"supportedClaims\":[],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_8e9ec5cfe34e\",\"requirementId\":\"req_8e9ec5cfe34e\",\"severity\":\"medium\",\"gap\":\"No evidence of month‑end invoice run participation or on‑call rotation duties\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_8e9ec5cfe34e\",\"requirementId\":\"req_8e9ec5cfe34e\",\"question\":\"Can you describe your involvement in the month‑end invoice run and on‑call rotation, including any specific tasks or responsibilities you handled?\",\"evidenceTarget\":\"Details of on‑call duties and month‑end run participation\"}],\"humanReviewChecklist\":[\"Verify evidence of on‑call rotation participation\",\"Confirm senior engineer level duration and level definition\",\"Confirm Go or Java service design and implementation experience\"],\"auditSummary\":\"The candidate has documented experience designing and building Go billing services, managing PostgreSQL migrations, leading design reviews, and holding a senior engineer level for over two years. Evidence for participation in the month‑end invoice run and on‑call rotation is missing and requires follow‑up. No protected characteristics are inferred. Human review is required to assess the remaining evidence gap.\",\"limitations\":[\"No evidence of month‑end invoice run or on‑call rotation participation\"]} }",
+ "content_sha256": "14ebfa301320d3bb74b4bfe1593115a1612c425073f30108bbf8faee22b80079",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_41da7711e839978b",
+   "targetRoleTitle": "Senior Backend Engineer, Billing Platform",
+   "professionalSummary": [
+    "Senior Backend Engineer with 7+ years of experience building billing services in Go, leading design reviews, and managing PostgreSQL schemas for financial data."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess evidence gaps and confirm on-call rotation participation."
+   },
+   "role": {
+    "roleTitle": "Senior Backend Engineer, Billing Platform",
+    "jobDescriptionSource": "jd_839f5288634dbd3c",
+    "requirementIds": [
+     "req_d19bd34ff0fe",
+     "req_3b41fad86c97",
+     "req_992300da21ce",
+     "req_b0300c33c28c",
+     "req_8e9ec5cfe34e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_41da7711e839978b",
+    "sources": [
+     "src_3e73999bfd69",
+     "src_848be566215f",
+     "src_0b23de540470",
+     "src_2fee6047ba19",
+     "src_0170c84a9fa9",
+     "src_f9a0b9bf7f2e",
+     "src_387bc7d73493",
+     "src_23092e5163d0"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d19bd34ff0fe",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3e73999bfd69",
+       "text": "built the proration service in Go that recalculates subscription charges when customers change plan mid-cycle",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of Go service design and implementation"
+      },
+      {
+       "sourceId": "src_0b23de540470",
+       "text": "Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of Go/Java service design and review"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3b41fad86c97",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_848be566215f",
+       "text": "Wrote the PostgreSQL migrations that partitioned the invoice-line table by billing month and added a nightly reconciliation job comparing invoice totals with the payments ledger",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of PostgreSQL schema work"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_992300da21ce",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_387bc7d73493",
+       "text": "Ardent Ledger's engineering director confirmed in writing that the candidate was promoted to level L5 (senior engineer) in April 2023 and held that level until leaving in July 2026, three years and four months in all",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of senior level duration"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b0300c33c28c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0b23de540470",
+       "text": "Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off from the payments and finance-systems teams",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of leading design reviews"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8e9ec5cfe34e",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No evidence of participation in month‑end invoice run or on‑call rotation"
+     ]
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_8e9ec5cfe34e",
+     "requirementId": "req_8e9ec5cfe34e",
+     "severity": "medium",
+     "gap": "No evidence of month‑end invoice run participation or on‑call rotation duties"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_8e9ec5cfe34e",
+     "requirementId": "req_8e9ec5cfe34e",
+     "question": "Can you describe your involvement in the month‑end invoice run and on‑call rotation, including any specific tasks or responsibilities you handled?",
+     "evidenceTarget": "Details of on‑call duties and month‑end run participation"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify evidence of on‑call rotation participation",
+    "Confirm senior engineer level duration and level definition",
+    "Confirm Go or Java service design and implementation experience"
+   ],
+   "auditSummary": "The candidate has documented experience designing and building Go billing services, managing PostgreSQL migrations, leading design reviews, and holding a senior engineer level for over two years. Evidence for participation in the month‑end invoice run and on‑call rotation is missing and requires follow‑up. No protected characteristics are inferred. Human review is required to assess the remaining evidence gap.",
+   "limitations": [
+    "No evidence of month‑end invoice run or on‑call rotation participation"
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:35:56.890459+00:00"
+}

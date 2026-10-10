@@ -1,0 +1,254 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "77e480fa-f48b-41f7-8de8-0efc3e099eb7.C1",
+ "case_id": "77e480fa-f48b-41f7-8de8-0efc3e099eb7",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11611,
+  "promptWords": 1544
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 45.61
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3214,
+ "eval_count": 1799,
+ "prompt_eval_duration_ns": 18010000,
+ "eval_duration_ns": 32120247000,
+ "total_duration_ns": 45607456750,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. Use source ids. For experience: four years product manager. Also mention two years business analyst. But requirement 1: at least seven years product management. We have 4 years product manager + 2 years business analyst (not product). Source 0cbbba9b5b24 says candidate said seven years in product, counted business analyst years as product. But we cannot assume. So evidence for 7 years is insufficient. So claim of 7 years is unsupported. We can include claim of 4 years product manager. Also mention 2 years business analyst. For pricing: source c85bc894f2eb says pricing set by director; integrations area contributed data. So claim that candidate set pricing is unsupported. So we can include claim that candidate contributed data. For discovery: source src_590f03c5222a says running discovery calls with engineering leaders at twenty customer accounts. So claim supported. For backlog prioritization: source src_b7ba79dc3c51. For adoption reporting: src_241ce862ca9f. For roadmap boundary: same. So we can include those claims.\n\nNow requirement evidence map: For each requirement id.\n\nreq_d5d9717d204c: at least seven years product management. We have insufficient evidence. Missing: clear count of product management years. So status insufficient_evidence.\n\nreq_45c2c98cc1b1: sets pricing and packaging with commercial team without senior PM above. We have insufficient evidence. Missing: evidence that candidate set pricing. Source c85bc894f2eb says director set pricing. So insufficient.\n\nreq_e254e415ff4e: runs discovery with engineering leaders and writes product requirements. Supported. Evidence src_590f03c5222a.\n\nreq_9f871fa293e8: prioritises backlog with feature teams under documented method. Supported. Evidence src_b7ba79dc3c51.\n\nreq_f675a7c1bf23: reports adoption and documents roadmap boundaries to leadership. Supported. Evidence src_241ce862ca9f.\n\nNow supportedClaims array: include claims that are supported: discovery, backlog prioritization, adoption reporting, roadmap boundary, contribution to pricing data. Also maybe mention four years product manager. Provide source ids.\n\nUnsupportedClaims: claim of seven years product management, claim of setting pricing.\n\nMissingEvidenceGaps: for each requirement missing evidence.\n\nInterviewSignalRisks: maybe note from recruiter screen that candidate said seven years in product. But that's not job-related evidence. So risk: claim of 7 years. Signal type: unverified claim. Not tied to job-related evidence. Severity medium. Recommended handling: verify years by role title.\n\nFollowUpQuestions: for requirement 1: ask for breakdown of product management years by role title. For requirement 2: ask for evidence of pricing ownership.\n\nHumanReviewChecklist: items like verify years, verify pricing ownership, confirm discovery calls count, confirm backlog method.\n\nAuditSummary: paragraph summarizing.\n\nLimitations: mention that evidence limited to provided sources.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_617a279f940b089e\",\"targetRoleTitle\":\"Product Manager, Developer Analytics Suite\",\"professionalSummary\":[\"Product manager for the integrations area of a developer analytics suite for four years, writing product requirements for source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts.\",\"Prioritized the integrations backlog with the integrations feature team using the suite's weighted scoring method, with scoring sheets and quarterly roadmap reviews filed in the product folder.\",\"Reported integration adoption to the leadership team each quarter and documented roadmap boundaries for the integrations area.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Product Manager, Developer Analytics Suite\",\"jobDescriptionSource\":\"jd_eef8c9573f68b9c9\",\"requirementIds\":[\"req_d5d9717d204c\",\"req_45c2c98cc1b1\",\"req_e254e415ff4e\",\"req_9f871fa293e8\",\"req_f675a7c1bf23\"]},\"candidate\":{\"candidateId\":\"cand_617a279f940b089e\",\"sources\":[\"src_590f03c5222a\",\"src_b7ba79dc3c51\",\"src_241ce862ca9f\",\"src_c85bc894f2eb\",\"src_0cbbba9b5b24\",\"src_5f68028fc4f7\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_d5d9717d204c\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Clear breakdown of product management years by role title; evidence that the candidate has at least seven years of product management experience.\"]},{\"requirementId\":\"req_45c2c98cc1b1\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate set pricing and packaging with the commercial team without a senior product manager above them.\"]},{\"requirementId\":\"req_e254e415ff4e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_590f03c5222a\",\"text\":\"Product manager for the integrations area of a developer analytics suite for four years, writing the product requirements for the source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of discovery calls and requirement writing.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9f871fa293e8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b7ba79dc3c51\",\"text\":\"Prioritised the integrations backlog with the integrations feature team under the suite's weighted scoring method, with the scoring sheets and the quarterly roadmap reviews filed in the product folder.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of backlog prioritization method.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f675a7c1bf23\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_241ce862ca9f\",\"text\":\"Reported integration adoption to the leadership team each quarter and wrote the roadmap boundary note for the integrations area, listing what the area would not build in the coming two quarters.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of adoption reporting and roadmap boundary documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Product manager for the integrations area of a developer analytics suite for four years, writing product requirements for source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts.\",\"supportingRequirementIds\":[\"req_e254e415ff4e\"],\"sourceIds\":[\"src_590f03c5222a\"],\"evidenceStrength\":\"high\",\"witness\":\"Product manager for the integrations area of a developer analytics suite for four years, writing the product requirements for the source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts.\"},{\"claim\":\"Prioritized the integrations backlog with the integrations feature team using the suite's weighted scoring method, with scoring sheets and quarterly roadmap reviews filed in the product folder.\",\"supportingRequirementIds\":[\"req_9f871fa293e8\"],\"sourceIds\":[\"src_b7ba79dc3c51\"],\"evidenceStrength\":\"high\",\"witness\":\"Prioritised the integrations backlog with the integrations feature team under the suite's weighted scoring method, with the scoring sheets and the quarterly roadmap reviews filed in the product folder.\"},{\"claim\":\"Reported integration adoption to the leadership team each quarter and documented roadmap boundaries for the integrations area.\",\"supportingRequirementIds\":[\"req_f675a7c1bf23\"],\"sourceIds\":[\"src_241ce862ca9f\"],\"evidenceStrength\":\"high\",\"witness\":\"Reported integration adoption to the leadership team each quarter and wrote the roadmap boundary note for the integrations area, listing what the area would not build in the coming two quarters.\"},{\"claim\":\"Contributed usage data to pricing and packaging discussions with the commercial team.\",\"supportingRequirementIds\":[\"req_45c2c98cc1b1\"],\"sourceIds\":[\"src_c85bc894f2eb\"],\"evidenceStrength\":\"medium\",\"witness\":\"Pricing and packaging for the suite were set by the director of product with the commercial team; the integrations area contributed usage data to those discussions.\"}],\"unsupportedClaims\":[{\"claim\":\"The candidate has at least seven years of product management experience.\",\"reason\":\"The provided sources do not provide a clear breakdown of product management years; the recruiter note indicates the candidate counted business analyst years as product work, which is not confirmed.\",\"requiredFollowUp\":\"Ask the candidate to provide a detailed timeline of product management roles and years.\"},{\"claim\":\"The candidate set pricing and packaging for the suite with the commercial team without a senior product manager above them.\",\"reason\":\"The only evidence indicates the director of product set pricing; the candidate contributed data but did not set pricing.\",\"requiredFollowUp\":\"Request documentation or statements confirming the candidate’s ownership of pricing decisions.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_d5d9717d204c\",\"severity\":\"high\",\"gap\":\"Clear evidence of at least seven years of product management experience, broken down by role title.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_45c2c98cc1b1\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate set pricing and packaging with the commercial team without a senior product manager above them.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_0cbbba9b5b24\",\"text\":\"candidate said she has 'seven years in product' and 'owned pricing for the integrations'; asked to break down the years, she counted the business analyst years as product work and said pricing was 'a shared thing with the director'.\",\"signalType\":\"unverified claim\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify the candidate’s product management years and pricing ownership through additional documentation or interview.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_d5d9717d204c\",\"question\":\"Can you provide a detailed timeline of your product management roles, including titles and duration for each role?\",\"evidenceTarget\":\"Clear breakdown of product management years.\"},{\"questionId\":\"q_2\",\"requirementId\":\"req_45c2c98cc1b1\",\"question\":\"What specific responsibilities did you have in setting pricing and packaging for the suite, and can you provide documentation or statements that confirm your ownership?\",\"evidenceTarget\":\"Evidence of pricing and packaging ownership.\"}],\"humanReviewChecklist\":[\"Verify the candidate’s product management experience duration and role titles.\",\"Confirm the candidate’s ownership of pricing and packaging decisions.\",\"Confirm that discovery calls were conducted with engineering leaders at customer accounts.\",\"Confirm that backlog prioritization used the weighted scoring method as described.\",\"Confirm that adoption reporting and roadmap boundary documentation were performed as stated.\"],\"auditSummary\":\"The evidence indicates the candidate has four years of product management experience in the integrations area, with documented discovery, backlog prioritization, adoption reporting, and roadmap boundary activities. However, there is insufficient evidence to confirm the candidate meets the seven-year product management requirement or that they set pricing and packaging independently. Human review is required to verify these gaps and assess overall fit.\",\"limitations\":[\"Evidence is limited to the provided sources; no external verification or additional documentation is available.\"]}}",
+ "content_sha256": "6436111c1c3fc60c8c278a54a5ffed15a583193533fef52bf072b91d7725ab6e",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_617a279f940b089e",
+   "targetRoleTitle": "Product Manager, Developer Analytics Suite",
+   "professionalSummary": [
+    "Product manager for the integrations area of a developer analytics suite for four years, writing product requirements for source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts.",
+    "Prioritized the integrations backlog with the integrations feature team using the suite's weighted scoring method, with scoring sheets and quarterly roadmap reviews filed in the product folder.",
+    "Reported integration adoption to the leadership team each quarter and documented roadmap boundaries for the integrations area."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Product Manager, Developer Analytics Suite",
+    "jobDescriptionSource": "jd_eef8c9573f68b9c9",
+    "requirementIds": [
+     "req_d5d9717d204c",
+     "req_45c2c98cc1b1",
+     "req_e254e415ff4e",
+     "req_9f871fa293e8",
+     "req_f675a7c1bf23"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_617a279f940b089e",
+    "sources": [
+     "src_590f03c5222a",
+     "src_b7ba79dc3c51",
+     "src_241ce862ca9f",
+     "src_c85bc894f2eb",
+     "src_0cbbba9b5b24",
+     "src_5f68028fc4f7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d5d9717d204c",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Clear breakdown of product management years by role title; evidence that the candidate has at least seven years of product management experience."
+     ]
+    },
+    {
+     "requirementId": "req_45c2c98cc1b1",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate set pricing and packaging with the commercial team without a senior product manager above them."
+     ]
+    },
+    {
+     "requirementId": "req_e254e415ff4e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_590f03c5222a",
+       "text": "Product manager for the integrations area of a developer analytics suite for four years, writing the product requirements for the source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of discovery calls and requirement writing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9f871fa293e8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b7ba79dc3c51",
+       "text": "Prioritised the integrations backlog with the integrations feature team under the suite's weighted scoring method, with the scoring sheets and the quarterly roadmap reviews filed in the product folder.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of backlog prioritization method."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f675a7c1bf23",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_241ce862ca9f",
+       "text": "Reported integration adoption to the leadership team each quarter and wrote the roadmap boundary note for the integrations area, listing what the area would not build in the coming two quarters.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of adoption reporting and roadmap boundary documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Product manager for the integrations area of a developer analytics suite for four years, writing product requirements for source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts.",
+     "supportingRequirementIds": [
+      "req_e254e415ff4e"
+     ],
+     "sourceIds": [
+      "src_590f03c5222a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Product manager for the integrations area of a developer analytics suite for four years, writing the product requirements for the source control and ticketing integrations and running discovery calls with engineering leaders at twenty customer accounts."
+    },
+    {
+     "claim": "Prioritized the integrations backlog with the integrations feature team using the suite's weighted scoring method, with scoring sheets and quarterly roadmap reviews filed in the product folder.",
+     "supportingRequirementIds": [
+      "req_9f871fa293e8"
+     ],
+     "sourceIds": [
+      "src_b7ba79dc3c51"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prioritised the integrations backlog with the integrations feature team under the suite's weighted scoring method, with the scoring sheets and the quarterly roadmap reviews filed in the product folder."
+    },
+    {
+     "claim": "Reported integration adoption to the leadership team each quarter and documented roadmap boundaries for the integrations area.",
+     "supportingRequirementIds": [
+      "req_f675a7c1bf23"
+     ],
+     "sourceIds": [
+      "src_241ce862ca9f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reported integration adoption to the leadership team each quarter and wrote the roadmap boundary note for the integrations area, listing what the area would not build in the coming two quarters."
+    },
+    {
+     "claim": "Contributed usage data to pricing and packaging discussions with the commercial team.",
+     "supportingRequirementIds": [
+      "req_45c2c98cc1b1"
+     ],
+     "sourceIds": [
+      "src_c85bc894f2eb"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Pricing and packaging for the suite were set by the director of product with the commercial team; the integrations area contributed usage data to those discussions."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The candidate has at least seven years of product management experience.",
+     "reason": "The provided sources do not provide a clear breakdown of product management years; the recruiter note indicates the candidate counted business analyst years as product work, which is not confirmed.",
+     "requiredFollowUp": "Ask the candidate to provide a detailed timeline of product management roles and years."
+    },
+    {
+     "claim": "The candidate set pricing and packaging for the suite with the commercial team without a senior product manager above them.",
+     "reason": "The only evidence indicates the director of product set pricing; the candidate contributed data but did not set pricing.",
+     "requiredFollowUp": "Request documentation or statements confirming the candidate’s ownership of pricing decisions."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_d5d9717d204c",
+     "severity": "high",
+     "gap": "Clear evidence of at least seven years of product management experience, broken down by role title."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_45c2c98cc1b1",
+     "severity": "high",
+     "gap": "Evidence that the candidate set pricing and packaging with the commercial team without a senior product manager above them."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_0cbbba9b5b24",
+     "text": "candidate said she has 'seven years in product' and 'owned pricing for the integrations'; asked to break down the years, she counted the business analyst years as product work and said pricing was 'a shared thing with the director'.",
+     "signalType": "unverified claim",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify the candidate’s product management years and pricing ownership through additional documentation or interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_d5d9717d204c",
+     "question": "Can you provide a detailed timeline of your product management roles, including titles and duration for each role?",
+     "evidenceTarget": "Clear breakdown of product management years."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_45c2c98cc1b1",
+     "question": "What specific responsibilities did you have in setting pricing and packaging for the suite, and can you provide documentation or statements that confirm your ownership?",
+     "evidenceTarget": "Evidence of pricing and packaging ownership."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate’s product management experience duration and role titles.",
+    "Confirm the candidate’s ownership of pricing and packaging decisions.",
+    "Confirm that discovery calls were conducted with engineering leaders at customer accounts.",
+    "Confirm that backlog prioritization used the weighted scoring method as described.",
+    "Confirm that adoption reporting and roadmap boundary documentation were performed as stated."
+   ],
+   "auditSummary": "The evidence indicates the candidate has four years of product management experience in the integrations area, with documented discovery, backlog prioritization, adoption reporting, and roadmap boundary activities. However, there is insufficient evidence to confirm the candidate meets the seven-year product management requirement or that they set pricing and packaging independently. Human review is required to verify these gaps and assess overall fit.",
+   "limitations": [
+    "Evidence is limited to the provided sources; no external verification or additional documentation is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:46:33.328030+00:00"
+}

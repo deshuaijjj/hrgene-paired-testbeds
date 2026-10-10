@@ -1,0 +1,248 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "b02e6fe7-9a99-4eba-9eee-b96e90b77497.C2",
+ "case_id": "b02e6fe7-9a99-4eba-9eee-b96e90b77497",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14310,
+  "promptWords": 1704
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 34.545
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3521,
+ "eval_count": 1692,
+ "prompt_eval_duration_ns": 18441000,
+ "eval_duration_ns": 30357222000,
+ "total_duration_ns": 34542995833,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Ensure all requirements mapped. Use evidence. No subjective. Provide gaps for requirement 5? We have trial on test hall, not field. So insufficient evidence. Provide missing evidence. Also requirement 2 owner: we have source. Requirement 1: building models from telemetry: source. Requirement 3: telemetry ingestion pipeline: source. Requirement 4: review alerts: source. Requirement 5: deployed models to run on equipment controllers in the field: we have test hall, not field. So insufficient evidence. Provide gap and follow up question.\n\nAlso need optimizedCv with claims. Use evidence. Provide evidenceBoundary sentence.\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_65046f712d637ff0\",\"targetRoleTitle\":\"Machine Learning Engineer, Predictive Maintenance\",\"professionalSummary\":[\"Machine learning engineer with five years of experience developing failure‑prediction models for industrial air compressors using vibration and temperature telemetry.\",\"Owner of a production bearing‑failure model, responsible for approving retraining releases and threshold adjustments.\",\"Designed and maintained telemetry ingestion pipelines that resample controller data into ten‑minute windows and load features into an analytics warehouse.\",\"Collaborated with field‑service engineers to review alerts and refine model performance.\",\"Participated in a pilot deploying a compressed model onto compressor controllers in a test environment.\"],\"experienceHighlights\":[\"Developed failure‑prediction models from equipment telemetry (src_4e8d6c5b52f2).\",\"Acted as registered owner of the bearing‑failure model, approving six retraining releases and two threshold changes (src_b3dd41af97b3).\",\"Built telemetry ingestion pipeline with daily completeness checks (src_2f3ed064cd8e).\",\"Reviewed monthly alerts with field‑service engineers, adjusting review lists based on inspection findings (src_800d5bb443c8).\",\"Took part in a three‑month trial deploying a compressed model onto two compressor controllers in the company’s test hall (src_da8fd662db12).\"],\"projectsAndWorkSamples\":[\"Model‑register entry for the bearing‑failure model, showing ownership, approval history, and alert‑review log for March 2024 (src_df445913aeed).\"],\"skills\":[\"Python\",\"TensorFlow\",\"PyTorch\",\"Airflow\",\"SQL\",\"Feature Engineering\",\"Model Registry Management\",\"Telemetry Processing\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience with telemetry‑based model development, model ownership, pipeline construction, alert review, and a pilot deployment in a test hall, but do not confirm deployment onto field equipment controllers.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the role based on the evidence and gaps identified.\"},\"role\":{\"roleTitle\":\"Machine Learning Engineer, Predictive Maintenance\",\"jobDescriptionSource\":\"jd_e15799ecf7c5edb7\",\"requirementIds\":[\"req_42980ca24aa5\",\"req_8180369faecb\",\"req_8b7c35bef111\",\"req_59073ff444f4\",\"req_a3dd467b9bb6\"]},\"candidate\":{\"candidateId\":\"cand_65046f712d637ff0\",\"sources\":[\"src_4e8d6c5b52f2\",\"src_b3dd41af97b3\",\"src_2f3ed064cd8e\",\"src_800d5bb443c8\",\"src_da8fd662db12\",\"src_df445913aeed\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_42980ca24aa5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4e8d6c5b52f2\",\"text\":\"building failure‑prediction models for industrial air compressors from vibration and temperature telemetry\",\"evidenceStrength\":\"high\",\"notes\":\"directly states model development from telemetry\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_8180369faecb\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b3dd41af97b3\",\"text\":\"Recorded as model owner for the bearing‑failure model in the company's model register from 2021; approved each retraining release (six between 2022 and 2024) and two changes to the alert threshold\",\"evidenceStrength\":\"high\",\"notes\":\"explicit ownership and approval actions\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_8b7c35bef111\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2f3ed064cd8e\",\"text\":\"Built the telemetry ingestion pipeline that resamples controller data into ten‑minute windows and writes the features to the analytics warehouse, with a daily completeness check on each controller's feed\",\"evidenceStrength\":\"high\",\"notes\":\"direct pipeline construction\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_59073ff444f4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_800d5bb443c8\",\"text\":\"Reviewed the flagged alerts each month with two field‑service engineers, recording whether the site inspection found bearing wear and adjusting the review list when an alert proved false\",\"evidenceStrength\":\"high\",\"notes\":\"alert review with field engineers\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a3dd467b9bb6\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate deployed a model onto equipment controllers in the field, not just in a test hall\"]}],\"supportedClaims\":[{\"claim\":\"Developed failure‑prediction models from equipment telemetry\",\"supportingRequirementIds\":[\"req_42980ca24aa5\"],\"sourceIds\":[\"src_4e8d6c5b52f2\"],\"evidenceStrength\":\"high\",\"witness\":\"building failure‑prediction models for industrial air compressors from vibration and temperature telemetry\"},{\"claim\":\"Acted as registered owner of a production model, approving retraining releases and threshold changes\",\"supportingRequirementIds\":[\"req_8180369faecb\"],\"sourceIds\":[\"src_b3dd41af97b3\"],\"evidenceStrength\":\"high\",\"witness\":\"Recorded as model owner for the bearing‑failure model in the company's model register from 2021; approved each retraining release (six between 2022 and 2024) and two changes to the alert threshold\"},{\"claim\":\"Built telemetry ingestion and feature pipelines\",\"supportingRequirementIds\":[\"req_8b7c35bef111\"],\"sourceIds\":[\"src_2f3ed064cd8e\"],\"evidenceStrength\":\"high\",\"witness\":\"Built the telemetry ingestion pipeline that resamples controller data into ten‑minute windows and writes the features to the analytics warehouse, with a daily completeness check on each controller's feed\"},{\"claim\":\"Reviewed model alerts with field‑service engineers against inspection findings\",\"supportingRequirementIds\":[\"req_59073ff444f4\"],\"sourceIds\":[\"src_800d5bb443c8\"],\"evidenceStrength\":\"high\",\"witness\":\"Reviewed the flagged alerts each month with two field‑service engineers, recording whether the site inspection found bearing wear and adjusting the review list when an alert proved false\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_a3dd467b9bb6\",\"severity\":\"medium\",\"gap\":\"No evidence that the candidate deployed a model onto equipment controllers in the field; only a test hall deployment is documented.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_a3dd467b9bb6\",\"question\":\"Can you describe any deployment of a predictive maintenance model onto compressor controllers in a production field environment, including the deployment process, validation steps, and any operational monitoring performed?\",\"evidenceTarget\":\"Evidence of field deployment, including environment, release authority, and runtime responsibilities.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s ownership and approval actions align with the company’s model register policies.\",\"Confirm that the telemetry ingestion pipeline meets the required data quality and completeness standards.\",\"Assess the candidate’s experience with field‑service collaboration and alert review processes.\",\"Determine whether the candidate has actual field deployment experience or only test‑hall trials.\"],\"auditSummary\":\"The evidence supports the candidate’s experience with telemetry‑based model development, model ownership, pipeline construction, and alert review. However, there is insufficient evidence for deployment onto field equipment controllers, which is a key requirement. Human review should focus on clarifying field deployment experience and verifying alignment with organizational processes.\",\"limitations\":[\"The analysis is limited to the provided resume and work sample; additional documentation or references may alter the assessment.\" ]}}",
+ "content_sha256": "d6357085581f0fbd8b510c7971538b2a352e8ac7bdc38555db4f4736df63a965",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_65046f712d637ff0",
+   "targetRoleTitle": "Machine Learning Engineer, Predictive Maintenance",
+   "professionalSummary": [
+    "Machine learning engineer with five years of experience developing failure‑prediction models for industrial air compressors using vibration and temperature telemetry.",
+    "Owner of a production bearing‑failure model, responsible for approving retraining releases and threshold adjustments.",
+    "Designed and maintained telemetry ingestion pipelines that resample controller data into ten‑minute windows and load features into an analytics warehouse.",
+    "Collaborated with field‑service engineers to review alerts and refine model performance.",
+    "Participated in a pilot deploying a compressed model onto compressor controllers in a test environment."
+   ],
+   "experienceHighlights": [
+    "Developed failure‑prediction models from equipment telemetry (src_4e8d6c5b52f2).",
+    "Acted as registered owner of the bearing‑failure model, approving six retraining releases and two threshold changes (src_b3dd41af97b3).",
+    "Built telemetry ingestion pipeline with daily completeness checks (src_2f3ed064cd8e).",
+    "Reviewed monthly alerts with field‑service engineers, adjusting review lists based on inspection findings (src_800d5bb443c8).",
+    "Took part in a three‑month trial deploying a compressed model onto two compressor controllers in the company’s test hall (src_da8fd662db12)."
+   ],
+   "projectsAndWorkSamples": [
+    "Model‑register entry for the bearing‑failure model, showing ownership, approval history, and alert‑review log for March 2024 (src_df445913aeed)."
+   ],
+   "skills": [
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "Airflow",
+    "SQL",
+    "Feature Engineering",
+    "Model Registry Management",
+    "Telemetry Processing"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience with telemetry‑based model development, model ownership, pipeline construction, alert review, and a pilot deployment in a test hall, but do not confirm deployment onto field equipment controllers."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role based on the evidence and gaps identified."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Predictive Maintenance",
+    "jobDescriptionSource": "jd_e15799ecf7c5edb7",
+    "requirementIds": [
+     "req_42980ca24aa5",
+     "req_8180369faecb",
+     "req_8b7c35bef111",
+     "req_59073ff444f4",
+     "req_a3dd467b9bb6"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_65046f712d637ff0",
+    "sources": [
+     "src_4e8d6c5b52f2",
+     "src_b3dd41af97b3",
+     "src_2f3ed064cd8e",
+     "src_800d5bb443c8",
+     "src_da8fd662db12",
+     "src_df445913aeed"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_42980ca24aa5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4e8d6c5b52f2",
+       "text": "building failure‑prediction models for industrial air compressors from vibration and temperature telemetry",
+       "evidenceStrength": "high",
+       "notes": "directly states model development from telemetry"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8180369faecb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b3dd41af97b3",
+       "text": "Recorded as model owner for the bearing‑failure model in the company's model register from 2021; approved each retraining release (six between 2022 and 2024) and two changes to the alert threshold",
+       "evidenceStrength": "high",
+       "notes": "explicit ownership and approval actions"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8b7c35bef111",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2f3ed064cd8e",
+       "text": "Built the telemetry ingestion pipeline that resamples controller data into ten‑minute windows and writes the features to the analytics warehouse, with a daily completeness check on each controller's feed",
+       "evidenceStrength": "high",
+       "notes": "direct pipeline construction"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_59073ff444f4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_800d5bb443c8",
+       "text": "Reviewed the flagged alerts each month with two field‑service engineers, recording whether the site inspection found bearing wear and adjusting the review list when an alert proved false",
+       "evidenceStrength": "high",
+       "notes": "alert review with field engineers"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a3dd467b9bb6",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate deployed a model onto equipment controllers in the field, not just in a test hall"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed failure‑prediction models from equipment telemetry",
+     "supportingRequirementIds": [
+      "req_42980ca24aa5"
+     ],
+     "sourceIds": [
+      "src_4e8d6c5b52f2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "building failure‑prediction models for industrial air compressors from vibration and temperature telemetry"
+    },
+    {
+     "claim": "Acted as registered owner of a production model, approving retraining releases and threshold changes",
+     "supportingRequirementIds": [
+      "req_8180369faecb"
+     ],
+     "sourceIds": [
+      "src_b3dd41af97b3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Recorded as model owner for the bearing‑failure model in the company's model register from 2021; approved each retraining release (six between 2022 and 2024) and two changes to the alert threshold"
+    },
+    {
+     "claim": "Built telemetry ingestion and feature pipelines",
+     "supportingRequirementIds": [
+      "req_8b7c35bef111"
+     ],
+     "sourceIds": [
+      "src_2f3ed064cd8e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the telemetry ingestion pipeline that resamples controller data into ten‑minute windows and writes the features to the analytics warehouse, with a daily completeness check on each controller's feed"
+    },
+    {
+     "claim": "Reviewed model alerts with field‑service engineers against inspection findings",
+     "supportingRequirementIds": [
+      "req_59073ff444f4"
+     ],
+     "sourceIds": [
+      "src_800d5bb443c8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed the flagged alerts each month with two field‑service engineers, recording whether the site inspection found bearing wear and adjusting the review list when an alert proved false"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_a3dd467b9bb6",
+     "severity": "medium",
+     "gap": "No evidence that the candidate deployed a model onto equipment controllers in the field; only a test hall deployment is documented."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_a3dd467b9bb6",
+     "question": "Can you describe any deployment of a predictive maintenance model onto compressor controllers in a production field environment, including the deployment process, validation steps, and any operational monitoring performed?",
+     "evidenceTarget": "Evidence of field deployment, including environment, release authority, and runtime responsibilities."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s ownership and approval actions align with the company’s model register policies.",
+    "Confirm that the telemetry ingestion pipeline meets the required data quality and completeness standards.",
+    "Assess the candidate’s experience with field‑service collaboration and alert review processes.",
+    "Determine whether the candidate has actual field deployment experience or only test‑hall trials."
+   ],
+   "auditSummary": "The evidence supports the candidate’s experience with telemetry‑based model development, model ownership, pipeline construction, and alert review. However, there is insufficient evidence for deployment onto field equipment controllers, which is a key requirement. Human review should focus on clarifying field deployment experience and verifying alignment with organizational processes.",
+   "limitations": [
+    "The analysis is limited to the provided resume and work sample; additional documentation or references may alter the assessment."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:18:06.190976+00:00"
+}

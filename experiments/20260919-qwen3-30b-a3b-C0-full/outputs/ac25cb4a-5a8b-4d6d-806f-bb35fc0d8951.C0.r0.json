@@ -1,0 +1,363 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951.C0",
+ "case_id": "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7393,
+  "promptWords": 949
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "qwen3:30b-a3b",
+ "digest": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 79.178
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 1812,
+ "eval_count": 3331,
+ "prompt_eval_duration_ns": 1754508000,
+ "eval_duration_ns": 77272893000,
+ "total_duration_ns": 79172146750,
+ "thinking": null,
+ "content": "{\"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\", \"optimizedCv\": {\"language\": \"en\", \"candidateId\": \"cand_1828adc5e1be8812\", \"targetRoleTitle\": \"Backend API Engineer, Equipment Maintenance Services\", \"professionalSummary\": [{\"claimId\": \"sum_01\", \"text\": \"Developed and maintained the work-order API (Go) and parts-availability service for the technician app, implementing idempotency keys to prevent duplicate work orders from sync retries.\", \"sourceIds\": [\"src_abf2293d99c6\"], \"requirementIds\": [\"req_712f37369198\"], \"supportBoundary\": \"supported\", \"witness\": \"Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders.\"}, {\"claimId\": \"sum_02\", \"text\": \"Owned and maintained integration test suites for both services, adding replay tests from anonymized sync logs to keep tests green in CI.\", \"sourceIds\": [\"src_d0cfe379b9aa\"], \"requirementIds\": [\"req_b112017acf4f\"], \"supportBoundary\": \"supported\", \"witness\": \"Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline.\"}, {\"claimId\": \"sum_03\", \"text\": \"Maintained API change logs and on-call hand-over checklists for every release, noting depot stock refresh intervals.\", \"sourceIds\": [\"src_67624cedce7b\"], \"requirementIds\": [\"req_2ff722e2a5a8\"], \"supportBoundary\": \"supported\", \"witness\": \"Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist.\"}, {\"claimId\": \"sum_04\", \"text\": \"Coordinated releases with app and platform teams through release reviews, though deployments were executed by the platform team's release engineer.\", \"sourceIds\": [\"src_7443a7529d70\"], \"requirementIds\": [\"req_391f7d1a9b96\"], \"supportBoundary\": \"supported\", \"witness\": \"Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me.\"}], \"experienceHighlights\": [{\"claimId\": \"exp_01\", \"text\": \"Two and a half years on the service-platform team managing work-order and parts services, integration tests, release coordination, and API documentation.\", \"sourceIds\": [\"src_97afd7c82f91\"], \"requirementIds\": [\"req_712f37369198\", \"req_b112017acf4f\", \"req_391f7d1a9b96\", \"req_2ff722e2a5a8\"], \"supportBoundary\": \"supported\", \"witness\": \"Two and a half years on the service-platform team: work-order and parts services, integration tests, release line-up and the change log.\"}], \"projectsAndWorkSamples\": [{\"claimId\": \"proj_01\", \"text\": \"Replay tests for work-order API and API change log entry for one release, with CI run numbers for traceability.\", \"sourceIds\": [\"src_ee51234ba903\", \"src_ee51234ba903\"], \"requirementIds\": [\"req_b112017acf4f\", \"req_2ff722e2a5a8\"], \"supportBoundary\": \"supported\", \"witness\": \"Work sample: the replay tests for the work-order API and one release's entry in the API change log; CI run numbers are included so they can be traced.\"}], \"skills\": [{\"claimId\": \"skill_01\", \"text\": \"Go programming, API design, integration testing, release coordination, documentation maintenance.\", \"sourceIds\": [\"src_abf2293d99c6\", \"src_d0cfe379b9aa\", \"src_7443a7529d70\", \"src_67624cedce7b\", \"src_97afd7c82f91\"], \"requirementIds\": [\"req_712f37369198\", \"req_b112017acf4f\", \"req_391f7d1a9b96\", \"req_2ff722e2a5a8\"], \"supportBoundary\": \"supported\", \"witness\": \"Developed and maintained the work-order API (Go) and the parts-availability service... Owned the integration test suite... Lined up each release... Kept the API change log current...\"}], \"evidenceBoundary\": \"The materials establish the candidate's direct involvement in developing and maintaining the work-order API and parts-availability service, owning integration tests, coordinating releases, and maintaining documentation. However, the materials do not establish a measurable reduction in work-order sync failures as required by req_a43cb3667b39, relying instead on a reference call that cites support-ticket volume rather than the platform's documented metric.\"}, \"hiringEvidencePacket\": {\"decisionBoundary\": {\"employmentDecisionMade\": false, \"candidateRanked\": false, \"protectedCharacteristicsInferred\": false, \"humanReviewRequired\": true, \"statement\": \"Human review required due to insufficient evidence for req_a43cb3667b39 (measurable reduction in sync failures) and a reference call that does not align with the platform's documented metric.\"}, \"role\": {\"roleTitle\": \"Backend API Engineer, Equipment Maintenance Services\", \"jobDescriptionSource\": \"jd_e93505062f487f8f\", \"requirementIds\": [\"req_712f37369198\", \"req_b112017acf4f\", \"req_a43cb3667b39\", \"req_391f7d1a9b96\", \"req_2ff722e2a5a8\"]}, \"candidate\": {\"candidateId\": \"cand_1828adc5e1be8812\", \"sources\": [\"src_abf2293d99c6\", \"src_d0cfe379b9aa\", \"src_7443a7529d70\", \"src_67624cedce7b\", \"src_97afd7c82f91\", \"src_ee51234ba903\", \"src_38ec5aa9aba7\", \"src_8f660602da80\"]}, \"requirementEvidenceMap\": [{\"requirementId\": \"req_712f37369198\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_abf2293d99c6\", \"text\": \"Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly addresses requirement.\"}], \"missingEvidence\": []}, {\"requirementId\": \"req_b112017acf4f\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_d0cfe379b9aa\", \"text\": \"Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly addresses requirement.\"}], \"missingEvidence\": []}, {\"requirementId\": \"req_a43cb3667b39\", \"status\": \"insufficient_evidence\", \"evidence\": [{\"sourceId\": \"src_38ec5aa9aba7\", \"text\": \"Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go away' and guessed sync failures dropped 'from a few hundred a week to a handful'; he said he was going by support-ticket volume rather than the platform's sync-failure metric.\", \"evidenceStrength\": \"low\", \"notes\": \"Reference call cites support-ticket volume, not platform metric.\"}], \"missingEvidence\": [\"Measured reduction in sync failures against platform's documented weekly baseline\"]}, {\"requirementId\": \"req_391f7d1a9b96\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_7443a7529d70\", \"text\": \"Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly addresses requirement.\"}], \"missingEvidence\": []}, {\"requirementId\": \"req_2ff722e2a5a8\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_67624cedce7b\", \"text\": \"Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly addresses requirement.\"}], \"missingEvidence\": []}], \"supportedClaims\": [{\"claim\": \"Developed and maintained the work-order API (Go) and parts-availability service for the technician app, implementing idempotency keys to prevent duplicate work orders from sync retries.\", \"supportingRequirementIds\": [\"req_712f37369198\"], \"sourceIds\": [\"src_abf2293d99c6\"], \"evidenceStrength\": \"high\", \"witness\": \"Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders.\"}, {\"claim\": \"Owned and maintained integration test suites for both services, adding replay tests from anonymized sync logs to keep tests green in CI.\", \"supportingRequirementIds\": [\"req_b112017acf4f\"], \"sourceIds\": [\"src_d0cfe379b9aa\"], \"evidenceStrength\": \"high\", \"witness\": \"Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline.\"}, {\"claim\": \"Maintained API change logs and on-call hand-over checklists for every release, noting depot stock refresh intervals.\", \"supportingRequirementIds\": [\"req_2ff722e2a5a8\"], \"sourceIds\": [\"src_67624cedce7b\"], \"evidenceStrength\": \"high\", \"witness\": \"Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist.\"}, {\"claim\": \"Coordinated releases with app and platform teams through release reviews, though deployments were executed by the platform team's release engineer.\", \"supportingRequirementIds\": [\"req_391f7d1a9b96\"], \"sourceIds\": [\"src_7443a7529d70\"], \"evidenceStrength\": \"high\", \"witness\": \"Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me.\"}, {\"claim\": \"Two and a half years on the service-platform team managing work-order and parts services, integration tests, release coordination, and API documentation.\", \"supportingRequirementIds\": [\"req_712f37369198\", \"req_b112017acf4f\", \"req_391f7d1a9b96\", \"req_2ff722e2a5a8\"], \"sourceIds\": [\"src_97afd7c82f91\"], \"evidenceStrength\": \"high\", \"witness\": \"Two and a half years on the service-platform team: work-order and parts services, integration tests, release line-up and the change log.\"}], \"unsupportedClaims\": [{\"claim\": \"Delivered a measurable reduction in work-order sync failures, reported against the platform's documented weekly baseline.\", \"reason\": \"The reference call cites support-ticket volume rather than the platform's documented metric, and the candidate's materials do not provide the documented metric or a direct measurement against it.\", \"requiredFollowUp\": \"Request the candidate to provide the platform's documented weekly baseline metric and evidence of a measurable reduction against it.\"}], \"missingEvidenceGaps\": [{\"gapId\": \"gap_a43cb3667b39\", \"requirementId\": \"req_a43cb3667b39\", \"severity\": \"high\", \"gap\": \"No evidence of a measurable reduction in work-order sync failures against the platform's documented weekly baseline metric.\"}], \"interviewSignalRisks\": [{\"sourceId\": \"src_38ec5aa9aba7\", \"text\": \"Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go away' and guessed sync failures dropped 'from a few hundred a week to a handful'; he said he was going by support-ticket volume rather than the platform's sync-failure metric.\", \"signalType\": \"metric_misalignment\", \"jobRelatedBoundary\": \"no\", \"severity\": \"high\", \"recommendedHandling\": \"Verify if the candidate can provide the documented metric and evidence of reduction against it.\"}], \"followUpQuestions\": [{\"questionId\": \"q_a43cb3667b39_01\", \"requirementId\": \"req_a43cb3667b39\", \"question\": \"Can you provide the platform's documented weekly baseline metric for work-order sync failures and evidence of a measurable reduction against it?\", \"evidenceTarget\": \"Measured reduction in sync failures against documented baseline metric.\"}], \"humanReviewChecklist\": [\"Verify alignment of reference call metric with platform's documented metric\", \"Confirm evidence of measurable reduction against documented baseline\", \"Check if candidate can provide traceable evidence for req_a43cb3667b39\"], \"auditSummary\": \"The candidate's materials provide strong evidence for all requirements except req_a43cb3667b39, which relies on a reference call that cites support-ticket volume instead of the platform's documented metric. The reference call is insufficient for the requirement, creating a high-severity gap.\", \"limitations\": [\"The reference call does not establish the required metric alignment\", \"No direct evidence of sync failure reduction against the documented baseline\"]}}",
+ "content_sha256": "53c30934d9abd0bc08b77aa31aa9903c3942c1aa96c4036b5b2699e097ad47c1",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_1828adc5e1be8812",
+   "targetRoleTitle": "Backend API Engineer, Equipment Maintenance Services",
+   "professionalSummary": [
+    {
+     "claimId": "sum_01",
+     "text": "Developed and maintained the work-order API (Go) and parts-availability service for the technician app, implementing idempotency keys to prevent duplicate work orders from sync retries.",
+     "sourceIds": [
+      "src_abf2293d99c6"
+     ],
+     "requirementIds": [
+      "req_712f37369198"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders."
+    },
+    {
+     "claimId": "sum_02",
+     "text": "Owned and maintained integration test suites for both services, adding replay tests from anonymized sync logs to keep tests green in CI.",
+     "sourceIds": [
+      "src_d0cfe379b9aa"
+     ],
+     "requirementIds": [
+      "req_b112017acf4f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline."
+    },
+    {
+     "claimId": "sum_03",
+     "text": "Maintained API change logs and on-call hand-over checklists for every release, noting depot stock refresh intervals.",
+     "sourceIds": [
+      "src_67624cedce7b"
+     ],
+     "requirementIds": [
+      "req_2ff722e2a5a8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist."
+    },
+    {
+     "claimId": "sum_04",
+     "text": "Coordinated releases with app and platform teams through release reviews, though deployments were executed by the platform team's release engineer.",
+     "sourceIds": [
+      "src_7443a7529d70"
+     ],
+     "requirementIds": [
+      "req_391f7d1a9b96"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_01",
+     "text": "Two and a half years on the service-platform team managing work-order and parts services, integration tests, release coordination, and API documentation.",
+     "sourceIds": [
+      "src_97afd7c82f91"
+     ],
+     "requirementIds": [
+      "req_712f37369198",
+      "req_b112017acf4f",
+      "req_391f7d1a9b96",
+      "req_2ff722e2a5a8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Two and a half years on the service-platform team: work-order and parts services, integration tests, release line-up and the change log."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Replay tests for work-order API and API change log entry for one release, with CI run numbers for traceability.",
+     "sourceIds": [
+      "src_ee51234ba903",
+      "src_ee51234ba903"
+     ],
+     "requirementIds": [
+      "req_b112017acf4f",
+      "req_2ff722e2a5a8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the replay tests for the work-order API and one release's entry in the API change log; CI run numbers are included so they can be traced."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "Go programming, API design, integration testing, release coordination, documentation maintenance.",
+     "sourceIds": [
+      "src_abf2293d99c6",
+      "src_d0cfe379b9aa",
+      "src_7443a7529d70",
+      "src_67624cedce7b",
+      "src_97afd7c82f91"
+     ],
+     "requirementIds": [
+      "req_712f37369198",
+      "req_b112017acf4f",
+      "req_391f7d1a9b96",
+      "req_2ff722e2a5a8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Developed and maintained the work-order API (Go) and the parts-availability service... Owned the integration test suite... Lined up each release... Kept the API change log current..."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's direct involvement in developing and maintaining the work-order API and parts-availability service, owning integration tests, coordinating releases, and maintaining documentation. However, the materials do not establish a measurable reduction in work-order sync failures as required by req_a43cb3667b39, relying instead on a reference call that cites support-ticket volume rather than the platform's documented metric."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required due to insufficient evidence for req_a43cb3667b39 (measurable reduction in sync failures) and a reference call that does not align with the platform's documented metric."
+   },
+   "role": {
+    "roleTitle": "Backend API Engineer, Equipment Maintenance Services",
+    "jobDescriptionSource": "jd_e93505062f487f8f",
+    "requirementIds": [
+     "req_712f37369198",
+     "req_b112017acf4f",
+     "req_a43cb3667b39",
+     "req_391f7d1a9b96",
+     "req_2ff722e2a5a8"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_1828adc5e1be8812",
+    "sources": [
+     "src_abf2293d99c6",
+     "src_d0cfe379b9aa",
+     "src_7443a7529d70",
+     "src_67624cedce7b",
+     "src_97afd7c82f91",
+     "src_ee51234ba903",
+     "src_38ec5aa9aba7",
+     "src_8f660602da80"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_712f37369198",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_abf2293d99c6",
+       "text": "Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders.",
+       "evidenceStrength": "high",
+       "notes": "Directly addresses requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b112017acf4f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d0cfe379b9aa",
+       "text": "Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline.",
+       "evidenceStrength": "high",
+       "notes": "Directly addresses requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a43cb3667b39",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_38ec5aa9aba7",
+       "text": "Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go away' and guessed sync failures dropped 'from a few hundred a week to a handful'; he said he was going by support-ticket volume rather than the platform's sync-failure metric.",
+       "evidenceStrength": "low",
+       "notes": "Reference call cites support-ticket volume, not platform metric."
+      }
+     ],
+     "missingEvidence": [
+      "Measured reduction in sync failures against platform's documented weekly baseline"
+     ]
+    },
+    {
+     "requirementId": "req_391f7d1a9b96",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7443a7529d70",
+       "text": "Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me.",
+       "evidenceStrength": "high",
+       "notes": "Directly addresses requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2ff722e2a5a8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_67624cedce7b",
+       "text": "Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist.",
+       "evidenceStrength": "high",
+       "notes": "Directly addresses requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed and maintained the work-order API (Go) and parts-availability service for the technician app, implementing idempotency keys to prevent duplicate work orders from sync retries.",
+     "supportingRequirementIds": [
+      "req_712f37369198"
+     ],
+     "sourceIds": [
+      "src_abf2293d99c6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders."
+    },
+    {
+     "claim": "Owned and maintained integration test suites for both services, adding replay tests from anonymized sync logs to keep tests green in CI.",
+     "supportingRequirementIds": [
+      "req_b112017acf4f"
+     ],
+     "sourceIds": [
+      "src_d0cfe379b9aa"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline."
+    },
+    {
+     "claim": "Maintained API change logs and on-call hand-over checklists for every release, noting depot stock refresh intervals.",
+     "supportingRequirementIds": [
+      "req_2ff722e2a5a8"
+     ],
+     "sourceIds": [
+      "src_67624cedce7b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist."
+    },
+    {
+     "claim": "Coordinated releases with app and platform teams through release reviews, though deployments were executed by the platform team's release engineer.",
+     "supportingRequirementIds": [
+      "req_391f7d1a9b96"
+     ],
+     "sourceIds": [
+      "src_7443a7529d70"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me."
+    },
+    {
+     "claim": "Two and a half years on the service-platform team managing work-order and parts services, integration tests, release coordination, and API documentation.",
+     "supportingRequirementIds": [
+      "req_712f37369198",
+      "req_b112017acf4f",
+      "req_391f7d1a9b96",
+      "req_2ff722e2a5a8"
+     ],
+     "sourceIds": [
+      "src_97afd7c82f91"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Two and a half years on the service-platform team: work-order and parts services, integration tests, release line-up and the change log."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Delivered a measurable reduction in work-order sync failures, reported against the platform's documented weekly baseline.",
+     "reason": "The reference call cites support-ticket volume rather than the platform's documented metric, and the candidate's materials do not provide the documented metric or a direct measurement against it.",
+     "requiredFollowUp": "Request the candidate to provide the platform's documented weekly baseline metric and evidence of a measurable reduction against it."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_a43cb3667b39",
+     "requirementId": "req_a43cb3667b39",
+     "severity": "high",
+     "gap": "No evidence of a measurable reduction in work-order sync failures against the platform's documented weekly baseline metric."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_38ec5aa9aba7",
+     "text": "Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go away' and guessed sync failures dropped 'from a few hundred a week to a handful'; he said he was going by support-ticket volume rather than the platform's sync-failure metric.",
+     "signalType": "metric_misalignment",
+     "jobRelatedBoundary": "no",
+     "severity": "high",
+     "recommendedHandling": "Verify if the candidate can provide the documented metric and evidence of reduction against it."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_a43cb3667b39_01",
+     "requirementId": "req_a43cb3667b39",
+     "question": "Can you provide the platform's documented weekly baseline metric for work-order sync failures and evidence of a measurable reduction against it?",
+     "evidenceTarget": "Measured reduction in sync failures against documented baseline metric."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify alignment of reference call metric with platform's documented metric",
+    "Confirm evidence of measurable reduction against documented baseline",
+    "Check if candidate can provide traceable evidence for req_a43cb3667b39"
+   ],
+   "auditSummary": "The candidate's materials provide strong evidence for all requirements except req_a43cb3667b39, which relies on a reference call that cites support-ticket volume instead of the platform's documented metric. The reference call is insufficient for the requirement, creating a high-severity gap.",
+   "limitations": [
+    "The reference call does not establish the required metric alignment",
+    "No direct evidence of sync failure reduction against the documented baseline"
+   ]
+  }
+ },
+ "finished_at": "2026-09-19T18:58:40.066723+00:00"
+}

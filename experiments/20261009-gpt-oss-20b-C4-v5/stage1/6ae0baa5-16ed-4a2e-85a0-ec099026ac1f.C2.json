@@ -1,0 +1,483 @@
+{
+ "request_id": "6ae0baa5-16ed-4a2e-85a0-ec099026ac1f.C2",
+ "case_id": "6ae0baa5-16ed-4a2e-85a0-ec099026ac1f",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Machine Learning Engineer with experience training LambdaMART and cross‑encoder re‑ranking models for product search, building offline evaluation harnesses, shi"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.candidate.candidateId",
+    "message": "candidateId differs from the case",
+    "witness": {
+     "expected": "cand_b4ee6988d9dc898b",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.jobDescriptionSource",
+    "message": "jobDescriptionSource differs from the case",
+    "witness": {
+     "expected": "jd_a266dc4d27910f02",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "boundary_flags",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.decisionBoundary",
+    "message": "decisionBoundary missing",
+    "witness": {}
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_d22f759d8f28 is not covered",
+    "witness": {
+     "requirementId": "req_d22f759d8f28"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_589ec3eb6098 is not covered",
+    "witness": {
+     "requirementId": "req_589ec3eb6098"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_c547fd347e55 is not covered",
+    "witness": {
+     "requirementId": "req_c547fd347e55"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_53da5a18ecaf is not covered",
+    "witness": {
+     "requirementId": "req_53da5a18ecaf"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_ee3989c3fbf7 is not covered",
+    "witness": {
+     "requirementId": "req_ee3989c3fbf7"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$",
+    "message": "10 schema error(s); first: $: missing required property 'hiringEvidencePacket'",
+    "witness": {
+     "errors": [
+      "$: missing required property 'hiringEvidencePacket'",
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str",
+      "$: additional property 'experienceHighlights' not allowed",
+      "$: additional property 'projectsAndWorkSamples' not allowed"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Machine Learning Engineer with experience training LambdaMART and cross‑encoder re‑ranking models for product search, bu"
+  },
+  {
+   "rule": "hrgene.human_review_boundary",
+   "code": "boundary_flags",
+   "action": "reset_boundary_flags",
+   "path": "$.hiringEvidencePacket.decisionBoundary",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_d22f759d8f28"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_589ec3eb6098"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_c547fd347e55"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_53da5a18ecaf"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_ee3989c3fbf7"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_b4ee6988d9dc898b",
+   "targetRoleTitle": "Machine Learning Engineer, Search Relevance",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "candidate": {
+    "candidateId": "cand_b4ee6988d9dc898b",
+    "sources": []
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Search Relevance",
+    "jobDescriptionSource": "jd_a266dc4d27910f02",
+    "requirementIds": []
+   },
+   "unsupportedClaims": [
+    {
+     "claim": "Machine Learning Engineer with experience training LambdaMART and cross‑encoder re‑ranking models for product search, building offline evaluation harnesses, shipping models via A/B tests, and mentoring interns.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "This packet supports qualified human review. It makes no employment decision, ranking or recommendation and infers no protected characteristics."
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d22f759d8f28",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_589ec3eb6098",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_c547fd347e55",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_53da5a18ecaf",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_ee3989c3fbf7",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "followUpQuestions": [],
+   "supportedClaims": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "",
+   "limitations": []
+  }
+ },
+ "needsRegeneration": false
+}

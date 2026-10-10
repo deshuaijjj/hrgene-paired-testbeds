@@ -1,0 +1,595 @@
+{
+ "request_id": "fcdda688-31ea-4687-a9b7-2574fb6706b6.C2",
+ "case_id": "fcdda688-31ea-4687-a9b7-2574fb6706b6",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Ran the model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared its alerts with conf",
+     "sourceIds": [
+      "src_878e5a37fe14",
+      "src_214306f913d4"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its ownership term(s) [MANAGE] (supervised) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_ddcf4670c558",
+     "family": "MANAGE",
+     "terms": [
+      "supervised"
+     ],
+     "sourceIds": [
+      "src_0fb69beb80fb",
+      "src_878e5a37fe14"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[0]",
+   "detail": "req_ddcf4670c558: supported -> partial_evidence"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_f349dae7621bcf3e",
+   "targetRoleTitle": "Machine Learning Engineer, Card Fraud",
+   "professionalSummary": [
+    {
+     "claimId": "sum_01",
+     "text": "Built a gradient-boosted debit fraud model during a 2023 shadow-mode trial that was later deployed to production for all debit authorisations.",
+     "sourceIds": [
+      "src_0fb69beb80fb"
+     ],
+     "requirementIds": [
+      "req_ddcf4670c558"
+     ],
+     "supportBoundary": "supported",
+     "witness": "built the gradient-boosted debit fraud model during the 2023 shadow-mode trial; per the risk director, it has since been serving production traffic for every debit authorisation."
+    },
+    {
+     "claimId": "sum_02",
+     "text": "Wrote feature pipelines in Python and SQL with data-quality checks that halted nightly runs on failure and posted failure reasons to the team channel.",
+     "sourceIds": [
+      "src_e07459ef7600"
+     ],
+     "requirementIds": [
+      "req_9e0d491efb8c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the feature pipeline in Python and SQL for merchant-category velocity and device-change features, with null-rate and range checks that halted the nightly run on failure and posted the reason to the team channel."
+    },
+    {
+     "claimId": "sum_03",
+     "text": "Ran a model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared alerts with confirmed fraud cases.",
+     "sourceIds": [
+      "src_878e5a37fe14"
+     ],
+     "requirementIds": [
+      "req_ddcf4670c558",
+      "req_9e0d491efb8c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared its alerts with confirmed fraud cases reported by the issuing banks."
+    },
+    {
+     "claimId": "sum_04",
+     "text": "Drafted a model development document including data, features, validation results, limitations, and known data gaps for model risk management review.",
+     "sourceIds": [
+      "src_ff0ebb68f6ce"
+     ],
+     "requirementIds": [
+      "req_6904a0c737da"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Drafted the model development document (data, features, validation results, limitations) that went to the model risk team for independent review, including a section on known data gaps."
+    },
+    {
+     "claimId": "sum_05",
+     "text": "Held fortnightly threshold sessions with three fraud analysts to test alert cut-offs on shadow-mode scores against analysts' daily case capacity.",
+     "sourceIds": [
+      "src_8552993b1d42"
+     ],
+     "requirementIds": [
+      "req_55bcb7cc872e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Held fortnightly threshold sessions with three fraud analysts, testing alert cut-offs on the shadow-mode scores against the analysts' daily case capacity."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_01",
+     "text": "Shadow-mode evaluation of a debit fraud model for ten weeks, comparing alerts with rules engine and confirmed fraud cases.",
+     "sourceIds": [
+      "src_878e5a37fe14",
+      "src_214306f913d4"
+     ],
+     "requirementIds": [
+      "req_ddcf4670c558",
+      "req_9e0d491efb8c"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "exp_02",
+     "text": "Feature pipeline development with data-quality checks in Python and SQL for merchant-category velocity and device-change features.",
+     "sourceIds": [
+      "src_e07459ef7600"
+     ],
+     "requirementIds": [
+      "req_9e0d491efb8c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the feature pipeline in Python and SQL for merchant-category velocity and device-change features, with null-rate and range checks that halted the nightly run on failure and posted the reason to the team channel."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Shadow-mode evaluation report comparing model alerts with rules engine and confirmed fraud cases, including precision and recall metrics at three cut-offs.",
+     "sourceIds": [
+      "src_214306f913d4"
+     ],
+     "requirementIds": [
+      "req_ddcf4670c558",
+      "req_9e0d491efb8c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the shadow-mode evaluation report, comparing ten weeks of model alerts with the rules engine's alerts and with confirmed fraud, with precision and recall at three cut-offs. The method section states that scores were logged only and did not decline any transaction."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "Python, SQL, model development, feature engineering, model risk documentation, threshold tuning with fraud analysts.",
+     "sourceIds": [
+      "src_e07459ef7600",
+      "src_ff0ebb68f6ce",
+      "src_8552993b1d42"
+     ],
+     "requirementIds": [
+      "req_9e0d491efb8c",
+      "req_6904a0c737da",
+      "req_55bcb7cc872e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the feature pipeline in Python and SQL... Drafted the model development document... Held fortnightly threshold sessions with three fraud analysts..."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's work on a shadow-mode trial for a debit fraud model, including feature pipeline development, model evaluation, documentation, and threshold sessions. The materials do not establish production deployment of the model on a live authorisation path, as the model was in shadow mode during the trial and the risk director's statement only confirms it 'has since been serving production traffic' without specifying the candidate's role in the deployment."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess whether the candidate personally deployed the model to production and whether the shadow-mode evaluation meets the requirement for production deployment on a live authorisation path."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Card Fraud",
+    "jobDescriptionSource": "jd_73f950887a23f888",
+    "requirementIds": [
+     "req_ddcf4670c558",
+     "req_9e0d491efb8c",
+     "req_c8d571ba5284",
+     "req_6904a0c737da",
+     "req_55bcb7cc872e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_f349dae7621bcf3e",
+    "sources": [
+     "src_0fb69beb80fb",
+     "src_e07459ef7600",
+     "src_878e5a37fe14",
+     "src_ff0ebb68f6ce",
+     "src_8552993b1d42",
+     "src_214306f913d4",
+     "src_b1186007a80a",
+     "src_3fc22f8b796d"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_ddcf4670c558",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_0fb69beb80fb",
+       "text": "built the gradient-boosted debit fraud model during the 2023 shadow-mode trial",
+       "evidenceStrength": "high",
+       "notes": "Shadow-mode trial, not production"
+      },
+      {
+       "sourceId": "src_878e5a37fe14",
+       "text": "Ran the model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared its alerts with confirmed fraud cases reported by the issuing banks.",
+       "evidenceStrength": "high",
+       "notes": "Shadow-mode evaluation"
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's manage element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_9e0d491efb8c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e07459ef7600",
+       "text": "Wrote the feature pipeline in Python and SQL for merchant-category velocity and device-change features, with null-rate and range checks that halted the nightly run on failure and posted the reason to the team channel.",
+       "evidenceStrength": "high",
+       "notes": "Feature pipeline with data-quality checks"
+      },
+      {
+       "sourceId": "src_878e5a37fe14",
+       "text": "Ran the model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared its alerts with confirmed fraud cases reported by the issuing banks.",
+       "evidenceStrength": "high",
+       "notes": "Shadow-mode evaluation"
+      },
+      {
+       "sourceId": "src_214306f913d4",
+       "text": "Work sample: the shadow-mode evaluation report, comparing ten weeks of model alerts with the rules engine's alerts and with confirmed fraud, with precision and recall at three cut-offs. The method section states that scores were logged only and did not decline any transaction.",
+       "evidenceStrength": "high",
+       "notes": "Shadow-mode evaluation report"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c8d571ba5284",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_0fb69beb80fb",
+       "text": "per the risk director, it has since been serving production traffic for every debit authorisation.",
+       "evidenceStrength": "medium",
+       "notes": "Risk director statement, not candidate's action"
+      }
+     ],
+     "missingEvidence": [
+      "Candidate personally deployed the model to production on a live authorisation path"
+     ]
+    },
+    {
+     "requirementId": "req_6904a0c737da",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ff0ebb68f6ce",
+       "text": "Drafted the model development document (data, features, validation results, limitations) that went to the model risk team for independent review, including a section on known data gaps.",
+       "evidenceStrength": "high",
+       "notes": "Document prepared for model risk review"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_55bcb7cc872e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8552993b1d42",
+       "text": "Held fortnightly threshold sessions with three fraud analysts, testing alert cut-offs on the shadow-mode scores against the analysts' daily case capacity.",
+       "evidenceStrength": "high",
+       "notes": "Threshold sessions with fraud analysts"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built a gradient-boosted debit fraud model during a 2023 shadow-mode trial that was later deployed to production for all debit authorisations.",
+     "supportingRequirementIds": [
+      "req_ddcf4670c558"
+     ],
+     "sourceIds": [
+      "src_0fb69beb80fb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "built the gradient-boosted debit fraud model during the 2023 shadow-mode trial; per the risk director, it has since been serving production traffic for every debit authorisation."
+    },
+    {
+     "claim": "Wrote feature pipelines in Python and SQL with data-quality checks that halted nightly runs on failure and posted failure reasons to the team channel.",
+     "supportingRequirementIds": [
+      "req_9e0d491efb8c"
+     ],
+     "sourceIds": [
+      "src_e07459ef7600"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the feature pipeline in Python and SQL for merchant-category velocity and device-change features, with null-rate and range checks that halted the nightly run on failure and posted the reason to the team channel."
+    },
+    {
+     "claim": "Ran the model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared its alerts with confirmed fraud cases reported by the issuing banks.",
+     "supportingRequirementIds": [
+      "req_ddcf4670c558",
+      "req_9e0d491efb8c"
+     ],
+     "sourceIds": [
+      "src_878e5a37fe14"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared its alerts with confirmed fraud cases reported by the issuing banks."
+    },
+    {
+     "claim": "Drafted the model development document (data, features, validation results, limitations) that went to the model risk team for independent review, including a section on known data gaps.",
+     "supportingRequirementIds": [
+      "req_6904a0c737da"
+     ],
+     "sourceIds": [
+      "src_ff0ebb68f6ce"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Drafted the model development document (data, features, validation results, limitations) that went to the model risk team for independent review, including a section on known data gaps."
+    },
+    {
+     "claim": "Held fortnightly threshold sessions with three fraud analysts, testing alert cut-offs on the shadow-mode scores against the analysts' daily case capacity.",
+     "supportingRequirementIds": [
+      "req_55bcb7cc872e"
+     ],
+     "sourceIds": [
+      "src_8552993b1d42"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Held fortnightly threshold sessions with three fraud analysts, testing alert cut-offs on the shadow-mode scores against the analysts' daily case capacity."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_c8d571ba5284",
+     "requirementId": "req_c8d571ba5284",
+     "severity": "high",
+     "gap": "Candidate personally deployed the model to production on a live authorisation path"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_c8d571ba5284",
+     "requirementId": "req_c8d571ba5284",
+     "question": "Can you describe the process by which the model was deployed to production on the live authorisation path, including your specific role in the deployment, release permissions, go-live confirmation, and run-time responsibilities?",
+     "evidenceTarget": "Production deployment process and candidate's role"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify whether the candidate personally deployed the model to production on a live authorisation path",
+    "Confirm the environment (production) and release permissions for the model deployment",
+    "Check if the model risk review was completed before the model touched live traffic"
+   ],
+   "auditSummary": "The evidence establishes shadow-mode evaluation, feature pipeline development, documentation, and threshold sessions. The requirement for production deployment on a live authorisation path is not fully established, as the materials only state the model 'has since been serving production traffic' without confirming the candidate's role in deployment. The risk director's statement is cited as evidence but does not establish the candidate's personal involvement in deployment.",
+   "limitations": [
+    "The materials do not establish the candidate's personal role in deploying the model to production on a live authorisation path, only that the model was serving production traffic after the shadow-mode trial."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

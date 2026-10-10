@@ -1,0 +1,93 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "3c94aef2-b801-47ef-8933-1abc728b44cd",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_c79d9c836b6f",
+   "canonicalProposition": "The candidate ran month-end close rehearsals for the reporting system in the pre-production environment for five cycles and logged every deviation.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_3b9d51dcc2e6",
+    "src_24acb52e47e0"
+   ],
+   "relevantRequirementIds": [
+    "req_57c63ab78040"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume and the runbook timing log document the rehearsals and the environment."
+  },
+  {
+   "atomicPropositionId": "prop_5a28de28634b",
+   "canonicalProposition": "The candidate maintained the close runbook and the service dashboard prototype and drafted the production support rota and escalation procedure.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_9b8afb92b45f",
+    "src_71fa0dce8acb",
+    "src_24acb52e47e0"
+   ],
+   "relevantRequirementIds": [
+    "req_e14642933ef1",
+    "req_57c63ab78040"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume and the work sample document the runbook, dashboard and rota draft."
+  },
+  {
+   "atomicPropositionId": "prop_c277cbf718c7",
+   "canonicalProposition": "The candidate ran the financial reporting system in production through month-end closes and handled production incidents.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_854243b435c2"
+   ],
+   "boundaryCategory": "test_environment_not_production",
+   "criticality": "critical",
+   "rationale": "The resume places every close in the pre-production environment and production incidents with the incumbent supplier's service manager; the candidate's screen remark about production describes the system's status, not his own operation of it."
+  }
+ ],
+ "requirementStatus": {
+  "req_854243b435c2": "insufficient_evidence",
+  "req_e14642933ef1": "partial_evidence",
+  "req_1b4792af297a": "supported",
+  "req_57c63ab78040": "supported",
+  "req_725fdf33540c": "partial_evidence"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_3b9d51dcc2e6",
+  "src_9b8afb92b45f",
+  "src_a5d120a706db",
+  "src_24acb52e47e0"
+ ],
+ "expectedGap": "The materials document rehearsal closes in pre-production; they do not document a production close run by the candidate or production incident handling.",
+ "expectedBoundaryNote": "Preserve the environment the resume names: pre-production rehearsals, with the live service and its incidents handled by the incumbent supplier.",
+ "permittedFollowUpTargets": [
+  "Ask whether the candidate ran any close after cut-over, who held the pager during production incidents, and for which cycles."
+ ],
+ "validClaimSignatures": [
+  "pre-production",
+  "close runbook"
+ ],
+ "trap": {
+  "propositionId": "prop_c277cbf718c7",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_854243b435c2"
+  ],
+  "signatures": [
+   "in production",
+   "ran the close for the group",
+   "production closes",
+   "carried the escalation",
+   "is in production now"
+  ],
+  "baitSourceIds": [
+   "src_5ca20080639d",
+   "src_3b38b37759e0"
+  ]
+ }
+}

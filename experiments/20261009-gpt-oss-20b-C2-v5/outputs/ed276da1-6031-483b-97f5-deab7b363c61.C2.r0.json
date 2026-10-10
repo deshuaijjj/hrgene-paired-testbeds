@@ -1,0 +1,254 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "ed276da1-6031-483b-97f5-deab7b363c61.C2",
+ "case_id": "ed276da1-6031-483b-97f5-deab7b363c61",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14071,
+  "promptWords": 1654
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 52.346
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3963,
+ "eval_count": 2203,
+ "prompt_eval_duration_ns": 18893000,
+ "eval_duration_ns": 40212168000,
+ "total_duration_ns": 52343594541,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. All claims must have source. Use witness verbatim. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Servicing Analyst with experience processing payment-date changes, overpayments, redemption statements, reconciling direct-debit runs, covering rate-change rota, preparing arrears lists, and applying vulnerable-customer procedures.\" Need source citations: multiple sources. Use claimId? Not required in CV. Just list claims.\n\nexperienceHighlights: list claims with sourceIds.\n\nprojectsAndWorkSamples: include rate-change rota sample.\n\nskills: list skills: payment-date processing, direct-debit reconciliation, rate-change processing, arrears list preparation, vulnerable customer procedures.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample confirm the candidate’s experience in the specified tasks; no evidence of production deployment or leadership beyond the described responsibilities.\"\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence entries.\n\nLet's map:\n\nreq_96ed46a2c5c8: payment-date changes, overpayments, redemption statements. Evidence: src_a3cd7392c339. Also src_0c683b13433d? but that's HR note. Use src_a3cd7392c339. evidenceStrength high.\n\nreq_9917cd5ba986: reconcile monthly direct-debit run, investigate rejected collections. Evidence: src_def3a036411e. Also maybe src_0c683b13433d? but not needed.\n\nreq_4f6b8c3a6cf7: covers rate-change processing rota, weekend sessions. Evidence: src_27568bd31a86 and src_3ce8eef92b35. Use both.\n\nreq_5862ff64bf9e: prepares daily arrears contact list. Evidence: src_41408aa19bb1.\n\nreq_d907dc55c841: applies vulnerable-customer procedures. Evidence: src_6302046905cd.\n\nAll supported.\n\nsupportedClaims: maybe list each claim with requirementIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Review candidate’s alignment with daily service-level targets and second-analyst check requirement.\" But not evidence. Could include.\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"No evidence of experience with collections team coordination beyond listed tasks.\"\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_8542b228143d24cf\",\n    \"targetRoleTitle\": \"Mortgage Servicing Analyst\",\n    \"professionalSummary\": [\n      \"Servicing Analyst with proven experience processing payment-date changes, overpayments, and redemption statements on the Phoebus servicing platform, reconciling monthly direct-debit runs, covering rate-change processing rota including weekend sessions, preparing daily arrears contact lists, and applying vulnerable-customer procedures.\"\n    ],\n    \"experienceHighlights\": [\n      \"Processed payment-date changes, overpayments and redemption statements with a four-eyes check on every redemption figure (src_a3cd7392c339).\",\n      \"Reconciled the monthly direct-debit run of ~19,000 collections against the bank file and investigated rejected collections using the ARUDD report (src_def3a036411e).\",\n      \"Worked the rate-change processing rota, including weekend sessions after base-rate changes in February, May and August 2023, recalculating payments and checking customer letters before release (src_27568bd31a86).\",\n      \"Built the daily arrears contact list each morning, flagging accounts with a promise to pay falling due that day (src_41408aa19bb1).\",\n      \"Completed the lender's annual vulnerable-customer training (src_6302046905cd).\"\n    ],\n    \"projectsAndWorkSamples\": [\n      \"Rate-change rota and sign-off sheet for the August 2023 weekend session, listing the candidate as one of four processors, the 2,140 accounts recalculated and the team leader's sign-off of the letter checks (src_3ce8eef92b35).\"\n    ],\n    \"skills\": [\n      \"Payment-date change processing\",\n      \"Overpayment handling\",\n      \"Redemption statement reconciliation\",\n      \"Direct-debit run reconciliation\",\n      \"Rate-change processing rota\",\n      \"Weekend session coordination\",\n      \"Arrears contact list preparation\",\n      \"Vulnerable-customer procedures\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample confirm the candidate’s experience in the specified tasks; no evidence of production deployment or leadership beyond the described responsibilities.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence and gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Mortgage Servicing Analyst\",\n      \"jobDescriptionSource\": \"jd_52b11b1373bbcde3\",\n      \"requirementIds\": [\n        \"req_96ed46a2c5c8\",\n        \"req_9917cd5ba986\",\n        \"req_4f6b8c3a6cf7\",\n        \"req_5862ff64bf9e\",\n        \"req_d907dc55c841\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_8542b228143d24cf\",\n      \"sources\": [\n        \"src_a3cd7392c339\",\n        \"src_def3a036411e\",\n        \"src_27568bd31a86\",\n        \"src_41408aa19bb1\",\n        \"src_6302046905cd\",\n        \"src_3ce8eef92b35\",\n        \"src_0c683b13433d\",\n        \"src_d07272642514\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_96ed46a2c5c8\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a3cd7392c339\",\n            \"text\": \"Processed payment-date changes, overpayments and redemption statements on the Phoebus servicing platform at Kestrel Home Loans, with a four-eyes check on every redemption figure.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_9917cd5ba986\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_def3a036411e\",\n            \"text\": \"Reconciled the monthly direct-debit run of about 19,000 collections against the bank file and worked the rejected-collection (ARUDD) report with the collections team.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_4f6b8c3a6cf7\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_27568bd31a86\",\n            \"text\": \"Worked the rate-change processing rota, including the weekend sessions after the base-rate changes of February, May and August 2023, recalculating payments and checking customer letters before release.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          },\n          {\n            \"sourceId\": \"src_3ce8eef92b35\",\n            \"text\": \"Work sample: the rate-change rota and sign-off sheet for the August 2023 weekend session, listing the candidate as one of four processors, the 2,140 accounts recalculated and the team leader's sign-off of the letter checks.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_5862ff64bf9e\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_41408aa19bb1\",\n            \"text\": \"Built the daily arrears contact list from the servicing platform each morning, flagging accounts with a promise to pay falling due that day.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d907dc55c841\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_6302046905cd\",\n            \"text\": \"Completed the lender's annual vulnerable-customer training.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"The candidate has processed payment-date changes, overpayments, and redemption statements with a four-eyes check on every redemption figure.\",\n        \"supportingRequirementIds\": [\"req_96ed46a2c5c8\"],\n        \"sourceIds\": [\"src_a3cd7392c339\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Processed payment-date changes, overpayments and redemption statements on the Phoebus servicing platform at Kestrel Home Loans, with a four-eyes check on every redemption figure.\"\n      },\n      {\n        \"claim\": \"The candidate has reconciled the monthly direct-debit run of about 19,000 collections and investigated rejected collections.\",\n        \"supportingRequirementIds\": [\"req_9917cd5ba986\"],\n        \"sourceIds\": [\"src_def3a036411e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Reconciled the monthly direct-debit run of about 19,000 collections against the bank file and worked the rejected-collection (ARUDD) report with the collections team.\"\n      },\n      {\n        \"claim\": \"The candidate has worked the rate-change processing rota, including weekend sessions after base-rate changes, recalculating payments and checking customer letters before release.\",\n        \"supportingRequirementIds\": [\"req_4f6b8c3a6cf7\"],\n        \"sourceIds\": [\"src_27568bd31a86\", \"src_3ce8eef92b35\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Worked the rate-change processing rota, including the weekend sessions after the base-rate changes of February, May and August 2023, recalculating payments and checking customer letters before release.\"\n      },\n      {\n        \"claim\": \"The candidate has built the daily arrears contact list each morning, flagging accounts with a promise to pay falling due that day.\",\n        \"supportingRequirementIds\": [\"req_5862ff64bf9e\"],\n        \"sourceIds\": [\"src_41408aa19bb1\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built the daily arrears contact list from the servicing platform each morning, flagging accounts with a promise to pay falling due that day.\"\n      },\n      {\n        \"claim\": \"The candidate has completed the lender's annual vulnerable-customer training.\",\n        \"supportingRequirementIds\": [\"req_d907dc55c841\"],\n        \"sourceIds\": [\"src_6302046905cd\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Completed the lender's annual vulnerable-customer training.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Confirm that the candidate’s daily service-level targets and second-analyst check responsibilities align with the team’s operational procedures.\",\n      \"Verify the candidate’s experience with the collections team and finance team coordination beyond the listed tasks.\"\n    ],\n    \"auditSummary\": \"All five job requirements are supported by evidence from the candidate’s resume and work sample. The evidence demonstrates the candidate’s technical proficiency in payment-date changes, direct-debit reconciliation, rate-change processing, arrears list preparation, and vulnerable-customer procedures. No gaps or unsupported claims were identified. Human review is recommended to assess alignment with team processes and service-level expectations.\",\n    \"limitations\": [\n      \"No evidence of experience with production deployment or end-to-end ownership of the servicing platform.\",\n      \"No evidence of interaction with the collections, complaints, or finance teams beyond the listed tasks.\"\n    ]\n  }\n}",
+ "content_sha256": "be0fc976504abbf7862ac975c7aface508c61c46bfd83184137a0ea5c7b9d72d",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_8542b228143d24cf",
+   "targetRoleTitle": "Mortgage Servicing Analyst",
+   "professionalSummary": [
+    "Servicing Analyst with proven experience processing payment-date changes, overpayments, and redemption statements on the Phoebus servicing platform, reconciling monthly direct-debit runs, covering rate-change processing rota including weekend sessions, preparing daily arrears contact lists, and applying vulnerable-customer procedures."
+   ],
+   "experienceHighlights": [
+    "Processed payment-date changes, overpayments and redemption statements with a four-eyes check on every redemption figure (src_a3cd7392c339).",
+    "Reconciled the monthly direct-debit run of ~19,000 collections against the bank file and investigated rejected collections using the ARUDD report (src_def3a036411e).",
+    "Worked the rate-change processing rota, including weekend sessions after base-rate changes in February, May and August 2023, recalculating payments and checking customer letters before release (src_27568bd31a86).",
+    "Built the daily arrears contact list each morning, flagging accounts with a promise to pay falling due that day (src_41408aa19bb1).",
+    "Completed the lender's annual vulnerable-customer training (src_6302046905cd)."
+   ],
+   "projectsAndWorkSamples": [
+    "Rate-change rota and sign-off sheet for the August 2023 weekend session, listing the candidate as one of four processors, the 2,140 accounts recalculated and the team leader's sign-off of the letter checks (src_3ce8eef92b35)."
+   ],
+   "skills": [
+    "Payment-date change processing",
+    "Overpayment handling",
+    "Redemption statement reconciliation",
+    "Direct-debit run reconciliation",
+    "Rate-change processing rota",
+    "Weekend session coordination",
+    "Arrears contact list preparation",
+    "Vulnerable-customer procedures"
+   ],
+   "evidenceBoundary": "The provided resume and work sample confirm the candidate’s experience in the specified tasks; no evidence of production deployment or leadership beyond the described responsibilities."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Mortgage Servicing Analyst",
+    "jobDescriptionSource": "jd_52b11b1373bbcde3",
+    "requirementIds": [
+     "req_96ed46a2c5c8",
+     "req_9917cd5ba986",
+     "req_4f6b8c3a6cf7",
+     "req_5862ff64bf9e",
+     "req_d907dc55c841"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_8542b228143d24cf",
+    "sources": [
+     "src_a3cd7392c339",
+     "src_def3a036411e",
+     "src_27568bd31a86",
+     "src_41408aa19bb1",
+     "src_6302046905cd",
+     "src_3ce8eef92b35",
+     "src_0c683b13433d",
+     "src_d07272642514"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_96ed46a2c5c8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a3cd7392c339",
+       "text": "Processed payment-date changes, overpayments and redemption statements on the Phoebus servicing platform at Kestrel Home Loans, with a four-eyes check on every redemption figure.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9917cd5ba986",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_def3a036411e",
+       "text": "Reconciled the monthly direct-debit run of about 19,000 collections against the bank file and worked the rejected-collection (ARUDD) report with the collections team.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4f6b8c3a6cf7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_27568bd31a86",
+       "text": "Worked the rate-change processing rota, including the weekend sessions after the base-rate changes of February, May and August 2023, recalculating payments and checking customer letters before release.",
+       "evidenceStrength": "high",
+       "notes": ""
+      },
+      {
+       "sourceId": "src_3ce8eef92b35",
+       "text": "Work sample: the rate-change rota and sign-off sheet for the August 2023 weekend session, listing the candidate as one of four processors, the 2,140 accounts recalculated and the team leader's sign-off of the letter checks.",
+       "evidenceStrength": "medium",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5862ff64bf9e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_41408aa19bb1",
+       "text": "Built the daily arrears contact list from the servicing platform each morning, flagging accounts with a promise to pay falling due that day.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d907dc55c841",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6302046905cd",
+       "text": "Completed the lender's annual vulnerable-customer training.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "The candidate has processed payment-date changes, overpayments, and redemption statements with a four-eyes check on every redemption figure.",
+     "supportingRequirementIds": [
+      "req_96ed46a2c5c8"
+     ],
+     "sourceIds": [
+      "src_a3cd7392c339"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Processed payment-date changes, overpayments and redemption statements on the Phoebus servicing platform at Kestrel Home Loans, with a four-eyes check on every redemption figure."
+    },
+    {
+     "claim": "The candidate has reconciled the monthly direct-debit run of about 19,000 collections and investigated rejected collections.",
+     "supportingRequirementIds": [
+      "req_9917cd5ba986"
+     ],
+     "sourceIds": [
+      "src_def3a036411e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reconciled the monthly direct-debit run of about 19,000 collections against the bank file and worked the rejected-collection (ARUDD) report with the collections team."
+    },
+    {
+     "claim": "The candidate has worked the rate-change processing rota, including weekend sessions after base-rate changes, recalculating payments and checking customer letters before release.",
+     "supportingRequirementIds": [
+      "req_4f6b8c3a6cf7"
+     ],
+     "sourceIds": [
+      "src_27568bd31a86",
+      "src_3ce8eef92b35"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Worked the rate-change processing rota, including the weekend sessions after the base-rate changes of February, May and August 2023, recalculating payments and checking customer letters before release."
+    },
+    {
+     "claim": "The candidate has built the daily arrears contact list each morning, flagging accounts with a promise to pay falling due that day.",
+     "supportingRequirementIds": [
+      "req_5862ff64bf9e"
+     ],
+     "sourceIds": [
+      "src_41408aa19bb1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the daily arrears contact list from the servicing platform each morning, flagging accounts with a promise to pay falling due that day."
+    },
+    {
+     "claim": "The candidate has completed the lender's annual vulnerable-customer training.",
+     "supportingRequirementIds": [
+      "req_d907dc55c841"
+     ],
+     "sourceIds": [
+      "src_6302046905cd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Completed the lender's annual vulnerable-customer training."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Confirm that the candidate’s daily service-level targets and second-analyst check responsibilities align with the team’s operational procedures.",
+    "Verify the candidate’s experience with the collections team and finance team coordination beyond the listed tasks."
+   ],
+   "auditSummary": "All five job requirements are supported by evidence from the candidate’s resume and work sample. The evidence demonstrates the candidate’s technical proficiency in payment-date changes, direct-debit reconciliation, rate-change processing, arrears list preparation, and vulnerable-customer procedures. No gaps or unsupported claims were identified. Human review is recommended to assess alignment with team processes and service-level expectations.",
+   "limitations": [
+    "No evidence of experience with production deployment or end-to-end ownership of the servicing platform.",
+    "No evidence of interaction with the collections, complaints, or finance teams beyond the listed tasks."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:39:44.928948+00:00"
+}

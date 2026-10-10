@@ -1,0 +1,482 @@
+{
+ "request_id": "96e97ce1-a5b3-4ee7-9af6-57e5c1c0fdbc.C2",
+ "case_id": "96e97ce1-a5b3-4ee7-9af6-57e5c1c0fdbc",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Data scientist with four years of experience at Brightwater Beverages, building and maintaining demand‑forecasting models for a soft‑drinks manufacturer.  Skill"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.candidate.candidateId",
+    "message": "candidateId differs from the case",
+    "witness": {
+     "expected": "cand_35f2fa1d602fd245",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.jobDescriptionSource",
+    "message": "jobDescriptionSource differs from the case",
+    "witness": {
+     "expected": "jd_5a3f9b88f63147ab",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "boundary_flags",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.decisionBoundary",
+    "message": "decisionBoundary missing",
+    "witness": {}
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_a38efe09dfc1 is not covered",
+    "witness": {
+     "requirementId": "req_a38efe09dfc1"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_c0bab843a73a is not covered",
+    "witness": {
+     "requirementId": "req_c0bab843a73a"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_6806a4b5e5e3 is not covered",
+    "witness": {
+     "requirementId": "req_6806a4b5e5e3"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_a2c8b0f70f34 is not covered",
+    "witness": {
+     "requirementId": "req_a2c8b0f70f34"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_fca929697fde is not covered",
+    "witness": {
+     "requirementId": "req_fca929697fde"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$",
+    "message": "7 schema error(s); first: $: missing required property 'hiringEvidencePacket'",
+    "witness": {
+     "errors": [
+      "$: missing required property 'hiringEvidencePacket'",
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str",
+      "$: additional property 'experienceHighlights' not allowed"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Data scientist with four years of experience at Brightwater Beverages, building and maintaining demand‑forecasting model"
+  },
+  {
+   "rule": "hrgene.human_review_boundary",
+   "code": "boundary_flags",
+   "action": "reset_boundary_flags",
+   "path": "$.hiringEvidencePacket.decisionBoundary",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_a38efe09dfc1"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_c0bab843a73a"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_6806a4b5e5e3"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_a2c8b0f70f34"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_fca929697fde"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_35f2fa1d602fd245",
+   "targetRoleTitle": "Data Scientist, Demand Forecasting",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "candidate": {
+    "candidateId": "cand_35f2fa1d602fd245",
+    "sources": []
+   },
+   "role": {
+    "roleTitle": "Data Scientist, Demand Forecasting",
+    "jobDescriptionSource": "jd_5a3f9b88f63147ab",
+    "requirementIds": []
+   },
+   "unsupportedClaims": [
+    {
+     "claim": "Data scientist with four years of experience at Brightwater Beverages, building and maintaining demand‑forecasting models for a soft‑drinks manufacturer.  Skilled in Python feature engineering, Airflow pipeline management, model validation, and documentation.  Proven track record of presenting forecast accuracy to supply‑planning stakeholders.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "This packet supports qualified human review. It makes no employment decision, ranking or recommendation and infers no protected characteristics."
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a38efe09dfc1",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_c0bab843a73a",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_6806a4b5e5e3",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_a2c8b0f70f34",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_fca929697fde",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "followUpQuestions": [],
+   "supportedClaims": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "",
+   "limitations": []
+  }
+ },
+ "needsRegeneration": false
+}

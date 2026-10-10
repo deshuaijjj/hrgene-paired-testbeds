@@ -1,0 +1,124 @@
+{
+ "caseId": "18ccb9ca-4b0a-40a1-9016-ccc8a371363e",
+ "roleTitle": "Data Scientist, Demand Forecasting",
+ "jobDescription": "Penhallow Grocers runs 240 supermarkets and replenishes fresh produce every day. The Data Scientist builds store-level demand forecasts, maintains the feature pipelines behind them, runs store trials with the replenishment planners and puts approved models into production in the replenishment system, then monitors forecast accuracy after release. Results are explained to category directors in plain language. The data science team has six people within supply chain, fresh waste is the main cost it watches, and models reach the replenishment system through a change process that needs supply-chain board sign-off.",
+ "requirements": [
+  "Builds store-level demand forecasting models for perishable products.",
+  "Maintains feature pipelines for sales, promotion and weather data.",
+  "Has put a forecasting model into production use in a replenishment system and monitored its accuracy after release.",
+  "Designs and runs store trials with replenishment planners.",
+  "Communicates forecast results to non-technical stakeholders."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Data Scientist at Kittering Fresh Markets, May 2022 to August 2024. Built a LightGBM forecast for 900 fresh-produce lines at store-day level using two years of till data, with features for weather, promotions and bank holidays."
+  },
+  {
+   "type": "resume",
+   "text": "Maintained the feature pipeline that joins till sales, promotion calendars and regional weather forecasts, with daily row-count checks on each source and a weekly check of promotion-calendar coverage."
+  },
+  {
+   "type": "resume",
+   "text": "Designed an eight-week side-by-side trial in 12 stores: planners saw the model's forecast next to the existing system's figure but kept placing orders from the existing system."
+  },
+  {
+   "type": "resume",
+   "text": "Ran weekly calls with the planners at the trial stores to collect their overrides and the reasons given for them, logging both in a shared sheet for model review."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote a two-page plain-English summary of the trial results for the fresh category directors, explaining the error measure with worked examples from three products."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the trial readout for the fresh-produce forecast, covering the 12 trial stores over eight weeks with forecast error by category for the model and for the existing system. The method page restates that orders came from the existing system throughout. Page 6, headed 'Rollout', reads: 'Go-live in all 180 stores from week 32, subject to supply-chain board approval.'"
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: Kittering's head of supply-chain analytics confirmed in writing that the candidate designed and ran the 12-store trial between March and May 2024."
+  },
+  {
+   "type": "note",
+   "text": "Recruiter logistics note: the candidate is available from 1 December and asked how the team splits office and remote days."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate designed an eight-week side-by-side trial in 12 stores in which planners kept ordering from the existing system.",
+    "status": "supported",
+    "sources": [
+     3,
+     7
+    ],
+    "requirements": [
+     4
+    ],
+    "boundaryCategory": "non_production_environment_preserved",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the trial design and the reference check confirms it in writing."
+   },
+   {
+    "text": "The candidate built a LightGBM forecast for 900 fresh-produce lines at store-day level from two years of till data.",
+    "status": "supported",
+    "sources": [
+     1
+    ],
+    "requirements": [
+     1
+    ],
+    "boundaryCategory": "documented_task_and_tooling",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the model directly."
+   },
+   {
+    "text": "The candidate put the fresh-produce forecast into production in the replenishment system for all 180 stores from week 32 and monitored its accuracy.",
+    "status": "unsupported",
+    "sources": [],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "planned_rollout_presented_as_production",
+    "criticality": "critical",
+    "rationale": "The rollout line in the readout is a plan subject to board approval, and the trial sources say orders came from the existing system throughout; no source says the model drove replenishment in production. The deployment rule forbids describing a trial as production use."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "partial_evidence",
+   "supported",
+   "supported"
+  ],
+  "trap": {
+   "proposition": 3,
+   "rule": "hrgene.deployment_boundary",
+   "requirements": [
+    3
+   ],
+   "signatures": [
+    "all 180 stores",
+    "from week 32"
+   ],
+   "bait": [
+    6
+   ],
+   "anywhere": []
+  },
+  "subjective": [],
+  "nonProduction": [
+   3,
+   6
+  ],
+  "expectedGap": "Only the side-by-side trial is documented; production use in a replenishment system and post-release accuracy monitoring are not.",
+  "expectedBoundaryNote": "Keep the forecast model and the 12-store side-by-side trial as documented; keep the rollout line as a plan subject to board approval.",
+  "followUpTargets": [
+   "Ask whether the supply-chain board approved the rollout, whether the model ever placed replenishment orders in production, and who monitored its accuracy afterwards."
+  ],
+  "validClaimSignatures": [
+   "side-by-side trial",
+   "900 fresh-produce lines"
+  ]
+ }
+}

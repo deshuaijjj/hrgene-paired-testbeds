@@ -1,0 +1,316 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "8d0ae574-04fa-4d24-9b05-cce27165f10f.C2",
+ "case_id": "8d0ae574-04fa-4d24-9b05-cce27165f10f",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15123,
+  "promptWords": 1777
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 66.054
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4155,
+ "eval_count": 2772,
+ "prompt_eval_duration_ns": 19280000,
+ "eval_duration_ns": 51227729000,
+ "total_duration_ns": 66051595250,
+ "thinking": "We need to produce JSON with schema. Use provided sources. Ensure claims with sourceId and witness. No unsupported claims. All requirements mapped. Let's craft.\n\nRequirements mapping:\n\nreq_e0f07a4beae3: senior specialist with at least four years. Evidence: src_0f01c476c6a3 shows five years and two months. Also src_a9ce773d6783 confirms. So supported.\n\nreq_3d19c762f408: holds Lean Six Sigma Green Belt or ISO 9001 internal auditor. Evidence: src_17ed3ac00cff. Also src_0f01c476c6a3 mentions. So supported.\n\nreq_df7bd1fe3861: runs partner quality audit programme including sampling, case review, corrective-action tracking. Evidence: src_0f01c476c6a3, src_ad75c2d1d089, src_f289e8154c32. So supported.\n\nreq_c67965bf9080: prepares monthly quality report for operations director and records own responsibility boundaries. Evidence: src_9e860a6d8e86, src_f289e8154c32. Also src_0f01c476c6a3 mentions. So supported.\n\nreq_cf66c75bc609: documents known limitations and hand-over conditions at end of each audit cycle. No evidence in sources. So insufficient evidence. Need gap.\n\nAlso need missingEvidenceGaps for that requirement.\n\nAlso interviewSignalRisks? None subjective.\n\nFollowUpQuestions for missing evidence: ask about documentation of limitations and hand-over conditions.\n\nNow produce optimized CV: language en, candidateId, targetRoleTitle. professionalSummary: claim about senior specialist, 5 years, Green Belt, ISO 9001, audit programme. Use claims with sourceId and witness.\n\nexperienceHighlights: similar.\n\nprojectsAndWorkSamples: include work sample.\n\nskills: Lean Six Sigma Green Belt, ISO 9001 internal auditor, audit sampling, case review, corrective-action tracking, monthly reporting.\n\nevidenceBoundary: state what materials establish: seniority, qualifications, programme responsibilities, reporting. Not establish documentation of limitations.\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id with status and evidence entries.\n\nsupportedClaims array: include claims with supportingRequirementIds, sourceIds, evidenceStrength high, witness.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: one for req_cf66c75bc609.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: one for that requirement.\n\nhumanReviewChecklist: maybe \"Review evidence for seniority, qualifications, programme responsibilities, reporting, and missing documentation of limitations.\"\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"No evidence of documentation of limitations and hand-over conditions.\"\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_36cd1ed0f64ba966\",\n    \"targetRoleTitle\": \"Senior Quality Operations Specialist, Mobility Services Platform\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv1\",\n        \"text\": \"Senior Quality Operations Specialist with over five years of experience leading partner quality audit programmes for a regional mobility operator.\",\n        \"sourceIds\": [\"src_0f01c476c6a3\"],\n        \"witness\": \"Senior Quality Operations Specialist for five years and two months at a regional mobility operator, promoted from quality specialist after the first eighteen months; led the partner quality audit programme covering about 900 driver and courier partners.\"\n      },\n      {\n        \"claimId\": \"cv2\",\n        \"text\": \"Certified Lean Six Sigma Green Belt and ISO 9001:2015 internal auditor.\",\n        \"sourceIds\": [\"src_17ed3ac00cff\"],\n        \"witness\": \"Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file) and ISO 9001:2015 internal auditor course completed with the certification body.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"cv3\",\n        \"text\": \"Ran quarterly audit sampling, case review sessions with partner managers, and corrective‑action tracking, closing actions within agreed deadlines.\",\n        \"sourceIds\": [\"src_ad75c2d1d089\"],\n        \"witness\": \"Ran the audit programme's quarterly sampling, the case review sessions with the partner managers and the corrective-action tracker, closing actions with the regional managers within the agreed deadlines.\"\n      },\n      {\n        \"claimId\": \"cv4\",\n        \"text\": \"Prepared monthly quality reports for the operations director, detailing audit results, open corrective actions and repeat findings.\",\n        \"sourceIds\": [\"src_9e860a6d8e86\"],\n        \"witness\": \"Prepared the monthly quality report for the operations director, covering audit results, open corrective actions and repeat findings; the director decided any partner suspensions.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"cv5\",\n        \"text\": \"Quarterly audit sampling plan and corrective‑action tracker extract with change history, used to produce the corresponding monthly report.\",\n        \"sourceIds\": [\"src_3e1bdcbb61b8\"],\n        \"witness\": \"Work sample: one quarter's audit sampling plan and corrective-action tracker extract (partner id, finding, action, owner, due date, closure date) and the corresponding monthly report, with the tracker's change history as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"cv6\",\n        \"text\": \"Lean Six Sigma Green Belt\",\n        \"sourceIds\": [\"src_17ed3ac00cff\"],\n        \"witness\": \"Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file)\"\n      },\n      {\n        \"claimId\": \"cv7\",\n        \"text\": \"ISO 9001:2015 internal auditor\",\n        \"sourceIds\": [\"src_17ed3ac00cff\"],\n        \"witness\": \"ISO 9001:2015 internal auditor course completed with the certification body\"\n      },\n      {\n        \"claimId\": \"cv8\",\n        \"text\": \"Audit sampling, case review, corrective‑action tracking, monthly reporting\",\n        \"sourceIds\": [\"src_0f01c476c6a3\",\"src_ad75c2d1d089\",\"src_9e860a6d8e86\"],\n        \"witness\": \"Responsibilities included audit sampling, case review, corrective-action tracking and monthly reporting for the partner quality programme.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided materials establish the candidate’s seniority, qualifications, audit programme responsibilities, and monthly reporting duties. They do not establish documentation of known limitations or hand‑over conditions at the end of each audit cycle.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence and gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Senior Quality Operations Specialist, Mobility Services Platform\",\n      \"jobDescriptionSource\": \"jd_7c2d45ed69785fc0\",\n      \"requirementIds\": [\n        \"req_e0f07a4beae3\",\n        \"req_3d19c762f408\",\n        \"req_df7bd1fe3861\",\n        \"req_c67965bf9080\",\n        \"req_cf66c75bc609\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_36cd1ed0f64ba966\",\n      \"sources\": [\n        \"src_0f01c476c6a3\",\n        \"src_17ed3ac00cff\",\n        \"src_ad75c2d1d089\",\n        \"src_9e860a6d8e86\",\n        \"src_f289e8154c32\",\n        \"src_3e1bdcbb61b8\",\n        \"src_a9ce773d6783\",\n        \"src_268a538d385b\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_e0f07a4beae3\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_0f01c476c6a3\",\n            \"text\": \"Senior Quality Operations Specialist for five years and two months at a regional mobility operator, promoted from quality specialist after the first eighteen months; led the partner quality audit programme covering about 900 driver and courier partners.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of tenure.\"\n          },\n          {\n            \"sourceId\": \"src_a9ce773d6783\",\n            \"text\": \"Reference call with former operations director: confirmed the senior title, the promotion date, five years and two months of employment and that the Green Belt was completed through the operator's programme.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"External confirmation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3d19c762f408\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_17ed3ac00cff\",\n            \"text\": \"Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file) and ISO 9001:2015 internal auditor course completed with the certification body.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Certification details.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_df7bd1fe3861\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_0f01c476c6a3\",\n            \"text\": \"led the partner quality audit programme covering about 900 driver and courier partners.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Programme leadership.\"\n          },\n          {\n            \"sourceId\": \"src_ad75c2d1d089\",\n            \"text\": \"Ran the audit programme's quarterly sampling, the case review sessions with the partner managers and the corrective-action tracker, closing actions with the regional managers within the agreed deadlines.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Specific audit activities.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_c67965bf9080\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9e860a6d8e86\",\n            \"text\": \"Prepared the monthly quality report for the operations director, covering audit results, open corrective actions and repeat findings; the director decided any partner suspensions.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Reporting to director.\"\n          },\n          {\n            \"sourceId\": \"src_f289e8154c32\",\n            \"text\": \"Responsibilities included audit sampling, case review, corrective-action tracking and monthly reporting for the partner quality programme.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Scope of responsibilities.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_cf66c75bc609\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [],\n        \"missingEvidence\": [\n          \"Documentation of known limitations and hand‑over conditions at the end of each audit cycle.\"\n        ]\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Senior Quality Operations Specialist with over five years of experience leading partner quality audit programmes for a regional mobility operator.\",\n        \"supportingRequirementIds\": [\"req_e0f07a4beae3\"],\n        \"sourceIds\": [\"src_0f01c476c6a3\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Senior Quality Operations Specialist for five years and two months at a regional mobility operator, promoted from quality specialist after the first eighteen months; led the partner quality audit programme covering about 900 driver and courier partners.\"\n      },\n      {\n        \"claim\": \"Certified Lean Six Sigma Green Belt and ISO 9001:2015 internal auditor.\",\n        \"supportingRequirementIds\": [\"req_3d19c762f408\"],\n        \"sourceIds\": [\"src_17ed3ac00cff\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file) and ISO 9001:2015 internal auditor course completed with the certification body.\"\n      },\n      {\n        \"claim\": \"Ran quarterly audit sampling, case review sessions with partner managers, and corrective‑action tracking, closing actions within agreed deadlines.\",\n        \"supportingRequirementIds\": [\"req_df7bd1fe3861\"],\n        \"sourceIds\": [\"src_ad75c2d1d089\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Ran the audit programme's quarterly sampling, the case review sessions with the partner managers and the corrective-action tracker, closing actions with the regional managers within the agreed deadlines.\"\n      },\n      {\n        \"claim\": \"Prepared monthly quality reports for the operations director, detailing audit results, open corrective actions and repeat findings.\",\n        \"supportingRequirementIds\": [\"req_c67965bf9080\"],\n        \"sourceIds\": [\"src_9e860a6d8e86\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Prepared the monthly quality report for the operations director, covering audit results, open corrective actions and repeat findings; the director decided any partner suspensions.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap1\",\n        \"requirementId\": \"req_cf66c75bc609\",\n        \"severity\": \"medium\",\n        \"gap\": \"No evidence of documentation of known limitations and hand‑over conditions at the end of each audit cycle.\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q1\",\n        \"requirementId\": \"req_cf66c75bc609\",\n        \"question\": \"Can you provide an example of a documentation template or report that captures known limitations and hand‑over conditions at the conclusion of an audit cycle?\",\n        \"evidenceTarget\": \"Documentation of limitations and hand‑over conditions.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify seniority and tenure against employment records.\",\n      \"Confirm Lean Six Sigma Green Belt and ISO 9001 internal auditor certifications.\",\n      \"Assess evidence of audit programme leadership, sampling, case review, corrective‑action tracking, and monthly reporting.\",\n      \"Determine whether documentation of limitations and hand‑over conditions exists.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and work sample provide strong evidence of seniority, required certifications, and execution of partner quality audit programme activities, including sampling, case review, corrective‑action tracking, and monthly reporting to the operations director. However, there is no evidence that the candidate documents known limitations and hand‑over conditions at the end of each audit cycle, a requirement that remains unverified. Human review should focus on confirming the missing documentation and evaluating overall fit.\",\n    \"limitations\": [\n      \"No evidence of documentation of known limitations and hand‑over conditions at the end of each audit cycle.\"\n    ]\n  }\n}",
+ "content_sha256": "ff4b74f7e51ca3b61c196b8bba902c8cdc573f777d66c8f4ad0fd00a62be023d",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_36cd1ed0f64ba966",
+   "targetRoleTitle": "Senior Quality Operations Specialist, Mobility Services Platform",
+   "professionalSummary": [
+    {
+     "claimId": "cv1",
+     "text": "Senior Quality Operations Specialist with over five years of experience leading partner quality audit programmes for a regional mobility operator.",
+     "sourceIds": [
+      "src_0f01c476c6a3"
+     ],
+     "witness": "Senior Quality Operations Specialist for five years and two months at a regional mobility operator, promoted from quality specialist after the first eighteen months; led the partner quality audit programme covering about 900 driver and courier partners."
+    },
+    {
+     "claimId": "cv2",
+     "text": "Certified Lean Six Sigma Green Belt and ISO 9001:2015 internal auditor.",
+     "sourceIds": [
+      "src_17ed3ac00cff"
+     ],
+     "witness": "Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file) and ISO 9001:2015 internal auditor course completed with the certification body."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cv3",
+     "text": "Ran quarterly audit sampling, case review sessions with partner managers, and corrective‑action tracking, closing actions within agreed deadlines.",
+     "sourceIds": [
+      "src_ad75c2d1d089"
+     ],
+     "witness": "Ran the audit programme's quarterly sampling, the case review sessions with the partner managers and the corrective-action tracker, closing actions with the regional managers within the agreed deadlines."
+    },
+    {
+     "claimId": "cv4",
+     "text": "Prepared monthly quality reports for the operations director, detailing audit results, open corrective actions and repeat findings.",
+     "sourceIds": [
+      "src_9e860a6d8e86"
+     ],
+     "witness": "Prepared the monthly quality report for the operations director, covering audit results, open corrective actions and repeat findings; the director decided any partner suspensions."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv5",
+     "text": "Quarterly audit sampling plan and corrective‑action tracker extract with change history, used to produce the corresponding monthly report.",
+     "sourceIds": [
+      "src_3e1bdcbb61b8"
+     ],
+     "witness": "Work sample: one quarter's audit sampling plan and corrective-action tracker extract (partner id, finding, action, owner, due date, closure date) and the corresponding monthly report, with the tracker's change history as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv6",
+     "text": "Lean Six Sigma Green Belt",
+     "sourceIds": [
+      "src_17ed3ac00cff"
+     ],
+     "witness": "Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file)"
+    },
+    {
+     "claimId": "cv7",
+     "text": "ISO 9001:2015 internal auditor",
+     "sourceIds": [
+      "src_17ed3ac00cff"
+     ],
+     "witness": "ISO 9001:2015 internal auditor course completed with the certification body"
+    },
+    {
+     "claimId": "cv8",
+     "text": "Audit sampling, case review, corrective‑action tracking, monthly reporting",
+     "sourceIds": [
+      "src_0f01c476c6a3",
+      "src_ad75c2d1d089",
+      "src_9e860a6d8e86"
+     ],
+     "witness": "Responsibilities included audit sampling, case review, corrective-action tracking and monthly reporting for the partner quality programme."
+    }
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s seniority, qualifications, audit programme responsibilities, and monthly reporting duties. They do not establish documentation of known limitations or hand‑over conditions at the end of each audit cycle."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Senior Quality Operations Specialist, Mobility Services Platform",
+    "jobDescriptionSource": "jd_7c2d45ed69785fc0",
+    "requirementIds": [
+     "req_e0f07a4beae3",
+     "req_3d19c762f408",
+     "req_df7bd1fe3861",
+     "req_c67965bf9080",
+     "req_cf66c75bc609"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_36cd1ed0f64ba966",
+    "sources": [
+     "src_0f01c476c6a3",
+     "src_17ed3ac00cff",
+     "src_ad75c2d1d089",
+     "src_9e860a6d8e86",
+     "src_f289e8154c32",
+     "src_3e1bdcbb61b8",
+     "src_a9ce773d6783",
+     "src_268a538d385b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_e0f07a4beae3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0f01c476c6a3",
+       "text": "Senior Quality Operations Specialist for five years and two months at a regional mobility operator, promoted from quality specialist after the first eighteen months; led the partner quality audit programme covering about 900 driver and courier partners.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of tenure."
+      },
+      {
+       "sourceId": "src_a9ce773d6783",
+       "text": "Reference call with former operations director: confirmed the senior title, the promotion date, five years and two months of employment and that the Green Belt was completed through the operator's programme.",
+       "evidenceStrength": "medium",
+       "notes": "External confirmation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3d19c762f408",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_17ed3ac00cff",
+       "text": "Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file) and ISO 9001:2015 internal auditor course completed with the certification body.",
+       "evidenceStrength": "high",
+       "notes": "Certification details."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_df7bd1fe3861",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0f01c476c6a3",
+       "text": "led the partner quality audit programme covering about 900 driver and courier partners.",
+       "evidenceStrength": "high",
+       "notes": "Programme leadership."
+      },
+      {
+       "sourceId": "src_ad75c2d1d089",
+       "text": "Ran the audit programme's quarterly sampling, the case review sessions with the partner managers and the corrective-action tracker, closing actions with the regional managers within the agreed deadlines.",
+       "evidenceStrength": "high",
+       "notes": "Specific audit activities."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c67965bf9080",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9e860a6d8e86",
+       "text": "Prepared the monthly quality report for the operations director, covering audit results, open corrective actions and repeat findings; the director decided any partner suspensions.",
+       "evidenceStrength": "high",
+       "notes": "Reporting to director."
+      },
+      {
+       "sourceId": "src_f289e8154c32",
+       "text": "Responsibilities included audit sampling, case review, corrective-action tracking and monthly reporting for the partner quality programme.",
+       "evidenceStrength": "medium",
+       "notes": "Scope of responsibilities."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cf66c75bc609",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Documentation of known limitations and hand‑over conditions at the end of each audit cycle."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Senior Quality Operations Specialist with over five years of experience leading partner quality audit programmes for a regional mobility operator.",
+     "supportingRequirementIds": [
+      "req_e0f07a4beae3"
+     ],
+     "sourceIds": [
+      "src_0f01c476c6a3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Senior Quality Operations Specialist for five years and two months at a regional mobility operator, promoted from quality specialist after the first eighteen months; led the partner quality audit programme covering about 900 driver and courier partners."
+    },
+    {
+     "claim": "Certified Lean Six Sigma Green Belt and ISO 9001:2015 internal auditor.",
+     "supportingRequirementIds": [
+      "req_3d19c762f408"
+     ],
+     "sourceIds": [
+      "src_17ed3ac00cff"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Lean Six Sigma Green Belt (certified by the operator's accredited programme provider, certificate number on file) and ISO 9001:2015 internal auditor course completed with the certification body."
+    },
+    {
+     "claim": "Ran quarterly audit sampling, case review sessions with partner managers, and corrective‑action tracking, closing actions within agreed deadlines.",
+     "supportingRequirementIds": [
+      "req_df7bd1fe3861"
+     ],
+     "sourceIds": [
+      "src_ad75c2d1d089"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the audit programme's quarterly sampling, the case review sessions with the partner managers and the corrective-action tracker, closing actions with the regional managers within the agreed deadlines."
+    },
+    {
+     "claim": "Prepared monthly quality reports for the operations director, detailing audit results, open corrective actions and repeat findings.",
+     "supportingRequirementIds": [
+      "req_c67965bf9080"
+     ],
+     "sourceIds": [
+      "src_9e860a6d8e86"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly quality report for the operations director, covering audit results, open corrective actions and repeat findings; the director decided any partner suspensions."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap1",
+     "requirementId": "req_cf66c75bc609",
+     "severity": "medium",
+     "gap": "No evidence of documentation of known limitations and hand‑over conditions at the end of each audit cycle."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_cf66c75bc609",
+     "question": "Can you provide an example of a documentation template or report that captures known limitations and hand‑over conditions at the conclusion of an audit cycle?",
+     "evidenceTarget": "Documentation of limitations and hand‑over conditions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify seniority and tenure against employment records.",
+    "Confirm Lean Six Sigma Green Belt and ISO 9001 internal auditor certifications.",
+    "Assess evidence of audit programme leadership, sampling, case review, corrective‑action tracking, and monthly reporting.",
+    "Determine whether documentation of limitations and hand‑over conditions exists."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence of seniority, required certifications, and execution of partner quality audit programme activities, including sampling, case review, corrective‑action tracking, and monthly reporting to the operations director. However, there is no evidence that the candidate documents known limitations and hand‑over conditions at the end of each audit cycle, a requirement that remains unverified. Human review should focus on confirming the missing documentation and evaluating overall fit.",
+   "limitations": [
+    "No evidence of documentation of known limitations and hand‑over conditions at the end of each audit cycle."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:36:36.031421+00:00"
+}

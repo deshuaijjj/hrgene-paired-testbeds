@@ -1,0 +1,334 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f067e3f3-43fb-47b6-a7cd-9f262b068fd8.C2",
+ "case_id": "f067e3f3-43fb-47b6-a7cd-9f262b068fd8",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14105,
+  "promptWords": 1694
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 71.836
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4144,
+ "eval_count": 2882,
+ "prompt_eval_duration_ns": 18740000,
+ "eval_duration_ns": 53902118000,
+ "total_duration_ns": 71833432750,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. All claims must have source. No unsupported claims. All requirements must be mapped. Let's craft.\n\nOptimized CV: language en, candidateId cand_1b3626b6d1e4797d, targetRoleTitle Maintenance Planning Coordinator, Paper Mill. professionalSummary: maybe one claim: \"Experienced Maintenance Planning Coordinator with three years at a paper mill operating two paper machines, responsible for building weekly maintenance plans, sequencing shutdowns, managing spare parts reservations, preparing plan reviews, and documenting open items.\" Need source citations: src_beb3e9912aa0, src_d4c0f1f35471, src_ccb7aa8a6b2e, src_5607dfe74d45, src_b97361e89d9d. Provide witness passages.\n\nexperienceHighlights: list claims each requirement. Provide source.\n\nprojectsAndWorkSamples: mention work sample source.\n\nskills: list relevant skills: maintenance planning, work order backlog management, shutdown sequencing, spare parts reservation, plan review preparation, documentation, coordination with machine crews, stores team, production manager.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample documents establish the candidate’s experience in weekly maintenance planning, shutdown sequencing, spare parts reservation, plan review preparation, and documentation at a paper mill with two machines.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle same, jobDescriptionSource copy id, requirementIds list all.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nreq_0b49fbd443ba: builds weekly plan. evidence: src_beb3e9912aa0. evidenceStrength high. missingEvidence none.\n\nreq_d3d60a8a6f72: sequences shutdown. evidence: src_d4c0f1f35471. high.\n\nreq_f17f90839f04: spare parts reservations. evidence: src_ccb7aa8a6b2e. high.\n\nreq_7743e27cbc91: prepares weekly plan review and records responsibility boundaries. evidence: src_5607dfe74d45. high.\n\nreq_f992268570bf: documents open items and hand-over. evidence: src_b97361e89d9d. high.\n\nAll supported.\n\nsupportedClaims: list claims with requirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note source src_1403393919a7 is a note confirming but could be subjective? It's a confirmation call. It's not subjective? It's a note from former manager confirming. Could treat as evidence. But rule about subjective: note_source. It's a note, but it's confirmation. Might be considered objective. But to be safe, we can include as interviewSignalRisks? The rule says subjective or hearsay note under interviewSignalRisks. This is a note, but it's a confirmation. Might be considered objective. But to be safe, we can include it as interviewSignalRisks with signalType \"note_source\" and recommendedHandling \"Verify with additional documentation\". But we already have evidence from resume. So maybe not needed. But rule says list every subjective or unverified note under interviewSignalRisks. This note is unverified? It's a note from former manager. Might be considered unverified. So include.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe items: \"Verify that the candidate’s experience aligns with all requirements\", \"Confirm that the candidate’s responsibilities match the role expectations\", \"Assess any gaps or uncertainties\".\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"Evidence limited to provided resume and work sample; no independent verification of dates or scope.\"\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_1b3626b6d1e4797d\",\n    \"targetRoleTitle\": \"Maintenance Planning Coordinator, Paper Mill\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cs_1\",\n        \"text\": \"Experienced Maintenance Planning Coordinator with three years at a paper mill operating two paper machines, responsible for building weekly maintenance plans, sequencing shutdowns, managing spare parts reservations, preparing plan reviews, and documenting open items.\",\n        \"sourceIds\": [\n          \"src_beb3e9912aa0\",\n          \"src_d4c0f1f35471\",\n          \"src_ccb7aa8a6b2e\",\n          \"src_5607dfe74d45\",\n          \"src_b97361e89d9d\"\n        ],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"eh_1\",\n        \"text\": \"Built the weekly maintenance plan from the backlog of open work orders under the mill's planning procedure.\",\n        \"sourceIds\": [\n          \"src_beb3e9912aa0\"\n        ],\n        \"requirementIds\": [\n          \"req_0b49fbd443ba\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system.\"\n      },\n      {\n        \"claimId\": \"eh_2\",\n        \"text\": \"Sequenced the shutdown work packages with the machine crews, with shutdown approval staying with the production manager.\",\n        \"sourceIds\": [\n          \"src_d4c0f1f35471\"\n        ],\n        \"requirementIds\": [\n          \"req_d3d60a8a6f72\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Sequenced the shutdown work packages with the two machine crews for the monthly shutdowns; the shutdown approval was the production manager's, recorded on the shutdown plan.\"\n      },\n      {\n        \"claimId\": \"eh_3\",\n        \"text\": \"Kept spare parts reservations current for planned work with the stores team, reconciling the reservation report each week.\",\n        \"sourceIds\": [\n          \"src_ccb7aa8a6b2e\"\n        ],\n        \"requirementIds\": [\n          \"req_f17f90839f04\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Kept the spare parts reservations current for planned work with the stores team, with the reservation report reconciled each week.\"\n      },\n      {\n        \"claimId\": \"eh_4\",\n        \"text\": \"Prepared the weekly plan review for the maintenance manager, recording plan changes and crew feedback.\",\n        \"sourceIds\": [\n          \"src_5607dfe74d45\"\n        ],\n        \"requirementIds\": [\n          \"req_7743e27cbc91\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Prepared the weekly plan review for the maintenance manager, recording in the review which plan changes I made and which came from the crews' feedback.\"\n      },\n      {\n        \"claimId\": \"eh_5\",\n        \"text\": \"Documented the plan's open items and hand-over conditions for the next week's planning at each review.\",\n        \"sourceIds\": [\n          \"src_b97361e89d9d\"\n        ],\n        \"requirementIds\": [\n          \"req_f992268570bf\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the plan's open items list and the hand-over conditions for the next week's planning at each review.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"ps_1\",\n        \"text\": \"Work sample: one weekly maintenance plan with its work order list, one shutdown plan with the production manager's approval, one reservation report and one weekly plan review, with the maintenance system references as a verification trail.\",\n        \"sourceIds\": [\n          \"src_6156a74ebf01\"\n        ],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: one weekly maintenance plan with its work order list, one shutdown plan with the production manager's approval, one reservation report and one weekly plan review, with the maintenance system references as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      \"Maintenance planning\",\n      \"Work order backlog management\",\n      \"Shutdown sequencing\",\n      \"Spare parts reservation\",\n      \"Plan review preparation\",\n      \"Documentation of open items\",\n      \"Coordination with machine crews\",\n      \"Collaboration with stores team\",\n      \"Collaboration with production manager\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample documents establish the candidate’s experience in weekly maintenance planning, shutdown sequencing, spare parts reservation, plan review preparation, and documentation at a paper mill with two machines.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence and gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Maintenance Planning Coordinator, Paper Mill\",\n      \"jobDescriptionSource\": \"jd_177baf540a13f1c4\",\n      \"requirementIds\": [\n        \"req_0b49fbd443ba\",\n        \"req_d3d60a8a6f72\",\n        \"req_f17f90839f04\",\n        \"req_7743e27cbc91\",\n        \"req_f992268570bf\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_1b3626b6d1e4797d\",\n      \"sources\": [\n        \"src_beb3e9912aa0\",\n        \"src_d4c0f1f35471\",\n        \"src_ccb7aa8a6b2e\",\n        \"src_5607dfe74d45\",\n        \"src_b97361e89d9d\",\n        \"src_6156a74ebf01\",\n        \"src_1403393919a7\",\n        \"src_001893a3ab8b\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_0b49fbd443ba\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_beb3e9912aa0\",\n            \"text\": \"Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d3d60a8a6f72\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_d4c0f1f35471\",\n            \"text\": \"Sequenced the shutdown work packages with the two machine crews for the monthly shutdowns; the shutdown approval was the production manager's, recorded on the shutdown plan.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_f17f90839f04\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_ccb7aa8a6b2e\",\n            \"text\": \"Kept the spare parts reservations current for planned work with the stores team, with the reservation report reconciled each week.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_7743e27cbc91\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_5607dfe74d45\",\n            \"text\": \"Prepared the weekly plan review for the maintenance manager, recording in the review which plan changes I made and which came from the crews' feedback.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_f992268570bf\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_b97361e89d9d\",\n            \"text\": \"Wrote the plan's open items list and the hand-over conditions for the next week's planning at each review.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Built the weekly maintenance plan from the backlog of open work orders under the mill's planning procedure.\",\n        \"supportingRequirementIds\": [\n          \"req_0b49fbd443ba\"\n        ],\n        \"sourceIds\": [\n          \"src_beb3e9912aa0\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system.\"\n      },\n      {\n        \"claim\": \"Sequenced the shutdown work packages with the machine crews, with shutdown approval staying with the production manager.\",\n        \"supportingRequirementIds\": [\n          \"req_d3d60a8a6f72\"\n        ],\n        \"sourceIds\": [\n          \"src_d4c0f1f35471\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Sequenced the shutdown work packages with the two machine crews for the monthly shutdowns; the shutdown approval was the production manager's, recorded on the shutdown plan.\"\n      },\n      {\n        \"claim\": \"Kept spare parts reservations current for planned work with the stores team, reconciling the reservation report each week.\",\n        \"supportingRequirementIds\": [\n          \"req_f17f90839f04\"\n        ],\n        \"sourceIds\": [\n          \"src_ccb7aa8a6b2e\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Kept the spare parts reservations current for planned work with the stores team, with the reservation report reconciled each week.\"\n      },\n      {\n        \"claim\": \"Prepared the weekly plan review for the maintenance manager, recording plan changes and crew feedback.\",\n        \"supportingRequirementIds\": [\n          \"req_7743e27cbc91\"\n        ],\n        \"sourceIds\": [\n          \"src_5607dfe74d45\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Prepared the weekly plan review for the maintenance manager, recording in the review which plan changes I made and which came from the crews' feedback.\"\n      },\n      {\n        \"claim\": \"Documented the plan's open items and hand-over conditions for the next week's planning at each review.\",\n        \"supportingRequirementIds\": [\n          \"req_f992268570bf\"\n        ],\n        \"sourceIds\": [\n          \"src_b97361e89d9d\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the plan's open items list and the hand-over conditions for the next week's planning at each review.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_1403393919a7\",\n        \"text\": \"Reference call with the former maintenance manager: confirmed the candidate built the weekly plans and sequenced the shutdown packages in the period, with shutdown approval staying with production, and confirmed the dates.\",\n        \"signalType\": \"note_source\",\n        \"jobRelatedBoundary\": \"true\",\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Verify with additional documentation or direct confirmation from the current organization.\"\n      }\n    ],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s experience aligns with all listed requirements.\",\n      \"Confirm that the candidate’s responsibilities match the role expectations.\",\n      \"Assess any gaps or uncertainties identified in the evidence.\"\n    ],\n    \"auditSummary\": \"All five role requirements are supported by evidence from the candidate’s resume and work sample. The evidence is high strength and directly matches the required tasks. No quantitative or causal claims are present. The only interview signal risk is a note from a former manager, which is low severity and can be verified with additional documentation.\",\n    \"limitations\": [\n      \"Evidence is limited to the provided resume, work sample, and notes; no independent verification of dates or scope is available.\"\n    ]\n  }\n}",
+ "content_sha256": "aced9dc754c85c9bc74a37246d306f8e28dd29440f1930c28eac4686bd760c88",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_1b3626b6d1e4797d",
+   "targetRoleTitle": "Maintenance Planning Coordinator, Paper Mill",
+   "professionalSummary": [
+    {
+     "claimId": "cs_1",
+     "text": "Experienced Maintenance Planning Coordinator with three years at a paper mill operating two paper machines, responsible for building weekly maintenance plans, sequencing shutdowns, managing spare parts reservations, preparing plan reviews, and documenting open items.",
+     "sourceIds": [
+      "src_beb3e9912aa0",
+      "src_d4c0f1f35471",
+      "src_ccb7aa8a6b2e",
+      "src_5607dfe74d45",
+      "src_b97361e89d9d"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_1",
+     "text": "Built the weekly maintenance plan from the backlog of open work orders under the mill's planning procedure.",
+     "sourceIds": [
+      "src_beb3e9912aa0"
+     ],
+     "requirementIds": [
+      "req_0b49fbd443ba"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system."
+    },
+    {
+     "claimId": "eh_2",
+     "text": "Sequenced the shutdown work packages with the machine crews, with shutdown approval staying with the production manager.",
+     "sourceIds": [
+      "src_d4c0f1f35471"
+     ],
+     "requirementIds": [
+      "req_d3d60a8a6f72"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Sequenced the shutdown work packages with the two machine crews for the monthly shutdowns; the shutdown approval was the production manager's, recorded on the shutdown plan."
+    },
+    {
+     "claimId": "eh_3",
+     "text": "Kept spare parts reservations current for planned work with the stores team, reconciling the reservation report each week.",
+     "sourceIds": [
+      "src_ccb7aa8a6b2e"
+     ],
+     "requirementIds": [
+      "req_f17f90839f04"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the spare parts reservations current for planned work with the stores team, with the reservation report reconciled each week."
+    },
+    {
+     "claimId": "eh_4",
+     "text": "Prepared the weekly plan review for the maintenance manager, recording plan changes and crew feedback.",
+     "sourceIds": [
+      "src_5607dfe74d45"
+     ],
+     "requirementIds": [
+      "req_7743e27cbc91"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the weekly plan review for the maintenance manager, recording in the review which plan changes I made and which came from the crews' feedback."
+    },
+    {
+     "claimId": "eh_5",
+     "text": "Documented the plan's open items and hand-over conditions for the next week's planning at each review.",
+     "sourceIds": [
+      "src_b97361e89d9d"
+     ],
+     "requirementIds": [
+      "req_f992268570bf"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the plan's open items list and the hand-over conditions for the next week's planning at each review."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps_1",
+     "text": "Work sample: one weekly maintenance plan with its work order list, one shutdown plan with the production manager's approval, one reservation report and one weekly plan review, with the maintenance system references as a verification trail.",
+     "sourceIds": [
+      "src_6156a74ebf01"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: one weekly maintenance plan with its work order list, one shutdown plan with the production manager's approval, one reservation report and one weekly plan review, with the maintenance system references as a verification trail."
+    }
+   ],
+   "skills": [
+    "Maintenance planning",
+    "Work order backlog management",
+    "Shutdown sequencing",
+    "Spare parts reservation",
+    "Plan review preparation",
+    "Documentation of open items",
+    "Coordination with machine crews",
+    "Collaboration with stores team",
+    "Collaboration with production manager"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience in weekly maintenance planning, shutdown sequencing, spare parts reservation, plan review preparation, and documentation at a paper mill with two machines."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Maintenance Planning Coordinator, Paper Mill",
+    "jobDescriptionSource": "jd_177baf540a13f1c4",
+    "requirementIds": [
+     "req_0b49fbd443ba",
+     "req_d3d60a8a6f72",
+     "req_f17f90839f04",
+     "req_7743e27cbc91",
+     "req_f992268570bf"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_1b3626b6d1e4797d",
+    "sources": [
+     "src_beb3e9912aa0",
+     "src_d4c0f1f35471",
+     "src_ccb7aa8a6b2e",
+     "src_5607dfe74d45",
+     "src_b97361e89d9d",
+     "src_6156a74ebf01",
+     "src_1403393919a7",
+     "src_001893a3ab8b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0b49fbd443ba",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_beb3e9912aa0",
+       "text": "Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d3d60a8a6f72",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d4c0f1f35471",
+       "text": "Sequenced the shutdown work packages with the two machine crews for the monthly shutdowns; the shutdown approval was the production manager's, recorded on the shutdown plan.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f17f90839f04",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ccb7aa8a6b2e",
+       "text": "Kept the spare parts reservations current for planned work with the stores team, with the reservation report reconciled each week.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7743e27cbc91",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5607dfe74d45",
+       "text": "Prepared the weekly plan review for the maintenance manager, recording in the review which plan changes I made and which came from the crews' feedback.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f992268570bf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b97361e89d9d",
+       "text": "Wrote the plan's open items list and the hand-over conditions for the next week's planning at each review.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built the weekly maintenance plan from the backlog of open work orders under the mill's planning procedure.",
+     "supportingRequirementIds": [
+      "req_0b49fbd443ba"
+     ],
+     "sourceIds": [
+      "src_beb3e9912aa0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintenance planning coordinator at a paper mill with two paper machines for three years, building each week's maintenance plan from the open work orders under the mill's planning procedure in the maintenance system."
+    },
+    {
+     "claim": "Sequenced the shutdown work packages with the machine crews, with shutdown approval staying with the production manager.",
+     "supportingRequirementIds": [
+      "req_d3d60a8a6f72"
+     ],
+     "sourceIds": [
+      "src_d4c0f1f35471"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Sequenced the shutdown work packages with the two machine crews for the monthly shutdowns; the shutdown approval was the production manager's, recorded on the shutdown plan."
+    },
+    {
+     "claim": "Kept spare parts reservations current for planned work with the stores team, reconciling the reservation report each week.",
+     "supportingRequirementIds": [
+      "req_f17f90839f04"
+     ],
+     "sourceIds": [
+      "src_ccb7aa8a6b2e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the spare parts reservations current for planned work with the stores team, with the reservation report reconciled each week."
+    },
+    {
+     "claim": "Prepared the weekly plan review for the maintenance manager, recording plan changes and crew feedback.",
+     "supportingRequirementIds": [
+      "req_7743e27cbc91"
+     ],
+     "sourceIds": [
+      "src_5607dfe74d45"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the weekly plan review for the maintenance manager, recording in the review which plan changes I made and which came from the crews' feedback."
+    },
+    {
+     "claim": "Documented the plan's open items and hand-over conditions for the next week's planning at each review.",
+     "supportingRequirementIds": [
+      "req_f992268570bf"
+     ],
+     "sourceIds": [
+      "src_b97361e89d9d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the plan's open items list and the hand-over conditions for the next week's planning at each review."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_1403393919a7",
+     "text": "Reference call with the former maintenance manager: confirmed the candidate built the weekly plans and sequenced the shutdown packages in the period, with shutdown approval staying with production, and confirmed the dates.",
+     "signalType": "note_source",
+     "jobRelatedBoundary": "true",
+     "severity": "low",
+     "recommendedHandling": "Verify with additional documentation or direct confirmation from the current organization."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s experience aligns with all listed requirements.",
+    "Confirm that the candidate’s responsibilities match the role expectations.",
+    "Assess any gaps or uncertainties identified in the evidence."
+   ],
+   "auditSummary": "All five role requirements are supported by evidence from the candidate’s resume and work sample. The evidence is high strength and directly matches the required tasks. No quantitative or causal claims are present. The only interview signal risk is a note from a former manager, which is low severity and can be verified with additional documentation.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and notes; no independent verification of dates or scope is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T15:12:43.217993+00:00"
+}

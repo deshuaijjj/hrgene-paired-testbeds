@@ -1,0 +1,244 @@
+{
+ "request_id": "3d2700ad-5306-4fa5-a079-08c7b85a9400.C2",
+ "case_id": "3d2700ad-5306-4fa5-a079-08c7b85a9400",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.candidate.candidateId",
+    "message": "candidateId differs from the case",
+    "witness": {
+     "expected": "cand_a2842dfff52c6f3e",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.jobDescriptionSource",
+    "message": "jobDescriptionSource differs from the case",
+    "witness": {
+     "expected": "jd_5cfa6ba71bf4f2e8",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "number(s) not stated by the cited sources: 140",
+    "witness": {
+     "numbers": [
+      "140"
+     ],
+     "sourceIds": [
+      "src_f0359e05b983",
+      "src_1665941577c7"
+     ],
+     "text": "Led the design and execution of a build-system migration from hand-written scripts to Bazel for 140 repositories"
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: signed off",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "signed off"
+     ],
+     "sourceIds": [
+      "src_9a7d34308802"
+     ],
+     "sourceFamilies": [],
+     "text": "Designed and documented the Bazel migration plan including a decision table with eight decisions signed off by the candidate as decider"
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "boundary_flags",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.decisionBoundary",
+    "message": "decisionBoundary missing",
+    "witness": {}
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_fea7ad26c7d8 is not covered",
+    "witness": {
+     "requirementId": "req_fea7ad26c7d8"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_380663278cad is not covered",
+    "witness": {
+     "requirementId": "req_380663278cad"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_4c0677417de7 is not covered",
+    "witness": {
+     "requirementId": "req_4c0677417de7"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_e1c82ac5250d is not covered",
+    "witness": {
+     "requirementId": "req_e1c82ac5250d"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_f9ce433dc520 is not covered",
+    "witness": {
+     "requirementId": "req_f9ce433dc520"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$",
+    "message": "1 schema error(s); first: $: missing required property 'hiringEvidencePacket'",
+    "witness": {
+     "errors": [
+      "$: missing required property 'hiringEvidencePacket'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

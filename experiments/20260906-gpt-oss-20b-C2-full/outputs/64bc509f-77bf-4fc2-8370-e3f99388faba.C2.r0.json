@@ -1,0 +1,252 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "64bc509f-77bf-4fc2-8370-e3f99388faba.C2",
+ "case_id": "64bc509f-77bf-4fc2-8370-e3f99388faba",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14942,
+  "promptWords": 1769
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 48.333
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4141,
+ "eval_count": 1824,
+ "prompt_eval_duration_ns": 19285000,
+ "eval_duration_ns": 33427165999,
+ "total_duration_ns": 48325961250,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from resume. Ensure no unsupported claims. All claims must have source. No quantitative unsupported. Provide requirementEvidenceMap covering all req ids. For each requirement, determine status. Let's analyze:\n\nRequirement req_a5894828fc7c: Owns reporting-engine migration end-to-end, holding go-live decision for each cohort. Evidence: src_36f05067567b says coordinated readiness and each cohort's go-live approved by steering committee on programme director's recommendation. Not directly holding decision. src_cd57aaf1b711 says presented pack; programme director chaired and put decisions to it. So candidate did not hold decision. So insufficient evidence. Gap: need confirmation of holding go-live decisions. Follow-up question.\n\nRequirement req_b9142ea0e2b0: Maintains project plan, risk log, cohort schedule. Evidence: src_281d5df31d71 and src_ceae72eee4c9. Supported.\n\nRequirement req_73778481652a: Prepares and presents steering committee update and records decisions. Evidence: src_cd57aaf1b711 and src_36f05067567b. Supported.\n\nRequirement req_940fa373ff87: Coordinates cohort readiness with adviser ops and platform team and records own responsibility boundaries. Evidence: src_36f05067567b. Supported.\n\nRequirement req_56b46a80386d: Documents known limitations and hand-over conditions for each cohort go-live. Evidence: src_5291ea0d0794. Supported.\n\nThus requirementEvidenceMap: req_a5894828fc7c insufficient_evidence with missing evidence: holding go-live decisions. Provide follow-up question.\n\nAlso need supportedClaims array: claims that are supported. For example: \"Maintained the project plan, risk log, and adviser-cohort schedule for the reporting-engine migration in the project tool\" etc. Provide source ids.\n\nUnsupportedClaims: maybe claim that candidate \"carried the project day to day\" from note src_f934bf42db6c is subjective? It's a note. It's a statement but not evidence of ownership. Could be considered subjective. But rule says subjective content goes to interviewSignalRisks. So we should put that note as interviewSignalRisks. Also note about hiring manager pre-read is not claim.\n\nMissingEvidenceGaps: for req_a5894828fc7c.\n\nInterviewSignalRisks: source src_f934bf42db6c: \"carried the project day to day\" and \"would happily have let him take the go-live calls\". Signal type: subjective. Recommend verifying.\n\nFollowUpQuestions: for requirement a5894828fc7c: ask \"Did you personally hold the go-live decision for each adviser cohort?\" etc.\n\nHumanReviewChecklist: maybe \"Verify ownership of go-live decisions\", \"Confirm budget ownership\", \"Assess alignment with role responsibilities\".\n\nAuditSummary: brief.\n\nLimitations: maybe \"Limited evidence on budget ownership\".\n\nNow produce JSON. Ensure language en. Use candidateId and jobDescriptionSourceId verbatim. Provide optimizedCv with claims. Use evidenceBoundary sentence.\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_d50898d80b1b85b4\",\"targetRoleTitle\":\"Technical Project Manager, Wealth Services Platform\",\"professionalSummary\":[\"Experienced project manager with a focus on reporting-engine migration for wealth services platforms, overseeing project planning, risk management, steering committee coordination, and cohort readiness.\"],\"experienceHighlights\":[\"Maintained the project plan, risk log, and adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.\",\"Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.\",\"Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.\",\"Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.\",\"Responsibilities included plan and risk-log maintenance, steering pack preparation, readiness coordination and go-live notes for the migration project over about eighteen months, working to the programme director.\"],\"projectsAndWorkSamples\":[\"Work sample: the cohort schedule export with the readiness checklist for cohort three and the steering committee pack for one month, with the project tool's record identifiers as a verification trail.\"],\"skills\":[\"Project Planning\",\"Risk Management\",\"Steering Committee Coordination\",\"Cohort Readiness\",\"Documentation\",\"Stakeholder Coordination\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in project planning, risk log maintenance, steering committee coordination, and cohort readiness for a reporting-engine migration, but do not establish that the candidate personally held go-live decisions or owned the migration end-to-end.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess evidence gaps and verify ownership of go-live decisions.\"},\"role\":{\"roleTitle\":\"Technical Project Manager, Wealth Services Platform\",\"jobDescriptionSource\":\"jd_8229c1cec84eb1ae\",\"requirementIds\":[\"req_a5894828fc7c\",\"req_b9142ea0e2b0\",\"req_73778481652a\",\"req_940fa373ff87\",\"req_56b46a80386d\"]},\"candidate\":{\"candidateId\":\"cand_d50898d80b1b85b4\",\"sources\":[\"src_281d5df31d71\",\"src_cd57aaf1b711\",\"src_36f05067567b\",\"src_5291ea0d0794\",\"src_ceae72eee4c9\",\"src_6f1d2c665bbb\",\"src_f934bf42db6c\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_a5894828fc7c\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate personally held the go-live decision for each adviser cohort\"]},{\"requirementId\":\"req_b9142ea0e2b0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_281d5df31d71\",\"text\":\"Maintained the project plan, the risk log and the adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of maintenance responsibilities\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_73778481652a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_cd57aaf1b711\",\"text\":\"Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows preparation and presentation of steering pack\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_940fa373ff87\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_36f05067567b\",\"text\":\"Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates coordination and recording of responsibility boundaries\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_56b46a80386d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_5291ea0d0794\",\"text\":\"Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.\",\"evidenceStrength\":\"high\",\"notes\":\"Documents limitations and hand-over conditions\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Maintained the project plan, risk log, and adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.\",\"sourceIds\":[\"src_281d5df31d71\"],\"requirementIds\":[\"req_b9142ea0e2b0\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the project plan, the risk log and the adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.\"},{\"claim\":\"Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.\",\"sourceIds\":[\"src_cd57aaf1b711\"],\"requirementIds\":[\"req_73778481652a\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.\"},{\"claim\":\"Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.\",\"sourceIds\":[\"src_36f05067567b\"],\"requirementIds\":[\"req_940fa373ff87\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.\"},{\"claim\":\"Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.\",\"sourceIds\":[\"src_5291ea0d0794\"],\"requirementIds\":[\"req_56b46a80386d\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_a5894828fc7c\",\"requirementId\":\"req_a5894828fc7c\",\"severity\":\"high\",\"gap\":\"No evidence that the candidate personally held go-live decisions for each adviser cohort.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_f934bf42db6c\",\"text\":\"Reference call with the former programme director: said the candidate 'carried the project day to day' and 'I would happily have let him take the go-live calls'; confirmed employment dates.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify ownership of go-live decisions and day-to-day project management responsibilities through additional evidence or interview.\"}],\"followUpQuestions\":[{\"questionId\":\"q_a5894828fc7c\",\"requirementId\":\"req_a5894828fc7c\",\"question\":\"Did you personally hold the go-live decision for each adviser cohort during the reporting-engine migration?\",\"evidenceTarget\":\"Confirmation of go-live decision ownership.\"}],\"humanReviewChecklist\":[\"Verify that the candidate personally held go-live decisions for each cohort.\",\"Confirm that the candidate had budget ownership or clarify scope of budget responsibilities.\",\"Assess alignment of candidate’s documented responsibilities with the Technical Project Manager role expectations.\"],\"auditSummary\":\"The candidate’s resume and work sample provide strong evidence for project planning, risk management, steering committee coordination, cohort readiness, and documentation of limitations. However, there is a critical evidence gap regarding ownership of go-live decisions, which is essential for the Technical Project Manager role. Human review is required to confirm this ownership and to assess any additional budget ownership requirements.\",\"limitations\":[\"Limited evidence on budget ownership and personal go-live decision authority.\"]}}",
+ "content_sha256": "bcf993175ced141e48b72242d67e53b8e526b1c169f77d960a44991e0ab7096d",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d50898d80b1b85b4",
+   "targetRoleTitle": "Technical Project Manager, Wealth Services Platform",
+   "professionalSummary": [
+    "Experienced project manager with a focus on reporting-engine migration for wealth services platforms, overseeing project planning, risk management, steering committee coordination, and cohort readiness."
+   ],
+   "experienceHighlights": [
+    "Maintained the project plan, risk log, and adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.",
+    "Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.",
+    "Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.",
+    "Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.",
+    "Responsibilities included plan and risk-log maintenance, steering pack preparation, readiness coordination and go-live notes for the migration project over about eighteen months, working to the programme director."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the cohort schedule export with the readiness checklist for cohort three and the steering committee pack for one month, with the project tool's record identifiers as a verification trail."
+   ],
+   "skills": [
+    "Project Planning",
+    "Risk Management",
+    "Steering Committee Coordination",
+    "Cohort Readiness",
+    "Documentation",
+    "Stakeholder Coordination"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in project planning, risk log maintenance, steering committee coordination, and cohort readiness for a reporting-engine migration, but do not establish that the candidate personally held go-live decisions or owned the migration end-to-end."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess evidence gaps and verify ownership of go-live decisions."
+   },
+   "role": {
+    "roleTitle": "Technical Project Manager, Wealth Services Platform",
+    "jobDescriptionSource": "jd_8229c1cec84eb1ae",
+    "requirementIds": [
+     "req_a5894828fc7c",
+     "req_b9142ea0e2b0",
+     "req_73778481652a",
+     "req_940fa373ff87",
+     "req_56b46a80386d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d50898d80b1b85b4",
+    "sources": [
+     "src_281d5df31d71",
+     "src_cd57aaf1b711",
+     "src_36f05067567b",
+     "src_5291ea0d0794",
+     "src_ceae72eee4c9",
+     "src_6f1d2c665bbb",
+     "src_f934bf42db6c"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a5894828fc7c",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate personally held the go-live decision for each adviser cohort"
+     ]
+    },
+    {
+     "requirementId": "req_b9142ea0e2b0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_281d5df31d71",
+       "text": "Maintained the project plan, the risk log and the adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of maintenance responsibilities"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_73778481652a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_cd57aaf1b711",
+       "text": "Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.",
+       "evidenceStrength": "high",
+       "notes": "Shows preparation and presentation of steering pack"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_940fa373ff87",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_36f05067567b",
+       "text": "Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates coordination and recording of responsibility boundaries"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_56b46a80386d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5291ea0d0794",
+       "text": "Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.",
+       "evidenceStrength": "high",
+       "notes": "Documents limitations and hand-over conditions"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained the project plan, risk log, and adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.",
+     "sourceIds": [
+      "src_281d5df31d71"
+     ],
+     "requirementIds": [
+      "req_b9142ea0e2b0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the project plan, the risk log and the adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks."
+    },
+    {
+     "claim": "Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.",
+     "sourceIds": [
+      "src_cd57aaf1b711"
+     ],
+     "requirementIds": [
+      "req_73778481652a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it."
+    },
+    {
+     "claim": "Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.",
+     "sourceIds": [
+      "src_36f05067567b"
+     ],
+     "requirementIds": [
+      "req_940fa373ff87"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation."
+    },
+    {
+     "claim": "Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.",
+     "sourceIds": [
+      "src_5291ea0d0794"
+     ],
+     "requirementIds": [
+      "req_56b46a80386d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_a5894828fc7c",
+     "requirementId": "req_a5894828fc7c",
+     "severity": "high",
+     "gap": "No evidence that the candidate personally held go-live decisions for each adviser cohort."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_f934bf42db6c",
+     "text": "Reference call with the former programme director: said the candidate 'carried the project day to day' and 'I would happily have let him take the go-live calls'; confirmed employment dates.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "yes",
+     "severity": "medium",
+     "recommendedHandling": "Verify ownership of go-live decisions and day-to-day project management responsibilities through additional evidence or interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_a5894828fc7c",
+     "requirementId": "req_a5894828fc7c",
+     "question": "Did you personally hold the go-live decision for each adviser cohort during the reporting-engine migration?",
+     "evidenceTarget": "Confirmation of go-live decision ownership."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate personally held go-live decisions for each cohort.",
+    "Confirm that the candidate had budget ownership or clarify scope of budget responsibilities.",
+    "Assess alignment of candidate’s documented responsibilities with the Technical Project Manager role expectations."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence for project planning, risk management, steering committee coordination, cohort readiness, and documentation of limitations. However, there is a critical evidence gap regarding ownership of go-live decisions, which is essential for the Technical Project Manager role. Human review is required to confirm this ownership and to assess any additional budget ownership requirements.",
+   "limitations": [
+    "Limited evidence on budget ownership and personal go-live decision authority."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:18:48.139928+00:00"
+}

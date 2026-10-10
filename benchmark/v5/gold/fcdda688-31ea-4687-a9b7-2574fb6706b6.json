@@ -1,0 +1,84 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "fcdda688-31ea-4687-a9b7-2574fb6706b6",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_de24a7066887",
+   "canonicalProposition": "The candidate ran the debit fraud model in shadow mode for ten weeks beside the rules engine, with scores logged only and no effect on decisions.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_878e5a37fe14",
+    "src_214306f913d4"
+   ],
+   "relevantRequirementIds": [
+    "req_c8d571ba5284"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume and the evaluation report both describe the shadow-mode run and state that scores did not affect decisions."
+  },
+  {
+   "atomicPropositionId": "prop_45568a8735e3",
+   "canonicalProposition": "The candidate wrote a Python and SQL feature pipeline with null-rate and range checks that halted the nightly run on failure.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_e07459ef7600"
+   ],
+   "relevantRequirementIds": [
+    "req_9e0d491efb8c"
+   ],
+   "boundaryCategory": "documented_task_and_tooling",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the pipeline and its checks."
+  },
+  {
+   "atomicPropositionId": "prop_66841bb483eb",
+   "canonicalProposition": "The candidate's fraud model is serving production traffic, scoring every debit authorisation on the live authorisation path.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_c8d571ba5284"
+   ],
+   "boundaryCategory": "hearsay_go_live_on_resume",
+   "criticality": "critical",
+   "rationale": "The production statement is relayed from the risk director ('per the risk director') rather than recorded, and the shadow-mode report says scores were logged only. Under the deployment rule a shadow trial is not to be described as live operation, and relayed hearsay is not a source that says the model ran in production."
+  }
+ ],
+ "requirementStatus": {
+  "req_ddcf4670c558": "supported",
+  "req_9e0d491efb8c": "supported",
+  "req_c8d571ba5284": "partial_evidence",
+  "req_6904a0c737da": "supported",
+  "req_55bcb7cc872e": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_878e5a37fe14",
+  "src_214306f913d4"
+ ],
+ "expectedGap": "Only the shadow-mode trial is documented; a production release on the authorisation path, its monitoring and the candidate's role in it are not.",
+ "expectedBoundaryNote": "Keep the model build, the shadow-mode trial and the threshold work; record the production claim as hearsay from the risk director, not as a release.",
+ "permittedFollowUpTargets": [
+  "Ask whether the model was released onto the live authorisation path, who approved and performed the release, and what monitoring and rollback the candidate was responsible for."
+ ],
+ "validClaimSignatures": [
+  "shadow mode",
+  "null-rate and range checks"
+ ],
+ "trap": {
+  "propositionId": "prop_66841bb483eb",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_c8d571ba5284"
+  ],
+  "signatures": [
+   "serving production traffic",
+   "every debit authorisation"
+  ],
+  "baitSourceIds": [
+   "src_0fb69beb80fb"
+  ]
+ }
+}

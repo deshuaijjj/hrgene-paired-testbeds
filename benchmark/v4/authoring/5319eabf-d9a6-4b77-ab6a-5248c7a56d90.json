@@ -1,0 +1,137 @@
+{
+  "caseId": "5319eabf-d9a6-4b77-ab6a-5248c7a56d90",
+  "roleTitle": "Conversational AI Engineer, Support Chat Assistant",
+  "jobDescription": "The support chat assistant answers customer questions inside the company's SaaS products and hands conversations to human agents when it cannot. The Conversational AI Engineer operates the intent and answer models behind live customer conversations: has released models into the live assistant, watches deflection and hand-off rates on live traffic, handles production model incidents such as a regression after a release or a spike in mis-routed conversations through the assistant's on-call rota, coordinates releases with the assistant platform team, and documents model limitations.",
+  "requirements": [
+    "Has released intent and answer models into the live assistant and watches deflection and hand-off rates on live traffic.",
+    "Handles model incidents such as post-release regressions or mis-routing spikes through the assistant's on-call rota.",
+    "Coordinates model releases with the assistant platform team and records own responsibility boundaries.",
+    "Trains and evaluates intent classification and answer retrieval models against held-out and replay sets with a maintained evaluation harness.",
+    "Documents model limitations and hand-over conditions in model cards and release notes."
+  ],
+  "evidence": [
+    {
+      "type": "resume",
+      "text": "Trained and evaluated intent classification and answer retrieval models for the support chat assistant in the model development sandbox, using the annotated conversation corpus and a replay set of anonymised past conversations as the held-out evaluation data."
+    },
+    {
+      "type": "resume",
+      "text": "Built and maintained the offline evaluation harness that scored every candidate model on intent accuracy, retrieval recall and replay-set regressions before it was proposed for release."
+    },
+    {
+      "type": "resume",
+      "text": "Prepared release candidates for the assistant platform team, which held the release pipeline, the live dashboards and the on-call rota; my involvement ended at the release review, and I did not have access to the live conversation data."
+    },
+    {
+      "type": "resume",
+      "text": "Wrote the model card and the release notes for each candidate model, listing the training data cut, the replay-set results and the known failure modes on multi-intent messages."
+    },
+    {
+      "type": "resume",
+      "text": "Over about two and a half years the work covered model training, the evaluation harness, release candidate preparation, model cards and release notes for the assistant's intent and retrieval models."
+    },
+    {
+      "type": "work_sample",
+      "text": "Work sample: the evaluation harness report for the last three release candidates with sandbox experiment identifiers, and the model card for the intent classifier."
+    },
+    {
+      "type": "note",
+      "text": "Recruiter screen: candidate said he had 'shipped the intent models that run the assistant' and that 'my models handle about a million conversations a month'; asked about incidents, he described a replay-set regression found before a release and said the platform team 'carried the pager'."
+    },
+    {
+      "type": "note",
+      "text": "Hiring manager pre-read: the candidate's portfolio site says 'production conversational AI serving live customers'; the head of support automation wants someone who has released and monitored models on live traffic rather than offline evaluations only, so the packet should identify who released each model."
+    }
+  ],
+  "gold": {
+    "propositions": [
+      {
+        "text": "The candidate trained and evaluated intent classification and answer retrieval models in the model development sandbox against held-out and replay sets, using an evaluation harness he built and maintained.",
+        "status": "supported",
+        "sources": [
+          1,
+          2,
+          6
+        ],
+        "requirements": [
+          4
+        ],
+        "boundaryCategory": "documented_task_and_artifact",
+        "criticality": "noncritical",
+        "rationale": "The resume and the harness report document the sandbox training and the offline evaluation."
+      },
+      {
+        "text": "The candidate wrote the model cards and release notes for each candidate model and prepared release candidates for the assistant platform team's release review.",
+        "status": "supported",
+        "sources": [
+          3,
+          4,
+          6
+        ],
+        "requirements": [
+          3,
+          5
+        ],
+        "boundaryCategory": "documented_tool_and_activity",
+        "criticality": "noncritical",
+        "rationale": "The resume and the model card document the artefacts and the hand-over point."
+      },
+      {
+        "text": "The candidate released intent and answer models into the live assistant and watched deflection and hand-off rates on live traffic.",
+        "status": "unsupported",
+        "sources": [],
+        "requirements": [
+          1,
+          2
+        ],
+        "boundaryCategory": "test_environment_not_production",
+        "criticality": "critical",
+        "rationale": "The resume places the candidate's work in the development sandbox and the release pipeline, dashboards and on-call rota with the platform team; his screen remarks describe the assistant's traffic, not his operation of the models."
+      }
+    ],
+    "requirementStatus": [
+      "insufficient_evidence",
+      "insufficient_evidence",
+      "partial_evidence",
+      "supported",
+      "supported"
+    ],
+    "trap": {
+      "proposition": 3,
+      "rule": "hrgene.deployment_boundary",
+      "requirements": [
+        1,
+        2
+      ],
+      "signatures": [
+        "shipped the intent models",
+        "run the assistant",
+        "a million conversations",
+        "serving live customers",
+        "released and monitored",
+        "on live traffic",
+        "in production"
+      ],
+      "bait": [
+        7,
+        8
+      ]
+    },
+    "subjective": [],
+    "nonProduction": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "expectedGap": "The materials document sandbox training and offline evaluation; they do not document the candidate releasing models into the live assistant, watching live traffic or handling incidents on the on-call rota.",
+    "expectedBoundaryNote": "Keep the environment the resume names: the model development sandbox and offline evaluation; releases, live dashboards and on-call belonged to the assistant platform team.",
+    "followUpTargets": [
+      "Ask whether the candidate has ever released a model to live conversations himself or held an on-call shift for the assistant, and when."
+    ],
+    "validClaimSignatures": [
+      "evaluation harness",
+      "sandbox"
+    ]
+  }
+}

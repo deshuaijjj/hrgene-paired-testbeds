@@ -1,0 +1,566 @@
+{
+ "request_id": "3154c6e6-9e1a-4fab-87d1-51ea515c96a3.C2",
+ "case_id": "3154c6e6-9e1a-4fab-87d1-51ea515c96a3",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Wrote 14 illustrated work instructions for receiving, put, and replenishment on the handheld scanners, each with photographs of the scanner screens and the exce",
+     "sourceId": "src_68db04388694"
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+    "message": "causal/comparative wording not present in the cited sources: cut",
+    "witness": {
+     "terms": [
+      "cut"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "causal/comparative wording not present in the cited sources: cut",
+    "witness": {
+     "terms": [
+      "cut"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+    "message": "production/live wording not licensed by the cited sources: live operation",
+    "witness": {
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "production/live wording not licensed by the cited sources: live operation",
+    "witness": {
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (live operation) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_695582c237b7",
+     "family": "PRODUCTION",
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "req_695582c237b7: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+   "detail": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[2]",
+   "detail": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Wrote 14 illustrated work instructions for receiving, put, and replenishment on the handheld scanners, each with photographs of the scanner screens and the exce",
+     "sourceId": "src_68db04388694"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_43249e25674bc44f",
+   "targetRoleTitle": "Warehouse Systems Coordinator",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "Configures putaway and picking rules in a warehouse management system.",
+     "sourceIds": [
+      "src_0b7c9dad5299"
+     ],
+     "requirementIds": [
+      "req_bbd58bf19ab6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "set up putaway and pick-face rules in the WMS training instance for a new handheld scanning workflow, covering three temperature zones and two pick-face sizes."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Writes work instructions for warehouse system processes.",
+     "sourceIds": [
+      "src_68db04388694"
+     ],
+     "requirementIds": [
+      "req_5ee10f6da83b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote 14 illustrated work instructions for receiving, putaway and replenishment on the handheld scanners, each with photographs of the scanner screens and the exception steps."
+    }
+   ],
+   "projectsAndWorkSamples": [],
+   "skills": [
+    {
+     "claimId": "claim_004",
+     "text": "Trains warehouse operatives on handheld scanning.",
+     "sourceIds": [
+      "src_9aa73f232375"
+     ],
+     "requirementIds": [
+      "req_3c2e78722c4e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Trained 40 operatives over two weeks of half-day sessions in the training warehouse, a mocked-up aisle stocked with dummy cartons, keeping attendance records for each session."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience with configuring warehouse management systems, writing work instructions, training operatives, and coordinating device provisioning. They do not establish the candidate's direct involvement in live operations or the specific details of device provisioning with IT."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's qualifications and experience are well-documented, but further human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Warehouse Systems Coordinator",
+    "jobDescriptionSource": "jd_3c442beba388ee5d",
+    "requirementIds": [
+     "req_bbd58bf19ab6",
+     "req_5ee10f6da83b",
+     "req_695582c237b7",
+     "req_3c2e78722c4e",
+     "req_7354eca1972a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_43249e25674bc44f",
+    "sources": [
+     "src_0b7c9dad5299",
+     "src_68db04388694",
+     "src_9aa73f232375",
+     "src_0e0648e669f0",
+     "src_e6bdbc2fb2db",
+     "src_199dc1e45905",
+     "src_c0cbeb484f54",
+     "src_162f7f50fa2d"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bbd58bf19ab6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0b7c9dad5299",
+       "text": "set up putaway and pick-face rules in the WMS training instance for a new handheld scanning workflow, covering three temperature zones and two pick-face sizes.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5ee10f6da83b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_68db04388694",
+       "text": "Wrote 14 illustrated work instructions for receiving, put, and replenishment on the handheld scanners, each with photographs of the scanner screens and the exception steps.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_695582c237b7",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_e6bdbc2fb2db",
+       "text": "Handheld scanning rollout at the Daventry site: per the client's account director, the new workflow 'has been live on every shift since the spring', with no paper pick lists left.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_3c2e78722c4e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9aa73f232375",
+       "text": "Trained 40 operatives over two weeks of half-day sessions in the training warehouse, a mocked-up aisle stocked with dummy cartons, keeping attendance records for each session.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7354eca1972a",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_0e0648e669f0",
+       "text": "Registered 60 handheld scanners with the IT service desk, checking each device's enrolment and app version before issue, and kept the device register up to date.",
+       "evidenceStrength": "medium",
+       "notes": "Supports coordination with IT but does not explicitly mention device provisioning."
+      }
+     ],
+     "missingEvidence": [
+      "Explicit mention of device provisioning with IT"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Configures putaway and picking rules in a warehouse management system.",
+     "supportingRequirementIds": [
+      "req_bbd58bf19ab6"
+     ],
+     "sourceIds": [
+      "src_0b7c9dad5299"
+     ],
+     "evidenceStrength": "high",
+     "witness": "set up putaway and pick-face rules in the WMS training instance for a new handheld scanning workflow, covering three temperature zones and two pick-face sizes."
+    },
+    {
+     "claim": "Writes work instructions for warehouse system processes.",
+     "supportingRequirementIds": [
+      "req_5ee10f6da83b"
+     ],
+     "sourceIds": [
+      "src_68db04388694"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote 14 illustrated work instructions for receiving, putaway and replenishment on the handheld scanners, each with photographs of the scanner screens and the exception steps."
+    },
+    {
+     "claim": "Trains warehouse operatives on handheld scanning.",
+     "supportingRequirementIds": [
+      "req_3c2e78722c4e"
+     ],
+     "sourceIds": [
+      "src_9aa73f232375"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Trained 40 operatives over two weeks of half-day sessions in the training warehouse, a mocked-up aisle stocked with dummy cartons, keeping attendance records for each session."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over.",
+     "reason": "The cited sources describe a non-production environment or do not state production deployment.",
+     "requiredFollowUp": "Ask about the operating environment, release permissions, go-live confirmation and run-time responsibilities."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_7354eca1972a",
+     "severity": "medium",
+     "gap": "Explicit mention of device provisioning with IT"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_7354eca1972a",
+     "question": "Can you describe the process you used to coordinate device provisioning with IT?",
+     "evidenceTarget": "Specific details about device provisioning with IT"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's direct involvement in live operations and device provisioning with IT.",
+    "Assess the candidate's ability to support users after cut-over.",
+    "Confirm the candidate's experience with healthcare clients and batch/expiry capture."
+   ],
+   "auditSummary": "The candidate's experience with configuring warehouse management systems, writing work instructions, training operatives, and coordinating device provisioning is well-documented. However, the materials do not explicitly establish the candidate's direct involvement in live operations and device provisioning with IT, which are critical for the role.",
+   "limitations": [
+    "The materials do not provide explicit details on device provisioning with IT.",
+    "The candidate's involvement in live operations is inferred but not directly stated."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

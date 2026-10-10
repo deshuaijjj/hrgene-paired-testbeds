@@ -1,0 +1,377 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3eb87eb2-2ac1-42b9-9005-10e7e9df1891.C2",
+ "case_id": "3eb87eb2-2ac1-42b9-9005-10e7e9df1891",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14461,
+  "promptWords": 1719
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 77.356
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4341,
+ "eval_count": 3056,
+ "prompt_eval_duration_ns": 19480000,
+ "eval_duration_ns": 56504492000,
+ "total_duration_ns": 77351896292,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from resume. Ensure no unsupported claims. All claims must have source. Provide evidence. Requirements mapping. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Three-year experience as a financial crime data analyst in a bank's transaction screening team, responsible for analysing alert outcomes and proposing rule/list changes with expected volumes.\" Source src_6eebb630ef43.\n\nexperienceHighlights: list claims: analyzing weekly, proposing changes, preparing pack, presenting proposals, coordinating changes, writing limitation section. Each with source.\n\nprojectsAndWorkSamples: mention work sample with two proposals etc. source src_e72ee9462dea.\n\nskills: maybe \"Screening rule analysis, alert volume estimation, governance presentation, change coordination, documentation of limitations.\" Could be derived but need source? Not directly. Might be inferred from resume but not verbatim. Could omit or include but risk unsupported. Better to keep empty or minimal. But requirement says skills array. We can include claims that are supported: \"Proficient in preparing monthly screening effectiveness packs under the pack standard\" source src_5e1851323b06. \"Experienced in presenting proposals to the screening governance forum\" source src_80cddd3f3158. \"Coordinated rule changes with screening operations\" source src_47f0e909d89c. \"Documented limitation sections and hand-over conditions\" source src_95df018afcd6.\n\nEvidenceBoundary: one sentence: \"The provided resume and work sample confirm the candidate's experience and activities as described; no evidence of additional responsibilities beyond those listed.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_1ee62dfd6416b95b, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_8f55100bfa98: analyses alert outcomes and proposes changes with expected volumes. Evidence: src_6eebb630ef43. status supported. evidenceStrength high. notes: direct.\n\nreq_10495143544c: prepares monthly pack under standard. Evidence src_5e1851323b06. status supported.\n\nreq_80ac2d5d7079: presents proposals and answers challenges. Evidence src_80cddd3f3158. status supported.\n\nreq_61b236a629ec: coordinates rule changes with operations, approval stays with forum, records responsibility boundaries. Evidence src_47f0e909d89c. status supported.\n\nreq_723478ac6020: documents each change's limitations and hand-over conditions. Evidence src_95df018afcd6. status supported.\n\nAll supported, no gaps.\n\nsupportedClaims: list claims with requirementIds and sourceIds. We can include same as above.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: we have subjective note src_409cbd5b58e2 and src_4325a1cc50ae. These are interview notes. They are subjective. According to rule, subjective content goes to interviewSignalRisks. So we include two entries.\n\nsourceId src_409cbd5b58e2: text: \"when the panel's compliance member challenged the sample proposal's false-positive estimate, the candidate named the two months the estimate came from, gave the alert counts for each, stated which count she would use if the forum preferred the conservative one, and left the estimate range on the slide rather than changing the number.\" signalType: \"subjective observation\". jobRelatedBoundary: true. severity low. recommendedHandling: \"Verify with documented proposal minutes or ask for quantitative evidence.\"\n\nsourceId src_4325a1cc50ae: text: \"Reference call with the former head of screening analytics: confirmed the candidate presented the proposals to the forum in the period, that approvals stayed with the forum, and confirmed the employment dates.\" signalType: \"verbal confirmation\". severity low. recommendedHandling: \"Cross-check with official records.\"\n\nfollowUpQuestions: none needed because all requirements supported. But maybe ask for evidence of expected alert volumes? Already have. So none.\n\nhumanReviewChecklist: maybe [\"Review evidence for each requirement\", \"Confirm no gaps\", \"Assess alignment with role\"].\n\nauditSummary: \"All job requirements are supported by evidence from the candidate's resume and work sample. No evidence gaps identified. Subjective interview notes are recorded as interview signals.\"\n\nlimitations: maybe [\"No evidence of experience beyond the listed responsibilities.\"].\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_5a6572ec1c744bfb\",\n    \"targetRoleTitle\": \"Financial Crime Data Analyst, Transaction Screening\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cs_1\",\n        \"text\": \"Three-year experience as a financial crime data analyst in a bank's transaction screening team, responsible for analysing alert outcomes and proposing rule and list changes with expected volumes.\",\n        \"sourceIds\": [\"src_6eebb630ef43\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Financial crime data analyst in a bank's transaction screening team for three years, analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"eh_1\",\n        \"text\": \"Analysed screening alert outcomes weekly and proposed rule and list changes with expected alert volumes.\",\n        \"sourceIds\": [\"src_6eebb630ef43\"],\n        \"requirementIds\": [\"req_8f55100bfa98\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes.\"\n      },\n      {\n        \"claimId\": \"eh_2\",\n        \"text\": \"Prepared the monthly screening effectiveness pack under the pack standard and filed it in the governance repository.\",\n        \"sourceIds\": [\"src_5e1851323b06\"],\n        \"requirementIds\": [\"req_10495143544c\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository.\"\n      },\n      {\n        \"claimId\": \"eh_3\",\n        \"text\": \"Presented twenty-seven proposals to the screening governance forum, with twenty-two approved and five amended.\",\n        \"sourceIds\": [\"src_80cddd3f3158\"],\n        \"requirementIds\": [\"req_80ac2d5d7079\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision, with twenty-two proposals approved as presented and five amended.\"\n      },\n      {\n        \"claimId\": \"eh_4\",\n        \"text\": \"Coordinated approved rule changes with the screening operations team, recording responsibilities and maintaining forum approval.\",\n        \"sourceIds\": [\"src_47f0e909d89c\"],\n        \"requirementIds\": [\"req_61b236a629ec\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's.\"\n      },\n      {\n        \"claimId\": \"eh_5\",\n        \"text\": \"Wrote limitation sections and hand-over conditions for each change note.\",\n        \"sourceIds\": [\"src_95df018afcd6\"],\n        \"requirementIds\": [\"req_723478ac6020\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the limitation section and the hand-over conditions of each change note.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"ps_1\",\n        \"text\": \"Provided a work sample containing two proposals with forum minutes and decisions, one monthly screening effectiveness pack, and one change note with its limitation section, all referenced in the governance repository.\",\n        \"sourceIds\": [\"src_e72ee9462dea\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: two proposals with their forum minutes and decisions, one monthly screening effectiveness pack and one change note with its limitation section, with the governance repository references as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"sk_1\",\n        \"text\": \"Proficient in preparing monthly screening effectiveness packs under the pack standard.\",\n        \"sourceIds\": [\"src_5e1851323b06\"],\n        \"requirementIds\": [\"req_10495143544c\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository.\"\n      },\n      {\n        \"claimId\": \"sk_2\",\n        \"text\": \"Experienced in presenting proposals to the screening governance forum.\",\n        \"sourceIds\": [\"src_80cddd3f3158\"],\n        \"requirementIds\": [\"req_80ac2d5d7079\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision.\"\n      },\n      {\n        \"claimId\": \"sk_3\",\n        \"text\": \"Coordinated rule changes with screening operations and documented responsibility boundaries.\",\n        \"sourceIds\": [\"src_47f0e909d89c\"],\n        \"requirementIds\": [\"req_61b236a629ec\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's.\"\n      },\n      {\n        \"claimId\": \"sk_4\",\n        \"text\": \"Documented limitation sections and hand-over conditions for change notes.\",\n        \"sourceIds\": [\"src_95df018afcd6\"],\n        \"requirementIds\": [\"req_723478ac6020\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the limitation section and the hand-over conditions of each change note.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample confirm the candidate's experience and activities as described; no evidence of additional responsibilities beyond those listed.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence and gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Financial Crime Data Analyst, Transaction Screening\",\n      \"jobDescriptionSource\": \"jd_1ee62dfd6416b95b\",\n      \"requirementIds\": [\n        \"req_8f55100bfa98\",\n        \"req_10495143544c\",\n        \"req_80ac2d5d7079\",\n        \"req_61b236a629ec\",\n        \"req_723478ac6020\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_5a6572ec1c744bfb\",\n      \"sources\": [\n        \"src_6eebb630ef43\",\n        \"src_5e1851323b06\",\n        \"src_80cddd3f3158\",\n        \"src_47f0e909d89c\",\n        \"src_95df018afcd6\",\n        \"src_e72ee9462dea\",\n        \"src_409cbd5b58e2\",\n        \"src_4325a1cc50ae\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_8f55100bfa98\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_6eebb630ef43\",\n            \"text\": \"analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of analysis and proposal with expected volumes.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_10495143544c\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_5e1851323b06\",\n            \"text\": \"Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct preparation of pack under standard.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_80ac2d5d7079\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_80cddd3f3158\",\n            \"text\": \"Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision, with twenty-two proposals approved as presented and five amended.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct presentation and challenge handling.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_61b236a629ec\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_47f0e909d89c\",\n            \"text\": \"Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct coordination and responsibility recording.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_723478ac6020\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_95df018afcd6\",\n            \"text\": \"Wrote the limitation section and the hand-over conditions of each change note.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct documentation of limitations and hand-over.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Analysed screening alert outcomes weekly and proposed rule and list changes with expected alert volumes.\",\n        \"supportingRequirementIds\": [\"req_8f55100bfa98\"],\n        \"sourceIds\": [\"src_6eebb630ef43\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes.\"\n      },\n      {\n        \"claim\": \"Prepared the monthly screening effectiveness pack under the pack standard.\",\n        \"supportingRequirementIds\": [\"req_10495143544c\"],\n        \"sourceIds\": [\"src_5e1851323b06\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository.\"\n      },\n      {\n        \"claim\": \"Presented twenty-seven proposals to the screening governance forum, with twenty-two approved and five amended.\",\n        \"supportingRequirementIds\": [\"req_80ac2d5d7079\"],\n        \"sourceIds\": [\"src_80cddd3f3158\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision, with twenty-two proposals approved as presented and five amended.\"\n      },\n      {\n        \"claim\": \"Coordinated approved rule changes with the screening operations team, recording responsibilities and maintaining forum approval.\",\n        \"supportingRequirementIds\": [\"req_61b236a629ec\"],\n        \"sourceIds\": [\"src_47f0e909d89c\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's.\"\n      },\n      {\n        \"claim\": \"Wrote limitation sections and hand-over conditions for each change note.\",\n        \"supportingRequirementIds\": [\"req_723478ac6020\"],\n        \"sourceIds\": [\"src_95df018afcd6\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the limitation section and the hand-over conditions of each change note.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_409cbd5b58e2\",\n        \"text\": \"when the panel's compliance member challenged the sample proposal's false-positive estimate, the candidate named the two months the estimate came from, gave the alert counts for each, stated which count she would use if the forum preferred the conservative one, and left the estimate range on the slide rather than changing the number.\",\n        \"signalType\": \"subjective observation\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Verify with documented proposal minutes or ask for quantitative evidence.\"\n      },\n      {\n        \"sourceId\": \"src_4325a1cc50ae\",\n        \"text\": \"Reference call with the former head of screening analytics: confirmed the candidate presented the proposals to the forum in the period, that approvals stayed with the forum, and confirmed the employment dates.\",\n        \"signalType\": \"verbal confirmation\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Cross-check with official records.\"\n      }\n    ],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Review evidence for each requirement.\",\n      \"Confirm no gaps in evidence.\",\n      \"Assess alignment with role responsibilities.\"\n    ],\n    \"auditSummary\": \"All job requirements are supported by evidence from the candidate's resume and work sample. No evidence gaps identified. Subjective interview notes are recorded as interview signals.\",\n    \"limitations\": [\n      \"No evidence of experience beyond the responsibilities listed in the resume.\"\n    ]\n  }\n}",
+ "content_sha256": "794d984efc26ab5ebe576b7197befbe3febc732bdf479adf2d31af3232444171",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_5a6572ec1c744bfb",
+   "targetRoleTitle": "Financial Crime Data Analyst, Transaction Screening",
+   "professionalSummary": [
+    {
+     "claimId": "cs_1",
+     "text": "Three-year experience as a financial crime data analyst in a bank's transaction screening team, responsible for analysing alert outcomes and proposing rule and list changes with expected volumes.",
+     "sourceIds": [
+      "src_6eebb630ef43"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Financial crime data analyst in a bank's transaction screening team for three years, analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_1",
+     "text": "Analysed screening alert outcomes weekly and proposed rule and list changes with expected alert volumes.",
+     "sourceIds": [
+      "src_6eebb630ef43"
+     ],
+     "requirementIds": [
+      "req_8f55100bfa98"
+     ],
+     "supportBoundary": "supported",
+     "witness": "analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes."
+    },
+    {
+     "claimId": "eh_2",
+     "text": "Prepared the monthly screening effectiveness pack under the pack standard and filed it in the governance repository.",
+     "sourceIds": [
+      "src_5e1851323b06"
+     ],
+     "requirementIds": [
+      "req_10495143544c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository."
+    },
+    {
+     "claimId": "eh_3",
+     "text": "Presented twenty-seven proposals to the screening governance forum, with twenty-two approved and five amended.",
+     "sourceIds": [
+      "src_80cddd3f3158"
+     ],
+     "requirementIds": [
+      "req_80ac2d5d7079"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision, with twenty-two proposals approved as presented and five amended."
+    },
+    {
+     "claimId": "eh_4",
+     "text": "Coordinated approved rule changes with the screening operations team, recording responsibilities and maintaining forum approval.",
+     "sourceIds": [
+      "src_47f0e909d89c"
+     ],
+     "requirementIds": [
+      "req_61b236a629ec"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's."
+    },
+    {
+     "claimId": "eh_5",
+     "text": "Wrote limitation sections and hand-over conditions for each change note.",
+     "sourceIds": [
+      "src_95df018afcd6"
+     ],
+     "requirementIds": [
+      "req_723478ac6020"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the limitation section and the hand-over conditions of each change note."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps_1",
+     "text": "Provided a work sample containing two proposals with forum minutes and decisions, one monthly screening effectiveness pack, and one change note with its limitation section, all referenced in the governance repository.",
+     "sourceIds": [
+      "src_e72ee9462dea"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: two proposals with their forum minutes and decisions, one monthly screening effectiveness pack and one change note with its limitation section, with the governance repository references as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "sk_1",
+     "text": "Proficient in preparing monthly screening effectiveness packs under the pack standard.",
+     "sourceIds": [
+      "src_5e1851323b06"
+     ],
+     "requirementIds": [
+      "req_10495143544c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository."
+    },
+    {
+     "claimId": "sk_2",
+     "text": "Experienced in presenting proposals to the screening governance forum.",
+     "sourceIds": [
+      "src_80cddd3f3158"
+     ],
+     "requirementIds": [
+      "req_80ac2d5d7079"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision."
+    },
+    {
+     "claimId": "sk_3",
+     "text": "Coordinated rule changes with screening operations and documented responsibility boundaries.",
+     "sourceIds": [
+      "src_47f0e909d89c"
+     ],
+     "requirementIds": [
+      "req_61b236a629ec"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's."
+    },
+    {
+     "claimId": "sk_4",
+     "text": "Documented limitation sections and hand-over conditions for change notes.",
+     "sourceIds": [
+      "src_95df018afcd6"
+     ],
+     "requirementIds": [
+      "req_723478ac6020"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the limitation section and the hand-over conditions of each change note."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample confirm the candidate's experience and activities as described; no evidence of additional responsibilities beyond those listed."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Financial Crime Data Analyst, Transaction Screening",
+    "jobDescriptionSource": "jd_1ee62dfd6416b95b",
+    "requirementIds": [
+     "req_8f55100bfa98",
+     "req_10495143544c",
+     "req_80ac2d5d7079",
+     "req_61b236a629ec",
+     "req_723478ac6020"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_5a6572ec1c744bfb",
+    "sources": [
+     "src_6eebb630ef43",
+     "src_5e1851323b06",
+     "src_80cddd3f3158",
+     "src_47f0e909d89c",
+     "src_95df018afcd6",
+     "src_e72ee9462dea",
+     "src_409cbd5b58e2",
+     "src_4325a1cc50ae"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_8f55100bfa98",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6eebb630ef43",
+       "text": "analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of analysis and proposal with expected volumes."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_10495143544c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5e1851323b06",
+       "text": "Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository.",
+       "evidenceStrength": "high",
+       "notes": "Direct preparation of pack under standard."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_80ac2d5d7079",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_80cddd3f3158",
+       "text": "Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision, with twenty-two proposals approved as presented and five amended.",
+       "evidenceStrength": "high",
+       "notes": "Direct presentation and challenge handling."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_61b236a629ec",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_47f0e909d89c",
+       "text": "Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's.",
+       "evidenceStrength": "high",
+       "notes": "Direct coordination and responsibility recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_723478ac6020",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_95df018afcd6",
+       "text": "Wrote the limitation section and the hand-over conditions of each change note.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation of limitations and hand-over."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Analysed screening alert outcomes weekly and proposed rule and list changes with expected alert volumes.",
+     "supportingRequirementIds": [
+      "req_8f55100bfa98"
+     ],
+     "sourceIds": [
+      "src_6eebb630ef43"
+     ],
+     "evidenceStrength": "high",
+     "witness": "analysing the screening alert outcomes each week and proposing rule and list changes with their expected alert volumes."
+    },
+    {
+     "claim": "Prepared the monthly screening effectiveness pack under the pack standard.",
+     "supportingRequirementIds": [
+      "req_10495143544c"
+     ],
+     "sourceIds": [
+      "src_5e1851323b06"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly screening effectiveness pack under the pack standard, with the packs filed in the screening governance repository."
+    },
+    {
+     "claim": "Presented twenty-seven proposals to the screening governance forum, with twenty-two approved and five amended.",
+     "supportingRequirementIds": [
+      "req_80ac2d5d7079"
+     ],
+     "sourceIds": [
+      "src_80cddd3f3158"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented twenty-seven proposals to the screening governance forum; the forum minutes record the compliance members' challenges on each and the forum's decision, with twenty-two proposals approved as presented and five amended."
+    },
+    {
+     "claim": "Coordinated approved rule changes with the screening operations team, recording responsibilities and maintaining forum approval.",
+     "supportingRequirementIds": [
+      "req_61b236a629ec"
+     ],
+     "sourceIds": [
+      "src_47f0e909d89c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated the approved rule changes with the screening operations team through the change note, recording which checks were mine and which were operations'; the approvals were the forum's."
+    },
+    {
+     "claim": "Wrote limitation sections and hand-over conditions for each change note.",
+     "supportingRequirementIds": [
+      "req_723478ac6020"
+     ],
+     "sourceIds": [
+      "src_95df018afcd6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the limitation section and the hand-over conditions of each change note."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_409cbd5b58e2",
+     "text": "when the panel's compliance member challenged the sample proposal's false-positive estimate, the candidate named the two months the estimate came from, gave the alert counts for each, stated which count she would use if the forum preferred the conservative one, and left the estimate range on the slide rather than changing the number.",
+     "signalType": "subjective observation",
+     "jobRelatedBoundary": true,
+     "severity": "low",
+     "recommendedHandling": "Verify with documented proposal minutes or ask for quantitative evidence."
+    },
+    {
+     "sourceId": "src_4325a1cc50ae",
+     "text": "Reference call with the former head of screening analytics: confirmed the candidate presented the proposals to the forum in the period, that approvals stayed with the forum, and confirmed the employment dates.",
+     "signalType": "verbal confirmation",
+     "jobRelatedBoundary": true,
+     "severity": "low",
+     "recommendedHandling": "Cross-check with official records."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Review evidence for each requirement.",
+    "Confirm no gaps in evidence.",
+    "Assess alignment with role responsibilities."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate's resume and work sample. No evidence gaps identified. Subjective interview notes are recorded as interview signals.",
+   "limitations": [
+    "No evidence of experience beyond the responsibilities listed in the resume."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:04:16.341570+00:00"
+}

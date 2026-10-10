@@ -1,0 +1,126 @@
+{
+ "caseId": "c5545629-5eba-42bd-a4d7-3ba034e16189",
+ "roleTitle": "Machine Learning Engineer, Search Ranking",
+ "jobDescription": "A help-desk software company is improving the search that support agents use to find knowledge-base articles. The machine learning engineer trains and evaluates ranking models, builds offline evaluation pipelines, works with backend engineers to serve models and writes up experiments. The team wants someone who has owned a ranking model in production and decided launches from A/B test results, because the current search lead is moving to a new product. The search team has four engineers, a product designer, a product manager and a search lead, and it ships ranking changes behind feature flags after an A/B test.",
+ "requirements": [
+  "Trains and compares learning-to-rank models in Python.",
+  "Builds offline evaluation pipelines with defined ranking metrics.",
+  "Has owned a ranking model in production, deciding launches from A/B test results.",
+  "Works with backend engineers to package and serve models.",
+  "Writes analyses for experiment reports."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Machine learning engineer on the search team at Copperleaf from June 2021 to August 2024, working on article search for customer-support agents."
+  },
+  {
+   "type": "resume",
+   "text": "Built the offline evaluation pipeline for article search, computing NDCG at 10 and recall on a judged query set refreshed every month by the support-content team."
+  },
+  {
+   "type": "resume",
+   "text": "Trained and compared two learning-to-rank candidates (LambdaMART and a small cross-encoder) for the 2023 ranking refresh and handed the results to the search lead, who chose the model to test."
+  },
+  {
+   "type": "resume",
+   "text": "Paired with backend engineers to package the chosen model behind the search service's feature-flag framework and wrote the load-test plan for it."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote the analysis section of the A/B test report for the ranking refresh, covering click-through on the first result and searches that ended without a ticket; the launch decision was recorded by the search lead and the product manager."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the offline evaluation notebook 'Ranking refresh 2023', with the description of the judged query set, the metric definitions and the comparison table for the two candidates."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: employment dates (June 2021 to August 2024) and the title Machine Learning Engineer were checked against Copperleaf's written confirmation."
+  },
+  {
+   "type": "note",
+   "text": "Reference call notes (informal, a former product designer on the search team): said the candidate 'basically owned search ranking' and was 'the one who decided what shipped'."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate built the offline evaluation pipeline for article search, computing NDCG at 10 and recall on a monthly refreshed judged query set.",
+    "status": "supported",
+    "sources": [
+     2,
+     6
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume states the pipeline and the notebook shows the metric definitions."
+   },
+   {
+    "text": "The candidate trained and compared two learning-to-rank candidates for the 2023 refresh and passed the results to the search lead, who chose the model to test and recorded the launch decision with the product manager.",
+    "status": "supported",
+    "sources": [
+     3,
+     5,
+     6
+    ],
+    "requirements": [
+     1,
+     3
+    ],
+    "boundaryCategory": "documented_participation_boundary",
+    "criticality": "noncritical",
+    "rationale": "The resume places model choice and the launch decision with the search lead and the product manager."
+   },
+   {
+    "text": "The candidate owned the article-search ranking model and decided which ranking changes launched.",
+    "status": "unsupported",
+    "sources": [],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "unsupported_ownership_and_scope",
+    "criticality": "critical",
+    "rationale": "The claim rests on a product designer's informal impression, which is not a record of decisions; the resume states that the search lead chose the model and recorded the launch decision with the product manager."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "partial_evidence",
+   "supported",
+   "supported"
+  ],
+  "trap": {
+   "proposition": 3,
+   "rule": "hrgene.ownership_scope",
+   "requirements": [
+    3
+   ],
+   "signatures": [
+    "basically owned search ranking",
+    "decided what shipped"
+   ],
+   "bait": [
+    8
+   ],
+   "anywhere": []
+  },
+  "subjective": [
+   8
+  ],
+  "nonProduction": [],
+  "expectedGap": "The sources document modelling, evaluation and analysis work; owning the model and deciding launches are not documented.",
+  "expectedBoundaryNote": "Keep the evaluation pipeline, model comparison, packaging and A/B analysis as stated; the designer's remark is an impression and does not show launch authority.",
+  "followUpTargets": [
+   "Ask which launch or model-selection decisions the candidate made personally and which the search lead made."
+  ],
+  "validClaimSignatures": [
+   "offline evaluation pipeline",
+   "learning-to-rank"
+  ]
+ }
+}

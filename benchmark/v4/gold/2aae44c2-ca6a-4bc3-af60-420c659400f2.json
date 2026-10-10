@@ -1,0 +1,97 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "2aae44c2-ca6a-4bc3-af60-420c659400f2",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_8188ea925c42",
+   "canonicalProposition": "The candidate built and backtested demand forecast models in the offline experimentation environment over eighteen months of historical store sales under the agreed evaluation protocol.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_bad90c312d3e",
+    "src_ed8185cd8d2c"
+   ],
+   "relevantRequirementIds": [
+    "req_650da42ee3e8"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume and the backtest report document the offline modelling and the backtests."
+  },
+  {
+   "atomicPropositionId": "prop_99c33e719c7c",
+   "canonicalProposition": "The candidate wrote the model card and evaluation report for each candidate model and handed the accepted models to the platform ML team through the model registry.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_932db6c41613",
+    "src_4406e2661844",
+    "src_ed8185cd8d2c"
+   ],
+   "relevantRequirementIds": [
+    "req_6d595462e5d0",
+    "req_1a4231595b37"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume and the model card document the artefacts and the registry hand-over."
+  },
+  {
+   "atomicPropositionId": "prop_07128ade92a1",
+   "canonicalProposition": "The candidate deployed forecast models into the nightly order generation for four hundred stores and checked their accuracy against actual store sales.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_408c902a3a52",
+    "req_6bd049ec7207"
+   ],
+   "boundaryCategory": "test_environment_not_production",
+   "criticality": "critical",
+   "rationale": "The resume places the candidate's work in the offline experimentation environment and the nightly run, releases and morning checks with the platform ML team; her screen remarks describe the models' status, not her operating them."
+  }
+ ],
+ "requirementStatus": {
+  "req_408c902a3a52": "insufficient_evidence",
+  "req_6bd049ec7207": "insufficient_evidence",
+  "req_6d595462e5d0": "partial_evidence",
+  "req_650da42ee3e8": "supported",
+  "req_1a4231595b37": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_bad90c312d3e",
+  "src_932db6c41613",
+  "src_4406e2661844",
+  "src_ed8185cd8d2c"
+ ],
+ "expectedGap": "The materials document offline model development and backtesting; they do not document the candidate deploying models into the nightly order run, checking live accuracy or handling incidents in the nightly window.",
+ "expectedBoundaryNote": "Keep the environment the resume names: offline experimentation and backtests; the nightly run, releases and morning accuracy checks belonged to the platform ML team.",
+ "permittedFollowUpTargets": [
+  "Ask whether the candidate has ever released a model into a nightly production run herself or handled an incident during the window, and when."
+ ],
+ "validClaimSignatures": [
+  "backtest",
+  "offline experimentation"
+ ],
+ "trap": {
+  "propositionId": "prop_07128ade92a1",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_408c902a3a52",
+   "req_6bd049ec7207"
+  ],
+  "signatures": [
+   "deployed the forecasting models",
+   "drive the nightly orders",
+   "running on my models",
+   "production demand forecasting",
+   "in production",
+   "real store orders",
+   "at scale"
+  ],
+  "baitSourceIds": [
+   "src_5541e2f5a603",
+   "src_ad6467e24832"
+  ]
+ }
+}

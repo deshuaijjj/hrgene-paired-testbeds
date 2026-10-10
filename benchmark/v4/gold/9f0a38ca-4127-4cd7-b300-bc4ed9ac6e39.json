@@ -1,0 +1,88 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "9f0a38ca-4127-4cd7-b300-bc4ed9ac6e39",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_6bc8ed58a88e",
+   "canonicalProposition": "The candidate maintained the subscription data models for seats, plans and renewals in the analytics warehouse, including the plan-change history table.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_5a99fe17d99a",
+    "src_1fa11fb18653"
+   ],
+   "relevantRequirementIds": [
+    "req_799b0995a21b"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the data models and the history table directly."
+  },
+  {
+   "atomicPropositionId": "prop_f09563753fa9",
+   "canonicalProposition": "The candidate built the nightly renewal-risk dataset combining seat-usage trend, support-ticket volume and days to renewal.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_2f6d6d36ebc7",
+    "src_f4d9f7b90725"
+   ],
+   "relevantRequirementIds": [
+    "req_0416458a892d"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume and the dataset specification document the build."
+  },
+  {
+   "atomicPropositionId": "prop_db77f1c4e7f6",
+   "canonicalProposition": "The candidate's renewal-risk dataset raised churn-flag precision into the high seventies.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_4d1aa549a18d"
+   ],
+   "boundaryCategory": "unsupported_quantification_and_causality",
+   "criticality": "critical",
+   "rationale": "The precision figure is a former team lead's recollection relayed by the hiring manager, with no evaluation, baseline or period in the materials."
+  }
+ ],
+ "requirementStatus": {
+  "req_799b0995a21b": "supported",
+  "req_0416458a892d": "supported",
+  "req_4d1aa549a18d": "insufficient_evidence",
+  "req_4b01f739cfd4": "supported",
+  "req_f4ecee2410fa": "partial_evidence"
+ },
+ "subjectiveSourceIds": [
+  "src_b0320f930bdc"
+ ],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No evaluation in the materials measures churn-flag accuracy before and after the renewal-risk dataset shipped.",
+ "expectedBoundaryNote": "Keep the team lead's recalled precision figure out of the evidence; the materials document the dataset and the data models, not an accuracy change.",
+ "permittedFollowUpTargets": [
+  "Ask for the churn-flag evaluation dashboard export with the metric definition, the quarterly baseline and the date the dataset shipped."
+ ],
+ "validClaimSignatures": [
+  "renewal-risk dataset",
+  "plan-change history"
+ ],
+ "trap": {
+  "propositionId": "prop_db77f1c4e7f6",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_4d1aa549a18d"
+  ],
+  "signatures": [
+   "high seventies",
+   "noticeably better",
+   "78%",
+   "79%",
+   "77%"
+  ],
+  "baitSourceIds": [
+   "src_b0320f930bdc",
+   "src_3dbbee8f5919"
+  ]
+ }
+}

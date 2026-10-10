@@ -1,0 +1,244 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "c83cb077-67cb-4817-8c64-b45bdee90d4c.C2",
+ "case_id": "c83cb077-67cb-4817-8c64-b45bdee90d4c",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14938,
+  "promptWords": 1773
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.605
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4000,
+ "eval_count": 1818,
+ "prompt_eval_duration_ns": 18971000,
+ "eval_duration_ns": 33043570000,
+ "total_duration_ns": 42602859458,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Ensure all requirements mapped. Use evidence. Provide unsupported claims? All claims are supported. Need to check each requirement.\n\nreq_945a787b1a34: builds candidate-generation and ranking models. Source src_f5c440d49c78 supports.\n\nreq_c99b39a6db70: designs online experiments. src_3d948f0fe882 supports.\n\nreq_e86f26fb7f61: mentors junior scientists. src_85766d8834b2 supports.\n\nreq_eb7c6feb1c6f: maintains feature pipeline. src_0a934a02d532 supports.\n\nreq_9f6d7c85f1f5: communicates results to product managers. src_207ff2301e05 supports.\n\nAll supported. No gaps. No interview signals. So requirementEvidenceMap all supported. No missingEvidence. No unsupportedClaims. No missingEvidenceGaps. No interviewSignalRisks. FollowUpQuestions none.\n\nHumanReviewChecklist maybe empty? but can include items like \"Review candidate's experience with production deployment\" but not needed. We can leave empty.\n\nAuditSummary: summary of evidence.\n\nLimitations: maybe note that no evidence of production deployment environment. But not required.\n\nLet's craft.\n\nAlso need optimizedCv: language en, candidateId, targetRoleTitle, professionalSummary, experienceHighlights, projectsAndWorkSamples, skills, evidenceBoundary.\n\nWe need to restate claims. Use claims from resume. Provide witness passages.\n\nLet's craft claims.\n\nProfessionalSummary: maybe \"Applied Scientist with experience building candidate-generation and ranking models, designing and analyzing online experiments, maintaining feature pipelines, mentoring junior scientists, and communicating results to product managers.\"\n\nExperienceHighlights: list each bullet with source.\n\nProjectsAndWorkSamples: include experiment report sample.\n\nSkills: list relevant skills: recommendation systems, online experimentation, feature engineering, Airflow, gradient boosting, two-tower models, mentoring, report writing.\n\nEvidenceBoundary: one or two sentences on what materials establish: that candidate has built models, designed experiments, maintained pipeline, mentored, reported.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_91f540cca1f90a0f\",\"targetRoleTitle\":\"Applied Scientist, Course Recommendations\",\"professionalSummary\":[\"Applied Scientist with experience building candidate‑generation and ranking models, designing and analyzing online experiments, maintaining feature pipelines, mentoring junior scientists, and communicating results to product managers.\"],\"experienceHighlights\":[\"Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events. (src_f5c440d49c78)\",\"Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan. (src_3d948f0fe882)\",\"Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty. (src_0a934a02d532)\",\"Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took. (src_207ff2301e05)\",\"Reviewed notebooks and pull requests from junior members of the recommendations team. (src_e5902673d062)\"],\"projectsAndWorkSamples\":[\"Experiment report for the 'continue learning' carousel test, with the pre‑registered metric, an effect of +2.1% course starts per visitor (95% interval +0.8% to +3.4%) over a 14‑day window, and the product owner's ship decision. (src_8b032e6c44b8)\"],\"skills\":[\"Recommendation systems\",\"Online experimentation\",\"Feature engineering\",\"Airflow\",\"Gradient boosting\",\"Two‑tower models\",\"Mentoring\",\"Report writing\"],\"evidenceBoundary\":\"The provided resume and work sample establish that the candidate has built candidate‑generation and ranking models, designed and analysed online experiments, maintained a feature pipeline, mentored junior scientists, and communicated experiment results to product managers.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the Applied Scientist, Course Recommendations role.\"},\"role\":{\"roleTitle\":\"Applied Scientist, Course Recommendations\",\"jobDescriptionSource\":\"jd_de1434631be4b6c2\",\"requirementIds\":[\"req_945a787b1a34\",\"req_c99b39a6db70\",\"req_e86f26fb7f61\",\"req_eb7c6feb1c6f\",\"req_9f6d7c85f1f5\"]},\"candidate\":{\"candidateId\":\"cand_91f540cca1f90a0f\",\"sources\":[\"src_f5c440d49c78\",\"src_3d948f0fe882\",\"src_0a934a02d532\",\"src_207ff2301e05\",\"src_e5902673d062\",\"src_8b032e6c44b8\",\"src_85766d8834b2\",\"src_584d52faafcd\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_945a787b1a34\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f5c440d49c78\",\"text\":\"Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states model building\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c99b39a6db70\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3d948f0fe882\",\"text\":\"Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states experiment design and analysis\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e86f26fb7f61\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_85766d8834b2\",\"text\":\"the candidate's former team lead at Lumora Learning confirmed in writing that the candidate was the assigned mentor for two graduate scientists from January to December 2023, holding weekly one‑to‑ones and reviewing each graduate's quarterly project plan.\",\"evidenceStrength\":\"high\",\"notes\":\"Mentoring role confirmed\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_eb7c6feb1c6f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0a934a02d532\",\"text\":\"Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty.\",\"evidenceStrength\":\"high\",\"notes\":\"Feature pipeline maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9f6d7c85f1f5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_207ff2301e05\",\"text\":\"Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took.\",\"evidenceStrength\":\"high\",\"notes\":\"Communication of results\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events.\",\"supportingRequirementIds\":[\"req_945a787b1a34\"],\"sourceIds\":[\"src_f5c440d49c78\"],\"evidenceStrength\":\"high\",\"witness\":\"Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events.\"},{\"claim\":\"Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan.\",\"supportingRequirementIds\":[\"req_c99b39a6db70\"],\"sourceIds\":[\"src_3d948f0fe882\"],\"evidenceStrength\":\"high\",\"witness\":\"Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan.\"},{\"claim\":\"Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty.\",\"supportingRequirementIds\":[\"req_eb7c6feb1c6f\"],\"sourceIds\":[\"src_0a934a02d532\"],\"evidenceStrength\":\"high\",\"witness\":\"Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty.\"},{\"claim\":\"Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took.\",\"supportingRequirementIds\":[\"req_9f6d7c85f1f5\"],\"sourceIds\":[\"src_207ff2301e05\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took.\"},{\"claim\":\"Reviewed notebooks and pull requests from junior members of the recommendations team.\",\"supportingRequirementIds\":[\"req_e86f26fb7f61\"],\"sourceIds\":[\"src_e5902673d062\"],\"evidenceStrength\":\"high\",\"witness\":\"Reviewed notebooks and pull requests from junior members of the recommendations team.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[],\"auditSummary\":\"All five job requirements are supported by explicit statements in the candidate's resume and work sample, with citations to the provided sources. No quantitative claims lack source attribution, and no ownership or deployment boundaries are overstated. The evidence indicates the candidate has the necessary modeling, experimentation, pipeline maintenance, mentoring, and reporting experience for the Applied Scientist, Course Recommendations role.\",\"limitations\":[\"No evidence of production‑level deployment or end‑to‑end ownership of the recommendation system beyond nightly training.\"]}}",
+ "content_sha256": "55c0148c48c10422a6ca3c9b5e2ca0c17b6cfefc77ae8c6781b916faef341775",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_91f540cca1f90a0f",
+   "targetRoleTitle": "Applied Scientist, Course Recommendations",
+   "professionalSummary": [
+    "Applied Scientist with experience building candidate‑generation and ranking models, designing and analyzing online experiments, maintaining feature pipelines, mentoring junior scientists, and communicating results to product managers."
+   ],
+   "experienceHighlights": [
+    "Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events. (src_f5c440d49c78)",
+    "Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan. (src_3d948f0fe882)",
+    "Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty. (src_0a934a02d532)",
+    "Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took. (src_207ff2301e05)",
+    "Reviewed notebooks and pull requests from junior members of the recommendations team. (src_e5902673d062)"
+   ],
+   "projectsAndWorkSamples": [
+    "Experiment report for the 'continue learning' carousel test, with the pre‑registered metric, an effect of +2.1% course starts per visitor (95% interval +0.8% to +3.4%) over a 14‑day window, and the product owner's ship decision. (src_8b032e6c44b8)"
+   ],
+   "skills": [
+    "Recommendation systems",
+    "Online experimentation",
+    "Feature engineering",
+    "Airflow",
+    "Gradient boosting",
+    "Two‑tower models",
+    "Mentoring",
+    "Report writing"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish that the candidate has built candidate‑generation and ranking models, designed and analysed online experiments, maintained a feature pipeline, mentored junior scientists, and communicated experiment results to product managers."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the Applied Scientist, Course Recommendations role."
+   },
+   "role": {
+    "roleTitle": "Applied Scientist, Course Recommendations",
+    "jobDescriptionSource": "jd_de1434631be4b6c2",
+    "requirementIds": [
+     "req_945a787b1a34",
+     "req_c99b39a6db70",
+     "req_e86f26fb7f61",
+     "req_eb7c6feb1c6f",
+     "req_9f6d7c85f1f5"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_91f540cca1f90a0f",
+    "sources": [
+     "src_f5c440d49c78",
+     "src_3d948f0fe882",
+     "src_0a934a02d532",
+     "src_207ff2301e05",
+     "src_e5902673d062",
+     "src_8b032e6c44b8",
+     "src_85766d8834b2",
+     "src_584d52faafcd"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_945a787b1a34",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f5c440d49c78",
+       "text": "Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events.",
+       "evidenceStrength": "high",
+       "notes": "Directly states model building"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c99b39a6db70",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3d948f0fe882",
+       "text": "Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan.",
+       "evidenceStrength": "high",
+       "notes": "Directly states experiment design and analysis"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e86f26fb7f61",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_85766d8834b2",
+       "text": "the candidate's former team lead at Lumora Learning confirmed in writing that the candidate was the assigned mentor for two graduate scientists from January to December 2023, holding weekly one‑to‑ones and reviewing each graduate's quarterly project plan.",
+       "evidenceStrength": "high",
+       "notes": "Mentoring role confirmed"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_eb7c6feb1c6f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0a934a02d532",
+       "text": "Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty.",
+       "evidenceStrength": "high",
+       "notes": "Feature pipeline maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9f6d7c85f1f5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_207ff2301e05",
+       "text": "Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took.",
+       "evidenceStrength": "high",
+       "notes": "Communication of results"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events.",
+     "supportingRequirementIds": [
+      "req_945a787b1a34"
+     ],
+     "sourceIds": [
+      "src_f5c440d49c78"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built a two‑tower candidate‑generation model and a gradient‑boosted re‑ranker for the course catalogue at Lumora Learning, trained nightly on enrolment and completion events."
+    },
+    {
+     "claim": "Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan.",
+     "supportingRequirementIds": [
+      "req_c99b39a6db70"
+     ],
+     "sourceIds": [
+      "src_3d948f0fe882"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed and analysed 11 online experiments with the growth team between 2022 and 2024, pre‑registering the primary metric (course starts per visitor) in each test plan."
+    },
+    {
+     "claim": "Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty.",
+     "supportingRequirementIds": [
+      "req_eb7c6feb1c6f"
+     ],
+     "sourceIds": [
+      "src_0a934a02d532"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added data‑quality checks to the Airflow feature pipeline owned by the data engineering team, so that the nightly training run stops when an input table arrives late or empty."
+    },
+    {
+     "claim": "Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took.",
+     "supportingRequirementIds": [
+      "req_9f6d7c85f1f5"
+     ],
+     "sourceIds": [
+      "src_207ff2301e05"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote an experiment report for each test for the product managers, giving the effect estimate, its confidence interval and the decision the product owner took."
+    },
+    {
+     "claim": "Reviewed notebooks and pull requests from junior members of the recommendations team.",
+     "supportingRequirementIds": [
+      "req_e86f26fb7f61"
+     ],
+     "sourceIds": [
+      "src_e5902673d062"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed notebooks and pull requests from junior members of the recommendations team."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "All five job requirements are supported by explicit statements in the candidate's resume and work sample, with citations to the provided sources. No quantitative claims lack source attribution, and no ownership or deployment boundaries are overstated. The evidence indicates the candidate has the necessary modeling, experimentation, pipeline maintenance, mentoring, and reporting experience for the Applied Scientist, Course Recommendations role.",
+   "limitations": [
+    "No evidence of production‑level deployment or end‑to‑end ownership of the recommendation system beyond nightly training."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:26:02.221048+00:00"
+}

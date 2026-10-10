@@ -1,0 +1,644 @@
+{
+ "request_id": "ed38cf92-7a36-4aec-9fca-a7a9e374561f.C2",
+ "case_id": "ed38cf92-7a36-4aec-9fca-a7a9e374561f",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Settlement Operations"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[1]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Cash Reconciliation"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[2]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Procedure Management"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[3]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Coaching & Development"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[4]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Decision Logging"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[5]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Escalation Management"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "6 schema error(s); first: $.optimizedCv.skills[0]: expected type object, got str",
+    "witness": {
+     "errors": [
+      "$.optimizedCv.skills[0]: expected type object, got str",
+      "$.optimizedCv.skills[1]: expected type object, got str",
+      "$.optimizedCv.skills[2]: expected type object, got str",
+      "$.optimizedCv.skills[3]: expected type object, got str",
+      "$.optimizedCv.skills[4]: expected type object, got str",
+      "$.optimizedCv.skills[5]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 6,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": "Settlement Operations"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[1]",
+   "detail": "Cash Reconciliation"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[2]",
+   "detail": "Procedure Management"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[3]",
+   "detail": "Coaching & Development"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[4]",
+   "detail": "Decision Logging"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[5]",
+   "detail": "Escalation Management"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_39810003cdf6142e",
+   "targetRoleTitle": "Settlements Operations Supervisor, Fund Administration",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Supervises daily settlement of fund subscriptions and redemptions for 140 funds.",
+     "sourceIds": [
+      "src_ed9290b49146"
+     ],
+     "requirementIds": [
+      "req_0afb11775cb9"
+     ],
+     "supportBoundary": "supported",
+     "witness": "supervising a team of six who settle subscriptions and redemptions for 140 funds"
+    },
+    {
+     "claimId": "claim_2",
+     "text": "Reconciles cash positions with the custodian each morning, clearing breaks before the 11:00 funding deadline.",
+     "sourceIds": [
+      "src_e0c81241a3d2"
+     ],
+     "requirementIds": [
+      "req_dec3881173b5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline"
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Maintains and updates settlement platform procedures, covering trade capture, cut-off monitoring and manual payment controls.",
+     "sourceIds": [
+      "src_120267e92cac"
+     ],
+     "requirementIds": [
+      "req_7502b88fc8a0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut-off monitoring and manual payment controls"
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_4",
+     "text": "Keeps a detailed decision log for failed settlements, recording resubmissions, manual payments, or escalations with timestamps.",
+     "sourceIds": [
+      "src_1bc3578c9cdc"
+     ],
+     "requirementIds": [
+      "req_636b3fe1e2a5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the decision log for failed settlements, recording for each item whether it was resubmitted, paid manually or escalated to treasury, together with the time of the decision"
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Coaches team members on quality-check results, providing one-to-one sessions when error rates exceed monthly thresholds.",
+     "sourceIds": [
+      "src_3d0ebc36692f"
+     ],
+     "requirementIds": [
+      "req_204a554b1a79"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Held one-to-one coaching sessions when a team member's quality-check error rate rose above the team's monthly threshold, using the failed checks as worked examples"
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_6",
+     "text": "An anonymised failed-settlement decision log for the March 2024 quarter-end, listing 14 items with decisions and timestamps against the cut-off, signed off by the operations director.",
+     "sourceIds": [
+      "src_df918821916b"
+     ],
+     "requirementIds": [
+      "req_636b3fe1e2a5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the anonymised failed-settlement decision log for the March 2024 quarter-end, listing 14 items with the decision taken on each and its timestamp against the cut-off, with the operations director's sign-off at the foot of the log"
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in supervising settlement operations, performing daily cash reconciliation, maintaining platform procedures, logging failed settlement decisions, and coaching team members. They do not provide explicit evidence that escalation decisions were made within cut‑off times or that competency sign‑offs were tracked."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess gaps in cut‑off compliance and competency sign‑off tracking."
+   },
+   "role": {
+    "roleTitle": "Settlements Operations Supervisor, Fund Administration",
+    "jobDescriptionSource": "jd_df997ecf99947bae",
+    "requirementIds": [
+     "req_0afb11775cb9",
+     "req_636b3fe1e2a5",
+     "req_dec3881173b5",
+     "req_7502b88fc8a0",
+     "req_204a554b1a79"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_39810003cdf6142e",
+    "sources": [
+     "src_ed9290b49146",
+     "src_e0c81241a3d2",
+     "src_1bc3578c9cdc",
+     "src_120267e92cac",
+     "src_3d0ebc36692f",
+     "src_df918821916b",
+     "src_a09c1bbcde43",
+     "src_7be6001cfca1"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0afb11775cb9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ed9290b49146",
+       "text": "supervising a team of six who settle subscriptions and redemptions for 140 funds",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of supervisory role"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_636b3fe1e2a5",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_1bc3578c9cdc",
+       "text": "Kept the decision log for failed settlements, recording for each item whether it was resubmitted, paid manually or escalated to treasury, together with the time of the decision",
+       "evidenceStrength": "medium",
+       "notes": "Shows logging of decisions but not cut‑off compliance"
+      },
+      {
+       "sourceId": "src_a09c1bbcde43",
+       "text": "confirms that the candidate made the resubmit, manual-payment or escalation call on failed settlements during the 2023 and 2024 quarter‑ends and that the director reviewed the logs afterwards",
+       "evidenceStrength": "medium",
+       "notes": "Supports decision making but not timing"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that escalation decisions were made within cut‑off times"
+     ]
+    },
+    {
+     "requirementId": "req_dec3881173b5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e0c81241a3d2",
+       "text": "Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline, logging any break carried forward with its reason",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of morning reconciliation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7502b88fc8a0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_120267e92cac",
+       "text": "Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut‑off monitoring and manual payment controls",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of procedure maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_204a554b1a79",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_3d0ebc36692f",
+       "text": "Held one-to-one coaching sessions when a team member's quality-check error rate rose above the team's monthly threshold, using the failed checks as worked examples",
+       "evidenceStrength": "medium",
+       "notes": "Shows coaching but not sign‑off tracking"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that competency sign‑offs were tracked"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Supervises daily settlement of fund subscriptions and redemptions for 140 funds.",
+     "supportingRequirementIds": [
+      "req_0afb11775cb9"
+     ],
+     "sourceIds": [
+      "src_ed9290b49146"
+     ],
+     "evidenceStrength": "high",
+     "witness": "supervising a team of six who settle subscriptions and redemptions for 140 funds"
+    },
+    {
+     "claim": "Reconciles cash positions with the custodian each morning, clearing breaks before the 11:00 funding deadline.",
+     "supportingRequirementIds": [
+      "req_dec3881173b5"
+     ],
+     "sourceIds": [
+      "src_e0c81241a3d2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline"
+    },
+    {
+     "claim": "Maintains and updates settlement platform procedures, covering trade capture, cut-off monitoring and manual payment controls.",
+     "supportingRequirementIds": [
+      "req_7502b88fc8a0"
+     ],
+     "sourceIds": [
+      "src_120267e92cac"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut‑off monitoring and manual payment controls"
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Settlement Operations",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Cash Reconciliation",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Procedure Management",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Coaching & Development",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Decision Logging",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Escalation Management",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_636b3fe1e2a5",
+     "severity": "medium",
+     "gap": "Evidence that escalation decisions were made within cut‑off times"
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_204a554b1a79",
+     "severity": "medium",
+     "gap": "Evidence that competency sign‑offs were tracked"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_636b3fe1e2a5",
+     "question": "Can you provide an example of a failed settlement where the escalation decision was made before the cut‑off time, including the timestamp and the rationale?",
+     "evidenceTarget": "Cut‑off compliance evidence"
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_204a554b1a79",
+     "question": "How do you track and record competency sign‑offs for team members after coaching sessions?",
+     "evidenceTarget": "Competency sign‑off tracking evidence"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that escalation decisions were consistently made within cut‑off times.",
+    "Confirm that competency sign‑offs are tracked and documented.",
+    "Assess overall alignment of candidate experience with role requirements."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence for supervisory, reconciliation, procedure maintenance, and coaching activities. However, there is insufficient evidence that escalation decisions were made within cut‑off times and that competency sign‑offs were tracked. Human review should focus on these gaps.",
+   "limitations": [
+    "No explicit evidence of cut‑off compliance for escalation decisions.",
+    "No explicit evidence of competency sign‑off tracking."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

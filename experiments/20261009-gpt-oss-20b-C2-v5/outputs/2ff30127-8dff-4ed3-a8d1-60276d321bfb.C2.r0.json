@@ -1,0 +1,180 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2ff30127-8dff-4ed3-a8d1-60276d321bfb.C2",
+ "case_id": "2ff30127-8dff-4ed3-a8d1-60276d321bfb",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14409,
+  "promptWords": 1729
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 28.085
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3876,
+ "eval_count": 1037,
+ "prompt_eval_duration_ns": 19125000,
+ "eval_duration_ns": 18673676000,
+ "total_duration_ns": 28082868125,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft claims.\n\nClaims: professionalSummary: maybe \"Experienced field service operations professional with proven scheduling, system administration, cut-over implementation, training, and reporting.\" Need source: resume lines. Use src_d50e1109ab8f for scheduling, src_b127bbb87b94 for admin, src_45d73006f8e6 for cut-over, src_1cf313b7f9a1 for training, src_a9ea5b649942 for reporting.\n\nExperienceHighlights: similar.\n\nProjectsAndWorkSamples: cut-over plan sample src_4aa58f6e41b3.\n\nSkills: scheduling, system administration, cut-over, training, reporting.\n\nEvidenceBoundary: materials establish candidate performed those tasks at Pellow.\n\nNow requirementEvidenceMap: for each requirement id.\n\nreq_b36902e07f82: scheduling. Evidence src_d50e1109ab8f. status supported.\n\nreq_307360b262b5: administer system. Evidence src_b127bbb87b94. supported.\n\nreq_d4e1b2b0e766: introduced system change into live operation with documented cut-over and supported users. Evidence src_45d73006f8e6 and src_4aa58f6e41b3 and src_99bac68d52f4. supported.\n\nreq_7da681dfd400: trains engineers and controllers. Evidence src_1cf313b7f9a1. supported.\n\nreq_73190a7d12a2: reports performance. Evidence src_a9ea5b649942. supported.\n\nAll supported.\n\nNo gaps.\n\nUnsupportedClaims none.\n\nMissingEvidenceGaps none.\n\nInterviewSignalRisks none.\n\nFollowUpQuestions none.\n\nHumanReviewChecklist: maybe \"Verify candidate's role at Pellow was Service Controller\" but that's verified. Could include \"Confirm no other responsibilities beyond listed.\" but not needed.\n\nAuditSummary: summary of evidence.\n\nLimitations: maybe \"No evidence of work with 120 engineers or 900 sites\" but not required.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_09bb9983e0ddaad8\",\"targetRoleTitle\":\"Field Service Operations Coordinator\",\"professionalSummary\":[\"Experienced field service operations professional with proven scheduling, system administration, cut-over implementation, training, and reporting.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit for the role.\"},\"role\":{\"roleTitle\":\"Field Service Operations Coordinator\",\"jobDescriptionSource\":\"jd_91bbeb6897f9f5d7\",\"requirementIds\":[\"req_b36902e07f82\",\"req_307360b262b5\",\"req_d4e1b2b0e766\",\"req_7da681dfd400\",\"req_73190a7d12a2\"]},\"candidate\":{\"candidateId\":\"cand_09bb9983e0ddaad8\",\"sources\":[\"src_d50e1109ab8f\",\"src_b127bbb87b94\",\"src_45d73006f8e6\",\"src_1cf313b7f9a1\",\"src_a9ea5b649942\",\"src_4aa58f6e41b3\",\"src_99bac68d52f4\",\"src_ab97748ea658\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_b36902e07f82\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d50e1109ab8f\",\"text\":\"Scheduled 85 field engineers across two regions against four-hour and next-day attendance deadlines, using the scheduling board in the field-service management system.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of scheduling against deadlines.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_307360b262b5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b127bbb87b94\",\"text\":\"Administered user accounts, job types and the skills matrix in the field-service management system, and kept the engineer skills list aligned with training records.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of system administration.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d4e1b2b0e766\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_45d73006f8e6\",\"text\":\"Moved all 85 engineers from paper job sheets to the mobile job-dispatch app at the April 2024 cut-over, working to the cut-over plan the operations manager had approved, with paper job sheets kept as a fallback for one week.\",\"evidenceStrength\":\"high\",\"notes\":\"Cut-over implementation with documented plan.\"},{\"sourceId\":\"src_4aa58f6e41b3\",\"text\":\"Work sample: the cut-over plan for the job-dispatch app, setting out the weekend timeline for 13 and 14 April 2024, data-migration checks, rollback criteria and the operations manager's approval signature, plus a contact list for the weekend.\",\"evidenceStrength\":\"high\",\"notes\":\"Documented cut-over plan.\"},{\"sourceId\":\"src_99bac68d52f4\",\"text\":\"Reference check summary: Pellow's operations manager confirmed in writing that the candidate ran the cut-over weekend on 13 and 14 April 2024 and staffed the floor-walker desk for engineers' app queries during the first two live weeks.\",\"evidenceStrength\":\"high\",\"notes\":\"Verification of support during first live weeks.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7da681dfd400\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1cf313b7f9a1\",\"text\":\"Ran 12 training sessions on the mobile app for engineers and controllers, using a test copy of the dispatch system loaded with dummy jobs, ending each session with a short quiz.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of training.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_73190a7d12a2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a9ea5b649942\",\"text\":\"Compiled a monthly attendance report against contract deadlines for the contracts manager, broken down by building type and region.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of reporting.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s role at Pellow was Service Controller and that responsibilities align with the job description.\"],\"auditSummary\":\"All job requirements are supported by direct evidence from the candidate’s resume and work samples. No gaps or unsupported claims identified.\",\"limitations\":[\"Evidence does not cover the scale of 120 engineers or 900 sites, but the candidate’s experience with 85 engineers demonstrates comparable responsibilities.\"]} }",
+ "content_sha256": "c129c9a07e82850e02d4886b712990ee61142f9cf4ab00411490b66962289b19",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_09bb9983e0ddaad8",
+   "targetRoleTitle": "Field Service Operations Coordinator",
+   "professionalSummary": [
+    "Experienced field service operations professional with proven scheduling, system administration, cut-over implementation, training, and reporting."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Field Service Operations Coordinator",
+    "jobDescriptionSource": "jd_91bbeb6897f9f5d7",
+    "requirementIds": [
+     "req_b36902e07f82",
+     "req_307360b262b5",
+     "req_d4e1b2b0e766",
+     "req_7da681dfd400",
+     "req_73190a7d12a2"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_09bb9983e0ddaad8",
+    "sources": [
+     "src_d50e1109ab8f",
+     "src_b127bbb87b94",
+     "src_45d73006f8e6",
+     "src_1cf313b7f9a1",
+     "src_a9ea5b649942",
+     "src_4aa58f6e41b3",
+     "src_99bac68d52f4",
+     "src_ab97748ea658"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_b36902e07f82",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d50e1109ab8f",
+       "text": "Scheduled 85 field engineers across two regions against four-hour and next-day attendance deadlines, using the scheduling board in the field-service management system.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of scheduling against deadlines."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_307360b262b5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b127bbb87b94",
+       "text": "Administered user accounts, job types and the skills matrix in the field-service management system, and kept the engineer skills list aligned with training records.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of system administration."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d4e1b2b0e766",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_45d73006f8e6",
+       "text": "Moved all 85 engineers from paper job sheets to the mobile job-dispatch app at the April 2024 cut-over, working to the cut-over plan the operations manager had approved, with paper job sheets kept as a fallback for one week.",
+       "evidenceStrength": "high",
+       "notes": "Cut-over implementation with documented plan."
+      },
+      {
+       "sourceId": "src_4aa58f6e41b3",
+       "text": "Work sample: the cut-over plan for the job-dispatch app, setting out the weekend timeline for 13 and 14 April 2024, data-migration checks, rollback criteria and the operations manager's approval signature, plus a contact list for the weekend.",
+       "evidenceStrength": "high",
+       "notes": "Documented cut-over plan."
+      },
+      {
+       "sourceId": "src_99bac68d52f4",
+       "text": "Reference check summary: Pellow's operations manager confirmed in writing that the candidate ran the cut-over weekend on 13 and 14 April 2024 and staffed the floor-walker desk for engineers' app queries during the first two live weeks.",
+       "evidenceStrength": "high",
+       "notes": "Verification of support during first live weeks."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7da681dfd400",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1cf313b7f9a1",
+       "text": "Ran 12 training sessions on the mobile app for engineers and controllers, using a test copy of the dispatch system loaded with dummy jobs, ending each session with a short quiz.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of training."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_73190a7d12a2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a9ea5b649942",
+       "text": "Compiled a monthly attendance report against contract deadlines for the contracts manager, broken down by building type and region.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of reporting."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s role at Pellow was Service Controller and that responsibilities align with the job description."
+   ],
+   "auditSummary": "All job requirements are supported by direct evidence from the candidate’s resume and work samples. No gaps or unsupported claims identified.",
+   "limitations": [
+    "Evidence does not cover the scale of 120 engineers or 900 sites, but the candidate’s experience with 85 engineers demonstrates comparable responsibilities."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:33:06.171322+00:00"
+}

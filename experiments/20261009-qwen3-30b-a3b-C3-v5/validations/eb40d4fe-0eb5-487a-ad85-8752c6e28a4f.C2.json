@@ -1,0 +1,223 @@
+{
+ "request_id": "eb40d4fe-0eb5-487a-ad85-8752c6e28a4f.C2",
+ "case_id": "eb40d4fe-0eb5-487a-ad85-8752c6e28a4f",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.candidate.candidateId",
+    "message": "candidateId differs from the case",
+    "witness": {
+     "expected": "cand_1f3cde0cbb97e7cb",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.jobDescriptionSource",
+    "message": "jobDescriptionSource differs from the case",
+    "witness": {
+     "expected": "jd_bfd924cdab3ce62e",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "rebuilt the application scorecard for unsecured loans in Python with logistic regression on weight-of-evidence binned features and compared it with a gradient-b",
+     "sourceIds": [
+      "src_9c1bebae4783",
+      "src_b892adf88aa2",
+      "src_8892ae9e6a78"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "boundary_flags",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.decisionBoundary",
+    "message": "decisionBoundary missing",
+    "witness": {}
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_cde672a83c40 is not covered",
+    "witness": {
+     "requirementId": "req_cde672a83c40"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_845d793111ca is not covered",
+    "witness": {
+     "requirementId": "req_845d793111ca"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_2cc01a36dda7 is not covered",
+    "witness": {
+     "requirementId": "req_2cc01a36dda7"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_aaf241aabfb7 is not covered",
+    "witness": {
+     "requirementId": "req_aaf241aabfb7"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_4b82255b2d72 is not covered",
+    "witness": {
+     "requirementId": "req_4b82255b2d72"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$",
+    "message": "1 schema error(s); first: $: missing required property 'hiringEvidencePacket'",
+    "witness": {
+     "errors": [
+      "$: missing required property 'hiringEvidencePacket'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

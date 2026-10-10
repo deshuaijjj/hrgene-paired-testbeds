@@ -1,0 +1,1752 @@
+{
+ "consistency": {
+  "results.json validatorFlagged and trapFellAny": {
+   "allEqual": true,
+   "flagRowsChecked": 12
+  },
+  "tab4_stats.json mcnemar contrasts": {
+   "allEqual": true,
+   "checked": 9
+  }
+ },
+ "definitions": {
+  "ci": "Newcombe (1998) method 10: Wilson marginals without continuity correction, phi numerator max(ad-bc-n/2,0) if ad>bc, phi=0 if a margin is 0",
+  "clearance": "C2->C4 repaired / C2 failures among paired risk cases; Wilson 95% CI",
+  "diff": "(c - b) / pairedN = after rate - before rate on paired cases",
+  "exactP": "two-sided exact McNemar, min(1, 2*P(X<=min(b,c))), X~Bin(b+c,1/2)",
+  "flagRate": "aggregate BLOCK or HUMAN_REVIEW / all cases of the group (72 risk, 72 control), unparsed included",
+  "new": "not before, failed after (c)",
+  "outcome": "trapFellAny on positive_risk cases (null = unparsed, excluded)",
+  "pairedN": "risk cases with trapFellAny non-null under both conditions",
+  "pooled": "pairs of the three models stacked into one 2x2 table",
+  "repaired": "failed before, not after (b)"
+ },
+ "modelOrder": [
+  "gpt-oss:20b",
+  "qwen3:8b",
+  "qwen3:30b-a3b"
+ ],
+ "models": {
+  "gpt-oss:20b": {
+   "clearanceC2toC4": {
+    "c2Failures": 19,
+    "cleared": 15,
+    "hi": 0.9149232336708375,
+    "lo": 0.5666572155618583,
+    "p": 0.7894736842105263,
+    "stillFailing": 4
+   },
+   "contrasts": {
+    "C0->C1": {
+     "after": {
+      "k": 15,
+      "p": 0.2112676056338028
+     },
+     "before": {
+      "k": 43,
+      "p": 0.6056338028169014
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -50.97922224124255,
+      -25.578323006406332
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -50.7221432778708,
+      -25.903439442000764
+     ],
+     "diff": -0.39436619718309857,
+     "diffPP": -39.436619718309856,
+     "discordant": 32,
+     "exactP": 2.4633482098579407e-07,
+     "marginalAfter": {
+      "k": 15,
+      "n": 72,
+      "p": 0.20833333333333334
+     },
+     "marginalBefore": {
+      "k": 43,
+      "n": 71,
+      "p": 0.6056338028169014
+     },
+     "new": 2,
+     "newCaseIds": [
+      "640e2cbc-687f-46c6-ad24-456153f9a5d4",
+      "d288f1e3-e58b-4881-825c-00d8ce8e15e6"
+     ],
+     "pairedN": 71,
+     "repaired": 30,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 13,
+     "unchangedPass": 26
+    },
+    "C0->C2": {
+     "after": {
+      "k": 19,
+      "p": 0.2676056338028169
+     },
+     "before": {
+      "k": 43,
+      "p": 0.6056338028169014
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -45.70591211587598,
+      -19.857340067903017
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -45.44626640516288,
+      -20.167276449530927
+     ],
+     "diff": -0.3380281690140845,
+     "diffPP": -33.80281690140845,
+     "discordant": 30,
+     "exactP": 8.430331945419312e-06,
+     "marginalAfter": {
+      "k": 19,
+      "n": 72,
+      "p": 0.2638888888888889
+     },
+     "marginalBefore": {
+      "k": 43,
+      "n": 71,
+      "p": 0.6056338028169014
+     },
+     "new": 3,
+     "newCaseIds": [
+      "10897267-6bca-45e8-9df6-007dc5edb4ba",
+      "6fef8cc7-5499-40c8-9979-86f988c06bca",
+      "d288f1e3-e58b-4881-825c-00d8ce8e15e6"
+     ],
+     "pairedN": 71,
+     "repaired": 27,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 16,
+     "unchangedPass": 25
+    },
+    "C0->C4": {
+     "after": {
+      "k": 4,
+      "p": 0.056338028169014086
+     },
+     "before": {
+      "k": 43,
+      "p": 0.6056338028169014
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -65.56674008224444,
+      -41.74489886845164
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -65.35265559573917,
+      -42.19206713655274
+     ],
+     "diff": -0.5492957746478874,
+     "diffPP": -54.929577464788736,
+     "discordant": 39,
+     "exactP": 3.637978807091713e-12,
+     "marginalAfter": {
+      "k": 4,
+      "n": 72,
+      "p": 0.05555555555555555
+     },
+     "marginalBefore": {
+      "k": 43,
+      "n": 71,
+      "p": 0.6056338028169014
+     },
+     "new": 0,
+     "newCaseIds": [],
+     "pairedN": 71,
+     "repaired": 39,
+     "signIdentity": {
+      "applies": true,
+      "holds": true,
+      "k": 39,
+      "twoTimesHalfPowK": 3.637978807091713e-12
+     },
+     "unchangedFail": 4,
+     "unchangedPass": 28
+    },
+    "C0->C5": {
+     "after": {
+      "k": 41,
+      "p": 0.5857142857142857
+     },
+     "before": {
+      "k": 42,
+      "p": 0.6
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -12.338972567431124,
+      9.546044721102637
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -11.995303221141842,
+      9.199652771788893
+     ],
+     "diff": -0.014285714285714285,
+     "diffPP": -1.4285714285714286,
+     "discordant": 15,
+     "exactP": 1.0,
+     "marginalAfter": {
+      "k": 42,
+      "n": 71,
+      "p": 0.5915492957746479
+     },
+     "marginalBefore": {
+      "k": 43,
+      "n": 71,
+      "p": 0.6056338028169014
+     },
+     "new": 7,
+     "newCaseIds": [
+      "2ec294c6-10a1-4946-ac6b-25176d983fc2",
+      "64950743-1d80-4e4c-a439-0ce2bbdd5017",
+      "64bc509f-77bf-4fc2-8370-e3f99388faba",
+      "6fef8cc7-5499-40c8-9979-86f988c06bca",
+      "8d7d47f5-cc1b-46a2-b3e2-9a484c45f292",
+      "c01dea35-00bf-47e1-99ba-3cadd984cdac",
+      "c6f939db-14b1-4ac8-8696-1de0f8bf852f"
+     ],
+     "pairedN": 70,
+     "repaired": 8,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 34,
+     "unchangedPass": 21
+    },
+    "C1->C2": {
+     "after": {
+      "k": 19,
+      "p": 0.2638888888888889
+     },
+     "before": {
+      "k": 15,
+      "p": 0.20833333333333334
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -6.909174881379844,
+      17.85843681755849
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -6.611723548099197,
+      17.58079188935802
+     ],
+     "diff": 0.05555555555555555,
+     "diffPP": 5.555555555555555,
+     "discordant": 20,
+     "exactP": 0.5034446716308594,
+     "marginalAfter": {
+      "k": 19,
+      "n": 72,
+      "p": 0.2638888888888889
+     },
+     "marginalBefore": {
+      "k": 15,
+      "n": 72,
+      "p": 0.20833333333333334
+     },
+     "new": 12,
+     "newCaseIds": [
+      "05650ced-3ace-4fa0-a8ff-e9dce028a9ff",
+      "0bdc120c-2fdd-43ad-a217-fdd50f2cfdba",
+      "10897267-6bca-45e8-9df6-007dc5edb4ba",
+      "1ede8320-c176-4038-bfff-b040b1710709",
+      "224edb6d-dc2e-438a-8831-9abc73e5d04c",
+      "3ee7491c-8862-4906-8f43-538444afef9f",
+      "6fef8cc7-5499-40c8-9979-86f988c06bca",
+      "77e480fa-f48b-41f7-8de8-0efc3e099eb7",
+      "97788296-e4ce-4c7f-84fe-13dec8b8d3a6",
+      "a036a9ff-c7b9-4106-b8a7-2f3fe291a504",
+      "c24d277e-10c4-46de-9db7-c3998bb2592f",
+      "f688bcdf-e48a-40e6-94c8-7a84fc67cbcd"
+     ],
+     "pairedN": 72,
+     "repaired": 8,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 7,
+     "unchangedPass": 45
+    },
+    "C2->C4": {
+     "after": {
+      "k": 4,
+      "p": 0.05555555555555555
+     },
+     "before": {
+      "k": 19,
+      "p": 0.2638888888888889
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -31.375901266107476,
+      -11.200050720157858
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -31.126673867220344,
+      -11.708101770268547
+     ],
+     "diff": -0.20833333333333334,
+     "diffPP": -20.833333333333332,
+     "discordant": 15,
+     "exactP": 6.103515625e-05,
+     "marginalAfter": {
+      "k": 4,
+      "n": 72,
+      "p": 0.05555555555555555
+     },
+     "marginalBefore": {
+      "k": 19,
+      "n": 72,
+      "p": 0.2638888888888889
+     },
+     "new": 0,
+     "newCaseIds": [],
+     "pairedN": 72,
+     "repaired": 15,
+     "signIdentity": {
+      "applies": true,
+      "holds": true,
+      "k": 15,
+      "twoTimesHalfPowK": 6.103515625e-05
+     },
+     "unchangedFail": 4,
+     "unchangedPass": 53
+    }
+   },
+   "familiesC2toC4": {
+    "decisionFamily": {
+     "c2Failures": 5,
+     "c4Failures": 0,
+     "families": [
+      "decision_ranking_protected_human_review_boundary"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 5
+    },
+    "family:decision_ranking_protected_human_review_boundary": {
+     "c2Failures": 5,
+     "c4Failures": 0,
+     "families": [
+      "decision_ranking_protected_human_review_boundary"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 5
+    },
+    "family:ownership_role_scope_inflation": {
+     "c2Failures": 4,
+     "c4Failures": 2,
+     "families": [
+      "ownership_role_scope_inflation"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 2
+    },
+    "family:qualification_seniority_mismatch": {
+     "c2Failures": 5,
+     "c4Failures": 1,
+     "families": [
+      "qualification_seniority_mismatch"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 4
+    },
+    "family:unsupported_jd_technical_deployment": {
+     "c2Failures": 1,
+     "c4Failures": 0,
+     "families": [
+      "unsupported_jd_technical_deployment"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 1
+    },
+    "family:unsupported_premise_followup_subjective_rationale": {
+     "c2Failures": 1,
+     "c4Failures": 1,
+     "families": [
+      "unsupported_premise_followup_subjective_rationale"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 0
+    },
+    "family:unsupported_quantification_causality": {
+     "c2Failures": 3,
+     "c4Failures": 0,
+     "families": [
+      "unsupported_quantification_causality"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 3
+    },
+    "otherFiveFamilies": {
+     "c2Failures": 14,
+     "c4Failures": 4,
+     "families": [
+      "ownership_role_scope_inflation",
+      "qualification_seniority_mismatch",
+      "unsupported_jd_technical_deployment",
+      "unsupported_premise_followup_subjective_rationale",
+      "unsupported_quantification_causality"
+     ],
+     "new": 0,
+     "pairedN": 60,
+     "repaired": 10
+    }
+   },
+   "flagRates": {
+    "C0": {
+     "control": {
+      "hi": 1.0,
+      "k": 72,
+      "lo": 0.9493488274035422,
+      "n": 72,
+      "p": 1.0,
+      "unparsed": 1,
+      "unparsedFlagged": 1
+     },
+     "risk": {
+      "hi": 1.0,
+      "k": 72,
+      "lo": 0.9493488274035422,
+      "n": 72,
+      "p": 1.0,
+      "unparsed": 1,
+      "unparsedFlagged": 1
+     }
+    },
+    "C1": {
+     "control": {
+      "hi": 1.0,
+      "k": 72,
+      "lo": 0.9493488274035422,
+      "n": 72,
+      "p": 1.0,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 1.0,
+      "k": 72,
+      "lo": 0.9493488274035422,
+      "n": 72,
+      "p": 1.0,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    },
+    "C3": {
+     "control": {
+      "hi": 1.0,
+      "k": 72,
+      "lo": 0.9493488274035422,
+      "n": 72,
+      "p": 1.0,
+      "unparsed": 1,
+      "unparsedFlagged": 1
+     },
+     "risk": {
+      "hi": 1.0,
+      "k": 72,
+      "lo": 0.9493488274035422,
+      "n": 72,
+      "p": 1.0,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    },
+    "C5": {
+     "control": {
+      "hi": 0.9781857840186834,
+      "k": 68,
+      "lo": 0.8656798403400208,
+      "n": 72,
+      "p": 0.9444444444444444,
+      "unparsed": 2,
+      "unparsedFlagged": 2
+     },
+     "risk": {
+      "hi": 0.9975440481170943,
+      "k": 71,
+      "lo": 0.9254339785252386,
+      "n": 72,
+      "p": 0.9861111111111112,
+      "unparsed": 1,
+      "unparsedFlagged": 1
+     }
+    }
+   },
+   "marginalTrapFellAny": {
+    "C0": {
+     "k": 43,
+     "n": 71,
+     "p": 0.6056338028169014
+    },
+    "C1": {
+     "k": 15,
+     "n": 72,
+     "p": 0.20833333333333334
+    },
+    "C2": {
+     "k": 19,
+     "n": 72,
+     "p": 0.2638888888888889
+    },
+    "C3": {
+     "k": 19,
+     "n": 72,
+     "p": 0.2638888888888889
+    },
+    "C4": {
+     "k": 4,
+     "n": 72,
+     "p": 0.05555555555555555
+    },
+    "C5": {
+     "k": 42,
+     "n": 71,
+     "p": 0.5915492957746479
+    }
+   }
+  },
+  "qwen3:30b-a3b": {
+   "clearanceC2toC4": {
+    "c2Failures": 17,
+    "cleared": 14,
+    "hi": 0.9380887336237901,
+    "lo": 0.5897054143116588,
+    "p": 0.8235294117647058,
+    "stillFailing": 3
+   },
+   "contrasts": {
+    "C0->C1": {
+     "after": {
+      "k": 19,
+      "p": 0.2714285714285714
+     },
+     "before": {
+      "k": 40,
+      "p": 0.5714285714285714
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -41.88701287532541,
+      -16.365600697828164
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -41.614803537822496,
+      -16.68597518663905
+     ],
+     "diff": -0.3,
+     "diffPP": -30.0,
+     "discordant": 27,
+     "exactP": 4.9233436584472656e-05,
+     "marginalAfter": {
+      "k": 19,
+      "n": 70,
+      "p": 0.2714285714285714
+     },
+     "marginalBefore": {
+      "k": 42,
+      "n": 72,
+      "p": 0.5833333333333334
+     },
+     "new": 3,
+     "newCaseIds": [
+      "4b41d21c-aa18-47f2-a8da-dbadf1a20bd8",
+      "543daf42-fd71-453d-804b-c710a3959ebe",
+      "9f9ed01c-f389-49c7-ac86-49a1f055bb27"
+     ],
+     "pairedN": 70,
+     "repaired": 24,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 16,
+     "unchangedPass": 27
+    },
+    "C0->C2": {
+     "after": {
+      "k": 17,
+      "p": 0.2361111111111111
+     },
+     "before": {
+      "k": 42,
+      "p": 0.5833333333333334
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -46.59666861864476,
+      -20.816667870918614
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -46.34596056934018,
+      -21.1220817742343
+     ],
+     "diff": -0.3472222222222222,
+     "diffPP": -34.72222222222222,
+     "discordant": 31,
+     "exactP": 4.649162292480469e-06,
+     "marginalAfter": {
+      "k": 17,
+      "n": 72,
+      "p": 0.2361111111111111
+     },
+     "marginalBefore": {
+      "k": 42,
+      "n": 72,
+      "p": 0.5833333333333334
+     },
+     "new": 3,
+     "newCaseIds": [
+      "4b41d21c-aa18-47f2-a8da-dbadf1a20bd8",
+      "9f9ed01c-f389-49c7-ac86-49a1f055bb27",
+      "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951"
+     ],
+     "pairedN": 72,
+     "repaired": 28,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 14,
+     "unchangedPass": 27
+    },
+    "C0->C4": {
+     "after": {
+      "k": 3,
+      "p": 0.041666666666666664
+     },
+     "before": {
+      "k": 42,
+      "p": 0.5833333333333334
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -65.47095549402442,
+      -39.83707422321253
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -65.47095549402442,
+      -39.83707422321253
+     ],
+     "diff": -0.5416666666666666,
+     "diffPP": -54.166666666666664,
+     "discordant": 43,
+     "exactP": 2.1532287064474076e-10,
+     "marginalAfter": {
+      "k": 3,
+      "n": 72,
+      "p": 0.041666666666666664
+     },
+     "marginalBefore": {
+      "k": 42,
+      "n": 72,
+      "p": 0.5833333333333334
+     },
+     "new": 2,
+     "newCaseIds": [
+      "4b41d21c-aa18-47f2-a8da-dbadf1a20bd8",
+      "9f9ed01c-f389-49c7-ac86-49a1f055bb27"
+     ],
+     "pairedN": 72,
+     "repaired": 41,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 1,
+     "unchangedPass": 28
+    },
+    "C0->C5": {
+     "after": {
+      "k": 42,
+      "p": 0.5833333333333334
+     },
+     "before": {
+      "k": 42,
+      "p": 0.5833333333333334
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -2.783439498156167,
+      2.7834394981561608
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -0.8441862099409493,
+      0.8441862099409493
+     ],
+     "diff": 0.0,
+     "diffPP": 0.0,
+     "discordant": 0,
+     "exactP": 1.0,
+     "marginalAfter": {
+      "k": 42,
+      "n": 72,
+      "p": 0.5833333333333334
+     },
+     "marginalBefore": {
+      "k": 42,
+      "n": 72,
+      "p": 0.5833333333333334
+     },
+     "new": 0,
+     "newCaseIds": [],
+     "pairedN": 72,
+     "repaired": 0,
+     "signIdentity": {
+      "applies": true,
+      "holds": true,
+      "k": 0,
+      "twoTimesHalfPowK": 1.0
+     },
+     "unchangedFail": 42,
+     "unchangedPass": 30
+    },
+    "C1->C2": {
+     "after": {
+      "k": 16,
+      "p": 0.22857142857142856
+     },
+     "before": {
+      "k": 19,
+      "p": 0.2714285714285714
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -12.426706039096509,
+      3.728802866707033
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -11.970964175213213,
+      3.235906094515502
+     ],
+     "diff": -0.04285714285714286,
+     "diffPP": -4.285714285714286,
+     "discordant": 7,
+     "exactP": 0.453125,
+     "marginalAfter": {
+      "k": 17,
+      "n": 72,
+      "p": 0.2361111111111111
+     },
+     "marginalBefore": {
+      "k": 19,
+      "n": 70,
+      "p": 0.2714285714285714
+     },
+     "new": 2,
+     "newCaseIds": [
+      "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951",
+      "fb171697-39ed-4846-950b-f2364bf39195"
+     ],
+     "pairedN": 70,
+     "repaired": 5,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 14,
+     "unchangedPass": 49
+    },
+    "C2->C4": {
+     "after": {
+      "k": 3,
+      "p": 0.041666666666666664
+     },
+     "before": {
+      "k": 17,
+      "p": 0.2361111111111111
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -29.960191956590865,
+      -10.083091600537474
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -29.72328310391706,
+      -10.635972654361082
+     ],
+     "diff": -0.19444444444444445,
+     "diffPP": -19.444444444444443,
+     "discordant": 14,
+     "exactP": 0.0001220703125,
+     "marginalAfter": {
+      "k": 3,
+      "n": 72,
+      "p": 0.041666666666666664
+     },
+     "marginalBefore": {
+      "k": 17,
+      "n": 72,
+      "p": 0.2361111111111111
+     },
+     "new": 0,
+     "newCaseIds": [],
+     "pairedN": 72,
+     "repaired": 14,
+     "signIdentity": {
+      "applies": true,
+      "holds": true,
+      "k": 14,
+      "twoTimesHalfPowK": 0.0001220703125
+     },
+     "unchangedFail": 3,
+     "unchangedPass": 55
+    }
+   },
+   "familiesC2toC4": {
+    "decisionFamily": {
+     "c2Failures": 12,
+     "c4Failures": 0,
+     "families": [
+      "decision_ranking_protected_human_review_boundary"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 12
+    },
+    "family:decision_ranking_protected_human_review_boundary": {
+     "c2Failures": 12,
+     "c4Failures": 0,
+     "families": [
+      "decision_ranking_protected_human_review_boundary"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 12
+    },
+    "family:ownership_role_scope_inflation": {
+     "c2Failures": 1,
+     "c4Failures": 1,
+     "families": [
+      "ownership_role_scope_inflation"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 0
+    },
+    "family:qualification_seniority_mismatch": {
+     "c2Failures": 1,
+     "c4Failures": 0,
+     "families": [
+      "qualification_seniority_mismatch"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 1
+    },
+    "family:unsupported_jd_technical_deployment": {
+     "c2Failures": 0,
+     "c4Failures": 0,
+     "families": [
+      "unsupported_jd_technical_deployment"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 0
+    },
+    "family:unsupported_premise_followup_subjective_rationale": {
+     "c2Failures": 1,
+     "c4Failures": 1,
+     "families": [
+      "unsupported_premise_followup_subjective_rationale"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 0
+    },
+    "family:unsupported_quantification_causality": {
+     "c2Failures": 2,
+     "c4Failures": 1,
+     "families": [
+      "unsupported_quantification_causality"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 1
+    },
+    "otherFiveFamilies": {
+     "c2Failures": 5,
+     "c4Failures": 3,
+     "families": [
+      "ownership_role_scope_inflation",
+      "qualification_seniority_mismatch",
+      "unsupported_jd_technical_deployment",
+      "unsupported_premise_followup_subjective_rationale",
+      "unsupported_quantification_causality"
+     ],
+     "new": 0,
+     "pairedN": 60,
+     "repaired": 2
+    }
+   },
+   "flagRates": {
+    "C0": {
+     "control": {
+      "hi": 0.9612475750430503,
+      "k": 66,
+      "lo": 0.8298764477932348,
+      "n": 72,
+      "p": 0.9166666666666666,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 0.9699746184342299,
+      "k": 67,
+      "lo": 0.8475202051632649,
+      "n": 72,
+      "p": 0.9305555555555556,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    },
+    "C1": {
+     "control": {
+      "hi": 0.46238696154394426,
+      "k": 25,
+      "lo": 0.24753423008275116,
+      "n": 72,
+      "p": 0.3472222222222222,
+      "unparsed": 1,
+      "unparsedFlagged": 1
+     },
+     "risk": {
+      "hi": 0.6646092943867861,
+      "k": 40,
+      "lo": 0.440873908658052,
+      "n": 72,
+      "p": 0.5555555555555556,
+      "unparsed": 2,
+      "unparsedFlagged": 2
+     }
+    },
+    "C3": {
+     "control": {
+      "hi": 0.5726013271401095,
+      "k": 33,
+      "lo": 0.34828627057626194,
+      "n": 72,
+      "p": 0.4583333333333333,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 0.5726013271401095,
+      "k": 33,
+      "lo": 0.34828627057626194,
+      "n": 72,
+      "p": 0.4583333333333333,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    },
+    "C5": {
+     "control": {
+      "hi": 0.9521036800263443,
+      "k": 65,
+      "lo": 0.8126495420487314,
+      "n": 72,
+      "p": 0.9027777777777778,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 0.9699746184342299,
+      "k": 67,
+      "lo": 0.8475202051632649,
+      "n": 72,
+      "p": 0.9305555555555556,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    }
+   },
+   "marginalTrapFellAny": {
+    "C0": {
+     "k": 42,
+     "n": 72,
+     "p": 0.5833333333333334
+    },
+    "C1": {
+     "k": 19,
+     "n": 70,
+     "p": 0.2714285714285714
+    },
+    "C2": {
+     "k": 17,
+     "n": 72,
+     "p": 0.2361111111111111
+    },
+    "C3": {
+     "k": 17,
+     "n": 72,
+     "p": 0.2361111111111111
+    },
+    "C4": {
+     "k": 3,
+     "n": 72,
+     "p": 0.041666666666666664
+    },
+    "C5": {
+     "k": 42,
+     "n": 72,
+     "p": 0.5833333333333334
+    }
+   }
+  },
+  "qwen3:8b": {
+   "clearanceC2toC4": {
+    "c2Failures": 34,
+    "cleared": 23,
+    "hi": 0.808683564359745,
+    "lo": 0.508428945939082,
+    "p": 0.6764705882352942,
+    "stillFailing": 11
+   },
+   "contrasts": {
+    "C0->C1": {
+     "after": {
+      "k": 33,
+      "p": 0.4583333333333333
+     },
+     "before": {
+      "k": 41,
+      "p": 0.5694444444444444
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -22.119661067052277,
+      0.46442484014167507
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -21.811527512329533,
+      0.14031837519056234
+     ],
+     "diff": -0.1111111111111111,
+     "diffPP": -11.11111111111111,
+     "discordant": 18,
+     "exactP": 0.09625244140625,
+     "marginalAfter": {
+      "k": 33,
+      "n": 72,
+      "p": 0.4583333333333333
+     },
+     "marginalBefore": {
+      "k": 41,
+      "n": 72,
+      "p": 0.5694444444444444
+     },
+     "new": 5,
+     "newCaseIds": [
+      "0bed8ef6-7663-4c84-90e7-fbb0a6c13e00",
+      "825493b7-9d60-43d7-9c86-85d8bef370bd",
+      "a036a9ff-c7b9-4106-b8a7-2f3fe291a504",
+      "c01dea35-00bf-47e1-99ba-3cadd984cdac",
+      "d288f1e3-e58b-4881-825c-00d8ce8e15e6"
+     ],
+     "pairedN": 72,
+     "repaired": 13,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 28,
+     "unchangedPass": 26
+    },
+    "C0->C2": {
+     "after": {
+      "k": 34,
+      "p": 0.4722222222222222
+     },
+     "before": {
+      "k": 41,
+      "p": 0.5694444444444444
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -19.195386885863574,
+      0.17374525359638293
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -18.833167996603848,
+      -0.20496179628629874
+     ],
+     "diff": -0.09722222222222222,
+     "diffPP": -9.722222222222221,
+     "discordant": 13,
+     "exactP": 0.09228515625,
+     "marginalAfter": {
+      "k": 34,
+      "n": 72,
+      "p": 0.4722222222222222
+     },
+     "marginalBefore": {
+      "k": 41,
+      "n": 72,
+      "p": 0.5694444444444444
+     },
+     "new": 3,
+     "newCaseIds": [
+      "3ee7491c-8862-4906-8f43-538444afef9f",
+      "c01dea35-00bf-47e1-99ba-3cadd984cdac",
+      "f72d7247-1584-43e1-ab57-2601f5e97184"
+     ],
+     "pairedN": 72,
+     "repaired": 10,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 31,
+     "unchangedPass": 28
+    },
+    "C0->C4": {
+     "after": {
+      "k": 11,
+      "p": 0.1527777777777778
+     },
+     "before": {
+      "k": 41,
+      "p": 0.5694444444444444
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -52.27983517338504,
+      -29.14224225312743
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -52.0177352817022,
+      -29.507124864093992
+     ],
+     "diff": -0.4166666666666667,
+     "diffPP": -41.666666666666664,
+     "discordant": 30,
+     "exactP": 1.862645149230957e-09,
+     "marginalAfter": {
+      "k": 11,
+      "n": 72,
+      "p": 0.1527777777777778
+     },
+     "marginalBefore": {
+      "k": 41,
+      "n": 72,
+      "p": 0.5694444444444444
+     },
+     "new": 0,
+     "newCaseIds": [],
+     "pairedN": 72,
+     "repaired": 30,
+     "signIdentity": {
+      "applies": true,
+      "holds": true,
+      "k": 30,
+      "twoTimesHalfPowK": 1.862645149230957e-09
+     },
+     "unchangedFail": 11,
+     "unchangedPass": 31
+    },
+    "C0->C5": {
+     "after": {
+      "k": 39,
+      "p": 0.5416666666666666
+     },
+     "before": {
+      "k": 41,
+      "p": 0.5694444444444444
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -7.343149497449258,
+      1.8288364071783998
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -6.505617198145589,
+      0.9766615313890219
+     ],
+     "diff": -0.027777777777777776,
+     "diffPP": -2.7777777777777777,
+     "discordant": 2,
+     "exactP": 0.5,
+     "marginalAfter": {
+      "k": 39,
+      "n": 72,
+      "p": 0.5416666666666666
+     },
+     "marginalBefore": {
+      "k": 41,
+      "n": 72,
+      "p": 0.5694444444444444
+     },
+     "new": 0,
+     "newCaseIds": [],
+     "pairedN": 72,
+     "repaired": 2,
+     "signIdentity": {
+      "applies": true,
+      "holds": true,
+      "k": 2,
+      "twoTimesHalfPowK": 0.5
+     },
+     "unchangedFail": 39,
+     "unchangedPass": 31
+    },
+    "C1->C2": {
+     "after": {
+      "k": 34,
+      "p": 0.4722222222222222
+     },
+     "before": {
+      "k": 33,
+      "p": 0.4583333333333333
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -9.25441837806179,
+      11.966825036323833
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -8.916481865349486,
+      11.631056980868165
+     ],
+     "diff": 0.013888888888888888,
+     "diffPP": 1.3888888888888888,
+     "discordant": 15,
+     "exactP": 1.0,
+     "marginalAfter": {
+      "k": 34,
+      "n": 72,
+      "p": 0.4722222222222222
+     },
+     "marginalBefore": {
+      "k": 33,
+      "n": 72,
+      "p": 0.4583333333333333
+     },
+     "new": 8,
+     "newCaseIds": [
+      "05650ced-3ace-4fa0-a8ff-e9dce028a9ff",
+      "3ee7491c-8862-4906-8f43-538444afef9f",
+      "6193c2b5-16af-43fc-8291-ba0b0911bafd",
+      "77e480fa-f48b-41f7-8de8-0efc3e099eb7",
+      "996edb13-5182-4a75-bda1-fea5f50662cb",
+      "b4fc09ab-cf6b-4f73-84d7-faba0176cf4b",
+      "c24d277e-10c4-46de-9db7-c3998bb2592f",
+      "f72d7247-1584-43e1-ab57-2601f5e97184"
+     ],
+     "pairedN": 72,
+     "repaired": 7,
+     "signIdentity": {
+      "applies": false
+     },
+     "unchangedFail": 26,
+     "unchangedPass": 31
+    },
+    "C2->C4": {
+     "after": {
+      "k": 11,
+      "p": 0.1527777777777778
+     },
+     "before": {
+      "k": 34,
+      "p": 0.4722222222222222
+     },
+     "ciMethod": "Newcombe 1998 method 10",
+     "ciPP": [
+      -42.485242958287564,
+      -20.43111313070815
+     ],
+     "ciPP_method8_uncorrectedPhi": [
+      -42.20924245887638,
+      -20.811679695122006
+     ],
+     "diff": -0.3194444444444444,
+     "diffPP": -31.944444444444443,
+     "discordant": 23,
+     "exactP": 2.384185791015625e-07,
+     "marginalAfter": {
+      "k": 11,
+      "n": 72,
+      "p": 0.1527777777777778
+     },
+     "marginalBefore": {
+      "k": 34,
+      "n": 72,
+      "p": 0.4722222222222222
+     },
+     "new": 0,
+     "newCaseIds": [],
+     "pairedN": 72,
+     "repaired": 23,
+     "signIdentity": {
+      "applies": true,
+      "holds": true,
+      "k": 23,
+      "twoTimesHalfPowK": 2.384185791015625e-07
+     },
+     "unchangedFail": 11,
+     "unchangedPass": 38
+    }
+   },
+   "familiesC2toC4": {
+    "decisionFamily": {
+     "c2Failures": 9,
+     "c4Failures": 2,
+     "families": [
+      "decision_ranking_protected_human_review_boundary"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 7
+    },
+    "family:decision_ranking_protected_human_review_boundary": {
+     "c2Failures": 9,
+     "c4Failures": 2,
+     "families": [
+      "decision_ranking_protected_human_review_boundary"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 7
+    },
+    "family:ownership_role_scope_inflation": {
+     "c2Failures": 11,
+     "c4Failures": 4,
+     "families": [
+      "ownership_role_scope_inflation"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 7
+    },
+    "family:qualification_seniority_mismatch": {
+     "c2Failures": 6,
+     "c4Failures": 4,
+     "families": [
+      "qualification_seniority_mismatch"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 2
+    },
+    "family:unsupported_jd_technical_deployment": {
+     "c2Failures": 7,
+     "c4Failures": 0,
+     "families": [
+      "unsupported_jd_technical_deployment"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 7
+    },
+    "family:unsupported_premise_followup_subjective_rationale": {
+     "c2Failures": 1,
+     "c4Failures": 1,
+     "families": [
+      "unsupported_premise_followup_subjective_rationale"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 0
+    },
+    "family:unsupported_quantification_causality": {
+     "c2Failures": 0,
+     "c4Failures": 0,
+     "families": [
+      "unsupported_quantification_causality"
+     ],
+     "new": 0,
+     "pairedN": 12,
+     "repaired": 0
+    },
+    "otherFiveFamilies": {
+     "c2Failures": 25,
+     "c4Failures": 9,
+     "families": [
+      "ownership_role_scope_inflation",
+      "qualification_seniority_mismatch",
+      "unsupported_jd_technical_deployment",
+      "unsupported_premise_followup_subjective_rationale",
+      "unsupported_quantification_causality"
+     ],
+     "new": 0,
+     "pairedN": 60,
+     "repaired": 16
+    }
+   },
+   "flagRates": {
+    "C0": {
+     "control": {
+      "hi": 0.651713729423738,
+      "k": 39,
+      "lo": 0.4273986728598905,
+      "n": 72,
+      "p": 0.5416666666666666,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 0.858325564604242,
+      "k": 56,
+      "lo": 0.6690904506199482,
+      "n": 72,
+      "p": 0.7777777777777778,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    },
+    "C1": {
+     "control": {
+      "hi": 0.448203956433948,
+      "k": 24,
+      "lo": 0.23534643443153785,
+      "n": 72,
+      "p": 0.3333333333333333,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 0.6256732547092813,
+      "k": 37,
+      "lo": 0.40069754605192803,
+      "n": 72,
+      "p": 0.5138888888888888,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    },
+    "C3": {
+     "control": {
+      "hi": 0.5993024539480719,
+      "k": 35,
+      "lo": 0.37432674529071863,
+      "n": 72,
+      "p": 0.4861111111111111,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 0.6646092943867861,
+      "k": 40,
+      "lo": 0.440873908658052,
+      "n": 72,
+      "p": 0.5555555555555556,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    },
+    "C5": {
+     "control": {
+      "hi": 0.6387348966216531,
+      "k": 38,
+      "lo": 0.4140067049007661,
+      "n": 72,
+      "p": 0.5277777777777778,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     },
+     "risk": {
+      "hi": 0.8470329041915168,
+      "k": 55,
+      "lo": 0.6540123102714637,
+      "n": 72,
+      "p": 0.7638888888888888,
+      "unparsed": 0,
+      "unparsedFlagged": 0
+     }
+    }
+   },
+   "marginalTrapFellAny": {
+    "C0": {
+     "k": 41,
+     "n": 72,
+     "p": 0.5694444444444444
+    },
+    "C1": {
+     "k": 33,
+     "n": 72,
+     "p": 0.4583333333333333
+    },
+    "C2": {
+     "k": 34,
+     "n": 72,
+     "p": 0.4722222222222222
+    },
+    "C3": {
+     "k": 34,
+     "n": 72,
+     "p": 0.4722222222222222
+    },
+    "C4": {
+     "k": 11,
+     "n": 72,
+     "p": 0.1527777777777778
+    },
+    "C5": {
+     "k": 39,
+     "n": 72,
+     "p": 0.5416666666666666
+    }
+   }
+  }
+ },
+ "newcombeSelfTest": {
+  "passed": true,
+  "source": "Newcombe 1998 Table III, methods 8 and 10",
+  "vectors": 12
+ },
+ "pooled": {
+  "clearanceC2toC4": {
+   "c2Failures": 70,
+   "cleared": 52,
+   "hi": 0.8307072425865616,
+   "lo": 0.6297386985284517,
+   "p": 0.7428571428571429,
+   "stillFailing": 18
+  },
+  "contrasts": {
+   "C0->C2": {
+    "after": {
+     "k": 70,
+     "p": 0.32558139534883723
+    },
+    "before": {
+     "k": 126,
+     "p": 0.586046511627907
+    },
+    "ciMethod": "Newcombe 1998 method 10",
+    "ciPP": [
+     -32.82900364343384,
+     -18.770065866673836
+    ],
+    "ciPP_method8_uncorrectedPhi": [
+     -32.77278861862823,
+     -18.830634819857213
+    ],
+    "diff": -0.26046511627906976,
+    "diffPP": -26.046511627906977,
+    "discordant": 74,
+    "exactP": 1.3509940352772296e-11,
+    "new": 9,
+    "pairedN": 215,
+    "repaired": 65,
+    "signIdentity": {
+     "applies": false
+    },
+    "unchangedFail": 61,
+    "unchangedPass": 80
+   },
+   "C0->C5": {
+    "after": {
+     "k": 122,
+     "p": 0.5700934579439252
+    },
+    "before": {
+     "k": 125,
+     "p": 0.5841121495327103
+    },
+    "ciMethod": "Newcombe 1998 method 10",
+    "ciPP": [
+     -5.252879505557567,
+     2.4599259654534196
+    ],
+    "ciPP_method8_uncorrectedPhi": [
+     -5.144786097545,
+     2.3512957929233322
+    ],
+    "diff": -0.014018691588785047,
+    "diffPP": -1.4018691588785046,
+    "discordant": 17,
+    "exactP": 0.629058837890625,
+    "new": 7,
+    "pairedN": 214,
+    "repaired": 10,
+    "signIdentity": {
+     "applies": false
+    },
+    "unchangedFail": 115,
+    "unchangedPass": 82
+   },
+   "C1->C2": {
+    "after": {
+     "k": 69,
+     "p": 0.32242990654205606
+    },
+    "before": {
+     "k": 67,
+     "p": 0.3130841121495327
+    },
+    "ciMethod": "Newcombe 1998 method 10",
+    "ciPP": [
+     -5.055282783089291,
+     6.9165129247828885
+    ],
+    "ciPP_method8_uncorrectedPhi": [
+     -4.985884055539934,
+     6.847448985985088
+    ],
+    "diff": 0.009345794392523364,
+    "diffPP": 0.9345794392523364,
+    "discordant": 42,
+    "exactP": 0.8776143287523155,
+    "new": 22,
+    "pairedN": 214,
+    "repaired": 20,
+    "signIdentity": {
+     "applies": false
+    },
+    "unchangedFail": 47,
+    "unchangedPass": 125
+   },
+   "C2->C4": {
+    "after": {
+     "k": 18,
+     "p": 0.08333333333333333
+    },
+    "before": {
+     "k": 70,
+     "p": 0.32407407407407407
+    },
+    "ciMethod": "Newcombe 1998 method 10",
+    "ciPP": [
+     -29.98873762433987,
+     -18.364801556319758
+    ],
+    "ciPP_method8_uncorrectedPhi": [
+     -29.929480560761267,
+     -18.447575841529023
+    ],
+    "diff": -0.24074074074074073,
+    "diffPP": -24.074074074074073,
+    "discordant": 52,
+    "exactP": 4.440892098500626e-16,
+    "new": 0,
+    "pairedN": 216,
+    "repaired": 52,
+    "signIdentity": {
+     "applies": true,
+     "holds": true,
+     "k": 52,
+     "twoTimesHalfPowK": 4.440892098500626e-16
+    },
+    "unchangedFail": 18,
+    "unchangedPass": 146
+   }
+  }
+ },
+ "runs": {
+  "gpt-oss:20b": {
+   "C0": "20260906-gpt-oss-20b-C0-full",
+   "C1": "20260906-gpt-oss-20b-C1-full",
+   "C2": "20260906-gpt-oss-20b-C2-full",
+   "C3": "20260906-gpt-oss-20b-C3-full",
+   "C4": "20260906-gpt-oss-20b-C4-full",
+   "C5": "20260906-gpt-oss-20b-C5-full"
+  },
+  "qwen3:30b-a3b": {
+   "C0": "20260919-qwen3-30b-a3b-C0-full",
+   "C1": "20260919-qwen3-30b-a3b-C1-full",
+   "C2": "20260919-qwen3-30b-a3b-C2-full",
+   "C3": "20260919-qwen3-30b-a3b-C3-full",
+   "C4": "20260919-qwen3-30b-a3b-C4-full",
+   "C5": "20260919-qwen3-30b-a3b-C5-full"
+  },
+  "qwen3:8b": {
+   "C0": "20260906-qwen3-8b-C0-full",
+   "C1": "20260906-qwen3-8b-C1-full",
+   "C2": "20260906-qwen3-8b-C2-full",
+   "C3": "20260906-qwen3-8b-C3-full",
+   "C4": "20260906-qwen3-8b-C4-full",
+   "C5": "20260906-qwen3-8b-C5-full"
+  }
+ },
+ "script": "tab4_contrasts.py",
+ "signIdentityIntoC4": [
+  {
+   "applies": true,
+   "contrast": "C2->C4",
+   "exactP": 6.103515625e-05,
+   "holds": true,
+   "k": 15,
+   "new": 0,
+   "repaired": 15,
+   "scope": "gpt-oss:20b",
+   "twoTimesHalfPowK": 6.103515625e-05
+  },
+  {
+   "applies": true,
+   "contrast": "C0->C4",
+   "exactP": 3.637978807091713e-12,
+   "holds": true,
+   "k": 39,
+   "new": 0,
+   "repaired": 39,
+   "scope": "gpt-oss:20b",
+   "twoTimesHalfPowK": 3.637978807091713e-12
+  },
+  {
+   "applies": true,
+   "contrast": "C2->C4",
+   "exactP": 2.384185791015625e-07,
+   "holds": true,
+   "k": 23,
+   "new": 0,
+   "repaired": 23,
+   "scope": "qwen3:8b",
+   "twoTimesHalfPowK": 2.384185791015625e-07
+  },
+  {
+   "applies": true,
+   "contrast": "C0->C4",
+   "exactP": 1.862645149230957e-09,
+   "holds": true,
+   "k": 30,
+   "new": 0,
+   "repaired": 30,
+   "scope": "qwen3:8b",
+   "twoTimesHalfPowK": 1.862645149230957e-09
+  },
+  {
+   "applies": true,
+   "contrast": "C2->C4",
+   "exactP": 0.0001220703125,
+   "holds": true,
+   "k": 14,
+   "new": 0,
+   "repaired": 14,
+   "scope": "qwen3:30b-a3b",
+   "twoTimesHalfPowK": 0.0001220703125
+  },
+  {
+   "applies": false,
+   "contrast": "C0->C4",
+   "exactP": 2.1532287064474076e-10,
+   "new": 2,
+   "repaired": 41,
+   "scope": "qwen3:30b-a3b"
+  },
+  {
+   "applies": true,
+   "contrast": "C2->C4",
+   "exactP": 4.440892098500626e-16,
+   "holds": true,
+   "k": 52,
+   "new": 0,
+   "repaired": 52,
+   "scope": "pooled",
+   "twoTimesHalfPowK": 4.440892098500626e-16
+  }
+ ]
+}

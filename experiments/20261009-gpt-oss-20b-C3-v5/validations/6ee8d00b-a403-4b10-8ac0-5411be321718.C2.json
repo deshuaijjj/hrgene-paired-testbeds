@@ -1,0 +1,213 @@
+{
+ "request_id": "6ee8d00b-a403-4b10-8ac0-5411be321718.C2",
+ "case_id": "6ee8d00b-a403-4b10-8ac0-5411be321718",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Experienced Infrastructure Engineer with a proven track record of upgrading and patching Kubernetes clusters, maintaining Terraform modules and Helm charts, par"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[4].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Work sample attached to the CKA requirement: a score report from a timed practice exam on the Kubelab training simulator, dated 2 August 2026, showing 88 out of",
+     "sourceIds": [
+      "src_21434bba5797"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Work sample attached to the CKA requirement: a score report from a timed practice exam on the Kubelab training simulator, dated 2 August 2026, showing 88 out of",
+     "sourceId": "src_21434bba5797"
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[4]",
+    "message": "qualification term(s) [CERTIFICATION] not licensed by the cited sources: certification, certified",
+    "witness": {
+     "family": "CERTIFICATION",
+     "terms": [
+      "certification",
+      "certified"
+     ],
+     "sourceIds": [
+      "src_21434bba5797"
+     ],
+     "sourceFamilies": [],
+     "text": "Holds a current Certified Kubernetes Administrator (CKA) certification"
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "requirement_qualification_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].status",
+    "message": "requirement marked supported but its qualification term(s) [CERTIFICATION] (certification, certified) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_7bcd83466c91",
+     "family": "CERTIFICATION",
+     "terms": [
+      "certification",
+      "certified"
+     ],
+     "sourceIds": [
+      "src_21434bba5797"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "no_decision_language",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[0].text",
+    "message": "employment-decision language: verdict",
+    "witness": {
+     "terms": [
+      "verdict"
+     ],
+     "text": "Work sample attached to the CKA requirement: a score report from a timed practice exam on the Kubelab training simulator, dated 2 August 2026, showing 88 out of 100 across 17 tasks and the simulator's"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "5 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

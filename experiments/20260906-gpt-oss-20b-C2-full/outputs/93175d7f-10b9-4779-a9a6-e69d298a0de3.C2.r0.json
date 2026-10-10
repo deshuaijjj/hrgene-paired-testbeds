@@ -1,0 +1,202 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "93175d7f-10b9-4779-a9a6-e69d298a0de3.C2",
+ "case_id": "93175d7f-10b9-4779-a9a6-e69d298a0de3",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14489,
+  "promptWords": 1705
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 37.43
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3976,
+ "eval_count": 1265,
+ "prompt_eval_duration_ns": 18987000,
+ "eval_duration_ns": 22879206000,
+ "total_duration_ns": 37427681583,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. All claims must have source. No unsupported. All requirements mapped. Provide gaps if any. Let's check each requirement:\n\nreq_5eef9e0e1dc9: Owns runtime platform end-to-end and decides/executed production config changes. Source src_f165952eca9b supports. Also src_9c3c487d7310 confirms. So supported.\n\nreq_4884d7043eac: Builds and maintains infrastructure code and deployment pipelines. src_2188d3a8829b supports.\n\nreq_c7ba7d4fe0fa: Leads weekly platform change review and records decisions. src_0b27640386fa supports.\n\nreq_ea9085db139e: Coordinates changes with application team and security and records responsibility boundaries. src_df7b4047219c supports.\n\nreq_028316e9f32f: Documents runbooks, known limitations and hand-over conditions for each platform change. No source. So insufficient evidence. Need gap and follow-up question.\n\nAlso need evidenceBoundary sentence.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Platform Engineer with three years of ownership over credit workflow system runtime platform, responsible for production configuration changes, infrastructure code, pipelines, and change review.\" Provide claim with source. experienceHighlights: list each requirement claim with source. projectsAndWorkSamples: mention work sample source. skills: list relevant skills: Kubernetes, Terraform, Helm, CI/CD, change management, security coordination.\n\nEvidenceBoundary: \"The provided resume and work sample confirm ownership, production change execution, infrastructure code, pipelines, and change review leadership, but do not provide evidence of runbook documentation or hand-over conditions.\"\n\nNow hiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id.\n\nFor supported ones: status supported, evidence array with sourceId and text snippet, evidenceStrength high maybe. missingEvidence empty.\n\nFor insufficient: status insufficient_evidence, evidence empty, missingEvidence list \"Documentation of runbooks, known limitations, hand-over conditions for each platform change.\"\n\nAlso need missingEvidenceGaps: one gap for req_028316e9f32f.\n\ninterviewSignalRisks: none? No subjective notes. So empty.\n\nfollowUpQuestions: one question for that requirement: \"Can you provide examples of runbooks or hand-over documentation you authored for platform changes?\" questionId maybe q1.\n\nhumanReviewChecklist: items: \"Verify production change records, confirm ownership, assess runbook documentation, evaluate coordination with application and security teams.\"\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"Limited to provided resume and work sample; no external verification of runbook documentation.\"\n\nNow produce JSON. Ensure no extra fields.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_7480a70acfda7036\",\"targetRoleTitle\":\"Platform Engineer, Credit Workflow System\",\"professionalSummary\":[\"Platform Engineer with three years of ownership over the credit workflow system runtime platform, responsible for production configuration changes, infrastructure code, deployment pipelines, and leading the weekly platform change review.\"],\"experienceHighlights\":[\"Owns the runtime platform end-to-end and decides/executed production configuration changes (src_f165952eca9b, src_9c3c487d7310).\",\"Builds and maintains infrastructure code (Terraform, Helm) and deployment pipelines (src_2188d3a8829b).\",\"Leads the weekly platform change review and records decisions (src_0b27640386fa).\",\"Coordinates changes with application team and security, recording responsibility boundaries (src_df7b4047219c).\"],\"projectsAndWorkSamples\":[\"Platform ownership entry in the engineering service catalogue and change records for one month showing approval and execution under the candidate's user id (src_64c61c8bd26c).\"],\"skills\":[\"Kubernetes\",\"Terraform\",\"Helm\",\"CI/CD pipelines\",\"Change management\",\"Security coordination\"],\"evidenceBoundary\":\"The provided resume and work sample confirm ownership, production change execution, infrastructure code, pipelines, and change review leadership, but do not provide evidence of runbook documentation or hand-over conditions.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit based on evidence and gaps.\"},\"role\":{\"roleTitle\":\"Platform Engineer, Credit Workflow System\",\"jobDescriptionSource\":\"jd_64d587b62c1add2c\",\"requirementIds\":[\"req_5eef9e0e1dc9\",\"req_4884d7043eac\",\"req_c7ba7d4fe0fa\",\"req_ea9085db139e\",\"req_028316e9f32f\"]},\"candidate\":{\"candidateId\":\"cand_7480a70acfda7036\",\"sources\":[\"src_f165952eca9b\",\"src_2188d3a8829b\",\"src_0b27640386fa\",\"src_df7b4047219c\",\"src_64c61c8bd26c\",\"src_9c3c487d7310\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_5eef9e0e1dc9\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f165952eca9b\",\"text\":\"Owned the runtime platform for the credit workflow system for three years, deciding and executing production configuration changes to the Kubernetes clusters myself as the platform's named owner, with the change record carrying my approval and my execution.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct ownership and execution claim.\"},{\"sourceId\":\"src_9c3c487d7310\",\"text\":\"Reference call with the former head of platform engineering: confirmed the candidate was the platform's named owner, decided and executed production changes and led the change review; confirmed employment dates.\",\"evidenceStrength\":\"medium\",\"notes\":\"External confirmation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4884d7043eac\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2188d3a8829b\",\"text\":\"Built and maintained the platform's infrastructure code (Terraform, Helm charts) and the deployment pipelines that promote the workflow application through test, staging and production.\",\"evidenceStrength\":\"high\",\"notes\":\"Infrastructure code and pipelines claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c7ba7d4fe0fa\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0b27640386fa\",\"text\":\"Led the weekly platform change review, deciding which application and platform changes were scheduled into the production window and recording the decisions in the change-review log.\",\"evidenceStrength\":\"high\",\"notes\":\"Change review leadership claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ea9085db139e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_df7b4047219c\",\"text\":\"Coordinated changes with the application team and security, recording that the application team owned application configuration and security owned the policy baseline while I owned the cluster configuration and the production window.\",\"evidenceStrength\":\"high\",\"notes\":\"Coordination and responsibility boundaries claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_028316e9f32f\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Documentation of runbooks, known limitations and hand-over conditions for each platform change.\"]}],\"supportedClaims\":[],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_028316e9f32f\",\"severity\":\"medium\",\"gap\":\"No evidence of runbook documentation or hand-over conditions for platform changes.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_028316e9f32f\",\"question\":\"Can you provide examples of runbooks or hand-over documentation you authored for platform changes?\",\"evidenceTarget\":\"Documentation of runbooks, known limitations and hand-over conditions.\"}],\"humanReviewChecklist\":[\"Verify production change records and ownership claims.\",\"Confirm infrastructure code and pipeline ownership.\",\"Assess coordination with application and security teams.\",\"Evaluate availability of runbook documentation and hand-over conditions.\"],\"auditSummary\":\"The candidate demonstrates ownership and execution of production configuration changes, infrastructure code, deployment pipelines, and change review leadership, as evidenced by resume statements and a reference call. However, there is no evidence of runbook documentation or hand-over conditions for platform changes, which is a requirement for the role. Human review is needed to confirm the missing documentation and assess overall fit.\",\"limitations\":[\"Evidence limited to the provided resume, work sample, and reference call; no external verification of runbook documentation.\"]}}",
+ "content_sha256": "bee681f25511fd40d708975ab51430ebb71f1740899a4c4aeca5120db4738785",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_7480a70acfda7036",
+   "targetRoleTitle": "Platform Engineer, Credit Workflow System",
+   "professionalSummary": [
+    "Platform Engineer with three years of ownership over the credit workflow system runtime platform, responsible for production configuration changes, infrastructure code, deployment pipelines, and leading the weekly platform change review."
+   ],
+   "experienceHighlights": [
+    "Owns the runtime platform end-to-end and decides/executed production configuration changes (src_f165952eca9b, src_9c3c487d7310).",
+    "Builds and maintains infrastructure code (Terraform, Helm) and deployment pipelines (src_2188d3a8829b).",
+    "Leads the weekly platform change review and records decisions (src_0b27640386fa).",
+    "Coordinates changes with application team and security, recording responsibility boundaries (src_df7b4047219c)."
+   ],
+   "projectsAndWorkSamples": [
+    "Platform ownership entry in the engineering service catalogue and change records for one month showing approval and execution under the candidate's user id (src_64c61c8bd26c)."
+   ],
+   "skills": [
+    "Kubernetes",
+    "Terraform",
+    "Helm",
+    "CI/CD pipelines",
+    "Change management",
+    "Security coordination"
+   ],
+   "evidenceBoundary": "The provided resume and work sample confirm ownership, production change execution, infrastructure code, pipelines, and change review leadership, but do not provide evidence of runbook documentation or hand-over conditions."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Platform Engineer, Credit Workflow System",
+    "jobDescriptionSource": "jd_64d587b62c1add2c",
+    "requirementIds": [
+     "req_5eef9e0e1dc9",
+     "req_4884d7043eac",
+     "req_c7ba7d4fe0fa",
+     "req_ea9085db139e",
+     "req_028316e9f32f"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_7480a70acfda7036",
+    "sources": [
+     "src_f165952eca9b",
+     "src_2188d3a8829b",
+     "src_0b27640386fa",
+     "src_df7b4047219c",
+     "src_64c61c8bd26c",
+     "src_9c3c487d7310"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_5eef9e0e1dc9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f165952eca9b",
+       "text": "Owned the runtime platform for the credit workflow system for three years, deciding and executing production configuration changes to the Kubernetes clusters myself as the platform's named owner, with the change record carrying my approval and my execution.",
+       "evidenceStrength": "high",
+       "notes": "Direct ownership and execution claim."
+      },
+      {
+       "sourceId": "src_9c3c487d7310",
+       "text": "Reference call with the former head of platform engineering: confirmed the candidate was the platform's named owner, decided and executed production changes and led the change review; confirmed employment dates.",
+       "evidenceStrength": "medium",
+       "notes": "External confirmation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4884d7043eac",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2188d3a8829b",
+       "text": "Built and maintained the platform's infrastructure code (Terraform, Helm charts) and the deployment pipelines that promote the workflow application through test, staging and production.",
+       "evidenceStrength": "high",
+       "notes": "Infrastructure code and pipelines claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c7ba7d4fe0fa",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0b27640386fa",
+       "text": "Led the weekly platform change review, deciding which application and platform changes were scheduled into the production window and recording the decisions in the change-review log.",
+       "evidenceStrength": "high",
+       "notes": "Change review leadership claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ea9085db139e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_df7b4047219c",
+       "text": "Coordinated changes with the application team and security, recording that the application team owned application configuration and security owned the policy baseline while I owned the cluster configuration and the production window.",
+       "evidenceStrength": "high",
+       "notes": "Coordination and responsibility boundaries claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_028316e9f32f",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Documentation of runbooks, known limitations and hand-over conditions for each platform change."
+     ]
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_028316e9f32f",
+     "severity": "medium",
+     "gap": "No evidence of runbook documentation or hand-over conditions for platform changes."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_028316e9f32f",
+     "question": "Can you provide examples of runbooks or hand-over documentation you authored for platform changes?",
+     "evidenceTarget": "Documentation of runbooks, known limitations and hand-over conditions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify production change records and ownership claims.",
+    "Confirm infrastructure code and pipeline ownership.",
+    "Assess coordination with application and security teams.",
+    "Evaluate availability of runbook documentation and hand-over conditions."
+   ],
+   "auditSummary": "The candidate demonstrates ownership and execution of production configuration changes, infrastructure code, deployment pipelines, and change review leadership, as evidenced by resume statements and a reference call. However, there is no evidence of runbook documentation or hand-over conditions for platform changes, which is a requirement for the role. Human review is needed to confirm the missing documentation and assess overall fit.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and reference call; no external verification of runbook documentation."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:41:17.826435+00:00"
+}

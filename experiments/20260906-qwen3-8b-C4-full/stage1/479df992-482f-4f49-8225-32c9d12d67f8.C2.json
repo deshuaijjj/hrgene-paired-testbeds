@@ -1,0 +1,545 @@
+{
+ "request_id": "479df992-482f-4f49-8225-32c9d12d67f8.C2",
+ "case_id": "479df992-482f-4f49-8225-32c9d12d67f8",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [OWN] not licensed by the cited sources: owns",
+    "witness": {
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_e076dd201d24"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "LEAD"
+     ],
+     "text": "Owns release quality end-to-end and holds the quality sign-off that gates each production release."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [END_TO_END] not licensed by the cited sources: end to end, end-to-end",
+    "witness": {
+     "family": "END_TO_END",
+     "terms": [
+      "end to end",
+      "end-to-end"
+     ],
+     "sourceIds": [
+      "src_e076dd201d24"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "LEAD"
+     ],
+     "text": "Owns release quality end-to-end and holds the quality sign-off that gates each production release."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: leads",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "leads"
+     ],
+     "sourceIds": [
+      "src_f97c8ff77aa0"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Coordinates test scope with the development leads and claims operations and records own responsibility boundaries."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "2 schema error(s); first: $.hiringEvidencePacket.supportedClaims[2]: missing required property 'witness'",
+    "witness": {
+     "errors": [
+      "$.hiringEvidencePacket.supportedClaims[2]: missing required property 'witness'",
+      "$.hiringEvidencePacket.supportedClaims[2]: additional property 'w,itness' not allowed"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Owns release quality end-to-end and holds the quality sign-off that gates each production release."
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": "Coordinates test scope with the development leads and claims operations and records own responsibility boundaries."
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_931f9e2c258bb7d3",
+   "targetRoleTitle": "Software Quality Engineer, Insurance Claims Platform",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Designed and maintained the automated regression suite for the claims-handling application (Java, Selenium and REST-assured), covering claim intake, reserve changes and payment authorisation flows, and kept it running nightly in the pipeline.",
+     "sourceIds": [
+      "src_5db2a999862c"
+     ],
+     "requirementIds": [
+      "req_53c78d7f6547"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Designed and maintained the automated regression suite for the claims-handling application (Java, Selenium and REST-assured), covering claim intake, reserve changes and payment authorisation flows, and kept it running nightly in the pipeline."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Reproduced and triaged defects from the regression runs and from claims operations' acceptance sessions, recording steps, environment and root cause in the defect tracker.",
+     "sourceIds": [
+      "src_12d8cceea614"
+     ],
+     "requirementIds": [
+      "req_579f17385818"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reproduced and triaged defects from the regression runs and from claims operations' acceptance sessions, recording steps, environment and root cause in the defect tracker."
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The materials establish the candidate's role in designing and maintaining the automated regression suite, reproducing and triaging defects, and contributing to release test summaries. They do not establish that the candidate personally held the quality sign-off or set the exit criteria for each release."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience and work samples provide evidence for several requirements, but some aspects of the role, such as holding the quality sign-off and setting exit criteria, require further clarification."
+   },
+   "role": {
+    "roleTitle": "Software Quality Engineer, Insurance Claims Platform",
+    "jobDescriptionSource": "jd_8792f3d8738f463c",
+    "requirementIds": [
+     "req_9f6dcc54c103",
+     "req_53c78d7f6547",
+     "req_579f17385818",
+     "req_1e43b746bbe6",
+     "req_1ab30b5eb6e9"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_931f9e2c258bb7d3",
+    "sources": [
+     "src_5db2a999862c",
+     "src_12d8cceea614",
+     "src_e076dd201d24",
+     "src_18cae1b93a7f",
+     "src_f97c8ff77aa0",
+     "src_4d63cdf17c24",
+     "src_f06ca0c164e3",
+     "src_ba4724d0b1ef"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_9f6dcc54c103",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_e076dd201d24",
+       "text": "Proposed the regression scope for each release in the test planning meeting; the QA lead set the final scope and exit criteria, and the quality sign-off that gated production was given by the QA lead.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate proposed the regression scope, but the QA lead set the final scope and exit criteria, and the sign-off was given by the QA lead."
+      }
+     ],
+     "missingEvidence": [
+      "The candidate personally held the quality sign-off and set the exit criteria for each release."
+     ]
+    },
+    {
+     "requirementId": "req_53c78d7f6547",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5db2a999862c",
+       "text": "Designed and maintained the automated regression suite for the claims-handling application (Java, Selenium and REST-assured), covering claim intake, reserve changes and payment authorisation flows, and kept it running nightly in the pipeline.",
+       "evidenceStrength": "high",
+       "notes": "The candidate designed and maintained the automated regression suite."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_579f17385818",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_12d8cceea614",
+       "text": "Reproduced and triaged defects from the regression runs and from claims operations' acceptance sessions, recording steps, environment and root cause in the defect tracker.",
+       "evidenceStrength": "high",
+       "notes": "The candidate reproduced and triaged defects."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1e43b746bbe6",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_f97c8ff77aa0",
+       "text": "Responsibilities included regression suite development, defect triage, scope proposals and release test summaries for the claims platform over about three years as one of four quality engineers.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate contributed to test scope proposals, but the evidence does not explicitly state that they coordinated test scope with development leads and claims operations."
+      }
+     ],
+     "missingEvidence": [
+      "The candidate coordinated test scope with development leads and claims operations."
+     ]
+    },
+    {
+     "requirementId": "req_1ab30b5eb6e9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_18cae1b93a7f",
+       "text": "Wrote the release test summary for each release, listing known limitations of the suite (payment flows for reinsured claims were not automated) and the hand-over notes for the support team.",
+       "evidenceStrength": "high",
+       "notes": "The candidate documented known limitations and hand-over conditions for each release."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed and maintained the automated regression suite for the claims-handling application (Java, Selenium and REST-assured), covering claim intake, reserve changes and payment authorisation flows, and kept it running nightly in the pipeline.",
+     "supportingRequirementIds": [
+      "req_53c78d7f6547"
+     ],
+     "sourceIds": [
+      "src_5db2a999862c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed and maintained the automated regression suite for the claims-handling application (Java, Selenium and REST-assured), covering claim intake, reserve changes and payment authorisation flows, and kept it running nightly in the pipeline."
+    },
+    {
+     "claim": "Reproduced and triaged defects from the regression runs and from claims operations' acceptance sessions, recording steps, environment and root cause in the defect tracker.",
+     "supportingRequirementIds": [
+      "req_579f17385818"
+     ],
+     "sourceIds": [
+      "src_12d8cceea614"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reproduced and triaged defects from the regression runs and from claims operations' acceptance sessions, recording steps, environment and root cause in the defect tracker."
+    },
+    {
+     "claim": "Wrote the release test summary for each release, listing known limitations of the suite (payment flows for reinsured claims were not automated) and the hand-over notes for the support team.",
+     "supportingRequirementIds": [
+      "req_1ab30b5eb6e9"
+     ],
+     "sourceIds": [
+      "src_18cae1b93a7f"
+     ],
+     "evidenceStrength": "high",
+     "witness": ""
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Owns release quality end-to-end and holds the quality sign-off that gates each production release.",
+     "reason": "The materials do not establish that the candidate personally held the quality sign-off or set the exit criteria for each release.",
+     "requiredFollowUp": "Ask the candidate to clarify whether they personally held the quality sign-off and set the exit criteria for each release."
+    },
+    {
+     "claim": "Coordinates test scope with the development leads and claims operations and records own responsibility boundaries.",
+     "reason": "The materials do not explicitly state that the candidate coordinated test scope with development leads and claims operations.",
+     "requiredFollowUp": "Ask the candidate to clarify whether they coordinated test scope with development leads and claims operations."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_9f6dcc54c103",
+     "severity": "medium",
+     "gap": "The candidate personally held the quality sign-off and set the exit criteria for each release."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_1e43b746bbe6",
+     "severity": "medium",
+     "gap": "The candidate coordinated test scope with development leads and claims operations."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_f06ca0c164e3",
+     "text": "Reference call with the former QA lead: said the candidate 'was the person who really decided what got tested' and that 'the sign-off was a formality after his summary'; confirmed employment dates.",
+     "signalType": "ownership",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to clarify whether they personally held the quality sign-off and set the exit criteria for each release."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_9f6dcc54c103",
+     "question": "Did you personally hold the quality sign-off and set the exit criteria for each release?",
+     "evidenceTarget": "Confirm whether the candidate personally held the quality sign-off and set the exit criteria for each release."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_1e43b746bbe6",
+     "question": "Did you coordinate test scope with development leads and claims operations?",
+     "evidenceTarget": "Confirm whether the candidate coordinated test scope with development leads and claims operations."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify whether the candidate personally held the quality sign-off and set the exit criteria for each release.",
+    "Verify whether the candidate coordinated test scope with development leads and claims operations."
+   ],
+   "auditSummary": "The materials establish the candidate's role in designing and maintaining the automated regression suite, reproducing and triaging defects, and contributing to release test summaries. They do not establish that the candidate personally held the quality sign-off or set the exit criteria for each release. Further clarification is needed to determine whether the candidate meets the full requirements of the role.",
+   "limitations": [
+    "The materials do not establish that the candidate personally held the quality sign-off or set the exit criteria for each release.",
+    "The materials do not explicitly state that the candidate coordinated test scope with development leads and claims operations."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

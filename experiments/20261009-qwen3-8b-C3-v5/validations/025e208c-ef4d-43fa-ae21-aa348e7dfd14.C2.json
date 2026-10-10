@@ -1,0 +1,238 @@
+{
+ "request_id": "025e208c-ef4d-43fa-ae21-aa348e7dfd14.C2",
+ "case_id": "025e208c-ef4d-43fa-ae21-aa348e7dfd14",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "causal/comparative wording not present in the cited sources: boosting",
+    "witness": {
+     "terms": [
+      "boosting"
+     ],
+     "sourceIds": [
+      "src_82f49c90da23"
+     ],
+     "text": "Develops application scorecards using logistic regression or gradient boosting."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "causal/comparative wording not present in the cited sources: boosting",
+    "witness": {
+     "terms": [
+      "boosting"
+     ],
+     "sourceIds": [
+      "src_82f49c90da23"
+     ],
+     "text": "Develops application scorecards using logistic regression or gradient boosting."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approved",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approved"
+     ],
+     "sourceIds": [
+      "src_9e17fce95112"
+     ],
+     "sourceFamilies": [],
+     "text": "Has supported the production rollout of an approved credit model through a change process."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approved",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approved"
+     ],
+     "sourceIds": [
+      "src_9e17fce95112"
+     ],
+     "sourceFamilies": [],
+     "text": "Has supported the production rollout of an approved credit model through a change process."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "nonproduction_rewritten_as_production",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+    "message": "production/live wording not licensed by the cited sources: production, production rollout",
+    "witness": {
+     "terms": [
+      "production",
+      "production rollout"
+     ],
+     "sourceIds": [
+      "src_9e17fce95112"
+     ],
+     "nonProductionTermsInSources": [
+      "test environment"
+     ],
+     "text": "Has supported the production rollout of an approved credit model through a change process."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "nonproduction_rewritten_as_production",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "production/live wording not licensed by the cited sources: production, production rollout",
+    "witness": {
+     "terms": [
+      "production",
+      "production rollout"
+     ],
+     "sourceIds": [
+      "src_9e17fce95112"
+     ],
+     "nonProductionTermsInSources": [
+      "test environment"
+     ],
+     "text": "Has supported the production rollout of an approved credit model through a change process."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (production rollout) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_74d81891a2df",
+     "family": "PRODUCTION",
+     "terms": [
+      "production rollout"
+     ],
+     "sourceIds": [
+      "src_9e17fce95112"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

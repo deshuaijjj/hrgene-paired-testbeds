@@ -1,0 +1,513 @@
+{
+ "request_id": "64bc509f-77bf-4fc2-8370-e3f99388faba.C2",
+ "case_id": "64bc509f-77bf-4fc2-8370-e3f99388faba",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [END_TO_END] not licensed by the cited sources: end to end, end-to-end",
+    "witness": {
+     "family": "END_TO_END",
+     "terms": [
+      "end to end",
+      "end-to-end"
+     ],
+     "sourceIds": [
+      "src_f934bf42db6c",
+      "src_e42b0adc4a0b"
+     ],
+     "sourceFamilies": [
+      "LEAD",
+      "OWN"
+     ],
+     "text": "Owns the reporting-engine migration end-to-end, holding the go-live decision for each adviser cohort."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [END_TO_END] not licensed by the cited sources: end to end, end-to-end",
+    "witness": {
+     "family": "END_TO_END",
+     "terms": [
+      "end to end",
+      "end-to-end"
+     ],
+     "sourceIds": [
+      "src_f934bf42db6c",
+      "src_e42b0adc4a0b"
+     ],
+     "sourceFamilies": [
+      "LEAD",
+      "OWN"
+     ],
+     "text": "Owns the reporting-engine migration end-to-end, holding the go-live decision for each adviser cohort."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its ownership term(s) [OWN] (owns) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_a5894828fc7c",
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_f934bf42db6c"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[0]",
+   "detail": "req_a5894828fc7c: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Owns the reporting-engine migration end-to-end, holding the go-live decision for each adviser cohort."
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Owns the reporting-engine migration end-to-end, holding the go-live decision for each adviser cohort."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d50898d80b1b85b4",
+   "targetRoleTitle": "Technical Project Manager, Wealth Services Platform",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Maintains the project plan, the risk log and the cohort schedule in the project tool.",
+     "sourceIds": [
+      "src_281d5df31d71"
+     ],
+     "requirementIds": [
+      "req_b9142ea0e2b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the project plan, the risk log and the adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Prepares and presents the steering committee update and records decisions.",
+     "sourceIds": [
+      "src_cd57aaf1b711"
+     ],
+     "requirementIds": [
+      "req_73778481652a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Coordinates cohort readiness with adviser operations and the platform team and records own responsibility boundaries.",
+     "sourceIds": [
+      "src_36f05067567b"
+     ],
+     "requirementIds": [
+      "req_940fa373ff87"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's ownership of the migration project, maintenance of the project plan, risk log, and cohort schedule, preparation of steering committee updates, and coordination of cohort readiness. They do not establish the candidate's budget ownership or the specific go-live decisions made."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience and evidence are documented, but further human review is required to determine suitability for the role."
+   },
+   "role": {
+    "roleTitle": "Technical Project Manager, Wealth Services Platform",
+    "jobDescriptionSource": "jd_8229c1cec84eb1ae",
+    "requirementIds": [
+     "req_a5894828fc7c",
+     "req_b9142ea0e2b0",
+     "req_73778481652a",
+     "req_940fa373ff87",
+     "req_56b46a80386d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d50898d80b1b85b4",
+    "sources": [
+     "src_281d5df31d71",
+     "src_cd57aaf1b711",
+     "src_36f05067567b",
+     "src_5291ea0d0794",
+     "src_ceae72eee4c9",
+     "src_6f1d2c665bbb",
+     "src_f934bf42db6c",
+     "src_e42b0adc4a0b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a5894828fc7c",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_f934bf42db6c",
+       "text": "Reference call with the former programme director: said the candidate 'carried the project day to day' and 'I would happily have let him take the go-live calls'; confirmed employment dates.",
+       "evidenceStrength": "high",
+       "notes": "The candidate is confirmed to have carried the project day to day and was willing to take go-live calls."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's own element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_b9142ea0e2b0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_281d5df31d71",
+       "text": "Maintained the project plan, the risk log and the adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks.",
+       "evidenceStrength": "high",
+       "notes": "The candidate maintained the project plan, risk log, and cohort schedule."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_73778481652a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_cd57aaf1b711",
+       "text": "Prepared the steering committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it.",
+       "evidenceStrength": "high",
+       "notes": "The candidate prepared the steering committee pack and presented the schedule and risk sections."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_940fa373ff87",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_36f05067567b",
+       "text": "Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation.",
+       "evidenceStrength": "high",
+       "notes": "The candidate coordinated cohort readiness with adviser operations and the platform team."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_56b46a80386d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5291ea0d0794",
+       "text": "Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support.",
+       "evidenceStrength": "high",
+       "notes": "The candidate wrote the go-live notes for each cohort, listing open defects and hand-over items."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintains the project plan, the risk log and the cohort schedule in the project tool.",
+     "supportingRequirementIds": [
+      "req_b9142ea0e2b0"
+     ],
+     "sourceIds": [
+      "src_281d5df31d71"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the project plan, the risk log and the adviser-cohort schedule for the reporting-engine migration in the project tool, re-planning the schedule when the data-migration phase slipped by three weeks."
+    },
+    {
+     "claim": "Prepares and presents the steering committee update and records decisions.",
+     "supportingRequirementIds": [
+      "req_73778481652a"
+     ],
+     "sourceIds": [
+      "src_cd57aaf1b711"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the steering, committee pack each month and presented the schedule and risk sections; the programme director chaired the committee and put the cohort go-live decisions to it."
+    },
+    {
+     "claim": "Coordinates cohort readiness with adviser operations and the platform team and records own responsibility boundaries.",
+     "supportingRequirementIds": [
+      "req_940fa373ff87"
+     ],
+     "sourceIds": [
+      "src_36f05067567b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated cohort readiness with adviser operations and the platform team through the readiness checklist; each cohort's go-live was approved by the steering committee on the programme director's recommendation."
+    },
+    {
+     "claim": "Documents known limitations and hand-over conditions for each cohort go-live.",
+     "supportingRequirementIds": [
+      "req_56b46a80386d"
+     ],
+     "sourceIds": [
+      "src_5291ea0d0794"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the go-live note for each of the four adviser cohorts, listing open defects, reporting limitations during the parallel run and the hand-over items for adviser support."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Owns the reporting-engine migration end-to-end, holding the go-live decision for each adviser cohort.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify the candidate's ownership of the budget for the migration project.",
+    "Confirm the specific go-live decisions the candidate held.",
+    "Assess the candidate's ability to make and justify go-live decisions."
+   ],
+   "auditSummary": "The candidate's experience and evidence are documented, but further human review is required to determine suitability for the role.",
+   "limitations": [
+    "The materials do not establish the candidate's budget ownership or the specific go-live decisions made."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

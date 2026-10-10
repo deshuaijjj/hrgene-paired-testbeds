@@ -1,0 +1,244 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "be375cef-4e9e-4351-99c6-fc917dde989f.C1",
+ "case_id": "be375cef-4e9e-4351-99c6-fc917dde989f",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11274,
+  "promptWords": 1458
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 46.768
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3165,
+ "eval_count": 1836,
+ "prompt_eval_duration_ns": 17980000,
+ "eval_duration_ns": 32887120000,
+ "total_duration_ns": 46765045375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claims list. Provide evidenceBoundary sentence. Then hiringEvidencePacket with requirementEvidenceMap for each requirement id. Use sources. Determine status: all supported? Let's check each requirement.\n\nreq_fb04608dd00e: Owns merchant feed quality end-to-end and decides which feed validations block onboarding. Source src_4b6e7713b450 supports. Also src_acf9aa808776 confirms. So supported.\n\nreq_45e1d97a9df4: Builds and maintains feed validation service and quality scorecards. src_15a29a3ead05 supports. So supported.\n\nreq_d18b7c5ea019: Leads monthly merchant data quality forum with onboarding and support and records decisions. src_820957b5ec04 supports. So supported.\n\nreq_acc1d3f0cf5d: Coordinates validation changes with onboarding and platform teams and records own responsibility boundaries. src_03456d3077a7 supports. So supported.\n\nreq_3a9e8618bb6d: Documents validation definitions, known limitations and hand-over conditions for each release. Not explicitly in sources. We have src_4b6e7713b450 mentions sign-offs but not documentation. So insufficient evidence. Need missing evidence: documentation of definitions, limitations, hand-over conditions. Follow-up question.\n\nThus all requirements covered.\n\nNow produce claims arrays. For optimizedCv, professionalSummary: maybe one claim: \"Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself.\" Source src_4b6e7713b450.\n\nexperienceHighlights: list claims: each bullet.\n\nprojectsAndWorkSamples: claim referencing work sample.\n\nskills: maybe list \"Kotlin\", \"data ownership\", \"validation service development\", \"quality scorecards\", \"forum leadership\". Each claim with source.\n\nEvidenceBoundary: \"The provided resume and work sample establish the candidate’s ownership, development, and forum leadership responsibilities, but do not provide evidence of documentation of validation definitions, known limitations, or hand-over conditions for each release.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle same, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id with status and evidence array.\n\nsupportedClaims: list claims that map to requirements. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness.\n\nunsupportedClaims: none? maybe none.\n\nmissingEvidenceGaps: one for req_3a9e8618bb6d.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: one question id, requirementId, question, evidenceTarget.\n\nhumanReviewChecklist: maybe items: \"Verify documentation of validation definitions, known limitations, hand-over conditions for each release.\"\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Evidence limited to resume and work sample; no independent verification of documentation practices.\"\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_e29c23763d417735\",\"targetRoleTitle\":\"Data Quality Engineer, E-commerce Fulfilment Software\",\"professionalSummary\":[\"Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself. (src_4b6e7713b450)\"],\"experienceHighlights\":[\"Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support. (src_15a29a3ead05)\",\"Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes. (src_820957b5ec04)\",\"Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations. (src_03456d3077a7)\"],\"projectsAndWorkSamples\":[\"Work sample: the data ownership register entry naming the candidate as owner, the validation release log with the candidate's sign-offs and one forum note, with the service's release identifiers as a verification trail. (src_2aef2560e372)\"],\"skills\":[\"Kotlin (src_15a29a3ead05)\",\"Data ownership (src_4b6e7713b450)\",\"Validation service development (src_15a29a3ead05)\",\"Quality scorecards (src_15a29a3ead05)\",\"Forum leadership (src_820957b5ec04)\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s ownership, development, and forum leadership responsibilities, but do not provide evidence of documentation of validation definitions, known limitations, or hand-over conditions for each release.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Data Quality Engineer, E-commerce Fulfilment Software\",\"jobDescriptionSource\":\"jd_53c851eabebfb375\",\"requirementIds\":[\"req_fb04608dd00e\",\"req_45e1d97a9df4\",\"req_d18b7c5ea019\",\"req_acc1d3f0cf5d\",\"req_3a9e8618bb6d\"]},\"candidate\":{\"candidateId\":\"cand_e29c23763d417735\",\"sources\":[\"src_4b6e7713b450\",\"src_15a29a3ead05\",\"src_820957b5ec04\",\"src_03456d3077a7\",\"src_2aef2560e372\",\"src_acf9aa808776\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_fb04608dd00e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4b6e7713b450\",\"text\":\"Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of ownership and blocking decisions.\"},{\"sourceId\":\"src_acf9aa808776\",\"text\":\"Reference call with the former VP of data: confirmed the candidate owned merchant feed quality, decided blocking validations and led the quality forum; confirmed employment dates.\",\"evidenceStrength\":\"medium\",\"notes\":\"External confirmation of ownership.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_45e1d97a9df4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_15a29a3ead05\",\"text\":\"Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct description of service development and scorecards.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d18b7c5ea019\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_820957b5ec04\",\"text\":\"Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of forum leadership and decision recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_acc1d3f0cf5d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_03456d3077a7\",\"text\":\"Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct description of coordination and responsibility boundaries.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3a9e8618bb6d\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate documents validation definitions, known limitations, and hand-over conditions for each release.\"]}],\"supportedClaims\":[{\"claim\":\"Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself.\",\"supportingRequirementIds\":[\"req_fb04608dd00e\"],\"sourceIds\":[\"src_4b6e7713b450\"],\"evidenceStrength\":\"high\",\"witness\":\"Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself.\"},{\"claim\":\"Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support.\",\"supportingRequirementIds\":[\"req_45e1d97a9df4\"],\"sourceIds\":[\"src_15a29a3ead05\"],\"evidenceStrength\":\"high\",\"witness\":\"Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support.\"},{\"claim\":\"Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes.\",\"supportingRequirementIds\":[\"req_d18b7c5ea019\"],\"sourceIds\":[\"src_820957b5ec04\"],\"evidenceStrength\":\"high\",\"witness\":\"Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes.\"},{\"claim\":\"Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations.\",\"supportingRequirementIds\":[\"req_acc1d3f0cf5d\"],\"sourceIds\":[\"src_03456d3077a7\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_3a9e8618bb6d\",\"severity\":\"high\",\"gap\":\"Documentation of validation definitions, known limitations, and hand-over conditions for each release is not provided in the available sources.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_3a9e8618bb6d\",\"question\":\"Can you provide examples of documentation that detail validation definitions, known limitations, and hand-over conditions for each release?\",\"evidenceTarget\":\"Documentation of validation definitions, known limitations, and hand-over conditions for each release.\"}],\"humanReviewChecklist\":[\"Verify that the candidate has documented validation definitions, known limitations, and hand-over conditions for each release.\",\"Confirm that the documentation aligns with the vendor’s quality standards.\"],\"auditSummary\":\"The evidence indicates that the candidate meets all listed requirements except for the documentation of validation definitions, known limitations, and hand-over conditions for each release. Human review is required to confirm the missing documentation and to assess overall fit.\",\"limitations\":[\"Evidence is limited to the candidate’s resume, work sample, and a reference call; independent verification of documentation practices is not available.\"]} }",
+ "content_sha256": "f743a3620b3eb979e4099743154bc0c00d1954af68a4ad9aa837cf0a65ef722d",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_e29c23763d417735",
+   "targetRoleTitle": "Data Quality Engineer, E-commerce Fulfilment Software",
+   "professionalSummary": [
+    "Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself. (src_4b6e7713b450)"
+   ],
+   "experienceHighlights": [
+    "Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support. (src_15a29a3ead05)",
+    "Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes. (src_820957b5ec04)",
+    "Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations. (src_03456d3077a7)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the data ownership register entry naming the candidate as owner, the validation release log with the candidate's sign-offs and one forum note, with the service's release identifiers as a verification trail. (src_2aef2560e372)"
+   ],
+   "skills": [
+    "Kotlin (src_15a29a3ead05)",
+    "Data ownership (src_4b6e7713b450)",
+    "Validation service development (src_15a29a3ead05)",
+    "Quality scorecards (src_15a29a3ead05)",
+    "Forum leadership (src_820957b5ec04)"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s ownership, development, and forum leadership responsibilities, but do not provide evidence of documentation of validation definitions, known limitations, or hand-over conditions for each release."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Data Quality Engineer, E-commerce Fulfilment Software",
+    "jobDescriptionSource": "jd_53c851eabebfb375",
+    "requirementIds": [
+     "req_fb04608dd00e",
+     "req_45e1d97a9df4",
+     "req_d18b7c5ea019",
+     "req_acc1d3f0cf5d",
+     "req_3a9e8618bb6d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_e29c23763d417735",
+    "sources": [
+     "src_4b6e7713b450",
+     "src_15a29a3ead05",
+     "src_820957b5ec04",
+     "src_03456d3077a7",
+     "src_2aef2560e372",
+     "src_acf9aa808776"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_fb04608dd00e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4b6e7713b450",
+       "text": "Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of ownership and blocking decisions."
+      },
+      {
+       "sourceId": "src_acf9aa808776",
+       "text": "Reference call with the former VP of data: confirmed the candidate owned merchant feed quality, decided blocking validations and led the quality forum; confirmed employment dates.",
+       "evidenceStrength": "medium",
+       "notes": "External confirmation of ownership."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_45e1d97a9df4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_15a29a3ead05",
+       "text": "Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support.",
+       "evidenceStrength": "high",
+       "notes": "Direct description of service development and scorecards."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d18b7c5ea019",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_820957b5ec04",
+       "text": "Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of forum leadership and decision recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_acc1d3f0cf5d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_03456d3077a7",
+       "text": "Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations.",
+       "evidenceStrength": "high",
+       "notes": "Direct description of coordination and responsibility boundaries."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3a9e8618bb6d",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate documents validation definitions, known limitations, and hand-over conditions for each release."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself.",
+     "supportingRequirementIds": [
+      "req_fb04608dd00e"
+     ],
+     "sourceIds": [
+      "src_4b6e7713b450"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself."
+    },
+    {
+     "claim": "Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support.",
+     "supportingRequirementIds": [
+      "req_45e1d97a9df4"
+     ],
+     "sourceIds": [
+      "src_15a29a3ead05"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support."
+    },
+    {
+     "claim": "Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes.",
+     "supportingRequirementIds": [
+      "req_d18b7c5ea019"
+     ],
+     "sourceIds": [
+      "src_820957b5ec04"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes."
+    },
+    {
+     "claim": "Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations.",
+     "supportingRequirementIds": [
+      "req_acc1d3f0cf5d"
+     ],
+     "sourceIds": [
+      "src_03456d3077a7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_3a9e8618bb6d",
+     "severity": "high",
+     "gap": "Documentation of validation definitions, known limitations, and hand-over conditions for each release is not provided in the available sources."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_3a9e8618bb6d",
+     "question": "Can you provide examples of documentation that detail validation definitions, known limitations, and hand-over conditions for each release?",
+     "evidenceTarget": "Documentation of validation definitions, known limitations, and hand-over conditions for each release."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate has documented validation definitions, known limitations, and hand-over conditions for each release.",
+    "Confirm that the documentation aligns with the vendor’s quality standards."
+   ],
+   "auditSummary": "The evidence indicates that the candidate meets all listed requirements except for the documentation of validation definitions, known limitations, and hand-over conditions for each release. Human review is required to confirm the missing documentation and to assess overall fit.",
+   "limitations": [
+    "Evidence is limited to the candidate’s resume, work sample, and a reference call; independent verification of documentation practices is not available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:18:37.983201+00:00"
+}

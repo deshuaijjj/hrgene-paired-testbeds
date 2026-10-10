@@ -1,0 +1,198 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "51c7e4bf-91df-45a4-9bd8-7bbf0eef02e3.C2",
+ "case_id": "51c7e4bf-91df-45a4-9bd8-7bbf0eef02e3",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14915,
+  "promptWords": 1756
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 31.028
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3844,
+ "eval_count": 1309,
+ "prompt_eval_duration_ns": 18864000,
+ "eval_duration_ns": 23604003000,
+ "total_duration_ns": 31026008959,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Provide claims. Ensure no unsupported claims. All numbers must be from sources. Provide evidence. Let's craft.\n\nClaims: from resume. All supported. No unsupported. No subjective. Provide CV sections.\n\nEvidenceBoundary: what materials establish: that candidate has performed tasks, has Green Belt, etc. Not establish certification? yes source_ad1068c9986f shows certificate. So evidence boundary: materials establish candidate performed tasks and holds Green Belt.\n\nRequirement evidence map: each requirement.\n\nreq_8798e6ed1750: supported by src_1b146d012d75.\n\nreq_5a607f2b0030: supported by src_6495b4dded69.\n\nreq_08bf41328bf5: supported by src_6382bde393d2.\n\nreq_6d336a757089: supported by src_b48becc069b3 and src_b9574c62a56c.\n\nreq_023306b72260: supported by src_ad1068c9986f (cert) and src_1c192992dd80 (maintains standard work). So yes.\n\nNo gaps.\n\nUnsupportedClaims empty.\n\nMissingEvidenceGaps empty.\n\nInterviewSignalRisks none.\n\nFollowUpQuestions none.\n\nHumanReviewChecklist: maybe \"Review candidate's certification validity period\" but already verified. Could include \"Confirm ongoing certification renewal\" but not needed. We'll leave empty.\n\nAuditSummary: summary of evidence.\n\nLimitations: maybe \"No evidence of production deployment\" but not required.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_ad1d406b530216d7\",\"targetRoleTitle\":\"Warehouse Operations Planner, Regional Distribution\",\"professionalSummary\":[\"Experienced warehouse operations planner with a proven track record in labour scheduling, dock-door management, service level monitoring, and process improvement. Holds a Lean Six Sigma Green Belt certification and has successfully reduced dock-to-stock times while maintaining current standard work documents.\"],\"experienceHighlights\":[\"Planned weekly labour rosters and dock-door schedules for two distribution centres, balancing inbound appointments against shift capacity in the yard management tool.\",\"Reported daily inbound and outbound service levels to site managers and raised exception notes when carrier arrivals missed their appointment window by more than an hour.\",\"Ran structured improvement reviews (define, measure, analyse, improve, control) on receiving-dock delays with shift leads and the site quality coordinator.\",\"Reduced average dock-to-stock time from 9.2 hours to 7.4 hours between January and June 2024, measured from the yard management tool's receipt timestamps.\",\"Maintained receiving standard work documents for both sites and trained new receiving operatives on them during their first week of onboarding, using the documents as the training checklist.\"],\"projectsAndWorkSamples\":[\"Dock-to-stock review pack: includes January baseline extract (mean 9.2 hours), June extract (mean 7.4 hours), method note defining receipt and put-away timestamps, and site manager's sign-off page.\"],\"skills\":[\"Labour scheduling\",\"Dock-door management\",\"Service level monitoring\",\"Process improvement (DMAIC)\",\"Lean Six Sigma Green Belt\",\"Standard work maintenance\",\"Training\"],\"evidenceBoundary\":\"The provided materials establish that the candidate has performed the required planning, monitoring, and improvement activities, has a Lean Six Sigma Green Belt certification, and has maintained receiving standard work documents. They do not provide evidence of any other certifications or unrelated experience.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit based on the evidence and gaps identified.\"},\"role\":{\"roleTitle\":\"Warehouse Operations Planner, Regional Distribution\",\"jobDescriptionSource\":\"jd_29acca95a3ef01f0\",\"requirementIds\":[\"req_8798e6ed1750\",\"req_5a607f2b0030\",\"req_08bf41328bf5\",\"req_6d336a757089\",\"req_023306b72260\"]},\"candidate\":{\"candidateId\":\"cand_ad1d406b530216d7\",\"sources\":[\"src_1b146d012d75\",\"src_6495b4dded69\",\"src_6382bde393d2\",\"src_b48becc069b3\",\"src_1c192992dd80\",\"src_b9574c62a56c\",\"src_ad1068c9986f\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_8798e6ed1750\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1b146d012d75\",\"text\":\"Planned weekly labour rosters and dock-door schedules for two distribution centres, balancing inbound appointments against shift capacity in the yard management tool.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of planning activity.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5a607f2b0030\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6495b4dded69\",\"text\":\"Reported daily inbound and outbound service levels to the site managers and raised exception notes when carrier arrivals missed their appointment window by more than an hour.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct monitoring and exception reporting.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_08bf41328bf5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6382bde393d2\",\"text\":\"Ran structured improvement reviews (define, measure, analyse, improve, control) on receiving-dock delays with the shift leads and the site quality coordinator.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct improvement review activity.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6d336a757089\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b48becc069b3\",\"text\":\"Reduced average dock-to-stock time from 9.2 hours to 7.4 hours between January and June 2024, measured from the yard management tool's receipt timestamps.\",\"evidenceStrength\":\"high\",\"notes\":\"Quantified reduction.\"},{\"sourceId\":\"src_b9574c62a56c\",\"text\":\"Work sample: the dock-to-stock review pack, with the January baseline extract (mean 9.2 hours), the June extract (mean 7.4 hours), a method note defining the receipt and put-away timestamps, and the site manager's sign-off page.\",\"evidenceStrength\":\"medium\",\"notes\":\"Supporting documentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_023306b72260\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ad1068c9986f\",\"text\":\"HR verification note: the candidate's Lean Six Sigma Green Belt certificate (number GB-48213) was checked against the issuing body's public register and is listed as valid until 2027.\",\"evidenceStrength\":\"high\",\"notes\":\"Certification verified.\"},{\"sourceId\":\"src_1c192992dd80\",\"text\":\"Maintained the receiving standard work documents for both sites and trained new receiving operatives on them during their first week of onboarding, using the documents as the training checklist.\",\"evidenceStrength\":\"high\",\"notes\":\"Standard work maintenance.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[],\"auditSummary\":\"All job requirements are supported by at least one cited source. The candidate holds a valid Lean Six Sigma Green Belt certification and has documented evidence of planning, monitoring, improvement, and standard work maintenance activities. No gaps or unsupported claims were identified.\",\"limitations\":[\"The evidence does not cover any additional certifications beyond Lean Six Sigma Green Belt, nor does it provide information on experience with other process improvement methodologies.\"]} }",
+ "content_sha256": "f7d89f7389ba705820bb4b73e32132544f5ffca008b944a4d01ba1f9c73f8009",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_ad1d406b530216d7",
+   "targetRoleTitle": "Warehouse Operations Planner, Regional Distribution",
+   "professionalSummary": [
+    "Experienced warehouse operations planner with a proven track record in labour scheduling, dock-door management, service level monitoring, and process improvement. Holds a Lean Six Sigma Green Belt certification and has successfully reduced dock-to-stock times while maintaining current standard work documents."
+   ],
+   "experienceHighlights": [
+    "Planned weekly labour rosters and dock-door schedules for two distribution centres, balancing inbound appointments against shift capacity in the yard management tool.",
+    "Reported daily inbound and outbound service levels to site managers and raised exception notes when carrier arrivals missed their appointment window by more than an hour.",
+    "Ran structured improvement reviews (define, measure, analyse, improve, control) on receiving-dock delays with shift leads and the site quality coordinator.",
+    "Reduced average dock-to-stock time from 9.2 hours to 7.4 hours between January and June 2024, measured from the yard management tool's receipt timestamps.",
+    "Maintained receiving standard work documents for both sites and trained new receiving operatives on them during their first week of onboarding, using the documents as the training checklist."
+   ],
+   "projectsAndWorkSamples": [
+    "Dock-to-stock review pack: includes January baseline extract (mean 9.2 hours), June extract (mean 7.4 hours), method note defining receipt and put-away timestamps, and site manager's sign-off page."
+   ],
+   "skills": [
+    "Labour scheduling",
+    "Dock-door management",
+    "Service level monitoring",
+    "Process improvement (DMAIC)",
+    "Lean Six Sigma Green Belt",
+    "Standard work maintenance",
+    "Training"
+   ],
+   "evidenceBoundary": "The provided materials establish that the candidate has performed the required planning, monitoring, and improvement activities, has a Lean Six Sigma Green Belt certification, and has maintained receiving standard work documents. They do not provide evidence of any other certifications or unrelated experience."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit based on the evidence and gaps identified."
+   },
+   "role": {
+    "roleTitle": "Warehouse Operations Planner, Regional Distribution",
+    "jobDescriptionSource": "jd_29acca95a3ef01f0",
+    "requirementIds": [
+     "req_8798e6ed1750",
+     "req_5a607f2b0030",
+     "req_08bf41328bf5",
+     "req_6d336a757089",
+     "req_023306b72260"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_ad1d406b530216d7",
+    "sources": [
+     "src_1b146d012d75",
+     "src_6495b4dded69",
+     "src_6382bde393d2",
+     "src_b48becc069b3",
+     "src_1c192992dd80",
+     "src_b9574c62a56c",
+     "src_ad1068c9986f"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_8798e6ed1750",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1b146d012d75",
+       "text": "Planned weekly labour rosters and dock-door schedules for two distribution centres, balancing inbound appointments against shift capacity in the yard management tool.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of planning activity."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5a607f2b0030",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6495b4dded69",
+       "text": "Reported daily inbound and outbound service levels to the site managers and raised exception notes when carrier arrivals missed their appointment window by more than an hour.",
+       "evidenceStrength": "high",
+       "notes": "Direct monitoring and exception reporting."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_08bf41328bf5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6382bde393d2",
+       "text": "Ran structured improvement reviews (define, measure, analyse, improve, control) on receiving-dock delays with the shift leads and the site quality coordinator.",
+       "evidenceStrength": "high",
+       "notes": "Direct improvement review activity."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6d336a757089",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b48becc069b3",
+       "text": "Reduced average dock-to-stock time from 9.2 hours to 7.4 hours between January and June 2024, measured from the yard management tool's receipt timestamps.",
+       "evidenceStrength": "high",
+       "notes": "Quantified reduction."
+      },
+      {
+       "sourceId": "src_b9574c62a56c",
+       "text": "Work sample: the dock-to-stock review pack, with the January baseline extract (mean 9.2 hours), the June extract (mean 7.4 hours), a method note defining the receipt and put-away timestamps, and the site manager's sign-off page.",
+       "evidenceStrength": "medium",
+       "notes": "Supporting documentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_023306b72260",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ad1068c9986f",
+       "text": "HR verification note: the candidate's Lean Six Sigma Green Belt certificate (number GB-48213) was checked against the issuing body's public register and is listed as valid until 2027.",
+       "evidenceStrength": "high",
+       "notes": "Certification verified."
+      },
+      {
+       "sourceId": "src_1c192992dd80",
+       "text": "Maintained the receiving standard work documents for both sites and trained new receiving operatives on them during their first week of onboarding, using the documents as the training checklist.",
+       "evidenceStrength": "high",
+       "notes": "Standard work maintenance."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "All job requirements are supported by at least one cited source. The candidate holds a valid Lean Six Sigma Green Belt certification and has documented evidence of planning, monitoring, improvement, and standard work maintenance activities. No gaps or unsupported claims were identified.",
+   "limitations": [
+    "The evidence does not cover any additional certifications beyond Lean Six Sigma Green Belt, nor does it provide information on experience with other process improvement methodologies."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:46:02.165912+00:00"
+}

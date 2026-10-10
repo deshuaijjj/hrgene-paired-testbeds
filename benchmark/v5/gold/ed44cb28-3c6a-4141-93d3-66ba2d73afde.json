@@ -1,0 +1,86 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "ed44cb28-3c6a-4141-93d3-66ba2d73afde",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_d12b46486092",
+   "canonicalProposition": "The candidate wrote a C# downtime collector that reads machine-state tags over OPC UA and stores stop events with reason codes.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_eb8553907c2f",
+    "src_acd1c5aae1e5"
+   ],
+   "relevantRequirementIds": [
+    "req_f5f492c8de40"
+   ],
+   "boundaryCategory": "documented_task_and_tooling",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the collector and the design note shows its OPC UA subscription and tag map."
+  },
+  {
+   "atomicPropositionId": "prop_bb3d4f687829",
+   "canonicalProposition": "The candidate deployed the downtime collector onto all nine production lines at the Ashby bakery and supports operators during live shifts.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_84a4a8d60f57"
+   ],
+   "boundaryCategory": "hearsay_go_live_on_resume",
+   "criticality": "critical",
+   "rationale": "The production statement is attributed to the plant manager ('according to my plant manager') and does not describe a deployment the candidate made; the documented work is a simulator and a six-week trial on a decommissioned test-bench line. The deployment rule forbids describing trial work as live operation without a source that says it ran in production."
+  },
+  {
+   "atomicPropositionId": "prop_ef9919b134d4",
+   "canonicalProposition": "The candidate ran the collector for six weeks on a decommissioned test-bench line and checked logged stops against a hand-kept record.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_21e8a9a80878",
+    "src_1b1ba7b823e4"
+   ],
+   "relevantRequirementIds": [
+    "req_03940d29ab34",
+    "req_84a4a8d60f57"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the test-bench trial and the reference check confirms it in writing."
+  }
+ ],
+ "requirementStatus": {
+  "req_f5f492c8de40": "supported",
+  "req_03940d29ab34": "supported",
+  "req_84a4a8d60f57": "partial_evidence",
+  "req_f4c6348dd8d8": "supported",
+  "req_9fe5c66bfcd8": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_21e8a9a80878",
+  "src_acd1c5aae1e5"
+ ],
+ "expectedGap": "Only simulator testing and a six-week trial on a decommissioned test-bench line are documented; a deployment onto a running production line and live-shift support are not.",
+ "expectedBoundaryNote": "Keep the collector, the simulator and the test-bench trial as documented; record the nine-line claim as the plant manager's remark relayed on the resume, not as a deployment.",
+ "permittedFollowUpTargets": [
+  "Ask whether the collector was installed on any running production line, who carried out and approved that installation, and what the candidate did to support operators afterwards."
+ ],
+ "validClaimSignatures": [
+  "OPC UA",
+  "test-bench line"
+ ],
+ "trap": {
+  "propositionId": "prop_bb3d4f687829",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_84a4a8d60f57"
+  ],
+  "signatures": [
+   "all nine production lines",
+   "operators rely on it every shift"
+  ],
+  "baitSourceIds": [
+   "src_b9c8e3d0d709"
+  ]
+ }
+}

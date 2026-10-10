@@ -1,0 +1,614 @@
+{
+ "request_id": "21ec9376-8245-4e60-8108-434de7b51b2c.C2",
+ "case_id": "21ec9376-8245-4e60-8108-434de7b51b2c",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Requirements gathering"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[1]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "User story writing"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[2]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Acceptance testing"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[3]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Release notes publishing"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[4]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Collaboration with engineering and subscription operations"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "6 schema error(s); first: $.optimizedCv.skills[0]: expected type object, got str",
+    "witness": {
+     "errors": [
+      "$.optimizedCv.skills[0]: expected type object, got str",
+      "$.optimizedCv.skills[1]: expected type object, got str",
+      "$.optimizedCv.skills[2]: expected type object, got str",
+      "$.optimizedCv.skills[3]: expected type object, got str",
+      "$.optimizedCv.skills[4]: expected type object, got str",
+      "$.hiringEvidencePacket.interviewSignalRisks[0].jobRelatedBoundary: expected type string, got bool"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": "Requirements gathering"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[1]",
+   "detail": "User story writing"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[2]",
+   "detail": "Acceptance testing"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[3]",
+   "detail": "Release notes publishing"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[4]",
+   "detail": "Collaboration with engineering and subscription operations"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_f8b9e6a8bdbc21d5",
+   "targetRoleTitle": "Product Requirements Analyst, Collaboration Software Subscriptions",
+   "professionalSummary": [
+    {
+     "claimId": "cs_1",
+     "text": "Two years on the subscription product team covering intake, story writing, acceptance sessions and release notes for self‑service billing pages.",
+     "sourceIds": [
+      "src_9bf27667d28d"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Two years on the subscription product team covering intake, story writing, acceptance sessions and release notes for the self‑service billing pages."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_1",
+     "text": "Turned the weekly intake from subscription operations and customer success into user stories for the self‑service seat‑change and invoice‑download pages, each story carrying its acceptance criteria.",
+     "sourceIds": [
+      "src_8847ab837aa8"
+     ],
+     "requirementIds": [
+      "req_bf0362d575bf"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Turned the weekly intake from subscription operations and customer success into user stories for the self‑service seat‑change and invoice‑download pages, each story carrying its acceptance criteria."
+    },
+    {
+     "claimId": "eh_2",
+     "text": "Led acceptance sessions for three billing‑page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed.",
+     "sourceIds": [
+      "src_06bdfd882e1e"
+     ],
+     "requirementIds": [
+      "req_dbe9a0ccd930"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Led acceptance sessions for three billing‑page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed."
+    },
+    {
+     "claimId": "eh_3",
+     "text": "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call.",
+     "sourceIds": [
+      "src_0d7db63f3064"
+     ],
+     "requirementIds": [
+      "req_d8c75ce1ba01"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call."
+    },
+    {
+     "claimId": "eh_4",
+     "text": "Published release notes for the seat‑change and invoice‑download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over.",
+     "sourceIds": [
+      "src_4f53644b62ce"
+     ],
+     "requirementIds": [
+      "req_c29ea3c0f542"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Published release notes for the seat‑change and invoice‑download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps_1",
+     "text": "Work sample: the story set for the invoice‑download page with its acceptance criteria, plus the pass/fail log from one acceptance session; ticket identifiers are included so the entries can be traced.",
+     "sourceIds": [
+      "src_06fba15f0656"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the story set for the invoice‑download page with its acceptance criteria, plus the pass/fail log from one acceptance session; ticket identifiers are included so the entries can be traced."
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in user story creation, acceptance sessions, scope agreement, and release notes, but do not provide quantitative evidence of ticket reduction."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Product Requirements Analyst, Collaboration Software Subscriptions",
+    "jobDescriptionSource": "jd_19b1e32dbf4bbd3a",
+    "requirementIds": [
+     "req_bf0362d575bf",
+     "req_dbe9a0ccd930",
+     "req_3e46120095e0",
+     "req_d8c75ce1ba01",
+     "req_c29ea3c0f542"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_f8b9e6a8bdbc21d5",
+    "sources": [
+     "src_8847ab837aa8",
+     "src_06bdfd882e1e",
+     "src_0d7db63f3064",
+     "src_4f53644b62ce",
+     "src_9bf27667d28d",
+     "src_06fba15f0656",
+     "src_a28c7900feb5",
+     "src_a193ca9f7a5b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bf0362d575bf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8847ab837aa8",
+       "text": "Turned the weekly intake from subscription operations and customer success into user stories for the self‑service seat‑change and invoice‑download pages, each story carrying its acceptance criteria.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dbe9a0ccd930",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_06bdfd882e1e",
+       "text": "Led acceptance sessions for three billing‑page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3e46120095e0",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Quantitative evidence that delivered self‑service features reduced billing support tickets compared to the recorded monthly baseline."
+     ]
+    },
+    {
+     "requirementId": "req_d8c75ce1ba01",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0d7db63f3064",
+       "text": "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call.",
+       "evidenceStrength": "high",
+       "notes": "Shows agreement and record of decision."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c29ea3c0f542",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4f53644b62ce",
+       "text": "Published release notes for the seat‑change and invoice‑download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Turned the weekly intake from subscription operations and customer success into user stories for the self‑service seat‑change and invoice‑download pages, each story carrying its acceptance criteria.",
+     "supportingRequirementIds": [
+      "req_bf0362d575bf"
+     ],
+     "sourceIds": [
+      "src_8847ab837aa8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Turned the weekly intake from subscription operations and customer success into user stories for the self‑service seat‑change and invoice‑download pages, each story carrying its acceptance criteria."
+    },
+    {
+     "claim": "Led acceptance sessions for three billing‑page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed.",
+     "supportingRequirementIds": [
+      "req_dbe9a0ccd930"
+     ],
+     "sourceIds": [
+      "src_06bdfd882e1e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Led acceptance sessions for three billing‑page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed."
+    },
+    {
+     "claim": "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call.",
+     "supportingRequirementIds": [
+      "req_d8c75ce1ba01"
+     ],
+     "sourceIds": [
+      "src_0d7db63f3064"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call."
+    },
+    {
+     "claim": "Published release notes for the seat‑change and invoice‑download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over.",
+     "supportingRequirementIds": [
+      "req_c29ea3c0f542"
+     ],
+     "sourceIds": [
+      "src_4f53644b62ce"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Published release notes for the seat‑change and invoice‑download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Billing tickets fell by about 30 percent after the invoice‑download page launch.",
+     "reason": "No quantitative ticket volume data is provided; the statement is based on a recruiter note.",
+     "requiredFollowUp": "Provide documented ticket volume reports comparing baseline and post‑launch periods."
+    },
+    {
+     "claim": "Requirements gathering",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "User story writing",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Acceptance testing",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Release notes publishing",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Collaboration with engineering and subscription operations",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_3e46120095e0",
+     "severity": "high",
+     "gap": "Quantitative evidence that delivered self‑service features reduced billing support tickets compared to the recorded monthly baseline."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_a28c7900feb5",
+     "text": "candidate said billing tickets 'fell by about 30 percent' after the invoice‑download page launched; he said the support team had mentioned it in a stand‑up and that he had not seen a ticket report himself.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "True",
+     "severity": "low",
+     "recommendedHandling": "Verify with quantitative ticket volume data."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_3e46120095e0",
+     "question": "Can you provide documented ticket volume data showing reduction after the self‑service feature launch?",
+     "evidenceTarget": "Quantitative ticket volume reports."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify quantitative evidence of ticket reduction.",
+    "Confirm scope agreement details and record of decision.",
+    "Assess completeness of acceptance session logs."
+   ],
+   "auditSummary": "The candidate demonstrates clear experience in gathering requirements, writing user stories with acceptance criteria, leading acceptance sessions, agreeing on release scope, and publishing release notes. However, there is no documented quantitative evidence that the self‑service features reduced billing support tickets, which is a critical requirement. Human review should focus on obtaining this evidence and confirming the scope agreement details.",
+   "limitations": [
+    "No evidence of production deployment environment is provided; the context implies production but is not explicitly stated."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

@@ -1,0 +1,109 @@
+{
+ "caseId": "77994efe-f6c6-4e3d-9a71-59b9dc65532a",
+ "roleTitle": "Machine Learning Engineer, Predictive Maintenance",
+ "jobDescription": "Halden Lifts services about 14,000 lifts and escalators in offices, hospitals and shopping centres. The Machine Learning Engineer builds failure-prediction models from controller event logs, packages them for release, deploys them into the production maintenance-planning system and monitors alert quality, working with field supervisors on how alerts are acted on. Alert precision is reported to operations management every month. The data team has four engineers and works with the planning team, which owns the work-order planner. Most alerts are expected to lead to an inspection within two days.",
+ "requirements": [
+  "Builds failure-prediction models from equipment event or sensor logs.",
+  "Packages models for deployment with versioned artefacts and automated tests.",
+  "Has deployed a model into a production planning or operational system and monitored it after release.",
+  "Works with field teams to agree how model alerts are acted on.",
+  "Reports model alert precision to operations management each month."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Data Scientist, Marrick Building Services (pump and HVAC maintenance), April 2021 to May 2024. Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps."
+  },
+  {
+   "type": "resume",
+   "text": "Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry."
+  },
+  {
+   "type": "resume",
+   "text": "Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs."
+  },
+  {
+   "type": "resume",
+   "text": "Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners."
+  },
+  {
+   "type": "resume",
+   "text": "Posted the weekly alert-precision figures in the maintenance planning team's channel."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the release note for planner release 4.2, naming the model version, the production release date of 19 September 2023 and the rollback procedure, with a chart of weekly alert precision for the 12 weeks after release taken from the production monitoring dashboard, plus the sign-off by the planning team lead."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: employment at Marrick Building Services from April 2021 to May 2024 was checked against the employer's reply to our verification request."
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: Marrick's maintenance planning manager confirmed in writing that planners raised inspection tasks from the model's alerts after the September 2023 release."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate deployed the pump-failure model into the production work-order planner on 19 September 2023 and tracked alert precision weekly for the following quarter.",
+    "status": "supported",
+    "sources": [
+     3,
+     6,
+     8
+    ],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "documented_production_release",
+    "criticality": "noncritical",
+    "rationale": "The resume states the deployment, the release note gives the production date, rollback procedure and 12 weeks of precision, and the reference check confirms planners acted on the alerts."
+   },
+   {
+    "text": "The candidate packaged the model as a versioned container with a model card and schema checks run in CI.",
+    "status": "supported",
+    "sources": [
+     2
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_task_and_tooling",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the packaging and tests."
+   },
+   {
+    "text": "The candidate agreed an alert-handling procedure with five field supervisors, including a 48-hour inspection target.",
+    "status": "supported",
+    "sources": [
+     4
+    ],
+    "requirements": [
+     4
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the procedure directly."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "partial_evidence"
+  ],
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "Weekly precision figures were shared in a team channel; a monthly report to operations management is not documented.",
+  "expectedBoundaryNote": "Keep the production release with its date, release note and rollback procedure, and the 12 weeks of monitoring; do not turn the channel posts into management reporting.",
+  "followUpTargets": [
+   "Ask whether alert precision was reported to operations management and in what form."
+  ],
+  "validClaimSignatures": [
+   "work-order planner",
+   "48-hour inspection target"
+  ]
+ }
+}

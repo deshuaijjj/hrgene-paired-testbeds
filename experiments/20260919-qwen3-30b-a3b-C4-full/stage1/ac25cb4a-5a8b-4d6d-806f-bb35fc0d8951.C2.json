@@ -1,0 +1,603 @@
+{
+ "request_id": "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951.C2",
+ "case_id": "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "causal/comparative wording not present in the cited sources: reducing",
+    "witness": {
+     "terms": [
+      "reducing"
+     ],
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Idempotency keys implemented to prevent duplicate work orders from retried syncs, reducing support-ticket volume related to sync issues."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[4]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managing",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managing"
+     ],
+     "sourceIds": [
+      "src_97afd7c82f91"
+     ],
+     "sourceFamilies": [],
+     "text": "Two and a half years on the service-platform team, managing work-order and parts services, integration tests, release line-up, and change logs."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "subjective/hearsay source cited as support: src_38ec5aa9aba7",
+    "witness": {
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Idempotency keys implemented to prevent duplicate work orders from retried syncs, reducing support-ticket volume related to sync issues."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0]",
+    "message": "subjective/hearsay source cited as support: src_38ec5aa9aba7",
+    "witness": {
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go away' and guessed sync failures dropped 'from a few hundred a week to a handful'; h"
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].notes",
+    "message": "subjective/hearsay source cited as support: src_38ec5aa9aba7",
+    "witness": {
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Support-ticket volume cited, not platform metric."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[4]",
+   "detail": "Two and a half years on the service-platform team, managing work-order and parts services, integration tests, release li"
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "Idempotency keys implemented to prevent duplicate work orders from retried syncs, reducing support-ticket volume related"
+  },
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective_source_cited_as_support",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go awa"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_1828adc5e1be8812",
+   "targetRoleTitle": "Backend API Engineer, Equipment Maintenance Services",
+   "professionalSummary": [
+    {
+     "claimId": "sum_1",
+     "text": "Developed and maintained the work-order API (Go) and parts-availability service for the technician app, including idempotency keys to prevent duplicate work orders from retried syncs.",
+     "sourceIds": [
+      "src_abf2293d99c6"
+     ],
+     "requirementIds": [
+      "req_712f37369198"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders."
+    },
+    {
+     "claimId": "sum_2",
+     "text": "Owned the integration test suite for both services, adding replay tests from anonymized sync logs and maintaining CI pipeline pass rates.",
+     "sourceIds": [
+      "src_d0cfe379b9aa"
+     ],
+     "requirementIds": [
+      "req_b112017acf4f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline."
+    },
+    {
+     "claimId": "sum_3",
+     "text": "Lined up releases with app and platform teams in release reviews, with deployments executed by platform team's release engineer.",
+     "sourceIds": [
+      "src_7443a7529d70"
+     ],
+     "requirementIds": [
+      "req_391f7d1a9b96"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me."
+    },
+    {
+     "claimId": "sum_4",
+     "text": "Kept the API change log current, noting hourly depot stock refreshes, and maintained the on-call hand-over checklist.",
+     "sourceIds": [
+      "src_67624cedce7b"
+     ],
+     "requirementIds": [
+      "req_2ff722e2a5a8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist."
+    }
+   ],
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_1",
+     "text": "Replay tests for work-order API and one release's entry in the API change log with traceable CI run numbers.",
+     "sourceIds": [
+      "src_ee51234ba903"
+     ],
+     "requirementIds": [
+      "req_b112017acf4f",
+      "req_2ff722e2a5a8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the replay tests for the work-order API and one release's entry in the API change log; CI run numbers are included so they can be traced."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_1",
+     "text": "Go programming, API development, integration testing, release coordination, change log management.",
+     "sourceIds": [
+      "src_abf2293d99c6",
+      "src_d0cfe379b9aa",
+      "src_7443a7529d70",
+      "src_67624cedce7b",
+      "src_97afd7c82f91"
+     ],
+     "requirementIds": [
+      "req_712f37369198",
+      "req_b112017acf4f",
+      "req_391f7d1a9b96",
+      "req_2ff722e2a5a8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Two and a half years on the service-platform team: work-order and parts services, integration tests, release line-up and the change log."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's direct involvement in developing and maintaining the work-order API and parts-availability service, owning integration tests, lining up releases, and maintaining change logs. The materials do not establish a measurable reduction in work-order sync failures against the documented weekly baseline, as the reference call cites support-ticket volume rather than the platform's metric."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required due to unverified claims about sync failure reduction and missing evidence for requirement req_a43cb3667b39."
+   },
+   "role": {
+    "roleTitle": "Backend API Engineer, Equipment Maintenance Services",
+    "jobDescriptionSource": "jd_e93505062f487f8f",
+    "requirementIds": [
+     "req_712f37369198",
+     "req_b112017acf4f",
+     "req_a43cb3667b39",
+     "req_391f7d1a9b96",
+     "req_2ff722e2a5a8"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_1828adc5e1be8812",
+    "sources": [
+     "src_abf2293d99c6",
+     "src_d0cfe379b9aa",
+     "src_7443a7529d70",
+     "src_67624cedce7b",
+     "src_97afd7c82f91",
+     "src_ee51234ba903",
+     "src_38ec5aa9aba7",
+     "src_8f660602da80"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_712f37369198",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_abf2293d99c6",
+       "text": "Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b112017acf4f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d0cfe379b9aa",
+       "text": "Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a43cb3667b39",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Measured reduction against documented weekly baseline"
+     ]
+    },
+    {
+     "requirementId": "req_391f7d1a9b96",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7443a7529d70",
+       "text": "Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me.",
+       "evidenceStrength": "high",
+       "notes": "Matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2ff722e2a5a8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_67624cedce7b",
+       "text": "Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed and maintained the work-order API (Go) and parts-availability service for the technician app, including idempotency keys to prevent duplicate work orders from retried syncs.",
+     "supportingRequirementIds": [
+      "req_712f37369198"
+     ],
+     "sourceIds": [
+      "src_abf2293d99c6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed and maintained the work-order API (Go) and the parts-availability service that queries depot stock for the technician app, including the idempotency keys added so that retried syncs did not create duplicate work orders."
+    },
+    {
+     "claim": "Owned the integration test suite for both services, adding replay tests from anonymized sync logs and maintaining CI pipeline pass rates.",
+     "supportingRequirementIds": [
+      "req_b112017acf4f"
+     ],
+     "sourceIds": [
+      "src_d0cfe379b9aa"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Owned the integration test suite for both services, adding replay tests built from anonymised sync logs and keeping the suite passing in the CI pipeline."
+    },
+    {
+     "claim": "Lined up releases with app and platform teams in release reviews, with deployments executed by platform team's release engineer.",
+     "supportingRequirementIds": [
+      "req_391f7d1a9b96"
+     ],
+     "sourceIds": [
+      "src_7443a7529d70"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Lined up each release with the app team and the platform team in the release review; deployments to production were run by the platform team's release engineer, not by me."
+    },
+    {
+     "claim": "Kept the API change log current, noting hourly depot stock refreshes, and maintained the on-call hand-over checklist.",
+     "supportingRequirementIds": [
+      "req_2ff722e2a5a8"
+     ],
+     "sourceIds": [
+      "src_67624cedce7b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the API change log current, noting for each release that depot stock was refreshed only hourly, and maintained the on-call hand-over checklist."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Sync failures dropped from a few hundred a week to a handful",
+     "reason": "The reference call cites support-ticket volume, not the platform's documented weekly baseline metric.",
+     "requiredFollowUp": "Ask for the documented weekly baseline metric and the specific reduction measured against it."
+    },
+    {
+     "claim": "Two and a half years on the service-platform team, managing work-order and parts services, integration tests, release line-up, and change logs.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    },
+    {
+     "claim": "Idempotency keys implemented to prevent duplicate work orders from retried syncs, reducing support-ticket volume related to sync issues.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_a43cb3667b39",
+     "requirementId": "req_a43cb3667b39",
+     "severity": "high",
+     "gap": "Measured reduction in work-order sync failures against the documented weekly baseline."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_38ec5aa9aba7",
+     "text": "guessed sync failures dropped 'from a few hundred a week to a handful'",
+     "signalType": "hearsay",
+     "jobRelatedBoundary": "false",
+     "severity": "high",
+     "recommendedHandling": "Ask for the documented metric and baseline."
+    },
+    {
+     "sourceId": "src_38ec5aa9aba7",
+     "text": "Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go away' and guessed sync failures dropped 'from a few hundred a week to a handful'; he said he was going by support-ticket volume rather than the platform's sync-failure metric.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_a43cb3667b39_1",
+     "requirementId": "req_a43cb3667b39",
+     "question": "Can you provide the documented weekly baseline metric for work-order sync failures and the specific reduction you achieved against it?",
+     "evidenceTarget": "Measured reduction in work-order sync failures against the documented weekly baseline."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the documented weekly baseline metric for work-order sync failures.",
+    "Confirm the specific reduction achieved against the baseline.",
+    "Check if the candidate personally controlled the metric or if it was observed by others."
+   ],
+   "auditSummary": "The optimized CV and evidence packet correctly cite all sources, avoid unsupported claims, and identify the gap in measuring sync failures against the documented baseline. The reference call's hearsay about sync failures is flagged as a risk and requires verification.",
+   "limitations": [
+    "The reference call's metric is based on support-ticket volume, not the platform's documented metric, creating a gap in requirement req_a43cb3667b39."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

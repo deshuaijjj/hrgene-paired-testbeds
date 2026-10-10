@@ -1,0 +1,473 @@
+{
+ "request_id": "77994efe-f6c6-4e3d-9a71-59b9dc65532a.C2",
+ "case_id": "77994efe-f6c6-4e3d-9a71-59b9dc65532a",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Data Scientist with experience building predictive maintenance models for pump failures."
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[1].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Release note for planner release 4.2 includes a chart of weekly alert precision for the 12 weeks after release.",
+     "sourceId": "src_8561a66a2933"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "5 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Data Scientist with experience building predictive maintenance models for pump failures."
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[1].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Release note for planner release 4.2 includes a chart of weekly alert precision for the 12 weeks after release.",
+     "sourceId": "src_8561a66a2933"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_c6138401224d7f0a",
+   "targetRoleTitle": "Machine Learning Engineer, Predictive Maintenance",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Predictive Maintenance",
+    "jobDescriptionSource": "jd_d7931b3fd64e7ac1",
+    "requirementIds": [
+     "req_2a05d48e4b27",
+     "req_c8ee3455f3bc",
+     "req_fde80247824f",
+     "req_e8021a37304c",
+     "req_34b37c5c222c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_c6138401224d7f0a",
+    "sources": [
+     "src_71f30bfa6152",
+     "src_9dd09f009644",
+     "src_780f82e887d6",
+     "src_b0a409050d19",
+     "src_1c3a7c375b89",
+     "src_8561a66a2933",
+     "src_6f5166e87230",
+     "src_585f53a53e5f"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2a05d48e4b27",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_71f30bfa6152",
+       "text": "Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates model building from logs."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c8ee3455f3bc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9dd09f009644",
+       "text": "Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry.",
+       "evidenceStrength": "high",
+       "notes": "Shows versioned artefacts and automated tests."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fde80247824f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_780f82e887d6",
+       "text": "Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs.",
+       "evidenceStrength": "high",
+       "notes": "Deployment into production and monitoring."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e8021a37304c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b0a409050d19",
+       "text": "Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners.",
+       "evidenceStrength": "high",
+       "notes": "Collaboration with field teams."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_34b37c5c222c",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_1c3a7c375b89",
+       "text": "Posted the weekly alert-precision figures in the maintenance planning team's channel.",
+       "evidenceStrength": "medium",
+       "notes": "Shows alert precision reporting but at weekly cadence."
+      },
+      {
+       "sourceId": "src_8561a66a2933",
+       "text": "Release note for planner release 4.2 includes a chart of weekly alert precision for the 12 weeks after release.",
+       "evidenceStrength": "medium",
+       "notes": "Provides alert precision data but not monthly."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that alert precision is reported to operations management on a monthly basis."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps.",
+     "supportingRequirementIds": [
+      "req_2a05d48e4b27"
+     ],
+     "sourceIds": [
+      "src_71f30bfa6152"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps."
+    },
+    {
+     "claim": "Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry.",
+     "supportingRequirementIds": [
+      "req_c8ee3455f3bc"
+     ],
+     "sourceIds": [
+      "src_9dd09f009644"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry."
+    },
+    {
+     "claim": "Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs.",
+     "supportingRequirementIds": [
+      "req_fde80247824f"
+     ],
+     "sourceIds": [
+      "src_780f82e887d6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs."
+    },
+    {
+     "claim": "Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners.",
+     "supportingRequirementIds": [
+      "req_e8021a37304c"
+     ],
+     "sourceIds": [
+      "src_b0a409050d19"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Data Scientist with experience building predictive maintenance models for pump failures.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_34b37c5c222c_monthly_reporting",
+     "requirementId": "req_34b37c5c222c",
+     "severity": "medium",
+     "gap": "No evidence that alert precision is reported to operations management on a monthly basis."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_34b37c5c222c_monthly_reporting",
+     "requirementId": "req_34b37c5c222c",
+     "question": "Can you confirm whether alert precision metrics are reported to operations management on a monthly basis, and if so, provide an example of such a report.",
+     "evidenceTarget": "Monthly reporting of alert precision to operations management."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that monthly reporting of alert precision exists.",
+    "Confirm that the deployment was into a production system as defined by the role."
+   ],
+   "auditSummary": "The candidate has documented experience building, packaging, deploying, and monitoring a predictive maintenance model, and collaborating with field teams. Evidence for monthly alert precision reporting is incomplete, requiring follow-up. No protected characteristics are inferred. All claims are sourced from provided materials.",
+   "limitations": [
+    "Evidence limited to the provided sources; no external verification beyond the supplied documents."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

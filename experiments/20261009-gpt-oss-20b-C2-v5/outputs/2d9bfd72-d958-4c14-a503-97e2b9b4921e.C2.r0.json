@@ -1,0 +1,255 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2d9bfd72-d958-4c14-a503-97e2b9b4921e.C2",
+ "case_id": "2d9bfd72-d958-4c14-a503-97e2b9b4921e",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14636,
+  "promptWords": 1732
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 49.159
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4207,
+ "eval_count": 1947,
+ "prompt_eval_duration_ns": 18972000,
+ "eval_duration_ns": 35650892000,
+ "total_duration_ns": 49157405292,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Need to map requirements. Let's craft.\n\nOptimized CV: language en, candidateId cand_42485fa3bbc23fe5, targetRoleTitle Production Shift Supervisor, Industrial Bakery. professionalSummary: claims about supervising 18 operatives, start-of-shift briefing, food safety checks, Level 3 qualification. Use sources.\n\nexperienceHighlights: similar.\n\nprojectsAndWorkSamples: allergen changeover record.\n\nskills: shift supervision, start-of-shift briefing, food safety, allergen management, metal detection, HACCP, Level 3 qualification.\n\nevidenceBoundary: what materials establish: supervision of 18 operatives, start-of-shift briefing, food safety checks, Level 3 qualification, allergen changeover record. Do not establish rotating 12-hour shifts, 22 operatives, 12-hour day/night pattern, 20 operatives, etc.\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence gaps.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_4d81c7b4c21a01c3, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_b8089ab7fba0: Supervises a production shift of around 20 operatives on high-speed food lines. Evidence: src_c33f3c061b30 shows 18 operatives. So partial_evidence (not 20). missingEvidence: number of operatives, high-speed lines. status partial_evidence.\n\nreq_f5922ad1ff0f: Works a rotating pattern of 12-hour day and night shifts. No evidence. status insufficient_evidence. missingEvidence: shift pattern.\n\nreq_503bc4132c77: Holds start-of-shift briefings and tracks output against the production plan. Evidence: src_ce8fc365f644. status supported.\n\nreq_0c446f969881: Completes food-safety, allergen-changeover and metal-detection checks to the site's HACCP plan. Evidence: src_f55fea6b6e89. status supported.\n\nreq_3effde336e03: Holds a Level 3 food-safety qualification. Evidence: src_2cb995a21f88. status supported.\n\nsupportedClaims: list claims that are supported: e.g., \"Supervised 18 operatives on a morning shift of two biscuit lines\" etc. Provide sourceIds.\n\nunsupportedClaims: none? maybe claim about rotating shifts? but that's requirement not claim. So none.\n\nmissingEvidenceGaps: for each insufficient or partial: create gap entries.\n\ninterviewSignalRisks: none subjective.\n\nfollowUpQuestions: for each gap: e.g., ask about shift pattern, number of operatives, line speed.\n\nhumanReviewChecklist: items: review evidence gaps, verify shift pattern, confirm number of operatives, confirm high-speed line context.\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: e.g., limited to provided sources, no info on shift pattern.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_42485fa3bbc23fe5\",\"targetRoleTitle\":\"Production Shift Supervisor, Industrial Bakery\",\"professionalSummary\":[\"Supervised 18 operatives on a morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.\",\"Conducted 10‑minute start‑of‑shift briefings and recorded hourly output against the production plan.\",\"Completed allergen‑changeover checklists and hourly metal‑detector tests, countersigning HACCP sheets.\",\"Holds a Level 3 Award in Food Safety and Hygiene for Manufacturing (2022).\"],\"experienceHighlights\":[\"Supervised 18 operatives on the morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.\",\"Ran the 10‑minute start‑of‑shift briefing at the line board and recorded hourly output against the production plan, raising a downtime ticket for every stop longer than 15 minutes.\",\"Completed the allergen‑changeover checklist and the hourly metal‑detector test‑piece checks for both lines, countersigning the operatives' entries on the HACCP sheets.\",\"Trained new starters on the line's safe‑stop procedure during their first week.\"],\"projectsAndWorkSamples\":[\"An anonymised allergen‑changeover record from a sesame‑to‑plain switchover, showing the clean‑down steps, the swab result, the line release time and the supervisor's countersignature.\"],\"skills\":[\"Shift supervision\",\"Start‑of‑shift briefing\",\"Food‑safety checks\",\"Allergen management\",\"Metal‑detection testing\",\"HACCP compliance\",\"Level 3 food‑safety qualification\"],\"evidenceBoundary\":\"The provided materials establish that the candidate supervised 18 operatives, conducted start‑of‑shift briefings, performed food‑safety and allergen checks, and holds a Level 3 food‑safety qualification. They do not establish a rotating 12‑hour shift pattern, a shift of 22 operatives, or operation on high‑speed lines.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit based on evidence gaps.\"},\"role\":{\"roleTitle\":\"Production Shift Supervisor, Industrial Bakery\",\"jobDescriptionSource\":\"jd_4d81c7b4c21a01c3\",\"requirementIds\":[\"req_b8089ab7fba0\",\"req_f5922ad1ff0f\",\"req_503bc4132c77\",\"req_0c446f969881\",\"req_3effde336e03\"]},\"candidate\":{\"candidateId\":\"cand_42485fa3bbc23fe5\",\"sources\":[\"src_c33f3c061b30\",\"src_ce8fc365f644\",\"src_f55fea6b6e89\",\"src_2cb995a21f88\",\"src_2deb56f27a6d\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_b8089ab7fba0\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_c33f3c061b30\",\"text\":\"Supervised 18 operatives on the morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.\",\"evidenceStrength\":\"medium\",\"notes\":\"Number of operatives is 18, not 20; line speed not specified.\"}],\"missingEvidence\":[\"Number of operatives required (≈20).\",\"Evidence that lines are high‑speed food lines.\"],\"missingEvidence\":[]},{\"requirementId\":\"req_f5922ad1ff0f\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Pattern of rotating 12‑hour day and night shifts.\"],\"missingEvidence\":[]},{\"requirementId\":\"req_503bc4132c77\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ce8fc365f644\",\"text\":\"Ran the 10‑minute start‑of‑shift briefing at the line board and recorded hourly output against the production plan, raising a downtime ticket for every stop longer than 15 minutes.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of briefing and output tracking.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0c446f969881\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f55fea6b6e89\",\"text\":\"Completed the allergen‑changeover checklist and the hourly metal‑detector test‑piece checks for both lines, countersigning the operatives' entries on the HACCP sheets.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of food‑safety and allergen checks.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3effde336e03\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2cb995a21f88\",\"text\":\"Recruiter verification: the Level 3 Award in Food Safety and Hygiene for Manufacturing was checked with the awarding body's online certificate‑checking service and matches the candidate's name and a 2022 award date.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct verification of Level 3 qualification.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Supervised 18 operatives on a morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.\",\"supportingRequirementIds\":[\"req_b8089ab7fba0\"],\"sourceIds\":[\"src_c33f3c061b30\"],\"evidenceStrength\":\"medium\",\"witness\":\"Supervised 18 operatives on the morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.\"},{\"claim\":\"Conducted 10‑minute start‑of‑shift briefings and recorded hourly output against the production plan.\",\"supportingRequirementIds\":[\"req_503bc4132c77\"],\"sourceIds\":[\"src_ce8fc365f644\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the 10‑minute start‑of‑shift briefing at the line board and recorded hourly output against the production plan, raising a downtime ticket for every stop longer than 15 minutes.\"},{\"claim\":\"Completed allergen‑changeover checklists and hourly metal‑detector tests, countersigning HACCP sheets.\",\"supportingRequirementIds\":[\"req_0c446f969881\"],\"sourceIds\":[\"src_f55fea6b6e89\"],\"evidenceStrength\":\"high\",\"witness\":\"Completed the allergen‑changeover checklist and the hourly metal‑detector test‑piece checks for both lines, countersigning the operatives' entries on the HACCP sheets.\"},{\"claim\":\"Holds a Level 3 Award in Food Safety and Hygiene for Manufacturing (2022).\",\"supportingRequirementIds\":[\"req_3effde336e03\"],\"sourceIds\":[\"src_2cb995a21f88\"],\"evidenceStrength\":\"high\",\"witness\":\"Recruiter verification: the Level 3 Award in Food Safety and Hygiene for Manufacturing was checked with the awarding body's online certificate‑checking service and matches the candidate's name and a 2022 award date.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_req_b8089ab7fba0_operatives\",\"requirementId\":\"req_b8089ab7fba0\",\"severity\":\"medium\",\"gap\":\"Number of operatives required (≈20) and evidence that lines are high‑speed.\"},{\"gapId\":\"gap_req_f5922ad1ff0f_shift_pattern\",\"requirementId\":\"req_f5922ad1ff0f\",\"severity\":\"high\",\"gap\":\"Pattern of rotating 12‑hour day and night shifts.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_b8089ab7fba0\",\"question\":\"Can you confirm the typical number of operatives you supervise per shift and whether the lines you worked on are high‑speed production lines?\",\"evidenceTarget\":\"Number of operatives and line speed\"},{\"questionId\":\"q2\",\"requirementId\":\"req_f5922ad1ff0f\",\"question\":\"What is your shift rotation pattern? Do you work 12‑hour day and night shifts on a rotating basis?\",\"evidenceTarget\":\"Shift rotation pattern\"}],\"humanReviewChecklist\":[\"Review evidence gaps for shift pattern and operatives count.\",\"Verify that the candidate’s supervisory experience aligns with a 12‑hour rotating shift schedule.\",\"Confirm that the candidate’s lines were high‑speed production lines.\",\"Assess whether the candidate’s experience meets the 22‑operative shift size requirement.\"],\"auditSummary\":\"The candidate has documented experience supervising 18 operatives, conducting start‑of‑shift briefings, performing food‑safety and allergen checks, and holds a Level 3 food‑safety qualification. Evidence gaps exist regarding the required 12‑hour rotating shift pattern, the exact number of operatives (≈20), and whether the lines were high‑speed. Human review is required to evaluate these gaps and determine fit for the Production Shift Supervisor role.\",\"limitations\":[\"Evidence limited to the provided sources; no information on shift rotation, line speed, or 22‑operative shift size.\"]}}",
+ "content_sha256": "cc6f55db7510e4e826893e38fa4505fdfe9932d1b3a4a1125ccf2beb1466ce69",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_42485fa3bbc23fe5",
+   "targetRoleTitle": "Production Shift Supervisor, Industrial Bakery",
+   "professionalSummary": [
+    "Supervised 18 operatives on a morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.",
+    "Conducted 10‑minute start‑of‑shift briefings and recorded hourly output against the production plan.",
+    "Completed allergen‑changeover checklists and hourly metal‑detector tests, countersigning HACCP sheets.",
+    "Holds a Level 3 Award in Food Safety and Hygiene for Manufacturing (2022)."
+   ],
+   "experienceHighlights": [
+    "Supervised 18 operatives on the morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.",
+    "Ran the 10‑minute start‑of‑shift briefing at the line board and recorded hourly output against the production plan, raising a downtime ticket for every stop longer than 15 minutes.",
+    "Completed the allergen‑changeover checklist and the hourly metal‑detector test‑piece checks for both lines, countersigning the operatives' entries on the HACCP sheets.",
+    "Trained new starters on the line's safe‑stop procedure during their first week."
+   ],
+   "projectsAndWorkSamples": [
+    "An anonymised allergen‑changeover record from a sesame‑to‑plain switchover, showing the clean‑down steps, the swab result, the line release time and the supervisor's countersignature."
+   ],
+   "skills": [
+    "Shift supervision",
+    "Start‑of‑shift briefing",
+    "Food‑safety checks",
+    "Allergen management",
+    "Metal‑detection testing",
+    "HACCP compliance",
+    "Level 3 food‑safety qualification"
+   ],
+   "evidenceBoundary": "The provided materials establish that the candidate supervised 18 operatives, conducted start‑of‑shift briefings, performed food‑safety and allergen checks, and holds a Level 3 food‑safety qualification. They do not establish a rotating 12‑hour shift pattern, a shift of 22 operatives, or operation on high‑speed lines."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Production Shift Supervisor, Industrial Bakery",
+    "jobDescriptionSource": "jd_4d81c7b4c21a01c3",
+    "requirementIds": [
+     "req_b8089ab7fba0",
+     "req_f5922ad1ff0f",
+     "req_503bc4132c77",
+     "req_0c446f969881",
+     "req_3effde336e03"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_42485fa3bbc23fe5",
+    "sources": [
+     "src_c33f3c061b30",
+     "src_ce8fc365f644",
+     "src_f55fea6b6e89",
+     "src_2cb995a21f88",
+     "src_2deb56f27a6d"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_b8089ab7fba0",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_c33f3c061b30",
+       "text": "Supervised 18 operatives on the morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.",
+       "evidenceStrength": "medium",
+       "notes": "Number of operatives is 18, not 20; line speed not specified."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f5922ad1ff0f",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_503bc4132c77",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ce8fc365f644",
+       "text": "Ran the 10‑minute start‑of‑shift briefing at the line board and recorded hourly output against the production plan, raising a downtime ticket for every stop longer than 15 minutes.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of briefing and output tracking."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0c446f969881",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f55fea6b6e89",
+       "text": "Completed the allergen‑changeover checklist and the hourly metal‑detector test‑piece checks for both lines, countersigning the operatives' entries on the HACCP sheets.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of food‑safety and allergen checks."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3effde336e03",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2cb995a21f88",
+       "text": "Recruiter verification: the Level 3 Award in Food Safety and Hygiene for Manufacturing was checked with the awarding body's online certificate‑checking service and matches the candidate's name and a 2022 award date.",
+       "evidenceStrength": "high",
+       "notes": "Direct verification of Level 3 qualification."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Supervised 18 operatives on a morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover.",
+     "supportingRequirementIds": [
+      "req_b8089ab7fba0"
+     ],
+     "sourceIds": [
+      "src_c33f3c061b30"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Supervised 18 operatives on the morning shift of two biscuit lines at Pennard Foods, covering line set‑up, breaks and absence cover."
+    },
+    {
+     "claim": "Conducted 10‑minute start‑of‑shift briefings and recorded hourly output against the production plan.",
+     "supportingRequirementIds": [
+      "req_503bc4132c77"
+     ],
+     "sourceIds": [
+      "src_ce8fc365f644"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the 10‑minute start‑of‑shift briefing at the line board and recorded hourly output against the production plan, raising a downtime ticket for every stop longer than 15 minutes."
+    },
+    {
+     "claim": "Completed allergen‑changeover checklists and hourly metal‑detector tests, countersigning HACCP sheets.",
+     "supportingRequirementIds": [
+      "req_0c446f969881"
+     ],
+     "sourceIds": [
+      "src_f55fea6b6e89"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Completed the allergen‑changeover checklist and the hourly metal‑detector test‑piece checks for both lines, countersigning the operatives' entries on the HACCP sheets."
+    },
+    {
+     "claim": "Holds a Level 3 Award in Food Safety and Hygiene for Manufacturing (2022).",
+     "supportingRequirementIds": [
+      "req_3effde336e03"
+     ],
+     "sourceIds": [
+      "src_2cb995a21f88"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Recruiter verification: the Level 3 Award in Food Safety and Hygiene for Manufacturing was checked with the awarding body's online certificate‑checking service and matches the candidate's name and a 2022 award date."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_req_b8089ab7fba0_operatives",
+     "requirementId": "req_b8089ab7fba0",
+     "severity": "medium",
+     "gap": "Number of operatives required (≈20) and evidence that lines are high‑speed."
+    },
+    {
+     "gapId": "gap_req_f5922ad1ff0f_shift_pattern",
+     "requirementId": "req_f5922ad1ff0f",
+     "severity": "high",
+     "gap": "Pattern of rotating 12‑hour day and night shifts."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_b8089ab7fba0",
+     "question": "Can you confirm the typical number of operatives you supervise per shift and whether the lines you worked on are high‑speed production lines?",
+     "evidenceTarget": "Number of operatives and line speed"
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_f5922ad1ff0f",
+     "question": "What is your shift rotation pattern? Do you work 12‑hour day and night shifts on a rotating basis?",
+     "evidenceTarget": "Shift rotation pattern"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Review evidence gaps for shift pattern and operatives count.",
+    "Verify that the candidate’s supervisory experience aligns with a 12‑hour rotating shift schedule.",
+    "Confirm that the candidate’s lines were high‑speed production lines.",
+    "Assess whether the candidate’s experience meets the 22‑operative shift size requirement."
+   ],
+   "auditSummary": "The candidate has documented experience supervising 18 operatives, conducting start‑of‑shift briefings, performing food‑safety and allergen checks, and holds a Level 3 food‑safety qualification. Evidence gaps exist regarding the required 12‑hour rotating shift pattern, the exact number of operatives (≈20), and whether the lines were high‑speed. Human review is required to evaluate these gaps and determine fit for the Production Shift Supervisor role.",
+   "limitations": [
+    "Evidence limited to the provided sources; no information on shift rotation, line speed, or 22‑operative shift size."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:31:13.229730+00:00"
+}

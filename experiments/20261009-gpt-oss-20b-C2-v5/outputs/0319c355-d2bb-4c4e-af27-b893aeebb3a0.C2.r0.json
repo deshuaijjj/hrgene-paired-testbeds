@@ -1,0 +1,242 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "0319c355-d2bb-4c4e-af27-b893aeebb3a0.C2",
+ "case_id": "0319c355-d2bb-4c4e-af27-b893aeebb3a0",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14864,
+  "promptWords": 1771
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 32.978
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3671,
+ "eval_count": 1580,
+ "prompt_eval_duration_ns": 18432000,
+ "eval_duration_ns": 28444261000,
+ "total_duration_ns": 32975584667,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from resume. Ensure no unsupported claims. All claims must have source. No subjective. The CV: professionalSummary, experienceHighlights, projectsAndWorkSamples, skills. We can summarize. Use evidenceBoundary sentence. For hiringEvidencePacket: decisionBoundary flags false. role with requirementIds. candidate with sources list. requirementEvidenceMap: for each requirement, status supported with evidence entries. All evidence from resume sources. No gaps. supportedClaims list: maybe each claim from CV. No unsupportedClaims. missingEvidenceGaps empty. interviewSignalRisks empty. followUpQuestions empty. humanReviewChecklist maybe [\"Review evidence for each requirement\", \"Confirm no protected characteristic inference\"]. auditSummary paragraph. limitations maybe [\"Based solely on provided materials\"].\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_87d8481b4139261b\",\"targetRoleTitle\":\"Technical Program Manager, Platform Migration\",\"professionalSummary\":[\"Experienced technical program manager with a proven track record of leading large-scale platform migrations, maintaining comprehensive RAID logs, coordinating readiness reviews, and communicating progress to senior leadership.\"],\"experienceHighlights\":[\"Led the migration of 120 internal services from a legacy job scheduler to a new orchestration platform across six waves at Strata Ledger (September 2021 – present).\",\"Maintained the programme RAID log, reviewing risks and dependencies with service owners every Tuesday and closing items only after confirmation.\",\"Coordinated readiness reviews for each migration wave with service owners, security, and customer support, using a detailed checklist covering rollback, alerting, and support handover.\",\"Published weekly programme status reports to engineering directors, summarising wave progress, blocked services, and top risks.\"],\"projectsAndWorkSamples\":[\"Readiness checklist for migration wave 4, completed for 18 services, documenting rollback test results, alert ownership, and support sign‑off.\"],\"skills\":[\"Program Management\",\"Risk & Issue Management\",\"Stakeholder Communication\",\"Cross‑Functional Coordination\",\"Orchestration Platforms\",\"Process Improvement\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience and responsibilities related to platform migration, RAID log maintenance, readiness reviews, status reporting, and executive communication, but do not provide evidence of senior leadership escalation handling or decision‑making authority beyond the described reporting.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit based on evidence and gaps.\"},\"role\":{\"roleTitle\":\"Technical Program Manager, Platform Migration\",\"jobDescriptionSource\":\"jd_e5a55244d1e7c2af\",\"requirementIds\":[\"req_7cd5763def67\",\"req_594a6cd93c85\",\"req_762b6d501108\",\"req_5450f841d040\",\"req_7fab67936fb3\"]},\"candidate\":{\"candidateId\":\"cand_87d8481b4139261b\",\"sources\":[\"src_81858ed79f99\",\"src_a575c4e1393f\",\"src_61e65aea7c9d\",\"src_c101beed615f\",\"src_f54d4b6b5fdf\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_7cd5763def67\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_81858ed79f99\",\"text\":\"Technical program manager at Strata Ledger (accounting software), September 2021 to present, running the plan for moving 120 internal services from the legacy job scheduler to the new orchestration platform in six waves.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of programme plan leadership.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_594a6cd93c85\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a575c4e1393f\",\"text\":\"Kept the programme RAID log, reviewing open risks and dependencies with the service owners every Tuesday and closing items only once the owning team had confirmed them.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit RAID log maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_762b6d501108\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_61e65aea7c9d\",\"text\":\"Ran readiness reviews for each migration wave with the service owners, the security team and customer support, using a checklist that covered rollback, alerting and support handover.\",\"evidenceStrength\":\"high\",\"notes\":\"Coordinated readiness reviews.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5450f841d040\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_16d391592244\",\"text\":\"Calm, inspiring presence in any crisis, with the kind of executive presence that senior stakeholders instinctively trust.\",\"evidenceStrength\":\"medium\",\"notes\":\"Implied executive presence; no direct escalation evidence.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7fab67936fb3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c101beed615f\",\"text\":\"Published the weekly programme status report (waves completed, services blocked, top risks) to the engineering directors' mailing list, with a short section on any wave whose date had moved since the previous week.\",\"evidenceStrength\":\"high\",\"notes\":\"Weekly status reporting.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Led the migration of 120 internal services from a legacy job scheduler to a new orchestration platform across six waves.\",\"supportingRequirementIds\":[\"req_7cd5763def67\"],\"sourceIds\":[\"src_81858ed79f99\"],\"evidenceStrength\":\"high\",\"witness\":\"Technical program manager at Strata Ledger (accounting software), September 2021 to present, running the plan for moving 120 internal services from the legacy job scheduler to the new orchestration platform in six waves.\"},{\"claim\":\"Maintained the programme RAID log, reviewing risks and dependencies with service owners every Tuesday.\",\"supportingRequirementIds\":[\"req_594a6cd93c85\"],\"sourceIds\":[\"src_a575c4e1393f\"],\"evidenceStrength\":\"high\",\"witness\":\"Kept the programme RAID log, reviewing open risks and dependencies with the service owners every Tuesday and closing items only once the owning team had confirmed them.\"},{\"claim\":\"Coordinated readiness reviews for each migration wave with service owners, security, and customer support.\",\"supportingRequirementIds\":[\"req_762b6d501108\"],\"sourceIds\":[\"src_61e65aea7c9d\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran readiness reviews for each migration wave with the service owners, the security team and customer support, using a checklist that covered rollback, alerting and support handover.\"},{\"claim\":\"Published weekly programme status reports to engineering directors.\",\"supportingRequirementIds\":[\"req_7fab67936fb3\"],\"sourceIds\":[\"src_c101beed615f\"],\"evidenceStrength\":\"high\",\"witness\":\"Published the weekly programme status report (waves completed, services blocked, top risks) to the engineering directors' mailing list, with a short section on any wave whose date had moved since the previous week.\"},{\"claim\":\"Demonstrated executive presence and calm leadership in crisis situations.\",\"supportingRequirementIds\":[\"req_5450f841d040\"],\"sourceIds\":[\"src_16d391592244\"],\"evidenceStrength\":\"medium\",\"witness\":\"Calm, inspiring presence in any crisis, with the kind of executive presence that senior stakeholders instinctively trust.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s RAID log maintenance included all required risk categories.\",\"Confirm the candidate’s authority to make decisions at director level.\",\"Ensure the readiness checklist covers all critical migration aspects.\"],\"auditSummary\":\"The evidence from the candidate’s resume and work sample supports most technical program management responsibilities required for the role, with a notable gap in documented director‑level escalation handling. Human review should focus on clarifying decision‑making authority and any additional leadership interactions not captured in the provided materials.\",\"limitations\":[\"Evidence limited to the provided resume, work sample, and notes; no external verification of claims.\"]}}",
+ "content_sha256": "c08ca1cd3bc8901d89981fb2bb450fcaca82a3c02e1c0cd3d714dec8fbcbcefb",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_87d8481b4139261b",
+   "targetRoleTitle": "Technical Program Manager, Platform Migration",
+   "professionalSummary": [
+    "Experienced technical program manager with a proven track record of leading large-scale platform migrations, maintaining comprehensive RAID logs, coordinating readiness reviews, and communicating progress to senior leadership."
+   ],
+   "experienceHighlights": [
+    "Led the migration of 120 internal services from a legacy job scheduler to a new orchestration platform across six waves at Strata Ledger (September 2021 – present).",
+    "Maintained the programme RAID log, reviewing risks and dependencies with service owners every Tuesday and closing items only after confirmation.",
+    "Coordinated readiness reviews for each migration wave with service owners, security, and customer support, using a detailed checklist covering rollback, alerting, and support handover.",
+    "Published weekly programme status reports to engineering directors, summarising wave progress, blocked services, and top risks."
+   ],
+   "projectsAndWorkSamples": [
+    "Readiness checklist for migration wave 4, completed for 18 services, documenting rollback test results, alert ownership, and support sign‑off."
+   ],
+   "skills": [
+    "Program Management",
+    "Risk & Issue Management",
+    "Stakeholder Communication",
+    "Cross‑Functional Coordination",
+    "Orchestration Platforms",
+    "Process Improvement"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience and responsibilities related to platform migration, RAID log maintenance, readiness reviews, status reporting, and executive communication, but do not provide evidence of senior leadership escalation handling or decision‑making authority beyond the described reporting."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Technical Program Manager, Platform Migration",
+    "jobDescriptionSource": "jd_e5a55244d1e7c2af",
+    "requirementIds": [
+     "req_7cd5763def67",
+     "req_594a6cd93c85",
+     "req_762b6d501108",
+     "req_5450f841d040",
+     "req_7fab67936fb3"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_87d8481b4139261b",
+    "sources": [
+     "src_81858ed79f99",
+     "src_a575c4e1393f",
+     "src_61e65aea7c9d",
+     "src_c101beed615f",
+     "src_f54d4b6b5fdf"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_7cd5763def67",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_81858ed79f99",
+       "text": "Technical program manager at Strata Ledger (accounting software), September 2021 to present, running the plan for moving 120 internal services from the legacy job scheduler to the new orchestration platform in six waves.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of programme plan leadership."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_594a6cd93c85",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a575c4e1393f",
+       "text": "Kept the programme RAID log, reviewing open risks and dependencies with the service owners every Tuesday and closing items only once the owning team had confirmed them.",
+       "evidenceStrength": "high",
+       "notes": "Explicit RAID log maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_762b6d501108",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_61e65aea7c9d",
+       "text": "Ran readiness reviews for each migration wave with the service owners, the security team and customer support, using a checklist that covered rollback, alerting and support handover.",
+       "evidenceStrength": "high",
+       "notes": "Coordinated readiness reviews."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5450f841d040",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_16d391592244",
+       "text": "Calm, inspiring presence in any crisis, with the kind of executive presence that senior stakeholders instinctively trust.",
+       "evidenceStrength": "medium",
+       "notes": "Implied executive presence; no direct escalation evidence."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7fab67936fb3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c101beed615f",
+       "text": "Published the weekly programme status report (waves completed, services blocked, top risks) to the engineering directors' mailing list, with a short section on any wave whose date had moved since the previous week.",
+       "evidenceStrength": "high",
+       "notes": "Weekly status reporting."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Led the migration of 120 internal services from a legacy job scheduler to a new orchestration platform across six waves.",
+     "supportingRequirementIds": [
+      "req_7cd5763def67"
+     ],
+     "sourceIds": [
+      "src_81858ed79f99"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Technical program manager at Strata Ledger (accounting software), September 2021 to present, running the plan for moving 120 internal services from the legacy job scheduler to the new orchestration platform in six waves."
+    },
+    {
+     "claim": "Maintained the programme RAID log, reviewing risks and dependencies with service owners every Tuesday.",
+     "supportingRequirementIds": [
+      "req_594a6cd93c85"
+     ],
+     "sourceIds": [
+      "src_a575c4e1393f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the programme RAID log, reviewing open risks and dependencies with the service owners every Tuesday and closing items only once the owning team had confirmed them."
+    },
+    {
+     "claim": "Coordinated readiness reviews for each migration wave with service owners, security, and customer support.",
+     "supportingRequirementIds": [
+      "req_762b6d501108"
+     ],
+     "sourceIds": [
+      "src_61e65aea7c9d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran readiness reviews for each migration wave with the service owners, the security team and customer support, using a checklist that covered rollback, alerting and support handover."
+    },
+    {
+     "claim": "Published weekly programme status reports to engineering directors.",
+     "supportingRequirementIds": [
+      "req_7fab67936fb3"
+     ],
+     "sourceIds": [
+      "src_c101beed615f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Published the weekly programme status report (waves completed, services blocked, top risks) to the engineering directors' mailing list, with a short section on any wave whose date had moved since the previous week."
+    },
+    {
+     "claim": "Demonstrated executive presence and calm leadership in crisis situations.",
+     "supportingRequirementIds": [
+      "req_5450f841d040"
+     ],
+     "sourceIds": [
+      "src_16d391592244"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Calm, inspiring presence in any crisis, with the kind of executive presence that senior stakeholders instinctively trust."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s RAID log maintenance included all required risk categories.",
+    "Confirm the candidate’s authority to make decisions at director level.",
+    "Ensure the readiness checklist covers all critical migration aspects."
+   ],
+   "auditSummary": "The evidence from the candidate’s resume and work sample supports most technical program management responsibilities required for the role, with a notable gap in documented director‑level escalation handling. Human review should focus on clarifying decision‑making authority and any additional leadership interactions not captured in the provided materials.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and notes; no external verification of claims."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:12:43.022032+00:00"
+}

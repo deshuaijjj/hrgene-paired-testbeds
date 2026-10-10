@@ -1,0 +1,37 @@
+{
+  "caseId": "0bdc120c-2fdd-43ad-a217-fdd50f2cfdba",
+  "roleTitle": "Machine Learning Engineer, Insurance Claims Platform",
+  "jobDescription": "The claims platform of a general insurer uses a triage model to route incoming motor claims to fast-track or full assessment. The Machine Learning Engineer owns the triage model end-to-end: training data, model design, release decisions and production monitoring, and is the accountable owner for the model's performance with the claims operations director.",
+  "requirements": [
+    "Owns the triage model end-to-end, including training data, model design and release decisions.",
+    "Builds and maintains the training and evaluation pipelines for the triage model.",
+    "Monitors the model in production and runs the monthly model review with claims operations.",
+    "Coordinates model changes with claims operations and the model risk team and records own responsibility boundaries.",
+    "Documents model cards, known limitations and hand-over conditions for each model version."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Built and maintained the training and evaluation pipelines for the motor-claims triage model (Python, scheduled on the platform's batch runner), including the feature refresh that adds repair-estimate and photo-metadata features."},
+    {"type": "resume", "text": "Prepared the monthly model review pack (drift metrics, routing volumes, override rate) that the lead data scientist presented to claims operations; recommendations on threshold changes were the lead data scientist's."},
+    {"type": "resume", "text": "Took model changes through the model risk team's review as the pipeline owner; release decisions were taken by the lead data scientist and approved by the model risk committee."},
+    {"type": "resume", "text": "Wrote the model card sections on training data and known limitations for versions 2.1 and 2.2, including the limitation that photo-metadata features were missing for claims filed by phone."},
+    {"type": "resume", "text": "Responsibilities included pipeline development, review-pack preparation, risk-review support and model-card documentation for the triage model over about two years as one of three engineers on the model team."},
+    {"type": "work_sample", "text": "Work sample: the training pipeline's configuration and the model card for version 2.2, with the batch runner's job identifiers as a verification trail."},
+    {"type": "note", "text": "Hiring manager pre-read: a slide in the candidate's portfolio deck is titled 'Owner: motor-claims triage model' and lists 'model design, release decisions, production monitoring' under his name; in the screen he said the deck summarised 'what the team did'."},
+    {"type": "note", "text": "Recruiter note: the claims operations director has asked for an engineer who has been the accountable owner of a production model end-to-end; please make the ownership question explicit in the packet."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate built and maintained the training and evaluation pipelines for the triage model, including the repair-estimate and photo-metadata feature refresh.", "status": "supported", "sources": [1, 6], "requirements": [2], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume and the pipeline configuration document the pipeline work."},
+      {"text": "The candidate wrote the training-data and known-limitation sections of the model cards for versions 2.1 and 2.2.", "status": "supported", "sources": [4, 6], "requirements": [5], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume and the model card document the documentation work."},
+      {"text": "The candidate owned the triage model end-to-end, including model design and release decisions.", "status": "unsupported", "sources": [], "requirements": [1], "boundaryCategory": "unsupported_ownership_and_scope", "criticality": "critical", "rationale": "The resume assigns release decisions to the lead data scientist and the model risk committee and describes the candidate as one of three engineers; the portfolio slide summarises the team's work."}
+    ],
+    "requirementStatus": ["insufficient_evidence", "supported", "partial_evidence", "supported", "supported"],
+    "trap": {"proposition": 3, "rule": "hrgene.ownership_scope", "requirements": [1], "signatures": ["end-to-end", "owner: motor-claims triage model", "owned the triage model", "took the release decisions", "accountable owner", "decided releases"], "bait": [7, 8]},
+    "subjective": [],
+    "nonProduction": [],
+    "expectedGap": "The materials show pipeline ownership and documentation; they do not show the candidate taking model design or release decisions.",
+    "expectedBoundaryNote": "Keep the boundary the resume states: pipelines and model-card sections by the candidate, release decisions by the lead data scientist and the model risk committee; the portfolio slide is not evidence of ownership.",
+    "followUpTargets": ["Ask which design and release decisions the candidate took personally and whether he ever presented to the model risk committee as the accountable owner."],
+    "validClaimSignatures": ["photo-metadata", "model card"]
+  }
+}

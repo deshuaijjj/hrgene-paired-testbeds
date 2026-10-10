@@ -1,0 +1,235 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2aae44c2-ca6a-4bc3-af60-420c659400f2.C0",
+ "case_id": "2aae44c2-ca6a-4bc3-af60-420c659400f2",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 8144,
+  "promptWords": 1014
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 29.88
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 1897,
+ "eval_count": 1615,
+ "prompt_eval_duration_ns": 17251000,
+ "eval_duration_ns": 27899644000,
+ "total_duration_ns": 29868728125,
+ "thinking": "We need to produce JSON with structure. Need to map requirements. Provide evidence. Use sources. Let's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_95c4744c30d34a6f\",\"targetRoleTitle\":\"Demand Forecasting Scientist, Retail Replenishment Service\",\"professionalSummary\":[\"Seasoned demand forecasting specialist with two years of experience building, evaluating, and hand‑over of forecast models for a grocery chain’s replenishment service. Demonstrated expertise in offline backtesting, model card documentation, and feature pipeline specification. Proven ability to collaborate with platform ML teams to ensure model readiness for production.\"],\"experienceHighlights\":[\"Built and backtested demand forecast models over 18 months of historical store sales, following a documented evaluation protocol agreed with the platform ML team.\",\"Authored comprehensive model cards and evaluation reports detailing feature dependencies, backtest results by store cluster, and known limitations of offline data.\",\"Handed two accepted models to the platform ML team via the model registry; coordinated feature pipeline changes and reviewed implementation against backtest assumptions.\",\"Managed end‑to‑end responsibilities for offline model development, backtesting, documentation, and hand‑over over a two‑year period.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Candidate has strong offline modeling and documentation experience but lacks evidence of deploying models into the nightly order generation or monitoring accuracy in production.\"},\"role\":{\"roleTitle\":\"Demand Forecasting Scientist, Retail Replenishment Service\",\"jobDescriptionSource\":\"jd_045d79f5106de276\",\"requirementIds\":[\"req_408c902a3a52\",\"req_6bd049ec7207\",\"req_6d595462e5d0\",\"req_650da42ee3e8\",\"req_1a4231595b37\"]},\"candidate\":{\"candidateId\":\"cand_95c4744c30d34a6f\",\"sources\":[\"src_bad90c312d3e\",\"src_932db6c41613\",\"src_4406e2661844\",\"src_92e5bb31b35d\",\"src_034237d1f8f7\",\"src_ed8185cd8d2c\",\"src_5541e2f5a603\",\"src_ad6467e24832\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_408c902a3a52\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_4406e2661844\",\"text\":\"Handed the two accepted candidate models to the platform ML team through the model registry; that team owned the nightly order run, the release pipeline and the morning accuracy checks, and I had no access to the run itself.\",\"evidenceStrength\":\"medium\",\"notes\":\"Evidence of hand‑over but no direct deployment or accuracy monitoring.\"},{\"sourceId\":\"src_5541e2f5a603\",\"text\":\"Candidate said she 'deployed the forecasting models that drive the nightly orders' and that 'four hundred stores are running on my models'; asked who owned the nightly run, she said the platform ML team 'took it from there' after her registry hand‑over.\",\"evidenceStrength\":\"low\",\"notes\":\"Self‑reported claim, no independent verification.\"}],\"missingEvidence\":[\"Direct evidence of model deployment into nightly order generation and accuracy checks against actual store sales.\"]},{\"requirementId\":\"req_6bd049ec7207\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No evidence of handling model incidents such as stale features or missing sales feed during nightly window.\"]},{\"requirementId\":\"req_6d595462e5d0\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_92e5bb31b35d\",\"text\":\"Specified the feature pipeline changes needed by the accepted models in the feature request log and reviewed the platform team's implementation against the backtest assumptions.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination with platform team but no explicit release responsibility record.\"}],\"missingEvidence\":[\"Explicit record of model release coordination and responsibility boundaries.\"]},{\"requirementId\":\"req_650da42ee3e8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_bad90c312d3e\",\"text\":\"Built and evaluated demand forecast models for the replenishment service in the offline experimentation environment, backtesting each candidate model over eighteen months of historical store sales extracts under the evaluation protocol agreed with the platform ML team.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of building and backtesting models under documented protocol.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_1a4231595b37\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_932db6c41613\",\"text\":\"Wrote the model card and the evaluation report for each candidate model, listing the feature dependencies, the backtest results by store cluster and the known limitations of the offline sales extracts.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of model card documentation.}\"}],\"missingEvidence\":[]},\"supportedClaims':[{\"\n\n]},\"unsupportedClaims\":[{\"claim\":\"Candidate deployed models into nightly order generation and monitored accuracy against actual store sales.\",\"reason\":\"No independent evidence of deployment or monitoring.\",\"requiredFollowUp\":\"Provide logs or screenshots of model deployment in the nightly pipeline and accuracy reports comparing predictions to actual sales.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_408c902a3a52\",\"severity\":\"high\",\"gap\":\"Evidence of model deployment into nightly order generation and accuracy checks.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_6bd049ec7207\",\"severity\":\"medium\",\"gap\":\"Evidence of handling model incidents during nightly window.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_6d595462e5d0\",\"severity\":\"low\",\"gap\":\"Explicit release coordination record.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_5541e2f5a603\",\"text\":\"Candidate claimed deployment of models into nightly orders.\",\"signalType\":\"self‑report\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify with platform ML team and review deployment logs.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_408c902a3a52\",\"question\":\"Can you describe the process you followed to deploy a forecast model into the nightly order generation pipeline and how you verified its accuracy against actual store sales?\",\"evidenceTarget\":\"Deployment logs, accuracy reports, and stakeholder confirmation.\"},{\"questionId\":\"q2\",\"requirementId\":\"req_6bd049ec7207\",\"question\":\"Tell me about a time you handled a model incident such as stale features or a missing sales feed during the nightly window. What steps did you take to resolve it?\",\"evidenceTarget\":\"Incident reports, remediation steps, and outcome.\"},{\"questionId\":\"q3\",\"requirementId\":\"req_6d595462e5d0\",\"question\":\"How did you coordinate model releases with the platform ML team, and what documentation did you maintain to record your responsibility boundaries?\",\"evidenceTarget\":\"Release notes, communication logs, and responsibility matrix.\"}],\"humanReviewChecklist\":[\"Verify candidate’s claim of model deployment into nightly pipeline.\",\"Confirm absence of direct evidence for incident handling.\",\"Assess completeness of release coordination documentation.\",\"Ensure model card documentation meets role expectations.\"],\"auditSummary\":\"The candidate demonstrates strong offline modeling, backtesting, and documentation skills aligned with several role requirements. However, critical evidence for live deployment, nightly accuracy monitoring, and incident handling is missing, necessitating further verification during interview and reference checks.\",\"limitations\":[\"Based solely on provided resume and notes; no external verification of claims.\"]}",
+ "content_sha256": "936f6af0a5bff58c54bdc4f74d5538ec3410c81c0a04628a1eec6c70cc569a62",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_95c4744c30d34a6f",
+   "targetRoleTitle": "Demand Forecasting Scientist, Retail Replenishment Service",
+   "professionalSummary": [
+    "Seasoned demand forecasting specialist with two years of experience building, evaluating, and hand‑over of forecast models for a grocery chain’s replenishment service. Demonstrated expertise in offline backtesting, model card documentation, and feature pipeline specification. Proven ability to collaborate with platform ML teams to ensure model readiness for production."
+   ],
+   "experienceHighlights": [
+    "Built and backtested demand forecast models over 18 months of historical store sales, following a documented evaluation protocol agreed with the platform ML team.",
+    "Authored comprehensive model cards and evaluation reports detailing feature dependencies, backtest results by store cluster, and known limitations of offline data.",
+    "Handed two accepted models to the platform ML team via the model registry; coordinated feature pipeline changes and reviewed implementation against backtest assumptions.",
+    "Managed end‑to‑end responsibilities for offline model development, backtesting, documentation, and hand‑over over a two‑year period."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Candidate has strong offline modeling and documentation experience but lacks evidence of deploying models into the nightly order generation or monitoring accuracy in production."
+   },
+   "role": {
+    "roleTitle": "Demand Forecasting Scientist, Retail Replenishment Service",
+    "jobDescriptionSource": "jd_045d79f5106de276",
+    "requirementIds": [
+     "req_408c902a3a52",
+     "req_6bd049ec7207",
+     "req_6d595462e5d0",
+     "req_650da42ee3e8",
+     "req_1a4231595b37"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_95c4744c30d34a6f",
+    "sources": [
+     "src_bad90c312d3e",
+     "src_932db6c41613",
+     "src_4406e2661844",
+     "src_92e5bb31b35d",
+     "src_034237d1f8f7",
+     "src_ed8185cd8d2c",
+     "src_5541e2f5a603",
+     "src_ad6467e24832"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_408c902a3a52",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_4406e2661844",
+       "text": "Handed the two accepted candidate models to the platform ML team through the model registry; that team owned the nightly order run, the release pipeline and the morning accuracy checks, and I had no access to the run itself.",
+       "evidenceStrength": "medium",
+       "notes": "Evidence of hand‑over but no direct deployment or accuracy monitoring."
+      },
+      {
+       "sourceId": "src_5541e2f5a603",
+       "text": "Candidate said she 'deployed the forecasting models that drive the nightly orders' and that 'four hundred stores are running on my models'; asked who owned the nightly run, she said the platform ML team 'took it from there' after her registry hand‑over.",
+       "evidenceStrength": "low",
+       "notes": "Self‑reported claim, no independent verification."
+      }
+     ],
+     "missingEvidence": [
+      "Direct evidence of model deployment into nightly order generation and accuracy checks against actual store sales."
+     ]
+    },
+    {
+     "requirementId": "req_6bd049ec7207",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No evidence of handling model incidents such as stale features or missing sales feed during nightly window."
+     ]
+    },
+    {
+     "requirementId": "req_6d595462e5d0",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_92e5bb31b35d",
+       "text": "Specified the feature pipeline changes needed by the accepted models in the feature request log and reviewed the platform team's implementation against the backtest assumptions.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination with platform team but no explicit release responsibility record."
+      }
+     ],
+     "missingEvidence": [
+      "Explicit record of model release coordination and responsibility boundaries."
+     ]
+    },
+    {
+     "requirementId": "req_650da42ee3e8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bad90c312d3e",
+       "text": "Built and evaluated demand forecast models for the replenishment service in the offline experimentation environment, backtesting each candidate model over eighteen months of historical store sales extracts under the evaluation protocol agreed with the platform ML team.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of building and backtesting models under documented protocol."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1a4231595b37",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_932db6c41613",
+       "text": "Wrote the model card and the evaluation report for each candidate model, listing the feature dependencies, the backtest results by store cluster and the known limitations of the offline sales extracts.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of model card documentation.}"
+      }
+     ],
+     "missingEvidence": []
+    },
+    "supportedClaims':[{"
+   ]
+  },
+  "unsupportedClaims": [
+   {
+    "claim": "Candidate deployed models into nightly order generation and monitored accuracy against actual store sales.",
+    "reason": "No independent evidence of deployment or monitoring.",
+    "requiredFollowUp": "Provide logs or screenshots of model deployment in the nightly pipeline and accuracy reports comparing predictions to actual sales."
+   }
+  ],
+  "missingEvidenceGaps": [
+   {
+    "gapId": "gap_1",
+    "requirementId": "req_408c902a3a52",
+    "severity": "high",
+    "gap": "Evidence of model deployment into nightly order generation and accuracy checks."
+   },
+   {
+    "gapId": "gap_2",
+    "requirementId": "req_6bd049ec7207",
+    "severity": "medium",
+    "gap": "Evidence of handling model incidents during nightly window."
+   },
+   {
+    "gapId": "gap_3",
+    "requirementId": "req_6d595462e5d0",
+    "severity": "low",
+    "gap": "Explicit release coordination record."
+   }
+  ],
+  "interviewSignalRisks": [
+   {
+    "sourceId": "src_5541e2f5a603",
+    "text": "Candidate claimed deployment of models into nightly orders.",
+    "signalType": "self‑report",
+    "jobRelatedBoundary": "yes",
+    "severity": "medium",
+    "recommendedHandling": "Verify with platform ML team and review deployment logs."
+   }
+  ],
+  "followUpQuestions": [
+   {
+    "questionId": "q1",
+    "requirementId": "req_408c902a3a52",
+    "question": "Can you describe the process you followed to deploy a forecast model into the nightly order generation pipeline and how you verified its accuracy against actual store sales?",
+    "evidenceTarget": "Deployment logs, accuracy reports, and stakeholder confirmation."
+   },
+   {
+    "questionId": "q2",
+    "requirementId": "req_6bd049ec7207",
+    "question": "Tell me about a time you handled a model incident such as stale features or a missing sales feed during the nightly window. What steps did you take to resolve it?",
+    "evidenceTarget": "Incident reports, remediation steps, and outcome."
+   },
+   {
+    "questionId": "q3",
+    "requirementId": "req_6d595462e5d0",
+    "question": "How did you coordinate model releases with the platform ML team, and what documentation did you maintain to record your responsibility boundaries?",
+    "evidenceTarget": "Release notes, communication logs, and responsibility matrix."
+   }
+  ],
+  "humanReviewChecklist": [
+   "Verify candidate’s claim of model deployment into nightly pipeline.",
+   "Confirm absence of direct evidence for incident handling.",
+   "Assess completeness of release coordination documentation.",
+   "Ensure model card documentation meets role expectations."
+  ],
+  "auditSummary": "The candidate demonstrates strong offline modeling, backtesting, and documentation skills aligned with several role requirements. However, critical evidence for live deployment, nightly accuracy monitoring, and incident handling is missing, necessitating further verification during interview and reference checks.",
+  "limitations": [
+   "Based solely on provided resume and notes; no external verification of claims."
+  ]
+ },
+ "finished_at": "2026-09-07T10:51:31.963725+00:00"
+}

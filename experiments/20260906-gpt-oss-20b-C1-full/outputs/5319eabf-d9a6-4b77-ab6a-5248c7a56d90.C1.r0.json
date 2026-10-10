@@ -1,0 +1,300 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "5319eabf-d9a6-4b77-ab6a-5248c7a56d90.C1",
+ "case_id": "5319eabf-d9a6-4b77-ab6a-5248c7a56d90",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11509,
+  "promptWords": 1516
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 57.521
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3286,
+ "eval_count": 2350,
+ "prompt_eval_duration_ns": 17968000,
+ "eval_duration_ns": 42336957000,
+ "total_duration_ns": 57519109416,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. For each requirement, map evidence. Let's identify evidence:\n\nreq_6e1a2c13f2ff: release models into live assistant and watches deflection/handoff rates. Candidate: source 8a182c777f47 says prepared release candidates for assistant platform team; involvement ended at release review, no access to live data. So not released into live assistant. So insufficient evidence. Also no watching rates. So requirement not supported.\n\nreq_00e307158d51: handles model incidents via on-call rota. Source 8a182c777f47 says platform team had on-call rota; candidate did not have access. So insufficient evidence.\n\nreq_2b2ed050ac8a: coordinates releases with platform team and records responsibility boundaries. Source 8a182c777f47: prepared release candidates for platform team; involvement ended at release review. So partial evidence: coordinated but not full responsibility boundaries. So partial_evidence.\n\nreq_9e545a9fb810: trains and evaluates models against held-out and replay sets with evaluation harness. Sources d49a50f0aae4, f18f02c97523, 4c100755d94c support. So supported.\n\nreq_d4642dcfd7d6: documents model limitations and hand-over conditions in model cards and release notes. Sources b9c9f034dc84, 4c100755d94c support. So supported.\n\nNow produce evidenceBoundary: materials establish training/evaluation, release candidate prep, model cards, but do not establish live release, monitoring, incident handling.\n\nNow produce optimized CV: professionalSummary: \"Experienced Conversational AI Engineer with focus on intent classification and answer retrieval model development, evaluation harness creation, and documentation of model limitations.\" Cite sources.\n\nexperienceHighlights: list training/evaluation, harness, release candidate prep, model cards.\n\nprojectsAndWorkSamples: evaluation harness report, model card.\n\nskills: intent classification, answer retrieval, evaluation harness, model documentation.\n\nNow hiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review required before any employment decision.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id with status and evidence array.\n\nsupportedClaims: claim about training/evaluation etc.\n\nunsupportedClaims: maybe claim that candidate released models into live assistant? Not present. But we can note that no evidence of live release. So unsupported claim: \"Candidate released intent models into live assistant.\" reason: no source. requiredFollowUp: ask for evidence of live deployment.\n\nmissingEvidenceGaps: for req_6e1a2c13f2ff and req_00e307158d51 and req_2b2ed050ac8a.\n\ninterviewSignalRisks: maybe note from note 92e3aefe5404 about incidents and pager. But it's not evidence. So risk: \"Candidate claimed to handle incidents but platform team carried pager.\" signalType: \"incident handling claim\". jobRelatedBoundary: false. severity: medium. recommendedHandling: verify incident handling responsibilities.\n\nfollowUpQuestions: for each gap.\n\nhumanReviewChecklist: items like \"Verify live deployment evidence\", \"Confirm incident handling responsibilities\", \"Confirm coordination scope\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: e.g., limited to provided materials, no external verification.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_55650263a4cc57a3\",\"targetRoleTitle\":\"Conversational AI Engineer, Support Chat Assistant\",\"professionalSummary\":[\"Experienced Conversational AI Engineer focused on intent classification and answer retrieval model development, evaluation harness creation, and documentation of model limitations. (src_d49a50f0aae4, src_f18f02c97523, src_b9c9f034dc84)\"],\"experienceHighlights\":[\"Trained and evaluated intent classification and answer retrieval models using an annotated conversation corpus and a replay set of anonymised past conversations as held‑out data. (src_d49a50f0aae4)\",\"Built and maintained an offline evaluation harness that scored candidate models on intent accuracy, retrieval recall, and replay‑set regressions before release. (src_f18f02c97523)\",\"Prepared release candidates for the assistant platform team, concluding involvement at the release review stage. (src_8a182c777f47)\",\"Authored model cards and release notes detailing training data cuts, replay‑set results, and known failure modes. (src_b9c9f034dc84)\"],\"projectsAndWorkSamples\":[\"Evaluation harness report for the last three release candidates with sandbox experiment identifiers. (src_f33802686b09)\",\"Model card for the intent classifier. (src_f33802686b09)\"],\"skills\":[\"Intent classification\",\"Answer retrieval\",\"Offline evaluation harness\",\"Model documentation\",\"Release candidate preparation\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience in training, evaluating, and documenting intent and answer models, as well as preparing release candidates for a platform team. They do not establish that the candidate released models into live customer traffic, monitored live deflection or hand‑off rates, or handled production incidents through an on‑call rota.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Conversational AI Engineer, Support Chat Assistant\",\"jobDescriptionSource\":\"jd_da93bf6b81eee03d\",\"requirementIds\":[\"req_6e1a2c13f2ff\",\"req_00e307158d51\",\"req_2b2ed050ac8a\",\"req_9e545a9fb810\",\"req_d4642dcfd7d6\"]},\"candidate\":{\"candidateId\":\"cand_55650263a4cc57a3\",\"sources\":[\"src_d49a50f0aae4\",\"src_f18f02c97523\",\"src_8a182c777f47\",\"src_b9c9f034dc84\",\"src_4c100755d94c\",\"src_f33802686b09\",\"src_92e3aefe5404\",\"src_c999ae72ed29\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_6e1a2c13f2ff\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate released intent and answer models into the live assistant and monitored deflection and hand‑off rates on live traffic.\"],\"missingEvidenceGaps\":[]},{\"requirementId\":\"req_00e307158d51\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate handled model incidents such as post‑release regressions or mis‑routing spikes through the assistant’s on‑call rota.\"],\"missingEvidenceGaps\":[]},{\"requirementId\":\"req_2b2ed050ac8a\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_8a182c777f47\",\"text\":\"Prepared release candidates for the assistant platform team, which held the release pipeline, the live dashboards and the on-call rota; my involvement ended at the release review, and I did not have access to the live conversation data.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination with platform team but not full responsibility boundaries.\"}],\"missingEvidence\":[\"Clear documentation of the candidate’s responsibility boundaries during release coordination.\"],\"missingEvidenceGaps\":[]},{\"requirementId\":\"req_9e545a9fb810\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d49a50f0aae4\",\"text\":\"Trained and evaluated intent classification and answer retrieval models for the support chat assistant in the model development sandbox, using the annotated conversation corpus and a replay set of anonymised past conversations as the held‑out evaluation data.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly supports training and evaluation against held‑out and replay sets.\"},{\"sourceId\":\"src_f18f02c97523\",\"text\":\"Built and maintained the offline evaluation harness that scored every candidate model on intent accuracy, retrieval recall and replay‑set regressions before it was proposed for release.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows maintenance of evaluation harness.\"}],\"missingEvidence\":[],\"missingEvidenceGaps\":[]},{\"requirementId\":\"req_d4642dcfd7d6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b9c9f034dc84\",\"text\":\"Wrote the model card and the release notes for each candidate model, listing the training data cut, the replay‑set results and the known failure modes on multi‑intent messages.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly documents model limitations and hand‑over conditions.\"},{\"sourceId\":\"src_4c100755d94c\",\"text\":\"Over about two and a half years the work covered model training, the evaluation harness, release candidate preparation, model cards and release notes for the assistant's intent and retrieval models.\",\"evidenceStrength\":\"medium\",\"notes\":\"Provides context for documentation activities.\"}],\"missingEvidence\":[],\"missingEvidenceGaps\":[]}],\"supportedClaims\":[{\"claim\":\"Candidate trained and evaluated intent classification and answer retrieval models using an annotated conversation corpus and a replay set of anonymised past conversations as held‑out data.\",\"supportingRequirementIds\":[\"req_9e545a9fb810\"],\"sourceIds\":[\"src_d49a50f0aae4\"],\"evidenceStrength\":\"high\",\"witness\":\"Trained and evaluated intent classification and answer retrieval models for the support chat assistant in the model development sandbox, using the annotated conversation corpus and a replay set of anonymised past conversations as the held‑out evaluation data.\"},{\"claim\":\"Candidate built and maintained an offline evaluation harness that scored candidate models on intent accuracy, retrieval recall and replay‑set regressions before release.\",\"supportingRequirementIds\":[\"req_9e545a9fb810\"],\"sourceIds\":[\"src_f18f02c97523\"],\"evidenceStrength\":\"high\",\"witness\":\"Built and maintained the offline evaluation harness that scored every candidate model on intent accuracy, retrieval recall and replay‑set regressions before it was proposed for release.\"},{\"claim\":\"Candidate prepared release candidates for the assistant platform team and concluded involvement at the release review stage.\",\"supportingRequirementIds\":[\"req_2b2ed050ac8a\"],\"sourceIds\":[\"src_8a182c777f47\"],\"evidenceStrength\":\"medium\",\"witness\":\"Prepared release candidates for the assistant platform team, which held the release pipeline, the live dashboards and the on‑call rota; my involvement ended at the release review, and I did not have access to the live conversation data.\"},{\"claim\":\"Candidate authored model cards and release notes detailing training data cuts, replay‑set results, and known failure modes.\",\"supportingRequirementIds\":[\"req_d4642dcfd7d6\"],\"sourceIds\":[\"src_b9c9f034dc84\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the model card and the release notes for each candidate model, listing the training data cut, the replay‑set results and the known failure modes on multi‑intent messages.\"}],\"unsupportedClaims\":[{\"claim\":\"Candidate released intent and answer models into the live assistant and monitors deflection and hand‑off rates on live traffic.\",\"reason\":\"No source documents live deployment or monitoring activities.\",\"requiredFollowUp\":\"Ask for evidence of live deployment and monitoring of deflection/hand‑off rates.\"},{\"claim\":\"Candidate handled model incidents such as post‑release regressions or mis‑routing spikes through the assistant’s on‑call rota.\",\"reason\":\"No source documents incident handling responsibilities.\",\"requiredFollowUp\":\"Ask for evidence of incident handling duties and on‑call participation.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_6e1a2c13f2ff\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate released models into live traffic and monitored deflection/hand‑off rates.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_00e307158d51\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate handled production incidents via the on‑call rota.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_2b2ed050ac8a\",\"severity\":\"medium\",\"gap\":\"Clear documentation of the candidate’s responsibility boundaries during release coordination.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_92e3aefe5404\",\"text\":\"Candidate said he had 'shipped the intent models that run the assistant' and that 'my models handle about a million conversations a month'; asked about incidents, he described a replay‑set regression found before a release and said the platform team 'carried the pager'.\",\"signalType\":\"incident handling claim\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify incident handling responsibilities and clarify the extent of live deployment.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_6e1a2c13f2ff\",\"question\":\"Can you provide evidence that your intent and answer models were deployed into the live assistant and that you monitored deflection and hand‑off rates on live traffic?\",\"evidenceTarget\":\"Live deployment logs or monitoring dashboards.\"},{\"questionId\":\"q2\",\"requirementId\":\"req_00e307158d51\",\"question\":\"What specific incidents did you handle through the assistant’s on‑call rota, and what documentation exists of your involvement?\",\"evidenceTarget\":\"Incident reports or on‑call logs.\"},{\"questionId\":\"q3\",\"requirementId\":\"req_2b2ed050ac8a\",\"question\":\"Can you describe the boundaries of your responsibilities during model release coordination with the assistant platform team?\",\"evidenceTarget\":\"Release coordination documentation or role descriptions.\"}],\"humanReviewChecklist\":[\"Verify evidence of live deployment and monitoring of deflection/hand‑off rates.\",\"Confirm incident handling responsibilities and on‑call participation.\",\"Clarify scope of responsibility boundaries during release coordination.\"],\"auditSummary\":\"The candidate demonstrates strong experience in training, evaluating, and documenting intent and answer models, and in preparing release candidates for a platform team. However, the provided materials do not establish that the candidate released models into live customer traffic, monitored live metrics, or handled production incidents through an on‑call rota. Human review is required to confirm these critical responsibilities for the target role.\",\"limitations\":[\"Analysis is limited to the provided candidate materials and job description; no external verification of claims is performed.\"]}}",
+ "content_sha256": "5ef6a761f3e04f321619ad04c02bc8467c078ca1efe865ea87878d4a2d49e0a3",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_55650263a4cc57a3",
+   "targetRoleTitle": "Conversational AI Engineer, Support Chat Assistant",
+   "professionalSummary": [
+    "Experienced Conversational AI Engineer focused on intent classification and answer retrieval model development, evaluation harness creation, and documentation of model limitations. (src_d49a50f0aae4, src_f18f02c97523, src_b9c9f034dc84)"
+   ],
+   "experienceHighlights": [
+    "Trained and evaluated intent classification and answer retrieval models using an annotated conversation corpus and a replay set of anonymised past conversations as held‑out data. (src_d49a50f0aae4)",
+    "Built and maintained an offline evaluation harness that scored candidate models on intent accuracy, retrieval recall, and replay‑set regressions before release. (src_f18f02c97523)",
+    "Prepared release candidates for the assistant platform team, concluding involvement at the release review stage. (src_8a182c777f47)",
+    "Authored model cards and release notes detailing training data cuts, replay‑set results, and known failure modes. (src_b9c9f034dc84)"
+   ],
+   "projectsAndWorkSamples": [
+    "Evaluation harness report for the last three release candidates with sandbox experiment identifiers. (src_f33802686b09)",
+    "Model card for the intent classifier. (src_f33802686b09)"
+   ],
+   "skills": [
+    "Intent classification",
+    "Answer retrieval",
+    "Offline evaluation harness",
+    "Model documentation",
+    "Release candidate preparation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in training, evaluating, and documenting intent and answer models, as well as preparing release candidates for a platform team. They do not establish that the candidate released models into live customer traffic, monitored live deflection or hand‑off rates, or handled production incidents through an on‑call rota."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Conversational AI Engineer, Support Chat Assistant",
+    "jobDescriptionSource": "jd_da93bf6b81eee03d",
+    "requirementIds": [
+     "req_6e1a2c13f2ff",
+     "req_00e307158d51",
+     "req_2b2ed050ac8a",
+     "req_9e545a9fb810",
+     "req_d4642dcfd7d6"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_55650263a4cc57a3",
+    "sources": [
+     "src_d49a50f0aae4",
+     "src_f18f02c97523",
+     "src_8a182c777f47",
+     "src_b9c9f034dc84",
+     "src_4c100755d94c",
+     "src_f33802686b09",
+     "src_92e3aefe5404",
+     "src_c999ae72ed29"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_6e1a2c13f2ff",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate released intent and answer models into the live assistant and monitored deflection and hand‑off rates on live traffic."
+     ],
+     "missingEvidenceGaps": []
+    },
+    {
+     "requirementId": "req_00e307158d51",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate handled model incidents such as post‑release regressions or mis‑routing spikes through the assistant’s on‑call rota."
+     ],
+     "missingEvidenceGaps": []
+    },
+    {
+     "requirementId": "req_2b2ed050ac8a",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_8a182c777f47",
+       "text": "Prepared release candidates for the assistant platform team, which held the release pipeline, the live dashboards and the on-call rota; my involvement ended at the release review, and I did not have access to the live conversation data.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination with platform team but not full responsibility boundaries."
+      }
+     ],
+     "missingEvidence": [
+      "Clear documentation of the candidate’s responsibility boundaries during release coordination."
+     ],
+     "missingEvidenceGaps": []
+    },
+    {
+     "requirementId": "req_9e545a9fb810",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d49a50f0aae4",
+       "text": "Trained and evaluated intent classification and answer retrieval models for the support chat assistant in the model development sandbox, using the annotated conversation corpus and a replay set of anonymised past conversations as the held‑out evaluation data.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports training and evaluation against held‑out and replay sets."
+      },
+      {
+       "sourceId": "src_f18f02c97523",
+       "text": "Built and maintained the offline evaluation harness that scored every candidate model on intent accuracy, retrieval recall and replay‑set regressions before it was proposed for release.",
+       "evidenceStrength": "high",
+       "notes": "Shows maintenance of evaluation harness."
+      }
+     ],
+     "missingEvidence": [],
+     "missingEvidenceGaps": []
+    },
+    {
+     "requirementId": "req_d4642dcfd7d6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b9c9f034dc84",
+       "text": "Wrote the model card and the release notes for each candidate model, listing the training data cut, the replay‑set results and the known failure modes on multi‑intent messages.",
+       "evidenceStrength": "high",
+       "notes": "Directly documents model limitations and hand‑over conditions."
+      },
+      {
+       "sourceId": "src_4c100755d94c",
+       "text": "Over about two and a half years the work covered model training, the evaluation harness, release candidate preparation, model cards and release notes for the assistant's intent and retrieval models.",
+       "evidenceStrength": "medium",
+       "notes": "Provides context for documentation activities."
+      }
+     ],
+     "missingEvidence": [],
+     "missingEvidenceGaps": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Candidate trained and evaluated intent classification and answer retrieval models using an annotated conversation corpus and a replay set of anonymised past conversations as held‑out data.",
+     "supportingRequirementIds": [
+      "req_9e545a9fb810"
+     ],
+     "sourceIds": [
+      "src_d49a50f0aae4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Trained and evaluated intent classification and answer retrieval models for the support chat assistant in the model development sandbox, using the annotated conversation corpus and a replay set of anonymised past conversations as the held‑out evaluation data."
+    },
+    {
+     "claim": "Candidate built and maintained an offline evaluation harness that scored candidate models on intent accuracy, retrieval recall and replay‑set regressions before release.",
+     "supportingRequirementIds": [
+      "req_9e545a9fb810"
+     ],
+     "sourceIds": [
+      "src_f18f02c97523"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built and maintained the offline evaluation harness that scored every candidate model on intent accuracy, retrieval recall and replay‑set regressions before it was proposed for release."
+    },
+    {
+     "claim": "Candidate prepared release candidates for the assistant platform team and concluded involvement at the release review stage.",
+     "supportingRequirementIds": [
+      "req_2b2ed050ac8a"
+     ],
+     "sourceIds": [
+      "src_8a182c777f47"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Prepared release candidates for the assistant platform team, which held the release pipeline, the live dashboards and the on‑call rota; my involvement ended at the release review, and I did not have access to the live conversation data."
+    },
+    {
+     "claim": "Candidate authored model cards and release notes detailing training data cuts, replay‑set results, and known failure modes.",
+     "supportingRequirementIds": [
+      "req_d4642dcfd7d6"
+     ],
+     "sourceIds": [
+      "src_b9c9f034dc84"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model card and the release notes for each candidate model, listing the training data cut, the replay‑set results and the known failure modes on multi‑intent messages."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate released intent and answer models into the live assistant and monitors deflection and hand‑off rates on live traffic.",
+     "reason": "No source documents live deployment or monitoring activities.",
+     "requiredFollowUp": "Ask for evidence of live deployment and monitoring of deflection/hand‑off rates."
+    },
+    {
+     "claim": "Candidate handled model incidents such as post‑release regressions or mis‑routing spikes through the assistant’s on‑call rota.",
+     "reason": "No source documents incident handling responsibilities.",
+     "requiredFollowUp": "Ask for evidence of incident handling duties and on‑call participation."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_6e1a2c13f2ff",
+     "severity": "high",
+     "gap": "Evidence that the candidate released models into live traffic and monitored deflection/hand‑off rates."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_00e307158d51",
+     "severity": "high",
+     "gap": "Evidence that the candidate handled production incidents via the on‑call rota."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_2b2ed050ac8a",
+     "severity": "medium",
+     "gap": "Clear documentation of the candidate’s responsibility boundaries during release coordination."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_92e3aefe5404",
+     "text": "Candidate said he had 'shipped the intent models that run the assistant' and that 'my models handle about a million conversations a month'; asked about incidents, he described a replay‑set regression found before a release and said the platform team 'carried the pager'.",
+     "signalType": "incident handling claim",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify incident handling responsibilities and clarify the extent of live deployment."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_6e1a2c13f2ff",
+     "question": "Can you provide evidence that your intent and answer models were deployed into the live assistant and that you monitored deflection and hand‑off rates on live traffic?",
+     "evidenceTarget": "Live deployment logs or monitoring dashboards."
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_00e307158d51",
+     "question": "What specific incidents did you handle through the assistant’s on‑call rota, and what documentation exists of your involvement?",
+     "evidenceTarget": "Incident reports or on‑call logs."
+    },
+    {
+     "questionId": "q3",
+     "requirementId": "req_2b2ed050ac8a",
+     "question": "Can you describe the boundaries of your responsibilities during model release coordination with the assistant platform team?",
+     "evidenceTarget": "Release coordination documentation or role descriptions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify evidence of live deployment and monitoring of deflection/hand‑off rates.",
+    "Confirm incident handling responsibilities and on‑call participation.",
+    "Clarify scope of responsibility boundaries during release coordination."
+   ],
+   "auditSummary": "The candidate demonstrates strong experience in training, evaluating, and documenting intent and answer models, and in preparing release candidates for a platform team. However, the provided materials do not establish that the candidate released models into live customer traffic, monitored live metrics, or handled production incidents through an on‑call rota. Human review is required to confirm these critical responsibilities for the target role.",
+   "limitations": [
+    "Analysis is limited to the provided candidate materials and job description; no external verification of claims is performed."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:33:14.866755+00:00"
+}

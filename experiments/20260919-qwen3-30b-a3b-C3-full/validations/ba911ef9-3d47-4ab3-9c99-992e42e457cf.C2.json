@@ -1,0 +1,160 @@
+{
+ "request_id": "ba911ef9-3d47-4ab3-9c99-992e42e457cf.C2",
+ "case_id": "ba911ef9-3d47-4ab3-9c99-992e42e457cf",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Deployed cluster changes to the three production message queue clusters over two and a half years, including two broker version upgrades and the move to tiered ",
+     "sourceIds": [
+      "src_ef2cb34b2b82",
+      "src_a064e8db56dd",
+      "src_f6ac277ea545",
+      "src_f0a6c46c18ef",
+      "src_ed2e665b529e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "number(s) not stated by the cited sources: 2.5",
+    "witness": {
+     "numbers": [
+      "2.5"
+     ],
+     "sourceIds": [
+      "src_ef2cb34b2b82"
+     ],
+     "text": "Managed three production message queue clusters over 2.5 years, including two broker version upgrades and a tiered storage migration, each change documented in a change record under the candidate's na"
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managed",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managed"
+     ],
+     "sourceIds": [
+      "src_ef2cb34b2b82"
+     ],
+     "sourceFamilies": [],
+     "text": "Managed three production message queue clusters over 2.5 years, including two broker version upgrades and a tiered storage migration, each change documented in a change record under the candidate's na"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

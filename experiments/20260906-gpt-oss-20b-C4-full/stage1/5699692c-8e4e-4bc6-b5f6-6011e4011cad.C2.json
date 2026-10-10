@@ -1,0 +1,468 @@
+{
+ "request_id": "5699692c-8e4e-4bc6-b5f6-6011e4011cad.C2",
+ "case_id": "5699692c-8e4e-4bc6-b5f6-6011e4011cad",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Experienced in designing Prometheus alerting rules and Grafana dashboards for dispatch and parts-order services, validating them in staging environments, and ma"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "6 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str",
+      "$.hiringEvidencePacket.requirementEvidenceMap[4]: missing required property 'missingEvidence'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Experienced in designing Prometheus alerting rules and Grafana dashboards for dispatch and parts-order services, validat"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_65b5ee4a7d04a365",
+   "targetRoleTitle": "Site Reliability Engineer, After-Sales Service Network",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Site Reliability Engineer, After-Sales Service Network",
+    "jobDescriptionSource": "jd_eb24dead6e98a3a9",
+    "requirementIds": [
+     "req_bd64b2f9370d",
+     "req_02151dff1031",
+     "req_4c03059a563a",
+     "req_0b0d65c91afb",
+     "req_04f7c99e2fd1"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_65b5ee4a7d04a365",
+    "sources": [
+     "src_2f935397200c",
+     "src_ed66a2889ce5",
+     "src_63dc0dfa13e1",
+     "src_9a6e512b826b",
+     "src_9e13923cec61",
+     "src_1b69b4572dc2",
+     "src_b2c1222d9e37",
+     "src_51bebc4173fc"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bd64b2f9370d",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_2f935397200c",
+       "text": "Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts-order queue, and validated them against replayed traffic in the staging cluster over four release cycles.",
+       "evidenceStrength": "medium",
+       "notes": "Design and staging validation present; no production deployment evidence."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that alerting rules were deployed to production via the release pipeline and are currently active."
+     ]
+    },
+    {
+     "requirementId": "req_02151dff1031",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate operates production monitoring and participates in the on-call rotation for the service network platform."
+     ]
+    },
+    {
+     "requirementId": "req_4c03059a563a",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_ed66a2889ce5",
+       "text": "Took part in the incident review for the March dispatch outage as the monitoring owner for staging, drafting the timeline and the follow-up actions that service operations then reviewed.",
+       "evidenceStrength": "medium",
+       "notes": "Drafted timeline; no evidence of leading the review or recording final actions."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate ran incident reviews, recorded timelines, causes, and follow-up actions."
+     ]
+    },
+    {
+     "requirementId": "req_0b0d65c91afb",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_63dc0dfa13e1",
+       "text": "Submitted monitoring changes through the platform team's release pipeline; production releases were executed by the platform team's on-call engineer under their release calendar, and I had no production deployment permissions.",
+       "evidenceStrength": "medium",
+       "notes": "Coordinated changes; no record of responsibility boundaries for releases."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate recorded own responsibility boundaries for releases."
+     ]
+    },
+    {
+     "requirementId": "req_04f7c99e2fd1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9a6e512b826b",
+       "text": "Maintained the alerting runbook for the dispatch service, including the known limitation that queue-depth alerts were tuned only against staging traffic profiles.",
+       "evidenceStrength": "high",
+       "notes": "Runbook maintenance documented."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed Prometheus alerting rules and Grafana dashboards for dispatch and parts-order services.",
+     "supportingRequirementIds": [
+      "req_bd64b2f9370d"
+     ],
+     "sourceIds": [
+      "src_2f935397200c"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts-order queue, and validated them against replayed traffic in the staging cluster over four release cycles."
+    },
+    {
+     "claim": "Maintained the alerting runbook for the dispatch service.",
+     "supportingRequirementIds": [
+      "req_04f7c99e2fd1"
+     ],
+     "sourceIds": [
+      "src_9a6e512b826b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the alerting runbook for the dispatch service, including the known limitation that queue-depth alerts were tuned only against staging traffic profiles."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Experienced in designing Prometheus alerting rules and Grafana dashboards for dispatch and parts-order services, validating them in staging environments, and maintaining runbooks for service network platforms.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_req_bd64b2f9370d_prod",
+     "requirementId": "req_bd64b2f9370d",
+     "severity": "medium",
+     "gap": "No evidence that alerting rules were deployed to production and are currently active."
+    },
+    {
+     "gapId": "gap_req_02151dff1031_prod",
+     "requirementId": "req_02151dff1031",
+     "severity": "high",
+     "gap": "No evidence of operating production monitoring or participating in on-call rotation."
+    },
+    {
+     "gapId": "gap_req_4c03059a563a_review",
+     "requirementId": "req_4c03059a563a",
+     "severity": "medium",
+     "gap": "No evidence that the candidate ran incident reviews and recorded final actions."
+    },
+    {
+     "gapId": "gap_req_0b0d65c91afb_boundary",
+     "requirementId": "req_0b0d65c91afb",
+     "severity": "medium",
+     "gap": "No evidence of recording responsibility boundaries for releases."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_b2c1222d9e37",
+     "text": "candidate says the alerting rules he wrote are 'now running across the whole service network' and that the March incident was 'caught by my alerts'",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify production deployment status and incident response role through documentation or direct confirmation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_bd64b2f9370d",
+     "question": "Can you provide evidence (e.g., release notes, monitoring dashboards, or production logs) that the alerting rules you designed were deployed to production and are currently active?",
+     "evidenceTarget": "Production deployment evidence"
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_02151dff1031",
+     "question": "Do you have any documentation or logs that show you operated production monitoring or participated in the on-call rotation for the service network platform?",
+     "evidenceTarget": "Production monitoring and on-call participation evidence"
+    },
+    {
+     "questionId": "q3",
+     "requirementId": "req_4c03059a563a",
+     "question": "Can you share the final incident review report you authored, including timelines, causes, and follow-up actions?",
+     "evidenceTarget": "Incident review documentation"
+    },
+    {
+     "questionId": "q4",
+     "requirementId": "req_0b0d65c91afb",
+     "question": "Do you have records that detail your responsibility boundaries for releases, such as release checklists or sign-off documents?",
+     "evidenceTarget": "Release responsibility documentation"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that all requirementIds are covered in requirementEvidenceMap.",
+    "Ensure that every claim in supportedClaims cites a source and includes a witness passage.",
+    "Confirm that no subjective statements are listed as supported claims.",
+    "Check that all gaps have corresponding follow-up questions.",
+    "Validate that decisionBoundary flags are set correctly and no hiring recommendation is made."
+   ],
+   "auditSummary": "The evidence packet presents partial or insufficient evidence for several key requirements, notably production deployment, on-call participation, incident review leadership, and release responsibility boundaries. The candidate has documented design, staging validation, and runbook maintenance, which satisfy some requirements. Further evidence is needed to determine fit for the Site Reliability Engineer role.",
+   "limitations": [
+    "Evidence is limited to the provided resume and notes; no external verification of production deployment or on-call participation is available."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

@@ -1,0 +1,297 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "a92e67f2-47aa-442b-9310-adca52a8b239.C2",
+ "case_id": "a92e67f2-47aa-442b-9310-adca52a8b239",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15136,
+  "promptWords": 1780
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 65.409
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4912,
+ "eval_count": 1910,
+ "prompt_eval_duration_ns": 18841000,
+ "eval_duration_ns": 35868219000,
+ "total_duration_ns": 65405712125,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No unsupported claims. All claims must have source. Use witness verbatim. Provide gaps for any requirement not fully supported. Let's check each requirement:\n\nreq_ff4886e30d5c: Owns roadmap and prioritises backlog with compliance ops. Source src_412719d5e804 provides that. Also src_412719d5e804 verbatim. So supported.\n\nreq_454dce7fdd43: Runs release reviews with engineering and compliance ops and records decisions. src_e3ea6b9cac89 provides that. So supported.\n\nreq_dede62189b94: Raises share of alerts closed within target, reported against baseline. src_4c8f91db86cc provides that. So supported.\n\nreq_e13f68b881ae: Coordinates releases with engineering and compliance ops and records own responsibility boundaries. src_76b958c5dfef provides coordination. But does it record own responsibility boundaries? It says engineering manager set dates and compliance ops lead approved rollout. Not explicit about recording own responsibility boundaries. Might be partial. We can mark partial_evidence and ask follow-up. But maybe src_76b958c5dfef includes \"Coordinated releases with the engineering manager and the compliance operations lead; the engineering manager set release dates and the compliance operations lead approved the rollout to analyst teams.\" No mention of recording responsibility boundaries. So partial.\n\nreq_1dfd772ca0ae: Documents known limitations and hand-over conditions for each release. src_fba271547711 provides that. So supported.\n\nThus requirementEvidenceMap: 5 entries.\n\nMissing evidence for req_e13f68b881ae: need evidence of recording responsibility boundaries. Provide gap and follow-up question.\n\nAlso need supportedClaims array: claims that are supported. We can include claims for each requirement that is supported. For partial, maybe not include.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: one for req_e13f68b881ae.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: one for req_e13f68b881ae.\n\nHumanReviewChecklist: maybe \"Review gaps and follow-up questions\".\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of production deployment environment\".\n\nNow produce optimizedCv: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Owned the alert-review workflow roadmap and prioritized backlog with compliance operations.\" But must cite source. Use claim with source. But professionalSummary expects array of CLAIM objects. We need to use CLAIM structure? The schema says professionalSummary: [CLAIM...] but CLAIM defined earlier. So each claim must have claimId, text, sourceIds, requirementIds, supportBoundary, witness. We need to create claimIds. Let's create simple ones.\n\nBut maybe simpler: just put plain text? But rule requires claim provenance. So must use CLAIM objects. So we need to create claim objects.\n\nLet's create claimId \"clm_1\" etc.\n\nFor professionalSummary: maybe one claim: \"Owned the alert-review workflow roadmap and prioritized backlog with compliance operations.\" source src_412719d5e804. requirementIds: req_ff4886e30d5c. supportBoundary: supported. witness: verbatim.\n\nexperienceHighlights: maybe claim about release reviews. claimId \"clm_2\". source src_e3ea6b9cac89. requirementIds: req_454dce7fdd43.\n\nprojectsAndWorkSamples: claim about share of alerts closed. claimId \"clm_3\". source src_4c8f91db86cc. requirementIds: req_dede62189b94.\n\nskills: maybe claim about coordinating releases. claimId \"clm_4\". source src_76b958c5dfef. requirementIds: req_e13f68b881ae. But this is partial. Maybe not include in skills? But skills can include partial? Might be okay but risk. Maybe exclude.\n\nBut we need to include all claims that are supported. So we can include claim for req_e13f68b881ae but note partial? But supportBoundary must be supported or partial_evidence? The schema says supportBoundary: \"supported|partial_evidence\". So we can set partial_evidence. But then we need to provide witness. Provide verbatim. That is fine.\n\nAlso claim for req_1dfd772ca0ae: source src_fba271547711. requirementIds: req_1dfd772ca0ae. supportBoundary: supported.\n\nThus professionalSummary maybe just one claim. experienceHighlights maybe two. projectsAndWorkSamples maybe one. skills maybe one.\n\nNow evidenceBoundary: one or two sentences on what materials establish and not.\n\nNow hiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Human review required to assess gaps and verify responsibilities.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources: list all sourceIds used.\n\nrequirementEvidenceMap: each requirement with status and evidence entries.\n\nFor req_ff4886e30d5c: status supported, evidence: source src_412719d5e804, witness verbatim, evidenceStrength high.\n\nFor req_454dce7fdd43: supported, evidence src_e3ea6b9cac89.\n\nFor req_dede62189b94: supported, evidence src_4c8f91db86cc.\n\nFor req_e13f68b881ae: partial_evidence, evidence src_76b958c5dfef, missingEvidence: \"Evidence of recording own responsibility boundaries.\"\n\nFor req_1dfd772ca0ae: supported, evidence src_fba271547711.\n\nsupportedClaims: list claims that are supported. We can include those with supportBoundary supported. So include claims for req_ff4886e30d5c, req_454dce7fdd43, req_dede62189b94, req_1dfd772ca0ae. Not include partial.\n\nEach claim object: claim, supportingRequirementIds, sourceIds, evidenceStrength high, witness.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: one for req_e13f68b881ae.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: one: questionId \"q_1\", requirementId req_e13f68b881ae, question: \"Can you provide documentation or records that show you recorded your responsibility boundaries during release coordination?\" evidenceTarget: \"Release coordination documentation indicating responsibility boundaries.\"\n\nhumanReviewChecklist: [\"Review partial evidence for req_e13f68b881ae and verify responsibility boundary documentation.\"]\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"No evidence of production deployment environment.\"\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_4481dd952911b521\",\"targetRoleTitle\":\"Digital Product Manager, Transaction Monitoring\",\"professionalSummary\":[{\"claimId\":\"clm_1\",\"text\":\"Owned the alert-review workflow roadmap and prioritized backlog with compliance operations.\",\"sourceIds\":[\"src_412719d5e804\"],\"requirementIds\":[\"req_ff4886e30d5c\"],\"supportBoundary\":\"supported\",\"witness\":\"Owned the alert-review workflow roadmap for the transaction monitoring product, prioritising the backlog each sprint with the compliance operations lead and publishing the roadmap to the compliance director.\"}],\"experienceHighlights\":[{\"claimId\":\"clm_2\",\"text\":\"Ran release reviews with engineering and compliance operations, recording decisions and open items.\",\"sourceIds\":[\"src_e3ea6b9cac89\"],\"requirementIds\":[\"req_454dce7fdd43\"],\"supportBoundary\":\"supported\",\"witness\":\"Ran the release review for each of the six workflow releases with engineering and compliance operations, recording decisions and open items in the release record.\"},{\"claimId\":\"clm_3\",\"text\":\"Coordinated releases with engineering and compliance operations, setting dates and approving rollouts.\",\"sourceIds\":[\"src_76b958c5dfef\"],\"requirementIds\":[\"req_e13f68b881ae\"],\"supportBoundary\":\"partial_evidence\",\"witness\":\"Coordinated releases with the engineering manager and the compliance operations lead; the engineering manager set release dates and the compliance operations lead approved the rollout to analyst teams.\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"clm_4\",\"text\":\"Raised the share of alerts closed within the service-level target from 71% to 88% over four months.\",\"sourceIds\":[\"src_4c8f91db86cc\"],\"requirementIds\":[\"req_dede62189b94\"],\"supportBoundary\":\"supported\",\"witness\":\"The share of alerts closed within the service-level target rose from 71 percent to 88 percent over the four months after the alert-grouping release, per the compliance operations monthly report against its documented baseline of 71 percent.\"}],\"skills\":[{\"claimId\":\"clm_5\",\"text\":\"Documented known limitations and hand-over conditions for each release.\",\"sourceIds\":[\"src_fba271547711\"],\"requirementIds\":[\"req_1dfd772ca0ae\"],\"supportBoundary\":\"supported\",\"witness\":\"Wrote the release notes for each workflow release, including the known limitation that grouped alerts could not be split back into individual alerts, and the hand-over notes for analyst trainers.\"}],\"evidenceBoundary\":\"The provided resume and work sample establish that the candidate owned the alert-review workflow roadmap, ran release reviews, increased alert closure rates, coordinated releases, and documented limitations. They do not establish that the candidate recorded responsibility boundaries during release coordination or that releases were deployed to production environments.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess gaps and verify responsibilities.\"},\"role\":{\"roleTitle\":\"Digital Product Manager, Transaction Monitoring\",\"jobDescriptionSource\":\"jd_bb6f45f7846087ab\",\"requirementIds\":[\"req_ff4886e30d5c\",\"req_454dce7fdd43\",\"req_dede62189b94\",\"req_e13f68b881ae\",\"req_1dfd772ca0ae\"]},\"candidate\":{\"candidateId\":\"cand_4481dd952911b521\",\"sources\":[\"src_412719d5e804\",\"src_e3ea6b9cac89\",\"src_4c8f91db86cc\",\"src_76b958c5dfef\",\"src_fba271547711\",\"src_5e431cb2aa23\",\"src_086353633165\",\"src_79573fde3a88\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_ff4886e30d5c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_412719d5e804\",\"text\":\"Owned the alert-review workflow roadmap for the transaction monitoring product, prioritising the backlog each sprint with the compliance operations lead and publishing the roadmap to the compliance director.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of ownership and prioritisation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_454dce7fdd43\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e3ea6b9cac89\",\"text\":\"Ran the release review for each of the six workflow releases with engineering and compliance operations, recording decisions and open items in the release record.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit release review and recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_dede62189b94\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4c8f91db86cc\",\"text\":\"The share of alerts closed within the service-level target rose from 71 percent to 88 percent over the four months after the alert-grouping release, per the compliance operations monthly report against its documented baseline of 71 percent.\",\"evidenceStrength\":\"high\",\"notes\":\"Quantitative improvement reported.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e13f68b881ae\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_76b958c5dfef\",\"text\":\"Coordinated releases with the engineering manager and the compliance operations lead; the engineering manager set release dates and the compliance operations lead approved the rollout to analyst teams.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination but not responsibility boundary recording.\"}],\"missingEvidence\":[\"Evidence that the candidate recorded their responsibility boundaries during release coordination.\"],\"missingEvidenceGaps\":[]},{\"requirementId\":\"req_1dfd772ca0ae\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_fba271547711\",\"text\":\"Wrote the release notes for each workflow release, including the known limitation that grouped alerts could not be split back into individual alerts, and the hand-over notes for analyst trainers.\",\"evidenceStrength\":\"high\",\"notes\":\"Documents limitations and hand-over.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Owned the alert-review workflow roadmap and prioritized backlog with compliance operations.\",\"supportingRequirementIds\":[\"req_ff4886e30d5c\"],\"sourceIds\":[\"src_412719d5e804\"],\"evidenceStrength\":\"high\",\"witness\":\"Owned the alert-review workflow roadmap for the transaction monitoring product, prioritising the backlog each sprint with the compliance operations lead and publishing the roadmap to the compliance director.\"},{\"claim\":\"Ran release reviews with engineering and compliance operations, recording decisions and open items.\",\"supportingRequirementIds\":[\"req_454dce7fdd43\"],\"sourceIds\":[\"src_e3ea6b9cac89\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the release review for each of the six workflow releases with engineering and compliance operations, recording decisions and open items in the release record.\"},{\"claim\":\"Raised the share of alerts closed within the service-level target from 71% to 88% over four months.\",\"supportingRequirementIds\":[\"req_dede62189b94\"],\"sourceIds\":[\"src_4c8f91db86cc\"],\"evidenceStrength\":\"high\",\"witness\":\"The share of alerts closed within the service-level target rose from 71 percent to 88 percent over the four months after the alert-grouping release, per the compliance operations monthly report against its documented baseline of 71 percent.\"},{\"claim\":\"Documented known limitations and hand-over conditions for each release.\",\"supportingRequirementIds\":[\"req_1dfd772ca0ae\"],\"sourceIds\":[\"src_fba271547711\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the release notes for each workflow release, including the known limitation that grouped alerts could not be split back into individual alerts, and the hand-over notes for analyst trainers.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_e13f68b881ae\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate recorded their responsibility boundaries during release coordination.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_e13f68b881ae\",\"question\":\"Can you provide documentation or records that show you recorded your responsibility boundaries during release coordination?\",\"evidenceTarget\":\"Release coordination documentation indicating responsibility boundaries.\"}],\"humanReviewChecklist\":[\"Review partial evidence for req_e13f68b881ae and verify responsibility boundary documentation.\"],\"auditSummary\":\"The candidate’s resume and work sample provide strong evidence for ownership of the alert-review workflow roadmap, release review execution, improvement in alert closure rates, and documentation of limitations. However, there is insufficient evidence that the candidate recorded their responsibility boundaries during release coordination, and no evidence of production deployment environments. Human review should focus on obtaining the missing responsibility boundary documentation and confirming deployment context.\",\"limitations\":[\"No evidence of production deployment environment.\"]}}",
+ "content_sha256": "e09b302bcb9bed5e595aa9ff3986a871311f4eece49383ce9c0834ecaa080ab6",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4481dd952911b521",
+   "targetRoleTitle": "Digital Product Manager, Transaction Monitoring",
+   "professionalSummary": [
+    {
+     "claimId": "clm_1",
+     "text": "Owned the alert-review workflow roadmap and prioritized backlog with compliance operations.",
+     "sourceIds": [
+      "src_412719d5e804"
+     ],
+     "requirementIds": [
+      "req_ff4886e30d5c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Owned the alert-review workflow roadmap for the transaction monitoring product, prioritising the backlog each sprint with the compliance operations lead and publishing the roadmap to the compliance director."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "clm_2",
+     "text": "Ran release reviews with engineering and compliance operations, recording decisions and open items.",
+     "sourceIds": [
+      "src_e3ea6b9cac89"
+     ],
+     "requirementIds": [
+      "req_454dce7fdd43"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the release review for each of the six workflow releases with engineering and compliance operations, recording decisions and open items in the release record."
+    },
+    {
+     "claimId": "clm_3",
+     "text": "Coordinated releases with engineering and compliance operations, setting dates and approving rollouts.",
+     "sourceIds": [
+      "src_76b958c5dfef"
+     ],
+     "requirementIds": [
+      "req_e13f68b881ae"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "Coordinated releases with the engineering manager and the compliance operations lead; the engineering manager set release dates and the compliance operations lead approved the rollout to analyst teams."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "clm_4",
+     "text": "Raised the share of alerts closed within the service-level target from 71% to 88% over four months.",
+     "sourceIds": [
+      "src_4c8f91db86cc"
+     ],
+     "requirementIds": [
+      "req_dede62189b94"
+     ],
+     "supportBoundary": "supported",
+     "witness": "The share of alerts closed within the service-level target rose from 71 percent to 88 percent over the four months after the alert-grouping release, per the compliance operations monthly report against its documented baseline of 71 percent."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "clm_5",
+     "text": "Documented known limitations and hand-over conditions for each release.",
+     "sourceIds": [
+      "src_fba271547711"
+     ],
+     "requirementIds": [
+      "req_1dfd772ca0ae"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the release notes for each workflow release, including the known limitation that grouped alerts could not be split back into individual alerts, and the hand-over notes for analyst trainers."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish that the candidate owned the alert-review workflow roadmap, ran release reviews, increased alert closure rates, coordinated releases, and documented limitations. They do not establish that the candidate recorded responsibility boundaries during release coordination or that releases were deployed to production environments."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess gaps and verify responsibilities."
+   },
+   "role": {
+    "roleTitle": "Digital Product Manager, Transaction Monitoring",
+    "jobDescriptionSource": "jd_bb6f45f7846087ab",
+    "requirementIds": [
+     "req_ff4886e30d5c",
+     "req_454dce7fdd43",
+     "req_dede62189b94",
+     "req_e13f68b881ae",
+     "req_1dfd772ca0ae"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4481dd952911b521",
+    "sources": [
+     "src_412719d5e804",
+     "src_e3ea6b9cac89",
+     "src_4c8f91db86cc",
+     "src_76b958c5dfef",
+     "src_fba271547711",
+     "src_5e431cb2aa23",
+     "src_086353633165",
+     "src_79573fde3a88"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_ff4886e30d5c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_412719d5e804",
+       "text": "Owned the alert-review workflow roadmap for the transaction monitoring product, prioritising the backlog each sprint with the compliance operations lead and publishing the roadmap to the compliance director.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of ownership and prioritisation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_454dce7fdd43",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e3ea6b9cac89",
+       "text": "Ran the release review for each of the six workflow releases with engineering and compliance operations, recording decisions and open items in the release record.",
+       "evidenceStrength": "high",
+       "notes": "Explicit release review and recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dede62189b94",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4c8f91db86cc",
+       "text": "The share of alerts closed within the service-level target rose from 71 percent to 88 percent over the four months after the alert-grouping release, per the compliance operations monthly report against its documented baseline of 71 percent.",
+       "evidenceStrength": "high",
+       "notes": "Quantitative improvement reported."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e13f68b881ae",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_76b958c5dfef",
+       "text": "Coordinated releases with the engineering manager and the compliance operations lead; the engineering manager set release dates and the compliance operations lead approved the rollout to analyst teams.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination but not responsibility boundary recording."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate recorded their responsibility boundaries during release coordination."
+     ],
+     "missingEvidenceGaps": []
+    },
+    {
+     "requirementId": "req_1dfd772ca0ae",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_fba271547711",
+       "text": "Wrote the release notes for each workflow release, including the known limitation that grouped alerts could not be split back into individual alerts, and the hand-over notes for analyst trainers.",
+       "evidenceStrength": "high",
+       "notes": "Documents limitations and hand-over."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Owned the alert-review workflow roadmap and prioritized backlog with compliance operations.",
+     "supportingRequirementIds": [
+      "req_ff4886e30d5c"
+     ],
+     "sourceIds": [
+      "src_412719d5e804"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Owned the alert-review workflow roadmap for the transaction monitoring product, prioritising the backlog each sprint with the compliance operations lead and publishing the roadmap to the compliance director."
+    },
+    {
+     "claim": "Ran release reviews with engineering and compliance operations, recording decisions and open items.",
+     "supportingRequirementIds": [
+      "req_454dce7fdd43"
+     ],
+     "sourceIds": [
+      "src_e3ea6b9cac89"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the release review for each of the six workflow releases with engineering and compliance operations, recording decisions and open items in the release record."
+    },
+    {
+     "claim": "Raised the share of alerts closed within the service-level target from 71% to 88% over four months.",
+     "supportingRequirementIds": [
+      "req_dede62189b94"
+     ],
+     "sourceIds": [
+      "src_4c8f91db86cc"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The share of alerts closed within the service-level target rose from 71 percent to 88 percent over the four months after the alert-grouping release, per the compliance operations monthly report against its documented baseline of 71 percent."
+    },
+    {
+     "claim": "Documented known limitations and hand-over conditions for each release.",
+     "supportingRequirementIds": [
+      "req_1dfd772ca0ae"
+     ],
+     "sourceIds": [
+      "src_fba271547711"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the release notes for each workflow release, including the known limitation that grouped alerts could not be split back into individual alerts, and the hand-over notes for analyst trainers."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_e13f68b881ae",
+     "severity": "medium",
+     "gap": "Evidence that the candidate recorded their responsibility boundaries during release coordination."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_e13f68b881ae",
+     "question": "Can you provide documentation or records that show you recorded your responsibility boundaries during release coordination?",
+     "evidenceTarget": "Release coordination documentation indicating responsibility boundaries."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Review partial evidence for req_e13f68b881ae and verify responsibility boundary documentation."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence for ownership of the alert-review workflow roadmap, release review execution, improvement in alert closure rates, and documentation of limitations. However, there is insufficient evidence that the candidate recorded their responsibility boundaries during release coordination, and no evidence of production deployment environments. Human review should focus on obtaining the missing responsibility boundary documentation and confirming deployment context.",
+   "limitations": [
+    "No evidence of production deployment environment."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:51:39.482313+00:00"
+}

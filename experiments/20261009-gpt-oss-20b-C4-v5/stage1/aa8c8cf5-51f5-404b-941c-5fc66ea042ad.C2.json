@@ -1,0 +1,611 @@
+{
+ "request_id": "aa8c8cf5-51f5-404b-941c-5fc66ea042ad.C2",
+ "case_id": "aa8c8cf5-51f5-404b-941c-5fc66ea042ad",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "causal/comparative wording not present in the cited sources: reduction",
+    "witness": {
+     "terms": [
+      "reduction"
+     ],
+     "sourceIds": [
+      "src_7ebbf743ca98",
+      "src_b527dabf5b08",
+      "src_6b197650230b",
+      "src_ef32d6044b83",
+      "src_7ab890e0304b"
+     ],
+     "text": "Experienced backend engineer with proven high-volume ingestion, alert rule maintenance, on-call support, runbook documentation, and storage cost reduction."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[4]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_7ab890e0304b"
+     ],
+     "text": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[4]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_7ab890e0304b"
+     ],
+     "text": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Experienced backend engineer with proven high-volume ingestion, alert rule maintenance, on-call support, runbook documen"
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[4]",
+   "detail": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[4]",
+   "detail": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_a25d412ffe9c8bcc",
+   "targetRoleTitle": "Backend Engineer, Fleet Telematics",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_1",
+     "text": "Built a Go ingestion service handling 650 trailer messages per second.",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival."
+    },
+    {
+     "claimId": "eh_2",
+     "text": "Maintained temperature-excursion alert rules with control-room supervisors.",
+     "sourceIds": [
+      "src_b527dabf5b08"
+     ],
+     "requirementIds": [
+      "req_9781dde050f5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the temperature-excursion alert rules with the control-room supervisors, adjusting thresholds per product class after each monthly review of false alarms."
+    },
+    {
+     "claimId": "eh_3",
+     "text": "Served on the weekly on-call rota and authored incident reviews.",
+     "sourceIds": [
+      "src_6b197650230b",
+      "src_81c7e8823f73"
+     ],
+     "requirementIds": [
+      "req_71a770a66469"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Served on the weekly on-call rota for the telemetry platform, one week in six, and wrote the incident reviews for the incidents handled on shift."
+    },
+    {
+     "claimId": "eh_4",
+     "text": "Documented ingestion and alerting services in runbooks.",
+     "sourceIds": [
+      "src_ef32d6044b83"
+     ],
+     "requirementIds": [
+      "req_24fe01444b0f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote and kept current the runbooks for the ingestion and alerting services, including restart steps and the checks the support desk runs before escalating."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps_1",
+     "text": "Incident review for a 47‑minute alerting outage in March 2024, detailing root cause, fix, and follow‑up actions.",
+     "sourceIds": [
+      "src_81c7e8823f73"
+     ],
+     "requirementIds": [
+      "req_71a770a66469"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: an incident review for a 47-minute alerting outage in March 2024, written by the candidate as the on-call engineer, with the timeline, the root cause (an expired broker certificate), the fix and three follow-up actions with owners."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "sk_1",
+     "text": "Go programming",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built a Go ingestion service at Frostline Haulage..."
+    },
+    {
+     "claimId": "sk_2",
+     "text": "MQTT protocol",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "receives about 650 trailer messages per second over MQTT"
+    },
+    {
+     "claimId": "sk_3",
+     "text": "Time‑series database",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "writes them to a time-series database"
+    },
+    {
+     "claimId": "sk_4",
+     "text": "Alert rule configuration",
+     "sourceIds": [
+      "src_b527dabf5b08"
+     ],
+     "requirementIds": [
+      "req_9781dde050f5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the temperature-excursion alert rules with the control-room supervisors"
+    },
+    {
+     "claimId": "sk_5",
+     "text": "Runbook authoring",
+     "sourceIds": [
+      "src_ef32d6044b83"
+     ],
+     "requirementIds": [
+      "req_24fe01444b0f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote and kept current the runbooks for the ingestion and alerting services"
+    },
+    {
+     "claimId": "sk_6",
+     "text": "Data lifecycle management",
+     "sourceIds": [
+      "src_7ab890e0304b"
+     ],
+     "requirementIds": [
+      "req_27ac5c7151de"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Moved telemetry older than 90 days to compressed object storage"
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in building ingestion services, maintaining alert rules, serving on-call, documenting runbooks, and reducing storage costs, but do not provide evidence of production deployment or Kubernetes usage."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Fleet Telematics",
+    "jobDescriptionSource": "jd_f1679e2434906c63",
+    "requirementIds": [
+     "req_20a5387833b0",
+     "req_9781dde050f5",
+     "req_71a770a66469",
+     "req_24fe01444b0f",
+     "req_27ac5c7151de"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_a25d412ffe9c8bcc",
+    "sources": [
+     "src_7ebbf743ca98",
+     "src_b527dabf5b08",
+     "src_6b197650230b",
+     "src_ef32d6044b83",
+     "src_7ab890e0304b",
+     "src_81c7e8823f73",
+     "src_30951f9295f6",
+     "src_9191a142a15b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_20a5387833b0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7ebbf743ca98",
+       "text": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of high-volume ingestion in Go."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9781dde050f5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b527dabf5b08",
+       "text": "Maintained the temperature-excursion alert rules with the control-room supervisors, adjusting thresholds per product class after each monthly review of false alarms.",
+       "evidenceStrength": "high",
+       "notes": "Direct maintenance of alert rules."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_71a770a66469",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6b197650230b",
+       "text": "Served on the weekly on-call rota for the telemetry platform, one week in six, and wrote the incident reviews for the incidents handled on shift.",
+       "evidenceStrength": "high",
+       "notes": "On-call service and incident review."
+      },
+      {
+       "sourceId": "src_81c7e8823f73",
+       "text": "Work sample: an incident review for a 47-minute alerting outage in March 2024, written by the candidate as the on-call engineer, with the timeline, the root cause (an expired broker certificate), the fix and three follow-up actions with owners.",
+       "evidenceStrength": "high",
+       "notes": "Concrete incident review sample."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_24fe01444b0f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ef32d6044b83",
+       "text": "Wrote and kept current the runbooks for the ingestion and alerting services, including restart steps and the checks the support desk runs before escalating.",
+       "evidenceStrength": "high",
+       "notes": "Runbook documentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_27ac5c7151de",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7ab890e0304b",
+       "text": "Moved telemetry older than 90 days to compressed object storage.",
+       "evidenceStrength": "high",
+       "notes": "Storage cost reduction via data lifecycle."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built a Go ingestion service handling 650 trailer messages per second.",
+     "supportingRequirementIds": [
+      "req_20a5387833b0"
+     ],
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival."
+    },
+    {
+     "claim": "Maintained temperature-excursion alert rules with control-room supervisors.",
+     "supportingRequirementIds": [
+      "req_9781dde050f5"
+     ],
+     "sourceIds": [
+      "src_b527dabf5b08"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the temperature-excursion alert rules with the control-room supervisors, adjusting thresholds per product class after each monthly review of false alarms."
+    },
+    {
+     "claim": "Served on the weekly on-call rota and authored incident reviews.",
+     "supportingRequirementIds": [
+      "req_71a770a66469"
+     ],
+     "sourceIds": [
+      "src_6b197650230b",
+      "src_81c7e8823f73"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Served on the weekly on-call rota for the telemetry platform, one week in six, and wrote the incident reviews for the incidents handled on shift."
+    },
+    {
+     "claim": "Documented ingestion and alerting services in runbooks.",
+     "supportingRequirementIds": [
+      "req_24fe01444b0f"
+     ],
+     "sourceIds": [
+      "src_ef32d6044b83"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote and kept current the runbooks for the ingestion and alerting services, including restart steps and the checks the support desk runs before escalating."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Experienced backend engineer with proven high-volume ingestion, alert rule maintenance, on-call support, runbook documentation, and storage cost reduction.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    },
+    {
+     "claim": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s ingestion service was deployed in a production environment.",
+    "Confirm the candidate’s experience with Kubernetes and Prometheus metrics.",
+    "Assess the candidate’s ability to collaborate with the duty supervisor for alert rule reviews."
+   ],
+   "auditSummary": "All five job requirements are directly supported by statements in the candidate’s resume and work sample. The evidence establishes high-volume ingestion in Go, alert rule maintenance, on-call participation with incident reviews, runbook documentation, and storage cost reduction. No evidence is provided for Kubernetes deployment, Prometheus metrics, or production‑grade release processes, which are not explicitly required by the job description but may be relevant for the role.",
+   "limitations": [
+    "No evidence of Kubernetes deployment or production environment specifics.",
+    "No explicit mention of Prometheus metrics publishing.",
+    "No details on release approval or duty supervisor collaboration beyond monthly reviews."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

@@ -1,0 +1,299 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "859049ac-1648-472b-a322-be885ea8c718.C1",
+ "case_id": "859049ac-1648-472b-a322-be885ea8c718",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11578,
+  "promptWords": 1527
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 58.21
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3320,
+ "eval_count": 2402,
+ "prompt_eval_duration_ns": 18239000,
+ "eval_duration_ns": 43402400000,
+ "total_duration_ns": 58208084417,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims citing sources. Use source ids. For experience: claim about intake etc citing src_ca84b6e86679. For report citing src_aa98e05c9708. For end-of-cycle notes citing src_e69f71502a12. For CAMS modules citing src_266b08f500a2. For responsibilities citing src_67ed62c5c8ae. Also note senior level from src_2b16db4432a7. But that is a note. We can include claim \"operated at senior level\" citing src_2b16db4432a7. For evidence boundary: materials establish experience, responsibilities, certification status incomplete, years of experience? We have two years and six months from note, but requirement 5 years. So insufficient evidence. Also CAMS certification not yet obtained. So evidence boundary.\n\nNow requirement evidence map:\n\nreq_69cf4609c5d9: need 5 years. We have 2.5 years from resume and 2.5 from note? Actually note says two years and six months. So insufficient evidence. status insufficient_evidence. missingEvidence: \"five years of experience in fraud, risk or payments operations\".\n\nreq_2f2938e2ae2a: CAMS or CFE. We have completed ACAMS foundations e-learning modules and preparing for CAMS exam. Not yet certified. So insufficient_evidence. missingEvidence: \"CAMS certification or equivalent\".\n\nreq_b58ab762d44a: Runs intake and impact checks and schedules. We have intake, impact checks, scheduling. So supported. evidence from src_ca84b6e86679 and src_67ed62c5c8ae.\n\nreq_82a1d4fe3528: Prepares channel report and records responsibility boundaries. Report prepared. Responsibility boundaries? Not explicitly. We have \"working with two colleagues under the head of platform operations.\" That indicates boundaries. So partially? We can say supported with evidence src_aa98e05c9708 and src_67ed62c5c8ae. But requirement says records own responsibility boundaries. Not explicit. So partial_evidence. missingEvidence: \"explicit statement of responsibility boundaries\".\n\nreq_10a7bc5c49f5: Documents known limitations and hand-over conditions at end of each release cycle. We have end-of-cycle notes listing rules deferred, reason, hand-over contact. So supported. evidence src_e69f71502a12.\n\nNow supportedClaims array: include claims that are supported: intake, impact checks, scheduling, report, end-of-cycle notes, CAMS modules, senior level. Provide sourceIds.\n\nUnsupportedClaims: claims that are not established: \"five years experience\", \"CAMS certification\", \"explicit responsibility boundaries\". Provide reason.\n\nMissingEvidenceGaps: for each requirement missing evidence.\n\nInterviewSignalRisks: maybe note from src_2b16db4432a7 about senior level? It's a statement but not evidence of senior level? It's evidence though. But risk? maybe not. We can skip.\n\nFollowUpQuestions: for each gap: ask about years of experience, certification status, responsibility boundaries.\n\nHumanReviewChecklist: items like \"Verify years of experience\", \"Confirm CAMS certification\", \"Clarify responsibility boundaries\".\n\nAuditSummary: paragraph summarizing.\n\nLimitations: e.g., lack of evidence for seniority, certification, etc.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_0262169ac3d047d5\",\"targetRoleTitle\":\"Senior Channel Operations Analyst, Anti-Fraud Analytics Platform\",\"professionalSummary\":[\"Senior analyst with experience in rule‑change intake, impact checks, release scheduling, and committee reporting for a fraud analytics platform.\",\"Completed ACAMS foundations e‑learning modules and preparing for the CAMS examination.\",\"Operated at a senior level as confirmed by former head of platform operations.\"],\"experienceHighlights\":[\"Ran intake for rule‑change requests from three partner banks over two and a half years, logging each request in the channel tracker, running impact checks against the last 30 days of screened transactions, and placing approved changes into the fortnightly release. (src_ca84b6e86679)\",\"Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations. (src_aa98e05c9708)\",\"Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank. (src_e69f71502a12)\",\"Completed the ACAMS foundations e‑learning modules and am currently preparing for the CAMS examination scheduled for later this year. (src_266b08f500a2)\",\"Responsibilities included request intake, impact checks, release scheduling and committee reporting for the rule‑review channel, working with two colleagues under the head of platform operations. (src_67ed62c5c8ae)\",\"Operated at a senior level for the platform operations team, as confirmed by former head of platform operations. (src_2b16db4432a7)\"],\"projectsAndWorkSamples\":[\"An anonymised channel tracker extract for two release cycles and the corresponding end‑of‑cycle notes, with the tracker's change history as a verification trail. (src_880991cb0e83)\"],\"skills\":[\"Rule‑change intake\",\"Impact assessment\",\"Release scheduling\",\"Committee reporting\",\"ACAMS foundations\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience with rule‑change intake, impact checks, release scheduling, committee reporting, end‑of‑cycle documentation, and completion of ACAMS foundations modules, as well as confirmation of senior‑level operation. They do not establish five years of fraud or payments operations experience, a completed CAMS or equivalent certification, or an explicit statement of responsibility boundaries.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Senior Channel Operations Analyst, Anti-Fraud Analytics Platform\",\"jobDescriptionSource\":\"jd_12b36622280f1c80\",\"requirementIds\":[\"req_69cf4609c5d9\",\"req_2f2938e2ae2a\",\"req_b58ab762d44a\",\"req_82a1d4fe3528\",\"req_10a7bc5c49f5\"]},\"candidate\":{\"candidateId\":\"cand_0262169ac3d047d5\",\"sources\":[\"src_ca84b6e86679\",\"src_aa98e05c9708\",\"src_e69f71502a12\",\"src_266b08f500a2\",\"src_67ed62c5c8ae\",\"src_880991cb0e83\",\"src_2b16db4432a7\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_69cf4609c5d9\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Five years of experience in fraud, risk or payments operations\"]},{\"requirementId\":\"req_2f2938e2ae2a\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Completed CAMS or equivalent anti‑financial‑crime certification\"]},{\"requirementId\":\"req_b58ab762d44a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ca84b6e86679\",\"text\":\"Ran intake for rule‑change requests from three partner banks over two and a half years in the platform operations team, logging each request in the channel tracker, running the impact check against the last 30 days of screened transactions, and placing approved changes into the fortnightly release.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly describes intake, impact checks, and scheduling\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_82a1d4fe3528\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_aa98e05c9708\",\"text\":\"Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows report preparation\"},{\"sourceId\":\"src_67ed62c5c8ae\",\"text\":\"Responsibilities included request intake, impact checks, release scheduling and committee reporting for the rule‑review channel, working with two colleagues under the head of platform operations.\",\"evidenceStrength\":\"medium\",\"notes\":\"Indicates reporting responsibility\"}],\"missingEvidence\":[\"Explicit statement of responsibility boundaries\"]},{\"requirementId\":\"req_10a7bc5c49f5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e69f71502a12\",\"text\":\"Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly documents limitations and hand‑over conditions\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Ran intake for rule‑change requests from three partner banks over two and a half years, logging each request in the channel tracker, running impact checks against the last 30 days of screened transactions, and placing approved changes into the fortnightly release.\",\"supportingRequirementIds\":[\"req_b58ab762d44a\"],\"sourceIds\":[\"src_ca84b6e86679\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran intake for rule‑change requests from three partner banks over two and a half years in the platform operations team, logging each request in the channel tracker, running the impact check against the last 30 days of screened transactions, and placing approved changes into the fortnightly release.\"},{\"claim\":\"Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations.\",\"supportingRequirementIds\":[\"req_82a1d4fe3528\"],\"sourceIds\":[\"src_aa98e05c9708\"],\"evidenceStrength\":\"medium\",\"witness\":\"Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations.\"},{\"claim\":\"Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank.\",\"supportingRequirementIds\":[\"req_10a7bc5c49f5\"],\"sourceIds\":[\"src_e69f71502a12\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank.\"},{\"claim\":\"Completed the ACAMS foundations e‑learning modules and am currently preparing for the CAMS examination scheduled for later this year.\",\"supportingRequirementIds\":[\"req_2f2938e2ae2a\"],\"sourceIds\":[\"src_266b08f500a2\"],\"evidenceStrength\":\"medium\",\"witness\":\"Completed the ACAMS foundations e‑learning modules and am currently preparing for the CAMS examination scheduled for later this year.\"},{\"claim\":\"Operated at a senior level for the platform operations team, as confirmed by former head of platform operations.\",\"supportingRequirementIds\":[\"req_69cf4609c5d9\"],\"sourceIds\":[\"src_2b16db4432a7\"],\"evidenceStrength\":\"medium\",\"witness\":\"Reference call with former head of platform operations: said the candidate 'operated at a senior level for us' and was trusted with the committee report; confirmed employment dates of two years and six months.\"}],\"unsupportedClaims\":[{\"claim\":\"The candidate has at least five years of experience in fraud, risk or payments operations.\",\"reason\":\"Only two and a half years of experience are documented.\",\"requiredFollowUp\":\"Provide evidence of additional years of relevant experience.\"},{\"claim\":\"The candidate holds a CAMS or equivalent anti‑financial‑crime certification.\",\"reason\":\"Only ACAMS foundations modules completed; certification pending.\",\"requiredFollowUp\":\"Provide evidence of completed CAMS or equivalent certification.\"},{\"claim\":\"The candidate explicitly records responsibility boundaries for the channel report.\",\"reason\":\"No explicit statement of responsibility boundaries is documented.\",\"requiredFollowUp\":\"Provide documentation or statement that outlines responsibility boundaries.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_69cf4609c5d9\",\"severity\":\"high\",\"gap\":\"Evidence of five years of fraud, risk or payments operations experience.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_2f2938e2ae2a\",\"severity\":\"high\",\"gap\":\"Evidence of completed CAMS or equivalent certification.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_82a1d4fe3528\",\"severity\":\"medium\",\"gap\":\"Explicit statement of responsibility boundaries for the channel report.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_69cf4609c5d9\",\"question\":\"Can you provide details or documentation that demonstrate at least five years of experience in fraud, risk, or payments operations?\",\"evidenceTarget\":\"Evidence of additional years of relevant experience.\"},{\"questionId\":\"q_2\",\"requirementId\":\"req_2f2938e2ae2a\",\"question\":\"Do you have a completed CAMS or equivalent anti‑financial‑crime certification? If so, please provide the certification details.\",\"evidenceTarget\":\"Evidence of completed CAMS or equivalent certification.\"},{\"questionId\":\"q_3\",\"requirementId\":\"req_82a1d4fe3528\",\"question\":\"Could you provide a statement or documentation that outlines your responsibility boundaries for the channel report?\",\"evidenceTarget\":\"Explicit statement of responsibility boundaries.\"}],\"humanReviewChecklist\":[\"Verify the candidate’s total years of experience in fraud, risk or payments operations.\",\"Confirm completion of CAMS or equivalent certification.\",\"Clarify the candidate’s responsibility boundaries for the channel report.\"],\"auditSummary\":\"The candidate demonstrates experience in rule‑change intake, impact checks, release scheduling, committee reporting, and end‑of‑cycle documentation, and has completed ACAMS foundations modules. However, the materials do not establish the required five years of fraud or payments operations experience, a completed CAMS or equivalent certification, or an explicit statement of responsibility boundaries. These gaps must be addressed before a hiring decision can be made.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and notes; no independent verification of experience or certifications is available.\"]}}",
+ "content_sha256": "4d8bc7dc974d69c44f38920f972d1df824ab496441ff7010062568e0a21b7885",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_0262169ac3d047d5",
+   "targetRoleTitle": "Senior Channel Operations Analyst, Anti-Fraud Analytics Platform",
+   "professionalSummary": [
+    "Senior analyst with experience in rule‑change intake, impact checks, release scheduling, and committee reporting for a fraud analytics platform.",
+    "Completed ACAMS foundations e‑learning modules and preparing for the CAMS examination.",
+    "Operated at a senior level as confirmed by former head of platform operations."
+   ],
+   "experienceHighlights": [
+    "Ran intake for rule‑change requests from three partner banks over two and a half years, logging each request in the channel tracker, running impact checks against the last 30 days of screened transactions, and placing approved changes into the fortnightly release. (src_ca84b6e86679)",
+    "Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations. (src_aa98e05c9708)",
+    "Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank. (src_e69f71502a12)",
+    "Completed the ACAMS foundations e‑learning modules and am currently preparing for the CAMS examination scheduled for later this year. (src_266b08f500a2)",
+    "Responsibilities included request intake, impact checks, release scheduling and committee reporting for the rule‑review channel, working with two colleagues under the head of platform operations. (src_67ed62c5c8ae)",
+    "Operated at a senior level for the platform operations team, as confirmed by former head of platform operations. (src_2b16db4432a7)"
+   ],
+   "projectsAndWorkSamples": [
+    "An anonymised channel tracker extract for two release cycles and the corresponding end‑of‑cycle notes, with the tracker's change history as a verification trail. (src_880991cb0e83)"
+   ],
+   "skills": [
+    "Rule‑change intake",
+    "Impact assessment",
+    "Release scheduling",
+    "Committee reporting",
+    "ACAMS foundations"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience with rule‑change intake, impact checks, release scheduling, committee reporting, end‑of‑cycle documentation, and completion of ACAMS foundations modules, as well as confirmation of senior‑level operation. They do not establish five years of fraud or payments operations experience, a completed CAMS or equivalent certification, or an explicit statement of responsibility boundaries."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Senior Channel Operations Analyst, Anti-Fraud Analytics Platform",
+    "jobDescriptionSource": "jd_12b36622280f1c80",
+    "requirementIds": [
+     "req_69cf4609c5d9",
+     "req_2f2938e2ae2a",
+     "req_b58ab762d44a",
+     "req_82a1d4fe3528",
+     "req_10a7bc5c49f5"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_0262169ac3d047d5",
+    "sources": [
+     "src_ca84b6e86679",
+     "src_aa98e05c9708",
+     "src_e69f71502a12",
+     "src_266b08f500a2",
+     "src_67ed62c5c8ae",
+     "src_880991cb0e83",
+     "src_2b16db4432a7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_69cf4609c5d9",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Five years of experience in fraud, risk or payments operations"
+     ]
+    },
+    {
+     "requirementId": "req_2f2938e2ae2a",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Completed CAMS or equivalent anti‑financial‑crime certification"
+     ]
+    },
+    {
+     "requirementId": "req_b58ab762d44a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ca84b6e86679",
+       "text": "Ran intake for rule‑change requests from three partner banks over two and a half years in the platform operations team, logging each request in the channel tracker, running the impact check against the last 30 days of screened transactions, and placing approved changes into the fortnightly release.",
+       "evidenceStrength": "high",
+       "notes": "Directly describes intake, impact checks, and scheduling"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_82a1d4fe3528",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_aa98e05c9708",
+       "text": "Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations.",
+       "evidenceStrength": "medium",
+       "notes": "Shows report preparation"
+      },
+      {
+       "sourceId": "src_67ed62c5c8ae",
+       "text": "Responsibilities included request intake, impact checks, release scheduling and committee reporting for the rule‑review channel, working with two colleagues under the head of platform operations.",
+       "evidenceStrength": "medium",
+       "notes": "Indicates reporting responsibility"
+      }
+     ],
+     "missingEvidence": [
+      "Explicit statement of responsibility boundaries"
+     ]
+    },
+    {
+     "requirementId": "req_10a7bc5c49f5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e69f71502a12",
+       "text": "Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank.",
+       "evidenceStrength": "high",
+       "notes": "Directly documents limitations and hand‑over conditions"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Ran intake for rule‑change requests from three partner banks over two and a half years, logging each request in the channel tracker, running impact checks against the last 30 days of screened transactions, and placing approved changes into the fortnightly release.",
+     "supportingRequirementIds": [
+      "req_b58ab762d44a"
+     ],
+     "sourceIds": [
+      "src_ca84b6e86679"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran intake for rule‑change requests from three partner banks over two and a half years in the platform operations team, logging each request in the channel tracker, running the impact check against the last 30 days of screened transactions, and placing approved changes into the fortnightly release."
+    },
+    {
+     "claim": "Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations.",
+     "supportingRequirementIds": [
+      "req_82a1d4fe3528"
+     ],
+     "sourceIds": [
+      "src_aa98e05c9708"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Prepared the monthly channel report for the fraud steering committee, covering request volumes, release contents and open items; the report was reviewed and presented by the head of platform operations."
+    },
+    {
+     "claim": "Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank.",
+     "supportingRequirementIds": [
+      "req_10a7bc5c49f5"
+     ],
+     "sourceIds": [
+      "src_e69f71502a12"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the end‑of‑cycle notes for each release, listing rules deferred to the next cycle, the reason for deferral and the hand‑over contact at each bank."
+    },
+    {
+     "claim": "Completed the ACAMS foundations e‑learning modules and am currently preparing for the CAMS examination scheduled for later this year.",
+     "supportingRequirementIds": [
+      "req_2f2938e2ae2a"
+     ],
+     "sourceIds": [
+      "src_266b08f500a2"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Completed the ACAMS foundations e‑learning modules and am currently preparing for the CAMS examination scheduled for later this year."
+    },
+    {
+     "claim": "Operated at a senior level for the platform operations team, as confirmed by former head of platform operations.",
+     "supportingRequirementIds": [
+      "req_69cf4609c5d9"
+     ],
+     "sourceIds": [
+      "src_2b16db4432a7"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Reference call with former head of platform operations: said the candidate 'operated at a senior level for us' and was trusted with the committee report; confirmed employment dates of two years and six months."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The candidate has at least five years of experience in fraud, risk or payments operations.",
+     "reason": "Only two and a half years of experience are documented.",
+     "requiredFollowUp": "Provide evidence of additional years of relevant experience."
+    },
+    {
+     "claim": "The candidate holds a CAMS or equivalent anti‑financial‑crime certification.",
+     "reason": "Only ACAMS foundations modules completed; certification pending.",
+     "requiredFollowUp": "Provide evidence of completed CAMS or equivalent certification."
+    },
+    {
+     "claim": "The candidate explicitly records responsibility boundaries for the channel report.",
+     "reason": "No explicit statement of responsibility boundaries is documented.",
+     "requiredFollowUp": "Provide documentation or statement that outlines responsibility boundaries."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_69cf4609c5d9",
+     "severity": "high",
+     "gap": "Evidence of five years of fraud, risk or payments operations experience."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_2f2938e2ae2a",
+     "severity": "high",
+     "gap": "Evidence of completed CAMS or equivalent certification."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_82a1d4fe3528",
+     "severity": "medium",
+     "gap": "Explicit statement of responsibility boundaries for the channel report."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_69cf4609c5d9",
+     "question": "Can you provide details or documentation that demonstrate at least five years of experience in fraud, risk, or payments operations?",
+     "evidenceTarget": "Evidence of additional years of relevant experience."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_2f2938e2ae2a",
+     "question": "Do you have a completed CAMS or equivalent anti‑financial‑crime certification? If so, please provide the certification details.",
+     "evidenceTarget": "Evidence of completed CAMS or equivalent certification."
+    },
+    {
+     "questionId": "q_3",
+     "requirementId": "req_82a1d4fe3528",
+     "question": "Could you provide a statement or documentation that outlines your responsibility boundaries for the channel report?",
+     "evidenceTarget": "Explicit statement of responsibility boundaries."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate’s total years of experience in fraud, risk or payments operations.",
+    "Confirm completion of CAMS or equivalent certification.",
+    "Clarify the candidate’s responsibility boundaries for the channel report."
+   ],
+   "auditSummary": "The candidate demonstrates experience in rule‑change intake, impact checks, release scheduling, committee reporting, and end‑of‑cycle documentation, and has completed ACAMS foundations modules. However, the materials do not establish the required five years of fraud or payments operations experience, a completed CAMS or equivalent certification, or an explicit statement of responsibility boundaries. These gaps must be addressed before a hiring decision can be made.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and notes; no independent verification of experience or certifications is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:51:34.202945+00:00"
+}

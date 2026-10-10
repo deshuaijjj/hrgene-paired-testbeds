@@ -1,0 +1,258 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "6acd432d-101e-4637-9144-9b4bd50fbe9b.C1",
+ "case_id": "6acd432d-101e-4637-9144-9b4bd50fbe9b",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10827,
+  "promptWords": 1422
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 47.23
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3032,
+ "eval_count": 1979,
+ "prompt_eval_duration_ns": 18476000,
+ "eval_duration_ns": 35229981000,
+ "total_duration_ns": 47228108208,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claims list. Provide evidenceBoundary sentence. Then hiringEvidencePacket with requirementEvidenceMap covering all requirementIds. Use status based on sources.\n\nLet's analyze each requirement:\n\nreq_0ed4a13f6dad: Owns evaluation programme end-to-end and final say. Sources: src_ff3b79105b3a and src_aa18a777ac96 mention final say. Also resume says ship or hold decisions taken by head of product on basis of report; candidate had final say in practice. So evidence supports partial? The candidate did not have final say, head did. So requirement: owns programme end-to-end and final say. Candidate does not own; only reports. So insufficient evidence. Missing evidence: evidence of ownership and final decision authority. Follow-up question: Does candidate have final say? So status insufficient_evidence.\n\nreq_1ad6d6000773: Maintains evaluation sets and scoring scripts. Sources: src_c6379bf0ab40, src_186c8ee4f521, src_361d6bd1189b. So supported.\n\nreq_ea65a7fbcccd: Runs pre-release evaluation and publishes report. Sources: src_186c8ee4f521, src_361d6bd1189b. Supported.\n\nreq_d50aae8e6411: Coordinates evaluation changes with model and content team and records responsibility boundaries. Sources: src_4f3c77906265, src_361d6bd1189b. Supported.\n\nreq_975bcd0a1e46: Documents evaluation assumptions, known limitations and hand-over conditions. Sources: src_8cf140792f84, src_361d6bd1189b. Supported.\n\nThus requirementEvidenceMap with statuses.\n\nsupportedClaims: list claims that are supported: e.g., \"Maintained evaluation sets of question-answer pairs with source passages\" etc. Provide sourceIds.\n\nunsupportedClaims: maybe claim that candidate owns evaluation programme end-to-end. Provide reason.\n\nmissingEvidenceGaps: for req_0ed4a13f6dad.\n\ninterviewSignalRisks: maybe note about hiring manager pre-read describing gatekeeper. That is subjective. Source src_ff3b79105b3a. Signal type: subjective assessment. Not tied to job evidence. Severity low. Recommended handling: ask neutral question.\n\nfollowUpQuestions: for missing evidence: question about ownership and final decision authority.\n\nhumanReviewChecklist: items like \"Verify ownership and final decision authority\", \"Confirm evaluation set maintenance scope\", etc.\n\nauditSummary: paragraph summarizing.\n\nlimitations: e.g., limited to provided materials, no external verification.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_a3678081e1e5c688\",\"targetRoleTitle\":\"Model Evaluation Engineer, Enterprise Knowledge Base\",\"professionalSummary\":[\"Maintained evaluation sets of question-answer pairs with source passages and scoring scripts that compute answer correctness and citation accuracy.\",\"Ran pre-release evaluations for multiple model versions and published detailed reports to the model team and head of product.\",\"Coordinated evaluation-set changes with model and content teams during fortnightly quality reviews.\",\"Authored evaluation notes documenting set composition, known limitations, and hand-over items for subsequent evaluations.\"],\"experienceHighlights\":[\"Maintained evaluation sets of approximately 1,900 items across four content domains and scoring scripts (src_c6379bf0ab40).\",\"Ran pre-release evaluation for each of five model versions released in the year and published reports with per-domain breakdowns (src_186c8ee4f521).\",\"Coordinated evaluation-set changes with model and content teams in fortnightly quality reviews; ship or hold decisions were taken by the head of product based on the report (src_4f3c77906265).\",\"Wrote evaluation notes for each version, listing set composition, known limitations such as under-sampling of newly added content domains, and hand-over items for the next evaluation (src_8cf140792f84).\"],\"projectsAndWorkSamples\":[\"Scoring script repository README and evaluation report for version 4.1, including evaluation run identifiers as a verification trail (src_6e83d35e07ab).\"],\"skills\":[\"Evaluation set maintenance\",\"Scoring script development\",\"Pre-release evaluation execution\",\"Report generation\",\"Cross-team coordination\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s responsibilities in evaluation set maintenance, scoring script development, pre-release evaluation execution, report publication, and coordination with model and content teams. They do not establish ownership of the entire evaluation programme or final decision authority on model ship/no-ship.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Model Evaluation Engineer, Enterprise Knowledge Base\",\"jobDescriptionSource\":\"jd_67a25838e48ba9a6\",\"requirementIds\":[\"req_0ed4a13f6dad\",\"req_1ad6d6000773\",\"req_ea65a7fbcccd\",\"req_d50aae8e6411\",\"req_975bcd0a1e46\"]},\"candidate\":{\"candidateId\":\"cand_a3678081e1e5c688\",\"sources\":[\"src_c6379bf0ab40\",\"src_186c8ee4f521\",\"src_4f3c77906265\",\"src_8cf140792f84\",\"src_361d6bd1189b\",\"src_6e83d35e07ab\",\"src_ff3b79105b3a\",\"src_aa18a777ac96\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_0ed4a13f6dad\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate owns the evaluation programme end-to-end and has the final say on model ship/no-ship decisions\"]},{\"requirementId\":\"req_1ad6d6000773\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c6379bf0ab40\",\"text\":\"Maintained the evaluation sets of question-answer pairs with source passages (around 1,900 items across four content domains) and the scoring scripts that compute answer correctness and citation accuracy.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of maintenance responsibilities\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ea65a7fbcccd\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_186c8ee4f521\",\"text\":\"Ran the pre-release evaluation for each of the five model versions released in the year and published the report with per-domain breakdowns to the model team and the head of product.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of pre-release evaluation and report publication\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d50aae8e6411\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4f3c77906265\",\"text\":\"Coordinated evaluation-set changes with the model team and the content team in the fortnightly quality review; ship or hold decisions for each version were taken by the head of product on the basis of the report and the model team's recommendation.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct coordination and responsibility boundary\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_975bcd0a1e46\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8cf140792f84\",\"text\":\"Wrote the evaluation notes for each version, listing set composition, the known limitation that newly added content domains were under-sampled, and the hand-over items for the next evaluation.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct documentation of assumptions and hand-over\"}],\"missingEvidence\":[] }],\"supportedClaims\":[{\"claim\":\"Maintained evaluation sets of question-answer pairs with source passages and scoring scripts that compute answer correctness and citation accuracy.\",\"sourceIds\":[\"src_c6379bf0ab40\"],\"requirementIds\":[\"req_1ad6d6000773\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the evaluation sets of question-answer pairs with source passages (around 1,900 items across four content domains) and the scoring scripts that compute answer correctness and citation accuracy.\"},{\"claim\":\"Ran pre-release evaluation for each of the five model versions released in the year and published the report with per-domain breakdowns.\",\"sourceIds\":[\"src_186c8ee4f521\"],\"requirementIds\":[\"req_ea65a7fbcccd\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the pre-release evaluation for each of the five model versions released in the year and published the report with per-domain breakdowns to the model team and the head of product.\"},{\"claim\":\"Coordinated evaluation-set changes with the model team and the content team in the fortnightly quality review.\",\"sourceIds\":[\"src_4f3c77906265\"],\"requirementIds\":[\"req_d50aae8e6411\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated evaluation-set changes with the model team and the content team in the fortnightly quality review; ship or hold decisions for each version were taken by the head of product on the basis of the report and the model team's recommendation.\"},{\"claim\":\"Authored evaluation notes documenting set composition, known limitations, and hand-over items for subsequent evaluations.\",\"sourceIds\":[\"src_8cf140792f84\"],\"requirementIds\":[\"req_975bcd0a1e46\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the evaluation notes for each version, listing set composition, the known limitation that newly added content domains were under-sampled, and the hand-over items for the next evaluation.\"}],\"unsupportedClaims\":[{\"claim\":\"The candidate owns the evaluation programme end-to-end and has the final say on whether a model version ships.\",\"reason\":\"The provided materials indicate that the head of product makes the final ship/no-ship decision based on the candidate’s report; ownership is not established.\",\"requiredFollowUp\":\"Ask the candidate to clarify whether they have formal ownership and final decision authority over the evaluation programme.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_0\",\"requirementId\":\"req_0ed4a13f6dad\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate owns the evaluation programme end-to-end and has the final decision authority on model ship/no-ship.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_ff3b79105b3a\",\"text\":\"the candidate's portfolio site describes him as 'the gatekeeper for every model release' who 'set the bar and made the ship/no-ship call'; the head of product wants exactly that profile.\",\"signalType\":\"subjective assessment\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify with the candidate and the head of product whether the candidate has formal ownership and final decision authority.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_0ed4a13f6dad\",\"question\":\"Can you describe the formal ownership structure of the evaluation programme and who has the final decision authority on model ship/no-ship?\",\"evidenceTarget\":\"Clarify ownership and final decision authority.\"}],\"humanReviewChecklist\":[\"Verify that the candidate has formal ownership and final decision authority on the evaluation programme.\",\"Confirm that the candidate’s responsibilities align with the required evaluation set maintenance, scoring script development, pre-release evaluation execution, and documentation of assumptions and hand-over items.\"],\"auditSummary\":\"The evidence indicates that the candidate fulfills all technical requirements related to evaluation set maintenance, scoring script development, pre-release evaluation execution, and documentation of assumptions and hand-over items. However, there is insufficient evidence that the candidate owns the evaluation programme end-to-end or has the final decision authority on model ship/no-ship. A neutral follow-up question is recommended to resolve this gap before any hiring decision.\",\"limitations\":[\"Analysis is limited to the provided resume, work sample, and notes; no external verification of claims or decision authority is available.\"]}}",
+ "content_sha256": "6713024f8c86ad180758559d57928541b2b50a54587d2c797964c7ef9e7473eb",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_a3678081e1e5c688",
+   "targetRoleTitle": "Model Evaluation Engineer, Enterprise Knowledge Base",
+   "professionalSummary": [
+    "Maintained evaluation sets of question-answer pairs with source passages and scoring scripts that compute answer correctness and citation accuracy.",
+    "Ran pre-release evaluations for multiple model versions and published detailed reports to the model team and head of product.",
+    "Coordinated evaluation-set changes with model and content teams during fortnightly quality reviews.",
+    "Authored evaluation notes documenting set composition, known limitations, and hand-over items for subsequent evaluations."
+   ],
+   "experienceHighlights": [
+    "Maintained evaluation sets of approximately 1,900 items across four content domains and scoring scripts (src_c6379bf0ab40).",
+    "Ran pre-release evaluation for each of five model versions released in the year and published reports with per-domain breakdowns (src_186c8ee4f521).",
+    "Coordinated evaluation-set changes with model and content teams in fortnightly quality reviews; ship or hold decisions were taken by the head of product based on the report (src_4f3c77906265).",
+    "Wrote evaluation notes for each version, listing set composition, known limitations such as under-sampling of newly added content domains, and hand-over items for the next evaluation (src_8cf140792f84)."
+   ],
+   "projectsAndWorkSamples": [
+    "Scoring script repository README and evaluation report for version 4.1, including evaluation run identifiers as a verification trail (src_6e83d35e07ab)."
+   ],
+   "skills": [
+    "Evaluation set maintenance",
+    "Scoring script development",
+    "Pre-release evaluation execution",
+    "Report generation",
+    "Cross-team coordination"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s responsibilities in evaluation set maintenance, scoring script development, pre-release evaluation execution, report publication, and coordination with model and content teams. They do not establish ownership of the entire evaluation programme or final decision authority on model ship/no-ship."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Model Evaluation Engineer, Enterprise Knowledge Base",
+    "jobDescriptionSource": "jd_67a25838e48ba9a6",
+    "requirementIds": [
+     "req_0ed4a13f6dad",
+     "req_1ad6d6000773",
+     "req_ea65a7fbcccd",
+     "req_d50aae8e6411",
+     "req_975bcd0a1e46"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_a3678081e1e5c688",
+    "sources": [
+     "src_c6379bf0ab40",
+     "src_186c8ee4f521",
+     "src_4f3c77906265",
+     "src_8cf140792f84",
+     "src_361d6bd1189b",
+     "src_6e83d35e07ab",
+     "src_ff3b79105b3a",
+     "src_aa18a777ac96"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0ed4a13f6dad",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate owns the evaluation programme end-to-end and has the final say on model ship/no-ship decisions"
+     ]
+    },
+    {
+     "requirementId": "req_1ad6d6000773",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c6379bf0ab40",
+       "text": "Maintained the evaluation sets of question-answer pairs with source passages (around 1,900 items across four content domains) and the scoring scripts that compute answer correctness and citation accuracy.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of maintenance responsibilities"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ea65a7fbcccd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_186c8ee4f521",
+       "text": "Ran the pre-release evaluation for each of the five model versions released in the year and published the report with per-domain breakdowns to the model team and the head of product.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of pre-release evaluation and report publication"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d50aae8e6411",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4f3c77906265",
+       "text": "Coordinated evaluation-set changes with the model team and the content team in the fortnightly quality review; ship or hold decisions for each version were taken by the head of product on the basis of the report and the model team's recommendation.",
+       "evidenceStrength": "high",
+       "notes": "Direct coordination and responsibility boundary"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_975bcd0a1e46",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8cf140792f84",
+       "text": "Wrote the evaluation notes for each version, listing set composition, the known limitation that newly added content domains were under-sampled, and the hand-over items for the next evaluation.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation of assumptions and hand-over"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained evaluation sets of question-answer pairs with source passages and scoring scripts that compute answer correctness and citation accuracy.",
+     "sourceIds": [
+      "src_c6379bf0ab40"
+     ],
+     "requirementIds": [
+      "req_1ad6d6000773"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the evaluation sets of question-answer pairs with source passages (around 1,900 items across four content domains) and the scoring scripts that compute answer correctness and citation accuracy."
+    },
+    {
+     "claim": "Ran pre-release evaluation for each of the five model versions released in the year and published the report with per-domain breakdowns.",
+     "sourceIds": [
+      "src_186c8ee4f521"
+     ],
+     "requirementIds": [
+      "req_ea65a7fbcccd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the pre-release evaluation for each of the five model versions released in the year and published the report with per-domain breakdowns to the model team and the head of product."
+    },
+    {
+     "claim": "Coordinated evaluation-set changes with the model team and the content team in the fortnightly quality review.",
+     "sourceIds": [
+      "src_4f3c77906265"
+     ],
+     "requirementIds": [
+      "req_d50aae8e6411"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated evaluation-set changes with the model team and the content team in the fortnightly quality review; ship or hold decisions for each version were taken by the head of product on the basis of the report and the model team's recommendation."
+    },
+    {
+     "claim": "Authored evaluation notes documenting set composition, known limitations, and hand-over items for subsequent evaluations.",
+     "sourceIds": [
+      "src_8cf140792f84"
+     ],
+     "requirementIds": [
+      "req_975bcd0a1e46"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the evaluation notes for each version, listing set composition, the known limitation that newly added content domains were under-sampled, and the hand-over items for the next evaluation."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The candidate owns the evaluation programme end-to-end and has the final say on whether a model version ships.",
+     "reason": "The provided materials indicate that the head of product makes the final ship/no-ship decision based on the candidate’s report; ownership is not established.",
+     "requiredFollowUp": "Ask the candidate to clarify whether they have formal ownership and final decision authority over the evaluation programme."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_0",
+     "requirementId": "req_0ed4a13f6dad",
+     "severity": "high",
+     "gap": "Evidence that the candidate owns the evaluation programme end-to-end and has the final decision authority on model ship/no-ship."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_ff3b79105b3a",
+     "text": "the candidate's portfolio site describes him as 'the gatekeeper for every model release' who 'set the bar and made the ship/no-ship call'; the head of product wants exactly that profile.",
+     "signalType": "subjective assessment",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify with the candidate and the head of product whether the candidate has formal ownership and final decision authority."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_0ed4a13f6dad",
+     "question": "Can you describe the formal ownership structure of the evaluation programme and who has the final decision authority on model ship/no-ship?",
+     "evidenceTarget": "Clarify ownership and final decision authority."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate has formal ownership and final decision authority on the evaluation programme.",
+    "Confirm that the candidate’s responsibilities align with the required evaluation set maintenance, scoring script development, pre-release evaluation execution, and documentation of assumptions and hand-over items."
+   ],
+   "auditSummary": "The evidence indicates that the candidate fulfills all technical requirements related to evaluation set maintenance, scoring script development, pre-release evaluation execution, and documentation of assumptions and hand-over items. However, there is insufficient evidence that the candidate owns the evaluation programme end-to-end or has the final decision authority on model ship/no-ship. A neutral follow-up question is recommended to resolve this gap before any hiring decision.",
+   "limitations": [
+    "Analysis is limited to the provided resume, work sample, and notes; no external verification of claims or decision authority is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:39:56.165903+00:00"
+}

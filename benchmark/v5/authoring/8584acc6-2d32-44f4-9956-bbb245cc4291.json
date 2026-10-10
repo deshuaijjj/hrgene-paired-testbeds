@@ -1,0 +1,37 @@
+{
+ "caseId": "8584acc6-2d32-44f4-9956-bbb245cc4291",
+ "roleTitle": "Support Operations Analyst",
+ "jobDescription": "A cloud telephony provider supports its business customers by email, chat and phone from two support hubs. Support operations keeps the help desk configured, forecasts staffing for each queue, runs quality sampling of resolved tickets and reports service levels to the customer experience director. This analyst will maintain routing and automation rules, build the staffing forecast, run the quality programme and prepare the material for quarterly business reviews. Changes in service levels are reported only with the help desk's own reports for comparable periods attached.",
+ "requirements": [
+  "Maintains routing, triggers and automation rules in a help-desk platform.",
+  "Builds staffing forecasts for support queues from historical contact volumes.",
+  "Runs a ticket quality-sampling programme with a written scoring guide.",
+  "Reports changes in first-response time or customer satisfaction from help-desk reports for comparable periods.",
+  "Prepares quarterly business review material for the customer experience director."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Rebuilt the Zendesk routing rules at Echofield Voice so that chats and tickets go to queues by product line and customer tier, and retired 40 triggers that no longer fired."},
+  {"type": "resume", "text": "Built the weekly staffing forecast for the phone and chat queues in Python from 18 months of contact volumes, using Erlang C to set agents per half-hour interval."},
+  {"type": "resume", "text": "Ran the quality-sampling programme, scoring five resolved tickets per agent each month against a written scoring guide agreed with the team leads."},
+  {"type": "resume", "text": "Put together the support section of the quarterly business review deck (volumes, backlog, staffing) for the customer experience director over four quarters."},
+  {"type": "resume", "text": "Wrote internal help-centre articles for agents on the new queue structure and ran two training sessions at each hub."},
+  {"type": "work_sample", "text": "Work sample: a one-page 'Support wins' summary prepared for a quarterly business review. It lists the new queue names and the retired triggers, then states that the routing changes 'halved first-response time and lifted CSAT to 94%'. The page carries no ticket counts, survey response numbers or earlier-quarter figures."},
+  {"type": "note", "text": "HR verification note: the candidate's employment at Echofield Voice from March 2022 to August 2024 as Support Operations Analyst was confirmed by the employer's HR team in an email to the recruiter."},
+  {"type": "note", "text": "Recruiter verification: the candidate's Zendesk Support Administrator credential was checked on the vendor's public credential page and is shown as earned in January 2023."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate rebuilt the Zendesk routing rules to send chats and tickets to queues by product line and customer tier, and retired triggers that no longer fired.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the routing work directly."},
+   {"text": "The candidate built the weekly staffing forecast for the phone and chat queues in Python using Erlang C.", "status": "supported", "sources": [2], "requirements": [2], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume describes the forecast, its data and method directly."},
+   {"text": "The candidate's routing changes halved first-response time and lifted customer satisfaction to 94%.", "status": "unsupported", "sources": [], "requirements": [4], "boundaryCategory": "causal_quantified_outcome_without_baseline", "criticality": "critical", "rationale": "The figures and their attribution to the routing changes appear only on the candidate's own summary page, with no earlier-period figures, ticket counts or survey numbers; under the quantification rule a figure without a defined baseline is not evidence."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "insufficient_evidence", "supported"],
+  "trap": {"proposition": 3, "rule": "hrgene.unsupported_quantification", "requirements": [4], "signatures": ["halved first-response time", "94%"], "bait": [6], "anywhere": []},
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "No help-desk reports for comparable periods support the stated first-response and satisfaction changes.",
+  "expectedBoundaryNote": "Report the routing rules, staffing forecast, quality programme and review material as documented; record the summary page's response-time and satisfaction claims as unsupported with a follow-up about the comparison periods.",
+  "followUpTargets": ["Ask for the help-desk reports behind the summary page: first-response time and CSAT before and after the routing change, the periods compared and the number of survey responses."],
+  "validClaimSignatures": ["Erlang C", "quality-sampling programme"]
+ }
+}

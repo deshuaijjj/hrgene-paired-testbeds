@@ -1,0 +1,585 @@
+{
+ "request_id": "7a61be3b-e1e3-4d92-8eb2-a79903c9e094.C2",
+ "case_id": "7a61be3b-e1e3-4d92-8eb2-a79903c9e094",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.candidate.candidateId",
+    "message": "candidateId differs from the case",
+    "witness": {
+     "expected": "cand_612723f51123f15e",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.jobDescriptionSource",
+    "message": "jobDescriptionSource differs from the case",
+    "witness": {
+     "expected": "jd_24b4937ca1d79c5d",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "number(s) not stated by the cited sources: 3, 61131",
+    "witness": {
+     "numbers": [
+      "3",
+      "61131"
+     ],
+     "sourceIds": [
+      "src_b31df9191c08"
+     ],
+     "text": "Experienced Controls Engineer with expertise in writing and maintaining PLC programs (IEC 61131-3) and HMI screens for packaging lines, including structured-text and ladder logic for case packers and "
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managed",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managed"
+     ],
+     "sourceIds": [
+      "src_15fce2f03485"
+     ],
+     "sourceFamilies": [],
+     "text": "Managed version control for 140 controller programs, implementing a system with check-in comments and named reviewers for every change."
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "qualification term(s) [EXPERT] not licensed by the cited sources: expertise in",
+    "witness": {
+     "family": "EXPERT",
+     "terms": [
+      "expertise in"
+     ],
+     "sourceIds": [
+      "src_b31df9191c08"
+     ],
+     "sourceFamilies": [],
+     "text": "Experienced Controls Engineer with expertise in writing and maintaining PLC programs (IEC 61131-3) and HMI screens for packaging lines, including structured-text and ladder logic for case packers and "
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "boundary_flags",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.decisionBoundary",
+    "message": "decisionBoundary missing",
+    "witness": {}
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_73b2064c0375 is not covered",
+    "witness": {
+     "requirementId": "req_73b2064c0375"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_1fc971727ace is not covered",
+    "witness": {
+     "requirementId": "req_1fc971727ace"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_8b2b923f1f00 is not covered",
+    "witness": {
+     "requirementId": "req_8b2b923f1f00"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_ec09217d82ff is not covered",
+    "witness": {
+     "requirementId": "req_ec09217d82ff"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_0d78459b9311 is not covered",
+    "witness": {
+     "requirementId": "req_0d78459b9311"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$",
+    "message": "1 schema error(s); first: $: missing required property 'hiringEvidencePacket'",
+    "witness": {
+     "errors": [
+      "$: missing required property 'hiringEvidencePacket'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "qualification_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Experienced Controls Engineer with expertise in writing and maintaining PLC programs (IEC 61131-3) and HMI screens for p"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "Managed version control for 140 controller programs, implementing a system with check-in comments and named reviewers fo"
+  },
+  {
+   "rule": "hrgene.human_review_boundary",
+   "code": "boundary_flags",
+   "action": "reset_boundary_flags",
+   "path": "$.hiringEvidencePacket.decisionBoundary",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_73b2064c0375"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_1fc971727ace"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_8b2b923f1f00"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_ec09217d82ff"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_0d78459b9311"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_612723f51123f15e",
+   "targetRoleTitle": "Controls Software Engineer, Packaging Lines",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_02",
+     "text": "Supported commissioning of line changes, including I/O checks and handover to operations, for a second labeller added to line 4.",
+     "sourceIds": [
+      "src_435d2ecbc6c9"
+     ],
+     "requirementIds": [
+      "req_ec09217d82ff"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the I/O checks and wrote the operator handover sheet when a second labeller was added to line 4, and stayed on site for the first two shifts after restart."
+    },
+    {
+     "claimId": "exp_03",
+     "text": "Collaborated with IT security on plant network zoning and conduit documentation, including cell zone division and conduit mapping between plant and office networks.",
+     "sourceIds": [
+      "src_fcc51d8abeb7"
+     ],
+     "requirementIds": [
+      "req_0d78459b9311"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Took part in workshops with the IT security team that divided the plant network into cell zones and documented the conduits between them and the site office network."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Provided a change record for the line 4 labeller program, including program diff, reviewer comments, I/O checklist, and shift supervisor acceptance signature.",
+     "sourceIds": [
+      "src_2b0b125f582c"
+     ],
+     "requirementIds": [
+      "req_8b2b923f1f00",
+      "req_ec09217d82ff"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: a change record for the line 4 labeller program, showing the program diff, the reviewer's comments, the I/O checklist completed during commissioning and the shift supervisor's acceptance signature."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "ISA/IEC 62443 Cybersecurity Fundamentals Specialist certification in progress, with training courses IC32 and IC33 completed in June 2026 and exam booked for 18 November 2026.",
+     "sourceIds": [
+      "src_448d08fefc36"
+     ],
+     "requirementIds": [
+      "req_1fc971727ace"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "ISA/IEC 62443 Cybersecurity Fundamentals Specialist: training courses IC32 and IC33 completed in June 2026; certificate exam booked for 18 November 2026."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience with PLC programming, version control, commissioning support, and network collaboration, but do not establish the ISA/IEC 62443 certification as held (only in progress)."
+  },
+  "hiringEvidencePacket": {
+   "candidate": {
+    "candidateId": "cand_612723f51123f15e",
+    "sources": []
+   },
+   "role": {
+    "roleTitle": "Controls Software Engineer, Packaging Lines",
+    "jobDescriptionSource": "jd_24b4937ca1d79c5d",
+    "requirementIds": []
+   },
+   "unsupportedClaims": [
+    {
+     "claim": "Experienced Controls Engineer with expertise in writing and maintaining PLC programs (IEC 61131-3) and HMI screens for packaging lines, including structured-text and ladder logic for case packers and labellers on ControlLogix controllers.",
+     "reason": "The cited sources do not establish this qualification, seniority or duration.",
+     "requiredFollowUp": "Ask for the specific credential, its issuer and dates, and the scope of the experience."
+    },
+    {
+     "claim": "Managed version control for 140 controller programs, implementing a system with check-in comments and named reviewers for every change.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "This packet supports qualified human review. It makes no employment decision, ranking or recommendation and infers no protected characteristics."
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_73b2064c0375",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_1fc971727ace",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_8b2b923f1f00",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_ec09217d82ff",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_0d78459b9311",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "followUpQuestions": [],
+   "supportedClaims": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "",
+   "limitations": []
+  }
+ },
+ "needsRegeneration": false
+}

@@ -1,0 +1,271 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "43806eb6-5236-4d84-a94e-2717d23f04c0.C2",
+ "case_id": "43806eb6-5236-4d84-a94e-2717d23f04c0",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14093,
+  "promptWords": 1694
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 40.365
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3540,
+ "eval_count": 2009,
+ "prompt_eval_duration_ns": 18244000,
+ "eval_duration_ns": 36210790000,
+ "total_duration_ns": 40363401792,
+ "thinking": "Need to map requirements. Provide claims with source. Ensure no unsupported claims. The 22% increase claim is quantitative but not supported by test protocol; it's from resume but no test report. So that claim is unsupported. We should put it in unsupportedClaims. Also the range claim is req_4ceac2769e13; we have source src_71d49d914824 but it says led to 22% increase but no test protocol. So insufficient evidence. So requirement status insufficient_evidence, missingEvidence: \"test-protocol report with baseline firmware, load, route\". Follow-up question.\n\nAlso other requirements supported.\n\nWe must include evidenceBoundary sentence.\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_54005bf2b22c1af4\",\"targetRoleTitle\":\"Embedded Software Engineer, E-bike Drive Systems\",\"professionalSummary\":[\"Embedded Software Engineer with experience writing C firmware for STM32 microcontrollers in motor control and battery management, extending CAN diagnostics, optimizing hardware‑in‑the‑loop regression suites, and maintaining signed over‑the‑air update pipelines.\"],\"experienceHighlights\":[\"Wrote field‑oriented control firmware in C for the STM32G4 motor controller, including current‑loop tuning and stall protection.\",\"Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service‑tool team.\",\"Reduced the hardware‑in‑the‑loop regression suite runtime from 95 minutes to 38 minutes by parallelizing test groups across two rig channels, as recorded in CI pipeline logs.\",\"Maintained the OTA update pipeline that signs firmware images, stages them for the companion app, and added a rollback check for failed installs.\"],\"projectsAndWorkSamples\":[\"Reworked state‑of‑charge estimation in battery‑management firmware, resulting in a 22% increase in riding range (source: resume).\"],\"skills\":[\"C programming\",\"STM32 microcontrollers\",\"CAN bus diagnostics\",\"Hardware‑in‑the‑loop testing\",\"CI/CD pipelines\",\"OTA firmware updates\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience with STM32 firmware, CAN diagnostics, regression suite optimization, and OTA pipeline maintenance, but do not provide a test‑protocol report demonstrating measured effects on range or energy use.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess the candidate’s fit for the Embedded Software Engineer role.\"},\"role\":{\"roleTitle\":\"Embedded Software Engineer, E-bike Drive Systems\",\"jobDescriptionSource\":\"jd_c6237e0379672922\",\"requirementIds\":[\"req_a9b4e581869b\",\"req_7b21027582b0\",\"req_273bd23458e4\",\"req_4ceac2769e13\",\"req_60c03af5a429\"]},\"candidate\":{\"candidateId\":\"cand_54005bf2b22c1af4\",\"sources\":[\"src_6a687d01215d\",\"src_b8191bd1b2b1\",\"src_d6dc00e8d69d\",\"src_4b645c740f61\",\"src_71d49d914824\",\"src_37814e06d9a6\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_a9b4e581869b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6a687d01215d\",\"text\":\"Wrote field-oriented control firmware in C for the STM32G4 motor controller at Velomark Cycles, including current-loop tuning and stall protection.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of C firmware for STM32\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7b21027582b0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b8191bd1b2b1\",\"text\":\"Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service-tool team.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct extension of CAN diagnostics\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_273bd23458e4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d6dc00e8d69d\",\"text\":\"Cut the hardware-in-the-loop regression suite from 95 minutes to 38 minutes between March and May 2023 by running independent test groups in parallel on two rig channels, as recorded in the CI pipeline logs.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of regression suite optimization\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4ceac2769e13\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_71d49d914824\",\"text\":\"Reworked the state-of-charge estimation in the battery-management firmware, which led to a 22% increase in riding range.\",\"evidenceStrength\":\"low\",\"notes\":\"No test-protocol report cited\"}],\"missingEvidence\":[\"Test‑protocol report that states the baseline firmware, the load and the route, and documents the measured effect on range or energy use.\"]},{\"requirementId\":\"req_60c03af5a429\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4b645c740f61\",\"text\":\"Maintained the over-the-air update pipeline that signs firmware images and stages them for the companion app, and added a rollback check for failed installs.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct maintenance of OTA pipeline\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Wrote field-oriented control firmware in C for the STM32G4 motor controller at Velomark Cycles, including current-loop tuning and stall protection.\",\"supportingRequirementIds\":[\"req_a9b4e581869b\"],\"sourceIds\":[\"src_6a687d01215d\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote field-oriented control firmware in C for the STM32G4 motor controller at Velomark Cycles, including current-loop tuning and stall protection.\"},{\"claim\":\"Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service-tool team.\",\"supportingRequirementIds\":[\"req_7b21027582b0\"],\"sourceIds\":[\"src_b8191bd1b2b1\"],\"evidenceStrength\":\"high\",\"witness\":\"Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service-tool team.\"},{\"claim\":\"Cut the hardware-in-the-loop regression suite from 95 minutes to 38 minutes between March and May 2023 by running independent test groups in parallel on two rig channels, as recorded in the CI pipeline logs.\",\"supportingRequirementIds\":[\"req_273bd23458e4\"],\"sourceIds\":[\"src_d6dc00e8d69d\"],\"evidenceStrength\":\"high\",\"witness\":\"Cut the hardware-in-the-loop regression suite from 95 minutes to 38 minutes between March and May 2023 by running independent test groups in parallel on two rig channels, as recorded in the CI pipeline logs.\"},{\"claim\":\"Maintained the over-the-air update pipeline that signs firmware images and stages them for the companion app, and added a rollback check for failed installs.\",\"supportingRequirementIds\":[\"req_60c03af5a429\"],\"sourceIds\":[\"src_4b645c740f61\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the over-the-air update pipeline that signs firmware images and stages them for the companion app, and added a rollback check for failed installs.\"}],\"unsupportedClaims\":[{\"claim\":\"Reworked the state-of-charge estimation in the battery-management firmware, which led to a 22% increase in riding range.\",\"reason\":\"No test-protocol report with baseline firmware, load and route is cited.\",\"requiredFollowUp\":\"Provide a test-protocol report that documents the measured effect on range or energy use.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_4ceac2769e13\",\"severity\":\"medium\",\"gap\":\"Test‑protocol report that states the baseline firmware, the load and the route, and documents the measured effect on range or energy use.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_0e46a0a0d6e9\",\"text\":\"HR verification note: the candidate's employment at Velomark Cycles (September 2020 to June 2024) and the title Embedded Software Engineer were checked against the employment contract and final payslip the candidate provided.\",\"signalType\":\"verification\",\"jobRelatedBoundary\":\"true\",\"severity\":\"low\",\"recommendedHandling\":\"Confirm employment dates and title with HR records.\"},{\"sourceId\":\"src_013f5a8057cf\",\"text\":\"Reference check summary: Velomark's former firmware lead confirmed in writing that the candidate wrote the motor-control firmware and the CAN diagnostic trouble codes listed on the resume.\",\"signalType\":\"reference\",\"jobRelatedBoundary\":\"true\",\"severity\":\"low\",\"recommendedHandling\":\"Verify reference statements with the former firmware lead.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_4ceac2769e13\",\"question\":\"Could you provide the test‑protocol report that documents the measured effect of the state-of-charge estimation changes on riding range, including baseline firmware, load, and route details?\",\"evidenceTarget\":\"Test‑protocol report with baseline firmware, load, route, and measured effect.\"}],\"humanReviewChecklist\":[\"Verify that all requirementIds are covered in requirementEvidenceMap.\",\"Confirm that no claim is supported without a cited source.\",\"Ensure that quantitative claims are only included in unsupportedClaims if no test protocol is cited.\",\"Check that interviewSignalRisks are properly identified and recommended handling is appropriate.\"],\"auditSummary\":\"All requirements are mapped; three are fully supported, one has insufficient evidence, and one is unsupported due to lack of a test protocol. Interview signals are identified and follow‑up questions are provided for the missing evidence. Human review is required to evaluate the candidate’s fit.\",\"limitations\":[\"The CV does not include a test‑protocol report for the range improvement claim; this limits assessment of the candidate’s ability to demonstrate measurable effects on range or energy use.\"]}}",
+ "content_sha256": "332584673f1ce47961324e9307b230e3666d04422f4ec872e421b58b461b243b",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_54005bf2b22c1af4",
+   "targetRoleTitle": "Embedded Software Engineer, E-bike Drive Systems",
+   "professionalSummary": [
+    "Embedded Software Engineer with experience writing C firmware for STM32 microcontrollers in motor control and battery management, extending CAN diagnostics, optimizing hardware‑in‑the‑loop regression suites, and maintaining signed over‑the‑air update pipelines."
+   ],
+   "experienceHighlights": [
+    "Wrote field‑oriented control firmware in C for the STM32G4 motor controller, including current‑loop tuning and stall protection.",
+    "Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service‑tool team.",
+    "Reduced the hardware‑in‑the‑loop regression suite runtime from 95 minutes to 38 minutes by parallelizing test groups across two rig channels, as recorded in CI pipeline logs.",
+    "Maintained the OTA update pipeline that signs firmware images, stages them for the companion app, and added a rollback check for failed installs."
+   ],
+   "projectsAndWorkSamples": [
+    "Reworked state‑of‑charge estimation in battery‑management firmware, resulting in a 22% increase in riding range (source: resume)."
+   ],
+   "skills": [
+    "C programming",
+    "STM32 microcontrollers",
+    "CAN bus diagnostics",
+    "Hardware‑in‑the‑loop testing",
+    "CI/CD pipelines",
+    "OTA firmware updates"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience with STM32 firmware, CAN diagnostics, regression suite optimization, and OTA pipeline maintenance, but do not provide a test‑protocol report demonstrating measured effects on range or energy use."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate’s fit for the Embedded Software Engineer role."
+   },
+   "role": {
+    "roleTitle": "Embedded Software Engineer, E-bike Drive Systems",
+    "jobDescriptionSource": "jd_c6237e0379672922",
+    "requirementIds": [
+     "req_a9b4e581869b",
+     "req_7b21027582b0",
+     "req_273bd23458e4",
+     "req_4ceac2769e13",
+     "req_60c03af5a429"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_54005bf2b22c1af4",
+    "sources": [
+     "src_6a687d01215d",
+     "src_b8191bd1b2b1",
+     "src_d6dc00e8d69d",
+     "src_4b645c740f61",
+     "src_71d49d914824",
+     "src_37814e06d9a6"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a9b4e581869b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6a687d01215d",
+       "text": "Wrote field-oriented control firmware in C for the STM32G4 motor controller at Velomark Cycles, including current-loop tuning and stall protection.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of C firmware for STM32"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7b21027582b0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b8191bd1b2b1",
+       "text": "Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service-tool team.",
+       "evidenceStrength": "high",
+       "notes": "Direct extension of CAN diagnostics"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_273bd23458e4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d6dc00e8d69d",
+       "text": "Cut the hardware-in-the-loop regression suite from 95 minutes to 38 minutes between March and May 2023 by running independent test groups in parallel on two rig channels, as recorded in the CI pipeline logs.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of regression suite optimization"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4ceac2769e13",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_71d49d914824",
+       "text": "Reworked the state-of-charge estimation in the battery-management firmware, which led to a 22% increase in riding range.",
+       "evidenceStrength": "low",
+       "notes": "No test-protocol report cited"
+      }
+     ],
+     "missingEvidence": [
+      "Test‑protocol report that states the baseline firmware, the load and the route, and documents the measured effect on range or energy use."
+     ]
+    },
+    {
+     "requirementId": "req_60c03af5a429",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4b645c740f61",
+       "text": "Maintained the over-the-air update pipeline that signs firmware images and stages them for the companion app, and added a rollback check for failed installs.",
+       "evidenceStrength": "high",
+       "notes": "Direct maintenance of OTA pipeline"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Wrote field-oriented control firmware in C for the STM32G4 motor controller at Velomark Cycles, including current-loop tuning and stall protection.",
+     "supportingRequirementIds": [
+      "req_a9b4e581869b"
+     ],
+     "sourceIds": [
+      "src_6a687d01215d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote field-oriented control firmware in C for the STM32G4 motor controller at Velomark Cycles, including current-loop tuning and stall protection."
+    },
+    {
+     "claim": "Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service-tool team.",
+     "supportingRequirementIds": [
+      "req_7b21027582b0"
+     ],
+     "sourceIds": [
+      "src_b8191bd1b2b1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service-tool team."
+    },
+    {
+     "claim": "Cut the hardware-in-the-loop regression suite from 95 minutes to 38 minutes between March and May 2023 by running independent test groups in parallel on two rig channels, as recorded in the CI pipeline logs.",
+     "supportingRequirementIds": [
+      "req_273bd23458e4"
+     ],
+     "sourceIds": [
+      "src_d6dc00e8d69d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Cut the hardware-in-the-loop regression suite from 95 minutes to 38 minutes between March and May 2023 by running independent test groups in parallel on two rig channels, as recorded in the CI pipeline logs."
+    },
+    {
+     "claim": "Maintained the over-the-air update pipeline that signs firmware images and stages them for the companion app, and added a rollback check for failed installs.",
+     "supportingRequirementIds": [
+      "req_60c03af5a429"
+     ],
+     "sourceIds": [
+      "src_4b645c740f61"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the over-the-air update pipeline that signs firmware images and stages them for the companion app, and added a rollback check for failed installs."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Reworked the state-of-charge estimation in the battery-management firmware, which led to a 22% increase in riding range.",
+     "reason": "No test-protocol report with baseline firmware, load and route is cited.",
+     "requiredFollowUp": "Provide a test-protocol report that documents the measured effect on range or energy use."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_4ceac2769e13",
+     "severity": "medium",
+     "gap": "Test‑protocol report that states the baseline firmware, the load and the route, and documents the measured effect on range or energy use."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_0e46a0a0d6e9",
+     "text": "HR verification note: the candidate's employment at Velomark Cycles (September 2020 to June 2024) and the title Embedded Software Engineer were checked against the employment contract and final payslip the candidate provided.",
+     "signalType": "verification",
+     "jobRelatedBoundary": "true",
+     "severity": "low",
+     "recommendedHandling": "Confirm employment dates and title with HR records."
+    },
+    {
+     "sourceId": "src_013f5a8057cf",
+     "text": "Reference check summary: Velomark's former firmware lead confirmed in writing that the candidate wrote the motor-control firmware and the CAN diagnostic trouble codes listed on the resume.",
+     "signalType": "reference",
+     "jobRelatedBoundary": "true",
+     "severity": "low",
+     "recommendedHandling": "Verify reference statements with the former firmware lead."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_4ceac2769e13",
+     "question": "Could you provide the test‑protocol report that documents the measured effect of the state-of-charge estimation changes on riding range, including baseline firmware, load, and route details?",
+     "evidenceTarget": "Test‑protocol report with baseline firmware, load, route, and measured effect."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that all requirementIds are covered in requirementEvidenceMap.",
+    "Confirm that no claim is supported without a cited source.",
+    "Ensure that quantitative claims are only included in unsupportedClaims if no test protocol is cited.",
+    "Check that interviewSignalRisks are properly identified and recommended handling is appropriate."
+   ],
+   "auditSummary": "All requirements are mapped; three are fully supported, one has insufficient evidence, and one is unsupported due to lack of a test protocol. Interview signals are identified and follow‑up questions are provided for the missing evidence. Human review is required to evaluate the candidate’s fit.",
+   "limitations": [
+    "The CV does not include a test‑protocol report for the range improvement claim; this limits assessment of the candidate’s ability to demonstrate measurable effects on range or energy use."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:42:24.905128+00:00"
+}

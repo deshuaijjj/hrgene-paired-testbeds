@@ -1,0 +1,596 @@
+{
+ "request_id": "da74fb50-ca87-46ef-9f30-a7ec592aecfc.C2",
+ "case_id": "da74fb50-ca87-46ef-9f30-a7ec592aecfc",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managed",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managed"
+     ],
+     "sourceIds": [
+      "src_adc9e58198ea",
+      "src_f8e3c04383a9"
+     ],
+     "sourceFamilies": [],
+     "text": "Managed pre-implementation pilot programmes for six prospective logistics customers on the fleet telematics service, including tenant configuration, pilot delivery, and pilot-device installation sched"
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managed",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managed"
+     ],
+     "sourceIds": [
+      "src_0f9e46c054d0"
+     ],
+     "sourceFamilies": [
+      "LEAD"
+     ],
+     "text": "Did not participate in cut-over to live operation, full fleet device installation, or hypercare period; these stages were managed by delivery team implementation leads after contract signing."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managed",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managed"
+     ],
+     "sourceIds": [
+      "src_adc9e58198ea",
+      "src_f8e3c04383a9"
+     ],
+     "sourceFamilies": [],
+     "text": "Managed pre-implementation pilot programmes for six prospective logistics customers on the fleet telematics service, including tenant configuration, pilot delivery, and pilot-device installation sched"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Managed pre-implementation pilot programmes for six prospective logistics customers on the fleet telematics service, inc"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "Did not participate in cut-over to live operation, full fleet device installation, or hypercare period; these stages wer"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Managed pre-implementation pilot programmes for six prospective logistics customers on the fleet telematics service, inc"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_5b31ad9841e68697",
+   "targetRoleTitle": "Implementation Project Manager, Fleet Telematics Service",
+   "professionalSummary": [
+    {
+     "claimId": "sum_02",
+     "text": "Documented pilot limitations, configuration questions, and hand-over conditions in pilot reports and implementation plans for each customer.",
+     "sourceIds": [
+      "src_924bb4a4bf14",
+      "src_f8e3c04383a9"
+     ],
+     "requirementIds": [
+      "req_6d2bfc05ae33"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand-over conditions."
+    },
+    {
+     "claimId": "sum_03",
+     "text": "Coordinated pilot device installation schedules with the field engineering partner for pilot vehicles only.",
+     "sourceIds": [
+      "src_ac6172db7a4d",
+      "src_f8e3c04383a9"
+     ],
+     "requirementIds": [
+      "req_c7ed009cbfd1"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated the installation of pilot devices on each customer's pilot vehicles with the field engineering partner, keeping the installation schedule for the pilot vehicles only."
+    }
+   ],
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Pilot report and implementation plan for one regional carrier, including demonstration tenant configuration identifiers and pilot vehicle list as verification trail.",
+     "sourceIds": [
+      "src_f7cf02d44f76"
+     ],
+     "requirementIds": [
+      "req_863bc09d8778",
+      "req_6d2bfc05ae33"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the pilot report and implementation plan for one regional carrier, with the demonstration tenant's configuration identifiers and the pilot vehicle list as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "Pilot programme management for fleet telematics service, including tenant configuration, pilot delivery, and pilot-device installation scheduling.",
+     "sourceIds": [
+      "src_f8e3c04383a9"
+     ],
+     "requirementIds": [
+      "req_863bc09d8778",
+      "req_6d2bfc05ae33"
+     ],
+     "supportBoundary": "supported",
+     "witness": "About three years on the pilot programme covered tenant configuration, pilot delivery, pilot-device installation scheduling, pilot reports and implementation plans for prospective customers."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's role in pilot programmes but do not establish involvement in cut-overs, full fleet deployments, or hypercare periods. The candidate's claims about bringing fleets live and running cut-overs are contradicted by the materials."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required due to evidence gaps in core requirements for live implementation, cut-over, and hypercare."
+   },
+   "role": {
+    "roleTitle": "Implementation Project Manager, Fleet Telematics Service",
+    "jobDescriptionSource": "jd_2433baa51064a931",
+    "requirementIds": [
+     "req_ab9c2ecbcc45",
+     "req_e30a8b6e30d2",
+     "req_c7ed009cbfd1",
+     "req_863bc09d8778",
+     "req_6d2bfc05ae33"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_5b31ad9841e68697",
+    "sources": [
+     "src_adc9e58198ea",
+     "src_ac6172db7a4d",
+     "src_0f9e46c054d0",
+     "src_924bb4a4bf14",
+     "src_f8e3c04383a9",
+     "src_f7cf02d44f76",
+     "src_9f3277c1436e",
+     "src_e9eac84fb0f7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_ab9c2ecbcc45",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_0f9e46c054d0",
+       "text": "The cut-over to live operation, the device installation across each customer's full fleet and the hypercare period were run by the delivery team's implementation leads after the contract was signed; I did not take part in those stages.",
+       "evidenceStrength": "high",
+       "notes": "Candidate explicitly states no involvement in cut-over or full fleet deployment"
+      }
+     ],
+     "missingEvidence": [
+      "Cut-over to live operation",
+      "Full fleet device installation"
+     ]
+    },
+    {
+     "requirementId": "req_e30a8b6e30d2",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_0f9e46c054d0",
+       "text": "The cut-over to live operation, the device installation across each customer's full fleet and the hypercare period were run by the delivery team's implementation leads after the contract was signed; I did not take part in those stages.",
+       "evidenceStrength": "high",
+       "notes": "Candidate explicitly states no involvement in hypercare"
+      }
+     ],
+     "missingEvidence": [
+      "Hypercare period ownership",
+      "Incident handling by dispatchers"
+     ]
+    },
+    {
+     "requirementId": "req_c7ed009cbfd1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ac6172db7a4d",
+       "text": "Coordinated the installation of pilot devices on each customer's pilot vehicles with the field engineering partner, keeping the installation schedule for the pilot vehicles only.",
+       "evidenceStrength": "high",
+       "notes": "Pilot vehicles only, not full fleet"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_863bc09d8778",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_adc9e58198ea",
+       "text": "Ran the pre-implementation pilot programme for the fleet telematics service, configuring the demonstration tenant for six prospective logistics customers and running a two-week pilot with each customer's pilot vehicles.",
+       "evidenceStrength": "high",
+       "notes": "Pilot programme, not live implementation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6d2bfc05ae33",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_924bb4a4bf14",
+       "text": "Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand-over conditions.",
+       "evidenceStrength": "high",
+       "notes": "Pilot reports, not live implementation"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Documented pilot limitations, configuration questions, and hand-over conditions in pilot reports and implementation plans for each customer.",
+     "supportingRequirementIds": [
+      "req_6d2bfc05ae33"
+     ],
+     "sourceIds": [
+      "src_924bb4a4bf14",
+      "src_f8e3c04383a9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand-over conditions."
+    },
+    {
+     "claim": "Coordinated pilot device installation schedules with the field engineering partner for pilot vehicles only.",
+     "supportingRequirementIds": [
+      "req_c7ed009cbfd1"
+     ],
+     "sourceIds": [
+      "src_ac6172db7a4d",
+      "src_f8e3c04383a9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated the installation of pilot devices on each customer's pilot vehicles with the field engineering partner, keeping the installation schedule for the pilot vehicles only."
+    },
+    {
+     "claim": "Pilot report and implementation plan for one regional carrier, including demonstration tenant configuration identifiers and pilot vehicle list as verification trail.",
+     "supportingRequirementIds": [
+      "req_863bc09d8778",
+      "req_6d2bfc05ae33"
+     ],
+     "sourceIds": [
+      "src_f7cf02d44f76"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Work sample: the pilot report and implementation plan for one regional carrier, with the demonstration tenant's configuration identifiers and the pilot vehicle list as a verification trail."
+    },
+    {
+     "claim": "Pilot programme management for fleet telematics service, including tenant configuration, pilot delivery, and pilot-device installation scheduling.",
+     "supportingRequirementIds": [
+      "req_863bc09d8778",
+      "req_6d2bfc05ae33"
+     ],
+     "sourceIds": [
+      "src_f8e3c04383a9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "About three years on the pilot programme covered tenant configuration, pilot delivery, pilot-device installation scheduling, pilot reports and implementation plans for prospective customers."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Has brought customer fleets live on the service and run the cut-over from the customer's previous system.",
+     "reason": "Candidate explicitly states in source src_0f9e46c054d0 that they did not take part in cut-over or full fleet deployment.",
+     "requiredFollowUp": "Ask for specific examples of cut-over and live deployment they personally managed."
+    },
+    {
+     "claim": "Owns the hypercare period after go-live and handles incidents raised by the customer's dispatchers.",
+     "reason": "Candidate explicitly states in source src_0f9e46c054d0 that hypercare was run by delivery team implementation leads.",
+     "requiredFollowUp": "Ask for specific examples of hypercare ownership and incident handling they personally managed."
+    },
+    {
+     "claim": "The candidate said he had 'brought six logistics fleets live on the service' and 'ran the cut-overs' (source src_9f3277c1436e).",
+     "reason": "This claim is contradicted by the candidate's own statement in source src_0f9e46c054d0.",
+     "requiredFollowUp": "Ask for clarification on the discrepancy between the candidate's statement and their own documentation."
+    },
+    {
+     "claim": "Managed pre-implementation pilot programmes for six prospective logistics customers on the fleet telematics service, including tenant configuration, pilot delivery, and pilot-device installation scheduling.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    },
+    {
+     "claim": "Did not participate in cut-over to live operation, full fleet device installation, or hypercare period; these stages were managed by delivery team implementation leads after contract signing.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_ab9c2ecbcc45",
+     "requirementId": "req_ab9c2ecbcc45",
+     "severity": "high",
+     "gap": "No evidence of cut-over to live operation or full fleet deployment by candidate."
+    },
+    {
+     "gapId": "gap_e30a8b6e30d2",
+     "requirementId": "req_e30a8b6e30d2",
+     "severity": "high",
+     "gap": "No evidence of hypercare ownership or incident handling by candidate."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_9f3277c1436e",
+     "text": "candidate said he had 'brought six logistics fleets live on the service' and 'ran the cut-overs'",
+     "signalType": "overclaim",
+     "jobRelatedBoundary": "false",
+     "severity": "high",
+     "recommendedHandling": "Verify with candidate whether they personally managed cut-overs or if they were part of the delivery team."
+    },
+    {
+     "sourceId": "src_e9eac84fb0f7",
+     "text": "the agency summary reads 'six fleet implementations taken live, cut-over and hypercare included'",
+     "signalType": "overclaim",
+     "jobRelatedBoundary": "false",
+     "severity": "high",
+     "recommendedHandling": "Verify with candidate whether they personally managed cut-overs and hypercare."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_ab9c2ecbcc45",
+     "requirementId": "req_ab9c2ecbcc45",
+     "question": "Can you describe a specific instance where you personally managed the cut-over from a customer's previous system to the fleet telematics service?",
+     "evidenceTarget": "Cut-over management by candidate"
+    },
+    {
+     "questionId": "q_e30a8b6e30d2",
+     "requirementId": "req_e30a8b6e30d2",
+     "question": "Can you describe a specific instance where you personally owned the hypercare period and handled incidents raised by customer dispatchers?",
+     "evidenceTarget": "Hypercare ownership and incident handling by candidate"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify candidate's claims about cut-over and hypercare against their own documentation",
+    "Confirm whether the candidate personally managed cut-overs and hypercare periods",
+    "Check if the candidate's pilot experience aligns with live implementation requirements"
+   ],
+   "auditSummary": "The candidate's materials establish strong pilot programme management but contradict claims about live implementation, cut-over, and hypercare. The evidence gaps are significant for core requirements. The candidate's own documentation explicitly states no involvement in cut-over and hypercare, contradicting their recruiter and agency claims.",
+   "limitations": [
+    "The candidate's own documentation contradicts their recruiter and agency claims about live implementation and cut-over",
+    "No evidence of full fleet deployment or hypercare ownership"
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

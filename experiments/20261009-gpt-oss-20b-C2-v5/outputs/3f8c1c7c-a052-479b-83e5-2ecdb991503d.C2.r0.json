@@ -1,0 +1,316 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3f8c1c7c-a052-479b-83e5-2ecdb991503d.C2",
+ "case_id": "3f8c1c7c-a052-479b-83e5-2ecdb991503d",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14402,
+  "promptWords": 1726
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 61.203
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3830,
+ "eval_count": 2870,
+ "prompt_eval_duration_ns": 18889000,
+ "eval_duration_ns": 52650773000,
+ "total_duration_ns": 61200862958,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from resume. Ensure no unsupported claims. Provide requirementEvidenceMap covering all req ids. Provide evidence entries with verbatim passages. Use source texts. We have source texts in brackets. Need to quote short verbatim passage. Use evidenceStrength maybe medium. Provide missingEvidence for partial. Let's map:\n\nreq_e91f27d04194: Builds REST services in Java with automated tests. Evidence: src_4c923ccd916a and src_c176a0ea651b. Provide claim.\n\nreq_b2ded67f7640: Maintains contract tests with upstream and downstream systems. Evidence: src_c176a0ea651b.\n\nreq_d0ba70034508: Released services to a production environment through change approval and held responsibility for them in live operation. Evidence: src_c254737bf530, src_42f45af0f01a, src_f6d1ac5ed4a8.\n\nreq_e2f781c04791: Has served on a production on-call rota. Evidence: src_f6d1ac5ed4a8.\n\nreq_a843ad7de377: Handles personal data in line with data-protection requirements, including retention and access controls. Evidence: src_0a7fa297e2a9.\n\nAll supported. No gaps. So status supported for all.\n\nsupportedClaims: we can list claims like \"Built the claims-intake API in Java (Spring Boot) that accepts first notice of loss\" etc. Provide source ids.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Review evidence for production deployment details\" but since evidence present, maybe empty.\n\nauditSummary: brief.\n\nlimitations: maybe \"Based on provided sources only\".\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_4f4aefe338518291\",\n    \"targetRoleTitle\": \"Backend Engineer, Claims Platform\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Software Engineer at Lanark Mutual Assurance, building Java REST services for claims intake with automated unit and integration tests.\",\n        \"sourceIds\": [\"src_4c923ccd916a\"],\n        \"requirementIds\": [\"req_e91f27d04194\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"built the claims-intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build.\"\n      },\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, ensuring build failures on breaking changes.\",\n        \"sourceIds\": [\"src_c176a0ea651b\"],\n        \"requirementIds\": [\"req_b2ded67f7640\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, run on every build of either side and failing the build on any breaking change.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot.\",\n        \"sourceIds\": [\"src_c254737bf530\", \"src_42f45af0f01a\"],\n        \"requirementIds\": [\"req_d0ba70034508\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Held production deploy rights and served as a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024.\",\n        \"sourceIds\": [\"src_f6d1ac5ed4a8\"],\n        \"requirementIds\": [\"req_d0ba70034508\", \"req_e2f781c04791\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Masked bank details and policyholder phone numbers in API logs after a data‑protection review, adding a unit test that fails if unmasked values appear.\",\n        \"sourceIds\": [\"src_0a7fa297e2a9\"],\n        \"requirementIds\": [\"req_a843ad7de377\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Masked bank details and policyholder phone numbers in the API's logs after a data‑protection review, and added a unit test that fails if unmasked values appear.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      \"Built and maintained the claims‑intake API in Java (Spring Boot) with comprehensive automated testing.\",\n      \"Implemented and enforced contract tests with the policy administration system.\",\n      \"Released production services under formal change approval and managed live operation.\",\n      \"Served on the production on‑call rota for the claims‑intake API.\",\n      \"Ensured compliance with data‑protection requirements for personal data handling.\"\n    ],\n    \"projectsAndWorkSamples\": [\n      \"Change record CHG‑77140: documented approval, deployment steps, post‑deployment smoke tests, and rollback plan.\"\n    ],\n    \"skills\": [\n      \"Java, Spring Boot, RESTful services\",\n      \"Automated unit and integration testing\",\n      \"Consumer‑driven contract testing\",\n      \"Change management and production deployment\",\n      \"On‑call operations\",\n      \"Data‑protection compliance\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample documents establish the candidate’s experience with Java REST services, automated testing, contract tests, production releases, on‑call duties, and data‑protection practices. No claims beyond these are supported by the sources.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess fit for the Backend Engineer, Claims Platform role.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Backend Engineer, Claims Platform\",\n      \"jobDescriptionSource\": \"jd_e026c0387058329b\",\n      \"requirementIds\": [\n        \"req_e91f27d04194\",\n        \"req_b2ded67f7640\",\n        \"req_d0ba70034508\",\n        \"req_e2f781c04791\",\n        \"req_a843ad7de377\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_4f4aefe338518291\",\n      \"sources\": [\n        \"src_4c923ccd916a\",\n        \"src_c176a0ea651b\",\n        \"src_c254737bf530\",\n        \"src_0a7fa297e2a9\",\n        \"src_42f45af0f01a\",\n        \"src_f6d1ac5ed4a8\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_e91f27d04194\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_4c923ccd916a\",\n            \"text\": \"built the claims‑intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of Java REST service development with automated tests.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_b2ded67f7640\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_c176a0ea651b\",\n            \"text\": \"Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, run on every build of either side and failing the build on any breaking change.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Explicit maintenance of contract tests.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d0ba70034508\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_c254737bf530\",\n            \"text\": \"Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Production release with change approval.\"\n          },\n          {\n            \"sourceId\": \"src_42f45af0f01a\",\n            \"text\": \"Work sample: change record CHG‑77140, with the change‑board approval, the deployment steps executed, the post‑deployment smoke‑test results and the rollback plan, listing the candidate as implementer and the change manager as approver.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Detailed change record.\"\n          },\n          {\n            \"sourceId\": \"src_f6d1ac5ed4a8\",\n            \"text\": \"the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Live operation responsibility.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_e2f781c04791\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_f6d1ac5ed4a8\",\n            \"text\": \"the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"On‑call rota participation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_a843ad7de377\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_0a7fa297e2a9\",\n            \"text\": \"Masked bank details and policyholder phone numbers in the API's logs after a data‑protection review, and added a unit test that fails if unmasked values appear.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Data‑protection handling and controls.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Built the claims‑intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build.\",\n        \"supportingRequirementIds\": [\"req_e91f27d04194\"],\n        \"sourceIds\": [\"src_4c923ccd916a\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"built the claims‑intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build.\"\n      },\n      {\n        \"claim\": \"Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system.\",\n        \"supportingRequirementIds\": [\"req_b2ded67f7640\"],\n        \"sourceIds\": [\"src_c176a0ea651b\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, run on every build of either side and failing the build on any breaking change.\"\n      },\n      {\n        \"claim\": \"Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board.\",\n        \"supportingRequirementIds\": [\"req_d0ba70034508\"],\n        \"sourceIds\": [\"src_c254737bf530\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot.\"\n      },\n      {\n        \"claim\": \"Held production deploy rights and served as a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024.\",\n        \"supportingRequirementIds\": [\"req_d0ba70034508\", \"req_e2f781c04791\"],\n        \"sourceIds\": [\"src_f6d1ac5ed4a8\"],\n        \"evidenceStrength\": \"medium\",\n        \"witness\": \"the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024\"\n      },\n      {\n        \"claim\": \"Masked bank details and policyholder phone numbers in API logs after a data‑protection review, adding a unit test that fails if unmasked values appear.\",\n        \"supportingRequirementIds\": [\"req_a843ad7de377\"],\n        \"sourceIds\": [\"src_0a7fa297e2a9\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Masked bank details and policyholder phone numbers in the API's logs after a data‑protection review, and added a unit test that fails if unmasked values appear.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Verify that the production deployment environment matches the company’s production definition.\",\n      \"Confirm that the on‑call rota responsibilities were for the claims‑intake API and not a different service.\"\n    ],\n    \"auditSummary\": \"All job requirements are supported by the provided resume and work sample documents. No quantitative or causal claims are present. The evidence is sufficient for a human reviewer to assess the candidate’s fit for the Backend Engineer, Claims Platform role.\",\n    \"limitations\": [\n      \"Evidence is limited to the supplied resume, work sample, and reference notes; no external verification of production deployment details beyond the change record is available.\"\n    ]\n  }\n}",
+ "content_sha256": "db5154901dc3444e5e4df8aaf3dbf9753bd7ca5938f8585488a96efe468989f8",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4f4aefe338518291",
+   "targetRoleTitle": "Backend Engineer, Claims Platform",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Software Engineer at Lanark Mutual Assurance, building Java REST services for claims intake with automated unit and integration tests.",
+     "sourceIds": [
+      "src_4c923ccd916a"
+     ],
+     "requirementIds": [
+      "req_e91f27d04194"
+     ],
+     "supportBoundary": "supported",
+     "witness": "built the claims-intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build."
+    },
+    {
+     "claimId": "claim_2",
+     "text": "Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, ensuring build failures on breaking changes.",
+     "sourceIds": [
+      "src_c176a0ea651b"
+     ],
+     "requirementIds": [
+      "req_b2ded67f7640"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, run on every build of either side and failing the build on any breaking change."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot.",
+     "sourceIds": [
+      "src_c254737bf530",
+      "src_42f45af0f01a"
+     ],
+     "requirementIds": [
+      "req_d0ba70034508"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Held production deploy rights and served as a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024.",
+     "sourceIds": [
+      "src_f6d1ac5ed4a8"
+     ],
+     "requirementIds": [
+      "req_d0ba70034508",
+      "req_e2f781c04791"
+     ],
+     "supportBoundary": "supported",
+     "witness": "the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024"
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Masked bank details and policyholder phone numbers in API logs after a data‑protection review, adding a unit test that fails if unmasked values appear.",
+     "sourceIds": [
+      "src_0a7fa297e2a9"
+     ],
+     "requirementIds": [
+      "req_a843ad7de377"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Masked bank details and policyholder phone numbers in the API's logs after a data‑protection review, and added a unit test that fails if unmasked values appear."
+    }
+   ],
+   "experienceHighlights": [
+    "Built and maintained the claims‑intake API in Java (Spring Boot) with comprehensive automated testing.",
+    "Implemented and enforced contract tests with the policy administration system.",
+    "Released production services under formal change approval and managed live operation.",
+    "Served on the production on‑call rota for the claims‑intake API.",
+    "Ensured compliance with data‑protection requirements for personal data handling."
+   ],
+   "projectsAndWorkSamples": [
+    "Change record CHG‑77140: documented approval, deployment steps, post‑deployment smoke tests, and rollback plan."
+   ],
+   "skills": [
+    "Java, Spring Boot, RESTful services",
+    "Automated unit and integration testing",
+    "Consumer‑driven contract testing",
+    "Change management and production deployment",
+    "On‑call operations",
+    "Data‑protection compliance"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience with Java REST services, automated testing, contract tests, production releases, on‑call duties, and data‑protection practices. No claims beyond these are supported by the sources."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the Backend Engineer, Claims Platform role."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Claims Platform",
+    "jobDescriptionSource": "jd_e026c0387058329b",
+    "requirementIds": [
+     "req_e91f27d04194",
+     "req_b2ded67f7640",
+     "req_d0ba70034508",
+     "req_e2f781c04791",
+     "req_a843ad7de377"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4f4aefe338518291",
+    "sources": [
+     "src_4c923ccd916a",
+     "src_c176a0ea651b",
+     "src_c254737bf530",
+     "src_0a7fa297e2a9",
+     "src_42f45af0f01a",
+     "src_f6d1ac5ed4a8"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_e91f27d04194",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4c923ccd916a",
+       "text": "built the claims‑intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of Java REST service development with automated tests."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b2ded67f7640",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c176a0ea651b",
+       "text": "Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, run on every build of either side and failing the build on any breaking change.",
+       "evidenceStrength": "high",
+       "notes": "Explicit maintenance of contract tests."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d0ba70034508",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c254737bf530",
+       "text": "Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot.",
+       "evidenceStrength": "high",
+       "notes": "Production release with change approval."
+      },
+      {
+       "sourceId": "src_42f45af0f01a",
+       "text": "Work sample: change record CHG‑77140, with the change‑board approval, the deployment steps executed, the post‑deployment smoke‑test results and the rollback plan, listing the candidate as implementer and the change manager as approver.",
+       "evidenceStrength": "high",
+       "notes": "Detailed change record."
+      },
+      {
+       "sourceId": "src_f6d1ac5ed4a8",
+       "text": "the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024",
+       "evidenceStrength": "medium",
+       "notes": "Live operation responsibility."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e2f781c04791",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f6d1ac5ed4a8",
+       "text": "the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024",
+       "evidenceStrength": "medium",
+       "notes": "On‑call rota participation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a843ad7de377",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0a7fa297e2a9",
+       "text": "Masked bank details and policyholder phone numbers in the API's logs after a data‑protection review, and added a unit test that fails if unmasked values appear.",
+       "evidenceStrength": "high",
+       "notes": "Data‑protection handling and controls."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built the claims‑intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build.",
+     "supportingRequirementIds": [
+      "req_e91f27d04194"
+     ],
+     "sourceIds": [
+      "src_4c923ccd916a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "built the claims‑intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call‑centre tool, with unit and integration tests in the build."
+    },
+    {
+     "claim": "Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system.",
+     "supportingRequirementIds": [
+      "req_b2ded67f7640"
+     ],
+     "sourceIds": [
+      "src_c176a0ea651b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained consumer‑driven contract tests between the claims‑intake API and the policy administration system, run on every build of either side and failing the build on any breaking change."
+    },
+    {
+     "claim": "Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board.",
+     "supportingRequirementIds": [
+      "req_d0ba70034508"
+     ],
+     "sourceIds": [
+      "src_c254737bf530"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Released claims‑intake API version 3 to production on 18 July 2023 under change CHG‑77140 following approval at the weekly change board, deploying in the Tuesday evening release slot."
+    },
+    {
+     "claim": "Held production deploy rights and served as a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024.",
+     "supportingRequirementIds": [
+      "req_d0ba70034508",
+      "req_e2f781c04791"
+     ],
+     "sourceIds": [
+      "src_f6d1ac5ed4a8"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "the candidate held production deploy rights and was a primary on‑call engineer for the claims‑intake API from August 2023 to March 2024"
+    },
+    {
+     "claim": "Masked bank details and policyholder phone numbers in API logs after a data‑protection review, adding a unit test that fails if unmasked values appear.",
+     "supportingRequirementIds": [
+      "req_a843ad7de377"
+     ],
+     "sourceIds": [
+      "src_0a7fa297e2a9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Masked bank details and policyholder phone numbers in the API's logs after a data‑protection review, and added a unit test that fails if unmasked values appear."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the production deployment environment matches the company’s production definition.",
+    "Confirm that the on‑call rota responsibilities were for the claims‑intake API and not a different service."
+   ],
+   "auditSummary": "All job requirements are supported by the provided resume and work sample documents. No quantitative or causal claims are present. The evidence is sufficient for a human reviewer to assess the candidate’s fit for the Backend Engineer, Claims Platform role.",
+   "limitations": [
+    "Evidence is limited to the supplied resume, work sample, and reference notes; no external verification of production deployment details beyond the change record is available."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:41:09.107205+00:00"
+}

@@ -1,0 +1,374 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "524a9234-5036-40be-b334-25e41e175721.C1",
+ "case_id": "524a9234-5036-40be-b334-25e41e175721",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10919,
+  "promptWords": 1458
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 58.267
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3035,
+ "eval_count": 2605,
+ "prompt_eval_duration_ns": 18041000,
+ "eval_duration_ns": 46844957000,
+ "total_duration_ns": 58261312292,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: one or two sentences on what materials establish.\n\nRequirement evidence map: list each requirement id with status. We have evidence for all. So all supported. Provide evidence entries with sourceId and text verbatim. Need to copy text from sources. We have source texts in description. Use them.\n\nWe need to include \"witness\" field in claim objects? In optimizedCv, claims are just strings? The schema says professionalSummary: [CLAIM...] where CLAIM is object with claimId etc. So we need to structure each claim as object. Let's create claimId like \"cs_1\". Provide text, sourceIds, requirementIds maybe none. Provide witness? Not required in optimizedCv? The schema says CLAIM = {\"claimId\": \"<id>\", \"text\": \"<statement>\", \"sourceIds\": [\"<id>\"], \"requirementIds\": [\"<id>\"], \"supportBoundary\": \"supported|partial_evidence\", \"witness\": \"<verbatim passage from a cited source, or empty string>\"}. So we need to include all fields. Let's create claims for summary, experience highlights, projects, skills. For skills maybe list generic? But we need to cite sources. We can claim skills like \"Crew allocation\", \"Briefing delivery\", \"Stoppage resolution\", \"Shift record keeping\", \"Open item documentation\". Provide sourceIds.\n\nNow requirementEvidenceMap: each requirement id with status supported. Provide evidence array with sourceId and text. Use verbatim passage from source. For example for req_7d6a43b9459d: source src_a0b6d1d3ce69 text: \"Shift operations supervisor at a bottling plant with three high-speed lines for four years, allocating a crew of seventeen across the lines each shift under the plant's crewing plan.\" Provide that.\n\nSimilarly others.\n\nMissingEvidence: none.\n\nsupportedClaims: list claims that map to requirements. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness verbatim.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note about interviewer's observation? But it's not a risk. No subjective. So empty.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Verify that shift allocation matches plant crewing plan\" etc. Provide items.\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"No evidence of production line speed decisions\" etc.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_4e9dedcb35bcb806\",\"targetRoleTitle\":\"Shift Operations Supervisor, Bottling Line\",\"professionalSummary\":[{\"claimId\":\"cs_1\",\"text\":\"Experienced shift operations supervisor with four years managing three high‑speed bottling lines.\",\"sourceIds\":[\"src_a0b6d1d3ce69\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"Shift operations supervisor at a bottling plant with three high-speed lines for four years, allocating a crew of seventeen across the lines each shift under the plant's crewing plan.\"}],\"experienceHighlights\":[{\"claimId\":\"cs_2\",\"text\":\"Allocated a crew of seventeen across three lines each shift in accordance with the plant's crewing plan.\",\"sourceIds\":[\"src_a0b6d1d3ce69\"],\"requirementIds\":[\"req_7d6a43b9459d\"],\"supportBoundary\":\"supported\",\"witness\":\"allocating a crew of seventeen across the lines each shift under the plant's crewing plan.\"},{\"claimId\":\"cs_3\",\"text\":\"Conducted shift start and hand‑over briefings following the plant's briefing standard, with records signed by crew leads and audited monthly by the production manager.\",\"sourceIds\":[\"src_569ee705c86b\"],\"requirementIds\":[\"req_4dec6c624f8d\"],\"supportBoundary\":\"supported\",\"witness\":\"Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager.\"},{\"claimId\":\"cs_4\",\"text\":\"Resolved line stoppages in collaboration with the maintenance technician, logging each event and resolution in the line system.\",\"sourceIds\":[\"src_1e30196217db\"],\"requirementIds\":[\"req_d3bf7371a5fd\"],\"supportBoundary\":\"supported\",\"witness\":\"Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system.\"},{\"claimId\":\"cs_5\",\"text\":\"Recorded shift output and downtime in the line system, noting that line speed and changeover decisions were made by the production manager.\",\"sourceIds\":[\"src_b6c3819ac72d\"],\"requirementIds\":[\"req_00391c7145b3\"],\"supportBoundary\":\"supported\",\"witness\":\"Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record.\"},{\"claimId\":\"cs_6\",\"text\":\"Documented shift open items and hand‑over conditions on the hand‑over sheet for the next supervisor.\",\"sourceIds\":[\"src_b89cf71cb9bd\"],\"requirementIds\":[\"req_52e98272b805\"],\"supportBoundary\":\"supported\",\"witness\":\"Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor.\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"cs_7\",\"text\":\"Provided a one‑week work sample including briefing records with crew lead signatures, a stoppage log, and a hand‑over sheet, all referenced in the line system.\",\"sourceIds\":[\"src_958559bd882f\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"Work sample: one week's briefing records with the crew leads' signatures, the stoppage log for the same week and one hand-over sheet, with the line system references as a verification trail.\"}],\"skills\":[{\"claimId\":\"cs_8\",\"text\":\"Crew allocation across multiple lines\",\"sourceIds\":[\"src_a0b6d1d3ce69\"],\"requirementIds\":[\"req_7d6a43b9459d\"],\"supportBoundary\":\"supported\",\"witness\":\"allocating a crew of seventeen across the lines each shift under the plant's crewing plan.\"},{\"claimId\":\"cs_9\",\"text\":\"Briefing delivery and documentation\",\"sourceIds\":[\"src_569ee705c86b\"],\"requirementIds\":[\"req_4dec6c624f8d\"],\"supportBoundary\":\"supported\",\"witness\":\"Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager.\"},{\"claimId\":\"cs_10\",\"text\":\"Stoppage resolution with maintenance\",\"sourceIds\":[\"src_1e30196217db\"],\"requirementIds\":[\"req_d3bf7371a5fd\"],\"supportBoundary\":\"supported\",\"witness\":\"Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system.\"},{\"claimId\":\"cs_11\",\"text\":\"Shift output and downtime recording\",\"sourceIds\":[\"src_b6c3819ac72d\"],\"requirementIds\":[\"req_00391c7145b3\"],\"supportBoundary\":\"supported\",\"witness\":\"Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record.\"},{\"claimId\":\"cs_12\",\"text\":\"Open item documentation\",\"sourceIds\":[\"src_b89cf71cb9bd\"],\"requirementIds\":[\"req_52e98272b805\"],\"supportBoundary\":\"supported\",\"witness\":\"Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor.\"}],\"evidenceBoundary\":\"The provided resume, work sample, and interview notes establish that the candidate performed all core shift‑operations tasks required for the Shift Operations Supervisor role, including crew allocation, briefing delivery, stoppage resolution, shift record keeping, and open‑item documentation.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Shift Operations Supervisor, Bottling Line\",\"jobDescriptionSource\":\"jd_29225b769952d685\",\"requirementIds\":[\"req_7d6a43b9459d\",\"req_4dec6c624f8d\",\"req_d3bf7371a5fd\",\"req_00391c7145b3\",\"req_52e98272b805\"]},\"candidate\":{\"candidateId\":\"cand_4e9dedcb35bcb806\",\"sources\":[\"src_a0b6d1d3ce69\",\"src_569ee705c86b\",\"src_1e30196217db\",\"src_b6c3819ac72d\",\"src_b89cf71cb9bd\",\"src_958559bd882f\",\"src_b70f38155287\",\"src_701097e3924e\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_7d6a43b9459d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a0b6d1d3ce69\",\"text\":\"Shift operations supervisor at a bottling plant with three high-speed lines for four years, allocating a crew of seventeen across the lines each shift under the plant's crewing plan.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of crew allocation per shift.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4dec6c624f8d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_569ee705c86b\",\"text\":\"Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of briefing execution.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d3bf7371a5fd\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1e30196217db\",\"text\":\"Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of stoppage resolution.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_00391c7145b3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b6c3819ac72d\",\"text\":\"Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of output/downtime recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_52e98272b805\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b89cf71cb9bd\",\"text\":\"Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of open item documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Allocated a crew of seventeen across three lines each shift in accordance with the plant's crewing plan.\",\"supportingRequirementIds\":[\"req_7d6a43b9459d\"],\"sourceIds\":[\"src_a0b6d1d3ce69\"],\"evidenceStrength\":\"high\",\"witness\":\"allocating a crew of seventeen across the lines each shift under the plant's crewing plan.\"},{\"claim\":\"Conducted shift start and hand‑over briefings following the plant's briefing standard, with records signed by crew leads and audited monthly by the production manager.\",\"supportingRequirementIds\":[\"req_4dec6c624f8d\"],\"sourceIds\":[\"src_569ee705c86b\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager.\"},{\"claim\":\"Resolved line stoppages in collaboration with the maintenance technician, logging each event and resolution in the line system.\",\"supportingRequirementIds\":[\"req_d3bf7371a5fd\"],\"sourceIds\":[\"src_1e30196217db\"],\"evidenceStrength\":\"high\",\"witness\":\"Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system.\"},{\"claim\":\"Recorded shift output and downtime in the line system, noting that line speed and changeover decisions were made by the production manager.\",\"supportingRequirementIds\":[\"req_00391c7145b3\"],\"sourceIds\":[\"src_b6c3819ac72d\"],\"evidenceStrength\":\"high\",\"witness\":\"Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record.\"},{\"claim\":\"Documented shift open items and hand‑over conditions on the hand‑over sheet for the next supervisor.\",\"supportingRequirementIds\":[\"req_52e98272b805\"],\"sourceIds\":[\"src_b89cf71cb9bd\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the crew allocation matches the plant's crewing plan for each shift.\",\"Confirm that briefing records are signed by all crew leads and audited monthly.\",\"Ensure that stoppage logs include resolution details as per the stoppage procedure.\",\"Check that shift output and downtime records are consistently entered into the line system.\",\"Validate that hand‑over sheets are completed for every shift.\"],\"auditSummary\":\"All five core requirements for the Shift Operations Supervisor role are directly supported by the candidate's resume, work sample, and interview notes. The evidence demonstrates that the candidate performed crew allocation, briefing delivery, stoppage resolution, shift record keeping, and open‑item documentation in line with the plant's standards and procedures. No gaps or unsupported claims were identified, and no interview signals suggest potential issues. Qualified human review is recommended to confirm the consistency of the documented evidence and to assess any additional contextual factors not captured in the provided materials.\",\"limitations\":[\"Evidence is limited to the candidate's self‑reported resume and a single week of work sample; broader performance over the four‑year tenure is not documented here.\"]}}",
+ "content_sha256": "4991f6ee059e723bba531f7bc9582cc1e6ea2dbbb1a0719a5b849a805cc6fe5f",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4e9dedcb35bcb806",
+   "targetRoleTitle": "Shift Operations Supervisor, Bottling Line",
+   "professionalSummary": [
+    {
+     "claimId": "cs_1",
+     "text": "Experienced shift operations supervisor with four years managing three high‑speed bottling lines.",
+     "sourceIds": [
+      "src_a0b6d1d3ce69"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Shift operations supervisor at a bottling plant with three high-speed lines for four years, allocating a crew of seventeen across the lines each shift under the plant's crewing plan."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cs_2",
+     "text": "Allocated a crew of seventeen across three lines each shift in accordance with the plant's crewing plan.",
+     "sourceIds": [
+      "src_a0b6d1d3ce69"
+     ],
+     "requirementIds": [
+      "req_7d6a43b9459d"
+     ],
+     "supportBoundary": "supported",
+     "witness": "allocating a crew of seventeen across the lines each shift under the plant's crewing plan."
+    },
+    {
+     "claimId": "cs_3",
+     "text": "Conducted shift start and hand‑over briefings following the plant's briefing standard, with records signed by crew leads and audited monthly by the production manager.",
+     "sourceIds": [
+      "src_569ee705c86b"
+     ],
+     "requirementIds": [
+      "req_4dec6c624f8d"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager."
+    },
+    {
+     "claimId": "cs_4",
+     "text": "Resolved line stoppages in collaboration with the maintenance technician, logging each event and resolution in the line system.",
+     "sourceIds": [
+      "src_1e30196217db"
+     ],
+     "requirementIds": [
+      "req_d3bf7371a5fd"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system."
+    },
+    {
+     "claimId": "cs_5",
+     "text": "Recorded shift output and downtime in the line system, noting that line speed and changeover decisions were made by the production manager.",
+     "sourceIds": [
+      "src_b6c3819ac72d"
+     ],
+     "requirementIds": [
+      "req_00391c7145b3"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record."
+    },
+    {
+     "claimId": "cs_6",
+     "text": "Documented shift open items and hand‑over conditions on the hand‑over sheet for the next supervisor.",
+     "sourceIds": [
+      "src_b89cf71cb9bd"
+     ],
+     "requirementIds": [
+      "req_52e98272b805"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cs_7",
+     "text": "Provided a one‑week work sample including briefing records with crew lead signatures, a stoppage log, and a hand‑over sheet, all referenced in the line system.",
+     "sourceIds": [
+      "src_958559bd882f"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: one week's briefing records with the crew leads' signatures, the stoppage log for the same week and one hand-over sheet, with the line system references as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cs_8",
+     "text": "Crew allocation across multiple lines",
+     "sourceIds": [
+      "src_a0b6d1d3ce69"
+     ],
+     "requirementIds": [
+      "req_7d6a43b9459d"
+     ],
+     "supportBoundary": "supported",
+     "witness": "allocating a crew of seventeen across the lines each shift under the plant's crewing plan."
+    },
+    {
+     "claimId": "cs_9",
+     "text": "Briefing delivery and documentation",
+     "sourceIds": [
+      "src_569ee705c86b"
+     ],
+     "requirementIds": [
+      "req_4dec6c624f8d"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager."
+    },
+    {
+     "claimId": "cs_10",
+     "text": "Stoppage resolution with maintenance",
+     "sourceIds": [
+      "src_1e30196217db"
+     ],
+     "requirementIds": [
+      "req_d3bf7371a5fd"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system."
+    },
+    {
+     "claimId": "cs_11",
+     "text": "Shift output and downtime recording",
+     "sourceIds": [
+      "src_b6c3819ac72d"
+     ],
+     "requirementIds": [
+      "req_00391c7145b3"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record."
+    },
+    {
+     "claimId": "cs_12",
+     "text": "Open item documentation",
+     "sourceIds": [
+      "src_b89cf71cb9bd"
+     ],
+     "requirementIds": [
+      "req_52e98272b805"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor."
+    }
+   ],
+   "evidenceBoundary": "The provided resume, work sample, and interview notes establish that the candidate performed all core shift‑operations tasks required for the Shift Operations Supervisor role, including crew allocation, briefing delivery, stoppage resolution, shift record keeping, and open‑item documentation."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Shift Operations Supervisor, Bottling Line",
+    "jobDescriptionSource": "jd_29225b769952d685",
+    "requirementIds": [
+     "req_7d6a43b9459d",
+     "req_4dec6c624f8d",
+     "req_d3bf7371a5fd",
+     "req_00391c7145b3",
+     "req_52e98272b805"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4e9dedcb35bcb806",
+    "sources": [
+     "src_a0b6d1d3ce69",
+     "src_569ee705c86b",
+     "src_1e30196217db",
+     "src_b6c3819ac72d",
+     "src_b89cf71cb9bd",
+     "src_958559bd882f",
+     "src_b70f38155287",
+     "src_701097e3924e"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_7d6a43b9459d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a0b6d1d3ce69",
+       "text": "Shift operations supervisor at a bottling plant with three high-speed lines for four years, allocating a crew of seventeen across the lines each shift under the plant's crewing plan.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of crew allocation per shift."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4dec6c624f8d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_569ee705c86b",
+       "text": "Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of briefing execution."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d3bf7371a5fd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1e30196217db",
+       "text": "Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of stoppage resolution."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_00391c7145b3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b6c3819ac72d",
+       "text": "Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of output/downtime recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_52e98272b805",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b89cf71cb9bd",
+       "text": "Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of open item documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Allocated a crew of seventeen across three lines each shift in accordance with the plant's crewing plan.",
+     "supportingRequirementIds": [
+      "req_7d6a43b9459d"
+     ],
+     "sourceIds": [
+      "src_a0b6d1d3ce69"
+     ],
+     "evidenceStrength": "high",
+     "witness": "allocating a crew of seventeen across the lines each shift under the plant's crewing plan."
+    },
+    {
+     "claim": "Conducted shift start and hand‑over briefings following the plant's briefing standard, with records signed by crew leads and audited monthly by the production manager.",
+     "supportingRequirementIds": [
+      "req_4dec6c624f8d"
+     ],
+     "sourceIds": [
+      "src_569ee705c86b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the shift start and hand-over briefings under the plant's briefing standard, with the briefing records signed by the crew leads each shift and audited monthly by the production manager."
+    },
+    {
+     "claim": "Resolved line stoppages in collaboration with the maintenance technician, logging each event and resolution in the line system.",
+     "supportingRequirementIds": [
+      "req_d3bf7371a5fd"
+     ],
+     "sourceIds": [
+      "src_1e30196217db"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Resolved the line stoppages with the shift maintenance technician under the stoppage procedure, with each stoppage and its resolution logged in the line system."
+    },
+    {
+     "claim": "Recorded shift output and downtime in the line system, noting that line speed and changeover decisions were made by the production manager.",
+     "supportingRequirementIds": [
+      "req_00391c7145b3"
+     ],
+     "sourceIds": [
+      "src_b6c3819ac72d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Recorded the shift's output and downtime in the line system each shift; line speed and changeover decisions were the production manager's, recorded against my shift record."
+    },
+    {
+     "claim": "Documented shift open items and hand‑over conditions on the hand‑over sheet for the next supervisor.",
+     "supportingRequirementIds": [
+      "req_52e98272b805"
+     ],
+     "sourceIds": [
+      "src_b89cf71cb9bd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the shift's open items and hand-over conditions on the hand-over sheet for the next supervisor."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the crew allocation matches the plant's crewing plan for each shift.",
+    "Confirm that briefing records are signed by all crew leads and audited monthly.",
+    "Ensure that stoppage logs include resolution details as per the stoppage procedure.",
+    "Check that shift output and downtime records are consistently entered into the line system.",
+    "Validate that hand‑over sheets are completed for every shift."
+   ],
+   "auditSummary": "All five core requirements for the Shift Operations Supervisor role are directly supported by the candidate's resume, work sample, and interview notes. The evidence demonstrates that the candidate performed crew allocation, briefing delivery, stoppage resolution, shift record keeping, and open‑item documentation in line with the plant's standards and procedures. No gaps or unsupported claims were identified, and no interview signals suggest potential issues. Qualified human review is recommended to confirm the consistency of the documented evidence and to assess any additional contextual factors not captured in the provided materials.",
+   "limitations": [
+    "Evidence is limited to the candidate's self‑reported resume and a single week of work sample; broader performance over the four‑year tenure is not documented here."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:31:32.396634+00:00"
+}

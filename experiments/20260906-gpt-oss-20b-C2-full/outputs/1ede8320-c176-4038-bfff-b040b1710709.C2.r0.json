@@ -1,0 +1,308 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "1ede8320-c176-4038-bfff-b040b1710709.C2",
+ "case_id": "1ede8320-c176-4038-bfff-b040b1710709",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14584,
+  "promptWords": 1764
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 50.483
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3661,
+ "eval_count": 2361,
+ "prompt_eval_duration_ns": 18131000,
+ "eval_duration_ns": 42944172000,
+ "total_duration_ns": 50480574375,
+ "thinking": "Need to map claims. Use sources. Ensure no unsupported. Provide CV claims with source ids. For requirements: check evidence. req_461dbb854e2d: deployed to prod? sources say no deployment rights. So insufficient evidence. req_0b9ee3386bec: on-call and incidents? sources say no deployment rights, but note src_6c2e696fa5aa says candidate said she had been paged for delivery backlogs. That's subjective note. So partial evidence. req_7b9d592c95e9: watches live latency and records boundaries? sources: runbook drafts and hand-over notes. But no live monitoring. So partial. req_cd4afdaa0fdf: develops provider adapters and retry scheduler with load tests against staging cluster. Sources: src_c72d21fbfa7a and src_a6e136f94f49. Supported. req_cecd25933020: documents load-test findings, limitations and hand-over conditions. Sources: src_a6e136f94f49 and src_fe7fa6d39b6f. Supported.\n\nProvide gaps and follow-ups.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_505e2997067b55a2\",\"targetRoleTitle\":\"Backend Engineer, Push Notification Service\",\"professionalSummary\":[\"Experienced backend engineer with a focus on push notification services, specializing in provider adapter development, retry scheduling, and staging load testing.\",\"Proficient in drafting runbooks and hand‑over documentation to support SRE operations.\",\"Collaborated closely with mobile app teams and provider account managers to ensure reliable message delivery.\"],\"experienceHighlights\":[\"Developed provider adapters and retry scheduler for the push notification service in the development environment, with integration tests against provider sandboxes.\",\"Ran load tests against the staging cluster with synthetic traffic up to 15k messages per second, recording latency percentiles and queue depth in the load‑test report for each release candidate.\",\"Authored runbook drafts for the retry scheduler and hand‑over notes for each release candidate, detailing staging‑to‑production differences and open items for SRE.\",\"Contributed to the service over two years, covering adapter development, retry scheduling, staging load tests, runbook drafts and hand‑over notes.\"],\"projectsAndWorkSamples\":[\"Load‑test report for release candidate twelve with staging cluster run identifiers.\",\"Runbook draft for the retry scheduler.\"],\"skills\":[\"Provider adapter development\",\"Retry scheduler design\",\"Staging load testing\",\"Runbook drafting\",\"Documentation\",\"Collaboration with SRE and mobile teams\"],\"evidenceBoundary\":\"The provided resume and work‑sample sources establish the candidate’s experience in developing provider adapters, retry scheduling, staging load testing, and documentation. They do not establish production deployment rights, on‑call participation, or live latency monitoring.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess the candidate’s fit for the Backend Engineer, Push Notification Service role.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Push Notification Service\",\"jobDescriptionSource\":\"jd_58f40269d08ad323\",\"requirementIds\":[\"req_461dbb854e2d\",\"req_0b9ee3386bec\",\"req_7b9d592c95e9\",\"req_cd4afdaa0fdf\",\"req_cecd25933020\"]},\"candidate\":{\"candidateId\":\"cand_505e2997067b55a2\",\"sources\":[\"src_c72d21fbfa7a\",\"src_a6e136f94f49\",\"src_9183eaf3d66d\",\"src_fe7fa6d39b6f\",\"src_6fa959020ee4\",\"src_0262cb931348\",\"src_6c2e696fa5aa\",\"src_9e22e43697b5\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_461dbb854e2d\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate deployed service changes to production through the deployment pipeline, including deployment rights or confirmation from the SRE pair.\"],\"gapId\":\"gap_1\"},{\"requirementId\":\"req_0b9ee3386bec\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_6c2e696fa5aa\",\"text\":\"candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'\",\"evidenceStrength\":\"low\",\"notes\":\"Subjective recruiter note, no confirmation of on‑call rota participation or incident handling.\"}],\"missingEvidence\":[\"Confirmation that the candidate held a place on the on‑call rota and handled production incidents such as delivery backlogs or provider outages.\"],\"gapId\":\"gap_2\"},{\"requirementId\":\"req_7b9d592c95e9\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_fe7fa6d39b6f\",\"text\":\"Wrote the runbook drafts for the retry scheduler and the hand‑over notes for each release candidate, listing the staging cluster's differences from the customer‑facing cluster and the open items for SRE\",\"evidenceStrength\":\"medium\",\"notes\":\"Documentation of boundaries, but no evidence of live latency monitoring.\"}],\"missingEvidence\":[\"Evidence that the candidate watches live delivery latency and records own responsibility boundaries for the service.\"],\"gapId\":\"gap_3\"},{\"requirementId\":\"req_cd4afdaa0fdf\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c72d21fbfa7a\",\"text\":\"Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes\",\"evidenceStrength\":\"high\",\"notes\":\"Direct claim of development work.\"},{\"sourceId\":\"src_a6e136f94f49\",\"text\":\"Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate\",\"evidenceStrength\":\"high\",\"notes\":\"Direct claim of load testing against staging cluster.\"}],\"missingEvidence\":[],\"gapId\":\"gap_4\"},{\"requirementId\":\"req_cecd25933020\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a6e136f94f49\",\"text\":\"Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate\",\"evidenceStrength\":\"high\",\"notes\":\"Load-test findings documented.\"},{\"sourceId\":\"src_fe7fa6d39b6f\",\"text\":\"Wrote the runbook drafts for the retry scheduler and the hand-over notes for each release candidate, listing the staging cluster's differences from the customer-facing cluster and the open items for SRE\",\"evidenceStrength\":\"high\",\"notes\":\"Hand-over conditions documented.\"}],\"missingEvidence\":[],\"gapId\":\"gap_5\"}],\"supportedClaims\":[{\"claim\":\"Developed provider adapters and retry scheduler for the push notification service in the development environment, with integration tests against provider sandboxes.\",\"supportingRequirementIds\":[\"req_cd4afdaa0fdf\"],\"sourceIds\":[\"src_c72d21fbfa7a\"],\"evidenceStrength\":\"high\",\"witness\":\"Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes.\"},{\"claim\":\"Ran load tests against the staging cluster with synthetic traffic up to 15k messages per second, recording latency percentiles and queue depth for each release candidate.\",\"supportingRequirementIds\":[\"req_cd4afdaa0fdf\",\"req_cecd25933020\"],\"sourceIds\":[\"src_a6e136f94f49\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate.\"},{\"claim\":\"Authored runbook drafts for the retry scheduler and hand-over notes for each release candidate, detailing staging-to-production differences and open items for SRE.\",\"supportingRequirementIds\":[\"req_7b9d592c95e9\",\"req_cecd25933020\"],\"sourceIds\":[\"src_fe7fa6d39b6f\"],\"evidenceStrength\":\"medium\",\"witness\":\"Wrote the runbook drafts for the retry scheduler and the hand-over notes for each release candidate, listing the staging cluster's differences from the customer-facing cluster and the open items for SRE.\"}],\"unsupportedClaims\":[{\"claim\":\"Deployed service changes to production through the deployment pipeline.\",\"reason\":\"No source establishes deployment rights or confirmation of production deployment.\",\"requiredFollowUp\":\"Provide evidence of production deployment, such as deployment logs, release notes, or confirmation from the SRE pair.\"},{\"claim\":\"Held a place on the on-call rota and handled production incidents such as delivery backlogs or provider outages.\",\"reason\":\"Only a subjective recruiter note mentions paging; no confirmation of on-call participation or incident handling.\",\"requiredFollowUp\":\"Provide documentation of on-call rota assignment or incident reports where the candidate was involved.\"},{\"claim\":\"Watches live delivery latency and records own responsibility boundaries for the service.\",\"reason\":\"No source documents live latency monitoring or boundary recording beyond runbook drafts.\",\"requiredFollowUp\":\"Provide evidence of live monitoring dashboards or incident logs showing the candidate’s monitoring activities.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_461dbb854e2d\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate deployed service changes to production through the deployment pipeline, including deployment rights or confirmation from the SRE pair.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_0b9ee3386bec\",\"severity\":\"medium\",\"gap\":\"Confirmation that the candidate held a place on the on-call rota and handled production incidents such as delivery backlogs or provider outages.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_7b9d592c95e9\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate watches live delivery latency and records own responsibility boundaries for the service.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_6c2e696fa5aa\",\"text\":\"candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"true\",\"severity\":\"low\",\"recommendedHandling\":\"Verify on-call participation and incident handling through documentation or direct confirmation.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_461dbb854e2d\",\"question\":\"Can you provide deployment logs or release notes that confirm your changes were deployed to production through the deployment pipeline?\",\"evidenceTarget\":\"Production deployment evidence\"},{\"questionId\":\"q2\",\"requirementId\":\"req_0b9ee3386bec\",\"question\":\"Do you have documentation of your on-call rota assignment or incident reports where you handled delivery backlogs or provider outages?\",\"evidenceTarget\":\"On-call and incident handling evidence\"},{\"questionId\":\"q3\",\"requirementId\":\"req_7b9d592c95e9\",\"question\":\"Can you share dashboards or logs that show you monitoring live delivery latency and recording responsibility boundaries?\",\"evidenceTarget\":\"Live monitoring evidence\"}],\"humanReviewChecklist\":[\"Verify that all requirementIds are covered in requirementEvidenceMap.\",\"Ensure no unsupported claims are listed as supported.\",\"Confirm that subjective notes are routed to interviewSignalRisks.\",\"Check that evidenceStrength ratings are consistent with source content.\",\"Validate that all gaps have corresponding follow-up questions.\"],\"auditSummary\":\"The evidence packet establishes the candidate’s experience in provider adapter development, retry scheduling, staging load testing, and documentation. It does not establish production deployment rights, on-call participation, or live latency monitoring. Gaps and follow-up questions are provided for each unmet requirement. Human review is required to assess fit.\",\"limitations\":[\"Evidence is limited to the provided resume and work‑sample sources; no external verification of production deployment or incident handling is available.\"]}}",
+ "content_sha256": "99c2cc4fa6704a609c7e3c12bab23112d4b74eebccfce8b4e7649d43a13826bc",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_505e2997067b55a2",
+   "targetRoleTitle": "Backend Engineer, Push Notification Service",
+   "professionalSummary": [
+    "Experienced backend engineer with a focus on push notification services, specializing in provider adapter development, retry scheduling, and staging load testing.",
+    "Proficient in drafting runbooks and hand‑over documentation to support SRE operations.",
+    "Collaborated closely with mobile app teams and provider account managers to ensure reliable message delivery."
+   ],
+   "experienceHighlights": [
+    "Developed provider adapters and retry scheduler for the push notification service in the development environment, with integration tests against provider sandboxes.",
+    "Ran load tests against the staging cluster with synthetic traffic up to 15k messages per second, recording latency percentiles and queue depth in the load‑test report for each release candidate.",
+    "Authored runbook drafts for the retry scheduler and hand‑over notes for each release candidate, detailing staging‑to‑production differences and open items for SRE.",
+    "Contributed to the service over two years, covering adapter development, retry scheduling, staging load tests, runbook drafts and hand‑over notes."
+   ],
+   "projectsAndWorkSamples": [
+    "Load‑test report for release candidate twelve with staging cluster run identifiers.",
+    "Runbook draft for the retry scheduler."
+   ],
+   "skills": [
+    "Provider adapter development",
+    "Retry scheduler design",
+    "Staging load testing",
+    "Runbook drafting",
+    "Documentation",
+    "Collaboration with SRE and mobile teams"
+   ],
+   "evidenceBoundary": "The provided resume and work‑sample sources establish the candidate’s experience in developing provider adapters, retry scheduling, staging load testing, and documentation. They do not establish production deployment rights, on‑call participation, or live latency monitoring."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate’s fit for the Backend Engineer, Push Notification Service role."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Push Notification Service",
+    "jobDescriptionSource": "jd_58f40269d08ad323",
+    "requirementIds": [
+     "req_461dbb854e2d",
+     "req_0b9ee3386bec",
+     "req_7b9d592c95e9",
+     "req_cd4afdaa0fdf",
+     "req_cecd25933020"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_505e2997067b55a2",
+    "sources": [
+     "src_c72d21fbfa7a",
+     "src_a6e136f94f49",
+     "src_9183eaf3d66d",
+     "src_fe7fa6d39b6f",
+     "src_6fa959020ee4",
+     "src_0262cb931348",
+     "src_6c2e696fa5aa",
+     "src_9e22e43697b5"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_461dbb854e2d",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate deployed service changes to production through the deployment pipeline, including deployment rights or confirmation from the SRE pair."
+     ],
+     "gapId": "gap_1"
+    },
+    {
+     "requirementId": "req_0b9ee3386bec",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_6c2e696fa5aa",
+       "text": "candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'",
+       "evidenceStrength": "low",
+       "notes": "Subjective recruiter note, no confirmation of on‑call rota participation or incident handling."
+      }
+     ],
+     "missingEvidence": [
+      "Confirmation that the candidate held a place on the on‑call rota and handled production incidents such as delivery backlogs or provider outages."
+     ],
+     "gapId": "gap_2"
+    },
+    {
+     "requirementId": "req_7b9d592c95e9",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_fe7fa6d39b6f",
+       "text": "Wrote the runbook drafts for the retry scheduler and the hand‑over notes for each release candidate, listing the staging cluster's differences from the customer‑facing cluster and the open items for SRE",
+       "evidenceStrength": "medium",
+       "notes": "Documentation of boundaries, but no evidence of live latency monitoring."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate watches live delivery latency and records own responsibility boundaries for the service."
+     ],
+     "gapId": "gap_3"
+    },
+    {
+     "requirementId": "req_cd4afdaa0fdf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c72d21fbfa7a",
+       "text": "Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes",
+       "evidenceStrength": "high",
+       "notes": "Direct claim of development work."
+      },
+      {
+       "sourceId": "src_a6e136f94f49",
+       "text": "Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate",
+       "evidenceStrength": "high",
+       "notes": "Direct claim of load testing against staging cluster."
+      }
+     ],
+     "missingEvidence": [],
+     "gapId": "gap_4"
+    },
+    {
+     "requirementId": "req_cecd25933020",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a6e136f94f49",
+       "text": "Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate",
+       "evidenceStrength": "high",
+       "notes": "Load-test findings documented."
+      },
+      {
+       "sourceId": "src_fe7fa6d39b6f",
+       "text": "Wrote the runbook drafts for the retry scheduler and the hand-over notes for each release candidate, listing the staging cluster's differences from the customer-facing cluster and the open items for SRE",
+       "evidenceStrength": "high",
+       "notes": "Hand-over conditions documented."
+      }
+     ],
+     "missingEvidence": [],
+     "gapId": "gap_5"
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed provider adapters and retry scheduler for the push notification service in the development environment, with integration tests against provider sandboxes.",
+     "supportingRequirementIds": [
+      "req_cd4afdaa0fdf"
+     ],
+     "sourceIds": [
+      "src_c72d21fbfa7a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes."
+    },
+    {
+     "claim": "Ran load tests against the staging cluster with synthetic traffic up to 15k messages per second, recording latency percentiles and queue depth for each release candidate.",
+     "supportingRequirementIds": [
+      "req_cd4afdaa0fdf",
+      "req_cecd25933020"
+     ],
+     "sourceIds": [
+      "src_a6e136f94f49"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate."
+    },
+    {
+     "claim": "Authored runbook drafts for the retry scheduler and hand-over notes for each release candidate, detailing staging-to-production differences and open items for SRE.",
+     "supportingRequirementIds": [
+      "req_7b9d592c95e9",
+      "req_cecd25933020"
+     ],
+     "sourceIds": [
+      "src_fe7fa6d39b6f"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Wrote the runbook drafts for the retry scheduler and the hand-over notes for each release candidate, listing the staging cluster's differences from the customer-facing cluster and the open items for SRE."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Deployed service changes to production through the deployment pipeline.",
+     "reason": "No source establishes deployment rights or confirmation of production deployment.",
+     "requiredFollowUp": "Provide evidence of production deployment, such as deployment logs, release notes, or confirmation from the SRE pair."
+    },
+    {
+     "claim": "Held a place on the on-call rota and handled production incidents such as delivery backlogs or provider outages.",
+     "reason": "Only a subjective recruiter note mentions paging; no confirmation of on-call participation or incident handling.",
+     "requiredFollowUp": "Provide documentation of on-call rota assignment or incident reports where the candidate was involved."
+    },
+    {
+     "claim": "Watches live delivery latency and records own responsibility boundaries for the service.",
+     "reason": "No source documents live latency monitoring or boundary recording beyond runbook drafts.",
+     "requiredFollowUp": "Provide evidence of live monitoring dashboards or incident logs showing the candidate’s monitoring activities."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_461dbb854e2d",
+     "severity": "high",
+     "gap": "Evidence that the candidate deployed service changes to production through the deployment pipeline, including deployment rights or confirmation from the SRE pair."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_0b9ee3386bec",
+     "severity": "medium",
+     "gap": "Confirmation that the candidate held a place on the on-call rota and handled production incidents such as delivery backlogs or provider outages."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_7b9d592c95e9",
+     "severity": "medium",
+     "gap": "Evidence that the candidate watches live delivery latency and records own responsibility boundaries for the service."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_6c2e696fa5aa",
+     "text": "candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "low",
+     "recommendedHandling": "Verify on-call participation and incident handling through documentation or direct confirmation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_461dbb854e2d",
+     "question": "Can you provide deployment logs or release notes that confirm your changes were deployed to production through the deployment pipeline?",
+     "evidenceTarget": "Production deployment evidence"
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_0b9ee3386bec",
+     "question": "Do you have documentation of your on-call rota assignment or incident reports where you handled delivery backlogs or provider outages?",
+     "evidenceTarget": "On-call and incident handling evidence"
+    },
+    {
+     "questionId": "q3",
+     "requirementId": "req_7b9d592c95e9",
+     "question": "Can you share dashboards or logs that show you monitoring live delivery latency and recording responsibility boundaries?",
+     "evidenceTarget": "Live monitoring evidence"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that all requirementIds are covered in requirementEvidenceMap.",
+    "Ensure no unsupported claims are listed as supported.",
+    "Confirm that subjective notes are routed to interviewSignalRisks.",
+    "Check that evidenceStrength ratings are consistent with source content.",
+    "Validate that all gaps have corresponding follow-up questions."
+   ],
+   "auditSummary": "The evidence packet establishes the candidate’s experience in provider adapter development, retry scheduling, staging load testing, and documentation. It does not establish production deployment rights, on-call participation, or live latency monitoring. Gaps and follow-up questions are provided for each unmet requirement. Human review is required to assess fit.",
+   "limitations": [
+    "Evidence is limited to the provided resume and work‑sample sources; no external verification of production deployment or incident handling is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:50:36.664121+00:00"
+}

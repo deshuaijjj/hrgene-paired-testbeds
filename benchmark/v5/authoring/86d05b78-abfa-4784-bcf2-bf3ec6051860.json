@@ -1,0 +1,36 @@
+{
+ "caseId": "86d05b78-abfa-4784-bcf2-bf3ec6051860",
+ "roleTitle": "Software Engineer, Open Banking APIs",
+ "jobDescription": "A retail bank exposes account-information and payment-initiation APIs to licensed third-party providers under open-banking regulation. The API engineering squad builds the Java and Kotlin services behind those endpoints, keeps the consent flows aligned with the published standard and reports endpoint response times to the regulator every quarter. The engineer will add endpoints, profile and tune slow paths, keep the conformance test suite current and pair with the security team on certificate rotation. Performance improvements are reported against a recorded baseline taken from the API gateway's monitoring.",
+ "requirements": [
+  "Builds and maintains Java or Kotlin services behind regulated open-banking endpoints, including payment-initiation endpoints.",
+  "Maintains automated conformance tests against the published open-banking standard.",
+  "Demonstrates a measured response-time improvement on an API path against a recorded baseline.",
+  "Works with the security team on mutual-TLS certificate rotation for third-party connections.",
+  "Holds a recognised Java developer certification."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Built the Kotlin service behind the account-balances endpoint at Harrowgate Building Society, including pagination, consent checks and mapping of internal errors to the standard's error codes."},
+  {"type": "resume", "text": "Kept the conformance test suite passing against each new version of the open-banking standard and added test cases for the variable recurring payments consent flow."},
+  {"type": "resume", "text": "Profiled the transactions-history endpoint and replaced a per-row consent lookup with a cached consent snapshot, then worked with the API gateway team to compare response times before and after the change."},
+  {"type": "resume", "text": "Joined the quarterly certificate rotation with the security team, updating the trust-store configuration for third-party provider connections and checking the handshake logs afterwards."},
+  {"type": "resume", "text": "Wrote the runbook for re-issuing expired consents and walked the squad's engineering guild through it."},
+  {"type": "work_sample", "text": "Work sample: the pull request for the cached consent snapshot (diff and description), showing the cache invalidation rules, unit tests for revoked consents and review comments from two engineers."},
+  {"type": "note", "text": "HR verification note: the gateway performance report cited by the candidate was requested directly from Harrowgate Building Society's API platform office. It records a p95 response time of 1,180 ms on the transactions-history endpoint for 1 to 28 February 2024 and 410 ms for 1 to 28 April 2024, and names the candidate as author of the change released on 15 March 2024."},
+  {"type": "note", "text": "Recruiter verification: the candidate's Oracle Certified Professional: Java SE 17 Developer credential was looked up on the vendor's certification verification page with the validation number the candidate supplied; it is listed as earned in May 2023."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate's cached consent snapshot change was followed by a fall in p95 response time on the transactions-history endpoint from 1,180 ms (1 to 28 February 2024) to 410 ms (1 to 28 April 2024), according to the gateway performance report obtained from the former employer.", "status": "supported", "sources": [3, 6, 7], "requirements": [3], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The verification note records a report obtained from the employer with the endpoint, percentile, baseline and comparison windows and the candidate's authorship; the resume and pull request describe the change."},
+   {"text": "The candidate holds the Oracle Certified Professional: Java SE 17 Developer credential, verified on the vendor's certification page.", "status": "supported", "sources": [8], "requirements": [5], "boundaryCategory": "verified_credential_record", "criticality": "noncritical", "rationale": "The recruiter verification records a check of the credential with its validation number."},
+   {"text": "The candidate built the Kotlin service behind the account-balances endpoint, including consent checks and error mapping.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the service directly."}
+  ],
+  "requirementStatus": ["partial_evidence", "supported", "supported", "supported", "supported"],
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "The documented endpoint work covers account-information endpoints; no payment-initiation endpoint work is described.",
+  "expectedBoundaryNote": "Keep the response-time result with its endpoint, percentile, February and April windows and the employer-supplied report, and keep the verified credential; do not extend the result to other endpoints or to payment initiation.",
+  "followUpTargets": ["Ask whether the candidate has built or changed payment-initiation endpoints and what that work involved."],
+  "validClaimSignatures": ["1,180 ms", "Oracle Certified Professional", "account-balances endpoint"]
+ }
+}

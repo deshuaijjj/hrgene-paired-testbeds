@@ -1,0 +1,597 @@
+{
+ "request_id": "b4cbdc22-33f8-4b68-8019-b3a87f82464a.C2",
+ "case_id": "b4cbdc22-33f8-4b68-8019-b3a87f82464a",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[3]",
+    "message": "production/live wording not licensed by the cited sources: launch",
+    "witness": {
+     "terms": [
+      "launch"
+     ],
+     "sourceIds": [
+      "src_9a8bcb359343"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Wrote developer-facing launch communications including changelog, migration guide, and customer email."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].notes",
+    "message": "production/live wording not licensed by the cited sources: launch",
+    "witness": {
+     "terms": [
+      "launch"
+     ],
+     "sourceIds": [
+      "src_9a8bcb359343"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Includes developer-facing launch communications."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (launch) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_8040ba2ddd14",
+     "family": "PRODUCTION",
+     "terms": [
+      "launch"
+     ],
+     "sourceIds": [
+      "src_9a8bcb359343"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "req_8040ba2ddd14: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[3]",
+   "detail": "Wrote developer-facing launch communications including changelog, migration guide, and customer email."
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "Wrote the changelog entry, the migration guide and the customer email announcing rate limiting; developer relations revi"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_437bd26253a54710",
+   "targetRoleTitle": "Product Manager, Developer API",
+   "professionalSummary": [
+    {
+     "claimId": "sum_1",
+     "text": "Product Manager at Tidewater APIs with experience writing API specifications, running early-access programmes, taking features to general availability, preparing developer communications, and collaborating on pricing with the commercial team.",
+     "sourceIds": [
+      "src_5d5191a320b5",
+      "src_e1fdaee823ae",
+      "src_9a44ec1428cf",
+      "src_9a8bcb359343",
+      "src_84cbb831385b"
+     ],
+     "requirementIds": [
+      "req_3761f4b3d63a",
+      "req_66eef8965ae6",
+      "req_e3f9251ec70b",
+      "req_8040ba2ddd14",
+      "req_84908a81e0e6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Product Manager, Tidewater APIs, March 2021 to July 2024: wrote the specification for per-key rate limiting with two platform engineers, including the 429 response format, retry headers and versioning rules, reviewed by the architecture group."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_1",
+     "text": "Wrote API specifications with platform engineers, including error and versioning behaviour, reviewed by architecture group.",
+     "sourceIds": [
+      "src_5d5191a320b5"
+     ],
+     "requirementIds": [
+      "req_3761f4b3d63a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Product Manager, Tidewater APIs, March 2021 to July 2024: wrote the specification for per-key rate limiting with two platform engineers, including the 429 response format, retry headers and versioning rules, reviewed by the architecture group."
+    },
+    {
+     "claimId": "exp_2",
+     "text": "Ran a six-week early-access programme for rate limiting with nine customers on a separate preview endpoint, holding weekly feedback calls and logging requests on the product board.",
+     "sourceIds": [
+      "src_e1fdaee823ae"
+     ],
+     "requirementIds": [
+      "req_66eef8965ae6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran a six-week early-access programme for rate limiting with nine customers on a separate preview endpoint, holding weekly feedback calls and logging requests on the product board."
+    },
+    {
+     "claimId": "exp_3",
+     "text": "Took rate limiting to general availability on all production endpoints after release review signed off the launch checklist, chaired post-launch review with engineering and support.",
+     "sourceIds": [
+      "src_9a44ec1428cf"
+     ],
+     "requirementIds": [
+      "req_e3f9251ec70b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Took rate limiting to general availability on all production endpoints on 21 February 2024 after the release review signed off the launch checklist, and chaired the post-launch review three weeks later with engineering and support."
+    },
+    {
+     "claimId": "exp_4",
+     "text": "Wrote changelog, migration guide, and customer email for rate limiting; developer relations reviewed each before publication, with API reference pages updated to match.",
+     "sourceIds": [
+      "src_9a8bcb359343"
+     ],
+     "requirementIds": [
+      "req_8040ba2ddd14"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the changelog entry, the migration guide and the customer email announcing rate limiting; developer relations reviewed each before publication, and the API reference pages were updated to match."
+    },
+    {
+     "claimId": "exp_5",
+     "text": "Supplied per-plan usage data to commercial team for pricing tier limits, wrote internal FAQ for sales team.",
+     "sourceIds": [
+      "src_84cbb831385b"
+     ],
+     "requirementIds": [
+      "req_84908a81e0e6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Supplied per-plan usage data to the commercial team, which then set the limits attached to each pricing tier, and wrote the internal FAQ for the sales team."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_1",
+     "text": "Post-launch review for rate limiting included signed launch checklist, production release date of 21 February 2024, 429 response counts by plan for first three weeks, and two follow-up actions agreed with engineering, both closed within a month.",
+     "sourceIds": [
+      "src_6102c4fb20eb"
+     ],
+     "requirementIds": [
+      "req_e3f9251ec70b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the post-launch review for rate limiting, including the signed launch checklist, the production release date of 21 February 2024, counts of 429 responses by plan for the first three weeks and two follow-up actions agreed with engineering, both closed within a month."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_1",
+     "text": "API specifications, early-access programmes, general availability releases, developer communications, pricing collaboration.",
+     "sourceIds": [
+      "src_5d5191a320b5",
+      "src_e1fdaee823ae",
+      "src_9a44ec1428cf",
+      "src_9a8bcb359343",
+      "src_84cbb831385b"
+     ],
+     "requirementIds": [
+      "req_3761f4b3d63a",
+      "req_66eef8965ae6",
+      "req_e3f9251ec70b",
+      "req_8040ba2ddd14",
+      "req_84908a81e0e6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Product Manager, Tidewater APIs, March 2021 to July 2024: wrote the specification for per-key rate limiting with two platform engineers, including the 429 response format, retry headers and versioning rules, reviewed by the architecture group."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience with writing API specifications, running early-access programmes, taking features to general availability, preparing developer communications, and collaborating on pricing with the commercial team, but do not establish the candidate's direct involvement in the pricing decision-making process beyond supplying data."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate's fit for the role based on the evidence provided."
+   },
+   "role": {
+    "roleTitle": "Product Manager, Developer API",
+    "jobDescriptionSource": "jd_324cb3595c013527",
+    "requirementIds": [
+     "req_3761f4b3d63a",
+     "req_66eef8965ae6",
+     "req_e3f9251ec70b",
+     "req_8040ba2ddd14",
+     "req_84908a81e0e6"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_437bd26253a54710",
+    "sources": [
+     "src_5d5191a320b5",
+     "src_e1fdaee823ae",
+     "src_9a44ec1428cf",
+     "src_9a8bcb359343",
+     "src_84cbb831385b",
+     "src_6102c4fb20eb",
+     "src_779ae9dff7b1",
+     "src_588fac2cdb43"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_3761f4b3d63a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5d5191a320b5",
+       "text": "Product Manager, Tidewater APIs, March 2021 to July 2024: wrote the specification for per-key rate limiting with two platform engineers, including the 429 response format, retry headers and versioning rules, reviewed by the architecture group.",
+       "evidenceStrength": "high",
+       "notes": "Includes error and versioning behaviour as required."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_66eef8965ae6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e1fdaee823ae",
+       "text": "Ran a six-week early-access programme for rate limiting with nine customers on a separate preview endpoint, holding weekly feedback calls and logging requests on the product board.",
+       "evidenceStrength": "high",
+       "notes": "Includes running early-access with customers."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e3f9251ec70b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9a44ec1428cf",
+       "text": "Took rate limiting to general availability on all production endpoints on 21 February 2024 after the release review signed off the launch checklist, and chaired the post-launch review three weeks later with engineering and support.",
+       "evidenceStrength": "high",
+       "notes": "Includes production deployment and post-launch review."
+      },
+      {
+       "sourceId": "src_6102c4fb20eb",
+       "text": "Work sample: the post-launch review for rate limiting, including the signed launch checklist, the production release date of 21 February 2024, counts of 429 responses by plan for the first three weeks and two follow-up actions agreed with engineering, both closed within a month.",
+       "evidenceStrength": "medium",
+       "notes": "Supports the post-launch review and production release."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8040ba2ddd14",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_84908a81e0e6",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_84cbb831385b",
+       "text": "Supplied per-plan usage data to the commercial team, which then set the limits attached to each pricing tier, and wrote the internal FAQ for the sales team.",
+       "evidenceStrength": "medium",
+       "notes": "Supplied data for pricing, but did not set pricing or packaging."
+      }
+     ],
+     "missingEvidence": [
+      "Candidate personally set pricing or packaging decisions with commercial team"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Wrote API specifications with engineering, including error and versioning behaviour.",
+     "supportingRequirementIds": [
+      "req_3761f4b3d63a"
+     ],
+     "sourceIds": [
+      "src_5d5191a320b5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Product Manager, Tidewater APIs, March 2021 to July 2024: wrote the specification for per-key rate limiting with two platform engineers, including the 429 response format, retry headers and versioning rules, reviewed by the architecture group."
+    },
+    {
+     "claim": "Ran early-access programme with customers on a preview endpoint.",
+     "supportingRequirementIds": [
+      "req_66eef8965ae6"
+     ],
+     "sourceIds": [
+      "src_e1fdaee823ae"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran a six-week early-access programme for rate limiting with nine customers on a separate preview endpoint, holding weekly feedback calls and logging requests on the product board."
+    },
+    {
+     "claim": "Took feature to general availability on production endpoints after release review, chaired post-launch review.",
+     "supportingRequirementIds": [
+      "req_e3f9251ec70b"
+     ],
+     "sourceIds": [
+      "src_9a44ec1428cf"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took rate limiting to general availability on all production endpoints on 21 February 2024 after the release review signed off the launch checklist, and chaired the post-launch review three weeks later with engineering and support."
+    },
+    {
+     "claim": "Supplied per-plan usage data to commercial team for pricing tier limits.",
+     "supportingRequirementIds": [
+      "req_84908a81e0e6"
+     ],
+     "sourceIds": [
+      "src_84cbb831385b"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Supplied per-plan usage data to the commercial team, which then set the limits attached to each pricing tier, and wrote the internal FAQ for the sales team."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate personally set pricing or packaging decisions with commercial team.",
+     "reason": "The materials state the candidate supplied data, but the commercial team set the limits.",
+     "requiredFollowUp": "Ask the candidate if they personally set pricing or packaging decisions with the commercial team."
+    },
+    {
+     "claim": "Wrote developer-facing launch communications including changelog, migration guide, and customer email.",
+     "reason": "The cited sources describe a non-production environment or do not state production deployment.",
+     "requiredFollowUp": "Ask about the operating environment, release permissions, go-live confirmation and run-time responsibilities."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_84908a81e0e6",
+     "requirementId": "req_84908a81e0e6",
+     "severity": "medium",
+     "gap": "Candidate personally set pricing or packaging decisions with commercial team"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_84908a81e0e6",
+     "requirementId": "req_84908a81e0e6",
+     "question": "Can you describe your role in setting pricing or packaging decisions for API features with the commercial team?",
+     "evidenceTarget": "Whether the candidate personally set pricing or packaging decisions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate personally set pricing or packaging decisions for API features with the commercial team.",
+    "Confirm the candidate's direct involvement in the release process and post-launch review."
+   ],
+   "auditSummary": "The evidence provided supports all requirements except for req_84908a81e0e6, which has partial evidence. The candidate supplied data for pricing but did not set pricing or packaging decisions. The materials do not establish the candidate's direct involvement in pricing decisions beyond data supply.",
+   "limitations": [
+    "The materials do not establish the candidate's direct involvement in pricing decisions beyond supplying data."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

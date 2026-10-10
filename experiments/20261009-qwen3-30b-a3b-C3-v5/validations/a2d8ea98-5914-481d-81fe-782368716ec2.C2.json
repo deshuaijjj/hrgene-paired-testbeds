@@ -1,0 +1,160 @@
+{
+ "request_id": "a2d8ea98-5914-481d-81fe-782368716ec2.C2",
+ "case_id": "a2d8ea98-5914-481d-81fe-782368716ec2",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "ran 18 discovery interviews with members who split bills or collect money for clubs, then wrote the problem statement and requirements for in-app payment reques",
+     "sourceIds": [
+      "src_680482ca2aa2",
+      "src_7a0c0463193e",
+      "src_e6d908486b43",
+      "src_88bbfa681e8e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[0].notes",
+    "message": "qualification term(s) [SENIORITY] not licensed by the cited sources: senior",
+    "witness": {
+     "family": "SENIORITY",
+     "terms": [
+      "senior"
+     ],
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ],
+     "sourceFamilies": [],
+     "text": "Direct evidence of reporting to senior stakeholders"
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "requirement_qualification_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].status",
+    "message": "requirement marked supported but its qualification term(s) [SENIORITY] (senior) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_7f6967bf721e",
+     "family": "SENIORITY",
+     "terms": [
+      "senior"
+     ],
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

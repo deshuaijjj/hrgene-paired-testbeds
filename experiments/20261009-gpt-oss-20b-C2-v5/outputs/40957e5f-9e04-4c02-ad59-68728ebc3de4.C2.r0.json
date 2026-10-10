@@ -1,0 +1,203 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "40957e5f-9e04-4c02-ad59-68728ebc3de4.C2",
+ "case_id": "40957e5f-9e04-4c02-ad59-68728ebc3de4",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14175,
+  "promptWords": 1677
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 35.424
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3892,
+ "eval_count": 1373,
+ "prompt_eval_duration_ns": 18657000,
+ "eval_duration_ns": 24782014000,
+ "total_duration_ns": 35422528375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. All numbers from sources. Provide gaps for any requirement not fully supported. Let's check each requirement:\n\nreq_e71599e7b7a5: Triages purchase requests and routes them to right buyer or category owner. Source src_17fb0278375a supports. Good.\n\nreq_ef7bf7faf3c7: Maintains approval matrix and workflows with finance. Source src_fad39a544490 supports.\n\nreq_f569a6744aad: Shows measured reduction in PO approval time from system timestamps against baseline quarter. Source src_79bcd4d01976 provides numbers. Good.\n\nreq_cffa3ed7863b: Maintains supplier master data, duplicate removal, bank-detail change controls, annual reviews. Source src_4cddc515e2e6 covers duplicate removal and bank-detail change check. No mention of annual reviews. So partial evidence. Need gap: annual supplier risk reviews missing.\n\nreq_287ec6265703: Builds monthly procurement report for finance leadership. Source src_aa6e1074962a supports.\n\nThus requirementEvidenceMap entries accordingly.\n\nUnsupported claims: none? All claims in CV are supported. No unsupported.\n\nMissingEvidenceGaps: for req_cffa3ed7863b: annual supplier risk reviews missing. severity medium.\n\nInterviewSignalRisks: none subjective.\n\nFollowUpQuestions: for req_cffa3ed7863b: ask about annual supplier risk reviews.\n\nHumanReviewChecklist: maybe \"Review evidence gaps and follow-up questions\".\n\nAuditSummary: summary.\n\nLimitations: maybe \"Limited to provided sources\".\n\nNow produce optimizedCv: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Procurement Operations Analyst with experience triaging purchase requests, managing approval workflows, reducing PO approval times, maintaining supplier master data, and building monthly procurement reports.\" Use source citations. experienceHighlights: list claims with sources. projectsAndWorkSamples: mention approval-time analysis workbook. skills: list relevant skills: Coupa, Looker, data analysis, supplier data management, workflow configuration.\n\nEvidenceBoundary: one sentence: \"The provided resume and work sample sources establish the candidate’s experience in triaging purchase requests, rewriting approval matrices, reducing approval times, merging duplicate suppliers, and building procurement reports, but do not provide evidence of annual supplier risk reviews.\"\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_48e0a5fc511cf408\",\"targetRoleTitle\":\"Procurement Operations Analyst\",\"professionalSummary\":[\"Procurement Operations Analyst with experience triaging purchase requests, managing approval workflows, reducing purchase‑order approval times, maintaining supplier master data, and building monthly procurement reports for finance leadership.\"],\"experienceHighlights\":[\"Triaged incoming purchase requests in Coupa, routing each to the category buyer and returning incomplete requests with a checklist of required fields (src_17fb0278375a).\",\"Rewrote the approval matrix with the financial controller, removing two approval tiers for renewals within budget and configuring the new workflow in Coupa (src_fad39a544490).\",\"Reduced average purchase‑order approval time from 6.8 working days in Q1 2024 to 2.9 working days in Q3 2024, measured between request‑submitted and final‑approval timestamps in Coupa (src_79bcd4d01976).\",\"Merged 312 duplicate supplier records and applied the call‑back check to every supplier bank‑detail change request (src_4cddc515e2e6).\",\"Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold (src_aa6e1074962a).\"],\"projectsAndWorkSamples\":[\"Approval‑time analysis workbook containing Q1 2024 and Q3 2024 timestamp extracts, working‑day calculation excluding public holidays, the two averages (6.8 and 2.9 working days) and the financial controller’s review comments (src_affd005de700).\"],\"skills\":[\"Coupa procurement platform\",\"Looker data visualization\",\"Supplier master data management\",\"Approval workflow configuration\",\"Purchase‑order cycle‑time analysis\",\"Data‑driven reporting\"],\"evidenceBoundary\":\"The provided resume and work sample sources establish the candidate’s experience in triaging purchase requests, managing approval workflows, reducing PO approval times, maintaining supplier master data, and building monthly procurement reports, but do not provide evidence of annual supplier risk reviews.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to evaluate evidence gaps and follow‑up questions.\"},\"role\":{\"roleTitle\":\"Procurement Operations Analyst\",\"jobDescriptionSource\":\"jd_1d2fd7a9dd9c1485\",\"requirementIds\":[\"req_e71599e7b7a5\",\"req_ef7bf7faf3c7\",\"req_f569a6744aad\",\"req_cffa3ed7863b\",\"req_287ec6265703\"]},\"candidate\":{\"candidateId\":\"cand_48e0a5fc511cf408\",\"sources\":[\"src_17fb0278375a\",\"src_fad39a544490\",\"src_79bcd4d01976\",\"src_4cddc515e2e6\",\"src_aa6e1074962a\",\"src_affd005de700\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_e71599e7b7a5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_17fb0278375a\",\"text\":\"Triaged incoming purchase requests in Coupa at Northvale Software, routing each one to the category buyer and sending incomplete requests back with a checklist of the fields to complete.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches requirement\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ef7bf7faf3c7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_fad39a544490\",\"text\":\"Rewrote the approval matrix with the financial controller, removing two approval tiers for renewals within budget, and configured the new workflow in Coupa.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches requirement\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f569a6744aad\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_79bcd4d01976\",\"text\":\"Average purchase‑order approval time went from 6.8 working days in Q1 2024 to 2.9 working days in Q3 2024, measured between the request‑submitted and final‑approval timestamps in Coupa.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches requirement\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_cffa3ed7863b\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_4cddc515e2e6\",\"text\":\"Merged 312 duplicate supplier records and applied the call‑back check to every supplier bank‑detail change request.\",\"evidenceStrength\":\"medium\",\"notes\":\"Supports duplicate removal and bank‑detail change controls\"}],\"missingEvidence\":[\"Annual supplier risk reviews\"]},{\"requirementId\":\"req_287ec6265703\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_aa6e1074962a\",\"text\":\"Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches requirement\"}],\"missingEvidence\":[]}],\"supportedClaims\":[],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_annual_risk_reviews\",\"requirementId\":\"req_cffa3ed7863b\",\"severity\":\"medium\",\"gap\":\"Evidence of annual supplier risk reviews is not provided.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_annual_risk_reviews\",\"requirementId\":\"req_cffa3ed7863b\",\"question\":\"Can you describe your experience conducting annual supplier risk reviews, including the process and any outcomes?\",\"evidenceTarget\":\"Evidence of annual supplier risk review activities.\"}],\"humanReviewChecklist\":[\"Verify that all requirement evidence entries are sourced from the provided materials.\",\"Confirm that the partial evidence for supplier master data includes duplicate removal and bank‑detail change controls but lacks annual risk reviews.\",\"Ensure that the follow‑up question addresses the missing evidence gap.\"],\"auditSummary\":\"All claims in the optimized CV are directly supported by the provided resume and work sample sources. The only evidence gap is the lack of documentation for annual supplier risk reviews, which is addressed with a follow‑up question. No subjective or unverified statements are included.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and notes; additional context from the candidate is not included.\"]}}",
+ "content_sha256": "a6d44884b2a09856dd6d64954d0285b320ec65a04172748133459cd3d1ee2d7d",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_48e0a5fc511cf408",
+   "targetRoleTitle": "Procurement Operations Analyst",
+   "professionalSummary": [
+    "Procurement Operations Analyst with experience triaging purchase requests, managing approval workflows, reducing purchase‑order approval times, maintaining supplier master data, and building monthly procurement reports for finance leadership."
+   ],
+   "experienceHighlights": [
+    "Triaged incoming purchase requests in Coupa, routing each to the category buyer and returning incomplete requests with a checklist of required fields (src_17fb0278375a).",
+    "Rewrote the approval matrix with the financial controller, removing two approval tiers for renewals within budget and configuring the new workflow in Coupa (src_fad39a544490).",
+    "Reduced average purchase‑order approval time from 6.8 working days in Q1 2024 to 2.9 working days in Q3 2024, measured between request‑submitted and final‑approval timestamps in Coupa (src_79bcd4d01976).",
+    "Merged 312 duplicate supplier records and applied the call‑back check to every supplier bank‑detail change request (src_4cddc515e2e6).",
+    "Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold (src_aa6e1074962a)."
+   ],
+   "projectsAndWorkSamples": [
+    "Approval‑time analysis workbook containing Q1 2024 and Q3 2024 timestamp extracts, working‑day calculation excluding public holidays, the two averages (6.8 and 2.9 working days) and the financial controller’s review comments (src_affd005de700)."
+   ],
+   "skills": [
+    "Coupa procurement platform",
+    "Looker data visualization",
+    "Supplier master data management",
+    "Approval workflow configuration",
+    "Purchase‑order cycle‑time analysis",
+    "Data‑driven reporting"
+   ],
+   "evidenceBoundary": "The provided resume and work sample sources establish the candidate’s experience in triaging purchase requests, managing approval workflows, reducing PO approval times, maintaining supplier master data, and building monthly procurement reports, but do not provide evidence of annual supplier risk reviews."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to evaluate evidence gaps and follow‑up questions."
+   },
+   "role": {
+    "roleTitle": "Procurement Operations Analyst",
+    "jobDescriptionSource": "jd_1d2fd7a9dd9c1485",
+    "requirementIds": [
+     "req_e71599e7b7a5",
+     "req_ef7bf7faf3c7",
+     "req_f569a6744aad",
+     "req_cffa3ed7863b",
+     "req_287ec6265703"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_48e0a5fc511cf408",
+    "sources": [
+     "src_17fb0278375a",
+     "src_fad39a544490",
+     "src_79bcd4d01976",
+     "src_4cddc515e2e6",
+     "src_aa6e1074962a",
+     "src_affd005de700"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_e71599e7b7a5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_17fb0278375a",
+       "text": "Triaged incoming purchase requests in Coupa at Northvale Software, routing each one to the category buyer and sending incomplete requests back with a checklist of the fields to complete.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ef7bf7faf3c7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_fad39a544490",
+       "text": "Rewrote the approval matrix with the financial controller, removing two approval tiers for renewals within budget, and configured the new workflow in Coupa.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f569a6744aad",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_79bcd4d01976",
+       "text": "Average purchase‑order approval time went from 6.8 working days in Q1 2024 to 2.9 working days in Q3 2024, measured between the request‑submitted and final‑approval timestamps in Coupa.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cffa3ed7863b",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_4cddc515e2e6",
+       "text": "Merged 312 duplicate supplier records and applied the call‑back check to every supplier bank‑detail change request.",
+       "evidenceStrength": "medium",
+       "notes": "Supports duplicate removal and bank‑detail change controls"
+      }
+     ],
+     "missingEvidence": [
+      "Annual supplier risk reviews"
+     ]
+    },
+    {
+     "requirementId": "req_287ec6265703",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_aa6e1074962a",
+       "text": "Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_annual_risk_reviews",
+     "requirementId": "req_cffa3ed7863b",
+     "severity": "medium",
+     "gap": "Evidence of annual supplier risk reviews is not provided."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_annual_risk_reviews",
+     "requirementId": "req_cffa3ed7863b",
+     "question": "Can you describe your experience conducting annual supplier risk reviews, including the process and any outcomes?",
+     "evidenceTarget": "Evidence of annual supplier risk review activities."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that all requirement evidence entries are sourced from the provided materials.",
+    "Confirm that the partial evidence for supplier master data includes duplicate removal and bank‑detail change controls but lacks annual risk reviews.",
+    "Ensure that the follow‑up question addresses the missing evidence gap."
+   ],
+   "auditSummary": "All claims in the optimized CV are directly supported by the provided resume and work sample sources. The only evidence gap is the lack of documentation for annual supplier risk reviews, which is addressed with a follow‑up question. No subjective or unverified statements are included.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and notes; additional context from the candidate is not included."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:41:44.536043+00:00"
+}

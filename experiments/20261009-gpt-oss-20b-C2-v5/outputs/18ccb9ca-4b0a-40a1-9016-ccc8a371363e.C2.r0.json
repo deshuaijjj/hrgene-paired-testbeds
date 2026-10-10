@@ -1,0 +1,270 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "18ccb9ca-4b0a-40a1-9016-ccc8a371363e.C2",
+ "case_id": "18ccb9ca-4b0a-40a1-9016-ccc8a371363e",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14507,
+  "promptWords": 1755
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 49.384
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4086,
+ "eval_count": 2005,
+ "prompt_eval_duration_ns": 19443000,
+ "eval_duration_ns": 36615448000,
+ "total_duration_ns": 49381673667,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft claims.\n\nOptimized CV: language en, candidateId cand_26a6376874ffdba2, targetRoleTitle Data Scientist, Demand Forecasting.\n\nProfessionalSummary: claim about experience building store-level forecasts, feature pipelines, trials, communication. Use sources.\n\nExperienceHighlights: similar.\n\nProjectsAndWorkSamples: trial readout.\n\nSkills: LightGBM, feature engineering, pipeline maintenance, trial design, stakeholder communication.\n\nEvidenceBoundary: what materials establish: candidate built LightGBM forecast, maintained pipeline, designed and ran trial, communicated results. Do not establish production deployment or monitoring accuracy after release.\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle Data Scientist, Demand Forecasting, jobDescriptionSourceId jd_edb4c0a81afc1f6c, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_c7be24822a00: Builds store-level demand forecasting models for perishable products. Evidence: src_cd1045c48097, src_c9843877e549. status supported. evidenceStrength high? medium. notes.\n\nreq_3053d9527f5a: Maintains feature pipelines. Evidence: src_c9843877e549. status supported.\n\nreq_f45bf05b5e1e: Has put a forecasting model into production use in a replenishment system and monitored its accuracy after release. Evidence: src_26e6e91ffbdb mentions go-live in all 180 stores from week 32 subject to supply-chain board approval. But not confirmed that model was actually deployed or accuracy monitored. So partial_evidence? We have mention of rollout but not confirmation of deployment or monitoring. So status partial_evidence. missingEvidence: confirmation of production deployment and post-release accuracy monitoring.\n\nreq_920b8d45126a: Designs and runs store trials with replenishment planners. Evidence: src_a58e54ae7746, src_b4c1bc928492, src_df62c22917a4. status supported.\n\nreq_9de5b88af25a: Communicates forecast results to non-technical stakeholders. Evidence: src_47e145149fd1. status supported.\n\nsupportedClaims: list claims that are supported: building forecast, maintaining pipeline, designing trial, communicating results. Provide sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: for req_f45bf05b5e1e.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: for req_f45bf05b5e1e: question about confirmation of production deployment and monitoring.\n\nhumanReviewChecklist: items: verify production deployment, accuracy monitoring, board approval.\n\nauditSummary: brief.\n\nlimitations: maybe lack of evidence for production deployment.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_26a6376874ffdba2\",\"targetRoleTitle\":\"Data Scientist, Demand Forecasting\",\"professionalSummary\":[\"Candidate has built store‑level demand forecasting models for perishable products using LightGBM and two years of till data, incorporating weather, promotion and bank holiday features.\",\"Maintained end‑to‑end feature pipelines that join sales, promotion calendars and regional weather forecasts, with daily row‑count checks and weekly promotion coverage checks.\",\"Designed and executed an eight‑week side‑by‑side trial in 12 stores, collecting planner overrides and reasons for them.\",\"Communicated trial results to category directors in plain English, explaining error metrics with worked examples.\"],\"experienceHighlights\":[\"Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level (src_cd1045c48097).\",\"Maintained the feature pipeline joining sales, promotion and weather data with daily and weekly checks (src_c9843877e549).\",\"Designed an eight‑week trial in 12 stores and ran weekly calls with planners to log overrides (src_a58e54ae7746, src_b4c1bc928492).\",\"Authored a two‑page plain‑English summary for fresh category directors (src_47e145149fd1).\"],\"projectsAndWorkSamples\":[\"Trial readout for fresh‑produce forecast covering 12 stores over eight weeks, including forecast error by category and a rollout plan to all 180 stores (src_26e6e91ffbdb).\"],\"skills\":[\"LightGBM\",\"Feature engineering\",\"Pipeline maintenance\",\"Trial design\",\"Stakeholder communication\"],\"evidenceBoundary\":\"The provided materials establish that the candidate built store‑level forecasting models, maintained feature pipelines, designed and ran store trials, and communicated results to non‑technical stakeholders. They do not establish that a model was deployed into a replenishment system or that its accuracy was monitored post‑release.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit.\"},\"role\":{\"roleTitle\":\"Data Scientist, Demand Forecasting\",\"jobDescriptionSource\":\"jd_edb4c0a81afc1f6c\",\"requirementIds\":[\"req_c7be24822a00\",\"req_3053d9527f5a\",\"req_f45bf05b5e1e\",\"req_920b8d45126a\",\"req_9de5b88af25a\"]},\"candidate\":{\"candidateId\":\"cand_26a6376874ffdba2\",\"sources\":[\"src_cd1045c48097\",\"src_c9843877e549\",\"src_a58e54ae7746\",\"src_b4c1bc928492\",\"src_47e145149fd1\",\"src_26e6e91ffbdb\",\"src_df62c22917a4\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_c7be24822a00\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_cd1045c48097\",\"text\":\"Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level using two years of till data, with features for weather, promotions and bank holidays.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates store‑level forecasting for perishable products.\"},{\"sourceId\":\"src_c9843877e549\",\"text\":\"Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level using two years of till data, with features for weather, promotions and bank holidays.\",\"evidenceStrength\":\"high\",\"notes\":\"Reiterates model building.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3053d9527f5a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c9843877e549\",\"text\":\"Maintained the feature pipeline that joins till sales, promotion calendars and regional weather forecasts, with daily row‑count checks on each source and a weekly check of promotion‑calendar coverage.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows maintenance of feature pipeline.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f45bf05b5e1e\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_26e6e91ffbdb\",\"text\":\"Page 6, headed 'Rollout', reads: 'Go‑live in all 180 stores from week 32, subject to supply‑chain board approval.'\",\"evidenceStrength\":\"medium\",\"notes\":\"Mentions planned rollout but does not confirm actual deployment or post‑release monitoring.\"}],\"missingEvidence\":[\"Confirmation that the forecasting model was deployed into the replenishment system and that its accuracy was monitored after release.\"]},{\"requirementId\":\"req_920b8d45126a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a58e54ae7746\",\"text\":\"Designed an eight‑week side‑by‑side trial in 12 stores: planners saw the model's forecast next to the existing system's figure but kept placing orders from the existing system.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates trial design.\"},{\"sourceId\":\"src_b4c1bc928492\",\"text\":\"Ran weekly calls with the planners at the trial stores to collect their overrides and the reasons given for them, logging both in a shared sheet for model review.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows execution of trial.\"},{\"sourceId\":\"src_df62c22917a4\",\"text\":\"Reference check summary: Kittering's head of supply‑chain analytics confirmed in writing that the candidate designed and ran the 12‑store trial between March and May 2024.\",\"evidenceStrength\":\"high\",\"notes\":\"External confirmation of trial.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9de5b88af25a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_47e145149fd1\",\"text\":\"Wrote a two‑page plain‑English summary of the trial results for the fresh category directors, explaining the error measure with worked examples from three products.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows communication to non‑technical stakeholders.\"}],\"missingEvidence\":[] }],\"supportedClaims\":[{\"claim\":\"Built store‑level demand forecasting models for perishable products using LightGBM.\",\"supportingRequirementIds\":[\"req_c7be24822a00\"],\"sourceIds\":[\"src_cd1045c48097\"],\"evidenceStrength\":\"high\",\"witness\":\"Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level using two years of till data, with features for weather, promotions and bank holidays.\"},{\"claim\":\"Maintained feature pipelines for sales, promotion and weather data.\",\"supportingRequirementIds\":[\"req_3053d9527f5a\"],\"sourceIds\":[\"src_c9843877e549\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the feature pipeline that joins till sales, promotion calendars and regional weather forecasts, with daily row‑count checks on each source and a weekly check of promotion‑calendar coverage.\"},{\"claim\":\"Designed and ran store trials with replenishment planners.\",\"supportingRequirementIds\":[\"req_920b8d45126a\"],\"sourceIds\":[\"src_a58e54ae7746\",\"src_b4c1bc928492\",\"src_df62c22917a4\"],\"evidenceStrength\":\"high\",\"witness\":\"Designed an eight‑week side‑by‑side trial in 12 stores: planners saw the model's forecast next to the existing system's figure but kept placing orders from the existing system.\"},{\"claim\":\"Communicated forecast results to non‑technical stakeholders in plain English.\",\"supportingRequirementIds\":[\"req_9de5b88af25a\"],\"sourceIds\":[\"src_47e145149fd1\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote a two‑page plain‑English summary of the trial results for the fresh category directors, explaining the error measure with worked examples from three products.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_f45bf05b5e1e\",\"requirementId\":\"req_f45bf05b5e1e\",\"severity\":\"medium\",\"gap\":\"Evidence that the forecasting model was actually deployed into the replenishment system and that its accuracy was monitored after release.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_f45bf05b5e1e\",\"requirementId\":\"req_f45bf05b5e1e\",\"question\":\"Can you confirm whether the forecasting model was deployed into the replenishment system and whether you monitored its accuracy after release?\",\"evidenceTarget\":\"Confirmation of production deployment and post‑release monitoring.\"}],\"humanReviewChecklist\":[\"Verify that the candidate has deployed a forecasting model into a replenishment system and monitored its accuracy post‑release.\",\"Confirm that the candidate’s trial design and execution involved replenishment planners as described.\",\"Ensure that the candidate’s communication of results to non‑technical stakeholders meets the role’s expectations.\"],\"auditSummary\":\"The evidence supports the candidate’s experience in building store‑level forecasting models, maintaining feature pipelines, designing and running store trials, and communicating results. However, there is insufficient evidence that a model was deployed into a replenishment system or that its accuracy was monitored after release, which is a key requirement for the role.\",\"limitations\":[\"Lack of explicit confirmation of production deployment and post‑release accuracy monitoring; reliance on a planned rollout statement.\" ]}}",
+ "content_sha256": "c38fafb040750f049451bab7e737a2babcabc6e55f00f4830068e266e48d16e2",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_26a6376874ffdba2",
+   "targetRoleTitle": "Data Scientist, Demand Forecasting",
+   "professionalSummary": [
+    "Candidate has built store‑level demand forecasting models for perishable products using LightGBM and two years of till data, incorporating weather, promotion and bank holiday features.",
+    "Maintained end‑to‑end feature pipelines that join sales, promotion calendars and regional weather forecasts, with daily row‑count checks and weekly promotion coverage checks.",
+    "Designed and executed an eight‑week side‑by‑side trial in 12 stores, collecting planner overrides and reasons for them.",
+    "Communicated trial results to category directors in plain English, explaining error metrics with worked examples."
+   ],
+   "experienceHighlights": [
+    "Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level (src_cd1045c48097).",
+    "Maintained the feature pipeline joining sales, promotion and weather data with daily and weekly checks (src_c9843877e549).",
+    "Designed an eight‑week trial in 12 stores and ran weekly calls with planners to log overrides (src_a58e54ae7746, src_b4c1bc928492).",
+    "Authored a two‑page plain‑English summary for fresh category directors (src_47e145149fd1)."
+   ],
+   "projectsAndWorkSamples": [
+    "Trial readout for fresh‑produce forecast covering 12 stores over eight weeks, including forecast error by category and a rollout plan to all 180 stores (src_26e6e91ffbdb)."
+   ],
+   "skills": [
+    "LightGBM",
+    "Feature engineering",
+    "Pipeline maintenance",
+    "Trial design",
+    "Stakeholder communication"
+   ],
+   "evidenceBoundary": "The provided materials establish that the candidate built store‑level forecasting models, maintained feature pipelines, designed and ran store trials, and communicated results to non‑technical stakeholders. They do not establish that a model was deployed into a replenishment system or that its accuracy was monitored post‑release."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Data Scientist, Demand Forecasting",
+    "jobDescriptionSource": "jd_edb4c0a81afc1f6c",
+    "requirementIds": [
+     "req_c7be24822a00",
+     "req_3053d9527f5a",
+     "req_f45bf05b5e1e",
+     "req_920b8d45126a",
+     "req_9de5b88af25a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_26a6376874ffdba2",
+    "sources": [
+     "src_cd1045c48097",
+     "src_c9843877e549",
+     "src_a58e54ae7746",
+     "src_b4c1bc928492",
+     "src_47e145149fd1",
+     "src_26e6e91ffbdb",
+     "src_df62c22917a4"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_c7be24822a00",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_cd1045c48097",
+       "text": "Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level using two years of till data, with features for weather, promotions and bank holidays.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates store‑level forecasting for perishable products."
+      },
+      {
+       "sourceId": "src_c9843877e549",
+       "text": "Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level using two years of till data, with features for weather, promotions and bank holidays.",
+       "evidenceStrength": "high",
+       "notes": "Reiterates model building."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3053d9527f5a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c9843877e549",
+       "text": "Maintained the feature pipeline that joins till sales, promotion calendars and regional weather forecasts, with daily row‑count checks on each source and a weekly check of promotion‑calendar coverage.",
+       "evidenceStrength": "high",
+       "notes": "Shows maintenance of feature pipeline."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f45bf05b5e1e",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_26e6e91ffbdb",
+       "text": "Page 6, headed 'Rollout', reads: 'Go‑live in all 180 stores from week 32, subject to supply‑chain board approval.'",
+       "evidenceStrength": "medium",
+       "notes": "Mentions planned rollout but does not confirm actual deployment or post‑release monitoring."
+      }
+     ],
+     "missingEvidence": [
+      "Confirmation that the forecasting model was deployed into the replenishment system and that its accuracy was monitored after release."
+     ]
+    },
+    {
+     "requirementId": "req_920b8d45126a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a58e54ae7746",
+       "text": "Designed an eight‑week side‑by‑side trial in 12 stores: planners saw the model's forecast next to the existing system's figure but kept placing orders from the existing system.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates trial design."
+      },
+      {
+       "sourceId": "src_b4c1bc928492",
+       "text": "Ran weekly calls with the planners at the trial stores to collect their overrides and the reasons given for them, logging both in a shared sheet for model review.",
+       "evidenceStrength": "high",
+       "notes": "Shows execution of trial."
+      },
+      {
+       "sourceId": "src_df62c22917a4",
+       "text": "Reference check summary: Kittering's head of supply‑chain analytics confirmed in writing that the candidate designed and ran the 12‑store trial between March and May 2024.",
+       "evidenceStrength": "high",
+       "notes": "External confirmation of trial."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9de5b88af25a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_47e145149fd1",
+       "text": "Wrote a two‑page plain‑English summary of the trial results for the fresh category directors, explaining the error measure with worked examples from three products.",
+       "evidenceStrength": "high",
+       "notes": "Shows communication to non‑technical stakeholders."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built store‑level demand forecasting models for perishable products using LightGBM.",
+     "supportingRequirementIds": [
+      "req_c7be24822a00"
+     ],
+     "sourceIds": [
+      "src_cd1045c48097"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built a LightGBM forecast for 900 fresh‑produce lines at store‑day level using two years of till data, with features for weather, promotions and bank holidays."
+    },
+    {
+     "claim": "Maintained feature pipelines for sales, promotion and weather data.",
+     "supportingRequirementIds": [
+      "req_3053d9527f5a"
+     ],
+     "sourceIds": [
+      "src_c9843877e549"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the feature pipeline that joins till sales, promotion calendars and regional weather forecasts, with daily row‑count checks on each source and a weekly check of promotion‑calendar coverage."
+    },
+    {
+     "claim": "Designed and ran store trials with replenishment planners.",
+     "supportingRequirementIds": [
+      "req_920b8d45126a"
+     ],
+     "sourceIds": [
+      "src_a58e54ae7746",
+      "src_b4c1bc928492",
+      "src_df62c22917a4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed an eight‑week side‑by‑side trial in 12 stores: planners saw the model's forecast next to the existing system's figure but kept placing orders from the existing system."
+    },
+    {
+     "claim": "Communicated forecast results to non‑technical stakeholders in plain English.",
+     "supportingRequirementIds": [
+      "req_9de5b88af25a"
+     ],
+     "sourceIds": [
+      "src_47e145149fd1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote a two‑page plain‑English summary of the trial results for the fresh category directors, explaining the error measure with worked examples from three products."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_f45bf05b5e1e",
+     "requirementId": "req_f45bf05b5e1e",
+     "severity": "medium",
+     "gap": "Evidence that the forecasting model was actually deployed into the replenishment system and that its accuracy was monitored after release."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_f45bf05b5e1e",
+     "requirementId": "req_f45bf05b5e1e",
+     "question": "Can you confirm whether the forecasting model was deployed into the replenishment system and whether you monitored its accuracy after release?",
+     "evidenceTarget": "Confirmation of production deployment and post‑release monitoring."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate has deployed a forecasting model into a replenishment system and monitored its accuracy post‑release.",
+    "Confirm that the candidate’s trial design and execution involved replenishment planners as described.",
+    "Ensure that the candidate’s communication of results to non‑technical stakeholders meets the role’s expectations."
+   ],
+   "auditSummary": "The evidence supports the candidate’s experience in building store‑level forecasting models, maintaining feature pipelines, designing and running store trials, and communicating results. However, there is insufficient evidence that a model was deployed into a replenishment system or that its accuracy was monitored after release, which is a key requirement for the role.",
+   "limitations": [
+    "Lack of explicit confirmation of production deployment and post‑release accuracy monitoring; reliance on a planned rollout statement."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:25:26.379111+00:00"
+}

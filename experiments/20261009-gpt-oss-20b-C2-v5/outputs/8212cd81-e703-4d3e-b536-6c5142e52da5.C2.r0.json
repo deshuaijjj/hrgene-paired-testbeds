@@ -1,0 +1,304 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "8212cd81-e703-4d3e-b536-6c5142e52da5.C2",
+ "case_id": "8212cd81-e703-4d3e-b536-6c5142e52da5",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 13889,
+  "promptWords": 1671
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 56.511
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3911,
+ "eval_count": 2463,
+ "prompt_eval_duration_ns": 19073000,
+ "eval_duration_ns": 45060093000,
+ "total_duration_ns": 56509215125,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Claims: from resume. Ensure each claim has sourceId. No unsupported claims. Requirements mapping. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Product Manager with experience owning onboarding roadmap and running experiments.\" Use source src_4b8762579e8b etc. experienceHighlights: list claims. projectsAndWorkSamples: include experiment brief. skills: onboarding, experimentation, user interviews, lifecycle marketing.\n\nEvidenceBoundary: what materials establish: that candidate owned onboarding roadmap at Pixelcraft, designed experiments, interviewed users, reviewed welcome emails, but not that product sold to agencies. So evidence boundary: materials establish experience but not agency product.\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nLet's map:\n\nreq_fecaa738054f: Has managed onboarding for a product sold to agencies or other professional-services firms. Evidence: src_efe0483f8af1 says Pixelcraft's paying customers were mainly schools and small businesses; agency accounts small share. Not evidence of agencies. So insufficient_evidence. missingEvidence: \"Evidence that product was sold to agencies or professional services firms.\"\n\nreq_d6cbdd1c2a54: Owns onboarding roadmap and sets success metrics. Evidence: src_4b8762579e8b. status supported. evidenceStrength high. witness: quote.\n\nreq_07cce034ef83: Designs and runs onboarding experiments with a data analyst. Evidence: src_8cf142f450cd. supported.\n\nreq_9ec5b9f65306: Interviews new users regularly and shares findings. Evidence: src_2d1d372e2c93. supported.\n\nreq_179a9a68e0a6: Works with lifecycle marketing on onboarding emails. Evidence: src_2fbd6535d075. supported.\n\nsupportedClaims: list claims with requirementIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: one for req_fecaa738054f.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: for req_fecaa738054f: ask \"Can you provide evidence that Pixelcraft had agency accounts or that you managed onboarding for a product sold to agencies?\" etc.\n\nhumanReviewChecklist: maybe \"Review evidence for agency product requirement.\"\n\nauditSummary: brief.\n\nlimitations: maybe \"Limited evidence on agency product requirement.\"\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_85c4edb6e4fbb3f9\",\n    \"targetRoleTitle\": \"Product Manager, Onboarding\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Product Manager with experience owning the onboarding roadmap and driving activation metrics for a whiteboard app.\",\n        \"sourceIds\": [\"src_4b8762579e8b\"],\n        \"requirementIds\": [\"req_d6cbdd1c2a54\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Owned the onboarding roadmap at Pixelcraft, a whiteboard app, with activation defined as a user inviting a teammate and creating a board within seven days.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Designed and executed four onboarding experiments in collaboration with a data analyst, including hypothesis, variants, and stopping rules.\",\n        \"sourceIds\": [\"src_8cf142f450cd\"],\n        \"requirementIds\": [\"req_07cce034ef83\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Designed four onboarding experiments with the data analyst, writing the hypothesis, the variants and the stopping rule for each before launch.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Conducted monthly interviews with six to eight new users and shared findings with the team via summaries and video clips.\",\n        \"sourceIds\": [\"src_2d1d372e2c93\"],\n        \"requirementIds\": [\"req_9ec5b9f65306\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Interviewed six to eight new users every month and posted a summary of the findings in the team channel with clips from the recordings.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Collaborated with lifecycle marketing to review and refine the welcome‑email sequence, including updating the second email to link to the template gallery.\",\n        \"sourceIds\": [\"src_2fbd6535d075\"],\n        \"requirementIds\": [\"req_179a9a68e0a6\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Reviewed the welcome-email sequence with the lifecycle-marketing manager and changed the second email to link to the template gallery.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Experiment brief and readout for the 'invite a teammate' checklist test, showing a 3.5% lift in activation over 21 days.\",\n        \"sourceIds\": [\"src_e371ae344878\"],\n        \"requirementIds\": [\"req_07cce034ef83\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the experiment brief and readout for the 'invite a teammate' checklist test: hypothesis, two variants, the pre-set stopping rule, activation of 31.4% in control against 34.9% in the variant over 21 days, and the head of product's decision to ship.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"claim_6\",\n        \"text\": \"Onboarding strategy, experiment design, data analysis collaboration, user research, lifecycle marketing coordination\",\n        \"sourceIds\": [\"src_4b8762579e8b\",\"src_8cf142f450cd\",\"src_2d1d372e2c93\",\"src_2fbd6535d075\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided materials establish that the candidate owned the onboarding roadmap, designed experiments, interviewed users, and worked with lifecycle marketing at Pixelcraft, but they do not establish that Pixelcraft was sold to agencies or other professional‑services firms.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Product Manager, Onboarding\",\n      \"jobDescriptionSource\": \"jd_153fe08c6a7a5ef3\",\n      \"requirementIds\": [\n        \"req_fecaa738054f\",\n        \"req_d6cbdd1c2a54\",\n        \"req_07cce034ef83\",\n        \"req_9ec5b9f65306\",\n        \"req_179a9a68e0a6\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_85c4edb6e4fbb3f9\",\n      \"sources\": [\n        \"src_4b8762579e8b\",\n        \"src_8cf142f450cd\",\n        \"src_2d1d372e2c93\",\n        \"src_2fbd6535d075\",\n        \"src_efe0483f8af1\",\n        \"src_e371ae344878\",\n        \"src_81c29916b2b7\",\n        \"src_a28c5b5854e9\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_fecaa738054f\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [],\n        \"missingEvidence\": [\n          \"Evidence that Pixelcraft was sold to agencies or other professional‑services firms, or that the candidate managed onboarding for such a product.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_d6cbdd1c2a54\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_4b8762579e8b\",\n            \"text\": \"Owned the onboarding roadmap at Pixelcraft, a whiteboard app, with activation defined as a user inviting a teammate and creating a board within seven days.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of ownership and metric definition.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_07cce034ef83\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_8cf142f450cd\",\n            \"text\": \"Designed four onboarding experiments with the data analyst, writing the hypothesis, the variants and the stopping rule for each before launch.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Explicit collaboration with data analyst.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_9ec5b9f65306\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_2d1d372e2c93\",\n            \"text\": \"Interviewed six to eight new users every month and posted a summary of the findings in the team channel with clips from the recordings.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Regular interviews and sharing of findings.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_179a9a68e0a6\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_2fbd6535d075\",\n            \"text\": \"Reviewed the welcome-email sequence with the lifecycle-marketing manager and changed the second email to link to the template gallery.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct collaboration with lifecycle marketing.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Product Manager with experience owning the onboarding roadmap and driving activation metrics for a whiteboard app.\",\n        \"supportingRequirementIds\": [\"req_d6cbdd1c2a54\"],\n        \"sourceIds\": [\"src_4b8762579e8b\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Owned the onboarding roadmap at Pixelcraft, a whiteboard app, with activation defined as a user inviting a teammate and creating a board within seven days.\"\n      },\n      {\n        \"claim\": \"Designed and executed onboarding experiments with a data analyst.\",\n        \"supportingRequirementIds\": [\"req_07cce034ef83\"],\n        \"sourceIds\": [\"src_8cf142f450cd\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Designed four onboarding experiments with the data analyst, writing the hypothesis, the variants and the stopping rule for each before launch.\"\n      },\n      {\n        \"claim\": \"Conducted monthly user interviews and shared findings with the team.\",\n        \"supportingRequirementIds\": [\"req_9ec5b9f65306\"],\n        \"sourceIds\": [\"src_2d1d372e2c93\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Interviewed six to eight new users every month and posted a summary of the findings in the team channel with clips from the recordings.\"\n      },\n      {\n        \"claim\": \"Collaborated with lifecycle marketing on welcome‑email sequence.\",\n        \"supportingRequirementIds\": [\"req_179a9a68e0a6\"],\n        \"sourceIds\": [\"src_2fbd6535d075\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Reviewed the welcome-email sequence with the lifecycle-marketing manager and changed the second email to link to the template gallery.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_fecaa738054f\",\n        \"severity\": \"high\",\n        \"gap\": \"No evidence that Pixelcraft was sold to agencies or other professional‑services firms, or that the candidate managed onboarding for such a product.\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_fecaa738054f\",\n        \"question\": \"Can you provide evidence that Pixelcraft had agency accounts or that you managed onboarding for a product sold to agencies or other professional‑services firms?\",\n        \"evidenceTarget\": \"Documentation or statements confirming agency customer base or product targeting.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s onboarding roadmap ownership aligns with the role’s expectations.\",\n      \"Assess the sufficiency of evidence for the agency product requirement.\",\n      \"Confirm that experiment design and user interview practices meet the required standards.\"\n    ],\n    \"auditSummary\": \"The candidate demonstrates ownership of onboarding roadmap, experiment design, user interviews, and lifecycle marketing collaboration at Pixelcraft. However, there is no evidence that Pixelcraft was sold to agencies or other professional‑services firms, leaving the agency‑product requirement unfulfilled. Human review is required to determine whether this gap is critical for the role.\",\n    \"limitations\": [\n      \"Limited evidence on agency product requirement.\",\n      \"No data on actual conversion rates or email engagement metrics.\"\n    ]\n  }\n}",
+ "content_sha256": "71430a80e2a79596db5278b6bca7f9b23dc780dda96f78c9b0c463619454fcf4",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_85c4edb6e4fbb3f9",
+   "targetRoleTitle": "Product Manager, Onboarding",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Product Manager with experience owning the onboarding roadmap and driving activation metrics for a whiteboard app.",
+     "sourceIds": [
+      "src_4b8762579e8b"
+     ],
+     "requirementIds": [
+      "req_d6cbdd1c2a54"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Owned the onboarding roadmap at Pixelcraft, a whiteboard app, with activation defined as a user inviting a teammate and creating a board within seven days."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Designed and executed four onboarding experiments in collaboration with a data analyst, including hypothesis, variants, and stopping rules.",
+     "sourceIds": [
+      "src_8cf142f450cd"
+     ],
+     "requirementIds": [
+      "req_07cce034ef83"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Designed four onboarding experiments with the data analyst, writing the hypothesis, the variants and the stopping rule for each before launch."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Conducted monthly interviews with six to eight new users and shared findings with the team via summaries and video clips.",
+     "sourceIds": [
+      "src_2d1d372e2c93"
+     ],
+     "requirementIds": [
+      "req_9ec5b9f65306"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Interviewed six to eight new users every month and posted a summary of the findings in the team channel with clips from the recordings."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Collaborated with lifecycle marketing to review and refine the welcome‑email sequence, including updating the second email to link to the template gallery.",
+     "sourceIds": [
+      "src_2fbd6535d075"
+     ],
+     "requirementIds": [
+      "req_179a9a68e0a6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reviewed the welcome-email sequence with the lifecycle-marketing manager and changed the second email to link to the template gallery."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_5",
+     "text": "Experiment brief and readout for the 'invite a teammate' checklist test, showing a 3.5% lift in activation over 21 days.",
+     "sourceIds": [
+      "src_e371ae344878"
+     ],
+     "requirementIds": [
+      "req_07cce034ef83"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the experiment brief and readout for the 'invite a teammate' checklist test: hypothesis, two variants, the pre-set stopping rule, activation of 31.4% in control against 34.9% in the variant over 21 days, and the head of product's decision to ship."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_6",
+     "text": "Onboarding strategy, experiment design, data analysis collaboration, user research, lifecycle marketing coordination",
+     "sourceIds": [
+      "src_4b8762579e8b",
+      "src_8cf142f450cd",
+      "src_2d1d372e2c93",
+      "src_2fbd6535d075"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided materials establish that the candidate owned the onboarding roadmap, designed experiments, interviewed users, and worked with lifecycle marketing at Pixelcraft, but they do not establish that Pixelcraft was sold to agencies or other professional‑services firms."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Product Manager, Onboarding",
+    "jobDescriptionSource": "jd_153fe08c6a7a5ef3",
+    "requirementIds": [
+     "req_fecaa738054f",
+     "req_d6cbdd1c2a54",
+     "req_07cce034ef83",
+     "req_9ec5b9f65306",
+     "req_179a9a68e0a6"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_85c4edb6e4fbb3f9",
+    "sources": [
+     "src_4b8762579e8b",
+     "src_8cf142f450cd",
+     "src_2d1d372e2c93",
+     "src_2fbd6535d075",
+     "src_efe0483f8af1",
+     "src_e371ae344878",
+     "src_81c29916b2b7",
+     "src_a28c5b5854e9"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_fecaa738054f",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that Pixelcraft was sold to agencies or other professional‑services firms, or that the candidate managed onboarding for such a product."
+     ]
+    },
+    {
+     "requirementId": "req_d6cbdd1c2a54",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4b8762579e8b",
+       "text": "Owned the onboarding roadmap at Pixelcraft, a whiteboard app, with activation defined as a user inviting a teammate and creating a board within seven days.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of ownership and metric definition."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_07cce034ef83",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8cf142f450cd",
+       "text": "Designed four onboarding experiments with the data analyst, writing the hypothesis, the variants and the stopping rule for each before launch.",
+       "evidenceStrength": "high",
+       "notes": "Explicit collaboration with data analyst."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9ec5b9f65306",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2d1d372e2c93",
+       "text": "Interviewed six to eight new users every month and posted a summary of the findings in the team channel with clips from the recordings.",
+       "evidenceStrength": "high",
+       "notes": "Regular interviews and sharing of findings."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_179a9a68e0a6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2fbd6535d075",
+       "text": "Reviewed the welcome-email sequence with the lifecycle-marketing manager and changed the second email to link to the template gallery.",
+       "evidenceStrength": "high",
+       "notes": "Direct collaboration with lifecycle marketing."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Product Manager with experience owning the onboarding roadmap and driving activation metrics for a whiteboard app.",
+     "supportingRequirementIds": [
+      "req_d6cbdd1c2a54"
+     ],
+     "sourceIds": [
+      "src_4b8762579e8b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Owned the onboarding roadmap at Pixelcraft, a whiteboard app, with activation defined as a user inviting a teammate and creating a board within seven days."
+    },
+    {
+     "claim": "Designed and executed onboarding experiments with a data analyst.",
+     "supportingRequirementIds": [
+      "req_07cce034ef83"
+     ],
+     "sourceIds": [
+      "src_8cf142f450cd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed four onboarding experiments with the data analyst, writing the hypothesis, the variants and the stopping rule for each before launch."
+    },
+    {
+     "claim": "Conducted monthly user interviews and shared findings with the team.",
+     "supportingRequirementIds": [
+      "req_9ec5b9f65306"
+     ],
+     "sourceIds": [
+      "src_2d1d372e2c93"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Interviewed six to eight new users every month and posted a summary of the findings in the team channel with clips from the recordings."
+    },
+    {
+     "claim": "Collaborated with lifecycle marketing on welcome‑email sequence.",
+     "supportingRequirementIds": [
+      "req_179a9a68e0a6"
+     ],
+     "sourceIds": [
+      "src_2fbd6535d075"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed the welcome-email sequence with the lifecycle-marketing manager and changed the second email to link to the template gallery."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_fecaa738054f",
+     "severity": "high",
+     "gap": "No evidence that Pixelcraft was sold to agencies or other professional‑services firms, or that the candidate managed onboarding for such a product."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_fecaa738054f",
+     "question": "Can you provide evidence that Pixelcraft had agency accounts or that you managed onboarding for a product sold to agencies or other professional‑services firms?",
+     "evidenceTarget": "Documentation or statements confirming agency customer base or product targeting."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s onboarding roadmap ownership aligns with the role’s expectations.",
+    "Assess the sufficiency of evidence for the agency product requirement.",
+    "Confirm that experiment design and user interview practices meet the required standards."
+   ],
+   "auditSummary": "The candidate demonstrates ownership of onboarding roadmap, experiment design, user interviews, and lifecycle marketing collaboration at Pixelcraft. However, there is no evidence that Pixelcraft was sold to agencies or other professional‑services firms, leaving the agency‑product requirement unfulfilled. Human review is required to determine whether this gap is critical for the role.",
+   "limitations": [
+    "Limited evidence on agency product requirement.",
+    "No data on actual conversion rates or email engagement metrics."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:00:07.334271+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "caseId": "90eba559-e0b0-440f-9042-3fe29144db2d",
+  "roleTitle": "Software Quality Engineer, Customer Ticketing System",
+  "jobDescription": "The customer ticketing system vendor ships its support product to cloud customers weekly. The Software Quality Engineer owns quality for the ticket-routing service end-to-end: sets the test strategy, decides release scope with the development lead, holds the go/no-go for each weekly release, and is accountable for escaped defects to the VP of engineering.",
+  "requirements": [
+    "Owns quality for the ticket-routing service end-to-end and holds the go/no-go for each weekly release.",
+    "Maintains the service's automated test suites and the release-gate checks in the pipeline.",
+    "Analyses escaped defects and records root causes and prevention actions.",
+    "Coordinates release scope with the development lead and support operations and records own responsibility boundaries.",
+    "Documents known limitations and hand-over conditions for each release."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Maintained the ticket-routing service's automated test suites (unit, contract and load) and the release-gate checks in the pipeline, adding a routing-rule regression pack after two escaped defects in rule evaluation."},
+    {"type": "resume", "text": "Analysed escaped defects each fortnight, recording root causes and prevention actions in the quality log and presenting them at the engineering review."},
+    {"type": "resume", "text": "Coordinated release scope with the development lead and support operations in the weekly release meeting; the development lead set the scope and the release manager held the go/no-go for each weekly release."},
+    {"type": "resume", "text": "Wrote the release quality notes for each release, listing known limitations (load tests did not cover the enterprise tier's rule volumes) and the hand-over items for support operations."},
+    {"type": "resume", "text": "Responsibilities included test-suite maintenance, release-gate checks, escaped-defect analysis and release quality notes for the ticket-routing service over about two years."},
+    {"type": "work_sample", "text": "Work sample: the release-gate check configuration and the quality log for one quarter, with the pipeline run identifiers as a verification trail."},
+    {"type": "note", "text": "Hiring manager pre-read: the VP of engineering wants a quality engineer who has personally held the weekly go/no-go; in the screen the candidate said the release manager 'basically rubber-stamped what I recommended'."},
+    {"type": "note", "text": "Reference call with the former development lead: described the candidate as 'the conscience of the release process' and 'the one who really ran quality for routing'; confirmed employment dates."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate maintained the ticket-routing service's automated test suites and release-gate checks and added a routing-rule regression pack.", "status": "supported", "sources": [1, 6], "requirements": [2], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume and the gate configuration document the suites and checks."},
+      {"text": "The candidate analysed escaped defects fortnightly and recorded root causes and prevention actions in the quality log.", "status": "supported", "sources": [2, 6], "requirements": [3], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume and the quality log document the analysis."},
+      {"text": "The candidate owned quality for the ticket-routing service end-to-end and held the weekly go/no-go.", "status": "unsupported", "sources": [], "requirements": [1], "boundaryCategory": "unsupported_ownership_and_scope", "criticality": "critical", "rationale": "The resume assigns scope to the development lead and the go/no-go to the release manager; 'rubber-stamped' and 'really ran quality' describe influence and opinion, not authority held."}
+    ],
+    "requirementStatus": ["insufficient_evidence", "supported", "supported", "supported", "partial_evidence"],
+    "trap": {"proposition": 3, "rule": "hrgene.ownership_scope", "requirements": [1], "signatures": ["end-to-end", "held the weekly go/no-go", "rubber-stamped", "really ran quality", "conscience of the release process", "owned quality"], "bait": [7, 8]},
+    "subjective": [8],
+    "nonProduction": [],
+    "expectedGap": "The materials show suites, gate checks and defect analysis; they do not show the candidate holding the go/no-go or setting release scope.",
+    "expectedBoundaryNote": "Keep the boundary the resume states: scope by the development lead, go/no-go by the release manager; the candidate recommended.",
+    "followUpTargets": ["Ask whether the candidate ever held the go/no-go himself and for which releases, and who could overrule his recommendation."],
+    "validClaimSignatures": ["release-gate", "quality log"]
+  }
+}

@@ -1,0 +1,215 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "0bed8ef6-7663-4c84-90e7-fbb0a6c13e00.C1",
+ "case_id": "0bed8ef6-7663-4c84-90e7-fbb0a6c13e00",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11722,
+  "promptWords": 1543
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 32.595
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3022,
+ "eval_count": 1291,
+ "prompt_eval_duration_ns": 19008000,
+ "eval_duration_ns": 22804344000,
+ "total_duration_ns": 32592010459,
+ "thinking": "We need to produce JSON. Need to cite sources. For CV: claims: holds master's? evidence src_a1bf146537ea says candidate said she has master's. But not awarded. So claim unsupported. We can state \"has pursued master's\" but not hold. Requirement req_717ed90a7466 requires holds master's. We have insufficient evidence. So in CV we cannot claim holds master's. We can state \"pursuing master's\" but not claim holds. But CV should reflect what materials establish. So we can say \"pursuing master's in applied statistics\" citing src_8f9d21d2fa72 and src_a1bf146537ea. Also mention experience 3 years 7 months. Build models. Review data. Document limitations. So CV claims supported.\n\nNow evidence packet: map each requirement.\n\nreq_717ed90a7466: insufficient_evidence. missing: award of master's. evidence: src_a1bf146537ea says said she has master's but not awarded. So gap.\n\nreq_a59ee2ef0b15: has at least three years of applied reliability modelling on field failure data. Evidence: src_43ab5e748677 says reliability analyst 3 years 7 months building models. So supported.\n\nreq_72a68dbb7d72: builds survival and degradation models behind maintenance interval recommendations. Evidence: src_43ab5e748677. Supported.\n\nreq_144c359081f8: reviews field failure data with service engineers under documented data quality procedure. Evidence: src_7221c5798b43. Supported.\n\nreq_bcf83647589f: documents model limitations and interval boundaries for contract customers. Evidence: src_396e7ff29a52. Supported.\n\nAlso need unsupportedClaims: claim holds master's. Provide reason.\n\nMissingEvidenceGaps: for req_717ed90a7466.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: for master's award.\n\nHumanReviewChecklist: maybe \"Verify master's award status\".\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of completed master's degree\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_6cdcdbd378fc2f40\",\"targetRoleTitle\":\"Reliability Statistician, Industrial Pump Fleet Analytics\",\"professionalSummary\":[\"Pursuing a Master’s in Applied Statistics from a distance‑learning university, with two of eight modules completed in 2023 and 2024.\",\"Reliability analyst on a pump fleet analytics team for three years and seven months, building survival and degradation models for two pump families.\",\"Reviewed field failure data monthly with service engineers under a documented data quality procedure.\",\"Documented model limitations and interval boundaries for contract customers and presented recommendations to customers with the head of fleet analytics.\"],\"experienceHighlights\":[\"Reliability analyst, pump service company – 3 years 7 months, built survival and degradation models for maintenance intervals.\",\"Maintenance planning analyst, paper mill – 18 months, used failure records to plan overhauls.\"],\"projectsAndWorkSamples\":[\"Survival model workbook and interval recommendation note for one pump family, including data platform query references and transcript of completed postgraduate modules.\"],\"skills\":[\"Survival analysis\",\"Degradation modeling\",\"Data quality procedures\",\"Model documentation\",\"Customer communication\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s ongoing pursuit of a Master’s degree, three years of applied reliability modelling experience, model development, data review, and documentation activities, but do not confirm completion of the Master’s degree.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Reliability Statistician, Industrial Pump Fleet Analytics\",\"jobDescriptionSource\":\"jd_42805d82c0326fda\",\"requirementIds\":[\"req_717ed90a7466\",\"req_a59ee2ef0b15\",\"req_72a68dbb7d72\",\"req_144c359081f8\",\"req_bcf83647589f\"]},\"candidate\":{\"candidateId\":\"cand_6cdcdbd378fc2f40\",\"sources\":[\"src_43ab5e748677\",\"src_8f9d21d2fa72\",\"src_7221c5798b43\",\"src_396e7ff29a52\",\"src_d68bf2ae789a\",\"src_a8f72d479da0\",\"src_a1bf146537ea\",\"src_92462ef34cf3\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_717ed90a7466\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Completion of Master’s degree in statistics or related quantitative field\"]},{\"requirementId\":\"req_a59ee2ef0b15\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_43ab5e748677\",\"text\":\"Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of duration and activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_72a68dbb7d72\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_43ab5e748677\",\"text\":\"building the survival and degradation models behind the maintenance intervals for two pump families.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit model building activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_144c359081f8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_7221c5798b43\",\"text\":\"Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct review activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_bcf83647589f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_396e7ff29a52\",\"text\":\"Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct documentation activity\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Pursuing a Master’s in Applied Statistics with two of eight modules completed in 2023 and 2024.\",\"supportingRequirementIds\":[],\"sourceIds\":[\"src_8f9d21d2fa72\",\"src_a1bf146537ea\"],\"evidenceStrength\":\"medium\",\"witness\":\"Candidate stated she has a master’s in statistics and that the modules add up to the degree.\"}],\"unsupportedClaims\":[{\"claim\":\"Candidate holds a Master’s degree in statistics or a related quantitative field.\",\"reason\":\"The materials indicate the candidate is pursuing the degree but do not confirm completion or award.\",\"requiredFollowUp\":\"Provide evidence of award date and completion of all required modules.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_717ed90a7466\",\"severity\":\"high\",\"gap\":\"Evidence of Master’s degree award and completion of all required modules.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_717ed90a7466\",\"question\":\"Can you provide documentation confirming the completion and award of your Master’s degree in Applied Statistics?\",\"evidenceTarget\":\"Master’s degree award certificate or official transcript.\"}],\"humanReviewChecklist\":[\"Verify Master’s degree completion status\",\"Confirm that the candidate’s experience meets the three‑year reliability modelling requirement\",\"Assess the quality of the survival and degradation models presented in the work sample\"],\"auditSummary\":\"The candidate demonstrates relevant experience in reliability modelling, data review, and documentation, but lacks confirmed evidence of a completed Master’s degree, which is a required qualification for the role. Human review should focus on verifying the degree status and evaluating the technical depth of the provided models.\",\"limitations\":[\"No evidence of completed Master’s degree; reliance on self‑reporting for degree status.\"]} }",
+ "content_sha256": "d970be65d164c40733e1e30034383dbb72fa25c458a8a498bc6dbd13a45cee8d",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_6cdcdbd378fc2f40",
+   "targetRoleTitle": "Reliability Statistician, Industrial Pump Fleet Analytics",
+   "professionalSummary": [
+    "Pursuing a Master’s in Applied Statistics from a distance‑learning university, with two of eight modules completed in 2023 and 2024.",
+    "Reliability analyst on a pump fleet analytics team for three years and seven months, building survival and degradation models for two pump families.",
+    "Reviewed field failure data monthly with service engineers under a documented data quality procedure.",
+    "Documented model limitations and interval boundaries for contract customers and presented recommendations to customers with the head of fleet analytics."
+   ],
+   "experienceHighlights": [
+    "Reliability analyst, pump service company – 3 years 7 months, built survival and degradation models for maintenance intervals.",
+    "Maintenance planning analyst, paper mill – 18 months, used failure records to plan overhauls."
+   ],
+   "projectsAndWorkSamples": [
+    "Survival model workbook and interval recommendation note for one pump family, including data platform query references and transcript of completed postgraduate modules."
+   ],
+   "skills": [
+    "Survival analysis",
+    "Degradation modeling",
+    "Data quality procedures",
+    "Model documentation",
+    "Customer communication"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s ongoing pursuit of a Master’s degree, three years of applied reliability modelling experience, model development, data review, and documentation activities, but do not confirm completion of the Master’s degree."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Reliability Statistician, Industrial Pump Fleet Analytics",
+    "jobDescriptionSource": "jd_42805d82c0326fda",
+    "requirementIds": [
+     "req_717ed90a7466",
+     "req_a59ee2ef0b15",
+     "req_72a68dbb7d72",
+     "req_144c359081f8",
+     "req_bcf83647589f"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_6cdcdbd378fc2f40",
+    "sources": [
+     "src_43ab5e748677",
+     "src_8f9d21d2fa72",
+     "src_7221c5798b43",
+     "src_396e7ff29a52",
+     "src_d68bf2ae789a",
+     "src_a8f72d479da0",
+     "src_a1bf146537ea",
+     "src_92462ef34cf3"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_717ed90a7466",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Completion of Master’s degree in statistics or related quantitative field"
+     ]
+    },
+    {
+     "requirementId": "req_a59ee2ef0b15",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_43ab5e748677",
+       "text": "Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of duration and activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_72a68dbb7d72",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_43ab5e748677",
+       "text": "building the survival and degradation models behind the maintenance intervals for two pump families.",
+       "evidenceStrength": "high",
+       "notes": "Explicit model building activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_144c359081f8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7221c5798b43",
+       "text": "Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures.",
+       "evidenceStrength": "high",
+       "notes": "Direct review activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_bcf83647589f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_396e7ff29a52",
+       "text": "Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation activity"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Pursuing a Master’s in Applied Statistics with two of eight modules completed in 2023 and 2024.",
+     "supportingRequirementIds": [],
+     "sourceIds": [
+      "src_8f9d21d2fa72",
+      "src_a1bf146537ea"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Candidate stated she has a master’s in statistics and that the modules add up to the degree."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate holds a Master’s degree in statistics or a related quantitative field.",
+     "reason": "The materials indicate the candidate is pursuing the degree but do not confirm completion or award.",
+     "requiredFollowUp": "Provide evidence of award date and completion of all required modules."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_717ed90a7466",
+     "severity": "high",
+     "gap": "Evidence of Master’s degree award and completion of all required modules."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_717ed90a7466",
+     "question": "Can you provide documentation confirming the completion and award of your Master’s degree in Applied Statistics?",
+     "evidenceTarget": "Master’s degree award certificate or official transcript."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify Master’s degree completion status",
+    "Confirm that the candidate’s experience meets the three‑year reliability modelling requirement",
+    "Assess the quality of the survival and degradation models presented in the work sample"
+   ],
+   "auditSummary": "The candidate demonstrates relevant experience in reliability modelling, data review, and documentation, but lacks confirmed evidence of a completed Master’s degree, which is a required qualification for the role. Human review should focus on verifying the degree status and evaluating the technical depth of the provided models.",
+   "limitations": [
+    "No evidence of completed Master’s degree; reliance on self‑reporting for degree status."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:04:52.472326+00:00"
+}

@@ -1,0 +1,85 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "06a24afe-fc8b-49ae-87dc-00347a5bc370",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_c7d6be136af8",
+   "canonicalProposition": "The candidate wrote Terraform modules and Helm charts for the settlement-file service's UAT and performance-test clusters.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_abeadaf18a67"
+   ],
+   "relevantRequirementIds": [
+    "req_c5192236b4c9"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume names the clusters the infrastructure code was written for."
+  },
+  {
+   "atomicPropositionId": "prop_fe3309ea1014",
+   "canonicalProposition": "The candidate deployed the settlement-file service to production and has operated it since March, producing the end-of-day settlement file for every branch.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_4bbb4d5cc754"
+   ],
+   "boundaryCategory": "self_report_and_hearsay_go_live",
+   "criticality": "critical",
+   "rationale": "The production statement combines the candidate's own phrase with a remark relayed from the client bank's release manager; the documented sources place the candidate's work in UAT, pre-production and performance-test clusters and state that release management held production approval and carried out deployments. The deployment rule does not allow pre-production work to be described as production operation."
+  },
+  {
+   "atomicPropositionId": "prop_f6adeb223824",
+   "canonicalProposition": "The candidate holds a Certified Kubernetes Administrator certificate shown as valid on the issuer's verification page.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_3d35e5747cb7"
+   ],
+   "relevantRequirementIds": [
+    "req_c3506572e166"
+   ],
+   "boundaryCategory": "verified_credential_record",
+   "criticality": "noncritical",
+   "rationale": "The HR verification note records a check of the certificate on the issuer's verification page."
+  }
+ ],
+ "requirementStatus": {
+  "req_c5192236b4c9": "supported",
+  "req_12253a7bee78": "supported",
+  "req_4bbb4d5cc754": "partial_evidence",
+  "req_e74750379a27": "supported",
+  "req_c3506572e166": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_abeadaf18a67",
+  "src_5819252e29c2",
+  "src_69caf174f936",
+  "src_987572459fbb"
+ ],
+ "expectedGap": "The documented work is in UAT, pre-production and performance-test clusters, with production approval and deployment held by the client's release management; production operation, change approvals by the candidate and on-call duty are not documented.",
+ "expectedBoundaryNote": "Keep the infrastructure code, dashboards and fault-injection testing in the environments named and keep the verified certificate; record the 'live since March' remark as the candidate's self-report with relayed detail.",
+ "permittedFollowUpTargets": [
+  "Ask which production responsibilities the candidate held for the settlement-file service, including change approvals, deployment permissions and any on-call duty."
+ ],
+ "validClaimSignatures": [
+  "Certified Kubernetes Administrator",
+  "fault-injection tests"
+ ],
+ "trap": {
+  "propositionId": "prop_fe3309ea1014",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_4bbb4d5cc754"
+  ],
+  "signatures": [
+   "live since March",
+   "for every branch"
+  ],
+  "baitSourceIds": [
+   "src_64c7eb865917"
+  ]
+ }
+}

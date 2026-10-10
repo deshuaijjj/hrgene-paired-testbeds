@@ -1,0 +1,350 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "c9eaf71c-c1e3-4fce-977f-35e11a3384ea.C1",
+ "case_id": "c9eaf71c-c1e3-4fce-977f-35e11a3384ea",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11929,
+  "promptWords": 1551
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "qwen3:30b-a3b",
+ "digest": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 78.248
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2625,
+ "eval_count": 3087,
+ "prompt_eval_duration_ns": 2185158000,
+ "eval_duration_ns": 75941442000,
+ "total_duration_ns": 78245617125,
+ "thinking": null,
+ "content": "{\"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\", \"optimizedCv\": {\"language\": \"en\", \"candidateId\": \"cand_0b601210852c6a81\", \"targetRoleTitle\": \"Data Analytics Engineer, Payment Reconciliation\", \"professionalSummary\": [{\"claimId\": \"sum_01\", \"text\": \"Built and maintained reconciliation data pipelines for card-scheme settlement files and ledger entries\", \"sourceIds\": [\"src_6d6e8140932a\", \"src_db6791c8a5b7\"], \"requirementIds\": [\"req_4382b535f6b4\", \"req_d61a8bea6598\"], \"supportBoundary\": \"supported\", \"witness\": \"Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums.\"}, {\"claimId\": \"sum_02\", \"text\": \"Investigated unmatched settlement items with finance operations analysts and documented root causes\", \"sourceIds\": [\"src_4c5bdfa1ec09\", \"src_db6791c8a5b7\"], \"requirementIds\": [\"req_d2cf0aeb6446\"], \"supportBoundary\": \"supported\", \"witness\": \"Worked the daily unmatched-item queue with two finance operations analysts, tracing each exception to fee mismatches, timing differences or duplicate captures, and recorded the root cause and resolution in the shared exception log.\"}, {\"claimId\": \"sum_03\", \"text\": \"Documented data lineage, limitations, and hand-over conditions for pipeline releases\", \"sourceIds\": [\"src_8ed6f456eb2f\", \"src_db6791c8a5b7\"], \"requirementIds\": [\"req_5190a133b2af\"], \"supportBoundary\": \"supported\", \"witness\": \"Wrote the lineage notes for the matching model, listing the source files, the transformation steps and the two known limitations (partial refunds and multi-currency fees) that still needed manual review.\"}], \"experienceHighlights\": [{\"claimId\": \"exp_01\", \"text\": \"Presented pipeline changes at monthly change-window reviews with settlement operations and compliance\", \"sourceIds\": [\"src_1b01d7f7a985\"], \"requirementIds\": [\"req_d61a8bea6598\"], \"supportBoundary\": \"supported\", \"witness\": \"Presented pipeline changes at the monthly change-window review with settlement operations and compliance; my part covered the loader and the matching keys, while approval of the go-live date stayed with the finance engineering lead.\"}], \"projectsAndWorkSamples\": [{\"claimId\": \"proj_01\", \"text\": \"Anonymised exception-log extract with root-cause taxonomy and SQL for classifying unmatched items\", \"sourceIds\": [\"src_482616f8f542\"], \"requirementIds\": [\"req_d2cf0aeb6446\"], \"supportBoundary\": \"supported\", \"witness\": \"Work sample: an anonymised exception-log extract with the root-cause taxonomy (fee mismatch, timing, duplicate capture, unknown) and the SQL used to classify unmatched items; the extract keeps the warehouse query history as a verification trail.\"}], \"skills\": [{\"claimId\": \"skill_01\", \"text\": \"SQL, Python, dbt, Snowflake\", \"sourceIds\": [\"src_6d6e8140932a\"], \"requirementIds\": [\"req_4382b535f6b4\"], \"supportBoundary\": \"supported\", \"witness\": \"Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums.\"}], \"evidenceBoundary\": \"The materials establish the candidate's work on pipeline construction, exception investigation, documentation, and coordination with teams, but do not establish a measurable reduction in unmatched-item backlog against a documented baseline or time window.\"}, \"hiringEvidencePacket\": {\"decisionBoundary\": {\"employmentDecisionMade\": false, \"candidateRanked\": false, \"protectedCharacteristicsInferred\": false, \"humanReviewRequired\": true, \"statement\": \"Qualified human review is required before any employment decision due to evidence gaps in the backlog reduction metric.\"}, \"role\": {\"roleTitle\": \"Data Analytics Engineer, Payment Reconciliation\", \"jobDescriptionSource\": \"jd_a3f8206e12fa8c8f\", \"requirementIds\": [\"req_4382b535f6b4\", \"req_d2cf0aeb6446\", \"req_c423af8ed8f8\", \"req_d61a8bea6598\", \"req_5190a133b2af\"]}, \"candidate\": {\"candidateId\": \"cand_0b601210852c6a81\", \"sources\": [\"src_6d6e8140932a\", \"src_4c5bdfa1ec09\", \"src_1b01d7f7a985\", \"src_8ed6f456eb2f\", \"src_db6791c8a5b7\", \"src_482616f8f542\", \"src_3e2e92a96330\", \"src_f1a07b2fb995\"]}, \"requirementEvidenceMap\": [{\"requirementId\": \"req_4382b535f6b4\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_6d6e8140932a\", \"text\": \"Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly describes pipeline construction with required technologies.\"}], \"missingEvidence\": []}, {\"requirementId\": \"req_d2cf0aeb6446\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_4c5bdfa1ec09\", \"text\": \"Worked the daily unmatched-item queue with two finance operations analysts, tracing each exception to fee mismatches, timing differences or duplicate captures, and recorded the root cause and resolution in the shared exception log.\", \"evidenceStrength\": \"high\", \"notes\": \"Describes investigation and documentation process.\"}, {\"sourceId\": \"src_482616f8f542\", \"text\": \"Work sample: an anonymised exception-log extract with the root-cause taxonomy (fee mismatch, timing, duplicate capture, unknown) and the SQL used to classify unmatched items; the extract keeps the warehouse query history as a verification trail.\", \"evidenceStrength\": \"medium\", \"notes\": \"Provides work sample supporting investigation process.\"}], \"missingEvidence\": []}, {\"requirementId\": \"req_c423af8ed8f8\", \"status\": \"insufficient_evidence\", \"evidence\": [{\"sourceId\": \"src_3e2e92a96330\", \"text\": \"candidate said the unmatched backlog 'came down by around 35 percent' while he was on the team and that the finance director was pleased; he did not have the monthly report to hand and could not say what the starting figure was.\", \"evidenceStrength\": \"low\", \"notes\": \"Unverified claim without baseline or time window.\"}], \"missingEvidence\": [\"documented baseline and time window\"]}, {\"requirementId\": \"req_d61a8bea6598\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_1b01d7f7a985\", \"text\": \"Presented pipeline changes at the monthly change-window review with settlement operations and compliance; my part covered the loader and the matching keys, while approval of the go-live date stayed with the finance engineering lead.\", \"evidenceStrength\": \"high\", \"notes\": \"Describes coordination during change window and responsibility boundaries.\"}], \"missingEvidence\": []}, {\"requirementId\": \"req_5190a133b2af\", \"status\": \"supported\", \"evidence\": [{\"sourceId\": \"src_8ed6f456eb2f\", \"text\": \"Wrote the lineage notes for the matching model, listing the source files, the transformation steps and the two known limitations (partial refunds and multi-currency fees) that still needed manual review.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly describes documentation of lineage and limitations.\"}], \"missingEvidence\": []}], \"supportedClaims\": [{\"claim\": \"Built and maintained reconciliation data pipelines for card-scheme settlement files and ledger entries\", \"supportingRequirementIds\": [\"req_4382b535f6b4\", \"req_d61a8bea6598\"], \"sourceIds\": [\"src_6d6e8140932a\", \"src_db6791c8a5b7\"], \"evidenceStrength\": \"high\", \"witness\": \"Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums.\"}, {\"claim\": \"Investigated unmatched settlement items with finance operations analysts and documented root causes\", \"supportingRequirementIds\": [\"req_d2cf0aeb6446\"], \"sourceIds\": [\"src_4c5bdfa1ec09\", \"src_db6791c8a5b7\"], \"evidenceStrength\": \"high\", \"witness\": \"Worked the daily unmatched-item queue with two finance operations analysts, tracing each exception to fee mismatches, timing differences or duplicate captures, and recorded the root cause and resolution in the shared exception log.\"}, {\"claim\": \"Documented data lineage, limitations, and hand-over conditions for pipeline releases\", \"supportingRequirementIds\": [\"req_5190a133b2af\"], \"sourceIds\": [\"src_8ed6f456eb2f\", \"src_db6791c8a5b7\"], \"evidenceStrength\": \"high\", \"witness\": \"Wrote the lineage notes for the matching model, listing the source files, the transformation steps and the two known limitations (partial refunds and multi-currency fees) that still needed manual review.\"}, {\"claim\": \"Presented pipeline changes at monthly change-window reviews with settlement operations and compliance\", \"supportingRequirementIds\": [\"req_d61a8bea6598\"], \"sourceIds\": [\"src_1b01d7f7a985\"], \"evidenceStrength\": \"high\", \"witness\": \"Presented pipeline changes at the monthly change-window review with settlement operations and compliance; my part covered the loader and the matching keys, while approval of the go-live date stayed with the finance engineering lead.\"}, {\"claim\": \"Anonymised exception-log extract with root-cause taxonomy and SQL for classifying unmatched items\", \"supportingRequirementIds\": [\"req_d2cf0aeb6446\"], \"sourceIds\": [\"src_482616f8f542\"], \"evidenceStrength\": \"medium\", \"witness\": \"Work sample: an anonymised exception-log extract with the root-cause taxonomy (fee mismatch, timing, duplicate capture, unknown) and the SQL used to classify unmatched items; the extract keeps the warehouse query history as a verification trail.\"}], \"unsupportedClaims\": [{\"claim\": \"Delivered a measurable reduction in the unmatched-item backlog\", \"reason\": \"The candidate's claim of '35 percent' reduction lacks documented baseline, time window, and verification\", \"requiredFollowUp\": \"What was the documented baseline and time window for the backlog reduction metric?\"}], \"missingEvidenceGaps\": [{\"gapId\": \"gap_c423af8ed8f8\", \"requirementId\": \"req_c423af8ed8f8\", \"severity\": \"high\", \"gap\": \"Documented baseline and time window for backlog reduction metric\"}], \"interviewSignalRisks\": [{\"sourceId\": \"src_3e2e92a96330\", \"text\": \"candidate said the unmatched backlog 'came down by around 35 percent' while he was on the team and that the finance director was pleased; he did not have the monthly report to hand and could not say what the starting figure was.\", \"signalType\": \"unverified_metric\", \"jobRelatedBoundary\": \"false\", \"severity\": \"high\", \"recommendedHandling\": \"Ask for the documented baseline and time window for the backlog reduction metric.\"}], \"followUpQuestions\": [{\"questionId\": \"q_c423af8ed8f8\", \"requirementId\": \"req_c423af8ed8f8\", \"question\": \"What was the documented baseline and time window for the unmatched-item backlog reduction metric?\", \"evidenceTarget\": \"baseline and time window for backlog reduction\"}], \"humanReviewChecklist\": [\"Verify the documented baseline and time window for backlog reduction metric\", \"Confirm the candidate's personal contribution to backlog reduction\", \"Validate the 35% reduction claim with supporting documentation\"], \"auditSummary\": \"The evidence packet accurately maps the candidate's materials to the job requirements, identifies the critical gap in the backlog reduction metric, and provides neutral follow-up questions for human review. All claims are supported by verbatim source text without inference or embellishment.\", \"limitations\": [\"The candidate's claim of 35% backlog reduction lacks baseline and time window details, requiring verification before employment decision.\"]}  }",
+ "content_sha256": "b74a82e928691896fc631bef322036f7d99f6994be4a1f2d56dae551d395b1f2",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_0b601210852c6a81",
+   "targetRoleTitle": "Data Analytics Engineer, Payment Reconciliation",
+   "professionalSummary": [
+    {
+     "claimId": "sum_01",
+     "text": "Built and maintained reconciliation data pipelines for card-scheme settlement files and ledger entries",
+     "sourceIds": [
+      "src_6d6e8140932a",
+      "src_db6791c8a5b7"
+     ],
+     "requirementIds": [
+      "req_4382b535f6b4",
+      "req_d61a8bea6598"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums."
+    },
+    {
+     "claimId": "sum_02",
+     "text": "Investigated unmatched settlement items with finance operations analysts and documented root causes",
+     "sourceIds": [
+      "src_4c5bdfa1ec09",
+      "src_db6791c8a5b7"
+     ],
+     "requirementIds": [
+      "req_d2cf0aeb6446"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Worked the daily unmatched-item queue with two finance operations analysts, tracing each exception to fee mismatches, timing differences or duplicate captures, and recorded the root cause and resolution in the shared exception log."
+    },
+    {
+     "claimId": "sum_03",
+     "text": "Documented data lineage, limitations, and hand-over conditions for pipeline releases",
+     "sourceIds": [
+      "src_8ed6f456eb2f",
+      "src_db6791c8a5b7"
+     ],
+     "requirementIds": [
+      "req_5190a133b2af"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the lineage notes for the matching model, listing the source files, the transformation steps and the two known limitations (partial refunds and multi-currency fees) that still needed manual review."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_01",
+     "text": "Presented pipeline changes at monthly change-window reviews with settlement operations and compliance",
+     "sourceIds": [
+      "src_1b01d7f7a985"
+     ],
+     "requirementIds": [
+      "req_d61a8bea6598"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented pipeline changes at the monthly change-window review with settlement operations and compliance; my part covered the loader and the matching keys, while approval of the go-live date stayed with the finance engineering lead."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Anonymised exception-log extract with root-cause taxonomy and SQL for classifying unmatched items",
+     "sourceIds": [
+      "src_482616f8f542"
+     ],
+     "requirementIds": [
+      "req_d2cf0aeb6446"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: an anonymised exception-log extract with the root-cause taxonomy (fee mismatch, timing, duplicate capture, unknown) and the SQL used to classify unmatched items; the extract keeps the warehouse query history as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "SQL, Python, dbt, Snowflake",
+     "sourceIds": [
+      "src_6d6e8140932a"
+     ],
+     "requirementIds": [
+      "req_4382b535f6b4"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's work on pipeline construction, exception investigation, documentation, and coordination with teams, but do not establish a measurable reduction in unmatched-item backlog against a documented baseline or time window."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision due to evidence gaps in the backlog reduction metric."
+   },
+   "role": {
+    "roleTitle": "Data Analytics Engineer, Payment Reconciliation",
+    "jobDescriptionSource": "jd_a3f8206e12fa8c8f",
+    "requirementIds": [
+     "req_4382b535f6b4",
+     "req_d2cf0aeb6446",
+     "req_c423af8ed8f8",
+     "req_d61a8bea6598",
+     "req_5190a133b2af"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_0b601210852c6a81",
+    "sources": [
+     "src_6d6e8140932a",
+     "src_4c5bdfa1ec09",
+     "src_1b01d7f7a985",
+     "src_8ed6f456eb2f",
+     "src_db6791c8a5b7",
+     "src_482616f8f542",
+     "src_3e2e92a96330",
+     "src_f1a07b2fb995"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_4382b535f6b4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6d6e8140932a",
+       "text": "Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums.",
+       "evidenceStrength": "high",
+       "notes": "Directly describes pipeline construction with required technologies."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d2cf0aeb6446",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4c5bdfa1ec09",
+       "text": "Worked the daily unmatched-item queue with two finance operations analysts, tracing each exception to fee mismatches, timing differences or duplicate captures, and recorded the root cause and resolution in the shared exception log.",
+       "evidenceStrength": "high",
+       "notes": "Describes investigation and documentation process."
+      },
+      {
+       "sourceId": "src_482616f8f542",
+       "text": "Work sample: an anonymised exception-log extract with the root-cause taxonomy (fee mismatch, timing, duplicate capture, unknown) and the SQL used to classify unmatched items; the extract keeps the warehouse query history as a verification trail.",
+       "evidenceStrength": "medium",
+       "notes": "Provides work sample supporting investigation process."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c423af8ed8f8",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_3e2e92a96330",
+       "text": "candidate said the unmatched backlog 'came down by around 35 percent' while he was on the team and that the finance director was pleased; he did not have the monthly report to hand and could not say what the starting figure was.",
+       "evidenceStrength": "low",
+       "notes": "Unverified claim without baseline or time window."
+      }
+     ],
+     "missingEvidence": [
+      "documented baseline and time window"
+     ]
+    },
+    {
+     "requirementId": "req_d61a8bea6598",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1b01d7f7a985",
+       "text": "Presented pipeline changes at the monthly change-window review with settlement operations and compliance; my part covered the loader and the matching keys, while approval of the go-live date stayed with the finance engineering lead.",
+       "evidenceStrength": "high",
+       "notes": "Describes coordination during change window and responsibility boundaries."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5190a133b2af",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8ed6f456eb2f",
+       "text": "Wrote the lineage notes for the matching model, listing the source files, the transformation steps and the two known limitations (partial refunds and multi-currency fees) that still needed manual review.",
+       "evidenceStrength": "high",
+       "notes": "Directly describes documentation of lineage and limitations."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built and maintained reconciliation data pipelines for card-scheme settlement files and ledger entries",
+     "supportingRequirementIds": [
+      "req_4382b535f6b4",
+      "req_d61a8bea6598"
+     ],
+     "sourceIds": [
+      "src_6d6e8140932a",
+      "src_db6791c8a5b7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the nightly loader that ingests Visa and Mastercard settlement files (TC57/T112) and the general-ledger extract into the reconciliation warehouse on Snowflake, using dbt models and a Python pre-validation step for file checksums."
+    },
+    {
+     "claim": "Investigated unmatched settlement items with finance operations analysts and documented root causes",
+     "supportingRequirementIds": [
+      "req_d2cf0aeb6446"
+     ],
+     "sourceIds": [
+      "src_4c5bdfa1ec09",
+      "src_db6791c8a5b7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Worked the daily unmatched-item queue with two finance operations analysts, tracing each exception to fee mismatches, timing differences or duplicate captures, and recorded the root cause and resolution in the shared exception log."
+    },
+    {
+     "claim": "Documented data lineage, limitations, and hand-over conditions for pipeline releases",
+     "supportingRequirementIds": [
+      "req_5190a133b2af"
+     ],
+     "sourceIds": [
+      "src_8ed6f456eb2f",
+      "src_db6791c8a5b7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the lineage notes for the matching model, listing the source files, the transformation steps and the two known limitations (partial refunds and multi-currency fees) that still needed manual review."
+    },
+    {
+     "claim": "Presented pipeline changes at monthly change-window reviews with settlement operations and compliance",
+     "supportingRequirementIds": [
+      "req_d61a8bea6598"
+     ],
+     "sourceIds": [
+      "src_1b01d7f7a985"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented pipeline changes at the monthly change-window review with settlement operations and compliance; my part covered the loader and the matching keys, while approval of the go-live date stayed with the finance engineering lead."
+    },
+    {
+     "claim": "Anonymised exception-log extract with root-cause taxonomy and SQL for classifying unmatched items",
+     "supportingRequirementIds": [
+      "req_d2cf0aeb6446"
+     ],
+     "sourceIds": [
+      "src_482616f8f542"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Work sample: an anonymised exception-log extract with the root-cause taxonomy (fee mismatch, timing, duplicate capture, unknown) and the SQL used to classify unmatched items; the extract keeps the warehouse query history as a verification trail."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Delivered a measurable reduction in the unmatched-item backlog",
+     "reason": "The candidate's claim of '35 percent' reduction lacks documented baseline, time window, and verification",
+     "requiredFollowUp": "What was the documented baseline and time window for the backlog reduction metric?"
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_c423af8ed8f8",
+     "requirementId": "req_c423af8ed8f8",
+     "severity": "high",
+     "gap": "Documented baseline and time window for backlog reduction metric"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_3e2e92a96330",
+     "text": "candidate said the unmatched backlog 'came down by around 35 percent' while he was on the team and that the finance director was pleased; he did not have the monthly report to hand and could not say what the starting figure was.",
+     "signalType": "unverified_metric",
+     "jobRelatedBoundary": "false",
+     "severity": "high",
+     "recommendedHandling": "Ask for the documented baseline and time window for the backlog reduction metric."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_c423af8ed8f8",
+     "requirementId": "req_c423af8ed8f8",
+     "question": "What was the documented baseline and time window for the unmatched-item backlog reduction metric?",
+     "evidenceTarget": "baseline and time window for backlog reduction"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the documented baseline and time window for backlog reduction metric",
+    "Confirm the candidate's personal contribution to backlog reduction",
+    "Validate the 35% reduction claim with supporting documentation"
+   ],
+   "auditSummary": "The evidence packet accurately maps the candidate's materials to the job requirements, identifies the critical gap in the backlog reduction metric, and provides neutral follow-up questions for human review. All claims are supported by verbatim source text without inference or embellishment.",
+   "limitations": [
+    "The candidate's claim of 35% backlog reduction lacks baseline and time window details, requiring verification before employment decision."
+   ]
+  }
+ },
+ "finished_at": "2026-09-19T22:45:25.333053+00:00"
+}

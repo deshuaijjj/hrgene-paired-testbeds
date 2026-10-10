@@ -1,0 +1,237 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "c198aff1-f6ad-4669-a785-d389ac5e6dc6.C2",
+ "case_id": "c198aff1-f6ad-4669-a785-d389ac5e6dc6",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15216,
+  "promptWords": 1832
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 40.912
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4435,
+ "eval_count": 1337,
+ "prompt_eval_duration_ns": 19528000,
+ "eval_duration_ns": 24429339000,
+ "total_duration_ns": 40909773292,
+ "thinking": "We need to produce JSON with schema. Need to extract claims from sources. Ensure each claim cites source. Provide optimized CV with claims. Then requirementEvidenceMap covering all requirementIds. Use evidence from sources. No unsupported claims. No quantitative unsupported. All numbers are from sources. Provide gaps if any requirement not fully supported. Let's check each requirement:\n\nreq_04aa13b7c3e7: Designs operational workflows in a case-management or workflow system. Source src_7806baab6b3e provides: designed client-onboarding workflow in case-management system. So supported.\n\nreq_5c93d39bf0fd: Coordinates testing with operations teams before release. Source src_96c21ad2ff6c: coordinated three test cycles with client services team. So supported.\n\nreq_639ac8efb4ae: Has taken a new workflow into live operation with a documented go-live sign-off and a hypercare period. Source src_40cd24c53f1e: took onboarding workflow into live operation on 2 Oct 2023 once operations director signed go-live approval, ran four-week hypercare desk. Also src_a4f2bdeca905 provides hypercare close report with signed go-live approval dated 29 Sep 2023. So supported.\n\nreq_1d0414781cb3: Maintains the operational procedures library. Source src_a61fe3523acf: rewrote 18 procedures in operations manual to match new case stages and withdrew spreadsheet-era procedures after review by operations risk lead. So supported.\n\nreq_2d9756ebd79c: Measures processing times before and after workflow changes. Source src_ec6d3af574b9: built a dashboard of onboarding cases opened and closed each week after go-live. That measures processing times? It tracks open/closed each week. Might be considered measurement. But requirement says measures processing times before and after workflow changes. The source indicates dashboard after go-live, but no before. So partial evidence. We can mark partial_evidence and note missing before measurement. Provide follow-up question.\n\nThus requirementEvidenceMap entries.\n\nNow CV claims: professionalSummary: maybe one claim: \"Business Analyst with experience designing and deploying operational workflows in case-management systems, coordinating testing, managing hypercare, and maintaining procedures.\" Provide source citations.\n\nexperienceHighlights: list claims from sources.\n\nprojectsAndWorkSamples: include hypercare close report.\n\nskills: list relevant skills: workflow design, testing coordination, go-live sign-off, hypercare, procedures management, dashboard creation.\n\nEvidenceBoundary: one sentence: \"The provided resume and work sample documents establish the candidate’s experience in designing, testing, deploying, and documenting operational workflows, as well as maintaining procedures and creating dashboards, but do not provide evidence of measuring processing times before changes.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nsupportedClaims: list claims that are supported. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high maybe, witness verbatim passage.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: for req_2d9756ebd79c: gap: measurement before workflow changes.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: for req_2d9756ebd79c: question about measuring processing times before changes.\n\nhumanReviewChecklist: maybe items: review evidence for go-live sign-off, hypercare, procedures maintenance, dashboard measurement.\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"Limited to provided resume and work sample; no external verification of metrics.\"\n\nNow produce JSON. Ensure all arrays. Use correct claimId format? Not required but we can give simple ids. Provide witness verbatim passage from source. Use short excerpt.\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_bd44ce32464e2eef\",\"targetRoleTitle\":\"Operations Change Analyst, Wealth Platform\",\"professionalSummary\":[\"Business Analyst with experience designing and deploying operational workflows in case‑management systems, coordinating testing, managing hyper‑care, and maintaining procedures.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit based on evidence and gaps.\"},\"role\":{\"roleTitle\":\"Operations Change Analyst, Wealth Platform\",\"jobDescriptionSource\":\"jd_d308c99c95e9e4a4\",\"requirementIds\":[\"req_04aa13b7c3e7\",\"req_5c93d39bf0fd\",\"req_639ac8efb4ae\",\"req_1d0414781cb3\",\"req_2d9756ebd79c\"]},\"candidate\":{\"candidateId\":\"cand_bd44ce32464e2eef\",\"sources\":[\"src_7806baab6b3e\",\"src_96c21ad2ff6c\",\"src_40cd24c53f1e\",\"src_a61fe3523acf\",\"src_ec6d3af574b9\",\"src_a4f2bdeca905\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_04aa13b7c3e7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_7806baab6b3e\",\"text\":\"designed the client‑onboarding workflow in the case‑management system\",\"evidenceStrength\":\"high\",\"notes\":\"direct design activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5c93d39bf0fd\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_96c21ad2ff6c\",\"text\":\"Coordinated three test cycles with the client services team in the test instance\",\"evidenceStrength\":\"high\",\"notes\":\"testing coordination\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_639ac8efb4ae\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_40cd24c53f1e\",\"text\":\"Took the onboarding workflow into live operation on 2 October 2023 once the operations director had signed the go‑live approval, then ran a four‑week hypercare desk\",\"evidenceStrength\":\"high\",\"notes\":\"go‑live and hypercare\"},{\"sourceId\":\"src_a4f2bdeca905\",\"text\":\"hypercare close report with signed go‑live approval dated 29 September 2023\",\"evidenceStrength\":\"high\",\"notes\":\"documented approval\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_1d0414781cb3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a61fe3523acf\",\"text\":\"Rewrote 18 procedures in the operations manual to match the new case stages and withdrew the spreadsheet‑era procedures after review by the operations risk lead\",\"evidenceStrength\":\"high\",\"notes\":\"procedures maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_2d9756ebd79c\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_ec6d3af574b9\",\"text\":\"Built a dashboard of onboarding cases opened and closed each week after go‑live for the client services manager\",\"evidenceStrength\":\"medium\",\"notes\":\"post‑change measurement\"}],\"missingEvidence\":[\"Evidence of processing times measured before the workflow change\"]}],\"supportedClaims\":[{\"claim\":\"Designed the client‑onboarding workflow in the case‑management system\",\"supportingRequirementIds\":[\"req_04aa13b7c3e7\"],\"sourceIds\":[\"src_7806baab6b3e\"],\"evidenceStrength\":\"high\",\"witness\":\"designed the client‑onboarding workflow in the case‑management system\"},{\"claim\":\"Coordinated three test cycles with the client services team\",\"supportingRequirementIds\":[\"req_5c93d39bf0fd\"],\"sourceIds\":[\"src_96c21ad2ff6c\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated three test cycles with the client services team in the test instance\"},{\"claim\":\"Took the onboarding workflow into live operation with go‑live approval and hyper‑care\",\"supportingRequirementIds\":[\"req_639ac8efb4ae\"],\"sourceIds\":[\"src_40cd24c53f1e\",\"src_a4f2bdeca905\"],\"evidenceStrength\":\"high\",\"witness\":\"Took the onboarding workflow into live operation on 2 October 2023 once the operations director had signed the go‑live approval\"},{\"claim\":\"Rewrote 18 procedures in the operations manual\",\"supportingRequirementIds\":[\"req_1d0414781cb3\"],\"sourceIds\":[\"src_a61fe3523acf\"],\"evidenceStrength\":\"high\",\"witness\":\"Rewrote 18 procedures in the operations manual to match the new case stages\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_01\",\"requirementId\":\"req_2d9756ebd79c\",\"severity\":\"medium\",\"gap\":\"No evidence of measuring processing times before the workflow change\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_01\",\"requirementId\":\"req_2d9756ebd79c\",\"question\":\"Can you describe how you measured processing times before the workflow change and what metrics you used?\",\"evidenceTarget\":\"Pre‑change processing time measurement\"}],\"humanReviewChecklist\":[\"Verify that the go‑live approval and hyper‑care documentation are authentic\",\"Confirm that the dashboard captures processing times and that pre‑change data exists\",\"Assess whether the candidate’s experience aligns with the operational change responsibilities\"],\"auditSummary\":\"The evidence confirms the candidate’s experience in designing, testing, deploying, and documenting operational workflows, maintaining procedures, and creating dashboards. However, there is a gap in evidence for measuring processing times before workflow changes, which is required by the role. Human review is needed to evaluate the candidate’s fit and to obtain missing information.\",\"limitations\":[\"Evidence limited to the provided resume and work sample; no external verification of metrics or independent confirmation of the candidate’s role and responsibilities.\"]} }",
+ "content_sha256": "9ae0ac8a8d1e0cde7ead27bc961151dce638bccf79a09e55b8810f964ecfa65c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bd44ce32464e2eef",
+   "targetRoleTitle": "Operations Change Analyst, Wealth Platform",
+   "professionalSummary": [
+    "Business Analyst with experience designing and deploying operational workflows in case‑management systems, coordinating testing, managing hyper‑care, and maintaining procedures."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Operations Change Analyst, Wealth Platform",
+    "jobDescriptionSource": "jd_d308c99c95e9e4a4",
+    "requirementIds": [
+     "req_04aa13b7c3e7",
+     "req_5c93d39bf0fd",
+     "req_639ac8efb4ae",
+     "req_1d0414781cb3",
+     "req_2d9756ebd79c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bd44ce32464e2eef",
+    "sources": [
+     "src_7806baab6b3e",
+     "src_96c21ad2ff6c",
+     "src_40cd24c53f1e",
+     "src_a61fe3523acf",
+     "src_ec6d3af574b9",
+     "src_a4f2bdeca905"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_04aa13b7c3e7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7806baab6b3e",
+       "text": "designed the client‑onboarding workflow in the case‑management system",
+       "evidenceStrength": "high",
+       "notes": "direct design activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5c93d39bf0fd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_96c21ad2ff6c",
+       "text": "Coordinated three test cycles with the client services team in the test instance",
+       "evidenceStrength": "high",
+       "notes": "testing coordination"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_639ac8efb4ae",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_40cd24c53f1e",
+       "text": "Took the onboarding workflow into live operation on 2 October 2023 once the operations director had signed the go‑live approval, then ran a four‑week hypercare desk",
+       "evidenceStrength": "high",
+       "notes": "go‑live and hypercare"
+      },
+      {
+       "sourceId": "src_a4f2bdeca905",
+       "text": "hypercare close report with signed go‑live approval dated 29 September 2023",
+       "evidenceStrength": "high",
+       "notes": "documented approval"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1d0414781cb3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a61fe3523acf",
+       "text": "Rewrote 18 procedures in the operations manual to match the new case stages and withdrew the spreadsheet‑era procedures after review by the operations risk lead",
+       "evidenceStrength": "high",
+       "notes": "procedures maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2d9756ebd79c",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_ec6d3af574b9",
+       "text": "Built a dashboard of onboarding cases opened and closed each week after go‑live for the client services manager",
+       "evidenceStrength": "medium",
+       "notes": "post‑change measurement"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence of processing times measured before the workflow change"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed the client‑onboarding workflow in the case‑management system",
+     "supportingRequirementIds": [
+      "req_04aa13b7c3e7"
+     ],
+     "sourceIds": [
+      "src_7806baab6b3e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "designed the client‑onboarding workflow in the case‑management system"
+    },
+    {
+     "claim": "Coordinated three test cycles with the client services team",
+     "supportingRequirementIds": [
+      "req_5c93d39bf0fd"
+     ],
+     "sourceIds": [
+      "src_96c21ad2ff6c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated three test cycles with the client services team in the test instance"
+    },
+    {
+     "claim": "Took the onboarding workflow into live operation with go‑live approval and hyper‑care",
+     "supportingRequirementIds": [
+      "req_639ac8efb4ae"
+     ],
+     "sourceIds": [
+      "src_40cd24c53f1e",
+      "src_a4f2bdeca905"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took the onboarding workflow into live operation on 2 October 2023 once the operations director had signed the go‑live approval"
+    },
+    {
+     "claim": "Rewrote 18 procedures in the operations manual",
+     "supportingRequirementIds": [
+      "req_1d0414781cb3"
+     ],
+     "sourceIds": [
+      "src_a61fe3523acf"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rewrote 18 procedures in the operations manual to match the new case stages"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_01",
+     "requirementId": "req_2d9756ebd79c",
+     "severity": "medium",
+     "gap": "No evidence of measuring processing times before the workflow change"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_01",
+     "requirementId": "req_2d9756ebd79c",
+     "question": "Can you describe how you measured processing times before the workflow change and what metrics you used?",
+     "evidenceTarget": "Pre‑change processing time measurement"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the go‑live approval and hyper‑care documentation are authentic",
+    "Confirm that the dashboard captures processing times and that pre‑change data exists",
+    "Assess whether the candidate’s experience aligns with the operational change responsibilities"
+   ],
+   "auditSummary": "The evidence confirms the candidate’s experience in designing, testing, deploying, and documenting operational workflows, maintaining procedures, and creating dashboards. However, there is a gap in evidence for measuring processing times before workflow changes, which is required by the role. Human review is needed to evaluate the candidate’s fit and to obtain missing information.",
+   "limitations": [
+    "Evidence limited to the provided resume and work sample; no external verification of metrics or independent confirmation of the candidate’s role and responsibilities."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:23:07.648334+00:00"
+}

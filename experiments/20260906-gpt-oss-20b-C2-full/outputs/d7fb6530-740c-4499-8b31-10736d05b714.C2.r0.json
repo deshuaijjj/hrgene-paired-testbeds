@@ -1,0 +1,292 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "d7fb6530-740c-4499-8b31-10736d05b714.C2",
+ "case_id": "d7fb6530-740c-4499-8b31-10736d05b714",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15433,
+  "promptWords": 1842
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 57.622
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3956,
+ "eval_count": 2536,
+ "prompt_eval_duration_ns": 18752000,
+ "eval_duration_ns": 47020573000,
+ "total_duration_ns": 57619433583,
+ "thinking": "We need to produce JSON with schema. Must cite sources. All claims from CV must be supported. Use evidence. No unsupported claims. All requirements mapped. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Three years as project coordinator on a signalling renewals programme for a signalling contractor, responsible for keeping possession plan and works schedule current.\" source src_9bd70ef44ead. evidenceStrength high.\n\nexperienceHighlights: list claims for each requirement. Use sources.\n\nprojectsAndWorkSamples: mention work sample source.\n\nskills: maybe \"Project coordination, schedule management, documentation, stakeholder communication\" but need sources? Not provided. Could leave empty or minimal. But must cite source. We can list skills with no source? That would violate rule. So maybe omit skills or leave empty array. But schema expects array. We can include skills with no source? That would be unsupported. So better leave empty array.\n\nEvidenceBoundary: one sentence.\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence entries.\n\nsupportedClaims: list claims with supportingRequirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Verify that possession decisions remain with project manager as per requirement\" but that's already evidence. Could include \"Confirm that hand-over notes were countersigned by commissioning engineer\" but evidence exists. So maybe empty array.\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"No evidence of experience beyond the cited programme\" etc.\n\nLet's craft.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_6f43ed8a0a182f01\",\n    \"targetRoleTitle\": \"Project Coordinator, Rail Signalling Renewals\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cs_1\",\n        \"text\": \"Three years as project coordinator on a signalling renewals programme for a signalling contractor, responsible for keeping the possession plan and works schedule current each week from the contractor's reported progress.\",\n        \"sourceIds\": [\"src_9bd70ef44ead\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"eh_1\",\n        \"text\": \"Kept the possession plan and works schedule current with contractor progress for three renewal sites.\",\n        \"sourceIds\": [\"src_9bd70ef44ead\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress.\"\n      },\n      {\n        \"claimId\": \"eh_2\",\n        \"text\": \"Recorded possession briefings and site access permits under programme procedures; records audited twice by the infrastructure owner with no findings.\",\n        \"sourceIds\": [\"src_20cf566319de\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"The possession briefings and the site access permits on the three sites were recorded by me under the programme's procedures; the infrastructure owner audited the records twice and raised no findings.\"\n      },\n      {\n        \"claimId\": \"eh_3\",\n        \"text\": \"Prepared and delivered weekly progress reports to the infrastructure owner's representative, including their comments.\",\n        \"sourceIds\": [\"src_dd37f25f626f\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"The infrastructure owner's representative received my weekly progress report on each site, and the reports with the representative's comments are in the programme folder.\"\n      },\n      {\n        \"claimId\": \"eh_4\",\n        \"text\": \"Tracked equipment deliveries against the schedule, resolving delivery queries with suppliers and noting those requiring the project manager's possession decision.\",\n        \"sourceIds\": [\"src_d6030eb401d6\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Equipment deliveries were tracked by me against the schedule in the delivery log, which marks the delivery queries I settled with the suppliers and the ones that needed the project manager's possession decision.\"\n      },\n      {\n        \"claimId\": \"eh_5\",\n        \"text\": \"Authored hand‑over notes at each commissioning stage, countersigned by the commissioning engineer.\",\n        \"sourceIds\": [\"src_43e21db43f6e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Each commissioning stage on the three sites ended with my hand-over note, countersigned by the commissioning engineer.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"ps_1\",\n        \"text\": \"Work sample includes a month of possession plan updates, a possession briefing record, a weekly progress report and a commissioning stage hand‑over note, with programme folder references as verification.\",\n        \"sourceIds\": [\"src_9124a8d7ce68\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Work sample: a month of possession plan updates, a possession briefing record, a weekly progress report and a commissioning stage hand-over note, with the programme folder references as a verification trail.\"\n      }\n    ],\n    \"skills\": [],\n    \"evidenceBoundary\": \"The provided resume and work sample documents establish the candidate’s experience and responsibilities directly related to the Project Coordinator role.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Project Coordinator, Rail Signalling Renewals\",\n      \"jobDescriptionSource\": \"jd_d1d59f4f091a0952\",\n      \"requirementIds\": [\n        \"req_75df4027a6d4\",\n        \"req_3a6d14fb86d7\",\n        \"req_6f53866b6ca1\",\n        \"req_a5feddbdcf9a\",\n        \"req_e21023560a13\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_6f43ed8a0a182f01\",\n      \"sources\": [\n        \"src_9bd70ef44ead\",\n        \"src_20cf566319de\",\n        \"src_dd37f25f626f\",\n        \"src_d6030eb401d6\",\n        \"src_43e21db43f6e\",\n        \"src_9124a8d7ce68\",\n        \"src_1b8305ef0160\",\n        \"src_aa6cea52f2a3\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_75df4027a6d4\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9bd70ef44ead\",\n            \"text\": \"Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly supports keeping plan and schedule current.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3a6d14fb86d7\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_20cf566319de\",\n            \"text\": \"The possession briefings and the site access permits on the three sites were recorded by me under the programme's procedures; the infrastructure owner audited the records twice and raised no findings.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Shows recording under procedures.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_6f53866b6ca1\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_dd37f25f626f\",\n            \"text\": \"The infrastructure owner's representative received my weekly progress report on each site, and the reports with the representative's comments are in the programme folder.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly supports weekly progress report preparation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_a5feddbdcf9a\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_d6030eb401d6\",\n            \"text\": \"Equipment deliveries were tracked by me against the schedule in the delivery log, which marks the delivery queries I settled with the suppliers and the ones that needed the project manager's possession decision.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Shows tracking and boundary recording.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_e21023560a13\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_43e21db43f6e\",\n            \"text\": \"Each commissioning stage on the three sites ended with my hand-over note, countersigned by the commissioning engineer.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Directly supports hand-over note writing.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Three years as project coordinator on a signalling renewals programme for a signalling contractor, responsible for keeping the possession plan and works schedule current each week from the contractor's reported progress.\",\n        \"supportingRequirementIds\": [\"req_75df4027a6d4\"],\n        \"sourceIds\": [\"src_9bd70ef44ead\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress.\"\n      },\n      {\n        \"claim\": \"Recorded possession briefings and site access permits under programme procedures; records audited twice by the infrastructure owner with no findings.\",\n        \"supportingRequirementIds\": [\"req_3a6d14fb86d7\"],\n        \"sourceIds\": [\"src_20cf566319de\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"The possession briefings and the site access permits on the three sites were recorded by me under the programme's procedures; the infrastructure owner audited the records twice and raised no findings.\"\n      },\n      {\n        \"claim\": \"Prepared and delivered weekly progress reports to the infrastructure owner's representative, including their comments.\",\n        \"supportingRequirementIds\": [\"req_6f53866b6ca1\"],\n        \"sourceIds\": [\"src_dd37f25f626f\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"The infrastructure owner's representative received my weekly progress report on each site, and the reports with the representative's comments are in the programme folder.\"\n      },\n      {\n        \"claim\": \"Tracked equipment deliveries against the schedule, resolving delivery queries with suppliers and noting those requiring the project manager's possession decision.\",\n        \"supportingRequirementIds\": [\"req_a5feddbdcf9a\"],\n        \"sourceIds\": [\"src_d6030eb401d6\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Equipment deliveries were tracked by me against the schedule in the delivery log, which marks the delivery queries I settled with the suppliers and the ones that needed the project manager's possession decision.\"\n      },\n      {\n        \"claim\": \"Authored hand‑over notes at each commissioning stage, countersigned by the commissioning engineer.\",\n        \"supportingRequirementIds\": [\"req_e21023560a13\"],\n        \"sourceIds\": [\"src_43e21db43f6e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Each commissioning stage on the three sites ended with my hand-over note, countersigned by the commissioning engineer.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [],\n    \"auditSummary\": \"All five job requirements are directly supported by the candidate’s resume and work sample documents. The evidence establishes that the candidate performed the core responsibilities of a Project Coordinator on a signalling renewals programme, including schedule maintenance, documentation, reporting, delivery tracking, and commissioning hand‑over. No quantitative or ownership claims beyond those documented are made, and no gaps or subjective statements require further verification.\",\n    \"limitations\": [\n      \"Evidence is limited to a single signalling renewals programme; no information on experience with other programmes or broader industry contexts.\",\n      \"No explicit mention of safety card or site induction status beyond a recruiter note.\"\n    ]\n  }\n}",
+ "content_sha256": "76be382d482b080fe9746565abb76e54a64f65676cdd8c11f351aa00e34a0702",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_6f43ed8a0a182f01",
+   "targetRoleTitle": "Project Coordinator, Rail Signalling Renewals",
+   "professionalSummary": [
+    {
+     "claimId": "cs_1",
+     "text": "Three years as project coordinator on a signalling renewals programme for a signalling contractor, responsible for keeping the possession plan and works schedule current each week from the contractor's reported progress.",
+     "sourceIds": [
+      "src_9bd70ef44ead"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_1",
+     "text": "Kept the possession plan and works schedule current with contractor progress for three renewal sites.",
+     "sourceIds": [
+      "src_9bd70ef44ead"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress."
+    },
+    {
+     "claimId": "eh_2",
+     "text": "Recorded possession briefings and site access permits under programme procedures; records audited twice by the infrastructure owner with no findings.",
+     "sourceIds": [
+      "src_20cf566319de"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The possession briefings and the site access permits on the three sites were recorded by me under the programme's procedures; the infrastructure owner audited the records twice and raised no findings."
+    },
+    {
+     "claimId": "eh_3",
+     "text": "Prepared and delivered weekly progress reports to the infrastructure owner's representative, including their comments.",
+     "sourceIds": [
+      "src_dd37f25f626f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The infrastructure owner's representative received my weekly progress report on each site, and the reports with the representative's comments are in the programme folder."
+    },
+    {
+     "claimId": "eh_4",
+     "text": "Tracked equipment deliveries against the schedule, resolving delivery queries with suppliers and noting those requiring the project manager's possession decision.",
+     "sourceIds": [
+      "src_d6030eb401d6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Equipment deliveries were tracked by me against the schedule in the delivery log, which marks the delivery queries I settled with the suppliers and the ones that needed the project manager's possession decision."
+    },
+    {
+     "claimId": "eh_5",
+     "text": "Authored hand‑over notes at each commissioning stage, countersigned by the commissioning engineer.",
+     "sourceIds": [
+      "src_43e21db43f6e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Each commissioning stage on the three sites ended with my hand-over note, countersigned by the commissioning engineer."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps_1",
+     "text": "Work sample includes a month of possession plan updates, a possession briefing record, a weekly progress report and a commissioning stage hand‑over note, with programme folder references as verification.",
+     "sourceIds": [
+      "src_9124a8d7ce68"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Work sample: a month of possession plan updates, a possession briefing record, a weekly progress report and a commissioning stage hand-over note, with the programme folder references as a verification trail."
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience and responsibilities directly related to the Project Coordinator role."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Project Coordinator, Rail Signalling Renewals",
+    "jobDescriptionSource": "jd_d1d59f4f091a0952",
+    "requirementIds": [
+     "req_75df4027a6d4",
+     "req_3a6d14fb86d7",
+     "req_6f53866b6ca1",
+     "req_a5feddbdcf9a",
+     "req_e21023560a13"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_6f43ed8a0a182f01",
+    "sources": [
+     "src_9bd70ef44ead",
+     "src_20cf566319de",
+     "src_dd37f25f626f",
+     "src_d6030eb401d6",
+     "src_43e21db43f6e",
+     "src_9124a8d7ce68",
+     "src_1b8305ef0160",
+     "src_aa6cea52f2a3"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_75df4027a6d4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9bd70ef44ead",
+       "text": "Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports keeping plan and schedule current."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3a6d14fb86d7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_20cf566319de",
+       "text": "The possession briefings and the site access permits on the three sites were recorded by me under the programme's procedures; the infrastructure owner audited the records twice and raised no findings.",
+       "evidenceStrength": "high",
+       "notes": "Shows recording under procedures."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6f53866b6ca1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_dd37f25f626f",
+       "text": "The infrastructure owner's representative received my weekly progress report on each site, and the reports with the representative's comments are in the programme folder.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports weekly progress report preparation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a5feddbdcf9a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d6030eb401d6",
+       "text": "Equipment deliveries were tracked by me against the schedule in the delivery log, which marks the delivery queries I settled with the suppliers and the ones that needed the project manager's possession decision.",
+       "evidenceStrength": "high",
+       "notes": "Shows tracking and boundary recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e21023560a13",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_43e21db43f6e",
+       "text": "Each commissioning stage on the three sites ended with my hand-over note, countersigned by the commissioning engineer.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports hand-over note writing."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Three years as project coordinator on a signalling renewals programme for a signalling contractor, responsible for keeping the possession plan and works schedule current each week from the contractor's reported progress.",
+     "supportingRequirementIds": [
+      "req_75df4027a6d4"
+     ],
+     "sourceIds": [
+      "src_9bd70ef44ead"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Three years as project coordinator on a signalling renewals programme for a signalling contractor: the possession plan and the works schedule for three renewal sites were mine to keep current each week from the contractor's reported progress."
+    },
+    {
+     "claim": "Recorded possession briefings and site access permits under programme procedures; records audited twice by the infrastructure owner with no findings.",
+     "supportingRequirementIds": [
+      "req_3a6d14fb86d7"
+     ],
+     "sourceIds": [
+      "src_20cf566319de"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The possession briefings and the site access permits on the three sites were recorded by me under the programme's procedures; the infrastructure owner audited the records twice and raised no findings."
+    },
+    {
+     "claim": "Prepared and delivered weekly progress reports to the infrastructure owner's representative, including their comments.",
+     "supportingRequirementIds": [
+      "req_6f53866b6ca1"
+     ],
+     "sourceIds": [
+      "src_dd37f25f626f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The infrastructure owner's representative received my weekly progress report on each site, and the reports with the representative's comments are in the programme folder."
+    },
+    {
+     "claim": "Tracked equipment deliveries against the schedule, resolving delivery queries with suppliers and noting those requiring the project manager's possession decision.",
+     "supportingRequirementIds": [
+      "req_a5feddbdcf9a"
+     ],
+     "sourceIds": [
+      "src_d6030eb401d6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Equipment deliveries were tracked by me against the schedule in the delivery log, which marks the delivery queries I settled with the suppliers and the ones that needed the project manager's possession decision."
+    },
+    {
+     "claim": "Authored hand‑over notes at each commissioning stage, countersigned by the commissioning engineer.",
+     "supportingRequirementIds": [
+      "req_e21023560a13"
+     ],
+     "sourceIds": [
+      "src_43e21db43f6e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Each commissioning stage on the three sites ended with my hand-over note, countersigned by the commissioning engineer."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "All five job requirements are directly supported by the candidate’s resume and work sample documents. The evidence establishes that the candidate performed the core responsibilities of a Project Coordinator on a signalling renewals programme, including schedule maintenance, documentation, reporting, delivery tracking, and commissioning hand‑over. No quantitative or ownership claims beyond those documented are made, and no gaps or subjective statements require further verification.",
+   "limitations": [
+    "Evidence is limited to a single signalling renewals programme; no information on experience with other programmes or broader industry contexts.",
+    "No explicit mention of safety card or site induction status beyond a recruiter note."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T15:08:02.394637+00:00"
+}

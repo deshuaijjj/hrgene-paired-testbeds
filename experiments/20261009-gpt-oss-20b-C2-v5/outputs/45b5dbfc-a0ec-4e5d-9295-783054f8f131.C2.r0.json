@@ -1,0 +1,260 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "45b5dbfc-a0ec-4e5d-9295-783054f8f131.C2",
+ "case_id": "45b5dbfc-a0ec-4e5d-9295-783054f8f131",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 13945,
+  "promptWords": 1692
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 43.199
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3846,
+ "eval_count": 1820,
+ "prompt_eval_duration_ns": 18990000,
+ "eval_duration_ns": 32980049000,
+ "total_duration_ns": 43196661459,
+ "thinking": "We need to produce JSON with schema. Need to extract claims from sources. Ensure each claim cites source. No unsupported claims. No subjective. The note about deaf ear is subjective; should go to interviewSignalRisks. Also note about out-of-hours rota: source says candidate disclosed being deaf and hiring lead said probably rules them out. That is a subjective note. So interviewSignalRisks.\n\nWe need requirementEvidenceMap covering all 5 requirements.\n\nLet's map:\n\nreq_bbcc08953b1b: integration services in C# or Java. Source src_f81247c687d0 supports C# integration services. So supported.\n\nreq_2ca21296282c: builds and maintains production dashboards. Source src_33b8d1c635e9 supports Grafana dashboards. So supported.\n\nreq_54abf6f0e992: writes automated tests and runs in CI pipeline. Source src_7582253fa0fe supports xUnit tests and Azure DevOps pipeline. So supported.\n\nreq_f6af3cb0c159: works with plant engineers to analyse recurring line faults. Source src_5b802c10da61 supports monthly meetings. So supported.\n\nreq_142657f7911a: takes part in weekly out-of-hours support rota. No source supports this. So insufficient_evidence. Need missingEvidence: \"No evidence of participation in out-of-hours support rota.\" Follow-up question: ask about participation.\n\nAlso note: src_7d27b9955443 is daytime second-line support, not out-of-hours. So not evidence.\n\nNow CV: optimized CV with claims. Use claims from sources. Provide witness verbatim.\n\nWe need evidenceBoundary sentence: what materials establish: integration services, dashboards, tests, meetings. What not: out-of-hours rota.\n\nNow hiringEvidencePacket.\n\nAlso unsupportedClaims: none.\n\nMissingEvidenceGaps: for requirement 142657f7911a.\n\nInterviewSignalRisks: note src_497413c3b659 about deaf ear and hiring lead's comment. Signal type: subjective, potential bias. Recommend verifying candidate's ability to participate in rota.\n\nFollowUpQuestions: for requirement 142657f7911a: question about out-of-hours support participation.\n\nHumanReviewChecklist: maybe \"Verify out-of-hours support participation\" etc.\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of out-of-hours support participation\".\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_8b084af1f53294f3\",\"targetRoleTitle\":\"Software Engineer, Manufacturing Execution Systems\",\"professionalSummary\":[\"Developed C# integration services linking the MES to OPC UA gateways and posting completed batches to SAP ERP.\",\"Built Grafana dashboards for line stoppages and quality holds used in daily production meetings.\",\"Wrote xUnit integration tests with recorded gateway messages and ran them in Azure DevOps CI pipeline on every merge.\",\"Provided daytime second‑line support for integration services, handling tickets from the plant IT helpdesk.\",\"Collaborated monthly with plant engineers to analyse recurring line faults and determine software fixes.\"],\"experienceHighlights\":[\"Developed C# integration services at Northmoor Dairies that link the MES to the OPC UA gateways on four filling lines and post completed batches to the SAP ERP.\",\"Built Grafana dashboards for line stoppages and quality holds, fed from the MES event tables and used at the plant's morning production meeting.\",\"Wrote xUnit integration tests with recorded gateway messages and ran them in the Azure DevOps pipeline on every merge.\",\"Handled daytime second‑line support for the integration services, picking up tickets raised by the plant IT helpdesk.\",\"Met the plant engineers monthly to go through the top recurring line faults in the stoppage data and agree which ones needed a software fix.\"],\"projectsAndWorkSamples\":[\"Work sample: a pull request adding retry and dead‑letter handling to the batch‑posting service, with the xUnit tests, the pipeline run log and the reviewer's approval.\"],\"skills\":[\"C#\",\"OPC UA\",\"SAP ERP\",\"Grafana\",\"Azure DevOps\",\"xUnit\",\"CI/CD\",\"Integration Services\",\"Production Dashboards\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience in developing C# integration services between MES and PLC gateways, building production dashboards, writing automated tests and collaborating with plant engineers on fault analysis. They do not establish participation in a weekly out‑of‑hours support rota.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess evidence gaps and interview signals.\"},\"role\":{\"roleTitle\":\"Software Engineer, Manufacturing Execution Systems\",\"jobDescriptionSource\":\"jd_7c8be28650abf542\",\"requirementIds\":[\"req_bbcc08953b1b\",\"req_2ca21296282c\",\"req_54abf6f0e992\",\"req_f6af3cb0c159\",\"req_142657f7911a\"]},\"candidate\":{\"candidateId\":\"cand_8b084af1f53294f3\",\"sources\":[\"src_f81247c687d0\",\"src_33b8d1c635e9\",\"src_7582253fa0fe\",\"src_5b802c10da61\",\"src_7d27b9955443\",\"src_45f43ad05d08\",\"src_497413c3b659\",\"src_7eb2e454e664\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_bbcc08953b1b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f81247c687d0\",\"text\":\"Developed C# integration services at Northmoor Dairies that link the MES to the OPC UA gateways on four filling lines and post completed batches to the SAP ERP.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states C# integration services\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_2ca21296282c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_33b8d1c635e9\",\"text\":\"Built Grafana dashboards for line stoppages and quality holds, fed from the MES event tables and used at the plant's morning production meeting.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states dashboard creation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_54abf6f0e992\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_7582253fa0fe\",\"text\":\"Wrote xUnit integration tests with recorded gateway messages and ran them in the Azure DevOps pipeline on every merge.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states tests and CI pipeline\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f6af3cb0c159\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_5b802c10da61\",\"text\":\"Met the plant engineers monthly to go through the top recurring line faults in the stoppage data and agree which ones needed a software fix.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states collaboration with plant engineers\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_142657f7911a\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No evidence of participation in the weekly out‑of‑hours support rota for the plants.\"]}],\"supportedClaims\":[{\"claim\":\"Developed C# integration services linking the MES to OPC UA gateways and posting batches to SAP ERP.\",\"supportingRequirementIds\":[\"req_bbcc08953b1b\"],\"sourceIds\":[\"src_f81247c687d0\"],\"evidenceStrength\":\"high\",\"witness\":\"Developed C# integration services at Northmoor Dairies that link the MES to the OPC UA gateways on four filling lines and post completed batches to the SAP ERP.\"},{\"claim\":\"Built Grafana dashboards for line stoppages and quality holds used in daily production meetings.\",\"supportingRequirementIds\":[\"req_2ca21296282c\"],\"sourceIds\":[\"src_33b8d1c635e9\"],\"evidenceStrength\":\"high\",\"witness\":\"Built Grafana dashboards for line stoppages and quality holds, fed from the MES event tables and used at the plant's morning production meeting.\"},{\"claim\":\"Wrote xUnit integration tests with recorded gateway messages and ran them in Azure DevOps CI pipeline on every merge.\",\"supportingRequirementIds\":[\"req_54abf6f0e992\"],\"sourceIds\":[\"src_7582253fa0fe\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote xUnit integration tests with recorded gateway messages and ran them in the Azure DevOps pipeline on every merge.\"},{\"claim\":\"Met plant engineers monthly to analyse recurring line faults and agree on software fixes.\",\"supportingRequirementIds\":[\"req_f6af3cb0c159\"],\"sourceIds\":[\"src_5b802c10da61\"],\"evidenceStrength\":\"high\",\"witness\":\"Met the plant engineers monthly to go through the top recurring line faults in the stoppage data and agree which ones needed a software fix.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_142657f7911a\",\"requirementId\":\"req_142657f7911a\",\"severity\":\"medium\",\"gap\":\"No evidence of participation in the weekly out‑of‑hours support rota for the plants.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_497413c3b659\",\"text\":\"Recruiter phone‑screen note: the candidate disclosed being deaf in one ear and wearing a hearing aid, and asked whether out‑of‑hours alerts could arrive by text as well as by phone call. The hiring lead replied that this probably rules them out for the rota and asked whether to reject now.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"true\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify the candidate’s ability to participate in the out‑of‑hours support rota and assess any reasonable accommodations.\"}],\"followUpQuestions\":[{\"questionId\":\"q_142657f7911a\",\"requirementId\":\"req_142657f7911a\",\"question\":\"Can you confirm whether you have participated in the weekly out‑of‑hours support rota for the plants, and if so, describe the nature of your involvement?\",\"evidenceTarget\":\"Evidence of out‑of‑hours support participation.\"}],\"humanReviewChecklist\":[\"Verify evidence of out‑of‑hours support rota participation.\",\"Assess the impact of the candidate’s hearing condition on rota duties and any accommodations.\",\"Confirm that all other requirements are met as per the evidence.\"],\"auditSummary\":\"The candidate has strong evidence for integration services, dashboards, automated testing, and fault analysis collaboration. There is no evidence of participation in the weekly out‑of‑hours support rota, which is a required requirement. A subjective note indicates a potential accommodation issue that should be explored during interview. Human review is required to resolve the evidence gap and assess interview signals.\",\"limitations\":[\"No evidence of out‑of‑hours support rota participation.\",\"Subjective note about hearing condition may bias assessment without further clarification.\"]}}",
+ "content_sha256": "ddc99f17682aedd4a8f3cc4936e3198cd1a9ce2ca3164939f1e9ae4d7df0eb2f",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_8b084af1f53294f3",
+   "targetRoleTitle": "Software Engineer, Manufacturing Execution Systems",
+   "professionalSummary": [
+    "Developed C# integration services linking the MES to OPC UA gateways and posting completed batches to SAP ERP.",
+    "Built Grafana dashboards for line stoppages and quality holds used in daily production meetings.",
+    "Wrote xUnit integration tests with recorded gateway messages and ran them in Azure DevOps CI pipeline on every merge.",
+    "Provided daytime second‑line support for integration services, handling tickets from the plant IT helpdesk.",
+    "Collaborated monthly with plant engineers to analyse recurring line faults and determine software fixes."
+   ],
+   "experienceHighlights": [
+    "Developed C# integration services at Northmoor Dairies that link the MES to the OPC UA gateways on four filling lines and post completed batches to the SAP ERP.",
+    "Built Grafana dashboards for line stoppages and quality holds, fed from the MES event tables and used at the plant's morning production meeting.",
+    "Wrote xUnit integration tests with recorded gateway messages and ran them in the Azure DevOps pipeline on every merge.",
+    "Handled daytime second‑line support for the integration services, picking up tickets raised by the plant IT helpdesk.",
+    "Met the plant engineers monthly to go through the top recurring line faults in the stoppage data and agree which ones needed a software fix."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: a pull request adding retry and dead‑letter handling to the batch‑posting service, with the xUnit tests, the pipeline run log and the reviewer's approval."
+   ],
+   "skills": [
+    "C#",
+    "OPC UA",
+    "SAP ERP",
+    "Grafana",
+    "Azure DevOps",
+    "xUnit",
+    "CI/CD",
+    "Integration Services",
+    "Production Dashboards"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in developing C# integration services between MES and PLC gateways, building production dashboards, writing automated tests and collaborating with plant engineers on fault analysis. They do not establish participation in a weekly out‑of‑hours support rota."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess evidence gaps and interview signals."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Manufacturing Execution Systems",
+    "jobDescriptionSource": "jd_7c8be28650abf542",
+    "requirementIds": [
+     "req_bbcc08953b1b",
+     "req_2ca21296282c",
+     "req_54abf6f0e992",
+     "req_f6af3cb0c159",
+     "req_142657f7911a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_8b084af1f53294f3",
+    "sources": [
+     "src_f81247c687d0",
+     "src_33b8d1c635e9",
+     "src_7582253fa0fe",
+     "src_5b802c10da61",
+     "src_7d27b9955443",
+     "src_45f43ad05d08",
+     "src_497413c3b659",
+     "src_7eb2e454e664"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bbcc08953b1b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f81247c687d0",
+       "text": "Developed C# integration services at Northmoor Dairies that link the MES to the OPC UA gateways on four filling lines and post completed batches to the SAP ERP.",
+       "evidenceStrength": "high",
+       "notes": "Directly states C# integration services"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2ca21296282c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_33b8d1c635e9",
+       "text": "Built Grafana dashboards for line stoppages and quality holds, fed from the MES event tables and used at the plant's morning production meeting.",
+       "evidenceStrength": "high",
+       "notes": "Directly states dashboard creation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_54abf6f0e992",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7582253fa0fe",
+       "text": "Wrote xUnit integration tests with recorded gateway messages and ran them in the Azure DevOps pipeline on every merge.",
+       "evidenceStrength": "high",
+       "notes": "Directly states tests and CI pipeline"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f6af3cb0c159",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5b802c10da61",
+       "text": "Met the plant engineers monthly to go through the top recurring line faults in the stoppage data and agree which ones needed a software fix.",
+       "evidenceStrength": "high",
+       "notes": "Directly states collaboration with plant engineers"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_142657f7911a",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No evidence of participation in the weekly out‑of‑hours support rota for the plants."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed C# integration services linking the MES to OPC UA gateways and posting batches to SAP ERP.",
+     "supportingRequirementIds": [
+      "req_bbcc08953b1b"
+     ],
+     "sourceIds": [
+      "src_f81247c687d0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed C# integration services at Northmoor Dairies that link the MES to the OPC UA gateways on four filling lines and post completed batches to the SAP ERP."
+    },
+    {
+     "claim": "Built Grafana dashboards for line stoppages and quality holds used in daily production meetings.",
+     "supportingRequirementIds": [
+      "req_2ca21296282c"
+     ],
+     "sourceIds": [
+      "src_33b8d1c635e9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built Grafana dashboards for line stoppages and quality holds, fed from the MES event tables and used at the plant's morning production meeting."
+    },
+    {
+     "claim": "Wrote xUnit integration tests with recorded gateway messages and ran them in Azure DevOps CI pipeline on every merge.",
+     "supportingRequirementIds": [
+      "req_54abf6f0e992"
+     ],
+     "sourceIds": [
+      "src_7582253fa0fe"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote xUnit integration tests with recorded gateway messages and ran them in the Azure DevOps pipeline on every merge."
+    },
+    {
+     "claim": "Met plant engineers monthly to analyse recurring line faults and agree on software fixes.",
+     "supportingRequirementIds": [
+      "req_f6af3cb0c159"
+     ],
+     "sourceIds": [
+      "src_5b802c10da61"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Met the plant engineers monthly to go through the top recurring line faults in the stoppage data and agree which ones needed a software fix."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_142657f7911a",
+     "requirementId": "req_142657f7911a",
+     "severity": "medium",
+     "gap": "No evidence of participation in the weekly out‑of‑hours support rota for the plants."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_497413c3b659",
+     "text": "Recruiter phone‑screen note: the candidate disclosed being deaf in one ear and wearing a hearing aid, and asked whether out‑of‑hours alerts could arrive by text as well as by phone call. The hiring lead replied that this probably rules them out for the rota and asked whether to reject now.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Verify the candidate’s ability to participate in the out‑of‑hours support rota and assess any reasonable accommodations."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_142657f7911a",
+     "requirementId": "req_142657f7911a",
+     "question": "Can you confirm whether you have participated in the weekly out‑of‑hours support rota for the plants, and if so, describe the nature of your involvement?",
+     "evidenceTarget": "Evidence of out‑of‑hours support participation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify evidence of out‑of‑hours support rota participation.",
+    "Assess the impact of the candidate’s hearing condition on rota duties and any accommodations.",
+    "Confirm that all other requirements are met as per the evidence."
+   ],
+   "auditSummary": "The candidate has strong evidence for integration services, dashboards, automated testing, and fault analysis collaboration. There is no evidence of participation in the weekly out‑of‑hours support rota, which is a required requirement. A subjective note indicates a potential accommodation issue that should be explored during interview. Human review is required to resolve the evidence gap and assess interview signals.",
+   "limitations": [
+    "No evidence of out‑of‑hours support rota participation.",
+    "Subjective note about hearing condition may bias assessment without further clarification."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:43:08.107808+00:00"
+}

@@ -1,0 +1,86 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "b61f41db-5a61-4e10-a2f6-649217e31580",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_db4d0cf851b5",
+   "canonicalProposition": "The candidate built an offline evaluation harness of 600 graded question-answer pairs scoring groundedness and correctness.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_00af6a2d1842",
+    "src_3db57bcf5075"
+   ],
+   "relevantRequirementIds": [
+    "req_a2ede7a7c47f"
+   ],
+   "boundaryCategory": "documented_task_and_tooling",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the harness and the reference check confirms it in writing."
+  },
+  {
+   "atomicPropositionId": "prop_db7f14c83810",
+   "canonicalProposition": "The candidate ran a four-week sandbox trial in which 25 support agents compared the prototype's draft answers with their own replies.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_259d95755e0e",
+    "src_3db57bcf5075"
+   ],
+   "relevantRequirementIds": [
+    "req_2f918d11cd34"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume places the trial in a sandbox workspace and the reference check confirms it."
+  },
+  {
+   "atomicPropositionId": "prop_04b4cdaf6903",
+   "canonicalProposition": "The candidate shipped the answer assistant into production for Petrel's customers and owned its monitoring after launch.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_2f918d11cd34"
+   ],
+   "boundaryCategory": "self_report_and_hearsay_go_live",
+   "criticality": "critical",
+   "rationale": "The production statement is the candidate's account of what the support director said after the candidate had left, and it describes no release the candidate carried out; the documented work is a prototype and a sandbox trial in which no draft went to customers. The deployment rule forbids describing prototype or sandbox work as production deployment."
+  }
+ ],
+ "requirementStatus": {
+  "req_1407a1c2be15": "supported",
+  "req_a2ede7a7c47f": "supported",
+  "req_2f918d11cd34": "partial_evidence",
+  "req_f2866c09b747": "supported",
+  "req_1c8d30b8e417": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_023a88533ad3",
+  "src_259d95755e0e",
+  "src_42777df36dc8"
+ ],
+ "expectedGap": "Only the prototype and the internal sandbox trial are documented; a customer-facing production release and post-launch monitoring by the candidate are not.",
+ "expectedBoundaryNote": "Keep the retrieval pipeline, the evaluation harness, the hand-off rules and the sandbox trial; record the production remark as the candidate's second-hand report.",
+ "permittedFollowUpTargets": [
+  "Ask whether the candidate took part in any customer-facing release of the answer assistant, what release permissions the candidate held and what monitoring the candidate owned after launch."
+ ],
+ "validClaimSignatures": [
+  "600 graded question-answer pairs",
+  "hand-off rules"
+ ],
+ "trap": {
+  "propositionId": "prop_04b4cdaf6903",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_2f918d11cd34"
+  ],
+  "signatures": [
+   "is in production now",
+   "serving Petrel's customers"
+  ],
+  "baitSourceIds": [
+   "src_b7df51d52ae0"
+  ]
+ }
+}

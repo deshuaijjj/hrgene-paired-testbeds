@@ -1,0 +1,313 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "07ce4974-31a2-44ec-8933-75297a497cea.C1",
+ "case_id": "07ce4974-31a2-44ec-8933-75297a497cea",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11419,
+  "promptWords": 1539
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 52.44
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3032,
+ "eval_count": 2341,
+ "prompt_eval_duration_ns": 18399000,
+ "eval_duration_ns": 41973445000,
+ "total_duration_ns": 52436963042,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. Provide evidenceBoundary sentence. Then hiringEvidencePacket with requirementEvidenceMap covering all requirementIds. Provide status and evidence. Also supportedClaims, unsupportedClaims, missingEvidenceGaps, interviewSignalRisks, followUpQuestions, humanReviewChecklist, auditSummary, limitations.\n\nWe need to include claim objects? In optimizedCv, fields are arrays of CLAIM objects. CLAIM structure defined earlier: {\"claimId\":\"<id>\",\"text\":\"<statement>\",\"sourceIds\":[\"<id>\"],\"requirementIds\":[\"<id>\"],\"supportBoundary\":\"supported|partial_evidence\",\"witness\":\"<verbatim passage>\"}. We need to create claimIds. Let's create simple IDs like \"c1\", \"c2\" etc.\n\nWe must cite verbatim passage from source. Use text from resume lines. Provide witness.\n\nLet's craft.\n\nRequirement mapping:\n\nreq_f5a3b92ea0f2: Keeps dispatch system live and first responder. Evidence: src_a01fb4046a3d (rota) and src_b8f20b1a6395 (first responder). So supported.\n\nreq_a68647feaad9: primary holder of rota and branch escalation route. Evidence: src_a01fb4046a3d. Supported.\n\nreq_7d6b21bb775e: brings vendor changes into live system through quarterly change window and records checks. Evidence: src_5fb45b3b225f. Supported.\n\nreq_df833cd9f2c8: keeps runbook and response-time figures current. Evidence: src_20c88e8ad924. Supported.\n\nreq_97fd34526723: records known limitations and hand-over conditions in post-incident and change notes. Evidence: src_814ab52098bf. Supported.\n\nAll supported.\n\nThus no gaps.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: none.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: none.\n\nHumanReviewChecklist: maybe \"Verify that all evidence is accurate and complete.\" Provide one item.\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of production incidents beyond 2025\" etc.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_e6a427d3c7132dce\",\"targetRoleTitle\":\"Field Service Operations Manager, Elevator Maintenance Scheduling\",\"professionalSummary\":[{\"claimId\":\"c1\",\"text\":\"Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, managing the branch escalation route during working hours and the duty phone outside them.\",\"sourceIds\":[\"src_a01fb4046a3d\"],\"requirementIds\":[\"req_a68647feaad9\"],\"supportBoundary\":\"supported\",\"witness\":\"\\\"Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, with the branch escalation route running through me during working hours and the duty phone outside them.\\\"\"}],\"experienceHighlights\":[{\"claimId\":\"c2\",\"text\":\"First responder to every production incident that stopped dispatching in those four years, including three vendor outages in 2023 and 2024 logged under my name in the regional incident log with vendor ticket numbers.\",\"sourceIds\":[\"src_b8f20b1a6395\"],\"requirementIds\":[\"req_f5a3b92ea0f2\"],\"supportBoundary\":\"supported\",\"witness\":\"\\\"First responder to every production incident that stopped dispatching in those four years; the three vendor outages of 2023 and 2024 are logged under my name in the regional incident log with the vendor's ticket numbers.\\\"\"},{\"claimId\":\"c3\",\"text\":\"Brought the vendor's scheduling releases into the live system through the quarterly change window, recording acceptance checks separately from vendor regression checks.\",\"sourceIds\":[\"src_5fb45b3b225f\"],\"requirementIds\":[\"req_7d6b21bb775e\"],\"supportBoundary\":\"supported\",\"witness\":\"\\\"Brought the vendor's scheduling releases into the live system through the quarterly change window, with the change log recording my acceptance checks separately from the vendor's regression checks.\\\"\"},{\"claimId\":\"c4\",\"text\":\"Kept the dispatch runbook and response-time figures for the eleven branches current for service contract reviews, revising the runbook after each incident and each release.\",\"sourceIds\":[\"src_20c88e8ad924\"],\"requirementIds\":[\"req_df833cd9f2c8\"],\"supportBoundary\":\"supported\",\"witness\":\"\\\"Kept the dispatch runbook and the response-time figures for the eleven branches current for the service contract reviews, revising the runbook after each incident and each release.\\\"\"},{\"claimId\":\"c5\",\"text\":\"Wrote post-incident notes and release hand-over notes, recording known limitations of the technician availability feed and information needed by the next rota holder.\",\"sourceIds\":[\"src_814ab52098bf\"],\"requirementIds\":[\"req_97fd34526723\"],\"supportBoundary\":\"supported\",\"witness\":\"\\\"Wrote the post-incident notes and the release hand-over notes, recording the known limitations of the technician availability feed and what the next rota holder needed to know.\\\"\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"c6\",\"text\":\"Provided work samples including regional incident log extracts for the three vendor outages with ticket numbers, change logs for the last four quarterly windows, and the current dispatch runbook.\",\"sourceIds\":[\"src_319f3dda9d04\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"\\\"Work sample: regional incident log extracts for the three vendor outages with the vendor ticket numbers, the change log for the last four quarterly windows and the current dispatch runbook.\\\"\"}],\"skills\":[{\"claimId\":\"c7\",\"text\":\"Experience managing production support rota, incident response, vendor change management, runbook maintenance, and post-incident documentation.\",\"sourceIds\":[\"src_a01fb4046a3d\",\"src_b8f20b1a6395\",\"src_5fb45b3b225f\",\"src_20c88e8ad924\",\"src_814ab52098bf\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"\"}],\"evidenceBoundary\":\"The provided resume and work samples establish the candidate’s role as primary holder of the production support rota, first responder to production incidents, vendor change manager, runbook maintainer, and post-incident note writer for the elevator dispatch desk in the northern region from 2021 to 2025.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Field Service Operations Manager, Elevator Maintenance Scheduling\",\"jobDescriptionSource\":\"jd_ecf3a791374d00d3\",\"requirementIds\":[\"req_f5a3b92ea0f2\",\"req_a68647feaad9\",\"req_7d6b21bb775e\",\"req_df833cd9f2c8\",\"req_97fd34526723\"]},\"candidate\":{\"candidateId\":\"cand_e6a427d3c7132dce\",\"sources\":[\"src_a01fb4046a3d\",\"src_b8f20b1a6395\",\"src_5fb45b3b225f\",\"src_20c88e8ad924\",\"src_814ab52098bf\",\"src_319f3dda9d04\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_f5a3b92ea0f2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b8f20b1a6395\",\"text\":\"First responder to every production incident that stopped dispatching in those four years; the three vendor outages of 2023 and 2024 are logged under my name in the regional incident log with the vendor's ticket numbers.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of first responder role.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a68647feaad9\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a01fb4046a3d\",\"text\":\"Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, with the branch escalation route running through me during working hours and the duty phone outside them.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of rota holder and escalation route.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7d6b21bb775e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_5fb45b3b225f\",\"text\":\"Brought the vendor's scheduling releases into the live system through the quarterly change window, with the change log recording my acceptance checks separately from the vendor's regression checks.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of vendor change management.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_df833cd9f2c8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_20c88e8ad924\",\"text\":\"Kept the dispatch runbook and the response-time figures for the eleven branches current for the service contract reviews, revising the runbook after each incident and each release.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of runbook and response-time maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_97fd34526723\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_814ab52098bf\",\"text\":\"Wrote the post-incident notes and the release hand-over notes, recording the known limitations of the technician availability feed and what the next rota holder needed to know.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of post-incident documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, managing the branch escalation route during working hours and the duty phone outside them.\",\"supportingRequirementIds\":[\"req_a68647feaad9\"],\"sourceIds\":[\"src_a01fb4046a3d\"],\"evidenceStrength\":\"high\",\"witness\":\"\\\"Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, with the branch escalation route running through me during working hours and the duty phone outside them.\\\"\"},{\"claim\":\"First responder to every production incident that stopped dispatching in those four years, including three vendor outages in 2023 and 2024 logged under my name in the regional incident log with vendor ticket numbers.\",\"supportingRequirementIds\":[\"req_f5a3b92ea0f2\"],\"sourceIds\":[\"src_b8f20b1a6395\"],\"evidenceStrength\":\"high\",\"witness\":\"\\\"First responder to every production incident that stopped dispatching in those four years; the three vendor outages of 2023 and 2024 are logged under my name in the regional incident log with the vendor's ticket numbers.\\\"\"},{\"claim\":\"Brought the vendor's scheduling releases into the live system through the quarterly change window, recording acceptance checks separately from vendor regression checks.\",\"supportingRequirementIds\":[\"req_7d6b21bb775e\"],\"sourceIds\":[\"src_5fb45b3b225f\"],\"evidenceStrength\":\"high\",\"witness\":\"\\\"Brought the vendor's scheduling releases into the live system through the quarterly change window, with the change log recording my acceptance checks separately from the vendor's regression checks.\\\"\"},{\"claim\":\"Kept the dispatch runbook and response-time figures for the eleven branches current for service contract reviews, revising the runbook after each incident and each release.\",\"supportingRequirementIds\":[\"req_df833cd9f2c8\"],\"sourceIds\":[\"src_20c88e8ad924\"],\"evidenceStrength\":\"high\",\"witness\":\"\\\"Kept the dispatch runbook and the response-time figures for the eleven branches current for the service contract reviews, revising the runbook after each incident and each release.\\\"\"},{\"claim\":\"Wrote post-incident notes and release hand-over notes, recording known limitations of the technician availability feed and information needed by the next rota holder.\",\"supportingRequirementIds\":[\"req_97fd34526723\"],\"sourceIds\":[\"src_814ab52098bf\"],\"evidenceStrength\":\"high\",\"witness\":\"\\\"Wrote the post-incident notes and the release hand-over notes, recording the known limitations of the technician availability feed and what the next rota holder needed to know.\\\"\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that all evidence is accurate and complete.\",\"Confirm that the candidate’s experience aligns with the specific operational context of the northern region dispatch desk.\"],\"auditSummary\":\"All five job requirements are fully supported by the candidate’s resume and work samples. No evidence gaps or unsupported claims were identified. Human review is recommended to confirm contextual fit and to assess any additional soft‑skill considerations not captured in the provided documents.\",\"limitations\":[\"Evidence is limited to the period 2021‑2025 and does not cover any incidents or responsibilities beyond that timeframe.\"]}}",
+ "content_sha256": "7d3b50cc850e8f1e807144856c44fd80f093f1dd5378785c4ea452725eff2464",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_e6a427d3c7132dce",
+   "targetRoleTitle": "Field Service Operations Manager, Elevator Maintenance Scheduling",
+   "professionalSummary": [
+    {
+     "claimId": "c1",
+     "text": "Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, managing the branch escalation route during working hours and the duty phone outside them.",
+     "sourceIds": [
+      "src_a01fb4046a3d"
+     ],
+     "requirementIds": [
+      "req_a68647feaad9"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, with the branch escalation route running through me during working hours and the duty phone outside them.\""
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "c2",
+     "text": "First responder to every production incident that stopped dispatching in those four years, including three vendor outages in 2023 and 2024 logged under my name in the regional incident log with vendor ticket numbers.",
+     "sourceIds": [
+      "src_b8f20b1a6395"
+     ],
+     "requirementIds": [
+      "req_f5a3b92ea0f2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"First responder to every production incident that stopped dispatching in those four years; the three vendor outages of 2023 and 2024 are logged under my name in the regional incident log with the vendor's ticket numbers.\""
+    },
+    {
+     "claimId": "c3",
+     "text": "Brought the vendor's scheduling releases into the live system through the quarterly change window, recording acceptance checks separately from vendor regression checks.",
+     "sourceIds": [
+      "src_5fb45b3b225f"
+     ],
+     "requirementIds": [
+      "req_7d6b21bb775e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"Brought the vendor's scheduling releases into the live system through the quarterly change window, with the change log recording my acceptance checks separately from the vendor's regression checks.\""
+    },
+    {
+     "claimId": "c4",
+     "text": "Kept the dispatch runbook and response-time figures for the eleven branches current for service contract reviews, revising the runbook after each incident and each release.",
+     "sourceIds": [
+      "src_20c88e8ad924"
+     ],
+     "requirementIds": [
+      "req_df833cd9f2c8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"Kept the dispatch runbook and the response-time figures for the eleven branches current for the service contract reviews, revising the runbook after each incident and each release.\""
+    },
+    {
+     "claimId": "c5",
+     "text": "Wrote post-incident notes and release hand-over notes, recording known limitations of the technician availability feed and information needed by the next rota holder.",
+     "sourceIds": [
+      "src_814ab52098bf"
+     ],
+     "requirementIds": [
+      "req_97fd34526723"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"Wrote the post-incident notes and the release hand-over notes, recording the known limitations of the technician availability feed and what the next rota holder needed to know.\""
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "c6",
+     "text": "Provided work samples including regional incident log extracts for the three vendor outages with ticket numbers, change logs for the last four quarterly windows, and the current dispatch runbook.",
+     "sourceIds": [
+      "src_319f3dda9d04"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "\"Work sample: regional incident log extracts for the three vendor outages with the vendor ticket numbers, the change log for the last four quarterly windows and the current dispatch runbook.\""
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "c7",
+     "text": "Experience managing production support rota, incident response, vendor change management, runbook maintenance, and post-incident documentation.",
+     "sourceIds": [
+      "src_a01fb4046a3d",
+      "src_b8f20b1a6395",
+      "src_5fb45b3b225f",
+      "src_20c88e8ad924",
+      "src_814ab52098bf"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work samples establish the candidate’s role as primary holder of the production support rota, first responder to production incidents, vendor change manager, runbook maintainer, and post-incident note writer for the elevator dispatch desk in the northern region from 2021 to 2025."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Field Service Operations Manager, Elevator Maintenance Scheduling",
+    "jobDescriptionSource": "jd_ecf3a791374d00d3",
+    "requirementIds": [
+     "req_f5a3b92ea0f2",
+     "req_a68647feaad9",
+     "req_7d6b21bb775e",
+     "req_df833cd9f2c8",
+     "req_97fd34526723"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_e6a427d3c7132dce",
+    "sources": [
+     "src_a01fb4046a3d",
+     "src_b8f20b1a6395",
+     "src_5fb45b3b225f",
+     "src_20c88e8ad924",
+     "src_814ab52098bf",
+     "src_319f3dda9d04"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f5a3b92ea0f2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b8f20b1a6395",
+       "text": "First responder to every production incident that stopped dispatching in those four years; the three vendor outages of 2023 and 2024 are logged under my name in the regional incident log with the vendor's ticket numbers.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of first responder role."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a68647feaad9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a01fb4046a3d",
+       "text": "Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, with the branch escalation route running through me during working hours and the duty phone outside them.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of rota holder and escalation route."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7d6b21bb775e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5fb45b3b225f",
+       "text": "Brought the vendor's scheduling releases into the live system through the quarterly change window, with the change log recording my acceptance checks separately from the vendor's regression checks.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of vendor change management."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_df833cd9f2c8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_20c88e8ad924",
+       "text": "Kept the dispatch runbook and the response-time figures for the eleven branches current for the service contract reviews, revising the runbook after each incident and each release.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of runbook and response-time maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_97fd34526723",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_814ab52098bf",
+       "text": "Wrote the post-incident notes and the release hand-over notes, recording the known limitations of the technician availability feed and what the next rota holder needed to know.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of post-incident documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, managing the branch escalation route during working hours and the duty phone outside them.",
+     "supportingRequirementIds": [
+      "req_a68647feaad9"
+     ],
+     "sourceIds": [
+      "src_a01fb4046a3d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"Primary holder of the production support rota for the elevator dispatch desk in the northern region from 2021 to 2025, with the branch escalation route running through me during working hours and the duty phone outside them.\""
+    },
+    {
+     "claim": "First responder to every production incident that stopped dispatching in those four years, including three vendor outages in 2023 and 2024 logged under my name in the regional incident log with vendor ticket numbers.",
+     "supportingRequirementIds": [
+      "req_f5a3b92ea0f2"
+     ],
+     "sourceIds": [
+      "src_b8f20b1a6395"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"First responder to every production incident that stopped dispatching in those four years; the three vendor outages of 2023 and 2024 are logged under my name in the regional incident log with the vendor's ticket numbers.\""
+    },
+    {
+     "claim": "Brought the vendor's scheduling releases into the live system through the quarterly change window, recording acceptance checks separately from vendor regression checks.",
+     "supportingRequirementIds": [
+      "req_7d6b21bb775e"
+     ],
+     "sourceIds": [
+      "src_5fb45b3b225f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"Brought the vendor's scheduling releases into the live system through the quarterly change window, with the change log recording my acceptance checks separately from the vendor's regression checks.\""
+    },
+    {
+     "claim": "Kept the dispatch runbook and response-time figures for the eleven branches current for service contract reviews, revising the runbook after each incident and each release.",
+     "supportingRequirementIds": [
+      "req_df833cd9f2c8"
+     ],
+     "sourceIds": [
+      "src_20c88e8ad924"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"Kept the dispatch runbook and the response-time figures for the eleven branches current for the service contract reviews, revising the runbook after each incident and each release.\""
+    },
+    {
+     "claim": "Wrote post-incident notes and release hand-over notes, recording known limitations of the technician availability feed and information needed by the next rota holder.",
+     "supportingRequirementIds": [
+      "req_97fd34526723"
+     ],
+     "sourceIds": [
+      "src_814ab52098bf"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"Wrote the post-incident notes and the release hand-over notes, recording the known limitations of the technician availability feed and what the next rota holder needed to know.\""
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that all evidence is accurate and complete.",
+    "Confirm that the candidate’s experience aligns with the specific operational context of the northern region dispatch desk."
+   ],
+   "auditSummary": "All five job requirements are fully supported by the candidate’s resume and work samples. No evidence gaps or unsupported claims were identified. Human review is recommended to confirm contextual fit and to assess any additional soft‑skill considerations not captured in the provided documents.",
+   "limitations": [
+    "Evidence is limited to the period 2021‑2025 and does not cover any incidents or responsibilities beyond that timeframe."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:03:23.190889+00:00"
+}

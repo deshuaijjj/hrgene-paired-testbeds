@@ -1,0 +1,197 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "5f3a1e28-6760-48b8-b8ae-77d4c5f0f375.C1",
+ "case_id": "5f3a1e28-6760-48b8-b8ae-77d4c5f0f375",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11350,
+  "promptWords": 1511
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 31.826
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2937,
+ "eval_count": 1302,
+ "prompt_eval_duration_ns": 18169000,
+ "eval_duration_ns": 22971087000,
+ "total_duration_ns": 31824181709,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: say what materials establish.\n\nRequirement evidence map: list each requirement id with status. All seem supported by sources. Need to check each: req_b99454cbc853: senior analyst responsible for board-level revenue pack, signing off before finance director. Source src_320bb9744af9 supports. Also src_6e6a50a44e48 confirms. So supported.\n\nreq_5a69b2caea38: at least five years in revenue or sales ops analytics. Source src_320bb9744af9 says six years in revenue operations in all. So supported.\n\nreq_d04fd1351dd8: supervises analyst who assembles pack. Source src_9ee5ecc4f86a supports.\n\nreq_612e64c6318a: reconciles pack to billing system each month under documented procedure. Source src_61743540eba3 supports.\n\nreq_fe7df3a45982: documents pack boundaries and open items for finance director. Source src_279c9d899821 supports.\n\nAll supported. So status \"supported\". evidence array with sourceId and text. Need verbatim passage. Use text from source. Provide short note.\n\nsupportedClaims: maybe list claims like \"Senior Revenue Operations Analyst with six years experience\" etc. But we can include claim about board pack sign off etc. Provide sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Verify that the candidate's experience aligns with role responsibilities\" etc.\n\nauditSummary: summary.\n\nlimitations: maybe \"Based on provided materials only\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_2f26e2db6136a3c7\",\"targetRoleTitle\":\"Senior Revenue Operations Analyst, Subscription Analytics\",\"professionalSummary\":[\"Senior Revenue Operations Analyst with six years in revenue operations, responsible for the board revenue pack and signing it off before the finance director's review. (src_320bb9744af9)\"],\"experienceHighlights\":[\"Senior Revenue Operations Analyst at a software company for three years, responsible for the board revenue pack and signing it off before the finance director's review; before that, three years as a revenue operations analyst assembling the pack under the previous senior analyst; six years in revenue operations in all. (src_320bb9744af9)\",\"Supervised the revenue operations analyst who assembled the pack, reviewing the assembly checklist and the variance commentary before sign-off. (src_9ee5ecc4f86a)\",\"Reconciled the pack to the billing system each month under the team's reconciliation procedure, with the reconciliation workbooks and the exception log filed in the finance shared drive. (src_61743540eba3)\",\"Wrote the pack boundary note and the open items list that went to the finance director with each monthly pack, updated after each billing system change. (src_279c9d899821)\"],\"projectsAndWorkSamples\":[\"Work sample: one signed-off board revenue pack with its boundary note, one monthly reconciliation workbook with the exception log, and the assembly checklist, with the finance shared drive references as a verification trail. (src_ea54c1ee1118)\"],\"skills\":[\"Revenue Operations Analytics\",\"Board Revenue Pack Management\",\"Reconciliation Procedures\",\"Documentation\",\"Team Supervision\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s role, responsibilities, and experience relevant to the Senior Revenue Operations Analyst position.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Senior Revenue Operations Analyst, Subscription Analytics\",\"jobDescriptionSource\":\"jd_ef4b7b9c5f02584e\",\"requirementIds\":[\"req_b99454cbc853\",\"req_5a69b2caea38\",\"req_d04fd1351dd8\",\"req_612e64c6318a\",\"req_fe7df3a45982\"]},\"candidate\":{\"candidateId\":\"cand_2f26e2db6136a3c7\",\"sources\":[\"src_320bb9744af9\",\"src_9ee5ecc4f86a\",\"src_61743540eba3\",\"src_279c9d899821\",\"src_ea54c1ee1118\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_b99454cbc853\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_320bb9744af9\",\"text\":\"Senior Revenue Operations Analyst at a software company for three years, responsible for the board revenue pack and signing it off before the finance director's review; before that, three years as a revenue operations analyst at the same company assembling the pack under the previous senior analyst; six years in revenue operations in all.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of senior analyst role and sign‑off responsibility.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5a69b2caea38\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_320bb9744af9\",\"text\":\"six years in revenue operations in all.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit duration of experience.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d04fd1351dd8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9ee5ecc4f86a\",\"text\":\"Supervised the revenue operations analyst who assembled the pack, reviewing the assembly checklist and the variance commentary before sign-off.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct supervision claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_612e64c6318a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_61743540eba3\",\"text\":\"Reconciled the pack to the billing system each month under the team's reconciliation procedure, with the reconciliation workbooks and the exception log filed in the finance shared drive.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct reconciliation procedure claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fe7df3a45982\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_279c9d899821\",\"text\":\"Wrote the pack boundary note and the open items list that went to the finance director with each monthly pack, updated after each billing system change.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct documentation claim.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Senior Revenue Operations Analyst with six years in revenue operations, responsible for the board revenue pack and signing it off before the finance director's review.\",\"supportingRequirementIds\":[\"req_b99454cbc853\",\"req_5a69b2caea38\"],\"sourceIds\":[\"src_320bb9744af9\"],\"evidenceStrength\":\"high\",\"witness\":\"Senior Revenue Operations Analyst at a software company for three years, responsible for the board revenue pack and signing it off before the finance director's review; before that, three years as a revenue operations analyst at the same company assembling the pack under the previous senior analyst; six years in revenue operations in all.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s documented experience aligns with the responsibilities of the Senior Revenue Operations Analyst role.\",\"Confirm that the reconciliation procedure described matches the organization’s current billing system integration.\"],\"auditSummary\":\"All job requirements are directly supported by the candidate’s resume and work sample. No evidence gaps or unsupported claims were identified. Human review is recommended to confirm alignment with organizational processes.\",\"limitations\":[\"Assessment is based solely on the provided resume, work sample, and notes; no external verification has been performed.\"]} }",
+ "content_sha256": "d50d46cbf2f4bd5cc6e7593334ed8972fd569ad643cd4a8c9ebda2fd79a798d9",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2f26e2db6136a3c7",
+   "targetRoleTitle": "Senior Revenue Operations Analyst, Subscription Analytics",
+   "professionalSummary": [
+    "Senior Revenue Operations Analyst with six years in revenue operations, responsible for the board revenue pack and signing it off before the finance director's review. (src_320bb9744af9)"
+   ],
+   "experienceHighlights": [
+    "Senior Revenue Operations Analyst at a software company for three years, responsible for the board revenue pack and signing it off before the finance director's review; before that, three years as a revenue operations analyst assembling the pack under the previous senior analyst; six years in revenue operations in all. (src_320bb9744af9)",
+    "Supervised the revenue operations analyst who assembled the pack, reviewing the assembly checklist and the variance commentary before sign-off. (src_9ee5ecc4f86a)",
+    "Reconciled the pack to the billing system each month under the team's reconciliation procedure, with the reconciliation workbooks and the exception log filed in the finance shared drive. (src_61743540eba3)",
+    "Wrote the pack boundary note and the open items list that went to the finance director with each monthly pack, updated after each billing system change. (src_279c9d899821)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: one signed-off board revenue pack with its boundary note, one monthly reconciliation workbook with the exception log, and the assembly checklist, with the finance shared drive references as a verification trail. (src_ea54c1ee1118)"
+   ],
+   "skills": [
+    "Revenue Operations Analytics",
+    "Board Revenue Pack Management",
+    "Reconciliation Procedures",
+    "Documentation",
+    "Team Supervision"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s role, responsibilities, and experience relevant to the Senior Revenue Operations Analyst position."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Senior Revenue Operations Analyst, Subscription Analytics",
+    "jobDescriptionSource": "jd_ef4b7b9c5f02584e",
+    "requirementIds": [
+     "req_b99454cbc853",
+     "req_5a69b2caea38",
+     "req_d04fd1351dd8",
+     "req_612e64c6318a",
+     "req_fe7df3a45982"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2f26e2db6136a3c7",
+    "sources": [
+     "src_320bb9744af9",
+     "src_9ee5ecc4f86a",
+     "src_61743540eba3",
+     "src_279c9d899821",
+     "src_ea54c1ee1118"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_b99454cbc853",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_320bb9744af9",
+       "text": "Senior Revenue Operations Analyst at a software company for three years, responsible for the board revenue pack and signing it off before the finance director's review; before that, three years as a revenue operations analyst at the same company assembling the pack under the previous senior analyst; six years in revenue operations in all.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of senior analyst role and sign‑off responsibility."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5a69b2caea38",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_320bb9744af9",
+       "text": "six years in revenue operations in all.",
+       "evidenceStrength": "high",
+       "notes": "Explicit duration of experience."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d04fd1351dd8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9ee5ecc4f86a",
+       "text": "Supervised the revenue operations analyst who assembled the pack, reviewing the assembly checklist and the variance commentary before sign-off.",
+       "evidenceStrength": "high",
+       "notes": "Direct supervision claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_612e64c6318a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_61743540eba3",
+       "text": "Reconciled the pack to the billing system each month under the team's reconciliation procedure, with the reconciliation workbooks and the exception log filed in the finance shared drive.",
+       "evidenceStrength": "high",
+       "notes": "Direct reconciliation procedure claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fe7df3a45982",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_279c9d899821",
+       "text": "Wrote the pack boundary note and the open items list that went to the finance director with each monthly pack, updated after each billing system change.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation claim."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Senior Revenue Operations Analyst with six years in revenue operations, responsible for the board revenue pack and signing it off before the finance director's review.",
+     "supportingRequirementIds": [
+      "req_b99454cbc853",
+      "req_5a69b2caea38"
+     ],
+     "sourceIds": [
+      "src_320bb9744af9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Senior Revenue Operations Analyst at a software company for three years, responsible for the board revenue pack and signing it off before the finance director's review; before that, three years as a revenue operations analyst at the same company assembling the pack under the previous senior analyst; six years in revenue operations in all."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented experience aligns with the responsibilities of the Senior Revenue Operations Analyst role.",
+    "Confirm that the reconciliation procedure described matches the organization’s current billing system integration."
+   ],
+   "auditSummary": "All job requirements are directly supported by the candidate’s resume and work sample. No evidence gaps or unsupported claims were identified. Human review is recommended to confirm alignment with organizational processes.",
+   "limitations": [
+    "Assessment is based solely on the provided resume, work sample, and notes; no external verification has been performed."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:35:57.569002+00:00"
+}

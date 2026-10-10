@@ -1,0 +1,556 @@
+{
+ "request_id": "c198aff1-f6ad-4669-a785-d389ac5e6dc6.C2",
+ "case_id": "c198aff1-f6ad-4669-a785-d389ac5e6dc6",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Business Analyst with experience designing and deploying operational workflows in case‑management systems, coordinating testing, managing hyper‑care, and mainta"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[1].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "hypercare close report with signed go‑live approval dated 29 September 2023",
+     "sourceId": "src_a4f2bdeca905"
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its ownership term(s) [APPROVE] (sign off, sign-off) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_639ac8efb4ae",
+     "family": "APPROVE",
+     "terms": [
+      "sign off",
+      "sign-off"
+     ],
+     "sourceIds": [
+      "src_40cd24c53f1e",
+      "src_a4f2bdeca905"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (operational) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_04aa13b7c3e7",
+     "family": "PRODUCTION",
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_7806baab6b3e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (operational) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_1d0414781cb3",
+     "family": "PRODUCTION",
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_a61fe3523acf"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "5 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "req_639ac8efb4ae: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[0]",
+   "detail": "req_04aa13b7c3e7: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "req_1d0414781cb3: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Business Analyst with experience designing and deploying operational workflows in case‑management systems, coordinating "
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[1].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "hypercare close report with signed go‑live approval dated 29 September 2023",
+     "sourceId": "src_a4f2bdeca905"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bd44ce32464e2eef",
+   "targetRoleTitle": "Operations Change Analyst, Wealth Platform",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Operations Change Analyst, Wealth Platform",
+    "jobDescriptionSource": "jd_d308c99c95e9e4a4",
+    "requirementIds": [
+     "req_04aa13b7c3e7",
+     "req_5c93d39bf0fd",
+     "req_639ac8efb4ae",
+     "req_1d0414781cb3",
+     "req_2d9756ebd79c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bd44ce32464e2eef",
+    "sources": [
+     "src_7806baab6b3e",
+     "src_96c21ad2ff6c",
+     "src_40cd24c53f1e",
+     "src_a61fe3523acf",
+     "src_ec6d3af574b9",
+     "src_a4f2bdeca905"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_04aa13b7c3e7",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_7806baab6b3e",
+       "text": "designed the client‑onboarding workflow in the case‑management system",
+       "evidenceStrength": "high",
+       "notes": "direct design activity"
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_5c93d39bf0fd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_96c21ad2ff6c",
+       "text": "Coordinated three test cycles with the client services team in the test instance",
+       "evidenceStrength": "high",
+       "notes": "testing coordination"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_639ac8efb4ae",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_40cd24c53f1e",
+       "text": "Took the onboarding workflow into live operation on 2 October 2023 once the operations director had signed the go‑live approval, then ran a four‑week hypercare desk",
+       "evidenceStrength": "high",
+       "notes": "go‑live and hypercare"
+      },
+      {
+       "sourceId": "src_a4f2bdeca905",
+       "text": "hypercare close report with signed go‑live approval dated 29 September 2023",
+       "evidenceStrength": "high",
+       "notes": "documented approval"
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's approve element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_1d0414781cb3",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_a61fe3523acf",
+       "text": "Rewrote 18 procedures in the operations manual to match the new case stages and withdrew the spreadsheet‑era procedures after review by the operations risk lead",
+       "evidenceStrength": "high",
+       "notes": "procedures maintenance"
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_2d9756ebd79c",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_ec6d3af574b9",
+       "text": "Built a dashboard of onboarding cases opened and closed each week after go‑live for the client services manager",
+       "evidenceStrength": "medium",
+       "notes": "post‑change measurement"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence of processing times measured before the workflow change"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed the client‑onboarding workflow in the case‑management system",
+     "supportingRequirementIds": [
+      "req_04aa13b7c3e7"
+     ],
+     "sourceIds": [
+      "src_7806baab6b3e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "designed the client‑onboarding workflow in the case‑management system"
+    },
+    {
+     "claim": "Coordinated three test cycles with the client services team",
+     "supportingRequirementIds": [
+      "req_5c93d39bf0fd"
+     ],
+     "sourceIds": [
+      "src_96c21ad2ff6c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated three test cycles with the client services team in the test instance"
+    },
+    {
+     "claim": "Took the onboarding workflow into live operation with go‑live approval and hyper‑care",
+     "supportingRequirementIds": [
+      "req_639ac8efb4ae"
+     ],
+     "sourceIds": [
+      "src_40cd24c53f1e",
+      "src_a4f2bdeca905"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took the onboarding workflow into live operation on 2 October 2023 once the operations director had signed the go‑live approval"
+    },
+    {
+     "claim": "Rewrote 18 procedures in the operations manual",
+     "supportingRequirementIds": [
+      "req_1d0414781cb3"
+     ],
+     "sourceIds": [
+      "src_a61fe3523acf"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rewrote 18 procedures in the operations manual to match the new case stages"
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Business Analyst with experience designing and deploying operational workflows in case‑management systems, coordinating testing, managing hyper‑care, and maintaining procedures.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_01",
+     "requirementId": "req_2d9756ebd79c",
+     "severity": "medium",
+     "gap": "No evidence of measuring processing times before the workflow change"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_01",
+     "requirementId": "req_2d9756ebd79c",
+     "question": "Can you describe how you measured processing times before the workflow change and what metrics you used?",
+     "evidenceTarget": "Pre‑change processing time measurement"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the go‑live approval and hyper‑care documentation are authentic",
+    "Confirm that the dashboard captures processing times and that pre‑change data exists",
+    "Assess whether the candidate’s experience aligns with the operational change responsibilities"
+   ],
+   "auditSummary": "The evidence confirms the candidate’s experience in designing, testing, deploying, and documenting operational workflows, maintaining procedures, and creating dashboards. However, there is a gap in evidence for measuring processing times before workflow changes, which is required by the role. Human review is needed to evaluate the candidate’s fit and to obtain missing information.",
+   "limitations": [
+    "Evidence limited to the provided resume and work sample; no external verification of metrics or independent confirmation of the candidate’s role and responsibilities."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

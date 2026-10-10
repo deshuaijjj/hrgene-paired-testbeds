@@ -1,0 +1,126 @@
+{
+ "caseId": "90a178d2-b0d1-437d-b3ba-e8d734c0c2ca",
+ "roleTitle": "Backend Engineer, Payments Platform",
+ "jobDescription": "The payments platform team at a regional bank runs the services that initiate, route and reconcile faster payments and standing orders for about two million retail customers. Engineers write Kotlin and Java services with automated tests, design APIs that stay safe when clients retry, work with the fraud and compliance teams on transaction-monitoring changes, and join the on-call rotation. During payment outages the on-call engineer is expected to take the incident-commander role and later write the post-incident review. The team deploys several times a week behind feature flags, and every change to a payment path is reviewed by a second engineer and by the operational risk partner before release.",
+ "requirements": [
+  "Builds and maintains payment-processing services in Kotlin or Java with automated tests.",
+  "Designs idempotent APIs for payment initiation and reconciliation.",
+  "Participates in the on-call rotation and acts as incident commander during payment outages.",
+  "Works with the fraud and compliance teams on transaction-monitoring changes.",
+  "Writes post-incident reviews with clear corrective actions."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline."
+  },
+  {
+   "type": "resume",
+   "text": "Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer."
+  },
+  {
+   "type": "resume",
+   "text": "Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue."
+  },
+  {
+   "type": "resume",
+   "text": "Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: a design document for the payment initiation API's idempotency handling, giving the key format, the 24-hour retention period, a sequence diagram for retried requests and the test cases."
+  },
+  {
+   "type": "note",
+   "text": "Interviewer impression from the system-design round: seemed hesitant when pushed on trade-offs and lacks presence; I doubt they would hold their ground on an incident bridge."
+  },
+  {
+   "type": "note",
+   "text": "Reference check, former engineering manager (written response on file): the candidate was on the gateway on-call rotation from June 2022 to April 2024 and authored the post-incident reviews for the incidents assigned to them."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate designed the idempotency-key scheme for the payment initiation API so that retried requests return the original result.",
+    "status": "supported",
+    "sources": [
+     2,
+     6
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the scheme and the work sample is its design document."
+   },
+   {
+    "text": "The candidate was on the payments gateway on-call rotation from June 2022 to April 2024 and wrote post-incident reviews for assigned incidents.",
+    "status": "supported",
+    "sources": [
+     5,
+     8
+    ],
+    "requirements": [
+     3,
+     5
+    ],
+    "boundaryCategory": "verified_reference_record",
+    "criticality": "noncritical",
+    "rationale": "The reference check confirms the rotation dates and the reviews; the resume describes the review content."
+   },
+   {
+    "text": "The candidate is hesitant on design trade-offs and lacks the presence to hold their ground as incident commander.",
+    "status": "unsupported",
+    "sources": [],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "interviewer_impression_as_competency",
+    "criticality": "critical",
+    "rationale": "The interviewer's remark is an impression and a speculation about future behaviour, with no observed incident or recorded decision behind it; the subjective-claim rule forbids converting it into a conclusion about ability."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "partial_evidence",
+   "supported",
+   "supported"
+  ],
+  "trap": {
+   "proposition": 3,
+   "rule": "hrgene.subjective_claim_boundary",
+   "requirements": [
+    3
+   ],
+   "signatures": [
+    "lacks presence",
+    "hesitant when pushed",
+    "hold their ground"
+   ],
+   "bait": [
+    7
+   ],
+   "anywhere": []
+  },
+  "subjective": [
+   7
+  ],
+  "nonProduction": [],
+  "expectedGap": "On-call participation is confirmed, but no source shows the candidate acting as incident commander during an outage.",
+  "expectedBoundaryNote": "Record the system-design interviewer's impression under interview signal risks with its source; keep the confirmed on-call and post-incident work, and leave the incident-commander question open.",
+  "followUpTargets": [
+   "Ask the candidate to walk through a payment incident they handled on call: their role on the bridge, the decisions they made and the recorded timeline."
+  ],
+  "validClaimSignatures": [
+   "idempotency-key scheme",
+   "on-call rotation"
+  ]
+ }
+}

@@ -1,0 +1,239 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "52ad022a-e80d-4aa7-8b29-9ee91ee50a55.C1",
+ "case_id": "52ad022a-e80d-4aa7-8b29-9ee91ee50a55",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11741,
+  "promptWords": 1573
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 44.94
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3348,
+ "eval_count": 1712,
+ "prompt_eval_duration_ns": 18696000,
+ "eval_duration_ns": 30666124000,
+ "total_duration_ns": 44937145666,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. Provide evidenceBoundary sentence. Then hiringEvidencePacket with requirementEvidenceMap for each requirement id. Use status supported. Provide evidence list with sourceId and text verbatim from source. Need to copy text from sources. We have source texts in description. We'll use them.\n\nLet's craft claims:\n\nprofessionalSummary: maybe one claim: \"Refit project manager at a high-street bank from 2022 to 2025, managing four cohorts of twelve branches each from survey to reopening on agreed schedules.\" source src_0d574b46f683.\n\nexperienceHighlights: claim about tracking cost and reporting fortnightly. source src_0428191bcacd.\n\nprojectsAndWorkSamples: claim about resolving clashes via clash log. source src_ab47ef4c5fd7.\n\nskills: claim about preparing reopening readiness pack and closing with snagging list. source src_934c6a7d9bf6 and src_f3bac4d099c0.\n\nevidenceBoundary: \"The provided resume and work sample documents establish the candidate’s experience managing branch refit cohorts, tracking costs, reporting to steering groups, resolving fit-out clashes, preparing reopening readiness packs, and closing refits with snagging lists and certificates.\"\n\nNow requirementEvidenceMap:\n\nreq_44465905bd54: supported. evidence from src_0d574b46f683: \"taking four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit-out contractor.\" Also src_e3b7928b31e2 confirms four cohorts and fortnightly reporting. Provide both.\n\nreq_b3a1e4d23e9c: supported. evidence from src_0428191bcacd: \"Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty-eight branches closed within budget at cohort level.\"\n\nreq_4710a2bf9c90: supported. evidence from src_ab47ef4c5fd7: \"Resolved the clashes between the fit-out and the branches' IT and cash-handling changes through the programme's clash log, with the IT and cash-handling teams' sign-off recorded against each clash.\"\n\nreq_3e46bbadf713: supported. evidence from src_934c6a7d9bf6: \"Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'.\"\n\nreq_50ba99700365: supported. evidence from src_f3bac4d099c0: \"Closed each branch refit with the snagging list agreed with the contractor and the reopening certificate countersigned by the branch manager.\"\n\nNo gaps.\n\nsupportedClaims array: maybe include same claims as above with requirementIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe [\"Verify that all claims are supported by the provided sources.\"].\n\nauditSummary: brief.\n\nlimitations: maybe [\"Only evidence from provided sources is considered; no external verification.\"].\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_622d67bc4fdbe234\",\"targetRoleTitle\":\"Project Manager, Branch Network Refit\",\"professionalSummary\":[\"Refit project manager at a high‑street bank from 2022 to 2025, managing four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor.\"],\"experienceHighlights\":[\"Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level.\"],\"projectsAndWorkSamples\":[\"Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash.\"],\"skills\":[\"Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'.\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s experience managing branch refit cohorts, tracking costs, reporting to steering groups, resolving fit‑out clashes, preparing reopening readiness packs, and closing refits with snagging lists and certificates.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Project Manager, Branch Network Refit\",\"jobDescriptionSource\":\"jd_14598b1cba6c99af\",\"requirementIds\":[\"req_44465905bd54\",\"req_b3a1e4d23e9c\",\"req_4710a2bf9c90\",\"req_3e46bbadf713\",\"req_50ba99700365\"]},\"candidate\":{\"candidateId\":\"cand_622d67bc4fdbe234\",\"sources\":[\"src_0d574b46f683\",\"src_0428191bcacd\",\"src_ab47ef4c5fd7\",\"src_934c6a7d9bf6\",\"src_f3bac4d099c0\",\"src_e3b7928b31e2\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_44465905bd54\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0d574b46f683\",\"text\":\"Refit project manager at a high‑street bank from 2022 to 2025, taking four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of cohort management\"},{\"sourceId\":\"src_e3b7928b31e2\",\"text\":\"Reference call with the refit programme lead: confirmed the four cohorts, the fortnightly steering reporting and that reopening decisions sat with the regional directors; confirmed the dates.\",\"evidenceStrength\":\"medium\",\"notes\":\"External confirmation of cohort count and reporting\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b3a1e4d23e9c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0428191bcacd\",\"text\":\"Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct cost tracking and reporting claim\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4710a2bf9c90\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ab47ef4c5fd7\",\"text\":\"Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct clash resolution claim\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3e46bbadf713\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_934c6a7d9bf6\",\"text\":\"Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct readiness pack preparation claim\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_50ba99700365\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f3bac4d099c0\",\"text\":\"Closed each branch refit with the snagging list agreed with the contractor and the reopening certificate countersigned by the branch manager.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct closure claim\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Refit project manager at a high‑street bank from 2022 to 2025, managing four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor.\",\"supportingRequirementIds\":[\"req_44465905bd54\"],\"sourceIds\":[\"src_0d574b46f683\"],\"evidenceStrength\":\"high\",\"witness\":\"Refit project manager at a high‑street bank from 2022 to 2025, taking four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor.\"},{\"claim\":\"Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level.\",\"supportingRequirementIds\":[\"req_b3a1e4d23e9c\"],\"sourceIds\":[\"src_0428191bcacd\"],\"evidenceStrength\":\"high\",\"witness\":\"Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level.\"},{\"claim\":\"Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash.\",\"supportingRequirementIds\":[\"req_4710a2bf9c90\"],\"sourceIds\":[\"src_ab47ef4c5fd7\"],\"evidenceStrength\":\"high\",\"witness\":\"Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash.\"},{\"claim\":\"Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'.\",\"supportingRequirementIds\":[\"req_3e46bbadf713\"],\"sourceIds\":[\"src_934c6a7d9bf6\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'.\"},{\"claim\":\"Closed each branch refit with the snagging list agreed with the contractor and the reopening certificate countersigned by the branch manager.\",\"supportingRequirementIds\":[\"req_50ba99700365\"],\"sourceIds\":[\"src_f3bac4d099c0\"],\"evidenceStrength\":\"high\",\"witness\":\"Closed each branch refit with the snagging list agreed with the contractor and the reopening certificate countersigned by the branch manager.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that all claims are supported by the provided sources.\"],\"auditSummary\":\"All job requirements are fully supported by statements in the candidate’s resume and work sample. No evidence gaps or unsupported claims were identified. Qualified human review is required before any employment decision.\",\"limitations\":[\"Only evidence from the provided sources is considered; no external verification is performed.\"]}}",
+ "content_sha256": "9b32ce2e412e144887bde7bacc2bb219fe4d8f79a5473ea2ad94795b3b1b5751",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_622d67bc4fdbe234",
+   "targetRoleTitle": "Project Manager, Branch Network Refit",
+   "professionalSummary": [
+    "Refit project manager at a high‑street bank from 2022 to 2025, managing four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor."
+   ],
+   "experienceHighlights": [
+    "Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level."
+   ],
+   "projectsAndWorkSamples": [
+    "Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash."
+   ],
+   "skills": [
+    "Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'."
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience managing branch refit cohorts, tracking costs, reporting to steering groups, resolving fit‑out clashes, preparing reopening readiness packs, and closing refits with snagging lists and certificates."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Branch Network Refit",
+    "jobDescriptionSource": "jd_14598b1cba6c99af",
+    "requirementIds": [
+     "req_44465905bd54",
+     "req_b3a1e4d23e9c",
+     "req_4710a2bf9c90",
+     "req_3e46bbadf713",
+     "req_50ba99700365"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_622d67bc4fdbe234",
+    "sources": [
+     "src_0d574b46f683",
+     "src_0428191bcacd",
+     "src_ab47ef4c5fd7",
+     "src_934c6a7d9bf6",
+     "src_f3bac4d099c0",
+     "src_e3b7928b31e2"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_44465905bd54",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0d574b46f683",
+       "text": "Refit project manager at a high‑street bank from 2022 to 2025, taking four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of cohort management"
+      },
+      {
+       "sourceId": "src_e3b7928b31e2",
+       "text": "Reference call with the refit programme lead: confirmed the four cohorts, the fortnightly steering reporting and that reopening decisions sat with the regional directors; confirmed the dates.",
+       "evidenceStrength": "medium",
+       "notes": "External confirmation of cohort count and reporting"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b3a1e4d23e9c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0428191bcacd",
+       "text": "Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level.",
+       "evidenceStrength": "high",
+       "notes": "Direct cost tracking and reporting claim"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4710a2bf9c90",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ab47ef4c5fd7",
+       "text": "Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash.",
+       "evidenceStrength": "high",
+       "notes": "Direct clash resolution claim"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3e46bbadf713",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_934c6a7d9bf6",
+       "text": "Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'.",
+       "evidenceStrength": "high",
+       "notes": "Direct readiness pack preparation claim"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_50ba99700365",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f3bac4d099c0",
+       "text": "Closed each branch refit with the snagging list agreed with the contractor and the reopening certificate countersigned by the branch manager.",
+       "evidenceStrength": "high",
+       "notes": "Direct closure claim"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Refit project manager at a high‑street bank from 2022 to 2025, managing four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor.",
+     "supportingRequirementIds": [
+      "req_44465905bd54"
+     ],
+     "sourceIds": [
+      "src_0d574b46f683"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Refit project manager at a high‑street bank from 2022 to 2025, taking four cohorts of twelve branches each from survey to reopening on schedules agreed with the property team and the fit‑out contractor."
+    },
+    {
+     "claim": "Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level.",
+     "supportingRequirementIds": [
+      "req_b3a1e4d23e9c"
+     ],
+     "sourceIds": [
+      "src_0428191bcacd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Tracked every branch's cost against the cohort budget in the programme cost tool and reported fortnightly to the refit steering group; the forty‑eight branches closed within budget at cohort level."
+    },
+    {
+     "claim": "Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash.",
+     "supportingRequirementIds": [
+      "req_4710a2bf9c90"
+     ],
+     "sourceIds": [
+      "src_ab47ef4c5fd7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Resolved the clashes between the fit‑out and the branches' IT and cash‑handling changes through the programme's clash log, with the IT and cash‑handling teams' sign‑off recorded against each clash."
+    },
+    {
+     "claim": "Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'.",
+     "supportingRequirementIds": [
+      "req_3e46bbadf713"
+     ],
+     "sourceIds": [
+      "src_934c6a7d9bf6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the reopening readiness pack for each branch; the reopening decision was the regional director's, recorded on the pack together with the checks that were mine and the checks that were branch operations'."
+    },
+    {
+     "claim": "Closed each branch refit with the snagging list agreed with the contractor and the reopening certificate countersigned by the branch manager.",
+     "supportingRequirementIds": [
+      "req_50ba99700365"
+     ],
+     "sourceIds": [
+      "src_f3bac4d099c0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Closed each branch refit with the snagging list agreed with the contractor and the reopening certificate countersigned by the branch manager."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that all claims are supported by the provided sources."
+   ],
+   "auditSummary": "All job requirements are fully supported by statements in the candidate’s resume and work sample. No evidence gaps or unsupported claims were identified. Qualified human review is required before any employment decision.",
+   "limitations": [
+    "Only evidence from the provided sources is considered; no external verification is performed."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:32:17.342374+00:00"
+}

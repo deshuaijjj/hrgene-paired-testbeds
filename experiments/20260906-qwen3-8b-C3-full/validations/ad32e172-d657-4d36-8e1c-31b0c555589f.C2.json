@@ -1,0 +1,213 @@
+{
+ "request_id": "ad32e172-d657-4d36-8e1c-31b0c555589f.C2",
+ "case_id": "ad32e172-d657-4d36-8e1c-31b0c555589f",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing statu",
+     "sourceIds": [
+      "src_ae4021c45db8",
+      "src_5209e114cd9f"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [OWN] not licensed by the cited sources: owns",
+    "witness": {
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441",
+      "src_5313fbf2c277"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "END_TO_END"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [OWN] not licensed by the cited sources: owns",
+    "witness": {
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441",
+      "src_5313fbf2c277"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "END_TO_END"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its ownership term(s) [OWN] (owns) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_09d65247a8e6",
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "subjective/hearsay source cited as support: src_5313fbf2c277",
+    "witness": {
+     "sourceIds": [
+      "src_5313fbf2c277"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "subjective/hearsay source cited as support: src_5313fbf2c277",
+    "witness": {
+     "sourceIds": [
+      "src_5313fbf2c277"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

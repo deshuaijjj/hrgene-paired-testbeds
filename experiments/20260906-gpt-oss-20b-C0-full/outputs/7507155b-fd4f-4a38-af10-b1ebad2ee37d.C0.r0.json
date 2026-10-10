@@ -1,0 +1,280 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "7507155b-fd4f-4a38-af10-b1ebad2ee37d.C0",
+ "case_id": "7507155b-fd4f-4a38-af10-b1ebad2ee37d",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7753,
+  "promptWords": 1006
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.462
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2179,
+ "eval_count": 2034,
+ "prompt_eval_duration_ns": 17507000,
+ "eval_duration_ns": 35457308000,
+ "total_duration_ns": 42460563792,
+ "thinking": "We need to produce JSON with structure. Use provided sources. Let's craft optimizedCv: language en, candidateId, targetRoleTitle. professionalSummary: claims from resume. experienceHighlights: 46 tickets etc. projectsAndWorkSamples: work sample. skills: maybe report engineering, regression testing, pre-release walkthrough, ticketing. evidenceBoundary: what materials establish: that candidate delivered 46 tickets, did walkthroughs, maintained regression suite, got lead approval, left notes. What not established: no mention of specific technologies, no independent verification beyond sample.\n\nNow hiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Candidate meets all listed requirements based on evidence, but further verification of independent quality and broader experience is recommended.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence array with sourceId and text, evidenceStrength high maybe. missingEvidence empty.\n\nsupportedClaims: maybe claim about 46 tickets etc.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note about interviewer's note? but it's evidence. No risk.\n\nfollowUpQuestions: maybe none.\n\nhumanReviewChecklist: items like \"Verify regression suite coverage\", \"Confirm lead approval process\", \"Assess technology stack familiarity\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"No independent audit of ticket quality\", \"No evidence of cross-team collaboration beyond analysts\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_28302ca1b42dc6f6\",\"targetRoleTitle\":\"Software Engineer, Treasury Reporting Services\",\"professionalSummary\":[\"Senior Treasury Reporting Engineer with 46 report and feed tickets delivered to analyst specifications under the engineering standard since 2023.\",\"Expert in pre‑release walkthroughs, regression suite maintenance, release approval coordination, and comprehensive ticket documentation.\"],\"experienceHighlights\":[\"Delivered 46 report and feed tickets, each fully documented in the ticket system.\",\"Conducted pre‑release walkthroughs with analysts, capturing signed acceptance records.\",\"Maintained the regression suite for intraday liquidity and funding reports, ensuring pre‑release run results are attached to every ticket.\",\"Coordinated release approvals with the reporting services lead, recording all checks performed.\",\"Documented non‑touch points and hand‑over conditions on every ticket.\"],\"projectsAndWorkSamples\":[\"Work sample: three tickets with walkthrough records, signed acceptances, regression suite results, and lead approval, referenced in the ticket system.\"],\"skills\":[\"Report Engineering\",\"Data‑Feed Development\",\"Regression Testing\",\"Pre‑Release Walkthroughs\",\"Ticketing & Documentation\",\"Release Management\"],\"evidenceBoundary\":\"The provided resume and work sample establish that the candidate has delivered 46 report and feed tickets, performed pre‑release walkthroughs, maintained the regression suite, obtained lead approval, and documented non‑touch points. The materials do not provide independent verification of ticket quality, technology stack details, or broader cross‑team collaboration beyond analysts.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Candidate meets all listed requirements based on evidence, but further verification of independent quality and broader experience is recommended.\"},\"role\":{\"roleTitle\":\"Software Engineer, Treasury Reporting Services\",\"jobDescriptionSource\":\"jd_3c63c864328b808c\",\"requirementIds\":[\"req_a71bd37288d2\",\"req_939d66b01151\",\"req_c8d698197ccd\",\"req_3f52cfd9073f\",\"req_d4271d57f991\"]},\"candidate\":{\"candidateId\":\"cand_28302ca1b42dc6f6\",\"sources\":[\"src_9b14eaea9d3a\",\"src_8a83034a22b0\",\"src_66740b9c7445\",\"src_06fac136213d\",\"src_eadbef94cac1\",\"src_d1b487c96652\",\"src_f6fb8fe4e4f6\",\"src_72b0c8239b80\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_a71bd37288d2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9b14eaea9d3a\",\"text\":\"Treasury reporting engineer at a bank since 2023: forty‑six report and feed tickets delivered against the analysts' specifications under the engineering standard, all in my name in the ticket system.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct claim of 46 tickets delivered per specification.\"},{\"sourceId\":\"src_d1b487c96652\",\"text\":\"Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval, with the ticket system references as a verification trail.\",\"evidenceStrength\":\"high\",\"notes\":\"Sample tickets confirm delivery process.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_939d66b01151\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8a83034a22b0\",\"text\":\"Before every release I sat with the analysts and walked them through what would move on their reports, under the pre‑release walkthrough standard; each ticket carries the walkthrough record and the analysts' signed acceptance.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit walkthrough and acceptance documentation.\"},{\"sourceId\":\"src_f6fb8fe4e4f6\",\"text\":\"Interviewer 1 note: asked to explain a sample data‑feed change to the panel member playing a treasury analyst, the candidate showed the before and after values for one report line, named the two reports the change would not affect, gave the date the analyst would first see the change, and wrote the three points on the whiteboard for the analyst to keep.\",\"evidenceStrength\":\"medium\",\"notes\":\"Demonstrated walkthrough communication.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c8d698197ccd\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_66740b9c7445\",\"text\":\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results from the pre‑release run.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct maintenance claim with evidence of results.\"},{\"sourceId\":\"src_d1b487c96652\",\"text\":\"Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval, with the ticket system references as a verification trail.\",\"evidenceStrength\":\"high\",\"notes\":\"Sample tickets include suite results.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3f52cfd9073f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_06fac136213d\",\"text\":\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit approval and check record.\"},{\"sourceId\":\"src_72b0c8239b80\",\"text\":\"Reference call with the reporting services lead: confirmed the ticket count, the pre‑release walkthroughs and that release approval sat with the lead; confirmed the start date.\",\"evidenceStrength\":\"medium\",\"notes\":\"Lead confirmation of approval process.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d4271d57f991\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_eadbef94cac1\",\"text\":\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct claim of note practice.\"},{\"sourceId\":\"src_d1b487c96652\",\"text\":\"Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval, with the ticket system references as a verification trail.\",\"evidenceStrength\":\"high\",\"notes\":\"Sample tickets include non‑touch notes.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Delivered 46 report and feed tickets to analyst specifications under the engineering standard.\",\"supportingRequirementIds\":[\"req_a71bd37288d2\"],\"sourceIds\":[\"src_9b14eaea9d3a\"],\"evidenceStrength\":\"high\",\"witness\":\"Treasury reporting engineer at a bank since 2023: forty‑six report and feed tickets delivered against the analysts' specifications under the engineering standard, all in my name in the ticket system.\"},{\"claim\":\"Conducted pre‑release walkthroughs with analysts and captured signed acceptance records.\",\"supportingRequirementIds\":[\"req_939d66b01151\"],\"sourceIds\":[\"src_8a83034a22b0\"],\"evidenceStrength\":\"high\",\"witness\":\"Before every release I sat with the analysts and walked them through what would move on their reports, under the pre‑release walkthrough standard; each ticket carries the walkthrough record and the analysts' signed acceptance.\"},{\"claim\":\"Maintained the regression suite for intraday liquidity and funding reports.\",\"supportingRequirementIds\":[\"req_c8d698197ccd\"],\"sourceIds\":[\"src_66740b9c7445\"],\"evidenceStrength\":\"high\",\"witness\":\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results from the pre‑release run.\"},{\"claim\":\"Obtained release approval from the reporting services lead and recorded all checks.\",\"supportingRequirementIds\":[\"req_3f52cfd9073f\"],\"sourceIds\":[\"src_06fac136213d\"],\"evidenceStrength\":\"high\",\"witness\":\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's.\"},{\"claim\":\"Documented non‑touch points and hand‑over conditions on every ticket.\",\"supportingRequirementIds\":[\"req_d4271d57f991\"],\"sourceIds\":[\"src_eadbef94cac1\"],\"evidenceStrength\":\"high\",\"witness\":\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify regression suite coverage and test data quality\",\"Confirm that all 46 tickets were delivered to analyst specifications\",\"Assess the candidate's familiarity with the specific reporting platform and data models\",\"Validate the lead approval process and check documentation\",\"Ensure the candidate can articulate post‑release hand‑over procedures\"],\"auditSummary\":\"The evidence from the resume, work sample, and reference call collectively support that the candidate satisfies all five job requirements for the Software Engineer, Treasury Reporting Services role. The claims are corroborated by multiple independent sources, giving high confidence in the candidate's experience. However, independent audit of ticket quality, technology stack familiarity, and broader cross‑team collaboration beyond analysts is not provided and should be explored in a subsequent interview or technical assessment.\",\"limitations\":[\"No independent verification of ticket quality or regression suite effectiveness\",\"No evidence of experience with specific reporting platform or data models\",\"No demonstration of collaboration with treasury systems or platform SRE teams beyond analysts\"]} }",
+ "content_sha256": "1cfcf3c6cca1308d535c2dc95af6c26a95e0318452669f2f6320245721a03c00",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_28302ca1b42dc6f6",
+   "targetRoleTitle": "Software Engineer, Treasury Reporting Services",
+   "professionalSummary": [
+    "Senior Treasury Reporting Engineer with 46 report and feed tickets delivered to analyst specifications under the engineering standard since 2023.",
+    "Expert in pre‑release walkthroughs, regression suite maintenance, release approval coordination, and comprehensive ticket documentation."
+   ],
+   "experienceHighlights": [
+    "Delivered 46 report and feed tickets, each fully documented in the ticket system.",
+    "Conducted pre‑release walkthroughs with analysts, capturing signed acceptance records.",
+    "Maintained the regression suite for intraday liquidity and funding reports, ensuring pre‑release run results are attached to every ticket.",
+    "Coordinated release approvals with the reporting services lead, recording all checks performed.",
+    "Documented non‑touch points and hand‑over conditions on every ticket."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: three tickets with walkthrough records, signed acceptances, regression suite results, and lead approval, referenced in the ticket system."
+   ],
+   "skills": [
+    "Report Engineering",
+    "Data‑Feed Development",
+    "Regression Testing",
+    "Pre‑Release Walkthroughs",
+    "Ticketing & Documentation",
+    "Release Management"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish that the candidate has delivered 46 report and feed tickets, performed pre‑release walkthroughs, maintained the regression suite, obtained lead approval, and documented non‑touch points. The materials do not provide independent verification of ticket quality, technology stack details, or broader cross‑team collaboration beyond analysts."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Candidate meets all listed requirements based on evidence, but further verification of independent quality and broader experience is recommended."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Treasury Reporting Services",
+    "jobDescriptionSource": "jd_3c63c864328b808c",
+    "requirementIds": [
+     "req_a71bd37288d2",
+     "req_939d66b01151",
+     "req_c8d698197ccd",
+     "req_3f52cfd9073f",
+     "req_d4271d57f991"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_28302ca1b42dc6f6",
+    "sources": [
+     "src_9b14eaea9d3a",
+     "src_8a83034a22b0",
+     "src_66740b9c7445",
+     "src_06fac136213d",
+     "src_eadbef94cac1",
+     "src_d1b487c96652",
+     "src_f6fb8fe4e4f6",
+     "src_72b0c8239b80"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a71bd37288d2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9b14eaea9d3a",
+       "text": "Treasury reporting engineer at a bank since 2023: forty‑six report and feed tickets delivered against the analysts' specifications under the engineering standard, all in my name in the ticket system.",
+       "evidenceStrength": "high",
+       "notes": "Direct claim of 46 tickets delivered per specification."
+      },
+      {
+       "sourceId": "src_d1b487c96652",
+       "text": "Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval, with the ticket system references as a verification trail.",
+       "evidenceStrength": "high",
+       "notes": "Sample tickets confirm delivery process."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_939d66b01151",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8a83034a22b0",
+       "text": "Before every release I sat with the analysts and walked them through what would move on their reports, under the pre‑release walkthrough standard; each ticket carries the walkthrough record and the analysts' signed acceptance.",
+       "evidenceStrength": "high",
+       "notes": "Explicit walkthrough and acceptance documentation."
+      },
+      {
+       "sourceId": "src_f6fb8fe4e4f6",
+       "text": "Interviewer 1 note: asked to explain a sample data‑feed change to the panel member playing a treasury analyst, the candidate showed the before and after values for one report line, named the two reports the change would not affect, gave the date the analyst would first see the change, and wrote the three points on the whiteboard for the analyst to keep.",
+       "evidenceStrength": "medium",
+       "notes": "Demonstrated walkthrough communication."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c8d698197ccd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_66740b9c7445",
+       "text": "The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results from the pre‑release run.",
+       "evidenceStrength": "high",
+       "notes": "Direct maintenance claim with evidence of results."
+      },
+      {
+       "sourceId": "src_d1b487c96652",
+       "text": "Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval, with the ticket system references as a verification trail.",
+       "evidenceStrength": "high",
+       "notes": "Sample tickets include suite results."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3f52cfd9073f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_06fac136213d",
+       "text": "Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's.",
+       "evidenceStrength": "high",
+       "notes": "Explicit approval and check record."
+      },
+      {
+       "sourceId": "src_72b0c8239b80",
+       "text": "Reference call with the reporting services lead: confirmed the ticket count, the pre‑release walkthroughs and that release approval sat with the lead; confirmed the start date.",
+       "evidenceStrength": "medium",
+       "notes": "Lead confirmation of approval process."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d4271d57f991",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_eadbef94cac1",
+       "text": "Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know.",
+       "evidenceStrength": "high",
+       "notes": "Direct claim of note practice."
+      },
+      {
+       "sourceId": "src_d1b487c96652",
+       "text": "Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval, with the ticket system references as a verification trail.",
+       "evidenceStrength": "high",
+       "notes": "Sample tickets include non‑touch notes."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Delivered 46 report and feed tickets to analyst specifications under the engineering standard.",
+     "supportingRequirementIds": [
+      "req_a71bd37288d2"
+     ],
+     "sourceIds": [
+      "src_9b14eaea9d3a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Treasury reporting engineer at a bank since 2023: forty‑six report and feed tickets delivered against the analysts' specifications under the engineering standard, all in my name in the ticket system."
+    },
+    {
+     "claim": "Conducted pre‑release walkthroughs with analysts and captured signed acceptance records.",
+     "supportingRequirementIds": [
+      "req_939d66b01151"
+     ],
+     "sourceIds": [
+      "src_8a83034a22b0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Before every release I sat with the analysts and walked them through what would move on their reports, under the pre‑release walkthrough standard; each ticket carries the walkthrough record and the analysts' signed acceptance."
+    },
+    {
+     "claim": "Maintained the regression suite for intraday liquidity and funding reports.",
+     "supportingRequirementIds": [
+      "req_c8d698197ccd"
+     ],
+     "sourceIds": [
+      "src_66740b9c7445"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results from the pre‑release run."
+    },
+    {
+     "claim": "Obtained release approval from the reporting services lead and recorded all checks.",
+     "supportingRequirementIds": [
+      "req_3f52cfd9073f"
+     ],
+     "sourceIds": [
+      "src_06fac136213d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's."
+    },
+    {
+     "claim": "Documented non‑touch points and hand‑over conditions on every ticket.",
+     "supportingRequirementIds": [
+      "req_d4271d57f991"
+     ],
+     "sourceIds": [
+      "src_eadbef94cac1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify regression suite coverage and test data quality",
+    "Confirm that all 46 tickets were delivered to analyst specifications",
+    "Assess the candidate's familiarity with the specific reporting platform and data models",
+    "Validate the lead approval process and check documentation",
+    "Ensure the candidate can articulate post‑release hand‑over procedures"
+   ],
+   "auditSummary": "The evidence from the resume, work sample, and reference call collectively support that the candidate satisfies all five job requirements for the Software Engineer, Treasury Reporting Services role. The claims are corroborated by multiple independent sources, giving high confidence in the candidate's experience. However, independent audit of ticket quality, technology stack familiarity, and broader cross‑team collaboration beyond analysts is not provided and should be explored in a subsequent interview or technical assessment.",
+   "limitations": [
+    "No independent verification of ticket quality or regression suite effectiveness",
+    "No evidence of experience with specific reporting platform or data models",
+    "No demonstration of collaboration with treasury systems or platform SRE teams beyond analysts"
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T11:13:46.145312+00:00"
+}

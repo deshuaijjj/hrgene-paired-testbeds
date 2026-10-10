@@ -1,0 +1,253 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2c27d022-b000-4e6c-923e-b8be2857fae8.C1",
+ "case_id": "2c27d022-b000-4e6c-923e-b8be2857fae8",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11748,
+  "promptWords": 1592
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 47.892
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3364,
+ "eval_count": 1792,
+ "prompt_eval_duration_ns": 666666000,
+ "eval_duration_ns": 31960519000,
+ "total_duration_ns": 47888984125,
+ "thinking": "We need to craft JSON. Need to extract claims from resume. Use sources. Provide evidence. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe \"Software Engineer III on CI runners team, delivering runner autoscaling and cache service changes with rollout and rollback plans.\" etc. Must cite sources.\n\nexperienceHighlights: list claims with sourceIds.\n\nprojectsAndWorkSamples: mention work sample.\n\nskills: maybe \"Design review, architecture decision records, rollout/rollback planning\".\n\nevidenceBoundary: one or two sentences on what materials establish.\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false etc.\n\nrole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id.\n\nWe need to evaluate each requirement.\n\nreq_3a78681dd7f2: Has operated at staff or principal level, setting technical direction across more than one team. Evidence: resume says Software Engineer III on CI runners team for four years, delivering changes. Also note says operating at staff level. But does she set direction across more than one team? Not clear. She contributed to runners section of architecture decision records. Not across more than one team. So insufficient evidence. Missing: evidence of setting direction across multiple teams.\n\nreq_7600fc34f966: Has written the architecture decision records that other teams build against and represented a platform in an architecture council. Evidence: She contributed runners section to ADRs written by staff engineer, but did not author. She attended council as guest. So insufficient evidence. Missing: evidence of writing ADRs and representing platform.\n\nreq_5bcce0eb6846: Reviews the designs of major platform changes under a documented design review process. Evidence: She reviewed designs as one of two design reviewers, comments recorded. So supported.\n\nreq_7f43a00f8ee4: Delivers platform changes with a documented rollout and rollback plan. Evidence: delivered runner autoscaling and cache service changes with rollout and rollback plans. Supported.\n\nreq_be03e8cd56d5: Documents the boundaries of each decision record and each design review. Evidence: wrote design review boundary note and decision record boundary section for runners contributions. Supported.\n\nThus requirementEvidenceMap entries.\n\nsupportedClaims: list claims that are supported: reviewing designs, delivering changes with rollout/rollback, documenting boundaries.\n\nunsupportedClaims: maybe claim of operating at staff level? Actually note says she said operating at staff level. That is supported by note. But requirement 3a78681dd7f2 requires setting direction across more than one team. Not supported. So unsupported claim: \"operated at staff level and set direction for runners\" maybe partially. But we can list unsupported claim: \"operated at staff level and set direction for runners\" reason: not across more than one team. required follow-up: evidence of direction across multiple teams.\n\nmissingEvidenceGaps: for each requirement lacking evidence.\n\ninterviewSignalRisks: maybe note about recruiter screen: candidate said she has been 'operating at staff level' and 'set the direction for the runners' and that the group's staff engineer 'mostly rubber-stamped' the records; asked whether she had authored a record or presented at the council, she said not as author. This is a signal risk: unclear authority. Not tied to job evidence. So include.\n\nfollowUpQuestions: for gaps.\n\nhumanReviewChecklist: maybe items like \"Verify author of ADRs\", \"Confirm direction across multiple teams\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Based on provided materials only\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_bcc965e793a0b3c4\",\"targetRoleTitle\":\"Staff Engineer, Build and CI Platform\",\"professionalSummary\":[\"Software Engineer III on the CI runners team of a build platform group for four years, delivering runner autoscaling and cache service changes with documented rollout and rollback plans.\"],\"experienceHighlights\":[\"Delivered runner autoscaling and cache service changes with rollout and rollback plans on each change ticket (src_1bbee5699263).\",\"Reviewed the designs of the CI runners team's changes as one of the team's two design reviewers under the group's design review process, with review comments recorded on each design document (src_3285cda5cc57).\",\"Contributed the runners section to the architecture decision records written by the group's staff engineer, who owned the records and presented them at the architecture council; attended the council as a guest for the two records that covered the runners (src_22b8e8455ff1).\",\"Wrote the design review boundary note for each review I took part in and the decision record boundary section for the runners contributions (src_2486c6d8705c).\"],\"projectsAndWorkSamples\":[\"Work sample: the runner autoscaling change tickets with their rollout and rollback plans, the design review comments for one change and the runners section of one architecture decision record, with the group's document references as a verification trail; the record carries the staff engineer's name as author (src_824d969c8fe0).\"],\"skills\":[\"Design review\",\"Architecture decision record contribution\",\"Rollout and rollback planning\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience delivering platform changes with documented rollout and rollback plans, reviewing designs under a documented process, and documenting boundaries for design reviews and decision records. They do not establish authorship of architecture decision records, representation at an architecture council, or setting technical direction across multiple teams.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Staff Engineer, Build and CI Platform\",\"jobDescriptionSource\":\"jd_c1df84663c258df2\",\"requirementIds\":[\"req_3a78681dd7f2\",\"req_7600fc34f966\",\"req_5bcce0eb6846\",\"req_7f43a00f8ee4\",\"req_be03e8cd56d5\"]},\"candidate\":{\"candidateId\":\"cand_bcc965e793a0b3c4\",\"sources\":[\"src_1bbee5699263\",\"src_3285cda5cc57\",\"src_22b8e8455ff1\",\"src_2486c6d8705c\",\"src_2065b7b7c6a8\",\"src_824d969c8fe0\",\"src_bffc69fed69d\",\"src_bffc69fed69d\",\"src_e09f1391b892\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_3a78681dd7f2\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate set technical direction across more than one team.\"]},{\"requirementId\":\"req_7600fc34f966\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate authored architecture decision records and represented the platform at the architecture council.\"]},{\"requirementId\":\"req_5bcce0eb6846\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3285cda5cc57\",\"text\":\"Reviewed the designs of the CI runners team's changes as one of the team's two design reviewers under the group's design review process, with the review comments recorded on each design document.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of review role.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7f43a00f8ee4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1bbee5699263\",\"text\":\"Delivering the runner autoscaling and the cache service changes with rollout and rollback plans on each change ticket.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of delivery with plans.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_be03e8cd56d5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2486c6d8705c\",\"text\":\"Wrote the design review boundary note for each review I took part in and the decision record boundary section for the runners contributions.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of boundary documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Reviewed designs of major platform changes under a documented design review process.\",\"supportingRequirementIds\":[\"req_5bcce0eb6846\"],\"sourceIds\":[\"src_3285cda5cc57\"],\"evidenceStrength\":\"high\",\"witness\":\"Reviewed the designs of the CI runners team's changes as one of the team's two design reviewers under the group's design review process, with the review comments recorded on each design document.\"},{\"claim\":\"Delivered platform changes with documented rollout and rollback plans.\",\"supportingRequirementIds\":[\"req_7f43a00f8ee4\"],\"sourceIds\":[\"src_1bbee5699263\"],\"evidenceStrength\":\"high\",\"witness\":\"Delivering the runner autoscaling and the cache service changes with rollout and rollback plans on each change ticket.\"},{\"claim\":\"Documented the boundaries of each design review and decision record.\",\"supportingRequirementIds\":[\"req_be03e8cd56d5\"],\"sourceIds\":[\"src_2486c6d8705c\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the design review boundary note for each review I took part in and the decision record boundary section for the runners contributions.\"}],\"unsupportedClaims\":[{\"claim\":\"Operated at staff level and set the direction for the runners team.\",\"reason\":\"The materials do not establish that the candidate set technical direction across more than one team.\",\"requiredFollowUp\":\"Provide evidence that the candidate set technical direction for multiple teams.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_3a78681dd7f2\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate set technical direction across more than one team.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_7600fc34f966\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate authored architecture decision records and represented the platform at the architecture council.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_bffc69fed69d\",\"text\":\"Candidate said she has been 'operating at staff level' and 'set the direction for the runners' and that the group's staff engineer 'mostly rubber-stamped' the records; asked whether she had authored a record or presented at the council, she said not as author.\",\"signalType\":\"authority ambiguity\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify the candidate’s actual level of authority and decision ownership through additional documentation or interview.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_3a78681dd7f2\",\"question\":\"Can you provide specific examples where you set technical direction for more than one engineering team?\",\"evidenceTarget\":\"Evidence of multi-team technical direction.\"},{\"questionId\":\"q_2\",\"requirementId\":\"req_7600fc34f966\",\"question\":\"Did you author any architecture decision records or present at the architecture council on behalf of the platform? If so, please provide details.\",\"evidenceTarget\":\"Evidence of ADR authorship and council representation.\"}],\"humanReviewChecklist\":[\"Verify authorship of architecture decision records.\",\"Confirm representation at the architecture council.\",\"Assess evidence of multi-team technical direction.\",\"Ensure documented rollout and rollback plans are present for all delivered changes.\"],\"auditSummary\":\"The candidate demonstrates experience delivering platform changes with documented rollout and rollback plans, reviewing designs under a documented process, and documenting boundaries for design reviews and decision records. However, there is insufficient evidence that the candidate authored architecture decision records, represented the platform at the architecture council, or set technical direction across multiple teams, which are required for the Staff Engineer role. Additional evidence is needed to confirm these competencies before proceeding with hiring decisions.\",\"limitations\":[\"Analysis is limited to the provided resume, work sample, and notes; no external verification has been performed.\"]}}",
+ "content_sha256": "8734d651cf11e02aa6cedb215e1f2e476dfb0a2b097dbde078e12de4669eb09b",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bcc965e793a0b3c4",
+   "targetRoleTitle": "Staff Engineer, Build and CI Platform",
+   "professionalSummary": [
+    "Software Engineer III on the CI runners team of a build platform group for four years, delivering runner autoscaling and cache service changes with documented rollout and rollback plans."
+   ],
+   "experienceHighlights": [
+    "Delivered runner autoscaling and cache service changes with rollout and rollback plans on each change ticket (src_1bbee5699263).",
+    "Reviewed the designs of the CI runners team's changes as one of the team's two design reviewers under the group's design review process, with review comments recorded on each design document (src_3285cda5cc57).",
+    "Contributed the runners section to the architecture decision records written by the group's staff engineer, who owned the records and presented them at the architecture council; attended the council as a guest for the two records that covered the runners (src_22b8e8455ff1).",
+    "Wrote the design review boundary note for each review I took part in and the decision record boundary section for the runners contributions (src_2486c6d8705c)."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the runner autoscaling change tickets with their rollout and rollback plans, the design review comments for one change and the runners section of one architecture decision record, with the group's document references as a verification trail; the record carries the staff engineer's name as author (src_824d969c8fe0)."
+   ],
+   "skills": [
+    "Design review",
+    "Architecture decision record contribution",
+    "Rollout and rollback planning"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience delivering platform changes with documented rollout and rollback plans, reviewing designs under a documented process, and documenting boundaries for design reviews and decision records. They do not establish authorship of architecture decision records, representation at an architecture council, or setting technical direction across multiple teams."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Staff Engineer, Build and CI Platform",
+    "jobDescriptionSource": "jd_c1df84663c258df2",
+    "requirementIds": [
+     "req_3a78681dd7f2",
+     "req_7600fc34f966",
+     "req_5bcce0eb6846",
+     "req_7f43a00f8ee4",
+     "req_be03e8cd56d5"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bcc965e793a0b3c4",
+    "sources": [
+     "src_1bbee5699263",
+     "src_3285cda5cc57",
+     "src_22b8e8455ff1",
+     "src_2486c6d8705c",
+     "src_2065b7b7c6a8",
+     "src_824d969c8fe0",
+     "src_bffc69fed69d",
+     "src_bffc69fed69d",
+     "src_e09f1391b892"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_3a78681dd7f2",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate set technical direction across more than one team."
+     ]
+    },
+    {
+     "requirementId": "req_7600fc34f966",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate authored architecture decision records and represented the platform at the architecture council."
+     ]
+    },
+    {
+     "requirementId": "req_5bcce0eb6846",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3285cda5cc57",
+       "text": "Reviewed the designs of the CI runners team's changes as one of the team's two design reviewers under the group's design review process, with the review comments recorded on each design document.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of review role."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7f43a00f8ee4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1bbee5699263",
+       "text": "Delivering the runner autoscaling and the cache service changes with rollout and rollback plans on each change ticket.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of delivery with plans."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_be03e8cd56d5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2486c6d8705c",
+       "text": "Wrote the design review boundary note for each review I took part in and the decision record boundary section for the runners contributions.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of boundary documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Reviewed designs of major platform changes under a documented design review process.",
+     "supportingRequirementIds": [
+      "req_5bcce0eb6846"
+     ],
+     "sourceIds": [
+      "src_3285cda5cc57"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed the designs of the CI runners team's changes as one of the team's two design reviewers under the group's design review process, with the review comments recorded on each design document."
+    },
+    {
+     "claim": "Delivered platform changes with documented rollout and rollback plans.",
+     "supportingRequirementIds": [
+      "req_7f43a00f8ee4"
+     ],
+     "sourceIds": [
+      "src_1bbee5699263"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Delivering the runner autoscaling and the cache service changes with rollout and rollback plans on each change ticket."
+    },
+    {
+     "claim": "Documented the boundaries of each design review and decision record.",
+     "supportingRequirementIds": [
+      "req_be03e8cd56d5"
+     ],
+     "sourceIds": [
+      "src_2486c6d8705c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the design review boundary note for each review I took part in and the decision record boundary section for the runners contributions."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Operated at staff level and set the direction for the runners team.",
+     "reason": "The materials do not establish that the candidate set technical direction across more than one team.",
+     "requiredFollowUp": "Provide evidence that the candidate set technical direction for multiple teams."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_3a78681dd7f2",
+     "severity": "high",
+     "gap": "Evidence that the candidate set technical direction across more than one team."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_7600fc34f966",
+     "severity": "high",
+     "gap": "Evidence that the candidate authored architecture decision records and represented the platform at the architecture council."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_bffc69fed69d",
+     "text": "Candidate said she has been 'operating at staff level' and 'set the direction for the runners' and that the group's staff engineer 'mostly rubber-stamped' the records; asked whether she had authored a record or presented at the council, she said not as author.",
+     "signalType": "authority ambiguity",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify the candidate’s actual level of authority and decision ownership through additional documentation or interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_3a78681dd7f2",
+     "question": "Can you provide specific examples where you set technical direction for more than one engineering team?",
+     "evidenceTarget": "Evidence of multi-team technical direction."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_7600fc34f966",
+     "question": "Did you author any architecture decision records or present at the architecture council on behalf of the platform? If so, please provide details.",
+     "evidenceTarget": "Evidence of ADR authorship and council representation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify authorship of architecture decision records.",
+    "Confirm representation at the architecture council.",
+    "Assess evidence of multi-team technical direction.",
+    "Ensure documented rollout and rollback plans are present for all delivered changes."
+   ],
+   "auditSummary": "The candidate demonstrates experience delivering platform changes with documented rollout and rollback plans, reviewing designs under a documented process, and documenting boundaries for design reviews and decision records. However, there is insufficient evidence that the candidate authored architecture decision records, represented the platform at the architecture council, or set technical direction across multiple teams, which are required for the Staff Engineer role. Additional evidence is needed to confirm these competencies before proceeding with hiring decisions.",
+   "limitations": [
+    "Analysis is limited to the provided resume, work sample, and notes; no external verification has been performed."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:17:44.233914+00:00"
+}

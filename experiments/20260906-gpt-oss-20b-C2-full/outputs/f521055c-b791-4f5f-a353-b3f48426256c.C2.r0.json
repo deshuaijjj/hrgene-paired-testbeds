@@ -1,0 +1,303 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f521055c-b791-4f5f-a353-b3f48426256c.C2",
+ "case_id": "f521055c-b791-4f5f-a353-b3f48426256c",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14386,
+  "promptWords": 1725
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 65.164
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4020,
+ "eval_count": 2737,
+ "prompt_eval_duration_ns": 19769000,
+ "eval_duration_ns": 50878531000,
+ "total_duration_ns": 65162436667,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. All claims must have source. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Maintained month-end demand model forecasting batch volume from client, account, report counts, refreshing coefficients quarterly.\" source src_739f550c1b1c. experienceHighlights: list claims with sources. projectsAndWorkSamples: include overrun report extract etc. skills: maybe \"Capacity Planning, Demand Forecasting, Compute & Storage Planning, Documentation\". evidenceBoundary: \"The provided resume and work sample establish the candidate's experience in demand modeling, capacity planning, overrun reduction, coordination, and documentation for month-end cycles; they do not establish any experience outside these areas.\"\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nLet's map:\n\nreq_fa0b53737094: Forecasts month-end batch demand from client, account and report volumes and maintains the demand model. Evidence: src_739f550c1b1c. status supported. evidenceStrength high? medium. notes: \"Forecasts batch volume from client, account and report counts, refreshing coefficients quarterly.\" missingEvidence none.\n\nreq_6cf5a1db7fbe: Plans compute and storage capacity for the month-end cycle with the platform team. Evidence: src_83e7b43ec89d. status supported.\n\nreq_bf325971a16a: Reduces month-end batch overruns, reported against the published overrun baseline. Evidence: src_c519e2432512. status supported.\n\nreq_e5b89bebd662: Coordinates capacity changes with the platform and finance teams and records own responsibility boundaries. Evidence: src_34e8652e2e3f. status supported.\n\nreq_6961eafcd7c0: Documents model assumptions, known limitations and hand-over conditions for each planning cycle. Evidence: src_1747624ed4c1. status supported.\n\nAll supported. So no gaps.\n\nsupportedClaims: maybe list each claim with requirementIds. Provide sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe [\"Review candidate's ability to handle new platform changes\", \"Confirm understanding of overrun baseline\"] but since evidence covers, maybe empty.\n\nauditSummary: \"All requirements are supported by evidence from the candidate's resume and work sample. No gaps identified.\"\n\nlimitations: maybe [\"No evidence of experience beyond month-end cycle planning\"].\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_8e4ab9473bafe837\",\n    \"targetRoleTitle\": \"Capacity Planning Analyst, Wealth Services Platform\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cs_1\",\n        \"text\": \"Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing coefficients quarterly from platform job-history tables.\",\n        \"sourceIds\": [\"src_739f550c1b1c\"],\n        \"requirementIds\": [\"req_fa0b53737094\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing the coefficients each quarter from the platform's job-history tables.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"eh_1\",\n        \"text\": \"Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.\",\n        \"sourceIds\": [\"src_83e7b43ec89d\"],\n        \"requirementIds\": [\"req_6cf5a1db7fbe\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.\"\n      },\n      {\n        \"claimId\": \"eh_2\",\n        \"text\": \"Reduced month-end batch overruns from 9 per cycle to 2 per cycle over six cycles after re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle.\",\n        \"sourceIds\": [\"src_c519e2432512\"],\n        \"requirementIds\": [\"req_bf325971a16a\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Month-end batch overruns fell from 9 per cycle to 2 per cycle over the six cycles after the re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle for the preceding half-year.\"\n      },\n      {\n        \"claimId\": \"eh_3\",\n        \"text\": \"Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.\",\n        \"sourceIds\": [\"src_34e8652e2e3f\"],\n        \"requirementIds\": [\"req_e5b89bebd662\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.\"\n      },\n      {\n        \"claimId\": \"eh_4\",\n        \"text\": \"Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast, and the hand-over items for the next cycle.\",\n        \"sourceIds\": [\"src_1747624ed4c1\"],\n        \"requirementIds\": [\"req_6961eafcd7c0\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"ps_1\",\n        \"text\": \"Provided the overrun report extract for six cycles and the assumptions note for one cycle, with export identifiers as a verification trail.\",\n        \"sourceIds\": [\"src_a1bdccfa3996\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the overrun report extract for the six cycles (overruns per cycle, baseline line, go-live marker for the re-sequenced jobs) and the assumptions note for one cycle, with the report's export identifiers as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      \"Demand Forecasting\",\n      \"Compute & Storage Capacity Planning\",\n      \"Batch Overrun Reduction\",\n      \"Cross-Functional Coordination\",\n      \"Documentation & Hand-Over\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate's experience in demand modeling, capacity planning, overrun reduction, coordination, and documentation for month-end cycles; they do not establish any experience outside these areas.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence and gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Capacity Planning Analyst, Wealth Services Platform\",\n      \"jobDescriptionSource\": \"jd_ca6548b0d21a263b\",\n      \"requirementIds\": [\n        \"req_fa0b53737094\",\n        \"req_6cf5a1db7fbe\",\n        \"req_bf325971a16a\",\n        \"req_e5b89bebd662\",\n        \"req_6961eafcd7c0\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_8e4ab9473bafe837\",\n      \"sources\": [\n        \"src_739f550c1b1c\",\n        \"src_83e7b43ec89d\",\n        \"src_c519e2432512\",\n        \"src_34e8652e2e3f\",\n        \"src_1747624ed4c1\",\n        \"src_a1bdccfa3996\",\n        \"src_f2de23de9172\",\n        \"src_6dcbb0557115\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_fa0b53737094\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_739f550c1b1c\",\n            \"text\": \"Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing the coefficients each quarter from the platform's job-history tables.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of forecasting and model maintenance.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_6cf5a1db7fbe\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_83e7b43ec89d\",\n            \"text\": \"Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of planning compute and storage.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_bf325971a16a\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_c519e2432512\",\n            \"text\": \"Month-end batch overruns fell from 9 per cycle to 2 per cycle over the six cycles after the re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle for the preceding half-year.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Quantitative reduction against baseline.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_e5b89bebd662\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_34e8652e2e3f\",\n            \"text\": \"Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct coordination and responsibility boundary.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_6961eafcd7c0\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_1747624ed4c1\",\n            \"text\": \"Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct documentation of assumptions and hand-over.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing coefficients quarterly from platform job-history tables.\",\n        \"supportingRequirementIds\": [\"req_fa0b53737094\"],\n        \"sourceIds\": [\"src_739f550c1b1c\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing the coefficients each quarter from the platform's job-history tables.\"\n      },\n      {\n        \"claim\": \"Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.\",\n        \"supportingRequirementIds\": [\"req_6cf5a1db7fbe\"],\n        \"sourceIds\": [\"src_83e7b43ec89d\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.\"\n      },\n      {\n        \"claim\": \"Reduced month-end batch overruns from 9 per cycle to 2 per cycle over six cycles after re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle.\",\n        \"supportingRequirementIds\": [\"req_bf325971a16a\"],\n        \"sourceIds\": [\"src_c519e2432512\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Month-end batch overruns fell from 9 per cycle to 2 per cycle over the six cycles after the re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle for the preceding half-year.\"\n      },\n      {\n        \"claim\": \"Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.\",\n        \"supportingRequirementIds\": [\"req_e5b89bebd662\"],\n        \"sourceIds\": [\"src_34e8652e2e3f\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.\"\n      },\n      {\n        \"claim\": \"Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle.\",\n        \"supportingRequirementIds\": [\"req_6961eafcd7c0\"],\n        \"sourceIds\": [\"src_1747624ed4c1\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [],\n    \"auditSummary\": \"All five role requirements are directly supported by evidence from the candidate's resume and work sample. No evidence gaps or unsupported claims were identified.\",\n    \"limitations\": [\n      \"No evidence of experience beyond month-end cycle planning and coordination.\"\n    ]\n  }\n}",
+ "content_sha256": "d53f3173b6d4d7feaff71d128f2bfe1c49d5639f2e3ccc08e2992ba70328b87b",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_8e4ab9473bafe837",
+   "targetRoleTitle": "Capacity Planning Analyst, Wealth Services Platform",
+   "professionalSummary": [
+    {
+     "claimId": "cs_1",
+     "text": "Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing coefficients quarterly from platform job-history tables.",
+     "sourceIds": [
+      "src_739f550c1b1c"
+     ],
+     "requirementIds": [
+      "req_fa0b53737094"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing the coefficients each quarter from the platform's job-history tables."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_1",
+     "text": "Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.",
+     "sourceIds": [
+      "src_83e7b43ec89d"
+     ],
+     "requirementIds": [
+      "req_6cf5a1db7fbe"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan."
+    },
+    {
+     "claimId": "eh_2",
+     "text": "Reduced month-end batch overruns from 9 per cycle to 2 per cycle over six cycles after re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle.",
+     "sourceIds": [
+      "src_c519e2432512"
+     ],
+     "requirementIds": [
+      "req_bf325971a16a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Month-end batch overruns fell from 9 per cycle to 2 per cycle over the six cycles after the re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle for the preceding half-year."
+    },
+    {
+     "claimId": "eh_3",
+     "text": "Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.",
+     "sourceIds": [
+      "src_34e8652e2e3f"
+     ],
+     "requirementIds": [
+      "req_e5b89bebd662"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance."
+    },
+    {
+     "claimId": "eh_4",
+     "text": "Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast, and the hand-over items for the next cycle.",
+     "sourceIds": [
+      "src_1747624ed4c1"
+     ],
+     "requirementIds": [
+      "req_6961eafcd7c0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps_1",
+     "text": "Provided the overrun report extract for six cycles and the assumptions note for one cycle, with export identifiers as a verification trail.",
+     "sourceIds": [
+      "src_a1bdccfa3996"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the overrun report extract for the six cycles (overruns per cycle, baseline line, go-live marker for the re-sequenced jobs) and the assumptions note for one cycle, with the report's export identifiers as a verification trail."
+    }
+   ],
+   "skills": [
+    "Demand Forecasting",
+    "Compute & Storage Capacity Planning",
+    "Batch Overrun Reduction",
+    "Cross-Functional Coordination",
+    "Documentation & Hand-Over"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate's experience in demand modeling, capacity planning, overrun reduction, coordination, and documentation for month-end cycles; they do not establish any experience outside these areas."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Capacity Planning Analyst, Wealth Services Platform",
+    "jobDescriptionSource": "jd_ca6548b0d21a263b",
+    "requirementIds": [
+     "req_fa0b53737094",
+     "req_6cf5a1db7fbe",
+     "req_bf325971a16a",
+     "req_e5b89bebd662",
+     "req_6961eafcd7c0"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_8e4ab9473bafe837",
+    "sources": [
+     "src_739f550c1b1c",
+     "src_83e7b43ec89d",
+     "src_c519e2432512",
+     "src_34e8652e2e3f",
+     "src_1747624ed4c1",
+     "src_a1bdccfa3996",
+     "src_f2de23de9172",
+     "src_6dcbb0557115"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_fa0b53737094",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_739f550c1b1c",
+       "text": "Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing the coefficients each quarter from the platform's job-history tables.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of forecasting and model maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6cf5a1db7fbe",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_83e7b43ec89d",
+       "text": "Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of planning compute and storage."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_bf325971a16a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c519e2432512",
+       "text": "Month-end batch overruns fell from 9 per cycle to 2 per cycle over the six cycles after the re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle for the preceding half-year.",
+       "evidenceStrength": "high",
+       "notes": "Quantitative reduction against baseline."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e5b89bebd662",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_34e8652e2e3f",
+       "text": "Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.",
+       "evidenceStrength": "high",
+       "notes": "Direct coordination and responsibility boundary."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6961eafcd7c0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1747624ed4c1",
+       "text": "Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation of assumptions and hand-over."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing coefficients quarterly from platform job-history tables.",
+     "supportingRequirementIds": [
+      "req_fa0b53737094"
+     ],
+     "sourceIds": [
+      "src_739f550c1b1c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the month-end demand model that forecasts batch volume from client, account and report counts, refreshing the coefficients each quarter from the platform's job-history tables."
+    },
+    {
+     "claim": "Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan.",
+     "supportingRequirementIds": [
+      "req_6cf5a1db7fbe"
+     ],
+     "sourceIds": [
+      "src_83e7b43ec89d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Planned compute and storage for each month-end cycle with the platform team, translating the forecast into node reservations and storage headroom in the capacity plan."
+    },
+    {
+     "claim": "Reduced month-end batch overruns from 9 per cycle to 2 per cycle over six cycles after re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle.",
+     "supportingRequirementIds": [
+      "req_bf325971a16a"
+     ],
+     "sourceIds": [
+      "src_c519e2432512"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Month-end batch overruns fell from 9 per cycle to 2 per cycle over the six cycles after the re-sequenced valuation jobs went live, as recorded in the platform's overrun report against its published baseline of 9 overruns per cycle for the preceding half-year."
+    },
+    {
+     "claim": "Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance.",
+     "supportingRequirementIds": [
+      "req_e5b89bebd662"
+     ],
+     "sourceIds": [
+      "src_34e8652e2e3f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated capacity changes with the platform and finance teams in the monthly capacity review; reservation changes were approved by the platform manager and the cost impact was signed off by finance."
+    },
+    {
+     "claim": "Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle.",
+     "supportingRequirementIds": [
+      "req_6961eafcd7c0"
+     ],
+     "sourceIds": [
+      "src_1747624ed4c1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the assumptions note for each planning cycle, listing the model coefficients, the known limitation that ad-hoc adviser reports were outside the forecast and the hand-over items for the next cycle."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "All five role requirements are directly supported by evidence from the candidate's resume and work sample. No evidence gaps or unsupported claims were identified.",
+   "limitations": [
+    "No evidence of experience beyond month-end cycle planning and coordination."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T15:15:26.259635+00:00"
+}

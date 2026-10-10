@@ -1,0 +1,542 @@
+{
+ "request_id": "e7e8f47e-de9d-4bb1-892d-46b5d8050ca3.C2",
+ "case_id": "e7e8f47e-de9d-4bb1-892d-46b5d8050ca3",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "production/live wording not licensed by the cited sources: go-live",
+    "witness": {
+     "terms": [
+      "go-live"
+     ],
+     "sourceIds": [
+      "src_7f7dc1218e16"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Runs the hypercare fortnight after each go-live and handles stoppages raised by the customer's shift leaders."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1]",
+    "message": "production/live wording not licensed by the cited sources: go-live",
+    "witness": {
+     "terms": [
+      "go-live"
+     ],
+     "sourceIds": [
+      "src_7f7dc1218e16"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Runs the hypercare fortnight after each go-live and handles stoppages raised by the customer's shift leaders."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].evidence[0].notes",
+    "message": "production/live wording not licensed by the cited sources: go-live",
+    "witness": {
+     "terms": [
+      "go-live"
+     ],
+     "sourceIds": [
+      "src_7f7dc1218e16"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "The candidate has run the hypercare fortnight after each go-live and handled stoppages raised by the customer's shift leaders."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (go-live) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_e7dc36dd1785",
+     "family": "PRODUCTION",
+     "terms": [
+      "go-live"
+     ],
+     "sourceIds": [
+      "src_7f7dc1218e16"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 4,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[1]",
+   "detail": "req_e7dc36dd1785: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "Runs the hypercare fortnight after each go-live and handles stoppages raised by the customer's shift leaders."
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[1]",
+   "detail": "Runs the hypercare fortnight after each go-live and handles stoppages raised by the customer's shift leaders."
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[1]",
+   "detail": "Ran the hypercare fortnight at all nine sites with the customer's shift leaders and handled the stoppages raised during "
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_264c18a6037e9ea2",
+   "targetRoleTitle": "Rollout Project Manager, Warehouse Robotics Deployment",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Has taken customer sites live on the robotics system and run the cut-over from manual picking.",
+     "sourceIds": [
+      "src_3173bb1f0912",
+      "src_7f7dc1218e16",
+      "src_2cb6c8cc85c5",
+      "src_a31f3e93187d",
+      "src_fa252be61909"
+     ],
+     "requirementIds": [
+      "req_cc6101938991",
+      "req_e7dc36dd1785",
+      "req_a67f7dbaa8f7",
+      "req_1fe046ae1901",
+      "req_a68738bb8e53"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Took nine customer warehouses live on the goods-to-person robotics system between 2021 and 2025, running the cut-over from manual picking at each site over a weekend and the first live picking shift on the Monday morning."
+    }
+   ],
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Coordinates the installation schedule with field engineering before go-live.",
+     "sourceIds": [
+      "src_2cb6c8cc85c5"
+     ],
+     "requirementIds": [
+      "req_a67f7dbaa8f7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated the installation schedule with field engineering for each site in the six weeks before go-live, holding the weekly installation review with the field lead."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Runs the pre-go-live acceptance tests with the customer on the installed system.",
+     "sourceIds": [
+      "src_a31f3e93187d"
+     ],
+     "requirementIds": [
+      "req_1fe046ae1901"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the pre-go-live acceptance tests with the customer on the installed system at each site, with the acceptance record signed by the customer's operations manager before cut-over."
+    }
+   ],
+   "evidenceBoundary": "The materials establish that the candidate has taken customer sites live on the robotics system, run the cut-over from manual picking, ran the hypercare fortnight, coordinated the installation schedule, and written the site closure report. The materials do not establish the specific site numbers or the stoppage logs."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The materials establish that the candidate has the required experience and skills for the role. However, the specific site numbers and stoppage logs are not provided, and further verification is needed."
+   },
+   "role": {
+    "roleTitle": "Rollout Project Manager, Warehouse Robotics Deployment",
+    "jobDescriptionSource": "jd_6f39858d55a5bef4",
+    "requirementIds": [
+     "req_cc6101938991",
+     "req_e7dc36dd1785",
+     "req_a67f7dbaa8f7",
+     "req_1fe046ae1901",
+     "req_a68738bb8e53"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_264c18a6037e9ea2",
+    "sources": [
+     "src_3173bb1f0912",
+     "src_7f7dc1218e16",
+     "src_2cb6c8cc85c5",
+     "src_a31f3e93187d",
+     "src_fa252be61909",
+     "src_82d0dd10b703",
+     "src_2bb47242a7de",
+     "src_5543c1a26a38"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_cc6101938991",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3173bb1f0912",
+       "text": "Took nine customer warehouses live on the goods-to-person robotics system between 2021 and 2025, running the cut-over from manual picking at each site over a weekend and the first live picking shift on the Monday morning.",
+       "evidenceStrength": "high",
+       "notes": "The candidate has taken customer sites live on the robotics system and run the cut-over from manual picking."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e7dc36dd1785",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_a67f7dbaa8f7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2cb6c8cc85c5",
+       "text": "Coordinated the installation schedule with field engineering for each site in the six weeks before go-live, holding the weekly installation review with the field lead.",
+       "evidenceStrength": "high",
+       "notes": "The candidate has coordinated the installation schedule with field engineering before go-live."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1fe046ae1901",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a31f3e93187d",
+       "text": "Ran the pre-go-live acceptance tests with the customer on the installed system at each site, with the acceptance record signed by the customer's operations manager before cut-over.",
+       "evidenceStrength": "high",
+       "notes": "The candidate has run the pre-go-live acceptance tests with the customer on the installed system."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a68738bb8e53",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_fa252be61909",
+       "text": "Wrote the site closure report for each warehouse, listing the known limitations of the system at that site, the open items for remote support and the hand-over conditions agreed with the customer.",
+       "evidenceStrength": "high",
+       "notes": "The candidate has written the site closure report with the known limitations and hand-over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Has taken customer sites live on the robotics system and run the cut-over from manual picking.",
+     "supportingRequirementIds": [
+      "req_cc6101938991"
+     ],
+     "sourceIds": [
+      "src_3173bb1f0912"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took nine customer warehouses live on the goods-to-person robotics system between 2021 and 2025, running the cut-over from manual picking at each site over a weekend and the first live picking shift on the Monday morning."
+    },
+    {
+     "claim": "Coordinates the installation schedule with field engineering before go-live.",
+     "supportingRequirementIds": [
+      "req_a67f7dbaa8f7"
+     ],
+     "sourceIds": [
+      "src_2cb6c8cc85c5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated the installation schedule with field engineering for each site in the six weeks before go-live, holding the weekly installation review with the field lead."
+    },
+    {
+     "claim": "Runs the pre-go-live acceptance tests with the customer on the installed system.",
+     "supportingRequirementIds": [
+      "req_1fe046ae1901"
+     ],
+     "sourceIds": [
+      "src_a31f3e93187d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the pre-go-live acceptance tests with the customer on the installed system at each site, with the acceptance record signed by the customer's operations manager before cut-over."
+    },
+    {
+     "claim": "Writes the site closure report with the known limitations and hand-over conditions.",
+     "supportingRequirementIds": [
+      "req_a68738bb8e53"
+     ],
+     "sourceIds": [
+      "src_fa252be61909"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the site closure report for each warehouse, listing the known limitations of the system at that site, the open items for remote support and the hand, over conditions agreed with the customer."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Runs the hypercare fortnight after each go-live and handles stoppages raised by the customer's shift leaders.",
+     "reason": "The cited sources describe a non-production environment or do not state production deployment.",
+     "requiredFollowUp": "Ask about the operating environment, release permissions, go-live confirmation and run-time responsibilities."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_5543c1a26a38",
+     "text": "The head of customer rollouts asks the packet to cite the site numbers and the stoppage logs, and to show which sites the candidate took live himself rather than as a member of another manager's team.",
+     "signalType": "ownership",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to provide the site numbers and stoppage logs to confirm the sites they took live themselves."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_1",
+     "requirementId": "req_cc6101938991",
+     "question": "Can you provide the site numbers and stoppage logs to confirm the sites you took live yourself?",
+     "evidenceTarget": "Confirm the sites the candidate took live themselves."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the site numbers and stoppage logs to confirm the sites the candidate took live themselves.",
+    "Confirm the candidate's ownership and responsibility for the sites they took live."
+   ],
+   "auditSummary": "The materials establish that the candidate has the required experience and skills for the role. However, the specific site numbers and stoppage logs are not provided, and further verification is needed.",
+   "limitations": [
+    "The materials do not provide the specific site numbers and stoppage logs."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

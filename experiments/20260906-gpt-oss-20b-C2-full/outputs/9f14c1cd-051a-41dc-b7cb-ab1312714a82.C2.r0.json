@@ -1,0 +1,266 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "9f14c1cd-051a-41dc-b7cb-ab1312714a82.C2",
+ "case_id": "9f14c1cd-051a-41dc-b7cb-ab1312714a82",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15309,
+  "promptWords": 1812
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 41.262
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3879,
+ "eval_count": 1759,
+ "prompt_eval_duration_ns": 18581000,
+ "eval_duration_ns": 31944883000,
+ "total_duration_ns": 41260054375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Need to handle degree requirement: candidate has Higher National Diploma, not accredited engineering degree. So requirement req_d8ce1ab0fa8e not satisfied. So partial evidence? Actually not supported. So requirementEvidenceMap for each requirement. For req_d8ce1ab0fa8e: insufficient_evidence, missingEvidence: accredited engineering degree. For others: we have evidence.\n\nAlso need to note that safety function verification signed by safety engineer, not by candidate. So requirement req_179c3bc9cc95: candidate has not signed safety function verifications. So insufficient evidence. Provide gap.\n\nSimilarly, commissioning lines: candidate commissioned nine lines, evidence. So req_02baaeb55a67 supported.\n\nWrites PLC: evidence. req_397dd13b5f4a supported.\n\nProduces as-built docs: evidence. req_ac5bb03cd555 supported.\n\nThus requirementEvidenceMap entries.\n\nAlso need supportedClaims array: claims that are supported: e.g., \"Writes PLC and line-control software for eleven lines\" etc.\n\nUnsupportedClaims: e.g., \"Has signed safety function verifications\" and \"Holds an accredited engineering degree\".\n\nMissingEvidenceGaps: for each requirement missing.\n\nInterviewSignalRisks: maybe note about recruiter screen subjective. But not needed.\n\nFollowUpQuestions: for missing evidence: e.g., \"Does the candidate hold an accredited engineering degree?\" etc.\n\nHumanReviewChecklist: maybe list items.\n\nAuditSummary: paragraph.\n\nLimitations: maybe mention that degree not accredited.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_0300211d98793a5a\",\"targetRoleTitle\":\"Controls Software Engineer, Conveyor Systems\",\"professionalSummary\":[\"Controls technician and software engineer with six years of experience on conveyor and sortation lines, responsible for writing PLC and line‑control software, commissioning lines, and producing as‑built documentation.\"],\"experienceHighlights\":[\"Developed PLC and line‑control software for eleven lines in accordance with the company’s software standard.\",\"Commissioned nine lines on site with installation teams, recording commissioning results in line commissioning records.\"],\"projectsAndWorkSamples\":[\"Provided line‑control software listings, as‑built documentation, and commissioning records for a sortation line, accompanied by a diploma certificate as verification.\"],\"skills\":[\"PLC programming\",\"Line‑control software development\",\"Commissioning\",\"As‑built documentation\",\"Safety function implementation\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in PLC/software development, commissioning, and documentation, but do not establish an accredited engineering degree or that the candidate personally signed safety function verifications.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess qualification gaps and missing evidence.\"},\"role\":{\"roleTitle\":\"Controls Software Engineer, Conveyor Systems\",\"jobDescriptionSource\":\"jd_6e6a0632ce55f8ae\",\"requirementIds\":[\"req_d8ce1ab0fa8e\",\"req_179c3bc9cc95\",\"req_397dd13b5f4a\",\"req_02baaeb55a67\",\"req_ac5bb03cd555\"]},\"candidate\":{\"candidateId\":\"cand_0300211d98793a5a\",\"sources\":[\"src_6758d443c8fb\",\"src_e90b9f320220\",\"src_54acb315024b\",\"src_0face072df96\",\"src_39cf61becfa3\",\"src_e68518a9da0b\",\"src_4a3074cda8a9\",\"src_326df04fd0aa\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_d8ce1ab0fa8e\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Accredited engineering degree in electrical, electronic or control engineering\"]},{\"requirementId\":\"req_179c3bc9cc95\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Candidate’s signature on safety function verifications for conveyor or sortation lines\"]},{\"requirementId\":\"req_397dd13b5f4a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6758d443c8fb\",\"text\":\"Controls technician, then controls software engineer, on conveyor and sortation lines for a materials handling company for six years, writing the PLC and line-control software for eleven lines against the mechanical designs under the company's software standard.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of software development activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_02baaeb55a67\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e90b9f320220\",\"text\":\"Commissioned nine of those lines on site with the installation teams, recording the commissioning results in the line commissioning records.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of commissioning activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ac5bb03cd555\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_39cf61becfa3\",\"text\":\"Wrote the as-built software documentation and the control software boundary notes for the eleven lines, filed with each line's hand-over pack.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation activity\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Writes PLC and line-control software for eleven lines against the mechanical designs under the company's software standard.\",\"supportingRequirementIds\":[\"req_397dd13b5f4a\"],\"sourceIds\":[\"src_6758d443c8fb\"],\"evidenceStrength\":\"high\",\"witness\":\"Controls technician, then controls software engineer, on conveyor and sortation lines for a materials handling company for six years, writing the PLC and line-control software for eleven lines against the mechanical designs under the company's software standard.\"},{\"claim\":\"Commissioned nine lines on site with the installation teams, recording the commissioning results in the line commissioning records.\",\"supportingRequirementIds\":[\"req_02baaeb55a67\"],\"sourceIds\":[\"src_e90b9f320220\"],\"evidenceStrength\":\"high\",\"witness\":\"Commissioned nine of those lines on site with the installation teams, recording the commissioning results in the line commissioning records.\"},{\"claim\":\"Produced the as-built software documentation and control software boundary notes for the eleven lines, filed with each line's hand-over pack.\",\"supportingRequirementIds\":[\"req_ac5bb03cd555\"],\"sourceIds\":[\"src_39cf61becfa3\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the as-built software documentation and the control software boundary notes for the eleven lines, filed with each line's hand-over pack.\"}],\"unsupportedClaims\":[{\"claim\":\"Has signed safety function verifications for conveyor or sortation lines.\",\"reason\":\"The evidence indicates the safety function verification was signed by the safety engineer, not the candidate.\",\"requiredFollowUp\":\"Confirm whether the candidate personally signed any safety function verifications.\"},{\"claim\":\"Holds an accredited engineering degree in electrical, electronic or control engineering.\",\"reason\":\"The candidate holds a Higher National Diploma and a pending honours top‑up, not an accredited engineering degree.\",\"requiredFollowUp\":\"Provide documentation of an accredited engineering degree.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_d8ce1ab0fa8e\",\"severity\":\"high\",\"gap\":\"Accredited engineering degree in electrical, electronic or control engineering\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_179c3bc9cc95\",\"severity\":\"high\",\"gap\":\"Candidate’s signature on safety function verifications for conveyor or sortation lines\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_4a3074cda8a9\",\"text\":\"Candidate said he has 'an engineering degree in electrical' and described the diploma and the top‑up as 'the same thing in practice'; asked whether the top‑up was completed, he said it was 'on hold'.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify the candidate’s actual degree status through official documentation.\"},{\"sourceId\":\"src_326df04fd0aa\",\"text\":\"Hiring manager pre‑read: the candidate's LinkedIn education section reads 'BEng Electrical and Electronic Engineering'; the head of controls engineering wants the packet to state the qualification exactly as documented, because the controls engineer signs the safety verification.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Confirm the LinkedIn claim against official records.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_d8ce1ab0fa8e\",\"question\":\"Does the candidate hold an accredited engineering degree in electrical, electronic or control engineering?\",\"evidenceTarget\":\"Official degree certificate or university transcript\"},{\"questionId\":\"q2\",\"requirementId\":\"req_179c3bc9cc95\",\"question\":\"Has the candidate personally signed any safety function verifications for conveyor or sortation lines?\",\"evidenceTarget\":\"Signed safety function verification documents\"}],\"humanReviewChecklist\":[\"Verify accreditation status of candidate’s degree\",\"Confirm candidate’s signature on safety function verifications\",\"Assess impact of missing qualifications on role suitability\",\"Determine if experience compensates for missing degree\",\"Ensure documentation of commissioning and as-built work is complete\"],\"auditSummary\":\"The evidence confirms the candidate’s experience in PLC/software development, commissioning, and documentation, but lacks proof of an accredited engineering degree and personal signature on safety function verifications, which are critical requirements for the Controls Software Engineer role. Human review is required to evaluate whether the missing qualifications can be mitigated or if the candidate should be disqualified.\",\"limitations\":[\"Degree evidence is incomplete; candidate’s diploma is not an accredited engineering degree. The safety function verification was signed by the safety engineer, not the candidate.\"]} }",
+ "content_sha256": "26d3f749c030fc65b5b5fc239bc9edf0fb463e5240606815132ccf5c22eb6368",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_0300211d98793a5a",
+   "targetRoleTitle": "Controls Software Engineer, Conveyor Systems",
+   "professionalSummary": [
+    "Controls technician and software engineer with six years of experience on conveyor and sortation lines, responsible for writing PLC and line‑control software, commissioning lines, and producing as‑built documentation."
+   ],
+   "experienceHighlights": [
+    "Developed PLC and line‑control software for eleven lines in accordance with the company’s software standard.",
+    "Commissioned nine lines on site with installation teams, recording commissioning results in line commissioning records."
+   ],
+   "projectsAndWorkSamples": [
+    "Provided line‑control software listings, as‑built documentation, and commissioning records for a sortation line, accompanied by a diploma certificate as verification."
+   ],
+   "skills": [
+    "PLC programming",
+    "Line‑control software development",
+    "Commissioning",
+    "As‑built documentation",
+    "Safety function implementation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in PLC/software development, commissioning, and documentation, but do not establish an accredited engineering degree or that the candidate personally signed safety function verifications."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess qualification gaps and missing evidence."
+   },
+   "role": {
+    "roleTitle": "Controls Software Engineer, Conveyor Systems",
+    "jobDescriptionSource": "jd_6e6a0632ce55f8ae",
+    "requirementIds": [
+     "req_d8ce1ab0fa8e",
+     "req_179c3bc9cc95",
+     "req_397dd13b5f4a",
+     "req_02baaeb55a67",
+     "req_ac5bb03cd555"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_0300211d98793a5a",
+    "sources": [
+     "src_6758d443c8fb",
+     "src_e90b9f320220",
+     "src_54acb315024b",
+     "src_0face072df96",
+     "src_39cf61becfa3",
+     "src_e68518a9da0b",
+     "src_4a3074cda8a9",
+     "src_326df04fd0aa"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d8ce1ab0fa8e",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Accredited engineering degree in electrical, electronic or control engineering"
+     ]
+    },
+    {
+     "requirementId": "req_179c3bc9cc95",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Candidate’s signature on safety function verifications for conveyor or sortation lines"
+     ]
+    },
+    {
+     "requirementId": "req_397dd13b5f4a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6758d443c8fb",
+       "text": "Controls technician, then controls software engineer, on conveyor and sortation lines for a materials handling company for six years, writing the PLC and line-control software for eleven lines against the mechanical designs under the company's software standard.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of software development activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_02baaeb55a67",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e90b9f320220",
+       "text": "Commissioned nine of those lines on site with the installation teams, recording the commissioning results in the line commissioning records.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of commissioning activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ac5bb03cd555",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_39cf61becfa3",
+       "text": "Wrote the as-built software documentation and the control software boundary notes for the eleven lines, filed with each line's hand-over pack.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation activity"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Writes PLC and line-control software for eleven lines against the mechanical designs under the company's software standard.",
+     "supportingRequirementIds": [
+      "req_397dd13b5f4a"
+     ],
+     "sourceIds": [
+      "src_6758d443c8fb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Controls technician, then controls software engineer, on conveyor and sortation lines for a materials handling company for six years, writing the PLC and line-control software for eleven lines against the mechanical designs under the company's software standard."
+    },
+    {
+     "claim": "Commissioned nine lines on site with the installation teams, recording the commissioning results in the line commissioning records.",
+     "supportingRequirementIds": [
+      "req_02baaeb55a67"
+     ],
+     "sourceIds": [
+      "src_e90b9f320220"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Commissioned nine of those lines on site with the installation teams, recording the commissioning results in the line commissioning records."
+    },
+    {
+     "claim": "Produced the as-built software documentation and control software boundary notes for the eleven lines, filed with each line's hand-over pack.",
+     "supportingRequirementIds": [
+      "req_ac5bb03cd555"
+     ],
+     "sourceIds": [
+      "src_39cf61becfa3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the as-built software documentation and the control software boundary notes for the eleven lines, filed with each line's hand-over pack."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Has signed safety function verifications for conveyor or sortation lines.",
+     "reason": "The evidence indicates the safety function verification was signed by the safety engineer, not the candidate.",
+     "requiredFollowUp": "Confirm whether the candidate personally signed any safety function verifications."
+    },
+    {
+     "claim": "Holds an accredited engineering degree in electrical, electronic or control engineering.",
+     "reason": "The candidate holds a Higher National Diploma and a pending honours top‑up, not an accredited engineering degree.",
+     "requiredFollowUp": "Provide documentation of an accredited engineering degree."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_d8ce1ab0fa8e",
+     "severity": "high",
+     "gap": "Accredited engineering degree in electrical, electronic or control engineering"
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_179c3bc9cc95",
+     "severity": "high",
+     "gap": "Candidate’s signature on safety function verifications for conveyor or sortation lines"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_4a3074cda8a9",
+     "text": "Candidate said he has 'an engineering degree in electrical' and described the diploma and the top‑up as 'the same thing in practice'; asked whether the top‑up was completed, he said it was 'on hold'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify the candidate’s actual degree status through official documentation."
+    },
+    {
+     "sourceId": "src_326df04fd0aa",
+     "text": "Hiring manager pre‑read: the candidate's LinkedIn education section reads 'BEng Electrical and Electronic Engineering'; the head of controls engineering wants the packet to state the qualification exactly as documented, because the controls engineer signs the safety verification.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Confirm the LinkedIn claim against official records."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_d8ce1ab0fa8e",
+     "question": "Does the candidate hold an accredited engineering degree in electrical, electronic or control engineering?",
+     "evidenceTarget": "Official degree certificate or university transcript"
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_179c3bc9cc95",
+     "question": "Has the candidate personally signed any safety function verifications for conveyor or sortation lines?",
+     "evidenceTarget": "Signed safety function verification documents"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify accreditation status of candidate’s degree",
+    "Confirm candidate’s signature on safety function verifications",
+    "Assess impact of missing qualifications on role suitability",
+    "Determine if experience compensates for missing degree",
+    "Ensure documentation of commissioning and as-built work is complete"
+   ],
+   "auditSummary": "The evidence confirms the candidate’s experience in PLC/software development, commissioning, and documentation, but lacks proof of an accredited engineering degree and personal signature on safety function verifications, which are critical requirements for the Controls Software Engineer role. Human review is required to evaluate whether the missing qualifications can be mitigated or if the candidate should be disqualified.",
+   "limitations": [
+    "Degree evidence is incomplete; candidate’s diploma is not an accredited engineering degree. The safety function verification was signed by the safety engineer, not the candidate."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:45:41.770107+00:00"
+}

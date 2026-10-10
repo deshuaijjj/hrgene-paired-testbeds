@@ -1,0 +1,338 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "0bed8ef6-7663-4c84-90e7-fbb0a6c13e00.C2",
+ "case_id": "0bed8ef6-7663-4c84-90e7-fbb0a6c13e00",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15412,
+  "promptWords": 1842
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 70.382
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4235,
+ "eval_count": 2964,
+ "prompt_eval_duration_ns": 19041000,
+ "eval_duration_ns": 54974333000,
+ "total_duration_ns": 70379450209,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Need to check requirements. Let's map.\n\nRequirement 1: master's degree in stats or related. Candidate has BEng and postgraduate modules, but no award. Source src_a1bf146537ea says candidate said she has 'a master's in statistics' but modules paused. So not established. So requirement insufficient evidence. Need gap.\n\nRequirement 2: at least 3 years applied reliability modelling on field failure data. Source src_43ab5e748677 says reliability analyst for 3 years 7 months building models. So supported. Also src_396e7ff29a52. So evidence.\n\nRequirement 3: builds survival and degradation models behind maintenance interval recommendations. Source src_43ab5e748677 supports. Also src_a8f72d479da0 work sample. So supported.\n\nRequirement 4: reviews field failure data with service engineers under documented data quality procedure. Source src_7221c5798b43 supports. Also src_396e7ff29a52. So supported.\n\nRequirement 5: documents model limitations and interval boundaries for contract customers. Source src_396e7ff29a52 supports. Also src_a8f72d479da0. So supported.\n\nThus only req_717ed90a7466 insufficient evidence. Also maybe qualification gap.\n\nAlso need to note subjective claim: recruiter screen note is subjective. That note is source src_a1bf146537ea. It's a note, not evidence. Should go to interviewSignalRisks.\n\nAlso need to include missingEvidenceGaps for master's degree.\n\nAlso unsupportedClaims: claim that candidate has master's. But not established. So unsupported claim.\n\nAlso need to include evidenceBoundary: what materials establish: experience, models, reviews, documentation. What not: master's degree.\n\nNow produce JSON.\n\nNeed to include optimizedCv with claims. Claims should be supported by sources. For CV, we can restate experience highlights etc. Use sources.\n\nLet's craft.\n\nAlso need to include requirementEvidenceMap covering all 5 requirementIds.\n\nFor req_717ed90a7466: status insufficient_evidence, missingEvidence: \"Master's degree in statistics or related quantitative field not awarded; no evidence of completion.\" Provide evidence? None. So no evidence entries.\n\nFor others: status supported, evidence entries with sourceId and text.\n\nNeed to include witness: verbatim passage from source. Use short excerpt.\n\nAlso need to include supportedClaims array: maybe claims like \"Reliability analyst for 3 years 7 months building survival and degradation models\" etc. Provide sourceIds.\n\nUnsupportedClaims: claim that candidate has master's degree. Reason: source indicates no award. Required follow-up: provide official degree award documentation.\n\nMissingEvidenceGaps: gap for master's degree.\n\nInterviewSignalRisks: source src_a1bf146537ea note about recruiter screen. Signal type: subjective. Recommended handling: verify degree status.\n\nFollowUpQuestions: for requirement 1: ask for official degree award documentation.\n\nHumanReviewChecklist: items like \"Verify master's degree completion\", \"Confirm field failure data review procedure\", etc.\n\nAuditSummary: paragraph summarizing evidence and gaps.\n\nLimitations: maybe \"Limited to provided sources; no external verification\".\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_6cdcdbd378fc2f40\",\n    \"targetRoleTitle\": \"Reliability Statistician, Industrial Pump Fleet Analytics\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv_1\",\n        \"text\": \"Reliability analyst with 3 years and 7 months experience building survival and degradation models for industrial pump maintenance intervals.\",\n        \"sourceIds\": [\"src_43ab5e748677\"],\n        \"requirementIds\": [\"req_a59ee2ef0b15\", \"req_72a68dbb7d72\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.\"\n      },\n      {\n        \"claimId\": \"cv_2\",\n        \"text\": \"Reviewed field failure data monthly with service engineers under a documented data quality procedure and maintained an exclusion log for mislabelled failures.\",\n        \"sourceIds\": [\"src_7221c5798b43\"],\n        \"requirementIds\": [\"req_144c359081f8\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures.\"\n      },\n      {\n        \"claimId\": \"cv_3\",\n        \"text\": \"Authored model limitation notes and interval boundary statements sent to contract customers, and presented recommendations to customers with the head of fleet analytics.\",\n        \"sourceIds\": [\"src_396e7ff29a52\"],\n        \"requirementIds\": [\"req_bcf83647589f\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"exp_1\",\n        \"text\": \"Eighteen months as a maintenance planning analyst at a paper mill, using failure records to plan overhauls.\",\n        \"sourceIds\": [\"src_d68bf2ae789a\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Before the pump service company, eighteen months as a maintenance planning analyst at a paper mill, using the mill's failure records to plan overhauls.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"proj_1\",\n        \"text\": \"Survival model workbook and interval recommendation note for one pump family, including data platform query references and transcript of completed postgraduate modules.\",\n        \"sourceIds\": [\"src_a8f72d479da0\"],\n        \"requirementIds\": [\"req_72a68dbb7d72\", \"req_bcf83647589f\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the survival model workbook and the interval recommendation note for one pump family, with the data platform query references as a verification trail, and the transcript of the two completed postgraduate modules.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"skill_1\",\n        \"text\": \"Statistical modeling, survival analysis, degradation modeling, data quality procedures, client communication.\",\n        \"sourceIds\": [\"src_43ab5e748677\", \"src_7221c5798b43\", \"src_396e7ff29a52\"],\n        \"requirementIds\": [\"req_72a68dbb7d72\", \"req_144c359081f8\", \"req_bcf83647589f\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided materials establish the candidate’s experience in reliability analysis, model development, data review, and documentation for contract customers, but do not provide evidence of a completed master’s degree in statistics or a related quantitative field.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess qualification gaps and verify the candidate’s master’s degree status.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Reliability Statistician, Industrial Pump Fleet Analytics\",\n      \"jobDescriptionSource\": \"jd_42805d82c0326fda\",\n      \"requirementIds\": [\n        \"req_717ed90a7466\",\n        \"req_a59ee2ef0b15\",\n        \"req_72a68dbb7d72\",\n        \"req_144c359081f8\",\n        \"req_bcf83647589f\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_6cdcdbd378fc2f40\",\n      \"sources\": [\n        \"src_43ab5e748677\",\n        \"src_8f9d21d2fa72\",\n        \"src_7221c5798b43\",\n        \"src_396e7ff29a52\",\n        \"src_d68bf2ae789a\",\n        \"src_a8f72d479da0\",\n        \"src_a1bf146537ea\",\n        \"src_92462ef34cf3\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_717ed90a7466\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [],\n        \"missingEvidence\": [\n          \"Official documentation confirming completion of a master’s degree in statistics or a related quantitative field.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_a59ee2ef0b15\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_43ab5e748677\",\n            \"text\": \"Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of duration and activity.\"\n          },\n          {\n            \"sourceId\": \"src_396e7ff29a52\",\n            \"text\": \"Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Supports applied modeling context.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_72a68dbb7d72\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_43ab5e748677\",\n            \"text\": \"Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Explicit model building.\"\n          },\n          {\n            \"sourceId\": \"src_a8f72d479da0\",\n            \"text\": \"Work sample: the survival model workbook and the interval recommendation note for one pump family, with the data platform query references as a verification trail, and the transcript of the two completed postgraduate modules.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Concrete artifact.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_144c359081f8\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_7221c5798b43\",\n            \"text\": \"Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of review process.\"\n          },\n          {\n            \"sourceId\": \"src_396e7ff29a52\",\n            \"text\": \"Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Supports collaboration with service engineers.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_bcf83647589f\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_396e7ff29a52\",\n            \"text\": \"Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct documentation of model limitations.\"\n          },\n          {\n            \"sourceId\": \"src_a8f72d479da0\",\n            \"text\": \"Work sample: the survival model workbook and the interval recommendation note for one pump family, with the data platform query references as a verification trail, and the transcript of the two completed postgraduate modules.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Includes interval boundary statements.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Reliability analyst with 3 years and 7 months experience building survival and degradation models for industrial pump maintenance intervals.\",\n        \"supportingRequirementIds\": [\"req_a59ee2ef0b15\", \"req_72a68dbb7d72\"],\n        \"sourceIds\": [\"src_43ab5e748677\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.\"\n      },\n      {\n        \"claim\": \"Reviewed field failure data monthly with service engineers under a documented data quality procedure.\",\n        \"supportingRequirementIds\": [\"req_144c359081f8\"],\n        \"sourceIds\": [\"src_7221c5798b43\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures.\"\n      },\n      {\n        \"claim\": \"Authored model limitation notes and interval boundary statements sent to contract customers.\",\n        \"supportingRequirementIds\": [\"req_bcf83647589f\"],\n        \"sourceIds\": [\"src_396e7ff29a52\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.\"\n      }\n    ],\n    \"unsupportedClaims\": [\n      {\n        \"claim\": \"Candidate holds a master’s degree in statistics.\",\n        \"reason\": \"Sources indicate the candidate has not completed the degree and the remaining modules were paused.\",\n        \"requiredFollowUp\": \"Provide official degree award documentation or a formal statement of completion.\"\n      }\n    ],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_717ed90a7466\",\n        \"severity\": \"high\",\n        \"gap\": \"No evidence of completion of a master’s degree in statistics or a related quantitative field.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_a1bf146537ea\",\n        \"text\": \"Recruiter screen: candidate said she has 'a master's in statistics' from the distance-learning university and that the modules 'add up to the degree'; asked for the award date, she said the remaining modules were 'paused'.\",\n        \"signalType\": \"subjective\",\n        \"jobRelatedBoundary\": false,\n        \"severity\": \"medium\",\n        \"recommendedHandling\": \"Verify degree completion status with the university and request official documentation.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_717ed90a7466\",\n        \"question\": \"Can you provide official documentation confirming the completion of your master’s degree in statistics or a related quantitative field?\",\n        \"evidenceTarget\": \"Official degree award certificate or transcript.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify master’s degree completion status.\",\n      \"Confirm that the field failure data review procedure aligns with the documented data quality procedure.\",\n      \"Assess the completeness and relevance of the provided work samples.\",\n      \"Ensure that the candidate’s experience meets the three-year applied reliability modeling requirement.\"\n    ],\n    \"auditSummary\": \"The candidate demonstrates substantial experience in reliability analysis, model development, data review, and documentation for contract customers, satisfying all technical requirements except for the master’s degree qualification. No evidence supports the claim of a completed master’s degree; a follow-up is required to confirm this credential.\",\n    \"limitations\": [\n      \"Evidence limited to the provided sources; external verification of degree status is not available.\",\n      \"Subjective recruiter notes are treated as interview signals, not evidence.\"\n    ]\n  }\n}",
+ "content_sha256": "a19ae87e0147d43ae46f924bb81ef2ecaf9965656fe1b4331ca56fc73f0bdd79",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_6cdcdbd378fc2f40",
+   "targetRoleTitle": "Reliability Statistician, Industrial Pump Fleet Analytics",
+   "professionalSummary": [
+    {
+     "claimId": "cv_1",
+     "text": "Reliability analyst with 3 years and 7 months experience building survival and degradation models for industrial pump maintenance intervals.",
+     "sourceIds": [
+      "src_43ab5e748677"
+     ],
+     "requirementIds": [
+      "req_a59ee2ef0b15",
+      "req_72a68dbb7d72"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families."
+    },
+    {
+     "claimId": "cv_2",
+     "text": "Reviewed field failure data monthly with service engineers under a documented data quality procedure and maintained an exclusion log for mislabelled failures.",
+     "sourceIds": [
+      "src_7221c5798b43"
+     ],
+     "requirementIds": [
+      "req_144c359081f8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures."
+    },
+    {
+     "claimId": "cv_3",
+     "text": "Authored model limitation notes and interval boundary statements sent to contract customers, and presented recommendations to customers with the head of fleet analytics.",
+     "sourceIds": [
+      "src_396e7ff29a52"
+     ],
+     "requirementIds": [
+      "req_bcf83647589f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_1",
+     "text": "Eighteen months as a maintenance planning analyst at a paper mill, using failure records to plan overhauls.",
+     "sourceIds": [
+      "src_d68bf2ae789a"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Before the pump service company, eighteen months as a maintenance planning analyst at a paper mill, using the mill's failure records to plan overhauls."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_1",
+     "text": "Survival model workbook and interval recommendation note for one pump family, including data platform query references and transcript of completed postgraduate modules.",
+     "sourceIds": [
+      "src_a8f72d479da0"
+     ],
+     "requirementIds": [
+      "req_72a68dbb7d72",
+      "req_bcf83647589f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the survival model workbook and the interval recommendation note for one pump family, with the data platform query references as a verification trail, and the transcript of the two completed postgraduate modules."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_1",
+     "text": "Statistical modeling, survival analysis, degradation modeling, data quality procedures, client communication.",
+     "sourceIds": [
+      "src_43ab5e748677",
+      "src_7221c5798b43",
+      "src_396e7ff29a52"
+     ],
+     "requirementIds": [
+      "req_72a68dbb7d72",
+      "req_144c359081f8",
+      "req_bcf83647589f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families."
+    }
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in reliability analysis, model development, data review, and documentation for contract customers, but do not provide evidence of a completed master’s degree in statistics or a related quantitative field."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess qualification gaps and verify the candidate’s master’s degree status."
+   },
+   "role": {
+    "roleTitle": "Reliability Statistician, Industrial Pump Fleet Analytics",
+    "jobDescriptionSource": "jd_42805d82c0326fda",
+    "requirementIds": [
+     "req_717ed90a7466",
+     "req_a59ee2ef0b15",
+     "req_72a68dbb7d72",
+     "req_144c359081f8",
+     "req_bcf83647589f"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_6cdcdbd378fc2f40",
+    "sources": [
+     "src_43ab5e748677",
+     "src_8f9d21d2fa72",
+     "src_7221c5798b43",
+     "src_396e7ff29a52",
+     "src_d68bf2ae789a",
+     "src_a8f72d479da0",
+     "src_a1bf146537ea",
+     "src_92462ef34cf3"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_717ed90a7466",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Official documentation confirming completion of a master’s degree in statistics or a related quantitative field."
+     ]
+    },
+    {
+     "requirementId": "req_a59ee2ef0b15",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_43ab5e748677",
+       "text": "Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of duration and activity."
+      },
+      {
+       "sourceId": "src_396e7ff29a52",
+       "text": "Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.",
+       "evidenceStrength": "medium",
+       "notes": "Supports applied modeling context."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_72a68dbb7d72",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_43ab5e748677",
+       "text": "Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families.",
+       "evidenceStrength": "high",
+       "notes": "Explicit model building."
+      },
+      {
+       "sourceId": "src_a8f72d479da0",
+       "text": "Work sample: the survival model workbook and the interval recommendation note for one pump family, with the data platform query references as a verification trail, and the transcript of the two completed postgraduate modules.",
+       "evidenceStrength": "medium",
+       "notes": "Concrete artifact."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_144c359081f8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7221c5798b43",
+       "text": "Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of review process."
+      },
+      {
+       "sourceId": "src_396e7ff29a52",
+       "text": "Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.",
+       "evidenceStrength": "medium",
+       "notes": "Supports collaboration with service engineers."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_bcf83647589f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_396e7ff29a52",
+       "text": "Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation of model limitations."
+      },
+      {
+       "sourceId": "src_a8f72d479da0",
+       "text": "Work sample: the survival model workbook and the interval recommendation note for one pump family, with the data platform query references as a verification trail, and the transcript of the two completed postgraduate modules.",
+       "evidenceStrength": "medium",
+       "notes": "Includes interval boundary statements."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Reliability analyst with 3 years and 7 months experience building survival and degradation models for industrial pump maintenance intervals.",
+     "supportingRequirementIds": [
+      "req_a59ee2ef0b15",
+      "req_72a68dbb7d72"
+     ],
+     "sourceIds": [
+      "src_43ab5e748677"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reliability analyst on the pump fleet analytics team of a pump service company for three years and seven months, building the survival and degradation models behind the maintenance intervals for two pump families."
+    },
+    {
+     "claim": "Reviewed field failure data monthly with service engineers under a documented data quality procedure.",
+     "supportingRequirementIds": [
+      "req_144c359081f8"
+     ],
+     "sourceIds": [
+      "src_7221c5798b43"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed the field failure data with the service engineers each month under the team's data quality procedure, keeping the exclusion log for mislabelled failures."
+    },
+    {
+     "claim": "Authored model limitation notes and interval boundary statements sent to contract customers.",
+     "supportingRequirementIds": [
+      "req_bcf83647589f"
+     ],
+     "sourceIds": [
+      "src_396e7ff29a52"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model limitation notes and the interval boundary statements sent to contract customers with each interval recommendation, and presented the recommendations to two contract customers with the head of fleet analytics."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate holds a master’s degree in statistics.",
+     "reason": "Sources indicate the candidate has not completed the degree and the remaining modules were paused.",
+     "requiredFollowUp": "Provide official degree award documentation or a formal statement of completion."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_717ed90a7466",
+     "severity": "high",
+     "gap": "No evidence of completion of a master’s degree in statistics or a related quantitative field."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_a1bf146537ea",
+     "text": "Recruiter screen: candidate said she has 'a master's in statistics' from the distance-learning university and that the modules 'add up to the degree'; asked for the award date, she said the remaining modules were 'paused'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": false,
+     "severity": "medium",
+     "recommendedHandling": "Verify degree completion status with the university and request official documentation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_717ed90a7466",
+     "question": "Can you provide official documentation confirming the completion of your master’s degree in statistics or a related quantitative field?",
+     "evidenceTarget": "Official degree award certificate or transcript."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify master’s degree completion status.",
+    "Confirm that the field failure data review procedure aligns with the documented data quality procedure.",
+    "Assess the completeness and relevance of the provided work samples.",
+    "Ensure that the candidate’s experience meets the three-year applied reliability modeling requirement."
+   ],
+   "auditSummary": "The candidate demonstrates substantial experience in reliability analysis, model development, data review, and documentation for contract customers, satisfying all technical requirements except for the master’s degree qualification. No evidence supports the claim of a completed master’s degree; a follow-up is required to confirm this credential.",
+   "limitations": [
+    "Evidence limited to the provided sources; external verification of degree status is not available.",
+    "Subjective recruiter notes are treated as interview signals, not evidence."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:44:29.094072+00:00"
+}

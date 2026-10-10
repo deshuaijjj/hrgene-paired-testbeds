@@ -1,0 +1,136 @@
+{
+  "caseId": "2aae44c2-ca6a-4bc3-af60-420c659400f2",
+  "roleTitle": "Demand Forecasting Scientist, Retail Replenishment Service",
+  "jobDescription": "The retail replenishment service generates the nightly store orders for a grocery chain of four hundred stores. The Demand Forecasting Scientist operates the forecast models inside the nightly production run: has deployed forecast models into the live order generation, checks forecast accuracy against actual store sales each morning, handles production model incidents such as stale features or a missing sales feed during the nightly window, coordinates model releases with the platform ML team, and documents each model's limitations. Experience limited to offline backtests is not sufficient on its own.",
+  "requirements": [
+    "Has deployed forecast models into the nightly order generation and checks their accuracy against actual store sales.",
+    "Handles model incidents such as stale features or a missing sales feed during the nightly window.",
+    "Coordinates model releases with the platform ML team and records own responsibility boundaries.",
+    "Builds and backtests demand forecast models on historical store sales under a documented evaluation protocol.",
+    "Documents each model's limitations and hand-over conditions in a model card."
+  ],
+  "evidence": [
+    {
+      "type": "resume",
+      "text": "Built and evaluated demand forecast models for the replenishment service in the offline experimentation environment, backtesting each candidate model over eighteen months of historical store sales extracts under the evaluation protocol agreed with the platform ML team."
+    },
+    {
+      "type": "resume",
+      "text": "Wrote the model card and the evaluation report for each candidate model, listing the feature dependencies, the backtest results by store cluster and the known limitations of the offline sales extracts."
+    },
+    {
+      "type": "resume",
+      "text": "Handed the two accepted candidate models to the platform ML team through the model registry; that team owned the nightly order run, the release pipeline and the morning accuracy checks, and I had no access to the run itself."
+    },
+    {
+      "type": "resume",
+      "text": "Specified the feature pipeline changes needed by the accepted models in the feature request log and reviewed the platform team's implementation against the backtest assumptions."
+    },
+    {
+      "type": "resume",
+      "text": "Responsibilities covered offline model development, backtesting, model cards, feature specifications and registry hand-over for the replenishment forecasting programme over roughly two years."
+    },
+    {
+      "type": "work_sample",
+      "text": "Work sample: the backtest report for the two accepted models with experiment run identifiers from the offline experimentation environment, and the model card for the store-cluster model."
+    },
+    {
+      "type": "note",
+      "text": "Recruiter screen: candidate said she 'deployed the forecasting models that drive the nightly orders' and that 'four hundred stores are running on my models'; asked who owned the nightly run, she said the platform ML team 'took it from there' after her registry hand-over."
+    },
+    {
+      "type": "note",
+      "text": "Hiring manager pre-read: her LinkedIn headline reads 'production demand forecasting at scale'; the head of supply chain wants someone who has run models inside the nightly window with real store orders, so the packet should say who deployed and who monitored."
+    }
+  ],
+  "gold": {
+    "propositions": [
+      {
+        "text": "The candidate built and backtested demand forecast models in the offline experimentation environment over eighteen months of historical store sales under the agreed evaluation protocol.",
+        "status": "supported",
+        "sources": [
+          1,
+          6
+        ],
+        "requirements": [
+          4
+        ],
+        "boundaryCategory": "documented_task_and_artifact",
+        "criticality": "noncritical",
+        "rationale": "The resume and the backtest report document the offline modelling and the backtests."
+      },
+      {
+        "text": "The candidate wrote the model card and evaluation report for each candidate model and handed the accepted models to the platform ML team through the model registry.",
+        "status": "supported",
+        "sources": [
+          2,
+          3,
+          6
+        ],
+        "requirements": [
+          3,
+          5
+        ],
+        "boundaryCategory": "documented_tool_and_activity",
+        "criticality": "noncritical",
+        "rationale": "The resume and the model card document the artefacts and the registry hand-over."
+      },
+      {
+        "text": "The candidate deployed forecast models into the nightly order generation for four hundred stores and checked their accuracy against actual store sales.",
+        "status": "unsupported",
+        "sources": [],
+        "requirements": [
+          1,
+          2
+        ],
+        "boundaryCategory": "test_environment_not_production",
+        "criticality": "critical",
+        "rationale": "The resume places the candidate's work in the offline experimentation environment and the nightly run, releases and morning checks with the platform ML team; her screen remarks describe the models' status, not her operating them."
+      }
+    ],
+    "requirementStatus": [
+      "insufficient_evidence",
+      "insufficient_evidence",
+      "partial_evidence",
+      "supported",
+      "supported"
+    ],
+    "trap": {
+      "proposition": 3,
+      "rule": "hrgene.deployment_boundary",
+      "requirements": [
+        1,
+        2
+      ],
+      "signatures": [
+        "deployed the forecasting models",
+        "drive the nightly orders",
+        "running on my models",
+        "production demand forecasting",
+        "in production",
+        "real store orders",
+        "at scale"
+      ],
+      "bait": [
+        7,
+        8
+      ]
+    },
+    "subjective": [],
+    "nonProduction": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "expectedGap": "The materials document offline model development and backtesting; they do not document the candidate deploying models into the nightly order run, checking live accuracy or handling incidents in the nightly window.",
+    "expectedBoundaryNote": "Keep the environment the resume names: offline experimentation and backtests; the nightly run, releases and morning accuracy checks belonged to the platform ML team.",
+    "followUpTargets": [
+      "Ask whether the candidate has ever released a model into a nightly production run herself or handled an incident during the window, and when."
+    ],
+    "validClaimSignatures": [
+      "backtest",
+      "offline experimentation"
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "6a6b6e2d-564c-4508-a70b-18a77692712e.C2",
+ "case_id": "6a6b6e2d-564c-4508-a70b-18a77692712e",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 13905,
+  "promptWords": 1652
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 38.737
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3625,
+ "eval_count": 1806,
+ "prompt_eval_duration_ns": 18358000,
+ "eval_duration_ns": 32560793000,
+ "total_duration_ns": 38735060833,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft claims.\n\nClaims: built microservices, wrote performance tests, upgraded to Java 11 (not 17), prepared PCI DSS evidence pack, idempotency key store.\n\nRequirements: req_faad5a8b49ad: builds and maintains Java and Spring Boot microservices for card authorisation. Supported: yes, source src_357bf6138459.\n\nreq_32565787933f: writes performance tests that check latency against a fixed budget. Supported: src_8a94f22451a2.\n\nreq_045553088cb4: upgraded production services to Java 17 and Spring Boot 3. Not supported; only Java 11 and Spring Boot 2.7. So insufficient evidence. Gap: need evidence of upgrade to Java 17/Spring Boot 3.\n\nreq_414e51bf7f2a: supplies evidence for PCI DSS assessments. Supported: src_192c2d4ec51b and src_2c9bd984f0ac.\n\nreq_cef28303f940: designs idempotent message handling for payment events. Supported: work sample src_05dbd4f24a69.\n\nAlso need evidenceBoundary sentence.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_bf3008629f7b665a\",\"targetRoleTitle\":\"Backend Engineer, Card Authorisation\",\"professionalSummary\":[\"Experienced backend engineer with a focus on card authorisation services, specialising in Java and Spring Boot microservices, performance testing, PCI DSS evidence preparation, and idempotent message handling.\"],\"experienceHighlights\":[\"Built Spring Boot microservices for merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes.\",\"Wrote Gatling performance tests that enforce a 150‑millisecond latency budget for the authorisation path.\",\"Upgraded the stand‑in‑rules service from Java 8 to Java 11 and Spring Boot 2.7 in 2021, replacing deprecated security configuration.\",\"Prepared yearly PCI DSS evidence packs for the team’s services, including access lists, change records and encryption‑key rotation logs.\"],\"projectsAndWorkSamples\":[\"Pull request introducing an idempotency‑key store for authorisation‑reversal events, with design note, unit and replay tests, and approvals from two reviewers.\"],\"skills\":[\"Java\",\"Spring Boot\",\"Gatling\",\"Kubernetes\",\"PCI DSS\",\"Idempotency Design\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience building and maintaining Java/Spring Boot microservices, writing performance tests against a latency budget, preparing PCI DSS evidence, and designing idempotent message handling. They do not establish experience upgrading services to Java 17/Spring Boot 3 or production deployment details.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the Backend Engineer, Card Authorisation role.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Card Authorisation\",\"jobDescriptionSource\":\"jd_2f34ab05aa560e02\",\"requirementIds\":[\"req_faad5a8b49ad\",\"req_32565787933f\",\"req_045553088cb4\",\"req_414e51bf7f2a\",\"req_cef28303f940\"]},\"candidate\":{\"candidateId\":\"cand_bf3008629f7b665a\",\"sources\":[\"src_357bf6138459\",\"src_8a94f22451a2\",\"src_1915a517cb40\",\"src_192c2d4ec51b\",\"src_05dbd4f24a69\",\"src_9a2471f7c413\",\"src_2c9bd984f0ac\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_faad5a8b49ad\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_357bf6138459\",\"text\":\"Built Spring Boot microservices for the merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states microservice development\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_32565787933f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8a94f22451a2\",\"text\":\"Wrote Gatling performance tests for the authorisation path that fail the build when 99th‑percentile latency in the test environment goes over the 150‑millisecond budget.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit latency budget\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_045553088cb4\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_1915a517cb40\",\"text\":\"Upgraded the stand‑in‑rules service from Java 8 to Java 11 and Spring Boot 2.7 in 2021, replacing deprecated security configuration.\",\"evidenceStrength\":\"medium\",\"notes\":\"Upgrade to Java 11, not Java 17/Spring Boot 3\"}],\"missingEvidence\":[\"Evidence that the candidate upgraded production services to Java 17 and Spring Boot 3\"]},{\"requirementId\":\"req_414e51bf7f2a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_192c2d4ec51b\",\"text\":\"Prepared the yearly PCI DSS evidence pack for the team's three services: access lists, change records and the encryption‑key rotation log.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct PCI DSS evidence preparation\"},{\"sourceId\":\"src_2c9bd984f0ac\",\"text\":\"The candidate's engineering manager at Calder Card Services confirmed in writing that the candidate prepared the PCI DSS evidence pack for the team's services in the 2021, 2023 and 2024 assessment cycles.\",\"evidenceStrength\":\"high\",\"notes\":\"Manager confirmation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_cef28303f940\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_05dbd4f24a69\",\"text\":\"Work sample: a pull request introducing an idempotency‑key store for authorisation‑reversal events, with the design note, unit and replay tests, and approvals from two reviewers.\",\"evidenceStrength\":\"high\",\"notes\":\"Design and implementation of idempotent handling\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Built Spring Boot microservices for the merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes.\",\"supportingRequirementIds\":[\"req_faad5a8b49ad\"],\"sourceIds\":[\"src_357bf6138459\"],\"evidenceStrength\":\"high\",\"witness\":\"Built Spring Boot microservices for the merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes.\"},{\"claim\":\"Wrote Gatling performance tests that enforce a 150‑millisecond latency budget for the authorisation path.\",\"supportingRequirementIds\":[\"req_32565787933f\"],\"sourceIds\":[\"src_8a94f22451a2\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote Gatling performance tests for the authorisation path that fail the build when 99th‑percentile latency in the test environment goes over the 150‑millisecond budget.\"},{\"claim\":\"Prepared yearly PCI DSS evidence packs for the team's services, including access lists, change records and encryption‑key rotation logs.\",\"supportingRequirementIds\":[\"req_414e51bf7f2a\"],\"sourceIds\":[\"src_192c2d4ec51b\",\"src_2c9bd984f0ac\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the yearly PCI DSS evidence pack for the team's three services: access lists, change records and the encryption‑key rotation log.\"},{\"claim\":\"Designed and implemented an idempotency‑key store for authorisation‑reversal events.\",\"supportingRequirementIds\":[\"req_cef28303f940\"],\"sourceIds\":[\"src_05dbd4f24a69\"],\"evidenceStrength\":\"high\",\"witness\":\"Work sample: a pull request introducing an idempotency‑key store for authorisation‑reversal events, with the design note, unit and replay tests, and approvals from two reviewers.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_045553088cb4\",\"requirementId\":\"req_045553088cb4\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate upgraded production services to Java 17 and Spring Boot 3.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_045553088cb4\",\"requirementId\":\"req_045553088cb4\",\"question\":\"Can you provide details of any upgrades you performed to bring services to Java 17 and Spring Boot 3, including the production environment and deployment process?\",\"evidenceTarget\":\"Upgrade to Java 17/Spring Boot 3 in production\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s performance test latency budget aligns with the 150‑millisecond requirement.\",\"Confirm the candidate’s experience with production deployments to Java 17/Spring Boot 3.\",\"Assess the completeness of PCI DSS evidence preparation.\",\"Evaluate the idempotency design for payment events.\"],\"auditSummary\":\"The evidence packet confirms the candidate meets most technical requirements for the Backend Engineer, Card Authorisation role, except for the upgrade to Java 17/Spring Boot 3, which lacks supporting documentation. Human review is required to evaluate this gap and overall fit.\",\"limitations\":[\"The analysis is limited to the provided sources and does not include external verification of deployment environments or compliance calendars.\"]} }",
+ "content_sha256": "3826568fe5871a6a6a5d3d9387ccea370d813a79c010217e64c10d2e15ded2a3",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bf3008629f7b665a",
+   "targetRoleTitle": "Backend Engineer, Card Authorisation",
+   "professionalSummary": [
+    "Experienced backend engineer with a focus on card authorisation services, specialising in Java and Spring Boot microservices, performance testing, PCI DSS evidence preparation, and idempotent message handling."
+   ],
+   "experienceHighlights": [
+    "Built Spring Boot microservices for merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes.",
+    "Wrote Gatling performance tests that enforce a 150‑millisecond latency budget for the authorisation path.",
+    "Upgraded the stand‑in‑rules service from Java 8 to Java 11 and Spring Boot 2.7 in 2021, replacing deprecated security configuration.",
+    "Prepared yearly PCI DSS evidence packs for the team’s services, including access lists, change records and encryption‑key rotation logs."
+   ],
+   "projectsAndWorkSamples": [
+    "Pull request introducing an idempotency‑key store for authorisation‑reversal events, with design note, unit and replay tests, and approvals from two reviewers."
+   ],
+   "skills": [
+    "Java",
+    "Spring Boot",
+    "Gatling",
+    "Kubernetes",
+    "PCI DSS",
+    "Idempotency Design"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience building and maintaining Java/Spring Boot microservices, writing performance tests against a latency budget, preparing PCI DSS evidence, and designing idempotent message handling. They do not establish experience upgrading services to Java 17/Spring Boot 3 or production deployment details."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the Backend Engineer, Card Authorisation role."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Card Authorisation",
+    "jobDescriptionSource": "jd_2f34ab05aa560e02",
+    "requirementIds": [
+     "req_faad5a8b49ad",
+     "req_32565787933f",
+     "req_045553088cb4",
+     "req_414e51bf7f2a",
+     "req_cef28303f940"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bf3008629f7b665a",
+    "sources": [
+     "src_357bf6138459",
+     "src_8a94f22451a2",
+     "src_1915a517cb40",
+     "src_192c2d4ec51b",
+     "src_05dbd4f24a69",
+     "src_9a2471f7c413",
+     "src_2c9bd984f0ac"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_faad5a8b49ad",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_357bf6138459",
+       "text": "Built Spring Boot microservices for the merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes.",
+       "evidenceStrength": "high",
+       "notes": "Directly states microservice development"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_32565787933f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8a94f22451a2",
+       "text": "Wrote Gatling performance tests for the authorisation path that fail the build when 99th‑percentile latency in the test environment goes over the 150‑millisecond budget.",
+       "evidenceStrength": "high",
+       "notes": "Explicit latency budget"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_045553088cb4",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_1915a517cb40",
+       "text": "Upgraded the stand‑in‑rules service from Java 8 to Java 11 and Spring Boot 2.7 in 2021, replacing deprecated security configuration.",
+       "evidenceStrength": "medium",
+       "notes": "Upgrade to Java 11, not Java 17/Spring Boot 3"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate upgraded production services to Java 17 and Spring Boot 3"
+     ]
+    },
+    {
+     "requirementId": "req_414e51bf7f2a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_192c2d4ec51b",
+       "text": "Prepared the yearly PCI DSS evidence pack for the team's three services: access lists, change records and the encryption‑key rotation log.",
+       "evidenceStrength": "high",
+       "notes": "Direct PCI DSS evidence preparation"
+      },
+      {
+       "sourceId": "src_2c9bd984f0ac",
+       "text": "The candidate's engineering manager at Calder Card Services confirmed in writing that the candidate prepared the PCI DSS evidence pack for the team's services in the 2021, 2023 and 2024 assessment cycles.",
+       "evidenceStrength": "high",
+       "notes": "Manager confirmation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cef28303f940",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_05dbd4f24a69",
+       "text": "Work sample: a pull request introducing an idempotency‑key store for authorisation‑reversal events, with the design note, unit and replay tests, and approvals from two reviewers.",
+       "evidenceStrength": "high",
+       "notes": "Design and implementation of idempotent handling"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built Spring Boot microservices for the merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes.",
+     "supportingRequirementIds": [
+      "req_faad5a8b49ad"
+     ],
+     "sourceIds": [
+      "src_357bf6138459"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built Spring Boot microservices for the merchant‑limits and stand‑in‑rules components of the authorisation platform at Calder Card Services, running on Kubernetes."
+    },
+    {
+     "claim": "Wrote Gatling performance tests that enforce a 150‑millisecond latency budget for the authorisation path.",
+     "supportingRequirementIds": [
+      "req_32565787933f"
+     ],
+     "sourceIds": [
+      "src_8a94f22451a2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote Gatling performance tests for the authorisation path that fail the build when 99th‑percentile latency in the test environment goes over the 150‑millisecond budget."
+    },
+    {
+     "claim": "Prepared yearly PCI DSS evidence packs for the team's services, including access lists, change records and encryption‑key rotation logs.",
+     "supportingRequirementIds": [
+      "req_414e51bf7f2a"
+     ],
+     "sourceIds": [
+      "src_192c2d4ec51b",
+      "src_2c9bd984f0ac"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the yearly PCI DSS evidence pack for the team's three services: access lists, change records and the encryption‑key rotation log."
+    },
+    {
+     "claim": "Designed and implemented an idempotency‑key store for authorisation‑reversal events.",
+     "supportingRequirementIds": [
+      "req_cef28303f940"
+     ],
+     "sourceIds": [
+      "src_05dbd4f24a69"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Work sample: a pull request introducing an idempotency‑key store for authorisation‑reversal events, with the design note, unit and replay tests, and approvals from two reviewers."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_045553088cb4",
+     "requirementId": "req_045553088cb4",
+     "severity": "medium",
+     "gap": "Evidence that the candidate upgraded production services to Java 17 and Spring Boot 3."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_045553088cb4",
+     "requirementId": "req_045553088cb4",
+     "question": "Can you provide details of any upgrades you performed to bring services to Java 17 and Spring Boot 3, including the production environment and deployment process?",
+     "evidenceTarget": "Upgrade to Java 17/Spring Boot 3 in production"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s performance test latency budget aligns with the 150‑millisecond requirement.",
+    "Confirm the candidate’s experience with production deployments to Java 17/Spring Boot 3.",
+    "Assess the completeness of PCI DSS evidence preparation.",
+    "Evaluate the idempotency design for payment events."
+   ],
+   "auditSummary": "The evidence packet confirms the candidate meets most technical requirements for the Backend Engineer, Card Authorisation role, except for the upgrade to Java 17/Spring Boot 3, which lacks supporting documentation. Human review is required to evaluate this gap and overall fit.",
+   "limitations": [
+    "The analysis is limited to the provided sources and does not include external verification of deployment environments or compliance calendars."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:52:07.924648+00:00"
+}

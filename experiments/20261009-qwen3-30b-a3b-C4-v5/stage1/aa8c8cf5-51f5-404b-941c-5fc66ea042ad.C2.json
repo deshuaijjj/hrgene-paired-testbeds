@@ -1,0 +1,643 @@
+{
+ "request_id": "aa8c8cf5-51f5-404b-941c-5fc66ea042ad.C2",
+ "case_id": "aa8c8cf5-51f5-404b-941c-5fc66ea042ad",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.candidate.candidateId",
+    "message": "candidateId differs from the case",
+    "witness": {
+     "expected": "cand_a25d412ffe9c8bcc",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.jobDescriptionSource",
+    "message": "jobDescriptionSource differs from the case",
+    "witness": {
+     "expected": "jd_f1679e2434906c63",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[4]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_7ab890e0304b"
+     ],
+     "text": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[4]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_7ab890e0304b"
+     ],
+     "text": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "boundary_flags",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.decisionBoundary",
+    "message": "decisionBoundary missing",
+    "witness": {}
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_20a5387833b0 is not covered",
+    "witness": {
+     "requirementId": "req_20a5387833b0"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_9781dde050f5 is not covered",
+    "witness": {
+     "requirementId": "req_9781dde050f5"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_71a770a66469 is not covered",
+    "witness": {
+     "requirementId": "req_71a770a66469"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_24fe01444b0f is not covered",
+    "witness": {
+     "requirementId": "req_24fe01444b0f"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_27ac5c7151de is not covered",
+    "witness": {
+     "requirementId": "req_27ac5c7151de"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$",
+    "message": "1 schema error(s); first: $: missing required property 'hiringEvidencePacket'",
+    "witness": {
+     "errors": [
+      "$: missing required property 'hiringEvidencePacket'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[4]",
+   "detail": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[4]",
+   "detail": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage."
+  },
+  {
+   "rule": "hrgene.human_review_boundary",
+   "code": "boundary_flags",
+   "action": "reset_boundary_flags",
+   "path": "$.hiringEvidencePacket.decisionBoundary",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_20a5387833b0"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_9781dde050f5"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_71a770a66469"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_24fe01444b0f"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_27ac5c7151de"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_a25d412ffe9c8bcc",
+   "targetRoleTitle": "Backend Engineer, Fleet Telematics",
+   "professionalSummary": [
+    {
+     "claimId": "sum_1",
+     "text": "Built a Go ingestion service for high-volume trailer telemetry at Frostline Haulage, processing 650 messages per second over MQTT with schema validation.",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival."
+    },
+    {
+     "claimId": "sum_2",
+     "text": "Maintained temperature-excursion alert rules with control-room supervisors, adjusting thresholds after monthly false alarm reviews.",
+     "sourceIds": [
+      "src_b527dabf5b08"
+     ],
+     "requirementIds": [
+      "req_9781dde050f5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the temperature-excursion alert rules with the control-room supervisors, adjusting thresholds per product class after each monthly review of false alarms."
+    },
+    {
+     "claimId": "sum_3",
+     "text": "Served on the weekly on-call rota for the telemetry platform, one week in six, and wrote incident reviews for incidents handled during shifts.",
+     "sourceIds": [
+      "src_6b197650230b",
+      "src_30951f9295f6"
+     ],
+     "requirementIds": [
+      "req_71a770a66469"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Served on the weekly on-call rota for the telemetry platform, one week in six, and wrote the incident reviews for the incidents handled on shift."
+    },
+    {
+     "claimId": "sum_4",
+     "text": "Wrote and maintained runbooks for ingestion and alerting services, including restart steps and support desk checks.",
+     "sourceIds": [
+      "src_ef32d6044b83"
+     ],
+     "requirementIds": [
+      "req_24fe01444b0f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote and kept current the runbooks for the ingestion and alerting services, including restart steps and the checks the support desk runs before escalating."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_1",
+     "text": "Processed 650 trailer messages per second using Go over MQTT with schema validation for high-volume telemetry ingestion.",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival."
+    },
+    {
+     "claimId": "exp_2",
+     "text": "Adjusted temperature-excursion alert thresholds per product class after monthly false alarm reviews with control-room supervisors.",
+     "sourceIds": [
+      "src_b527dabf5b08"
+     ],
+     "requirementIds": [
+      "req_9781dde050f5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the temperature-excursion alert rules with the control-room supervisors, adjusting thresholds per product class after each monthly review of false alarms."
+    },
+    {
+     "claimId": "exp_3",
+     "text": "Wrote incident reviews for telemetry platform incidents handled during on-call shifts, including root cause analysis and follow-up actions.",
+     "sourceIds": [
+      "src_81c7e8823f73"
+     ],
+     "requirementIds": [
+      "req_71a770a66469"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: an incident review for a 47-minute alerting outage in March 2024, written by the candidate as the on-call engineer, with the timeline, the root cause (an expired broker certificate), the fix and three follow-up actions with owners."
+    },
+    {
+     "claimId": "exp_4",
+     "text": "Documented runbooks for ingestion and alerting services with restart steps and support desk escalation checks.",
+     "sourceIds": [
+      "src_ef32d6044b83"
+     ],
+     "requirementIds": [
+      "req_24fe01444b0f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote and kept current the runbooks for the ingestion and alerting services, including restart steps and the checks the support desk runs before escalating."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_1",
+     "text": "Incident review for a 47-minute alerting outage in March 2024, including timeline, root cause (expired broker certificate), fix, and follow-up actions with owners.",
+     "sourceIds": [
+      "src_81c7e8823f73"
+     ],
+     "requirementIds": [
+      "req_71a770a66469"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: an incident review for a 47-minute alerting outage in March 2024, written by the candidate as the on-call engineer, with the timeline, the root cause (an expired broker certificate), the fix and three follow-up actions with owners."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_1",
+     "text": "Go programming for high-volume telemetry ingestion services.",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival."
+    },
+    {
+     "claimId": "skill_2",
+     "text": "Time-series database management for trailer telemetry data.",
+     "sourceIds": [
+      "src_7ebbf743ca98"
+     ],
+     "requirementIds": [
+      "req_20a5387833b0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's work on a Go ingestion service, alert rule maintenance, on-call rota, runbook writing, and storage cost reduction. They do not establish the candidate's experience with Kubernetes, Prometheus, or the specific platform team size (5 engineers) or reporting structure (head of engineering)."
+  },
+  "hiringEvidencePacket": {
+   "candidate": {
+    "candidateId": "cand_a25d412ffe9c8bcc",
+    "sources": []
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Fleet Telematics",
+    "jobDescriptionSource": "jd_f1679e2434906c63",
+    "requirementIds": []
+   },
+   "unsupportedClaims": [
+    {
+     "claim": "Reduced storage costs by moving telemetry older than 90 days to compressed object storage.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "This packet supports qualified human review. It makes no employment decision, ranking or recommendation and infers no protected characteristics."
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_20a5387833b0",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_9781dde050f5",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_71a770a66469",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_24fe01444b0f",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_27ac5c7151de",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "followUpQuestions": [],
+   "supportedClaims": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "",
+   "limitations": []
+  }
+ },
+ "needsRegeneration": false
+}

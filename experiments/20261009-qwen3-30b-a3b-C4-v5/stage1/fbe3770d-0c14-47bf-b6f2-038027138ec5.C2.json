@@ -1,0 +1,576 @@
+{
+ "request_id": "fbe3770d-0c14-47bf-b6f2-038027138ec5.C2",
+ "case_id": "fbe3770d-0c14-47bf-b6f2-038027138ec5",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managed",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managed"
+     ],
+     "sourceIds": [
+      "src_a1250b9c3348"
+     ],
+     "sourceFamilies": [],
+     "text": "Managed vendor and installation partner tracking against contract milestones, including chasing two late hardware deliveries and recording recovery dates."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].status",
+    "message": "requirement marked supported but its ownership term(s) [MANAGE] (manages) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_7d1c03a9fc83",
+     "family": "MANAGE",
+     "terms": [
+      "manages"
+     ],
+     "sourceIds": [
+      "src_a1250b9c3348"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[1]",
+   "detail": "req_7d1c03a9fc83: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "Managed vendor and installation partner tracking against contract milestones, including chasing two late hardware delive"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_a31dcf6a897adb2e",
+   "targetRoleTitle": "Project Manager, Restaurant Technology",
+   "professionalSummary": [
+    {
+     "claimId": "sum_01",
+     "text": "Built and maintained the schedule and RAID log for a kitchen display screen project, updating both after each weekly vendor call and sending the RAID log to the operations director each Friday.",
+     "sourceIds": [
+      "src_6874e5283d2a"
+     ],
+     "requirementIds": [
+      "req_bec0d5211065"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday."
+    },
+    {
+     "claimId": "sum_02",
+     "text": "Tracked the screen vendor and installation partner against contract milestones, chasing two late hardware deliveries and recording recovery dates agreed.",
+     "sourceIds": [
+      "src_a1250b9c3348"
+     ],
+     "requirementIds": [
+      "req_7d1c03a9fc83"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed."
+    },
+    {
+     "claimId": "sum_03",
+     "text": "Set up a ten-week trial of kitchen display screens in three pubs, using screens alongside paper tickets during quieter weekday services while weekend services stayed on paper only, gathering feedback through a weekly form and summarizing it for the operations director.",
+     "sourceIds": [
+      "src_b805d270cb8b",
+      "src_b15263c3e1ca"
+     ],
+     "requirementIds": [
+      "req_e41960931de2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Set up a ten-week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only."
+    },
+    {
+     "claimId": "sum_04",
+     "text": "Wrote the trial close report detailing screen-layout changes needed before wider rollout and costs for hardware changes.",
+     "sourceIds": [
+      "src_c744dccadfa7"
+     ],
+     "requirementIds": [
+      "req_e41960931de2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the trial close report, setting out the screen-layout changes needed before any wider rollout, with costs for the hardware changes."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_02",
+     "text": "Designed and ran a ten-week trial of kitchen display screens in three pubs, using screens alongside paper tickets during quieter weekday services while weekend services stayed on paper only, gathering feedback through a weekly form.",
+     "sourceIds": [
+      "src_b805d270cb8b",
+      "src_b15263c3e1ca"
+     ],
+     "requirementIds": [
+      "req_e41960931de2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Set up a ten-week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Trial plan for kitchen display screens, naming three trial pubs, ten-week schedule, weekday-only usage rule, success measures, and criteria for wider rollout decision, signed by operations director.",
+     "sourceIds": [
+      "src_6aef1ae72c9a"
+     ],
+     "requirementIds": [
+      "req_e41960931de2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the trial plan for the kitchen display screens, naming the three trial pubs, the ten-week schedule, the weekday-only usage rule, the success measures and the criteria the operations director would use to decide on a wider rollout, signed by the operations director."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "PRINCE2 Practitioner certified, verified on the awarding body's public register.",
+     "sourceIds": [
+      "src_681a6ca9cbdc"
+     ],
+     "requirementIds": [
+      "req_e9a611ea6700"
+     ],
+     "supportBoundary": "supported",
+     "witness": "HR verification note: the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience as a Project Coordinator at Bramble & Barrow Pubs, including building schedules and RAID logs, tracking vendors against milestones, setting up a trial, and having a PRINCE2 certification. The materials do not establish delivery into live trading across multiple sites, as the trial was limited to three pubs and the reference note mentions 'all 64 pubs' but does not confirm the candidate's role in the wider rollout."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required due to unverified claims about delivery into live trading across multiple sites."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Restaurant Technology",
+    "jobDescriptionSource": "jd_43c668b958ffe864",
+    "requirementIds": [
+     "req_bec0d5211065",
+     "req_7d1c03a9fc83",
+     "req_3e24ece21762",
+     "req_e41960931de2",
+     "req_e9a611ea6700"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_a31dcf6a897adb2e",
+    "sources": [
+     "src_6874e5283d2a",
+     "src_a1250b9c3348",
+     "src_b805d270cb8b",
+     "src_b15263c3e1ca",
+     "src_c744dccadfa7",
+     "src_6aef1ae72c9a",
+     "src_98916ee8a8f1",
+     "src_681a6ca9cbdc"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bec0d5211065",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6874e5283d2a",
+       "text": "Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday.",
+       "evidenceStrength": "high",
+       "notes": "Updates after weekly vendor calls, sent to operations director"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7d1c03a9fc83",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_a1250b9c3348",
+       "text": "Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed.",
+       "evidenceStrength": "high",
+       "notes": "Chased late deliveries, recorded recovery dates"
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's manage element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_3e24ece21762",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Delivery into live trading across multiple sites, including go-live sign-off and hypercare"
+     ]
+    },
+    {
+     "requirementId": "req_e41960931de2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b805d270cb8b",
+       "text": "Set up a ten-week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only.",
+       "evidenceStrength": "high",
+       "notes": "Trial setup in three pubs"
+      },
+      {
+       "sourceId": "src_b15263c3e1ca",
+       "text": "Gathered cooks' and managers' feedback from the trial pubs through a short weekly form and summarised it for the operations director, grouping comments by kitchen station.",
+       "evidenceStrength": "medium",
+       "notes": "Feedback gathered and summarized"
+      },
+      {
+       "sourceId": "src_c744dccadfa7",
+       "text": "Wrote the trial close report, setting out the screen-layout changes needed before any wider rollout, with costs for the hardware changes.",
+       "evidenceStrength": "medium",
+       "notes": "Trial close report written"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e9a611ea6700",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_681a6ca9cbdc",
+       "text": "HR verification note: the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current.",
+       "evidenceStrength": "high",
+       "notes": "Certificate verified on public register"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built and maintained the schedule and RAID log for a kitchen display screen project, updating both after each weekly vendor call and sending the RAID log to the operations director each Friday.",
+     "supportingRequirementIds": [
+      "req_bec0d5211065"
+     ],
+     "sourceIds": [
+      "src_6874e5283d2a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the schedule and RAID log for the kitchen display screen project and updated both after each weekly vendor call, sending the RAID log to the operations director each Friday."
+    },
+    {
+     "claim": "Tracked the screen vendor and installation partner against contract milestones, chasing two late hardware deliveries and recording recovery dates agreed.",
+     "supportingRequirementIds": [
+      "req_7d1c03a9fc83"
+     ],
+     "sourceIds": [
+      "src_a1250b9c3348"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Tracked the screen vendor and the installation partner against the contract milestones, chasing two late hardware deliveries and recording the recovery dates agreed."
+    },
+    {
+     "claim": "Set up a ten-week trial of kitchen display screens in three pubs, using screens alongside paper tickets during quieter weekday services while weekend services stayed on paper only, gathering feedback through a weekly form and summarizing it for the operations director.",
+     "supportingRequirementIds": [
+      "req_e41960931de2"
+     ],
+     "sourceIds": [
+      "src_b805d270cb8b",
+      "src_b15263c3e1ca"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Set up a ten-week trial of kitchen display screens in three pubs, with the screens used alongside paper tickets during quieter weekday services while weekend services stayed on paper only."
+    },
+    {
+     "claim": "Wrote the trial close report detailing screen-layout changes needed before wider rollout and costs for hardware changes.",
+     "supportingRequirementIds": [
+      "req_e41960931de2"
+     ],
+     "sourceIds": [
+      "src_c744dccadfa7"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Wrote the trial close report, setting out the screen-layout changes needed before any wider rollout, with costs for the hardware changes."
+    },
+    {
+     "claim": "PRINCE2 Practitioner certified, verified on the awarding body's public register.",
+     "supportingRequirementIds": [
+      "req_e9a611ea6700"
+     ],
+     "sourceIds": [
+      "src_681a6ca9cbdc"
+     ],
+     "evidenceStrength": "high",
+     "witness": "HR verification note: the candidate's PRINCE2 Practitioner certificate number was checked on the awarding body's public register and is listed as current."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The screens were switched on in all 64 pubs after the trial and 'the whole estate runs on them now'.",
+     "reason": "The reference note states this as a fact reported by a franchisee, but does not establish the candidate's role in the wider rollout or delivery into live trading across multiple sites.",
+     "requiredFollowUp": "Ask the candidate to confirm their role in the wider rollout and whether they were responsible for go-live sign-off and hypercare."
+    },
+    {
+     "claim": "Managed vendor and installation partner tracking against contract milestones, including chasing two late hardware deliveries and recording recovery dates.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_3e24ece21762",
+     "requirementId": "req_3e24ece21762",
+     "severity": "high",
+     "gap": "Delivery into live trading across multiple sites, including go-live sign-off and hypercare"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_98916ee8a8f1",
+     "text": "the referee, a franchisee who worked with the candidate, reported hearing from head office that the screens were switched on in all 64 pubs after the trial and that 'the whole estate runs on them now'.",
+     "signalType": "hearsay",
+     "jobRelatedBoundary": "no",
+     "severity": "high",
+     "recommendedHandling": "Ask the candidate to confirm their role in the wider rollout and whether they were responsible for go-live sign-off and hypercare."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_3e24ece21762",
+     "requirementId": "req_3e24ece21762",
+     "question": "Can you describe your role in the wider rollout of the kitchen display screens to all 64 pubs, including your responsibilities for go-live sign-off and hypercare?",
+     "evidenceTarget": "Confirmation of role in wider rollout, go-live sign-off, and hypercare"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's role in the wider rollout beyond the trial phase",
+    "Confirm go-live sign-off and hypercare responsibilities",
+    "Check that the PRINCE2 certification is current and relevant"
+   ],
+   "auditSummary": "The materials establish the candidate's experience in building schedules and RAID logs, tracking vendors against milestones, designing and running a trial, and having a PRINCE2 certification. The materials do not establish delivery into live trading across multiple sites, as the trial was limited to three pubs and the reference note does not confirm the candidate's role in the wider rollout. The reference note about 'all 64 pubs' is hearsay and not verified as the candidate's work.",
+   "limitations": [
+    "The reference note about 'all 64 pubs' is hearsay and not verified as the candidate's work",
+    "The materials do not establish delivery into live trading across multiple sites, including go-live sign-off and hypercare"
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

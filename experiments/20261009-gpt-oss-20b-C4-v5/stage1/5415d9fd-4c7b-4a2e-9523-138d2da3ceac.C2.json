@@ -1,0 +1,437 @@
+{
+ "request_id": "5415d9fd-4c7b-4a2e-9523-138d2da3ceac.C2",
+ "case_id": "5415d9fd-4c7b-4a2e-9523-138d2da3ceac",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Seasoned Salesforce operations professional with hands‑on experience managing data quality, building dashboards, configuring territory and lead‑routing rules, a"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "7 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str",
+      "$.hiringEvidencePacket: missing required property 'auditSummary'",
+      "$.hiringEvidencePacket: missing required property 'limitations'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Seasoned Salesforce operations professional with hands‑on experience managing data quality, building dashboards, configu"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_3462231a3370d5d2",
+   "targetRoleTitle": "Revenue Operations Analyst",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Revenue Operations Analyst",
+    "jobDescriptionSource": "jd_d02ac9a5a0120f85",
+    "requirementIds": [
+     "req_7299a196b03b",
+     "req_aa06ce3f13fc",
+     "req_49e9827ade0a",
+     "req_b2868dec6250",
+     "req_82aa6bcbf3ba"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_3462231a3370d5d2",
+    "sources": [
+     "src_bd7a486dd990",
+     "src_d56650cb2d81",
+     "src_c12ea3eaf41b",
+     "src_cc666c1c74ae",
+     "src_4801154d7ad3",
+     "src_f69fb60d83d5",
+     "src_098f91f2a41d",
+     "src_c3dee5339f02"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_7299a196b03b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bd7a486dd990",
+       "text": "ran monthly duplicate-merge jobs on accounts and contacts and added validation rules so that new opportunities could not be saved without a close date and a product line",
+       "evidenceStrength": "high",
+       "notes": "directly demonstrates duplicate management and required‑field enforcement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_aa06ce3f13fc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d56650cb2d81",
+       "text": "Built the pipeline-coverage and renewal-risk dashboards that the regional sales directors reviewed in their Monday forecast call, sourced from the opportunity and contract objects",
+       "evidenceStrength": "high",
+       "notes": "shows dashboard creation for sales leadership"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_49e9827ade0a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f69fb60d83d5",
+       "text": "certificate of completion from Corvane Learning for the 32-hour online course 'Salesforce Administrator Exam Preparation', dated 14 March 2026, listing the modules on security, automation and reporting with the end-of-module quiz scores",
+       "evidenceStrength": "high",
+       "notes": "provides credential evidence"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b2868dec6250",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c12ea3eaf41b",
+       "text": "Maintained the round-robin lead assignment for the inbound team and updated the territory rules when two account executives moved to the enterprise segment",
+       "evidenceStrength": "high",
+       "notes": "demonstrates territory and lead‑routing configuration"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_82aa6bcbf3ba",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_cc666c1c74ae",
+       "text": "Exported closed-won bookings each quarter and reconciled them with the finance analyst before commission statements were issued, flagging deals whose close dates did not match the signed contract",
+       "evidenceStrength": "high",
+       "notes": "shows support for commission calculation"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintains CRM data quality through duplicate‑merge jobs and validation rules",
+     "supportingRequirementIds": [
+      "req_7299a196b03b"
+     ],
+     "sourceIds": [
+      "src_bd7a486dd990"
+     ],
+     "evidenceStrength": "high",
+     "witness": "ran monthly duplicate-merge jobs on accounts and contacts and added validation rules so that new opportunities could not be saved without a close date and a product line"
+    },
+    {
+     "claim": "Builds pipeline and renewal dashboards for sales leadership",
+     "supportingRequirementIds": [
+      "req_aa06ce3f13fc"
+     ],
+     "sourceIds": [
+      "src_d56650cb2d81"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the pipeline-coverage and renewal-risk dashboards that the regional sales directors reviewed in their Monday forecast call, sourced from the opportunity and contract objects"
+    },
+    {
+     "claim": "Holds Salesforce Certified Administrator credential",
+     "supportingRequirementIds": [
+      "req_49e9827ade0a"
+     ],
+     "sourceIds": [
+      "src_f69fb60d83d5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "certificate of completion from Corvane Learning for the 32-hour online course 'Salesforce Administrator Exam Preparation', dated 14 March 2026, listing the modules on security, automation and reporting with the end-of-module quiz scores"
+    },
+    {
+     "claim": "Configures territory assignment and lead‑routing rules",
+     "supportingRequirementIds": [
+      "req_b2868dec6250"
+     ],
+     "sourceIds": [
+      "src_c12ea3eaf41b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the round-robin lead assignment for the inbound team and updated the territory rules when two account executives moved to the enterprise segment"
+    },
+    {
+     "claim": "Supports quarterly commission calculation with finance",
+     "supportingRequirementIds": [
+      "req_82aa6bcbf3ba"
+     ],
+     "sourceIds": [
+      "src_cc666c1c74ae"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Exported closed-won bookings each quarter and reconciled them with the finance analyst before commission statements were issued, flagging deals whose close dates did not match the signed contract"
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Seasoned Salesforce operations professional with hands‑on experience managing data quality, building dashboards, configuring territory and lead‑routing rules, and reconciling bookings with finance. Holds a Salesforce Administrator certification and has a proven track record of supporting sales leadership and finance teams.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the Salesforce Administrator credential is current and valid at offer time.",
+    "Confirm that the candidate’s role included system administrator rights in the CRM."
+   ],
+   "auditSummary": "",
+   "limitations": []
+  }
+ },
+ "needsRegeneration": false
+}

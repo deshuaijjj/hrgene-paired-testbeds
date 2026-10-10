@@ -1,0 +1,502 @@
+{
+ "request_id": "b8e94709-abbf-4242-84e4-01853bc784a4.C2",
+ "case_id": "b8e94709-abbf-4242-84e4-01853bc784a4",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Wrote two design documents, 'Retry policy for payment webhooks' and 'Idemp, the team's tech lead reviewed and approved both.",
+     "sourceIds": [
+      "src_59fe1b577775"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[3]",
+    "message": "causal/comparative wording not present in the cited sources: improved",
+    "witness": {
+     "terms": [
+      "improved"
+     ],
+     "sourceIds": [
+      "src_7aef337d4a8f"
+     ],
+     "text": "Candidate improved automated tests and the CI pipeline."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.hiringEvidencePacket.supportedClaims[1]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[3]",
+   "detail": "Candidate improved automated tests and the CI pipeline."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4193d4807968e56a",
+   "targetRoleTitle": "Backend Engineer, Billing Platform",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "Candidate has experience building billing services in Go.",
+     "sourceIds": [
+      "src_62dea18e7c3d"
+     ],
+     "requirementIds": [
+      "req_2c8af048c46f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Backend engineer at Lumenfold, a scheduling-software company, from 2021 to 2024, building the invoice-generation and proration services in Go."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Candidate contributed to the extraction of the invoicing service from the monolith.",
+     "sourceIds": [
+      "src_e1db854946b5"
+     ],
+     "requirementIds": [
+      "req_bfcb7c91a7b0"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "Contributed the data-access layer and the dual-write adapter to the extraction of the invoicing service from the monolith; the staff engineer wrote the design, which the architecture group approved."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "Candidate wrote two design documents that were reviewed and approved by the team's tech lead.",
+     "sourceIds": [
+      "src_59fe1b577775"
+     ],
+     "requirementIds": [
+      "req_e18fe4669ea5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote two design documents, 'Retry policy for payment webhooks' and 'Idempotency keys for invoice creation'; the team's tech lead reviewed and approved both."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_004",
+     "text": "Candidate has experience with on-call rotations and incident reviews.",
+     "sourceIds": [
+      "src_ff5f005cd144"
+     ],
+     "requirementIds": [
+      "req_091d9c2d0558"
+     ],
+     "supportBoundary": "supported",
+     "witness": "On the weekly on-call rotation; wrote the incident review for a 2023 duplicate-charge incident with the timeline, contributing causes and four follow-up actions."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience with Go, design documents, on-call rotations, and test improvements. They do not establish the candidate's ownership of the design decisions and rollout plan for the invoicing service extraction."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's qualifications are partially supported by the provided materials, and further human review is required to assess the full extent of their experience and ownership of the invoicing service extraction."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Billing Platform",
+    "jobDescriptionSource": "jd_941b6a9713af6bde",
+    "requirementIds": [
+     "req_2c8af048c46f",
+     "req_e18fe4669ea5",
+     "req_bfcb7c91a7b0",
+     "req_091d9c2d0558",
+     "req_cdc962334169"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4193d4807968e56a",
+    "sources": [
+     "src_62dea18e7c3d",
+     "src_e1db854946b5",
+     "src_59fe1b577775",
+     "src_ff5f005cd144",
+     "src_7aef337d4a8f",
+     "src_c79f449cb84d",
+     "src_03d8acf77e75",
+     "src_92cedaee50d7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2c8af048c46f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_62dea18e7c3d",
+       "text": "Backend engineer at Lumenfold, a scheduling-software company, from 2021 to 2024, building the invoice-generation and proration services in Go.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement for building billing services in Go."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e18fe4669ea5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_59fe1b577775",
+       "text": "Wrote two design documents, 'Retry policy for payment webhooks' and 'Idempotency keys for invoice creation'; the team's tech lead reviewed and approved both.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement for writing design documents and having them reviewed."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_bfcb7c91a7b0",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_e1db854946b5",
+       "text": "Contributed the data-access layer and the dual-write adapter to the extraction of the invoicing service from the monolith; the staff engineer wrote the design, which the architecture group approved.",
+       "evidenceStrength": "medium",
+       "notes": "Candidate contributed to the extraction but the staff engineer wrote the design."
+      }
+     ],
+     "missingEvidence": [
+      "Ownership of the design decisions and rollout plan"
+     ]
+    },
+    {
+     "requirementId": "req_091d9c2d0558",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ff5f005cd144",
+       "text": "On the weekly on-call rotation; wrote the incident review for a 2023 duplicate-charge incident with the timeline, contributing causes and four follow-up actions.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement for on-call participation and incident reviews."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cdc962334169",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7aef337d4a8f",
+       "text": "Added contract tests for the invoicing API and set up a quarantine stage in the CI pipeline for unstable test suites.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement for improving automated tests and the CI pipeline."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Candidate has experience building billing services in Go.",
+     "supportingRequirementIds": [
+      "req_2c8af048c46f"
+     ],
+     "sourceIds": [
+      "src_62dea18e7c3d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Backend engineer at Lumenfold, a scheduling-software company, from 2021 to 2024, building the invoice-generation and proration services in Go."
+    },
+    {
+     "claim": "Candidate wrote two design documents that were reviewed and approved by the team's tech lead.",
+     "supportingRequirementIds": [
+      "req_e18fe4669ea5"
+     ],
+     "sourceIds": [
+      "src_59fe1b577775"
+     ],
+     "evidenceStrength": "high",
+     "witness": ""
+    },
+    {
+     "claim": "Candidate has experience with on-call rotations and incident reviews.",
+     "supportingRequirementIds": [
+      "req_091d9c2d0558"
+     ],
+     "sourceIds": [
+      "src_ff5f005cd144"
+     ],
+     "evidenceStrength": "high",
+     "witness": "On the weekly on-call rotation; wrote the incident review for a 2023 duplicate-charge incident with the timeline, contributing causes and four follow-up actions."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate technically led the invoicing service extraction and owned the design decisions and rollout plan.",
+     "reason": "The materials do not establish that the candidate owned the design decisions and rollout plan for the invoicing service extraction.",
+     "requiredFollowUp": "Ask the candidate to clarify their role in the invoicing service extraction and provide evidence of ownership of the design decisions and rollout plan."
+    },
+    {
+     "claim": "Candidate improved automated tests and the CI pipeline.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_bfcb7c91a7b0",
+     "severity": "medium",
+     "gap": "Ownership of the design decisions and rollout plan for the invoicing service extraction is not established."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_c79f449cb84d",
+     "text": "Work sample: the candidate's portfolio page on the invoicing-service extraction. Under an architecture diagram copied from the design document sits a 'Kudos' panel of peer comments: 'basically drove the whole extraction', 'owned the rollout and every design call' and 'the technical lead in all but name'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to clarify their role in the invoicing service extraction and provide evidence of ownership of the design decisions and rollout plan."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_bfcb7c91a7b0",
+     "question": "Can you clarify your role in the invoicing service extraction and provide evidence of ownership of the design decisions and rollout plan?",
+     "evidenceTarget": "Ownership of the design decisions and rollout plan for the invoicing service extraction."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's ownership of the design decisions and rollout plan for the invoicing service extraction.",
+    "Assess the candidate's technical leadership in the invoicing service extraction.",
+    "Confirm the candidate's experience with Go, design documents, on-call rotations, and test improvements."
+   ],
+   "auditSummary": "The materials establish the candidate's experience with Go, design documents, on-call rotations, and test improvements. However, they do not establish the candidate's ownership of the design decisions and rollout plan for the invoicing service extraction. Further human review is required to assess the full extent of their experience and ownership.",
+   "limitations": [
+    "The materials do not establish the candidate's ownership of the design decisions and rollout plan for the invoicing service extraction.",
+    "The materials do not provide direct evidence of the candidate's technical leadership in the invoicing service extraction."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

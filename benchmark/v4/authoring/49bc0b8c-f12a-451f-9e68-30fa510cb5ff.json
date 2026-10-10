@@ -1,0 +1,37 @@
+{
+  "caseId": "49bc0b8c-f12a-451f-9e68-30fa510cb5ff",
+  "roleTitle": "Data Analytics Engineer, Equipment Maintenance Services",
+  "jobDescription": "The maintenance services division of an industrial equipment supplier collects sensor and service-visit data from customer machines. The Data Analytics Engineer builds the pipelines that combine telemetry with work-order history, maintains the failure-prediction features used by the planning team, and is expected to demonstrate a measurable increase in the share of failures caught before an unplanned stop, against the division's published baseline.",
+  "requirements": [
+    "Builds and maintains pipelines that join machine telemetry with work-order history in the analytics warehouse.",
+    "Maintains the failure-prediction feature set used by the maintenance planning team.",
+    "Demonstrates a measurable increase in failures caught before an unplanned stop, against the published baseline.",
+    "Coordinates schema and feature changes with the planning and platform teams and records own responsibility boundaries.",
+    "Documents data lineage, known limitations and hand-over conditions for each pipeline release."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Built the hourly pipeline that joins vibration and temperature telemetry from customer machines with work-order history in the analytics warehouse (Spark jobs on Databricks), including the late-arrival handling for telemetry uploaded after a site visit."},
+    {"type": "resume", "text": "Maintained the failure-prediction feature set (rolling vibration statistics, days since last service, part age) consumed by the planning team's model, versioning each feature change with a note on the affected machine families."},
+    {"type": "resume", "text": "Coordinated schema changes with the planning and platform teams in the fortnightly data review; the platform lead approved warehouse schema changes and the planning lead approved feature changes."},
+    {"type": "resume", "text": "Wrote the lineage note for the telemetry-work-order join, listing the source tables, the late-arrival rule and the known limitation that machines without a telemetry gateway are absent from the features."},
+    {"type": "resume", "text": "Responsibilities included pipeline development, feature maintenance, data-review coordination and lineage documentation for the maintenance analytics warehouse over about two years."},
+    {"type": "work_sample", "text": "Work sample: the feature-set change log for one quarter and the lineage note for the telemetry-work-order join, with the Databricks job identifiers as a verification trail."},
+    {"type": "note", "text": "Recruiter screen: candidate said the planning team told him the model 'now catches about two thirds of failures early, up from maybe half'; he said the numbers were the planning team's, that he had not seen the evaluation, and that several other changes were made to the model in the same period."},
+    {"type": "note", "text": "Hiring manager pre-read: the division head is looking for an engineer who has already improved early-catch rates; the packet should say exactly which improvements are documented and attributable to the candidate."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate built the hourly pipeline that joins machine telemetry with work-order history in the analytics warehouse, including late-arrival handling.", "status": "supported", "sources": [1, 5], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the pipeline and its late-arrival rule directly."},
+      {"text": "The candidate maintained and versioned the failure-prediction feature set consumed by the planning team's model.", "status": "supported", "sources": [2, 6], "requirements": [2], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume and the change log document the feature maintenance."},
+      {"text": "The candidate's feature work raised the share of failures caught early from half to two thirds.", "status": "unsupported", "sources": [], "requirements": [3], "boundaryCategory": "unsupported_quantification_and_causality", "criticality": "critical", "rationale": "The figures are second-hand from the planning team, the candidate has not seen the evaluation, and other model changes were made in the same period; no evaluation is in the materials."}
+    ],
+    "requirementStatus": ["supported", "supported", "insufficient_evidence", "supported", "partial_evidence"],
+    "trap": {"proposition": 3, "rule": "hrgene.unsupported_quantification", "requirements": [3], "signatures": ["two thirds", "two-thirds", "up from maybe half", "from half", "67%", "66 percent"], "bait": [7, 8]},
+    "subjective": [],
+    "nonProduction": [],
+    "expectedGap": "No evaluation in the materials measures the early-catch rate before and after the candidate's feature changes, and concurrent model changes are acknowledged.",
+    "expectedBoundaryNote": "Do not attribute the planning team's recollected early-catch figures to the candidate; the materials document the pipeline and feature work, not a measured effect.",
+    "followUpTargets": ["Ask for the planning team's model evaluation with the metric definition, baseline period and the list of changes made in the same period."],
+    "validClaimSignatures": ["Databricks", "late-arrival"]
+  }
+}

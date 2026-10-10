@@ -1,0 +1,333 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "0faf1178-7a46-4c40-bae1-6f2af395abfc.C2",
+ "case_id": "0faf1178-7a46-4c40-bae1-6f2af395abfc",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14207,
+  "promptWords": 1663
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 63.026
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3830,
+ "eval_count": 2876,
+ "prompt_eval_duration_ns": 19419000,
+ "eval_duration_ns": 52690411000,
+ "total_duration_ns": 63025002958,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Let's craft claims.\n\nClaims: professionalSummary: maybe one claim: \"Revenue management data scientist with experience building nightly room-demand forecasts and price-elasticity estimates for 42 hotels.\" source src_3b1e6447f720.\n\nexperienceHighlights: list claims: building forecasts, presenting recommendations, maintaining pipeline, evaluating tests, training dashboard. Each claim with source.\n\nprojectsAndWorkSamples: mention work sample.\n\nskills: maybe forecasting, elasticity modeling, data pipeline, pricing tests, dashboard training.\n\nEvidenceBoundary: what materials establish: they establish experience at Brightwater, building forecasts, presenting, maintaining pipeline, evaluating tests, training, work sample. They do not establish other aspects like seniority beyond current role, or certifications.\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nreq_e674d1f7f3b8: builds forecasts and elasticity models. Evidence: src_3b1e6447f720. status supported.\n\nreq_861700848926: presents recommendations and records decisions. Evidence: src_cd005112b509 and src_42aae5a749fe. status supported.\n\nreq_3ed16b3db5b6: maintains data pipeline. Evidence: src_9fea8b70ffd8. status supported.\n\nreq_aac509cc6637: evaluates pricing tests. Evidence: src_7b4f41b24884. status supported.\n\nreq_3831581c2932: trains revenue managers. Evidence: src_af95ac8abd10. status supported.\n\nNo gaps.\n\nsupportedClaims: list each claim with requirementIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note src_42aae5a749fe is a note, but it's a reference check confirming. It's not subjective? It's a written confirmation. Not subjective. So no interviewSignalRisks.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe items: verify seniority, confirm ongoing role, confirm pipeline details. But we can list generic.\n\nauditSummary: summary.\n\nlimitations: maybe \"No evidence of certifications or degrees.\"\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_dc5da0379820c51b\",\n    \"targetRoleTitle\": \"Revenue Management Data Scientist\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Revenue management data scientist with experience building nightly room‑demand forecasts and price‑elasticity estimates for 42 mid‑market hotels.\",\n        \"sourceIds\": [\"src_3b1e6447f720\"],\n        \"requirementIds\": [\"req_e674d1f7f3b8\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Revenue management data scientist at Brightwater Hotels (42 mid‑market hotels), March 2022 to present, building nightly room‑demand forecasts and price‑elasticity estimates by hotel and booking window.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Presented monthly pricing recommendations at commercial reviews attended by the commercial director and regional general managers, and maintained an action log recording adoption decisions.\",\n        \"sourceIds\": [\"src_cd005112b509\"],\n        \"requirementIds\": [\"req_861700848926\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Presented the monthly pricing recommendations at the commercial review attended by the commercial director and the regional general managers, and kept the action log showing which recommendations were adopted.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.\",\n        \"sourceIds\": [\"src_9fea8b70ffd8\"],\n        \"requirementIds\": [\"req_3ed16b3db5b6\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.\",\n        \"sourceIds\": [\"src_7b4f41b24884\"],\n        \"requirementIds\": [\"req_aac509cc6637\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Produced a four‑page guide to the pricing dashboard for revenue managers, explaining forecast bands and the recommended‑rate column, and posted it on the commercial team’s intranet page.\",\n        \"sourceIds\": [\"src_af95ac8abd10\"],\n        \"requirementIds\": [\"req_3831581c2932\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Produced a four‑page guide to the pricing dashboard for revenue managers, explaining the forecast bands and the recommended‑rate column, and posted it on the commercial team's intranet page.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"claim_6\",\n        \"text\": \"September 2023 commercial review pack containing three pricing recommendations, elasticity estimates, and minutes recording adoption decisions.\",\n        \"sourceIds\": [\"src_005c0aaaecf7\"],\n        \"requirementIds\": [\"req_861700848926\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the September 2023 commercial review pack, with the candidate's three pricing recommendations and the elasticity estimates behind each, and the minutes recording that the commercial director adopted two and deferred the third until the minimum‑stay test had finished.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"claim_7\",\n        \"text\": \"Forecasting, price‑elasticity modeling, data pipeline maintenance, pricing test evaluation, dashboard training.\",\n        \"sourceIds\": [\"src_3b1e6447f720\",\"src_cd005112b509\",\"src_9fea8b70ffd8\",\"src_7b4f41b24884\",\"src_af95ac8abd10\"],\n        \"requirementIds\": [\"req_e674d1f7f3b8\",\"req_861700848926\",\"req_3ed16b3db5b6\",\"req_aac509cc6637\",\"req_3831581c2932\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Compiled from all experience highlights.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided materials establish the candidate’s experience at Brightwater Hotels, including building forecasts and elasticity models, presenting recommendations and recording decisions, maintaining the data pipeline, evaluating pricing tests, training revenue managers, and supplying a relevant work sample. They do not provide evidence of additional qualifications, certifications, or seniority beyond the current role.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Revenue Management Data Scientist\",\n      \"jobDescriptionSource\": \"jd_5ef3bd9618627468\",\n      \"requirementIds\": [\n        \"req_e674d1f7f3b8\",\n        \"req_861700848926\",\n        \"req_3ed16b3db5b6\",\n        \"req_aac509cc6637\",\n        \"req_3831581c2932\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_dc5da0379820c51b\",\n      \"sources\": [\n        \"src_3b1e6447f720\",\n        \"src_cd005112b509\",\n        \"src_9fea8b70ffd8\",\n        \"src_7b4f41b24884\",\n        \"src_af95ac8abd10\",\n        \"src_005c0aaaecf7\",\n        \"src_42aae5a749fe\",\n        \"src_a913755a1aac\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_e674d1f7f3b8\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_3b1e6447f720\",\n            \"text\": \"Revenue management data scientist at Brightwater Hotels (42 mid‑market hotels), March 2022 to present, building nightly room‑demand forecasts and price‑elasticity estimates by hotel and booking window.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of forecasting and elasticity work.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_861700848926\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_cd005112b509\",\n            \"text\": \"Presented the monthly pricing recommendations at the commercial review attended by the commercial director and the regional general managers, and kept the action log showing which recommendations were adopted.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Shows presentation and record keeping.\"\n          },\n          {\n            \"sourceId\": \"src_42aae5a749fe\",\n            \"text\": \"Reference check summary: the commercial director confirmed in writing that the candidate presented at the monthly commercial review throughout 2023 and 2024 and maintained its action log.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"External confirmation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3ed16b3db5b6\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9fea8b70ffd8\",\n            \"text\": \"Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct pipeline maintenance.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_aac509cc6637\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_7b4f41b24884\",\n            \"text\": \"Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct test evaluation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3831581c2932\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_af95ac8abd10\",\n            \"text\": \"Produced a four‑page guide to the pricing dashboard for revenue managers, explaining the forecast bands and the recommended‑rate column, and posted it on the commercial team’s intranet page.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct training material.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Revenue management data scientist with experience building nightly room‑demand forecasts and price‑elasticity estimates for 42 mid‑market hotels.\",\n        \"supportingRequirementIds\": [\"req_e674d1f7f3b8\"],\n        \"sourceIds\": [\"src_3b1e6447f720\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Revenue management data scientist at Brightwater Hotels (42 mid‑market hotels), March 2022 to present, building nightly room‑demand forecasts and price‑elasticity estimates by hotel and booking window.\"\n      },\n      {\n        \"claim\": \"Presented monthly pricing recommendations at commercial reviews attended by the commercial director and regional general managers, and maintained an action log recording adoption decisions.\",\n        \"supportingRequirementIds\": [\"req_861700848926\"],\n        \"sourceIds\": [\"src_cd005112b509\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Presented the monthly pricing recommendations at the commercial review attended by the commercial director and the regional general managers, and kept the action log showing which recommendations were adopted.\"\n      },\n      {\n        \"claim\": \"Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.\",\n        \"supportingRequirementIds\": [\"req_3ed16b3db5b6\"],\n        \"sourceIds\": [\"src_9fea8b70ffd8\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.\"\n      },\n      {\n        \"claim\": \"Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.\",\n        \"supportingRequirementIds\": [\"req_aac509cc6637\"],\n        \"sourceIds\": [\"src_7b4f41b24884\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.\"\n      },\n      {\n        \"claim\": \"Produced a four‑page guide to the pricing dashboard for revenue managers, explaining forecast bands and the recommended‑rate column, and posted it on the commercial team’s intranet page.\",\n        \"supportingRequirementIds\": [\"req_3831581c2932\"],\n        \"sourceIds\": [\"src_af95ac8abd10\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Produced a four‑page guide to the pricing dashboard for revenue managers, explaining the forecast bands and the recommended‑rate column, and posted it on the commercial team's intranet page.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Confirm current employment status and notice period.\",\n      \"Verify that the data pipeline maintenance includes production‑grade monitoring.\",\n      \"Confirm that pricing test evaluation involved control hotels matched on key characteristics.\",\n      \"Assess the depth of dashboard training provided to revenue managers.\"\n    ],\n    \"auditSummary\": \"All requirements are supported by direct statements from the candidate’s resume and work sample. No quantitative claims beyond those explicitly stated are made. The evidence does not cover additional qualifications or certifications. Human review is required to confirm contextual details and assess overall fit.\",\n    \"limitations\": [\n      \"No evidence of formal certifications or advanced degrees.\",\n      \"No explicit mention of seniority level beyond current role.\",\n      \"No data on the scale of the data pipeline beyond daily extraction.\"\n    ]\n  }\n}",
+ "content_sha256": "190adcee8bbaa8d27056374bc00e1faebaa8ba5dde5b90972af7453f70e09e92",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_dc5da0379820c51b",
+   "targetRoleTitle": "Revenue Management Data Scientist",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Revenue management data scientist with experience building nightly room‑demand forecasts and price‑elasticity estimates for 42 mid‑market hotels.",
+     "sourceIds": [
+      "src_3b1e6447f720"
+     ],
+     "requirementIds": [
+      "req_e674d1f7f3b8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Revenue management data scientist at Brightwater Hotels (42 mid‑market hotels), March 2022 to present, building nightly room‑demand forecasts and price‑elasticity estimates by hotel and booking window."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Presented monthly pricing recommendations at commercial reviews attended by the commercial director and regional general managers, and maintained an action log recording adoption decisions.",
+     "sourceIds": [
+      "src_cd005112b509"
+     ],
+     "requirementIds": [
+      "req_861700848926"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented the monthly pricing recommendations at the commercial review attended by the commercial director and the regional general managers, and kept the action log showing which recommendations were adopted."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.",
+     "sourceIds": [
+      "src_9fea8b70ffd8"
+     ],
+     "requirementIds": [
+      "req_3ed16b3db5b6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.",
+     "sourceIds": [
+      "src_7b4f41b24884"
+     ],
+     "requirementIds": [
+      "req_aac509cc6637"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Produced a four‑page guide to the pricing dashboard for revenue managers, explaining forecast bands and the recommended‑rate column, and posted it on the commercial team’s intranet page.",
+     "sourceIds": [
+      "src_af95ac8abd10"
+     ],
+     "requirementIds": [
+      "req_3831581c2932"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Produced a four‑page guide to the pricing dashboard for revenue managers, explaining the forecast bands and the recommended‑rate column, and posted it on the commercial team's intranet page."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_6",
+     "text": "September 2023 commercial review pack containing three pricing recommendations, elasticity estimates, and minutes recording adoption decisions.",
+     "sourceIds": [
+      "src_005c0aaaecf7"
+     ],
+     "requirementIds": [
+      "req_861700848926"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the September 2023 commercial review pack, with the candidate's three pricing recommendations and the elasticity estimates behind each, and the minutes recording that the commercial director adopted two and deferred the third until the minimum‑stay test had finished."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_7",
+     "text": "Forecasting, price‑elasticity modeling, data pipeline maintenance, pricing test evaluation, dashboard training.",
+     "sourceIds": [
+      "src_3b1e6447f720",
+      "src_cd005112b509",
+      "src_9fea8b70ffd8",
+      "src_7b4f41b24884",
+      "src_af95ac8abd10"
+     ],
+     "requirementIds": [
+      "req_e674d1f7f3b8",
+      "req_861700848926",
+      "req_3ed16b3db5b6",
+      "req_aac509cc6637",
+      "req_3831581c2932"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Compiled from all experience highlights."
+    }
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience at Brightwater Hotels, including building forecasts and elasticity models, presenting recommendations and recording decisions, maintaining the data pipeline, evaluating pricing tests, training revenue managers, and supplying a relevant work sample. They do not provide evidence of additional qualifications, certifications, or seniority beyond the current role."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Revenue Management Data Scientist",
+    "jobDescriptionSource": "jd_5ef3bd9618627468",
+    "requirementIds": [
+     "req_e674d1f7f3b8",
+     "req_861700848926",
+     "req_3ed16b3db5b6",
+     "req_aac509cc6637",
+     "req_3831581c2932"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_dc5da0379820c51b",
+    "sources": [
+     "src_3b1e6447f720",
+     "src_cd005112b509",
+     "src_9fea8b70ffd8",
+     "src_7b4f41b24884",
+     "src_af95ac8abd10",
+     "src_005c0aaaecf7",
+     "src_42aae5a749fe",
+     "src_a913755a1aac"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_e674d1f7f3b8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3b1e6447f720",
+       "text": "Revenue management data scientist at Brightwater Hotels (42 mid‑market hotels), March 2022 to present, building nightly room‑demand forecasts and price‑elasticity estimates by hotel and booking window.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of forecasting and elasticity work."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_861700848926",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_cd005112b509",
+       "text": "Presented the monthly pricing recommendations at the commercial review attended by the commercial director and the regional general managers, and kept the action log showing which recommendations were adopted.",
+       "evidenceStrength": "high",
+       "notes": "Shows presentation and record keeping."
+      },
+      {
+       "sourceId": "src_42aae5a749fe",
+       "text": "Reference check summary: the commercial director confirmed in writing that the candidate presented at the monthly commercial review throughout 2023 and 2024 and maintained its action log.",
+       "evidenceStrength": "medium",
+       "notes": "External confirmation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3ed16b3db5b6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9fea8b70ffd8",
+       "text": "Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.",
+       "evidenceStrength": "high",
+       "notes": "Direct pipeline maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_aac509cc6637",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7b4f41b24884",
+       "text": "Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.",
+       "evidenceStrength": "high",
+       "notes": "Direct test evaluation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3831581c2932",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_af95ac8abd10",
+       "text": "Produced a four‑page guide to the pricing dashboard for revenue managers, explaining the forecast bands and the recommended‑rate column, and posted it on the commercial team’s intranet page.",
+       "evidenceStrength": "high",
+       "notes": "Direct training material."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Revenue management data scientist with experience building nightly room‑demand forecasts and price‑elasticity estimates for 42 mid‑market hotels.",
+     "supportingRequirementIds": [
+      "req_e674d1f7f3b8"
+     ],
+     "sourceIds": [
+      "src_3b1e6447f720"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Revenue management data scientist at Brightwater Hotels (42 mid‑market hotels), March 2022 to present, building nightly room‑demand forecasts and price‑elasticity estimates by hotel and booking window."
+    },
+    {
+     "claim": "Presented monthly pricing recommendations at commercial reviews attended by the commercial director and regional general managers, and maintained an action log recording adoption decisions.",
+     "supportingRequirementIds": [
+      "req_861700848926"
+     ],
+     "sourceIds": [
+      "src_cd005112b509"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented the monthly pricing recommendations at the commercial review attended by the commercial director and the regional general managers, and kept the action log showing which recommendations were adopted."
+    },
+    {
+     "claim": "Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota.",
+     "supportingRequirementIds": [
+      "req_3ed16b3db5b6"
+     ],
+     "sourceIds": [
+      "src_9fea8b70ffd8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the daily extract from the property management system into the warehouse, with row‑count and late‑arrival checks that alert the data engineering rota."
+    },
+    {
+     "claim": "Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks.",
+     "supportingRequirementIds": [
+      "req_aac509cc6637"
+     ],
+     "sourceIds": [
+      "src_7b4f41b24884"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Evaluated the 2023 weekend minimum‑stay test against six matched control hotels using a difference‑in‑differences comparison over twelve weeks."
+    },
+    {
+     "claim": "Produced a four‑page guide to the pricing dashboard for revenue managers, explaining forecast bands and the recommended‑rate column, and posted it on the commercial team’s intranet page.",
+     "supportingRequirementIds": [
+      "req_3831581c2932"
+     ],
+     "sourceIds": [
+      "src_af95ac8abd10"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Produced a four‑page guide to the pricing dashboard for revenue managers, explaining the forecast bands and the recommended‑rate column, and posted it on the commercial team's intranet page."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Confirm current employment status and notice period.",
+    "Verify that the data pipeline maintenance includes production‑grade monitoring.",
+    "Confirm that pricing test evaluation involved control hotels matched on key characteristics.",
+    "Assess the depth of dashboard training provided to revenue managers."
+   ],
+   "auditSummary": "All requirements are supported by direct statements from the candidate’s resume and work sample. No quantitative claims beyond those explicitly stated are made. The evidence does not cover additional qualifications or certifications. Human review is required to confirm contextual details and assess overall fit.",
+   "limitations": [
+    "No evidence of formal certifications or advanced degrees.",
+    "No explicit mention of seniority level beyond current role.",
+    "No data on the scale of the data pipeline beyond daily extraction."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:20:42.653107+00:00"
+}

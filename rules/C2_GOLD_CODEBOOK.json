@@ -1,0 +1,1788 @@
+{
+  "schemaVersion": "hrgene.c2.gold_codebook.v1",
+  "recordedAt": "2026-08-15",
+  "timezone": "America/New_York",
+  "status": "FROZEN_BEFORE_CASE_CONSTRUCTION",
+  "purpose": "Specification-only, closed-world oracle for deriving C2 gold vectors without candidate implementation, test, fixture, or output access.",
+  "evidenceState": {
+    "scientificClaimStatus": "UNVERIFIED",
+    "domainStatus": "SPECIFICATION_ONLY_READY_FOR_PROTOCOL_AUDIT",
+    "containsGoldCases": false,
+    "containsCaseLevelLabels": false,
+    "containsCandidateOutputs": false,
+    "authorizesCaseConstruction": false,
+    "authorizesBenchmarkExecution": false,
+    "allowedClaim": "This file fixes the semantic labeling rules for a future independently built C2 benchmark.",
+    "forbiddenClaims": [
+      "C2 has been executed",
+      "C2 has passed",
+      "the operator is scientifically validated",
+      "the codebook is benchmark evidence",
+      "desk-rejection risk is below 30 percent"
+    ]
+  },
+  "normativeBoundary": {
+    "semanticAuthority": "This file",
+    "metricAuthority": "C2_ACCEPTANCE_GATES.json",
+    "comparisonAuthority": "C2_ANALYZER_CONTRACT.json",
+    "goldInputs": [
+      "typed ledger",
+      "typed artifact",
+      "this codebook",
+      "public type-construction contract",
+      "frozen target identities"
+    ],
+    "neverGoldAuthority": [
+      "artifact prose alone",
+      "builder intent alone",
+      "candidate output or trace",
+      "candidate source or tests"
+    ],
+    "ambiguityPolicy": "Residual ambiguity is GOLD_UNADJUDICABLE and requires a preseal reserve replacement; it is never converted into runtime UNRESOLVED.",
+    "postsealChangePermitted": false
+  },
+  "frozenTarget": {
+    "package": "HRgeneEvidenceBoundedReview",
+    "packageVersion": "0.2.0-DEV",
+    "juliaVersion": "1.12.6",
+    "artifactSchemaVersion": "3.0.0",
+    "ruleSetSchemaVersion": "1.0.0",
+    "compilerVersion": "1.0.0",
+    "operatorVersion": "1.0.0",
+    "digests": {
+      "ruleSet": "sha256:117e53ccbcc48d5d34e6631cf3448408334f3723b93dd49eee8afe756a11d003",
+      "operatorSourceBundle": "sha256:19962cd0276462a40b9809d421b3a35e537915137c3a627a90247c463c0d692f",
+      "candidateTree": "a2de2c59cdd37fe9e5c560fe0a67dca9bf99dfb221c4147bbb1d16506e6843e4",
+      "sourceTree": "ada796fa6a34c35537db1e9bf5a48c477091efb0ff5fed9b9182f2c9637ef058",
+      "testTree": "319fa12b12b570691b59095866602d721c355d06694ea85a32c952d2660a537b",
+      "projectToml": "8bafc47763ccd80c27d2a217ee45cd31f64a680e59c62d411d960e397eaf941c",
+      "manifestToml": "4cc43618f612c40b6228184b102aa191b8763fca76e6c3c0786e194073d23a6c"
+    },
+    "identityChangeEffect": "A new target and wholly new unseen benchmark version are required."
+  },
+  "adjudicatorAccessControl": {
+    "initialLabelMustBeOutputNaive": true,
+    "permitted": [
+      "this codebook",
+      "public protocol and type contract",
+      "case typed ledger and artifact",
+      "paired clean seed when assigned",
+      "public target names, versions, and digests"
+    ],
+    "prohibitedBeforeInitialLabel": [
+      "candidate source tree or excerpts",
+      "candidate tests, fixtures, test receipts, or fixture outputs",
+      "candidate output, trace, receipt, replay, or dry-run result",
+      "builder intended mutation, target rule, declared delta, or route",
+      "the other adjudicator's label or rationale",
+      "prior v1, v2, checkpoint, Wave 1+2, or Step 4 cases and outputs"
+    ],
+    "sourceVisible": false,
+    "testsVisible": false,
+    "fixturesVisible": false,
+    "candidateOutputVisible": false,
+    "candidateExecutionPermitted": false,
+    "candidateReceiptGenerationPermitted": false,
+    "labelMayBeCopiedFromCandidate": false,
+    "requiredAudit": "Dated access logs and denylist hashes must prove these restrictions."
+  },
+  "oracleScope": {
+    "operationKinds": {
+      "EXECUTE_TYPED_INPUT": {
+        "count": 376,
+        "normalInputTypes": [
+          "EvidenceLedgerV1",
+          "AuditablePairedReviewBundleV3"
+        ],
+        "semanticOracle": "This file",
+        "producesNineRuleVector": true,
+        "producesAggregateAction": true
+      },
+      "TAMPER_EXECUTION_RECEIPT": {
+        "count": 8,
+        "semanticOracle": "C2_TAMPER_OPERATION_CONTRACT.json",
+        "tamperDetailsDuplicatedHere": false,
+        "producesNineRuleVector": false,
+        "producesAggregateAction": false,
+        "producesIntegrityDecision": true
+      }
+    },
+    "totalEligibleOperationCount": 384,
+    "operationFieldMapping": {
+      "neutralPrivateMetadataField": "operation",
+      "runnerPayloadField": "operation_kind",
+      "analyzerNormalizedField": "operation",
+      "normalization": "Rename the field only; preserve exactly one of the two closed enum values and reject missing, unknown, or contradictory aliases."
+    },
+    "ruleCount": 9,
+    "closedWorld": true,
+    "extraRuleCodeGapWitnessOrBindingPermitted": false,
+    "coverageCertificateConsumed": false,
+    "documentDigestAuthenticityRecomputed": false,
+    "freeTextCreatesTypedTruth": false,
+    "generatorOrProviderOutputCreatesTypedTruth": false,
+    "transport": "Julia Serialization pinned to Julia 1.12.6"
+  },
+  "populationContract": {
+    "primarySeedFamilyCount": 64,
+    "operationUnitsPerFamily": 6,
+    "primaryEligibleOperationCount": 384,
+    "typedInputExecutionCount": 376,
+    "tamperExecutionReceiptCount": 8,
+    "operationCountIdentity": "376 EXECUTE_TYPED_INPUT + 8 TAMPER_EXECUTION_RECEIPT = 384 eligible operation units",
+    "typedInputExpectedAggregateCounts": {
+      "ACCEPT": 112,
+      "BLOCK": 133,
+      "HUMAN_REVIEW": 131
+    },
+    "tamperExpectedTerminalCounts": {
+      "INTEGRITY_MISMATCH": 8
+    },
+    "aggregateNonAcceptTypedInputCount": 264,
+    "targetTraceNonAcceptTypedInputCount": 240,
+    "allNonAcceptTerminalClassesIncludingTamperCount": 272,
+    "tamperExcludedFromAggregateUnsafeAcceptanceDenominator": true,
+    "tamperOperationsHaveNoTopLevelAggregateAction": true,
+    "formalInputRefusalPermitted": false,
+    "formalInputRefusalGoldCount": 0,
+    "reservePolicy": {
+      "replacementUnit": "COMPLETE_SIX_OPERATION_FAMILY",
+      "mirrorFamilyCount": 64,
+      "operationUnitsPerMirrorFamily": 6,
+      "totalReserveOperationCount": 384,
+      "oneToOnePrimaryToMirrorMappingRequired": true,
+      "mappingFrozenBeforePrimaryAdjudication": true,
+      "sameFiveVariantCellSignaturesRequired": true,
+      "variantCellSignatureFields": [
+        "stratum",
+        "operation_kind",
+        "tamper_opcode_or_null",
+        "target_rule_ids",
+        "expected_activation_and_finding_values",
+        "ordered_reason_and_gap_code_channels",
+        "intended_terminal_class",
+        "fictional_context_category"
+      ],
+      "allVariantCellSignatureFieldsRequireExactEquality": true,
+      "sameFictionalContextCategoryRequired": true,
+      "independentSourceTextDigestAndIdNamespaceRequired": true,
+      "mappedOperationKindPreserved": true,
+      "mappedTamperOpcodePreservedWhenApplicable": true,
+      "tamperOpcodeAuthority": "C2_TAMPER_OPERATION_CONTRACT.json and the presealed one-to-one primary-to-mirror manifest",
+      "postSubstitutionPopulationIdentityRequired": "Exactly 376 EXECUTE_TYPED_INPUT and 8 TAMPER_EXECUTION_RECEIPT operations; each substituted mirror occupies the same six operation/opcode cells as its mapped primary.",
+      "individualOperationReplacementPermitted": false,
+      "mixedPrimaryAndMirrorFamilyPermitted": false,
+      "maximumPresealWholeFamilySubstitutions": 5,
+      "failedMirrorOrSixthSubstitutionAbortsCorpusVersion": true,
+      "postsealReplacementPermitted": false,
+      "unusedReserveOperationsAreNotEligibleOperations": true
+    }
+  },
+  "neutralBuilderSchema": {
+    "recordType": "C2NeutralCaseRecordV1",
+    "format": "CANONICAL_JSON",
+    "candidatePackageImportRequiredByBuilder": false,
+    "candidateExecutionRequiredByBuilder": false,
+    "unknownFieldsPermitted": false,
+    "listedFieldRequiredness": "STATE_DEPENDENT_UNDER_schemaStages",
+    "arrayOrderPreservedByEncoder": true,
+    "duplicateArrayMembersPreservedByEncoder": true,
+    "neutralRecordCanonicalization": "RFC8785_JSON_CANONICALIZATION_SCHEME_UTF8",
+    "scalarContracts": {
+      "Identifier": {
+        "jsonType": "string",
+        "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$",
+        "maximumUtf8Bytes": 160
+      },
+      "C2Identifier": {
+        "base": "Identifier",
+        "pattern": "^c2b1(?:[._-][a-z0-9]+)+$",
+        "purpose": "Private C2 namespace required by contamination admission."
+      },
+      "CheckedText": {
+        "jsonType": "string",
+        "validUtf8Required": true,
+        "nulPermitted": false,
+        "maximumUtf8Bytes": 32768
+      },
+      "NonblankCheckedText": {
+        "base": "CheckedText",
+        "stripMustBeNonempty": true
+      },
+      "ExternalUtf8Document": {
+        "jsonType": "string",
+        "validUtf8Required": true,
+        "nulPermitted": false,
+        "candidateCheckedTextByteLimitApplies": false
+      },
+      "Int": {
+        "jsonType": "integer",
+        "minimum": -9223372036854775808,
+        "maximum": 9223372036854775807,
+        "encoderTarget": "Julia Int on locked 64-bit environment"
+      },
+      "Bool": {
+        "jsonType": "boolean"
+      },
+      "NullableBool": {
+        "jsonTypes": ["boolean", "null"]
+      },
+      "VersionNumberString": {
+        "jsonType": "string",
+        "encoderTarget": "Julia VersionNumber"
+      },
+      "Sha256Syntax": {
+        "jsonType": "string",
+        "pattern": "^sha256:[0-9a-f]{64}$"
+      }
+    },
+    "identifierAdmissionOverride": {
+      "appliesToDeclaredTypes": ["Identifier", "array<Identifier>"],
+      "requiredEffectiveType": "C2Identifier",
+      "requiredPattern": "^c2b1(?:[._-][a-z0-9]+)+$",
+      "allTypedInputAndExternalSourceIdentifiersCovered": true,
+      "nonC2OrLegacyIdentifierPermitted": false,
+      "failureDisposition": "Reject the entire six-operation family before seal; do not rewrite IDs in place after adjudication."
+    },
+    "enumDomains": {
+      "SemanticStatus": [
+        "SEMANTIC_ESTABLISHED",
+        "SEMANTIC_MISSING",
+        "SEMANTIC_CONTRADICTORY",
+        "SEMANTIC_UNSUPPORTED",
+        "SEMANTIC_MALFORMED"
+      ],
+      "ClaimClass": [
+        "CLAIM_FACTUAL",
+        "CLAIM_SUBJECTIVE",
+        "CLAIM_CLASS_UNRESOLVED"
+      ],
+      "QuantificationMode": [
+        "CLAIM_UNQUANTIFIED",
+        "CLAIM_QUANTIFIED",
+        "QUANTIFICATION_MODE_UNRESOLVED"
+      ],
+      "EmploymentAction": [
+        "NO_EMPLOYMENT_ACTION",
+        "EMPLOYMENT_RANK",
+        "EMPLOYMENT_RECOMMEND",
+        "EMPLOYMENT_REJECT",
+        "EMPLOYMENT_SELECT",
+        "EMPLOYMENT_ACTION_UNRESOLVED"
+      ],
+      "OperationKind": [
+        "EXECUTE_TYPED_INPUT",
+        "TAMPER_EXECUTION_RECEIPT"
+      ],
+      "Stratum": [
+        "clean_controls",
+        "isolated_origin_mutations",
+        "evidence_gap_router_challenges",
+        "global_identity_integrity_challenges",
+        "compositional_adversarial"
+      ],
+      "IntendedTerminalClass": ["ACCEPT", "BLOCK", "HUMAN_REVIEW", "INTEGRITY_MISMATCH"]
+    },
+    "digestBinding": {
+      "recordType": "DigestBindingV1",
+      "fields": [
+        {"name": "mode", "type": "enum"},
+        {"name": "literal", "type": "string|null"}
+      ],
+      "modes": {
+        "LITERAL": "literal is required and copied exactly.",
+        "FROZEN_RULESET_DIGEST": "literal must be null; substitute frozenTarget.digests.ruleSet.",
+        "COMPUTED_LEDGER_DIGEST": "literal must be null; construct the typed ledger and substitute ledger_digest(ledger).",
+        "FLIPPED_COMPUTED_LEDGER_DIGEST": "literal must be null; compute the typed ledger digest, preserve sha256:, and replace the first hexadecimal digit with 1 when it is 0 and otherwise with 0; preserve every remaining digit.",
+        "COPY_ARTIFACT_LEDGER_DIGEST": "literal must be null; substitute the already resolved artifact.ledger_digest."
+      },
+      "fieldModeAllowlist": {
+        "artifact.rule_set_digest": ["LITERAL", "FROZEN_RULESET_DIGEST"],
+        "artifact.ledger_digest": ["LITERAL", "COMPUTED_LEDGER_DIGEST", "FLIPPED_COMPUTED_LEDGER_DIGEST"],
+        "artifact.primary_review.ledger_digest": ["LITERAL", "COPY_ARTIFACT_LEDGER_DIGEST"],
+        "artifact.audit_review.ledger_digest": ["LITERAL", "COPY_ARTIFACT_LEDGER_DIGEST"]
+      },
+      "bindingMetadataPassedToCandidate": false
+    },
+    "rootFields": [
+      {"name": "source_documents", "type": "array<ExternalSourceDocumentNeutralV1>", "order": "ascending raw UTF-8 bytes of source_id"},
+      {"name": "ledger", "type": "EvidenceLedgerNeutralV1"},
+      {"name": "artifact", "type": "AuditablePairedReviewBundleNeutralV3"},
+      {"name": "private_case_metadata", "type": "PrivateCaseMetadataNeutralV1"}
+    ],
+    "schemaStages": {
+      "BUILDER_DRAFT": {
+        "allRootFieldsRequired": true,
+        "allNestedFieldsRequiredExcept": [
+          "private_case_metadata.canonical_payload_digest",
+          "private_case_metadata.gold_record_digest"
+        ],
+        "omittedFields": [
+          "private_case_metadata.canonical_payload_digest",
+          "private_case_metadata.gold_record_digest"
+        ],
+        "nullDigestPlaceholderPermitted": false,
+        "candidateImportOrExecutionPermitted": false
+      },
+      "CUSTODIAN_RESOLVED_TYPED_RECORD": {
+        "allRootAndNestedFieldsRequiredExcept": [
+          "private_case_metadata.gold_record_digest"
+        ],
+        "requiredComputedFields": [
+          "private_case_metadata.canonical_payload_digest"
+        ],
+        "omittedFields": [
+          "private_case_metadata.gold_record_digest"
+        ],
+        "canonicalPayloadDigestTiming": "After every digest binding is resolved and the ledger/artifact constructors succeed, before any candidate compile or execution.",
+        "candidateCompileOrExecutionPermitted": false
+      },
+      "FINAL_ADJUDICATED_GOLD_RECORD": {
+        "allRootAndNestedFieldsRequired": true,
+        "requiredComputedFields": [
+          "private_case_metadata.canonical_payload_digest",
+          "private_case_metadata.gold_record_digest"
+        ],
+        "goldRecordDigestTiming": "After the complete adjudicated exact vector and provenance record are frozen; hash the final gold record with gold_record_digest omitted.",
+        "candidateOutputMayBeVisible": false
+      }
+    },
+    "definitions": {
+      "ExternalSourceDocumentNeutralV1": {
+        "encoderTarget": "EXTERNAL_GOLD_PREMISE_NOT_CANDIDATE_INPUT",
+        "fields": [
+          {"name": "source_id", "type": "Identifier"},
+          {"name": "document_digest", "type": "Sha256Syntax"},
+          {"name": "document_size_utf8_bytes", "type": "Int"},
+          {"name": "content_utf8", "type": "ExternalUtf8Document"}
+        ],
+        "invariants": [
+          "document_digest equals sha256: plus lowercase SHA-256 of the exact unmodified content_utf8 bytes.",
+          "document_size_utf8_bytes equals the exact UTF-8 byte length of content_utf8.",
+          "source_id maps to exactly one ledger.sources member for an admitted external source premise.",
+          "Every associated SourceSpanNeutralV1 indexes these exact unpadded bytes."
+        ],
+        "passedToCandidate": false
+      },
+      "PrivateCaseMetadataNeutralV1": {
+        "encoderTarget": "PRIVATE_CONTROL_RECORD_NOT_CANDIDATE_INPUT",
+        "fields": [
+          {"name": "case_id", "type": "Identifier"},
+          {"name": "seed_id", "type": "Identifier"},
+          {"name": "variant_id", "type": "Identifier"},
+          {"name": "mutation_recipe_id", "type": "Identifier"},
+          {"name": "operation", "type": "OperationKind"},
+          {"name": "stratum", "type": "Stratum"},
+          {"name": "intended_terminal_class", "type": "IntendedTerminalClass"},
+          {"name": "declared_semantic_delta", "type": "CheckedText"},
+          {"name": "mechanical_companion_change", "type": "CheckedText"},
+          {"name": "provenance_note", "type": "CheckedText"},
+          {"name": "canonical_payload_digest", "type": "Sha256Syntax", "requiredAtStages": ["CUSTODIAN_RESOLVED_TYPED_RECORD", "FINAL_ADJUDICATED_GOLD_RECORD"], "omittedAtStages": ["BUILDER_DRAFT"]},
+          {"name": "gold_record_digest", "type": "Sha256Syntax", "requiredAtStages": ["FINAL_ADJUDICATED_GOLD_RECORD"], "omittedAtStages": ["BUILDER_DRAFT", "CUSTODIAN_RESOLVED_TYPED_RECORD"]}
+        ],
+        "digestRules": {
+          "canonical_payload_digest": "SHA-256 of the RFC8785 canonical resolved source-document, ledger, artifact, and non-gold case identity payload defined by the locked encoder.",
+          "gold_record_digest": "SHA-256 of the RFC8785 canonical final gold record with gold_record_digest omitted; the custodian fills it only after adjudication."
+        },
+        "initialAdjudicatorVisibility": "Builder intent fields, intended terminal class, mutation recipe, and declared delta are withheld until both initial labels are submitted.",
+        "passedToCandidate": false
+      },
+      "SourceSpanNeutralV1": {
+        "encoderTarget": "SourceSpanV1",
+        "fields": [
+          {"name": "span_id", "type": "Identifier"},
+          {"name": "start_utf8_byte", "type": "Int"},
+          {"name": "end_utf8_byte", "type": "Int"}
+        ]
+      },
+      "EvidenceLocatorNeutralV1": {
+        "encoderTarget": "EvidenceLocatorV1",
+        "fields": [
+          {"name": "source_id", "type": "Identifier"},
+          {"name": "span_id", "type": "Identifier"}
+        ]
+      },
+      "EvidenceSourceNeutralV1": {
+        "encoderTarget": "EvidenceSourceV1",
+        "fields": [
+          {"name": "source_id", "type": "Identifier"},
+          {"name": "document_digest", "type": "CheckedText", "runtimeSyntaxCheckedAs": "Sha256Syntax"},
+          {"name": "document_size_utf8_bytes", "type": "Int"},
+          {"name": "spans", "type": "array<SourceSpanNeutralV1>"}
+        ]
+      },
+      "PropositionNeutralV1": {
+        "encoderTarget": "PropositionV1",
+        "fields": [
+          {"name": "proposition_id", "type": "Identifier"},
+          {"name": "status", "type": "SemanticStatus"},
+          {"name": "locators", "type": "array<EvidenceLocatorNeutralV1>"}
+        ]
+      },
+      "QuantificationNeutralV1": {
+        "encoderTarget": "QuantificationV1",
+        "fields": [
+          {"name": "quantification_id", "type": "Identifier"},
+          {"name": "proposition_id", "type": "Identifier"},
+          {"name": "value", "type": "CheckedText"},
+          {"name": "unit", "type": "CheckedText"},
+          {"name": "context", "type": "CheckedText"},
+          {"name": "status", "type": "SemanticStatus"},
+          {"name": "locators", "type": "array<EvidenceLocatorNeutralV1>"}
+        ]
+      },
+      "OwnershipRelationNeutralV1": {
+        "encoderTarget": "OwnershipRelationV1",
+        "fields": [
+          {"name": "relation_id", "type": "Identifier"},
+          {"name": "resource_id", "type": "Identifier"},
+          {"name": "owner_id", "type": "Identifier"},
+          {"name": "allowed_scopes", "type": "array<Identifier>"},
+          {"name": "status", "type": "SemanticStatus"},
+          {"name": "locators", "type": "array<EvidenceLocatorNeutralV1>"}
+        ]
+      },
+      "DeploymentTransitionNeutralV1": {
+        "encoderTarget": "DeploymentTransitionV1",
+        "fields": [
+          {"name": "transition_id", "type": "Identifier"},
+          {"name": "from_state", "type": "Identifier"},
+          {"name": "to_state", "type": "Identifier"},
+          {"name": "authorized", "type": "Bool"},
+          {"name": "status", "type": "SemanticStatus"},
+          {"name": "locators", "type": "array<EvidenceLocatorNeutralV1>"}
+        ]
+      },
+      "QualificationFacetNeutralV1": {
+        "encoderTarget": "QualificationFacetV1",
+        "fields": [
+          {"name": "facet_id", "type": "Identifier"},
+          {"name": "subject_id", "type": "Identifier"},
+          {"name": "scope_id", "type": "Identifier"},
+          {"name": "satisfied", "type": "Bool"},
+          {"name": "status", "type": "SemanticStatus"},
+          {"name": "locators", "type": "array<EvidenceLocatorNeutralV1>"}
+        ]
+      },
+      "PolicyFactNeutralV1": {
+        "encoderTarget": "PolicyFactV1",
+        "fields": [
+          {"name": "fact_id", "type": "Identifier"},
+          {"name": "value", "type": "Bool"},
+          {"name": "status", "type": "SemanticStatus"},
+          {"name": "locators", "type": "array<EvidenceLocatorNeutralV1>"}
+        ]
+      },
+      "CoverageCertificateNeutralV1": {
+        "encoderTarget": "CoverageCertificateV1",
+        "fields": [
+          {"name": "domain_id", "type": "Identifier"},
+          {"name": "closed_world", "type": "Bool"},
+          {"name": "status", "type": "SemanticStatus"},
+          {"name": "locators", "type": "array<EvidenceLocatorNeutralV1>"}
+        ],
+        "detectorConsumption": "NONE"
+      },
+      "EvidenceLedgerNeutralV1": {
+        "encoderTarget": "EvidenceLedgerV1",
+        "fields": [
+          {"name": "ledger_id", "type": "Identifier"},
+          {"name": "case_id", "type": "Identifier"},
+          {"name": "role_id", "type": "Identifier"},
+          {"name": "authority", "type": "literal:runner_authoritative"},
+          {"name": "sources", "type": "array<EvidenceSourceNeutralV1>"},
+          {"name": "propositions", "type": "array<PropositionNeutralV1>"},
+          {"name": "quantifications", "type": "array<QuantificationNeutralV1>"},
+          {"name": "ownership_relations", "type": "array<OwnershipRelationNeutralV1>"},
+          {"name": "deployment_transitions", "type": "array<DeploymentTransitionNeutralV1>"},
+          {"name": "qualification_facets", "type": "array<QualificationFacetNeutralV1>"},
+          {"name": "review_support_only", "type": "PolicyFactNeutralV1"},
+          {"name": "no_employment_decision", "type": "PolicyFactNeutralV1"},
+          {"name": "coverage", "type": "array<CoverageCertificateNeutralV1>"}
+        ]
+      },
+      "OutputSpanNeutralV1": {
+        "encoderTarget": "OutputSpanV1",
+        "fields": [
+          {"name": "section_id", "type": "Identifier"},
+          {"name": "start_utf8_byte", "type": "Int"},
+          {"name": "end_utf8_byte", "type": "Int"}
+        ]
+      },
+      "ReviewClaimNeutralV1": {
+        "encoderTarget": "ReviewClaimV1",
+        "fields": [
+          {"name": "claim_id", "type": "Identifier"},
+          {"name": "proposition_ids", "type": "array<Identifier>"},
+          {"name": "claim_class", "type": "ClaimClass"},
+          {"name": "quantification_mode", "type": "QuantificationMode"},
+          {"name": "quantification_ids", "type": "array<Identifier>"},
+          {"name": "subjective_labelled", "type": "Bool"},
+          {"name": "requires_human_review", "type": "Bool"},
+          {"name": "output_span", "type": "OutputSpanNeutralV1"}
+        ]
+      },
+      "OwnershipAssertionNeutralV1": {
+        "encoderTarget": "OwnershipAssertionV1",
+        "fields": [
+          {"name": "assertion_id", "type": "Identifier"},
+          {"name": "relation_id", "type": "Identifier"},
+          {"name": "resource_id", "type": "Identifier"},
+          {"name": "owner_id", "type": "Identifier"},
+          {"name": "scope_id", "type": "Identifier"},
+          {"name": "output_span", "type": "OutputSpanNeutralV1"}
+        ]
+      },
+      "DeploymentRequestNeutralV1": {
+        "encoderTarget": "DeploymentRequestV1",
+        "fields": [
+          {"name": "request_id", "type": "Identifier"},
+          {"name": "transition_id", "type": "Identifier"},
+          {"name": "from_state", "type": "Identifier"},
+          {"name": "to_state", "type": "Identifier"},
+          {"name": "output_span", "type": "OutputSpanNeutralV1"}
+        ]
+      },
+      "QualificationAssertionNeutralV1": {
+        "encoderTarget": "QualificationAssertionV1",
+        "fields": [
+          {"name": "assertion_id", "type": "Identifier"},
+          {"name": "facet_id", "type": "Identifier"},
+          {"name": "subject_id", "type": "Identifier"},
+          {"name": "scope_id", "type": "Identifier"},
+          {"name": "claimed_satisfied", "type": "Bool"},
+          {"name": "output_span", "type": "OutputSpanNeutralV1"}
+        ]
+      },
+      "BoundaryFactNeutralV1": {
+        "encoderTarget": "BoundaryFactV1",
+        "fields": [
+          {"name": "state", "type": "SemanticStatus"},
+          {"name": "value", "type": "NullableBool"}
+        ],
+        "invariant": "value is non-null exactly when state is SEMANTIC_ESTABLISHED"
+      },
+      "HumanReviewBoundaryNeutralV1": {
+        "encoderTarget": "HumanReviewBoundaryV1",
+        "fields": [
+          {"name": "boundary_id", "type": "Identifier"},
+          {"name": "review_support_only", "type": "BoundaryFactNeutralV1"},
+          {"name": "employment_decision_prohibited", "type": "BoundaryFactNeutralV1"},
+          {"name": "route_unresolved_to_human", "type": "BoundaryFactNeutralV1"},
+          {"name": "employment_action", "type": "EmploymentAction"}
+        ]
+      },
+      "PrimaryReviewSectionNeutralV1": {
+        "encoderTarget": "PrimaryReviewSectionV1",
+        "fields": [
+          {"name": "section_id", "type": "Identifier"},
+          {"name": "present", "type": "Bool"},
+          {"name": "case_id", "type": "Identifier"},
+          {"name": "role_id", "type": "Identifier"},
+          {"name": "ledger_digest", "type": "DigestBindingV1"},
+          {"name": "content", "type": "NonblankCheckedText"},
+          {"name": "claims", "type": "array<ReviewClaimNeutralV1>"},
+          {"name": "ownership_assertions", "type": "array<OwnershipAssertionNeutralV1>"},
+          {"name": "deployment_requests", "type": "array<DeploymentRequestNeutralV1>"},
+          {"name": "qualification_assertions", "type": "array<QualificationAssertionNeutralV1>"}
+        ]
+      },
+      "AuditReviewSectionNeutralV1": {
+        "encoderTarget": "AuditReviewSectionV1",
+        "fields": [
+          {"name": "section_id", "type": "Identifier"},
+          {"name": "present", "type": "Bool"},
+          {"name": "case_id", "type": "Identifier"},
+          {"name": "role_id", "type": "Identifier"},
+          {"name": "ledger_digest", "type": "DigestBindingV1"},
+          {"name": "review_section_id", "type": "Identifier"},
+          {"name": "content", "type": "NonblankCheckedText"},
+          {"name": "covered_item_ids", "type": "array<Identifier>"}
+        ]
+      },
+      "AuditablePairedReviewBundleNeutralV3": {
+        "encoderTarget": "AuditablePairedReviewBundleV3",
+        "fields": [
+          {"name": "bundle_id", "type": "Identifier"},
+          {"name": "schema_version", "type": "VersionNumberString"},
+          {"name": "rule_set_digest", "type": "DigestBindingV1"},
+          {"name": "ledger_digest", "type": "DigestBindingV1"},
+          {"name": "primary_review", "type": "PrimaryReviewSectionNeutralV1"},
+          {"name": "audit_review", "type": "AuditReviewSectionNeutralV1"},
+          {"name": "human_review_boundary", "type": "HumanReviewBoundaryNeutralV1"}
+        ]
+      }
+    },
+    "encoderRules": [
+      "Validate the neutral record without importing or executing the candidate in the builder workspace.",
+      "After both initial labels and any arbitration are locked, the custodian encoder resolves digest bindings, constructs each named Julia value in declared field order, and preserves every array member and its order.",
+      "The encoder may call only the construction and digest symbols allowed by C2_BUILDER_API_ALLOWLIST.json; it may not compile, detect, execute, audit, replay, or create a candidate receipt.",
+      "The runner receives only the resolved serialized ledger and artifact plus opaque operation metadata; neutral binding directives and gold fields are not serialized into candidate input."
+    ],
+    "admissionRules": {
+      "constructorFailureIsEligibleGoldOutcome": false,
+      "formalInputRefusalIsEligibleGoldOutcome": false,
+      "constructorFailureBeforeSealDisposition": "Mark the affected whole six-operation family ineligible and apply the preassigned whole-family mirror policy.",
+      "typedInputMustReachValidator": true,
+      "eligibleTypedInputExpectedExecutionStatus": "COMPLETED",
+      "coverageCertificateMayAlterGold": false,
+      "freeTextMayCreateTypedSemanticTruth": false
+    }
+  },
+  "canonicalRuleOrder": [
+    "hrgene.claim_provenance",
+    "hrgene.unsupported_quantification",
+    "hrgene.ownership_scope",
+    "hrgene.deployment_boundary",
+    "hrgene.qualification_boundary",
+    "hrgene.human_review_boundary",
+    "hrgene.subjective_claim_boundary",
+    "hrgene.evidence_gap_router",
+    "hrgene.paired_review_bundle_completeness"
+  ],
+  "evaluationOrderUnderValidEnvelope": [
+    "hrgene.claim_provenance",
+    "hrgene.unsupported_quantification",
+    "hrgene.ownership_scope",
+    "hrgene.deployment_boundary",
+    "hrgene.qualification_boundary",
+    "hrgene.human_review_boundary",
+    "hrgene.subjective_claim_boundary",
+    "hrgene.paired_review_bundle_completeness",
+    "hrgene.evidence_gap_router"
+  ],
+  "canonicalization": {
+    "inputTupleOrderIsNormative": true,
+    "pathIndicesAreOneBased": true,
+    "stableUnique": "Retain first occurrence and encounter order.",
+    "reasonOrdering": "FAIL: stableUnique(failures then gaps); UNRESOLVED: stableUnique(gaps); PASS: singleton pass reason.",
+    "gapOrdering": "stableUnique(gaps in encounter order)",
+    "witnessOrdering": "Preserve every emission in evaluation order; never sort or deduplicate.",
+    "referenceIteration": "stableUnique of artifact reference tuple after artifact-duplicate emission",
+    "locatorIteration": "input tuple order",
+    "bundleItemIteration": [
+      "claims",
+      "ownership_assertions",
+      "deployment_requests",
+      "qualification_assertions"
+    ],
+    "routerOriginIteration": [
+      "hrgene.claim_provenance",
+      "hrgene.unsupported_quantification",
+      "hrgene.ownership_scope",
+      "hrgene.deployment_boundary",
+      "hrgene.qualification_boundary",
+      "hrgene.human_review_boundary",
+      "hrgene.subjective_claim_boundary",
+      "hrgene.paired_review_bundle_completeness"
+    ],
+    "witnessTupleFields": [
+      "code",
+      "ledger_path",
+      "artifact_path",
+      "source_id",
+      "span_id",
+      "output_span"
+    ],
+    "outputSpanFields": [
+      "section_id",
+      "start_utf8_byte",
+      "end_utf8_byte"
+    ],
+    "digestDerivation": {
+      "ledger": "sha256(canonical_bytes(ledger)) with sha256: prefix",
+      "artifact": "sha256(canonical_bytes(artifact)) with sha256: prefix",
+      "receipt": "sha256(canonical_bytes((execution_receipt_v1, compiler_version, operator_version, operator_digest, rule_set_digest, ledger_digest, artifact_digest, traces, aggregate_action))) with sha256: prefix"
+    }
+  },
+  "commonOracle": {
+    "semanticStatusGap": {
+      "SEMANTIC_MISSING": "SEMANTIC_STATE_MISSING",
+      "SEMANTIC_CONTRADICTORY": "SEMANTIC_STATE_CONTRADICTORY",
+      "SEMANTIC_UNSUPPORTED": "SEMANTIC_STATE_UNSUPPORTED",
+      "SEMANTIC_MALFORMED": "SEMANTIC_STATE_MALFORMED",
+      "witness": null
+    },
+    "outputSpan": {
+      "validWhen": [
+        "section_id == primary_review.section_id",
+        "start_utf8_byte >= 0",
+        "end_utf8_byte > start_utf8_byte",
+        "end_utf8_byte <= utf8_byte_length(primary_review.content)"
+      ],
+      "invalidGap": "OUTPUT_SPAN_INVALID",
+      "invalidWitness": {
+        "code": "OUTPUT_SPAN_INVALID",
+        "ledger_path": "",
+        "artifact_path": "caller artifact path",
+        "source_id": null,
+        "span_id": null,
+        "output_span": "exact input OutputSpanV1 including invalid values"
+      },
+      "stopsItemEvaluation": false
+    },
+    "locator": {
+      "requireDocumentDigest": true,
+      "requireSourceSpan": true,
+      "orderedBranches": [
+        {
+          "when": "locators empty",
+          "gap": "EVIDENCE_LOCATOR_MISSING",
+          "witness": [
+            "EVIDENCE_LOCATOR_MISSING",
+            "caller ledger path",
+            "caller artifact path",
+            null,
+            null,
+            "caller output span or null"
+          ],
+          "stopHelper": true
+        },
+        {
+          "when": "source match count == 0",
+          "gap": "EVIDENCE_SOURCE_UNKNOWN",
+          "witness": [
+            "EVIDENCE_SOURCE_UNKNOWN",
+            "caller ledger path",
+            "caller artifact path",
+            "locator.source_id",
+            "locator.span_id",
+            "caller output span or null"
+          ],
+          "nextLocator": true
+        },
+        {
+          "when": "source match count > 1",
+          "gap": "EVIDENCE_SOURCE_DUPLICATE",
+          "witness": null,
+          "nextLocator": true
+        },
+        {
+          "when": "unique source digest fails ^sha256:[0-9a-f]{64}$",
+          "gap": "EVIDENCE_DIGEST_INVALID",
+          "witness": null,
+          "continueToSpan": true
+        },
+        {
+          "when": "span match count == 0",
+          "gap": "EVIDENCE_SPAN_UNKNOWN",
+          "witness": null,
+          "nextLocator": true
+        },
+        {
+          "when": "span match count > 1",
+          "gap": "EVIDENCE_SPAN_DUPLICATE",
+          "witness": null,
+          "nextLocator": true
+        },
+        {
+          "when": "span start < 0 or end <= start or end > document_size_utf8_bytes",
+          "gap": "EVIDENCE_SPAN_INVALID",
+          "witness": null,
+          "nextLocator": true
+        },
+        {
+          "when": "source unique and span unique and valid",
+          "gap": null,
+          "witness": [
+            "RULE_SATISFIED",
+            "caller ledger path",
+            "caller artifact path",
+            "locator.source_id",
+            "locator.span_id",
+            "caller output span or null"
+          ],
+          "evenIfDigestInvalid": true
+        }
+      ],
+      "returnValueConsumedByDetectors": false,
+      "locatorTupleDuplicatePolicy": "Do not deduplicate locator inputs. Re-evaluate each member in tuple order; repeated valid locators therefore repeat RULE_SATISFIED witnesses, while final reason and gap vectors still use stableUnique.",
+      "documentTruthBoundary": "Digest syntax only; external document authenticity is a builder premise."
+    },
+    "activationUnresolved": {
+      "activation": "ACTIVATION_UNRESOLVED",
+      "finding_presence": true,
+      "finding_value": "UNRESOLVED",
+      "ordered_reason_codes": [
+        "ACTIVATION_STATE_UNKNOWN"
+      ],
+      "ordered_gap_codes": [
+        "ACTIVATION_STATE_UNKNOWN"
+      ],
+      "ordered_witness_tuples": [
+        [
+          "ACTIVATION_STATE_UNKNOWN",
+          "execution.activation",
+          "execution.activation",
+          null,
+          null,
+          null
+        ]
+      ],
+      "trace_action": "TRACE_HUMAN_REVIEW"
+    },
+    "inactive": {
+      "activation": "NOT_APPLICABLE",
+      "finding_presence": false,
+      "finding_value": null,
+      "ordered_reason_codes": [],
+      "ordered_gap_codes": [],
+      "ordered_witness_tuples": [],
+      "trace_action": "TRACE_NOT_APPLICABLE",
+      "RULE_INACTIVE_emitted": false
+    }
+  },
+  "findingComposition": {
+    "FAIL_plus_gap": "FAIL wins; reasons are stableUnique(failures then gaps); gaps remain in ordered_gap_codes.",
+    "gap_without_FAIL": "UNRESOLVED; reasons equal gaps.",
+    "no_failure_or_gap": "PASS with singleton pass reason.",
+    "sameCodeMayOccupyFailureAndGapChannels": true,
+    "passRequiresWitness": true,
+    "failRequiresWitness": true,
+    "unresolvedMayHaveZeroWitnesses": true
+  },
+  "traceActionOracle": {
+    "NOT_APPLICABLE": "TRACE_NOT_APPLICABLE",
+    "PASS": "TRACE_ACCEPT",
+    "UNRESOLVED": "TRACE_HUMAN_REVIEW",
+    "FAIL_CRITICAL": "TRACE_BLOCK",
+    "FAIL_NONCRITICAL": "TRACE_HUMAN_REVIEW"
+  },
+  "aggregateOracle": {
+    "precedence": [
+      "BLOCK",
+      "HUMAN_REVIEW",
+      "ACCEPT"
+    ],
+    "BLOCK": "any TRACE_BLOCK",
+    "HUMAN_REVIEW": "no TRACE_BLOCK and any TRACE_HUMAN_REVIEW",
+    "ACCEPT": "otherwise",
+    "routerCanRescueBlock": false,
+    "weightedCompensationPermitted": false
+  },
+  "globalEnvelopeOracle": {
+    "shortCircuitBeforeRuleEvaluation": true,
+    "precedence": [
+      {
+        "priority": 1,
+        "when": "artifact.schema_version != 3.0.0",
+        "code": "INPUT_SCHEMA_UNSUPPORTED"
+      },
+      {
+        "priority": 2,
+        "when": "schema valid and artifact.rule_set_digest != frozen rule-set digest",
+        "code": "INPUT_RULESET_DIGEST_MISMATCH"
+      },
+      {
+        "priority": 3,
+        "when": "schema and ruleset valid and artifact.ledger_digest != ledger_digest(ledger)",
+        "code": "INPUT_LEDGER_DIGEST_MISMATCH"
+      }
+    ],
+    "multipleMismatchPolicy": "Emit only the first matching code.",
+    "perRuleVectorForAllNine": {
+      "activation": "ACTIVATION_UNRESOLVED",
+      "finding_presence": true,
+      "finding_value": "UNRESOLVED",
+      "ordered_reason_codes": [
+        "selected global code"
+      ],
+      "ordered_gap_codes": [
+        "selected global code"
+      ],
+      "ordered_witness_tuples": [
+        [
+          "selected global code",
+          "execution.activation",
+          "execution.activation",
+          null,
+          null,
+          null
+        ]
+      ],
+      "trace_action": "TRACE_HUMAN_REVIEW"
+    },
+    "aggregate_action": "HUMAN_REVIEW",
+    "topLevelExecutionStatus": "COMPLETED",
+    "topLevelOutcomeKind": "RECEIPT",
+    "validatorReached": true,
+    "ruleSpecificOriginSet": [],
+    "originLayer": "GLOBAL_ENVELOPE",
+    "operatorMismatchHandledHere": false,
+    "operatorMismatchScope": "TAMPER_EXECUTION_RECEIPT only under C2_TAMPER_OPERATION_CONTRACT.json, not the three EXECUTE_TYPED_INPUT envelope branches"
+  },
+  "typedInputOutcomeOracle": {
+    "operation_kind": "EXECUTE_TYPED_INPUT",
+    "typedPayloadAndCompiledTarget": {
+      "execution_status": "COMPLETED",
+      "outcome_kind": "RECEIPT",
+      "validator_reached": true,
+      "requiresNineTraces": true,
+      "terminal_class": "aggregate_action"
+    },
+    "formalInputRefusalPermitted": false,
+    "formalInputRefusalGoldCount": 0,
+    "alwaysIncorrectForEligibleExecute": [
+      "FORMAL_INPUT_REFUSAL",
+      "TIMEOUT",
+      "UNHANDLED_EXCEPTION",
+      "MALFORMED_OUTPUT"
+    ],
+    "INTEGRITY_MISMATCH_isAggregateAction": false,
+    "integrityMismatchScope": "Designated TAMPER_EXECUTION_RECEIPT operation only; all details and exact audit vectors are delegated to C2_TAMPER_OPERATION_CONTRACT.json."
+  },
+  "originOracle": {
+    "derivedBeforeCandidateOutput": true,
+    "candidateOutputMayDefineOrigin": false,
+    "routerIsSemanticOrigin": false,
+    "globalEnvelopeHasRuleSpecificOrigin": false,
+    "isolated": "Exactly one non-router semantic vector differs from its clean seed; companion changes may not change another rule vector.",
+    "compositional": "Two or more non-router semantic vectors differ; the complete set is the gold origin set.",
+    "targetTraceNonacceptOrigin": "Every non-router rule with ACTIVATION_UNRESOLVED, FAIL, or UNRESOLVED, except global short-circuit traces.",
+    "routerOriginSet": "Exactly the valid-envelope non-router traces with ACTIVATION_UNRESOLVED or nonempty gap_codes, in router origin order.",
+    "safeBoundaryOrigin": "Adjudicate by exact comparison with clean seed, never candidate output.",
+    "closedWorld": true
+  },
+  "rules": [
+    {
+      "rule_id": "hrgene.claim_provenance",
+      "rule_digest": "sha256:03dbcb05d4b131ab3ed4876c4aa58720797d8a97153a485793826ed38b40b519",
+      "version": "1.0.0",
+      "kind": "RULE_CONTRACT",
+      "severity": "SEVERITY_CRITICAL",
+      "operator_id": "claim_provenance",
+      "activationOracle": {
+        "reachable": ["NOT_APPLICABLE", "ACTIVATED"],
+        "orderedBranches": [
+          {"when": "primary_review.claims is empty", "activation": "NOT_APPLICABLE"},
+          {"when": "otherwise", "activation": "ACTIVATED"}
+        ]
+      },
+      "orderedEvaluation": [
+        "Iterate primary_review.claims in one-based input order.",
+        "For each claim, call commonOracle.outputSpan on claim.output_span with artifact_path primary_review.claims[{claim_index}].",
+        "If proposition_ids is empty, emit CLAIM_PROPOSITION_REFERENCE_MISSING and continue to the next claim.",
+        "Otherwise, emit artifact-side PROPOSITION_REFERENCE_DUPLICATE once when the array contains a duplicate, then iterate stableUnique(proposition_ids).",
+        "For each proposition_id, evaluate match count, semantic status, and then commonOracle.locator in that order."
+      ],
+      "branchEmitters": [
+        {
+          "when": "claim.proposition_ids is empty",
+          "channel": "failure",
+          "code": "CLAIM_PROPOSITION_REFERENCE_MISSING",
+          "witness": ["CLAIM_PROPOSITION_REFERENCE_MISSING", "", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"],
+          "control": "continue next claim"
+        },
+        {
+          "when": "claim.proposition_ids contains any duplicate",
+          "channel": "failure",
+          "code": "PROPOSITION_REFERENCE_DUPLICATE",
+          "witness": ["PROPOSITION_REFERENCE_DUPLICATE", "", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"],
+          "emitCount": "once per affected claim before reference iteration"
+        },
+        {
+          "when": "ledger proposition match count for proposition_id is 0",
+          "channel": "gap",
+          "code": "PROPOSITION_REFERENCE_UNKNOWN",
+          "witness": ["PROPOSITION_REFERENCE_UNKNOWN", "ledger.propositions.{proposition_id}", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"],
+          "control": "continue next stable-unique proposition_id"
+        },
+        {
+          "when": "ledger proposition match count for proposition_id is greater than 1",
+          "channel": "gap",
+          "code": "PROPOSITION_REFERENCE_DUPLICATE",
+          "witness": null,
+          "control": "continue next stable-unique proposition_id"
+        },
+        {
+          "when": "the unique proposition status is not SEMANTIC_ESTABLISHED",
+          "channel": "gap",
+          "code": "commonOracle.semanticStatusGap[proposition.status]",
+          "witness": null,
+          "control": "continue next stable-unique proposition_id"
+        },
+        {
+          "when": "the unique proposition status is SEMANTIC_ESTABLISHED",
+          "delegate": "commonOracle.locator",
+          "ledger_path": "ledger.propositions.{proposition_id}",
+          "artifact_path": "primary_review.claims[{claim_index}]",
+          "output_span": "claim.output_span",
+          "requireDocumentDigest": true,
+          "requireSourceSpan": true
+        }
+      ],
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "CLAIM_PROVENANCE_SATISFIED",
+        "failureCodes": ["CLAIM_PROPOSITION_REFERENCE_MISSING", "PROPOSITION_REFERENCE_DUPLICATE"],
+        "gapCodes": [
+          "OUTPUT_SPAN_INVALID",
+          "PROPOSITION_REFERENCE_UNKNOWN",
+          "PROPOSITION_REFERENCE_DUPLICATE",
+          "SEMANTIC_STATE_MISSING",
+          "SEMANTIC_STATE_CONTRADICTORY",
+          "SEMANTIC_STATE_UNSUPPORTED",
+          "SEMANTIC_STATE_MALFORMED",
+          "EVIDENCE_LOCATOR_MISSING",
+          "EVIDENCE_SOURCE_UNKNOWN",
+          "EVIDENCE_SOURCE_DUPLICATE",
+          "EVIDENCE_DIGEST_INVALID",
+          "EVIDENCE_SPAN_UNKNOWN",
+          "EVIDENCE_SPAN_DUPLICATE",
+          "EVIDENCE_SPAN_INVALID"
+        ],
+        "witnessCodes": [
+          "OUTPUT_SPAN_INVALID",
+          "CLAIM_PROPOSITION_REFERENCE_MISSING",
+          "PROPOSITION_REFERENCE_DUPLICATE",
+          "PROPOSITION_REFERENCE_UNKNOWN",
+          "EVIDENCE_LOCATOR_MISSING",
+          "EVIDENCE_SOURCE_UNKNOWN",
+          "RULE_SATISFIED"
+        ]
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "NOT_APPLICABLE", "finding_value": null, "trace_action": "TRACE_NOT_APPLICABLE"},
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_BLOCK"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Witness emissions preserve claim order, then branch order, then stable-unique proposition reference order, then locator order. Finding reasons use findingComposition and gaps use first-encounter stableUnique."
+    },
+    {
+      "rule_id": "hrgene.unsupported_quantification",
+      "rule_digest": "sha256:3b367930622c65030e80086929f10de694b1ea6c908639207460ec0f0db58531",
+      "version": "1.0.0",
+      "kind": "RULE_INVARIANT",
+      "severity": "SEVERITY_CRITICAL",
+      "operator_id": "unsupported_quantification",
+      "activationOracle": {
+        "reachable": ["NOT_APPLICABLE", "ACTIVATED", "ACTIVATION_UNRESOLVED"],
+        "orderedBranches": [
+          {"when": "any claim.quantification_mode is CLAIM_QUANTIFIED", "activation": "ACTIVATED"},
+          {"when": "no quantified claim and any mode is QUANTIFICATION_MODE_UNRESOLVED", "activation": "ACTIVATION_UNRESOLVED"},
+          {"when": "otherwise", "activation": "NOT_APPLICABLE"}
+        ],
+        "unresolvedShortCircuit": "Executor does not call the detector; emit commonOracle.activationUnresolved exactly."
+      },
+      "orderedEvaluationWhenActivated": [
+        "Iterate all claims in one-based input order.",
+        "For a QUANTIFICATION_MODE_UNRESOLVED claim, emit ACTIVATION_STATE_UNKNOWN as a gap without a witness and continue; this branch is reachable only because another claim made the rule ACTIVATED.",
+        "Skip every CLAIM_UNQUANTIFIED claim.",
+        "For each CLAIM_QUANTIFIED claim, evaluate output span, empty quantification_ids, artifact duplicate, then stable-unique quantification references.",
+        "For each unique established quantification, test value, unit, and context in that order; then proposition alignment; then common locator branches."
+      ],
+      "branchEmitters": [
+        {"when": "activated detector encounters QUANTIFICATION_MODE_UNRESOLVED", "channel": "gap", "code": "ACTIVATION_STATE_UNKNOWN", "witness": null, "control": "continue next claim"},
+        {
+          "when": "quantified claim.quantification_ids is empty",
+          "channel": "failure",
+          "code": "QUANTIFICATION_REFERENCE_MISSING",
+          "witness": ["QUANTIFICATION_REFERENCE_MISSING", "", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"],
+          "control": "continue next claim"
+        },
+        {
+          "when": "quantified claim.quantification_ids contains any duplicate",
+          "channel": "failure",
+          "code": "QUANTIFICATION_REFERENCE_DUPLICATE",
+          "witness": ["QUANTIFICATION_REFERENCE_DUPLICATE", "", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"],
+          "emitCount": "once per affected claim before reference iteration"
+        },
+        {"when": "ledger quantification match count is 0", "channel": "gap", "code": "QUANTIFICATION_REFERENCE_UNKNOWN", "witness": null, "control": "continue next stable-unique quantification_id"},
+        {"when": "ledger quantification match count is greater than 1", "channel": "gap", "code": "QUANTIFICATION_REFERENCE_DUPLICATE", "witness": null, "control": "continue next stable-unique quantification_id"},
+        {"when": "the unique quantification status is not SEMANTIC_ESTABLISHED", "channel": "gap", "code": "commonOracle.semanticStatusGap[quantification.status]", "witness": null, "control": "continue next stable-unique quantification_id"},
+        {
+          "when": "strip(value), strip(unit), or strip(context) is empty",
+          "channel": "gap",
+          "code": "QUANTIFICATION_COMPONENT_MISSING",
+          "witness": null,
+          "emitOrder": ["value", "unit", "context"],
+          "rawEmissionMultiplicity": "once for each empty component; final code vectors stable-deduplicate"
+        },
+        {
+          "when": "quantification.proposition_id is absent from the claim.proposition_ids array",
+          "channel": "failure",
+          "code": "QUANTIFICATION_PROPOSITION_MISMATCH",
+          "witness": ["QUANTIFICATION_PROPOSITION_MISMATCH", "ledger.quantifications.{quantification_id}.proposition_id", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"]
+        },
+        {
+          "when": "unique quantification is SEMANTIC_ESTABLISHED",
+          "delegate": "commonOracle.locator after component and alignment checks",
+          "ledger_path": "ledger.quantifications.{quantification_id}",
+          "artifact_path": "primary_review.claims[{claim_index}]",
+          "output_span": "claim.output_span",
+          "requireDocumentDigest": true,
+          "requireSourceSpan": true
+        }
+      ],
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "QUANTIFICATION_SATISFIED",
+        "failureCodes": ["QUANTIFICATION_REFERENCE_MISSING", "QUANTIFICATION_REFERENCE_DUPLICATE", "QUANTIFICATION_PROPOSITION_MISMATCH"],
+        "gapCodes": [
+          "ACTIVATION_STATE_UNKNOWN",
+          "OUTPUT_SPAN_INVALID",
+          "QUANTIFICATION_REFERENCE_UNKNOWN",
+          "QUANTIFICATION_REFERENCE_DUPLICATE",
+          "QUANTIFICATION_COMPONENT_MISSING",
+          "SEMANTIC_STATE_MISSING",
+          "SEMANTIC_STATE_CONTRADICTORY",
+          "SEMANTIC_STATE_UNSUPPORTED",
+          "SEMANTIC_STATE_MALFORMED",
+          "EVIDENCE_LOCATOR_MISSING",
+          "EVIDENCE_SOURCE_UNKNOWN",
+          "EVIDENCE_SOURCE_DUPLICATE",
+          "EVIDENCE_DIGEST_INVALID",
+          "EVIDENCE_SPAN_UNKNOWN",
+          "EVIDENCE_SPAN_DUPLICATE",
+          "EVIDENCE_SPAN_INVALID"
+        ],
+        "witnessCodes": [
+          "ACTIVATION_STATE_UNKNOWN",
+          "OUTPUT_SPAN_INVALID",
+          "QUANTIFICATION_REFERENCE_MISSING",
+          "QUANTIFICATION_REFERENCE_DUPLICATE",
+          "QUANTIFICATION_PROPOSITION_MISMATCH",
+          "EVIDENCE_LOCATOR_MISSING",
+          "EVIDENCE_SOURCE_UNKNOWN",
+          "RULE_SATISFIED"
+        ],
+        "activationStateUnknownWitnessRule": "Present only for executor-level ACTIVATION_UNRESOLVED; absent for an unresolved-mode claim encountered inside an otherwise ACTIVATED detector."
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "NOT_APPLICABLE", "finding_value": null, "trace_action": "TRACE_NOT_APPLICABLE"},
+        {"activation": "ACTIVATION_UNRESOLVED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW", "exactFinding": "commonOracle.activationUnresolved"},
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_BLOCK"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Claim order; unresolved-mode branch before quantified filtering; output span before empty/duplicate binding; stable-unique quantification reference order; component order value-unit-context; proposition mismatch before locator order."
+    },
+    {
+      "rule_id": "hrgene.ownership_scope",
+      "rule_digest": "sha256:23eeb953a65528019c63a5de5d6f174d68f7349a847f0f29d940173410d2a4c7",
+      "version": "1.0.0",
+      "kind": "RULE_CONDITIONAL_TRIGGER",
+      "severity": "SEVERITY_CRITICAL",
+      "operator_id": "ownership_scope",
+      "activationOracle": {
+        "reachable": ["NOT_APPLICABLE", "ACTIVATED"],
+        "orderedBranches": [
+          {"when": "primary_review.ownership_assertions is empty", "activation": "NOT_APPLICABLE"},
+          {"when": "otherwise", "activation": "ACTIVATED"}
+        ]
+      },
+      "orderedEvaluation": [
+        "Iterate ownership_assertions in one-based input order.",
+        "For each assertion: output span; relation_id match count; semantic status; resource-or-owner mismatch; allowed scope; common locator."
+      ],
+      "branchEmitters": [
+        {"when": "ledger ownership relation match count is not exactly 1", "channel": "gap", "code": "OWNERSHIP_RELATION_UNKNOWN", "witness": null, "zeroAndDuplicateLedgerRowsShareCode": true, "control": "continue next assertion"},
+        {"when": "unique relation status is not SEMANTIC_ESTABLISHED", "channel": "gap", "code": "commonOracle.semanticStatusGap[relation.status]", "witness": null, "control": "continue next assertion"},
+        {
+          "when": "relation.resource_id differs from assertion.resource_id or relation.owner_id differs from assertion.owner_id",
+          "channel": "failure",
+          "code": "OWNERSHIP_OWNER_MISMATCH",
+          "witness": ["OWNERSHIP_OWNER_MISMATCH", "ledger.ownership_relations.{relation_id}", "primary_review.ownership_assertions[{assertion_index}]", null, null, "assertion.output_span"]
+        },
+        {
+          "when": "assertion.scope_id is not a member of relation.allowed_scopes",
+          "channel": "failure",
+          "code": "OWNERSHIP_SCOPE_EXCEEDED",
+          "witness": ["OWNERSHIP_SCOPE_EXCEEDED", "ledger.ownership_relations.{relation_id}.allowed_scopes", "primary_review.ownership_assertions[{assertion_index}]", null, null, "assertion.output_span"]
+        },
+        {
+          "when": "unique relation is SEMANTIC_ESTABLISHED",
+          "delegate": "commonOracle.locator after both failure checks",
+          "ledger_path": "ledger.ownership_relations.{relation_id}",
+          "artifact_path": "primary_review.ownership_assertions[{assertion_index}]",
+          "output_span": "assertion.output_span"
+        }
+      ],
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "OWNERSHIP_SCOPE_SATISFIED",
+        "failureCodes": ["OWNERSHIP_OWNER_MISMATCH", "OWNERSHIP_SCOPE_EXCEEDED"],
+        "gapCodes": ["OUTPUT_SPAN_INVALID", "OWNERSHIP_RELATION_UNKNOWN", "SEMANTIC_STATE_MISSING", "SEMANTIC_STATE_CONTRADICTORY", "SEMANTIC_STATE_UNSUPPORTED", "SEMANTIC_STATE_MALFORMED", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "EVIDENCE_SOURCE_DUPLICATE", "EVIDENCE_DIGEST_INVALID", "EVIDENCE_SPAN_UNKNOWN", "EVIDENCE_SPAN_DUPLICATE", "EVIDENCE_SPAN_INVALID"],
+        "witnessCodes": ["OUTPUT_SPAN_INVALID", "OWNERSHIP_OWNER_MISMATCH", "OWNERSHIP_SCOPE_EXCEEDED", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "RULE_SATISFIED"]
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "NOT_APPLICABLE", "finding_value": null, "trace_action": "TRACE_NOT_APPLICABLE"},
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_BLOCK"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Assertion order; output-span witness first; owner mismatch before scope exceeded; locator emissions last."
+    },
+    {
+      "rule_id": "hrgene.deployment_boundary",
+      "rule_digest": "sha256:1a0ea639c01842199fbe67f445588aee876b1576e5dd7dc85ab6339355a50e32",
+      "version": "1.0.0",
+      "kind": "RULE_CONDITIONAL_TRIGGER",
+      "severity": "SEVERITY_CRITICAL",
+      "operator_id": "deployment_boundary",
+      "activationOracle": {
+        "reachable": ["NOT_APPLICABLE", "ACTIVATED"],
+        "orderedBranches": [
+          {"when": "primary_review.deployment_requests is empty", "activation": "NOT_APPLICABLE"},
+          {"when": "otherwise", "activation": "ACTIVATED"}
+        ]
+      },
+      "orderedEvaluation": [
+        "Iterate deployment_requests in one-based input order.",
+        "For each request: output span; transition_id match count; semantic status; endpoints; authorization; common locator."
+      ],
+      "branchEmitters": [
+        {"when": "ledger deployment transition match count is not exactly 1", "channel": "gap", "code": "DEPLOYMENT_TRANSITION_UNKNOWN", "witness": null, "zeroAndDuplicateLedgerRowsShareCode": true, "control": "continue next request"},
+        {"when": "unique transition status is not SEMANTIC_ESTABLISHED", "channel": "gap", "code": "commonOracle.semanticStatusGap[transition.status]", "witness": null, "control": "continue next request"},
+        {
+          "when": "transition.from_state or transition.to_state differs from the request endpoint",
+          "channel": "failure",
+          "code": "DEPLOYMENT_ENDPOINT_MISMATCH",
+          "witness": ["DEPLOYMENT_ENDPOINT_MISMATCH", "ledger.deployment_transitions.{transition_id}", "primary_review.deployment_requests[{request_index}]", null, null, "request.output_span"]
+        },
+        {
+          "when": "transition.authorized is false",
+          "channel": "failure",
+          "code": "DEPLOYMENT_NOT_AUTHORIZED",
+          "witness": ["DEPLOYMENT_NOT_AUTHORIZED", "ledger.deployment_transitions.{transition_id}.authorized", "primary_review.deployment_requests[{request_index}]", null, null, "request.output_span"]
+        },
+        {
+          "when": "unique transition is SEMANTIC_ESTABLISHED",
+          "delegate": "commonOracle.locator after endpoint and authorization checks",
+          "ledger_path": "ledger.deployment_transitions.{transition_id}",
+          "artifact_path": "primary_review.deployment_requests[{request_index}]",
+          "output_span": "request.output_span"
+        }
+      ],
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "DEPLOYMENT_BOUNDARY_SATISFIED",
+        "failureCodes": ["DEPLOYMENT_ENDPOINT_MISMATCH", "DEPLOYMENT_NOT_AUTHORIZED"],
+        "gapCodes": ["OUTPUT_SPAN_INVALID", "DEPLOYMENT_TRANSITION_UNKNOWN", "SEMANTIC_STATE_MISSING", "SEMANTIC_STATE_CONTRADICTORY", "SEMANTIC_STATE_UNSUPPORTED", "SEMANTIC_STATE_MALFORMED", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "EVIDENCE_SOURCE_DUPLICATE", "EVIDENCE_DIGEST_INVALID", "EVIDENCE_SPAN_UNKNOWN", "EVIDENCE_SPAN_DUPLICATE", "EVIDENCE_SPAN_INVALID"],
+        "witnessCodes": ["OUTPUT_SPAN_INVALID", "DEPLOYMENT_ENDPOINT_MISMATCH", "DEPLOYMENT_NOT_AUTHORIZED", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "RULE_SATISFIED"]
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "NOT_APPLICABLE", "finding_value": null, "trace_action": "TRACE_NOT_APPLICABLE"},
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_BLOCK"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Request order; output-span witness first; endpoint mismatch before authorization failure; locator emissions last."
+    },
+    {
+      "rule_id": "hrgene.qualification_boundary",
+      "rule_digest": "sha256:7e445c620093b76b64afec05629731ad9b98218831ada930c50d965e668c7ed8",
+      "version": "1.0.0",
+      "kind": "RULE_CONDITIONAL_TRIGGER",
+      "severity": "SEVERITY_CRITICAL",
+      "operator_id": "qualification_boundary",
+      "activationOracle": {
+        "reachable": ["NOT_APPLICABLE", "ACTIVATED"],
+        "orderedBranches": [
+          {"when": "primary_review.qualification_assertions is empty", "activation": "NOT_APPLICABLE"},
+          {"when": "otherwise", "activation": "ACTIVATED"}
+        ]
+      },
+      "orderedEvaluation": [
+        "Iterate qualification_assertions in one-based input order.",
+        "For each assertion: output span; facet_id match count; semantic status; subject; scope; claimed status; common locator."
+      ],
+      "branchEmitters": [
+        {"when": "ledger qualification facet match count is not exactly 1", "channel": "gap", "code": "QUALIFICATION_FACET_UNKNOWN", "witness": null, "zeroAndDuplicateLedgerRowsShareCode": true, "control": "continue next assertion"},
+        {"when": "unique facet status is not SEMANTIC_ESTABLISHED", "channel": "gap", "code": "commonOracle.semanticStatusGap[facet.status]", "witness": null, "control": "continue next assertion"},
+        {
+          "when": "facet.subject_id differs from assertion.subject_id",
+          "channel": "failure",
+          "code": "QUALIFICATION_SUBJECT_MISMATCH",
+          "witness": ["QUALIFICATION_SUBJECT_MISMATCH", "ledger.qualification_facets.{facet_id}.subject_id", "primary_review.qualification_assertions[{assertion_index}]", null, null, "assertion.output_span"]
+        },
+        {
+          "when": "facet.scope_id differs from assertion.scope_id",
+          "channel": "failure",
+          "code": "QUALIFICATION_SCOPE_MISMATCH",
+          "witness": ["QUALIFICATION_SCOPE_MISMATCH", "ledger.qualification_facets.{facet_id}.scope_id", "primary_review.qualification_assertions[{assertion_index}]", null, null, "assertion.output_span"]
+        },
+        {
+          "when": "facet.satisfied differs from assertion.claimed_satisfied",
+          "channel": "failure",
+          "code": "QUALIFICATION_STATUS_MISMATCH",
+          "witness": ["QUALIFICATION_STATUS_MISMATCH", "ledger.qualification_facets.{facet_id}.satisfied", "primary_review.qualification_assertions[{assertion_index}]", null, null, "assertion.output_span"]
+        },
+        {
+          "when": "unique facet is SEMANTIC_ESTABLISHED",
+          "delegate": "commonOracle.locator after subject, scope, and status checks",
+          "ledger_path": "ledger.qualification_facets.{facet_id}",
+          "artifact_path": "primary_review.qualification_assertions[{assertion_index}]",
+          "output_span": "assertion.output_span"
+        }
+      ],
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "QUALIFICATION_BOUNDARY_SATISFIED",
+        "failureCodes": ["QUALIFICATION_SUBJECT_MISMATCH", "QUALIFICATION_SCOPE_MISMATCH", "QUALIFICATION_STATUS_MISMATCH"],
+        "gapCodes": ["OUTPUT_SPAN_INVALID", "QUALIFICATION_FACET_UNKNOWN", "SEMANTIC_STATE_MISSING", "SEMANTIC_STATE_CONTRADICTORY", "SEMANTIC_STATE_UNSUPPORTED", "SEMANTIC_STATE_MALFORMED", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "EVIDENCE_SOURCE_DUPLICATE", "EVIDENCE_DIGEST_INVALID", "EVIDENCE_SPAN_UNKNOWN", "EVIDENCE_SPAN_DUPLICATE", "EVIDENCE_SPAN_INVALID"],
+        "witnessCodes": ["OUTPUT_SPAN_INVALID", "QUALIFICATION_SUBJECT_MISMATCH", "QUALIFICATION_SCOPE_MISMATCH", "QUALIFICATION_STATUS_MISMATCH", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "RULE_SATISFIED"]
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "NOT_APPLICABLE", "finding_value": null, "trace_action": "TRACE_NOT_APPLICABLE"},
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_BLOCK"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Assertion order; output-span witness first; subject, scope, and status failures in that order; locator emissions last."
+    },
+    {
+      "rule_id": "hrgene.human_review_boundary",
+      "rule_digest": "sha256:218fdf37c0b30d1806790c5cb052774aa49eae2f96bd504a1e1975cfce54a8ae",
+      "version": "1.0.0",
+      "kind": "RULE_CONTRACT",
+      "severity": "SEVERITY_CRITICAL",
+      "operator_id": "human_review_boundary",
+      "activationOracle": {
+        "reachable": ["ACTIVATED"],
+        "orderedBranches": [
+          {"when": "every valid-envelope typed input", "activation": "ACTIVATED"}
+        ]
+      },
+      "orderedEvaluation": [
+        "Evaluate artifact review_support_only boundary fact.",
+        "Evaluate ledger.review_support_only semantic status and locators, then its Boolean value.",
+        "Evaluate artifact employment_decision_prohibited boundary fact.",
+        "Evaluate ledger.no_employment_decision semantic status and locators, then its Boolean value.",
+        "Evaluate artifact route_unresolved_to_human boundary fact.",
+        "Evaluate employment_action last."
+      ],
+      "boundaryFactOracle": {
+        "orderedBranches": [
+          {"when": "state is not SEMANTIC_ESTABLISHED", "channel": "gap", "code": "commonOracle.semanticStatusGap[state]", "witness": null},
+          {"when": "state is SEMANTIC_ESTABLISHED and value is false", "channel": "failure", "code": "caller fail code", "witness": ["caller fail code", "", "caller artifact path", null, null, null]},
+          {"when": "state is SEMANTIC_ESTABLISHED and value is true", "channel": "none", "code": null, "witness": ["RULE_SATISFIED", "", "caller artifact path", null, null, null]}
+        ]
+      },
+      "policyFactOracle": {
+        "orderedBranches": [
+          {"when": "policy status is not SEMANTIC_ESTABLISHED", "channel": "gap", "code": "commonOracle.semanticStatusGap[status]", "witness": null, "locatorCalled": false},
+          {"when": "policy status is SEMANTIC_ESTABLISHED", "delegate": "commonOracle.locator", "ledger_path": "ledger.policy.{fact_id}", "artifact_path": "caller artifact path", "output_span": null},
+          {"when": "after the locator call, an established policy value is false", "channel": "failure", "code": "caller fail code", "witness": null, "note": "No additional policy-value witness is emitted; any witness is from the boundary, locator, or another later branch."}
+        ]
+      },
+      "branchBindings": [
+        {
+          "artifactFact": "human_review_boundary.review_support_only",
+          "ledgerFact": "ledger.review_support_only",
+          "failureCode": "REVIEW_SUPPORT_ONLY_VIOLATED",
+          "artifactPath": "human_review_boundary.review_support_only"
+        },
+        {
+          "artifactFact": "human_review_boundary.employment_decision_prohibited",
+          "ledgerFact": "ledger.no_employment_decision",
+          "failureCode": "EMPLOYMENT_DECISION_POLICY_VIOLATED",
+          "artifactPath": "human_review_boundary.employment_decision_prohibited"
+        },
+        {
+          "artifactFact": "human_review_boundary.route_unresolved_to_human",
+          "ledgerFact": null,
+          "failureCode": "UNRESOLVED_ROUTING_VIOLATED",
+          "artifactPath": "human_review_boundary.route_unresolved_to_human"
+        }
+      ],
+      "employmentActionOracle": {
+        "orderedBranches": [
+          {"when": "employment_action is EMPLOYMENT_ACTION_UNRESOLVED", "channel": "gap", "code": "ACTIVATION_STATE_UNKNOWN", "witness": null},
+          {"when": "employment_action is EMPLOYMENT_RANK, EMPLOYMENT_RECOMMEND, EMPLOYMENT_REJECT, or EMPLOYMENT_SELECT", "channel": "failure", "code": "EMPLOYMENT_ACTION_PRESENT", "witness": ["EMPLOYMENT_ACTION_PRESENT", "", "human_review_boundary.employment_action", null, null, null]},
+          {"when": "employment_action is NO_EMPLOYMENT_ACTION", "channel": "none", "code": null, "witness": ["RULE_SATISFIED", "", "human_review_boundary.employment_action", null, null, null]}
+        ]
+      },
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "HUMAN_REVIEW_BOUNDARY_SATISFIED",
+        "failureCodes": ["REVIEW_SUPPORT_ONLY_VIOLATED", "EMPLOYMENT_DECISION_POLICY_VIOLATED", "UNRESOLVED_ROUTING_VIOLATED", "EMPLOYMENT_ACTION_PRESENT"],
+        "gapCodes": ["ACTIVATION_STATE_UNKNOWN", "SEMANTIC_STATE_MISSING", "SEMANTIC_STATE_CONTRADICTORY", "SEMANTIC_STATE_UNSUPPORTED", "SEMANTIC_STATE_MALFORMED", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "EVIDENCE_SOURCE_DUPLICATE", "EVIDENCE_DIGEST_INVALID", "EVIDENCE_SPAN_UNKNOWN", "EVIDENCE_SPAN_DUPLICATE", "EVIDENCE_SPAN_INVALID"],
+        "witnessCodes": ["REVIEW_SUPPORT_ONLY_VIOLATED", "EMPLOYMENT_DECISION_POLICY_VIOLATED", "UNRESOLVED_ROUTING_VIOLATED", "EMPLOYMENT_ACTION_PRESENT", "EVIDENCE_LOCATOR_MISSING", "EVIDENCE_SOURCE_UNKNOWN", "RULE_SATISFIED"]
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_BLOCK"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "typedFindingConstructionGuard": {
+        "hazard": "An established false ledger policy adds its failure code after locator evaluation but emits no direct policy-value witness. If every other branch also emits zero witnesses, ValidationFindingV1 rejects the FAIL with INVALID_FAIL_FINDING before a receipt exists.",
+        "eligibleGoldRequirement": "Every sealed human-boundary FAIL vector must contain at least one witness from an artifact boundary violation, an explicit employment action, a locator branch that emits a witness, or another evaluated branch.",
+        "presealDisposition": "A neutral input that cannot satisfy this constructor invariant is not a FORMAL_INPUT_REFUSAL case; retire its whole family under the mirror policy before seal."
+      },
+      "orderingOracle": "All raw witnesses preserve the six evaluation stages above. Failures are stable-unique in first-emission order; then gaps are appended to reasons. A ledger-policy false failure is emitted only after that policy's locator emissions."
+    },
+    {
+      "rule_id": "hrgene.subjective_claim_boundary",
+      "rule_digest": "sha256:7670f34df65bd54a8259c239dd7038b14f76e1193b3030424e017127ae3f82bc",
+      "version": "1.0.0",
+      "kind": "RULE_CONDITIONAL_TRIGGER",
+      "severity": "SEVERITY_NONCRITICAL",
+      "operator_id": "subjective_claim_boundary",
+      "activationOracle": {
+        "reachable": ["NOT_APPLICABLE", "ACTIVATED", "ACTIVATION_UNRESOLVED"],
+        "orderedBranches": [
+          {"when": "any claim.claim_class is CLAIM_SUBJECTIVE", "activation": "ACTIVATED"},
+          {"when": "no subjective claim and any class is CLAIM_CLASS_UNRESOLVED", "activation": "ACTIVATION_UNRESOLVED"},
+          {"when": "otherwise", "activation": "NOT_APPLICABLE"}
+        ],
+        "unresolvedShortCircuit": "Executor does not call the detector; emit commonOracle.activationUnresolved exactly."
+      },
+      "orderedEvaluationWhenActivated": [
+        "Iterate all claims in one-based input order.",
+        "For CLAIM_CLASS_UNRESOLVED, emit ACTIVATION_STATE_UNKNOWN as a gap without a witness and continue; this is reachable only because another claim made the rule ACTIVATED.",
+        "Skip CLAIM_FACTUAL claims.",
+        "For CLAIM_SUBJECTIVE, evaluate output span, explicit label, human-review routing, and only then the all-satisfied witness."
+      ],
+      "branchEmitters": [
+        {"when": "activated detector encounters CLAIM_CLASS_UNRESOLVED", "channel": "gap", "code": "ACTIVATION_STATE_UNKNOWN", "witness": null, "control": "continue next claim"},
+        {
+          "when": "subjective_labelled is false",
+          "channel": "failure",
+          "code": "SUBJECTIVE_LABEL_MISSING",
+          "witness": ["SUBJECTIVE_LABEL_MISSING", "", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"]
+        },
+        {
+          "when": "requires_human_review is false",
+          "channel": "failure",
+          "code": "SUBJECTIVE_HUMAN_REVIEW_MISSING",
+          "witness": ["SUBJECTIVE_HUMAN_REVIEW_MISSING", "", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"]
+        },
+        {
+          "when": "subjective_labelled and requires_human_review are both true",
+          "channel": "none",
+          "code": null,
+          "witness": ["SUBJECTIVE_BOUNDARY_SATISFIED", "", "primary_review.claims[{claim_index}]", null, null, "claim.output_span"]
+        }
+      ],
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "SUBJECTIVE_BOUNDARY_SATISFIED",
+        "failureCodes": ["SUBJECTIVE_LABEL_MISSING", "SUBJECTIVE_HUMAN_REVIEW_MISSING"],
+        "gapCodes": ["ACTIVATION_STATE_UNKNOWN", "OUTPUT_SPAN_INVALID"],
+        "witnessCodes": ["ACTIVATION_STATE_UNKNOWN", "OUTPUT_SPAN_INVALID", "SUBJECTIVE_LABEL_MISSING", "SUBJECTIVE_HUMAN_REVIEW_MISSING", "SUBJECTIVE_BOUNDARY_SATISFIED"],
+        "activationStateUnknownWitnessRule": "Present only for executor-level ACTIVATION_UNRESOLVED; absent for an unresolved-class claim encountered inside an otherwise ACTIVATED detector."
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "NOT_APPLICABLE", "finding_value": null, "trace_action": "TRACE_NOT_APPLICABLE"},
+        {"activation": "ACTIVATION_UNRESOLVED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW", "exactFinding": "commonOracle.activationUnresolved"},
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_HUMAN_REVIEW"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Claim order; unresolved-class branch before subjective filtering; output span before label failure before human-review failure before all-satisfied witness."
+    },
+    {
+      "rule_id": "hrgene.evidence_gap_router",
+      "rule_digest": "sha256:6bfb2b6a115e8ea2091a4b15331b706c1484b96606d9dadb93a89984384f4a9b",
+      "version": "1.0.0",
+      "kind": "RULE_DIAGNOSTIC_ROUTER",
+      "severity": "SEVERITY_NONCRITICAL",
+      "operator_id": "evidence_gap_router",
+      "activationOracle": {
+        "reachable": ["NOT_APPLICABLE", "ACTIVATED"],
+        "orderedBranches": [
+          {"when": "no preceding non-router trace has ACTIVATION_UNRESOLVED and no preceding finding has a nonempty gap_codes array", "activation": "NOT_APPLICABLE"},
+          {"when": "otherwise", "activation": "ACTIVATED"}
+        ],
+        "ACTIVATION_UNRESOLVED_reachable": false
+      },
+      "precedingTraceOrder": [
+        "hrgene.claim_provenance",
+        "hrgene.unsupported_quantification",
+        "hrgene.ownership_scope",
+        "hrgene.deployment_boundary",
+        "hrgene.qualification_boundary",
+        "hrgene.human_review_boundary",
+        "hrgene.subjective_claim_boundary",
+        "hrgene.paired_review_bundle_completeness"
+      ],
+      "originInclusionOracle": {
+        "includeWhen": "trace.activation == ACTIVATION_UNRESOLVED OR trace.finding is non-null and trace.finding.gap_codes is nonempty",
+        "pureFailDefinition": "trace.finding.value == FAIL with empty gap_codes and activation != ACTIVATION_UNRESOLVED",
+        "pureFailIncluded": false,
+        "PASSWithoutGapsIncluded": false,
+        "NOT_APPLICABLEIncluded": false,
+        "failPlusGapIncluded": true,
+        "oneOriginEntryPerIncludedTrace": true
+      },
+      "orderedEvaluation": [
+        "Initialize raw gap emissions with EVIDENCE_GAP_PRESENT.",
+        "Scan preceding traces in precedingTraceOrder.",
+        "For each included trace, append it once to origin_traces; append ACTIVATION_STATE_UNKNOWN when activation is ACTIVATION_UNRESOLVED; then append every finding.gap_codes member in its existing order when finding is present.",
+        "If no origin trace exists, return no finding and emit NOT_APPLICABLE.",
+        "Otherwise stableUnique the raw gap emissions and use that exact vector for both reason_codes and gap_codes.",
+        "Emit one EVIDENCE_GAP_PRESENT witness per included origin trace in origin order."
+      ],
+      "witnessTemplate": ["EVIDENCE_GAP_PRESENT", "execution.trace.{origin_rule_id}", "execution.evidence_gap_router", null, null, null],
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": null,
+        "failureCodes": [],
+        "gapPrefix": "EVIDENCE_GAP_PRESENT",
+        "gapCodes": [
+          "EVIDENCE_GAP_PRESENT",
+          "ACTIVATION_STATE_UNKNOWN",
+          "PROPOSITION_REFERENCE_UNKNOWN",
+          "PROPOSITION_REFERENCE_DUPLICATE",
+          "QUANTIFICATION_REFERENCE_UNKNOWN",
+          "QUANTIFICATION_REFERENCE_DUPLICATE",
+          "QUANTIFICATION_COMPONENT_MISSING",
+          "OWNERSHIP_RELATION_UNKNOWN",
+          "DEPLOYMENT_TRANSITION_UNKNOWN",
+          "QUALIFICATION_FACET_UNKNOWN",
+          "SEMANTIC_STATE_MISSING",
+          "SEMANTIC_STATE_CONTRADICTORY",
+          "SEMANTIC_STATE_UNSUPPORTED",
+          "SEMANTIC_STATE_MALFORMED",
+          "EVIDENCE_LOCATOR_MISSING",
+          "EVIDENCE_SOURCE_UNKNOWN",
+          "EVIDENCE_SOURCE_DUPLICATE",
+          "EVIDENCE_DIGEST_INVALID",
+          "EVIDENCE_SPAN_UNKNOWN",
+          "EVIDENCE_SPAN_DUPLICATE",
+          "EVIDENCE_SPAN_INVALID",
+          "OUTPUT_SPAN_INVALID"
+        ],
+        "projectableOriginGapCodes": [
+          "ACTIVATION_STATE_UNKNOWN",
+          "PROPOSITION_REFERENCE_UNKNOWN",
+          "PROPOSITION_REFERENCE_DUPLICATE",
+          "QUANTIFICATION_REFERENCE_UNKNOWN",
+          "QUANTIFICATION_REFERENCE_DUPLICATE",
+          "QUANTIFICATION_COMPONENT_MISSING",
+          "OWNERSHIP_RELATION_UNKNOWN",
+          "DEPLOYMENT_TRANSITION_UNKNOWN",
+          "QUALIFICATION_FACET_UNKNOWN",
+          "SEMANTIC_STATE_MISSING",
+          "SEMANTIC_STATE_CONTRADICTORY",
+          "SEMANTIC_STATE_UNSUPPORTED",
+          "SEMANTIC_STATE_MALFORMED",
+          "EVIDENCE_LOCATOR_MISSING",
+          "EVIDENCE_SOURCE_UNKNOWN",
+          "EVIDENCE_SOURCE_DUPLICATE",
+          "EVIDENCE_DIGEST_INVALID",
+          "EVIDENCE_SPAN_UNKNOWN",
+          "EVIDENCE_SPAN_DUPLICATE",
+          "EVIDENCE_SPAN_INVALID",
+          "OUTPUT_SPAN_INVALID"
+        ],
+        "witnessCodes": ["EVIDENCE_GAP_PRESENT"]
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "NOT_APPLICABLE", "finding_value": null, "trace_action": "TRACE_NOT_APPLICABLE"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Router origins and witnesses follow precedingTraceOrder. Each origin's activation code is appended before that origin finding's gap vector. StableUnique is applied only to reason/gap codes; witnesses are never deduplicated."
+    },
+    {
+      "rule_id": "hrgene.paired_review_bundle_completeness",
+      "rule_digest": "sha256:ea50b8e920f598fe160a017a8a056cc0b1596e26b5c781945cdd6e02a88a4824",
+      "version": "1.0.0",
+      "kind": "RULE_CONTRACT",
+      "severity": "SEVERITY_CRITICAL",
+      "operator_id": "paired_review_bundle_completeness",
+      "activationOracle": {
+        "reachable": ["ACTIVATED"],
+        "orderedBranches": [
+          {"when": "every valid-envelope typed input", "activation": "ACTIVATED"}
+        ]
+      },
+      "itemFlatteningOrder": [
+        "primary_review.claims",
+        "primary_review.ownership_assertions",
+        "primary_review.deployment_requests",
+        "primary_review.qualification_assertions"
+      ],
+      "itemIdentifierProjection": {
+        "ReviewClaimV1": "claim_id",
+        "OwnershipAssertionV1": "assertion_id",
+        "DeploymentRequestV1": "request_id",
+        "QualificationAssertionV1": "assertion_id"
+      },
+      "orderedEvaluation": [
+        "Check both section present flags and emit at most one section-missing failure.",
+        "Flatten items in itemFlatteningOrder; if empty emit item-missing.",
+        "Project item IDs; if item IDs contain a duplicate OR audit covered_item_ids contain a duplicate, emit one identifier-duplicate failure.",
+        "Compare Set(item_ids) with Set(audit.covered_item_ids) and emit coverage mismatch when unequal.",
+        "Evaluate the single disjunctive section-link identity branch.",
+        "Iterate every flattened item in one-based flattened order and call commonOracle.outputSpan using artifact_path primary_review.items[{flat_item_index}].",
+        "Only when failures and gaps are both empty, emit the bundle pass witness."
+      ],
+      "branchEmitters": [
+        {"when": "primary.present is false or audit.present is false", "channel": "failure", "code": "BUNDLE_SECTION_MISSING", "witness": ["BUNDLE_SECTION_MISSING", "", "bundle.sections", null, null, null], "emitCount": "once"},
+        {"when": "the flattened item tuple is empty", "channel": "failure", "code": "BUNDLE_ITEM_MISSING", "witness": ["BUNDLE_ITEM_MISSING", "", "primary_review.items", null, null, null]},
+        {"when": "item_ids has any duplicate or audit.covered_item_ids has any duplicate", "channel": "failure", "code": "BUNDLE_IDENTIFIER_DUPLICATE", "witness": ["BUNDLE_IDENTIFIER_DUPLICATE", "", "bundle.item_ids", null, null, null], "emitCount": "once even when both sides contain duplicates"},
+        {"when": "Set(item_ids) != Set(audit.covered_item_ids)", "channel": "failure", "code": "BUNDLE_AUDIT_COVERAGE_MISMATCH", "witness": ["BUNDLE_AUDIT_COVERAGE_MISMATCH", "", "audit_review.covered_item_ids", null, null, null]},
+        {
+          "when": "any section-link identity disjunct is true",
+          "channel": "failure",
+          "code": "BUNDLE_SECTION_LINK_MISMATCH",
+          "witness": ["BUNDLE_SECTION_LINK_MISMATCH", "ledger.identity", "bundle.section_identity", null, null, null],
+          "emitCount": "once",
+          "disjunctsInSourceOrder": [
+            "primary.section_id == audit.section_id",
+            "audit.review_section_id != primary.section_id",
+            "primary.case_id != ledger.case_id",
+            "audit.case_id != ledger.case_id",
+            "primary.role_id != ledger.role_id",
+            "audit.role_id != ledger.role_id",
+            "primary.ledger_digest != artifact.ledger_digest",
+            "audit.ledger_digest != artifact.ledger_digest"
+          ]
+        },
+        {
+          "when": "a flattened item output span is invalid",
+          "delegate": "commonOracle.outputSpan",
+          "artifact_path": "primary_review.items[{flat_item_index}]",
+          "ledger_path": "",
+          "output_span": "item.output_span"
+        },
+        {"when": "no failures and no gaps after all item spans", "channel": "none", "code": null, "witness": ["BUNDLE_COMPLETENESS_SATISFIED", "ledger.identity", "bundle", null, null, null]}
+      ],
+      "sharedOutputSpanConstraint": {
+        "code": "OUTPUT_SPAN_INVALID",
+        "reachableFinding": "UNRESOLVED when no bundle failure is present; FAIL with OUTPUT_SPAN_INVALID retained as a gap when any bundle failure is present",
+        "isolatedBundleOriginPermitted": false,
+        "scoredPlacement": "COMPOSITIONAL_ONLY",
+        "sharingByItemType": {
+          "ReviewClaimV1": "Always shared with hrgene.claim_provenance; additionally shared with hrgene.unsupported_quantification when that claim is evaluated as quantified and with hrgene.subjective_claim_boundary when that claim is evaluated as subjective.",
+          "OwnershipAssertionV1": "Shared with hrgene.ownership_scope.",
+          "DeploymentRequestV1": "Shared with hrgene.deployment_boundary.",
+          "QualificationAssertionV1": "Shared with hrgene.qualification_boundary."
+        },
+        "goldOriginRuleSet": "Include the bundle rule and every corresponding item detector whose own evaluation reaches the same invalid OutputSpanV1; never label this as an isolated bundle mutation."
+      },
+      "codeChannelsUnderValidEnvelope": {
+        "passReason": "BUNDLE_COMPLETENESS_SATISFIED",
+        "failureCodes": ["BUNDLE_SECTION_MISSING", "BUNDLE_ITEM_MISSING", "BUNDLE_IDENTIFIER_DUPLICATE", "BUNDLE_AUDIT_COVERAGE_MISMATCH", "BUNDLE_SECTION_LINK_MISMATCH"],
+        "gapCodes": ["OUTPUT_SPAN_INVALID"],
+        "witnessCodes": ["BUNDLE_SECTION_MISSING", "BUNDLE_ITEM_MISSING", "BUNDLE_IDENTIFIER_DUPLICATE", "BUNDLE_AUDIT_COVERAGE_MISMATCH", "BUNDLE_SECTION_LINK_MISMATCH", "OUTPUT_SPAN_INVALID", "BUNDLE_COMPLETENESS_SATISFIED"]
+      },
+      "resultOracleUnderValidEnvelope": [
+        {"activation": "ACTIVATED", "finding_value": "PASS", "trace_action": "TRACE_ACCEPT"},
+        {"activation": "ACTIVATED", "finding_value": "FAIL", "trace_action": "TRACE_BLOCK"},
+        {"activation": "ACTIVATED", "finding_value": "UNRESOLVED", "trace_action": "TRACE_HUMAN_REVIEW"}
+      ],
+      "orderingOracle": "Failure raw order is section missing, item missing, identifier duplicate, audit coverage mismatch, section link mismatch. Output-span gap/witness emissions follow flattened item order after all failure checks. The final pass witness exists only when both channels remain empty."
+    }
+  ],
+  "crossRuleConstraints": {
+    "artifactVersusLedgerDuplicateChannels": {
+      "PROPOSITION_REFERENCE_DUPLICATE": {
+        "artifact": "FAIL",
+        "ledger": "UNRESOLVED gap"
+      },
+      "QUANTIFICATION_REFERENCE_DUPLICATE": {
+        "artifact": "FAIL",
+        "ledger": "UNRESOLVED gap"
+      }
+    },
+    "pureFailRouterRule": {
+      "definition": "FAIL with empty gap_codes and no ACTIVATION_UNRESOLVED",
+      "activatesRouter": false,
+      "criticalAggregate": "BLOCK",
+      "noncriticalSubjectiveAggregate": "HUMAN_REVIEW"
+    },
+    "failPlusGapRouterRule": {
+      "originFinding": "FAIL",
+      "activatesRouter": true,
+      "routerFinding": "UNRESOLVED",
+      "aggregateUsesBlockFirst": true
+    }
+  },
+  "exactVectorRecord": {
+    "scope": "Every EXECUTE_TYPED_INPUT receipt. TAMPER_EXECUTION_RECEIPT audit vectors remain exclusively governed by C2_TAMPER_OPERATION_CONTRACT.json.",
+    "perRuleFields": [
+      "rule_id",
+      "rule_digest",
+      "trace_operator_id",
+      "trace_operator_version",
+      "trace_operator_implementation_digest",
+      "trace_ledger_digest",
+      "trace_artifact_digest",
+      "activation",
+      "finding_presence",
+      "finding_value",
+      "ordered_reason_codes",
+      "ordered_gap_codes",
+      "ordered_witness_tuples",
+      "trace_action"
+    ],
+    "aggregateFields": [
+      "aggregate_action",
+      "terminal_class",
+      "top_level_execution_status"
+    ],
+    "identityFieldAuthority": {
+      "rule_id": {
+        "authority": "canonicalRuleOrder and the matching rules[].rule_id",
+        "valueClass": "FIXED_PER_RULE"
+      },
+      "rule_digest": {
+        "authority": "the matching rules[].rule_digest in this codebook",
+        "derivation": "canonical_digest of the frozen ExpertRuleContractV1 under Julia 1.12.6 canonical serialization",
+        "valueClass": "FIXED_PER_RULE",
+        "candidateReceiptMayDefineGold": false
+      },
+      "trace_operator_id": {
+        "authority": "the matching rules[].operator_id in this codebook",
+        "valueClass": "FIXED_PER_RULE"
+      },
+      "trace_operator_version": {
+        "authority": "frozenTarget.operatorVersion",
+        "exactValue": "1.0.0",
+        "valueClass": "FIXED_FOR_TARGET"
+      },
+      "trace_operator_implementation_digest": {
+        "authority": "frozenTarget.digests.operatorSourceBundle",
+        "exactValue": "sha256:19962cd0276462a40b9809d421b3a35e537915137c3a627a90247c463c0d692f",
+        "valueClass": "FIXED_FOR_TARGET"
+      },
+      "trace_ledger_digest": {
+        "authority": "locked custodian encoder output and sealed typed-payload manifest before candidate execution",
+        "derivation": "ledger_digest of the exact resolved EvidenceLedgerV1 canonical bytes",
+        "valueClass": "DERIVED_PER_TYPED_INPUT",
+        "mustEqual": "the top-level receipt ledger_digest and every other trace_ledger_digest in the same receipt",
+        "artifactDeclaredLedgerDigestIsAuthority": false,
+        "candidateReceiptMayDefineGold": false
+      },
+      "trace_artifact_digest": {
+        "authority": "locked custodian encoder output and sealed typed-payload manifest before candidate execution",
+        "derivation": "artifact_digest of the exact resolved AuditablePairedReviewBundleV3 canonical bytes",
+        "valueClass": "DERIVED_PER_TYPED_INPUT",
+        "mustEqual": "the top-level receipt artifact_digest and every other trace_artifact_digest in the same receipt",
+        "candidateReceiptMayDefineGold": false
+      },
+      "activationFindingAndActionFields": {
+        "authority": "commonOracle, globalEnvelopeOracle, the matching rules[] oracle, findingComposition, and traceActionOracle",
+        "valueClass": "DERIVED_PER_TYPED_INPUT_BEFORE_CANDIDATE_OUTPUT"
+      }
+    },
+    "ruleDigestFreeze": {
+      "ruleCount": 9,
+      "juliaVersion": "1.12.6",
+      "sourceRuleSetDigest": "sha256:117e53ccbcc48d5d34e6631cf3448408334f3723b93dd49eee8afe756a11d003",
+      "computedWithoutLedgerArtifactCaseOrValidatorExecution": true,
+      "allValuesMatchRulesArray": true,
+      "postsealRecomputationMayReplaceGold": false
+    },
+    "runnerSchemaAuthority": "C2_RUNNER_IO_CONTRACT.json#/ruleVectorSchema",
+    "fieldSetMustMatchRunnerExactly": true,
+    "jsonObjectMemberOrderIsSemantic": false,
+    "extraMissingOrDuplicateIdentityFieldPermitted": false,
+    "inactiveExactValue": "commonOracle.inactive",
+    "candidateOutputMayAmendGold": false
+  },
+  "completionRule": {
+    "readyForLockOnlyIf": [
+      "JSON parses",
+      "nine canonical rules appear once and in order",
+      "three global envelope branches are frozen",
+      "the only operation values are EXECUTE_TYPED_INPUT and TAMPER_EXECUTION_RECEIPT with counts 376 and 8",
+      "FORMAL_INPUT_REFUSAL is prohibited as C2 v1 gold",
+      "tamper transforms and audit vectors are delegated only to C2_TAMPER_OPERATION_CONTRACT.json",
+      "all reachable activation/result pairs and codes are closed-world",
+      "witness/path/source/span/output-span emitters are exact",
+      "the neutral builder schema validates without candidate import and resolves to the exact typed input surface through the locked custodian encoder",
+      "reserve substitution is preassigned and whole-family only",
+      "adjudicator access denial is enforceable",
+      "independent red-team has zero unresolved P0 and P1"
+    ],
+    "statusAfterThisFileAlone": "UNVERIFIED",
+    "nextClosureAction": "Machine lint and independent protocol red-team before case construction."
+  }
+}

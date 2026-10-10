@@ -1,0 +1,459 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:jam:schema:hiring-evidence-packet:v1",
+  "title": "HiringEvidencePacket v1",
+  "description": "Public structural contract for an evidence-bounded HR review-support artifact. Cross-field and source-grounding invariants are enforced by runtime-code/validate-hiring-evidence-packet.mjs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "activationId",
+    "traceId",
+    "status",
+    "genePack",
+    "capability",
+    "outputArtifact",
+    "decisionBoundary",
+    "role",
+    "candidate",
+    "requirementEvidenceMap",
+    "supportedClaims",
+    "unsupportedClaims",
+    "missingEvidenceGaps",
+    "interviewSignalRisks",
+    "rubricConsistencyCheck",
+    "followUpQuestions",
+    "humanReviewChecklist",
+    "auditSummary",
+    "limitations",
+    "cost"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "jam.hiring_evidence_packet.v1"
+    },
+    "activationId": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "traceId": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "status": {
+      "const": "completed"
+    },
+    "genePack": {
+      "const": "hrgene"
+    },
+    "capability": {
+      "const": "hiring_signal_integrity"
+    },
+    "outputArtifact": {
+      "const": "HiringEvidencePacket"
+    },
+    "decisionBoundary": {
+      "$ref": "#/$defs/decisionBoundary"
+    },
+    "role": {
+      "$ref": "#/$defs/role"
+    },
+    "candidate": {
+      "$ref": "#/$defs/candidate"
+    },
+    "requirementEvidenceMap": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/requirementEvidence"
+      }
+    },
+    "supportedClaims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/supportedClaim"
+      }
+    },
+    "unsupportedClaims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/unsupportedClaim"
+      }
+    },
+    "missingEvidenceGaps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/missingEvidenceGap"
+      }
+    },
+    "interviewSignalRisks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/interviewSignalRisk"
+      }
+    },
+    "rubricConsistencyCheck": {
+      "$ref": "#/$defs/rubricConsistencyCheck"
+    },
+    "followUpQuestions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/followUpQuestion"
+      }
+    },
+    "humanReviewChecklist": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "auditSummary": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "cost": {
+      "$ref": "#/$defs/cost"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "strength": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "decisionBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "employmentDecisionMade",
+        "candidateRanked",
+        "protectedCharacteristicsInferred",
+        "humanReviewRequired",
+        "statement"
+      ],
+      "properties": {
+        "employmentDecisionMade": {
+          "const": false
+        },
+        "candidateRanked": {
+          "const": false
+        },
+        "protectedCharacteristicsInferred": {
+          "const": false
+        },
+        "humanReviewRequired": {
+          "const": true
+        },
+        "statement": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "roleTitle",
+        "jobDescriptionSource",
+        "requirementIds"
+      ],
+      "properties": {
+        "roleTitle": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "jobDescriptionSource": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "requirementIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidateId",
+        "sources"
+      ],
+      "properties": {
+        "candidateId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "text",
+        "evidenceStrength",
+        "notes"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "text": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidenceStrength": {
+          "$ref": "#/$defs/strength"
+        },
+        "notes": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "requirementEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requirementId",
+        "status",
+        "evidence",
+        "missingEvidence"
+      ],
+      "properties": {
+        "requirementId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "status": {
+          "enum": [
+            "supported",
+            "partial_evidence",
+            "insufficient_evidence"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "missingEvidence": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "supportedClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim",
+        "supportingRequirementIds",
+        "evidenceStrength"
+      ],
+      "properties": {
+        "claim": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "supportingRequirementIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "evidenceStrength": {
+          "$ref": "#/$defs/strength"
+        }
+      }
+    },
+    "unsupportedClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim",
+        "reason",
+        "riskBoundary",
+        "requiredFollowUp"
+      ],
+      "properties": {
+        "claim": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "riskBoundary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "requiredFollowUp": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "missingEvidenceGap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gapId",
+        "requirementId",
+        "severity",
+        "gap"
+      ],
+      "properties": {
+        "gapId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "requirementId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "severity": {
+          "$ref": "#/$defs/severity"
+        },
+        "gap": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "interviewSignalRisk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "text",
+        "riskType",
+        "riskBoundary",
+        "severity",
+        "recommendedHandling"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "text": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "riskType": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "riskBoundary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "severity": {
+          "$ref": "#/$defs/severity"
+        },
+        "recommendedHandling": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "rubricConsistencyCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rubricId",
+        "consistentWithRubric",
+        "issues"
+      ],
+      "properties": {
+        "rubricId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "consistentWithRubric": {
+          "type": "boolean"
+        },
+        "issues": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "followUpQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "questionId",
+        "requirementId",
+        "question",
+        "evidenceTarget"
+      ],
+      "properties": {
+        "questionId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "requirementId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "question": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidenceTarget": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit",
+        "quantity",
+        "genePack",
+        "outputArtifact"
+      ],
+      "properties": {
+        "unit": {
+          "const": "gene_activation"
+        },
+        "quantity": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "genePack": {
+          "const": "hrgene"
+        },
+        "outputArtifact": {
+          "const": "HiringEvidencePacket"
+        },
+        "billingRail": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    }
+  }
+}

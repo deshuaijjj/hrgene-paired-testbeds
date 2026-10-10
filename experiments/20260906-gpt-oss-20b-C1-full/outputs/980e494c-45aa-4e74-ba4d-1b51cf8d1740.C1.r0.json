@@ -1,0 +1,243 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "980e494c-45aa-4e74-ba4d-1b51cf8d1740.C1",
+ "case_id": "980e494c-45aa-4e74-ba4d-1b51cf8d1740",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10600,
+  "promptWords": 1408
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 36.353
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2749,
+ "eval_count": 1612,
+ "prompt_eval_duration_ns": 17821000,
+ "eval_duration_ns": 28396601000,
+ "total_duration_ns": 36349669750,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claimId? Not required in optimizedCv. Just list claims. Provide evidenceBoundary sentence.\n\nRequirementEvidenceMap: list each requirement id with status and evidence.\n\nWe have evidence for all requirements. So all supported. Provide evidence entries with sourceId and text verbatim from resume. Need to copy text. Use the exact text from resume lines.\n\nLet's extract texts:\n\nsrc_8b0b14f5cb81: \"Pricing analyst in the motor pricing team of a personal lines insurer for three years, refreshing the rating factors from the claims and quote data each quarter under the team's refresh procedure.\"\n\nsrc_b532d3a9d282: \"Prepared eleven rate change proposals with their impact analysis; each was approved or amended by the pricing committee, with the committee's decision recorded on the proposal.\"\n\nsrc_6612e358e029: \"Ran the pricing model monitoring each month and raised three drift cases to the actuarial team, recorded in the monitoring log.\"\n\nsrc_23a20cd6f64c: \"Prepared the monthly pricing pack for the pricing committee, recording in the pack which analyses were mine and which came from the actuarial team.\"\n\nsrc_8b7c54c16e3e: \"Wrote the limitation section and the hand-over conditions of each rate change proposal.\"\n\nAll supported.\n\nNo gaps.\n\nInterviewSignalRisks none.\n\nFollowUpQuestions none.\n\nHumanReviewChecklist: maybe \"Review evidence for completeness and verify dates\".\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of production deployment context\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_5f3a83ae90404e0f\",\"targetRoleTitle\":\"Pricing Analyst, Motor Insurance\",\"professionalSummary\":[\"Pricing analyst in the motor pricing team of a personal lines insurer for three years, refreshing the rating factors from the claims and quote data each quarter under the team's refresh procedure. (src_8b0b14f5cb81)\"],\"experienceHighlights\":[\"Prepared eleven rate change proposals with their impact analysis; each was approved or amended by the pricing committee, with the committee's decision recorded on the proposal. (src_b532d3a9d282)\",\"Ran the pricing model monitoring each month and raised three drift cases to the actuarial team, recorded in the monitoring log. (src_6612e358e029)\",\"Prepared the monthly pricing pack for the pricing committee, recording in the pack which analyses were mine and which came from the actuarial team. (src_23a20cd6f64c)\",\"Wrote the limitation section and the hand-over conditions of each rate change proposal. (src_8b7c54c16e3e)\"],\"projectsAndWorkSamples\":[\"Work sample: one rate change proposal with its impact analysis and the committee decision record, one monthly pricing pack and the monitoring log extract for the three drift cases, with the pricing repository references as a verification trail. (src_c4784db81405)\"],\"skills\":[\"Rating factor refresh\",\"Rate change proposal preparation\",\"Impact analysis\",\"Pricing model monitoring\",\"Monthly pricing pack preparation\",\"Proposal limitation documentation\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s activities in rating factor refresh, proposal preparation, model monitoring, pack preparation, and limitation documentation, but do not provide evidence of production deployment context or broader organizational impact.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Pricing Analyst, Motor Insurance\",\"jobDescriptionSource\":\"jd_5a4d4b2d6ba5cba3\",\"requirementIds\":[\"req_2c474ae6991b\",\"req_e85b335c3da3\",\"req_b964581a1e90\",\"req_ec207c97a3d3\",\"req_eadb5ecd5aa2\"]},\"candidate\":{\"candidateId\":\"cand_5f3a83ae90404e0f\",\"sources\":[\"src_8b0b14f5cb81\",\"src_b532d3a9d282\",\"src_6612e358e029\",\"src_23a20cd6f64c\",\"src_8b7c54c16e3e\",\"src_c4784db81405\",\"src_7b5669c209fe\",\"src_173a9408d7dc\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_2c474ae6991b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8b0b14f5cb81\",\"text\":\"Pricing analyst in the motor pricing team of a personal lines insurer for three years, refreshing the rating factors from the claims and quote data each quarter under the team's refresh procedure.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of refresh activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e85b335c3da3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b532d3a9d282\",\"text\":\"Prepared eleven rate change proposals with their impact analysis; each was approved or amended by the pricing committee, with the committee's decision recorded on the proposal.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of proposal preparation and committee approval\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b964581a1e90\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6612e358e029\",\"text\":\"Ran the pricing model monitoring each month and raised three drift cases to the actuarial team, recorded in the monitoring log.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of monitoring and drift escalation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ec207c97a3d3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_23a20cd6f64c\",\"text\":\"Prepared the monthly pricing pack for the pricing committee, recording in the pack which analyses were mine and which came from the actuarial team.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of pack preparation and responsibility recording\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_eadb5ecd5aa2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8b7c54c16e3e\",\"text\":\"Wrote the limitation section and the hand-over conditions of each rate change proposal.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation of limitations and hand-over\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Candidate refreshed rating factors from claims and quote data each quarter under the team's refresh procedure.\",\"supportingRequirementIds\":[\"req_2c474ae6991b\"],\"sourceIds\":[\"src_8b0b14f5cb81\"],\"evidenceStrength\":\"high\",\"witness\":\"Pricing analyst in the motor pricing team of a personal lines insurer for three years, refreshing the rating factors from the claims and quote data each quarter under the team's refresh procedure.\"},{\"claim\":\"Candidate prepared rate change proposals with impact analysis and secured pricing committee approval.\",\"supportingRequirementIds\":[\"req_e85b335c3da3\"],\"sourceIds\":[\"src_b532d3a9d282\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared eleven rate change proposals with their impact analysis; each was approved or amended by the pricing committee, with the committee's decision recorded on the proposal.\"},{\"claim\":\"Candidate ran monthly pricing model monitoring and raised drift cases to the actuarial team.\",\"supportingRequirementIds\":[\"req_b964581a1e90\"],\"sourceIds\":[\"src_6612e358e029\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the pricing model monitoring each month and raised three drift cases to the actuarial team, recorded in the monitoring log.\"},{\"claim\":\"Candidate prepared the monthly pricing pack for the pricing committee and recorded analysis ownership.\",\"supportingRequirementIds\":[\"req_ec207c97a3d3\"],\"sourceIds\":[\"src_23a20cd6f64c\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the monthly pricing pack for the pricing committee, recording in the pack which analyses were mine and which came from the actuarial team.\"},{\"claim\":\"Candidate documented limitations and hand-over conditions for each rate change proposal.\",\"supportingRequirementIds\":[\"req_eadb5ecd5aa2\"],\"sourceIds\":[\"src_8b7c54c16e3e\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the limitation section and the hand-over conditions of each rate change proposal.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s work samples match the resume claims\",\"Confirm dates of employment and role responsibilities with the former head of motor pricing\"],\"auditSummary\":\"All five job requirements are directly supported by the candidate’s resume and work sample evidence. No evidence gaps or unsupported claims were identified. Human review is recommended to confirm employment dates and verify the authenticity of the provided work samples.\",\"limitations\":[\"Evidence does not indicate whether the candidate’s activities were performed in a production environment or the scale of the impact.\"]} }",
+ "content_sha256": "62066d1062d988c8af2d95b6d3bebb1e67b6eaa5041e6c44ab051a6e79f4bb95",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_5f3a83ae90404e0f",
+   "targetRoleTitle": "Pricing Analyst, Motor Insurance",
+   "professionalSummary": [
+    "Pricing analyst in the motor pricing team of a personal lines insurer for three years, refreshing the rating factors from the claims and quote data each quarter under the team's refresh procedure. (src_8b0b14f5cb81)"
+   ],
+   "experienceHighlights": [
+    "Prepared eleven rate change proposals with their impact analysis; each was approved or amended by the pricing committee, with the committee's decision recorded on the proposal. (src_b532d3a9d282)",
+    "Ran the pricing model monitoring each month and raised three drift cases to the actuarial team, recorded in the monitoring log. (src_6612e358e029)",
+    "Prepared the monthly pricing pack for the pricing committee, recording in the pack which analyses were mine and which came from the actuarial team. (src_23a20cd6f64c)",
+    "Wrote the limitation section and the hand-over conditions of each rate change proposal. (src_8b7c54c16e3e)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: one rate change proposal with its impact analysis and the committee decision record, one monthly pricing pack and the monitoring log extract for the three drift cases, with the pricing repository references as a verification trail. (src_c4784db81405)"
+   ],
+   "skills": [
+    "Rating factor refresh",
+    "Rate change proposal preparation",
+    "Impact analysis",
+    "Pricing model monitoring",
+    "Monthly pricing pack preparation",
+    "Proposal limitation documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s activities in rating factor refresh, proposal preparation, model monitoring, pack preparation, and limitation documentation, but do not provide evidence of production deployment context or broader organizational impact."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Pricing Analyst, Motor Insurance",
+    "jobDescriptionSource": "jd_5a4d4b2d6ba5cba3",
+    "requirementIds": [
+     "req_2c474ae6991b",
+     "req_e85b335c3da3",
+     "req_b964581a1e90",
+     "req_ec207c97a3d3",
+     "req_eadb5ecd5aa2"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_5f3a83ae90404e0f",
+    "sources": [
+     "src_8b0b14f5cb81",
+     "src_b532d3a9d282",
+     "src_6612e358e029",
+     "src_23a20cd6f64c",
+     "src_8b7c54c16e3e",
+     "src_c4784db81405",
+     "src_7b5669c209fe",
+     "src_173a9408d7dc"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2c474ae6991b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8b0b14f5cb81",
+       "text": "Pricing analyst in the motor pricing team of a personal lines insurer for three years, refreshing the rating factors from the claims and quote data each quarter under the team's refresh procedure.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of refresh activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e85b335c3da3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b532d3a9d282",
+       "text": "Prepared eleven rate change proposals with their impact analysis; each was approved or amended by the pricing committee, with the committee's decision recorded on the proposal.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of proposal preparation and committee approval"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b964581a1e90",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6612e358e029",
+       "text": "Ran the pricing model monitoring each month and raised three drift cases to the actuarial team, recorded in the monitoring log.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of monitoring and drift escalation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ec207c97a3d3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_23a20cd6f64c",
+       "text": "Prepared the monthly pricing pack for the pricing committee, recording in the pack which analyses were mine and which came from the actuarial team.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of pack preparation and responsibility recording"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_eadb5ecd5aa2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8b7c54c16e3e",
+       "text": "Wrote the limitation section and the hand-over conditions of each rate change proposal.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation of limitations and hand-over"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Candidate refreshed rating factors from claims and quote data each quarter under the team's refresh procedure.",
+     "supportingRequirementIds": [
+      "req_2c474ae6991b"
+     ],
+     "sourceIds": [
+      "src_8b0b14f5cb81"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Pricing analyst in the motor pricing team of a personal lines insurer for three years, refreshing the rating factors from the claims and quote data each quarter under the team's refresh procedure."
+    },
+    {
+     "claim": "Candidate prepared rate change proposals with impact analysis and secured pricing committee approval.",
+     "supportingRequirementIds": [
+      "req_e85b335c3da3"
+     ],
+     "sourceIds": [
+      "src_b532d3a9d282"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared eleven rate change proposals with their impact analysis; each was approved or amended by the pricing committee, with the committee's decision recorded on the proposal."
+    },
+    {
+     "claim": "Candidate ran monthly pricing model monitoring and raised drift cases to the actuarial team.",
+     "supportingRequirementIds": [
+      "req_b964581a1e90"
+     ],
+     "sourceIds": [
+      "src_6612e358e029"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the pricing model monitoring each month and raised three drift cases to the actuarial team, recorded in the monitoring log."
+    },
+    {
+     "claim": "Candidate prepared the monthly pricing pack for the pricing committee and recorded analysis ownership.",
+     "supportingRequirementIds": [
+      "req_ec207c97a3d3"
+     ],
+     "sourceIds": [
+      "src_23a20cd6f64c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly pricing pack for the pricing committee, recording in the pack which analyses were mine and which came from the actuarial team."
+    },
+    {
+     "claim": "Candidate documented limitations and hand-over conditions for each rate change proposal.",
+     "supportingRequirementIds": [
+      "req_eadb5ecd5aa2"
+     ],
+     "sourceIds": [
+      "src_8b7c54c16e3e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the limitation section and the hand-over conditions of each rate change proposal."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s work samples match the resume claims",
+    "Confirm dates of employment and role responsibilities with the former head of motor pricing"
+   ],
+   "auditSummary": "All five job requirements are directly supported by the candidate’s resume and work sample evidence. No evidence gaps or unsupported claims were identified. Human review is recommended to confirm employment dates and verify the authenticity of the provided work samples.",
+   "limitations": [
+    "Evidence does not indicate whether the candidate’s activities were performed in a production environment or the scale of the impact."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:03:36.246088+00:00"
+}

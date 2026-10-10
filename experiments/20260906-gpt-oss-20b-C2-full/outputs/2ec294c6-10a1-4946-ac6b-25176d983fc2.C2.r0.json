@@ -1,0 +1,260 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2ec294c6-10a1-4946-ac6b-25176d983fc2.C2",
+ "case_id": "2ec294c6-10a1-4946-ac6b-25176d983fc2",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14340,
+  "promptWords": 1733
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 43.658
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3762,
+ "eval_count": 1852,
+ "prompt_eval_duration_ns": 19037000,
+ "eval_duration_ns": 33678223000,
+ "total_duration_ns": 43653030750,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Need claims for CV sections. Use evidence. Also need requirementEvidenceMap covering all req ids. Provide evidence entries with sourceId and verbatim passage. Need to extract verbatim from sources. We have resume text. We can quote short passage. For each requirement, find evidence.\n\nLet's craft claims:\n\nprofessionalSummary: maybe one claim: \"Experienced Complaints Handler with three years in retail banking, managing ~400 complaints annually.\" source src_8eefde317482.\n\nexperienceHighlights: multiple claims: investigating complaints, phone conversations, final letters, redress, open items. Use respective sources.\n\nprojectsAndWorkSamples: claim about work sample. source src_2536c0415a38.\n\nskills: maybe \"Investigation, Customer Communication, Regulatory Compliance, Documentation\". Could cite multiple sources.\n\nEvidenceBoundary: statement about what materials establish: that candidate has experience as described, but no independent verification beyond resume and work sample.\n\nRequirementEvidenceMap: For each req, status supported. Provide evidence entries.\n\nNeed to include witness verbatim passage. Use short excerpt from resume.\n\nAlso need unsupportedClaims: maybe none.\n\nMissingEvidenceGaps: none.\n\nInterviewSignalRisks: subjective notes from src_a2b08f8735e and src_69505a699096. These are subjective. So list them.\n\nFollowUpQuestions: maybe for each requirement? But we have evidence. But still could ask for clarification? Not necessary. But rule says record a follow-up question for each requirement that is partial_evidence or insufficient_evidence. All are supported, so none.\n\nHumanReviewChecklist: maybe items like \"Verify work sample authenticity\", \"Confirm call monitoring scores\".\n\nAuditSummary: paragraph summarizing evidence.\n\nLimitations: maybe \"No independent audit of performance metrics\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_080dfdd2a63d5a90\",\"targetRoleTitle\":\"Complaints Handler, Retail Banking Complaints\",\"professionalSummary\":[\"Experienced Complaints Handler with three years in a retail bank’s complaints team, managing approximately 400 complaints annually. (src_8eefde317482)\"],\"experienceHighlights\":[\"Investigated complaints against account records following the team’s investigation procedure. (src_8eefde317482)\",\"Handled phone conversations for each case, including escalated calls, with quality checkers scoring calls within the call standard every quarter. (src_acddda7d255e)\",\"Wrote final response letters under the team’s letter standard, achieving 96% issued within the regulator’s time limit. (src_bbbb46f80771)\",\"Agreed redress within delegated limits and referred cases above the limit to the team leader, recording referrals and limits on each case. (src_990b656fcf1d)\",\"Documented open items and hand‑over conditions for each case passed to another handler or quality checkers. (src_303a8332b481)\"],\"projectsAndWorkSamples\":[\"Provided two anonymised case files (investigation notes, call log with quality scorecard, final response letter, redress record) and quarterly call monitoring scorecards as verification trail. (src_2536c0415a38)\"],\"skills\":[\"Investigation\",\"Customer Communication\",\"Regulatory Compliance\",\"Documentation\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s role, responsibilities, and quantitative performance metrics within the retail banking complaints context, but do not include independent verification beyond the cited sources.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess the candidate’s fit for the Complaints Handler role based on the evidence and gaps identified.\"},\"role\":{\"roleTitle\":\"Complaints Handler, Retail Banking Complaints\",\"jobDescriptionSource\":\"jd_04cf86e5a6292840\",\"requirementIds\":[\"req_9eafeb875f45\",\"req_51b7f027aafb\",\"req_98026d249bb8\",\"req_a96cec912103\",\"req_184a117959df\"]},\"candidate\":{\"candidateId\":\"cand_080dfdd2a63d5a90\",\"sources\":[\"src_8eefde317482\",\"src_acddda7d255e\",\"src_bbbb46f80771\",\"src_990b656fcf1d\",\"src_303a8332b481\",\"src_2536c0415a38\",\"src_a2b08f8735e\",\"src_69505a699096\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_9eafeb875f45\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8eefde317482\",\"text\":\"Complaints handler in a retail bank's complaints team for three years, investigating about four hundred complaints a year against the account records under the team's investigation procedure.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of investigation activity.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_51b7f027aafb\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_acddda7d255e\",\"text\":\"Handled the phone conversations on each case, including the escalated calls the branch network passed to the team; the quality checkers' call monitoring scored my calls within the call standard in every quarter of the three years, with the scorecards in the quality folder.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit claim of handling calls within standard.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_98026d249bb8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_bbbb46f80771\",\"text\":\"Wrote the final response letters under the team's letter standard, with ninety-six per cent issued within the regulator's time limit over the period.\",\"evidenceStrength\":\"high\",\"notes\":\"Quantitative performance metric.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a96cec912103\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_990b656fcf1d\",\"text\":\"Agreed redress within my delegated limit and referred the cases above it to the team leader, recording the referral and the limit on each case.\",\"evidenceStrength\":\"high\",\"notes\":\"Clear statement of redress agreement and referral.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_184a117959df\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_303a8332b481\",\"text\":\"Wrote the open items note and the hand-over conditions on each case passed to another handler or to the quality checkers.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct documentation claim.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Investigated approximately 400 complaints annually using the team’s investigation procedure.\",\"supportingRequirementIds\":[\"req_9eafeb875f45\"],\"sourceIds\":[\"src_8eefde317482\"],\"evidenceStrength\":\"high\",\"witness\":\"Complaints handler in a retail bank's complaints team for three years, investigating about four hundred complaints a year against the account records under the team's investigation procedure.\"},{\"claim\":\"Handled all phone conversations, including escalated calls, scoring within the call standard every quarter.\",\"supportingRequirementIds\":[\"req_51b7f027aafb\"],\"sourceIds\":[\"src_acddda7d255e\"],\"evidenceStrength\":\"high\",\"witness\":\"Handled the phone conversations on each case, including the escalated calls the branch network passed to the team; the quality checkers' call monitoring scored my calls within the call standard in every quarter of the three years, with the scorecards in the quality folder.\"},{\"claim\":\"Wrote final response letters under the team’s letter standard, achieving 96% within regulator time limits.\",\"supportingRequirementIds\":[\"req_98026d249bb8\"],\"sourceIds\":[\"src_bbbb46f80771\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the final response letters under the team's letter standard, with ninety-six per cent issued within the regulator's time limit over the period.\"},{\"claim\":\"Agreed redress within delegated limits and referred cases above the limit to the team leader, recording referrals and limits.\",\"supportingRequirementIds\":[\"req_a96cec912103\"],\"sourceIds\":[\"src_990b656fcf1d\"],\"evidenceStrength\":\"high\",\"witness\":\"Agreed redress within my delegated limit and referred the cases above it to the team leader, recording the referral and the limit on each case.\"},{\"claim\":\"Documented open items and hand‑over conditions for each case passed to another handler or quality checkers.\",\"supportingRequirementIds\":[\"req_184a117959df\"],\"sourceIds\":[\"src_303a8332b481\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the open items note and the hand-over conditions on each case passed to another handler or to the quality checkers.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_a2b08f8735e\",\"text\":\"she seemed nervous and soft-spoken in the role-play and my impression is she would be walked over by an angry customer; not sure she has the presence for the tougher calls.\",\"signalType\":\"subjective impression\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify through structured role‑play or call monitoring evidence.\"},{\"sourceId\":\"src_69505a699096\",\"text\":\"the team has lost two handlers who could not cope with abusive callers, so the panel wants the packet to say plainly whether she can handle upset customers.\",\"signalType\":\"organizational concern\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"medium\",\"recommendedHandling\":\"Request evidence of handling abusive callers or provide additional training records.\"}],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify authenticity of work sample (src_2536c0415a38).\",\"Confirm that call monitoring scorecards reflect actual performance. \",\"Assess candidate’s ability to handle abusive callers beyond subjective notes.\"],\"auditSummary\":\"The evidence from the resume and work sample confirms that the candidate meets all functional requirements for the Complaints Handler role, with quantitative metrics for investigation, communication, letter writing, redress, and documentation. Subjective interview notes raise moderate concerns about handling abusive callers, warranting further verification. No protected characteristics are inferred. Human review is required to evaluate the candidate’s fit and address the interview signal risks.\",\"limitations\":[\"Evidence is limited to the candidate’s own resume and a single work sample; independent audit or third‑party verification is not provided.\"]} }",
+ "content_sha256": "10d3fe287bc94225327e868e8c863b6a8c27b814ddbb36b2527109d6a9bae270",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_080dfdd2a63d5a90",
+   "targetRoleTitle": "Complaints Handler, Retail Banking Complaints",
+   "professionalSummary": [
+    "Experienced Complaints Handler with three years in a retail bank’s complaints team, managing approximately 400 complaints annually. (src_8eefde317482)"
+   ],
+   "experienceHighlights": [
+    "Investigated complaints against account records following the team’s investigation procedure. (src_8eefde317482)",
+    "Handled phone conversations for each case, including escalated calls, with quality checkers scoring calls within the call standard every quarter. (src_acddda7d255e)",
+    "Wrote final response letters under the team’s letter standard, achieving 96% issued within the regulator’s time limit. (src_bbbb46f80771)",
+    "Agreed redress within delegated limits and referred cases above the limit to the team leader, recording referrals and limits on each case. (src_990b656fcf1d)",
+    "Documented open items and hand‑over conditions for each case passed to another handler or quality checkers. (src_303a8332b481)"
+   ],
+   "projectsAndWorkSamples": [
+    "Provided two anonymised case files (investigation notes, call log with quality scorecard, final response letter, redress record) and quarterly call monitoring scorecards as verification trail. (src_2536c0415a38)"
+   ],
+   "skills": [
+    "Investigation",
+    "Customer Communication",
+    "Regulatory Compliance",
+    "Documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s role, responsibilities, and quantitative performance metrics within the retail banking complaints context, but do not include independent verification beyond the cited sources."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate’s fit for the Complaints Handler role based on the evidence and gaps identified."
+   },
+   "role": {
+    "roleTitle": "Complaints Handler, Retail Banking Complaints",
+    "jobDescriptionSource": "jd_04cf86e5a6292840",
+    "requirementIds": [
+     "req_9eafeb875f45",
+     "req_51b7f027aafb",
+     "req_98026d249bb8",
+     "req_a96cec912103",
+     "req_184a117959df"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_080dfdd2a63d5a90",
+    "sources": [
+     "src_8eefde317482",
+     "src_acddda7d255e",
+     "src_bbbb46f80771",
+     "src_990b656fcf1d",
+     "src_303a8332b481",
+     "src_2536c0415a38",
+     "src_a2b08f8735e",
+     "src_69505a699096"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_9eafeb875f45",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8eefde317482",
+       "text": "Complaints handler in a retail bank's complaints team for three years, investigating about four hundred complaints a year against the account records under the team's investigation procedure.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of investigation activity."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_51b7f027aafb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_acddda7d255e",
+       "text": "Handled the phone conversations on each case, including the escalated calls the branch network passed to the team; the quality checkers' call monitoring scored my calls within the call standard in every quarter of the three years, with the scorecards in the quality folder.",
+       "evidenceStrength": "high",
+       "notes": "Explicit claim of handling calls within standard."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_98026d249bb8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bbbb46f80771",
+       "text": "Wrote the final response letters under the team's letter standard, with ninety-six per cent issued within the regulator's time limit over the period.",
+       "evidenceStrength": "high",
+       "notes": "Quantitative performance metric."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a96cec912103",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_990b656fcf1d",
+       "text": "Agreed redress within my delegated limit and referred the cases above it to the team leader, recording the referral and the limit on each case.",
+       "evidenceStrength": "high",
+       "notes": "Clear statement of redress agreement and referral."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_184a117959df",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_303a8332b481",
+       "text": "Wrote the open items note and the hand-over conditions on each case passed to another handler or to the quality checkers.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation claim."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Investigated approximately 400 complaints annually using the team’s investigation procedure.",
+     "supportingRequirementIds": [
+      "req_9eafeb875f45"
+     ],
+     "sourceIds": [
+      "src_8eefde317482"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Complaints handler in a retail bank's complaints team for three years, investigating about four hundred complaints a year against the account records under the team's investigation procedure."
+    },
+    {
+     "claim": "Handled all phone conversations, including escalated calls, scoring within the call standard every quarter.",
+     "supportingRequirementIds": [
+      "req_51b7f027aafb"
+     ],
+     "sourceIds": [
+      "src_acddda7d255e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Handled the phone conversations on each case, including the escalated calls the branch network passed to the team; the quality checkers' call monitoring scored my calls within the call standard in every quarter of the three years, with the scorecards in the quality folder."
+    },
+    {
+     "claim": "Wrote final response letters under the team’s letter standard, achieving 96% within regulator time limits.",
+     "supportingRequirementIds": [
+      "req_98026d249bb8"
+     ],
+     "sourceIds": [
+      "src_bbbb46f80771"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the final response letters under the team's letter standard, with ninety-six per cent issued within the regulator's time limit over the period."
+    },
+    {
+     "claim": "Agreed redress within delegated limits and referred cases above the limit to the team leader, recording referrals and limits.",
+     "supportingRequirementIds": [
+      "req_a96cec912103"
+     ],
+     "sourceIds": [
+      "src_990b656fcf1d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed redress within my delegated limit and referred the cases above it to the team leader, recording the referral and the limit on each case."
+    },
+    {
+     "claim": "Documented open items and hand‑over conditions for each case passed to another handler or quality checkers.",
+     "supportingRequirementIds": [
+      "req_184a117959df"
+     ],
+     "sourceIds": [
+      "src_303a8332b481"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the open items note and the hand-over conditions on each case passed to another handler or to the quality checkers."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_a2b08f8735e",
+     "text": "she seemed nervous and soft-spoken in the role-play and my impression is she would be walked over by an angry customer; not sure she has the presence for the tougher calls.",
+     "signalType": "subjective impression",
+     "jobRelatedBoundary": "yes",
+     "severity": "medium",
+     "recommendedHandling": "Verify through structured role‑play or call monitoring evidence."
+    },
+    {
+     "sourceId": "src_69505a699096",
+     "text": "the team has lost two handlers who could not cope with abusive callers, so the panel wants the packet to say plainly whether she can handle upset customers.",
+     "signalType": "organizational concern",
+     "jobRelatedBoundary": "yes",
+     "severity": "medium",
+     "recommendedHandling": "Request evidence of handling abusive callers or provide additional training records."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify authenticity of work sample (src_2536c0415a38).",
+    "Confirm that call monitoring scorecards reflect actual performance. ",
+    "Assess candidate’s ability to handle abusive callers beyond subjective notes."
+   ],
+   "auditSummary": "The evidence from the resume and work sample confirms that the candidate meets all functional requirements for the Complaints Handler role, with quantitative metrics for investigation, communication, letter writing, redress, and documentation. Subjective interview notes raise moderate concerns about handling abusive callers, warranting further verification. No protected characteristics are inferred. Human review is required to evaluate the candidate’s fit and address the interview signal risks.",
+   "limitations": [
+    "Evidence is limited to the candidate’s own resume and a single work sample; independent audit or third‑party verification is not provided."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:58:48.004031+00:00"
+}

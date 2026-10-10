@@ -1,0 +1,534 @@
+{
+ "request_id": "6ee8d00b-a403-4b10-8ac0-5411be321718.C2",
+ "case_id": "6ee8d00b-a403-4b10-8ac0-5411be321718",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Experienced Infrastructure Engineer with a proven track record of upgrading and patching Kubernetes clusters, maintaining Terraform modules and Helm charts, par"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[4].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Work sample attached to the CKA requirement: a score report from a timed practice exam on the Kubelab training simulator, dated 2 August 2026, showing 88 out of",
+     "sourceIds": [
+      "src_21434bba5797"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Work sample attached to the CKA requirement: a score report from a timed practice exam on the Kubelab training simulator, dated 2 August 2026, showing 88 out of",
+     "sourceId": "src_21434bba5797"
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[4]",
+    "message": "qualification term(s) [CERTIFICATION] not licensed by the cited sources: certification, certified",
+    "witness": {
+     "family": "CERTIFICATION",
+     "terms": [
+      "certification",
+      "certified"
+     ],
+     "sourceIds": [
+      "src_21434bba5797"
+     ],
+     "sourceFamilies": [],
+     "text": "Holds a current Certified Kubernetes Administrator (CKA) certification"
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "requirement_qualification_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].status",
+    "message": "requirement marked supported but its qualification term(s) [CERTIFICATION] (certification, certified) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_7bcd83466c91",
+     "family": "CERTIFICATION",
+     "terms": [
+      "certification",
+      "certified"
+     ],
+     "sourceIds": [
+      "src_21434bba5797"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "no_decision_language",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[0].text",
+    "message": "employment-decision language: verdict",
+    "witness": {
+     "terms": [
+      "verdict"
+     ],
+     "text": "Work sample attached to the CKA requirement: a score report from a timed practice exam on the Kubelab training simulator, dated 2 August 2026, showing 88 out of 100 across 17 tasks and the simulator's"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "5 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.hiringEvidencePacket.supportedClaims[4]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "requirement_qualification_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[4]",
+   "detail": "req_7bcd83466c91: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Experienced Infrastructure Engineer with a proven track record of upgrading and patching Kubernetes clusters, maintainin"
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "qualification_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[4]",
+   "detail": "Holds a current Certified Kubernetes Administrator (CKA) certification"
+  },
+  {
+   "rule": "hrgene.human_review_boundary",
+   "code": "no_decision_language",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[4]",
+   "detail": "Work sample attached to the CKA requirement: a score report from a timed practice exam on the Kubelab training simulator"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2d00228ab39c2929",
+   "targetRoleTitle": "Platform Engineer, Kubernetes Infrastructure",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit for Platform Engineer, Kubernetes Infrastructure role."
+   },
+   "role": {
+    "roleTitle": "Platform Engineer, Kubernetes Infrastructure",
+    "jobDescriptionSource": "jd_066cef7c725931c0",
+    "requirementIds": [
+     "req_a6e3cd89f21e",
+     "req_160605e759c6",
+     "req_e579d7d87a8f",
+     "req_a0ab68fa5472",
+     "req_7bcd83466c91"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2d00228ab39c2929",
+    "sources": [
+     "src_74106511f1cb",
+     "src_411156205eda",
+     "src_c8cb4782b8d1",
+     "src_bc46f0f6e520",
+     "src_6bf12939f1d4",
+     "src_21434bba5797",
+     "src_f131da7f327c",
+     "src_ebe8a856af51"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a6e3cd89f21e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_74106511f1cb",
+       "text": "ran minor-version upgrades on four EKS clusters, draining node groups in batches and keeping a written rollback plan for each upgrade window",
+       "evidenceStrength": "high",
+       "notes": "directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_160605e759c6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_411156205eda",
+       "text": "Maintained the Terraform modules for VPCs, node groups and IAM roles, and the Helm charts for the ingress controller and the log shipper",
+       "evidenceStrength": "high",
+       "notes": "directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e579d7d87a8f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c8cb4782b8d1",
+       "text": "Joined the one-week-in-five on-call rotation from January 2024 and wrote runbooks for disk-pressure evictions and failed certificate renewals",
+       "evidenceStrength": "high",
+       "notes": "directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a0ab68fa5472",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bc46f0f6e520",
+       "text": "Reviewed infrastructure pull requests from the team's two other engineers, reading each Terraform plan before approving the merge",
+       "evidenceStrength": "high",
+       "notes": "directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7bcd83466c91",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's certification element; verify before treating it as met."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Upgrades and patches Kubernetes clusters with documented rollback plans",
+     "supportingRequirementIds": [
+      "req_a6e3cd89f21e"
+     ],
+     "sourceIds": [
+      "src_74106511f1cb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "ran minor-version upgrades on four EKS clusters, draining node groups in batches and keeping a written rollback plan for each upgrade window"
+    },
+    {
+     "claim": "Maintains Terraform modules and Helm charts for the cluster fleet",
+     "supportingRequirementIds": [
+      "req_160605e759c6"
+     ],
+     "sourceIds": [
+      "src_411156205eda"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the Terraform modules for VPCs, node groups and IAM roles, and the Helm charts for the ingress controller and the log shipper"
+    },
+    {
+     "claim": "Takes part in an on-call rotation and writes incident runbooks",
+     "supportingRequirementIds": [
+      "req_e579d7d87a8f"
+     ],
+     "sourceIds": [
+      "src_c8cb4782b8d1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Joined the one-week-in-five on-call rotation from January 2024 and wrote runbooks for disk-pressure evictions and failed certificate renewals"
+    },
+    {
+     "claim": "Reviews infrastructure changes from other engineers through pull requests",
+     "supportingRequirementIds": [
+      "req_a0ab68fa5472"
+     ],
+     "sourceIds": [
+      "src_bc46f0f6e520"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed infrastructure pull requests from the team's two other engineers, reading each Terraform plan before approving the merge"
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Experienced Infrastructure Engineer with a proven track record of upgrading and patching Kubernetes clusters, maintaining Terraform modules and Helm charts, participating in on‑call rotations, and reviewing infrastructure changes. Holds a current Certified Kubernetes Administrator certification.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Holds a current Certified Kubernetes Administrator (CKA) certification",
+     "reason": "The cited sources do not establish this qualification, seniority or duration.",
+     "requiredFollowUp": "Ask for the specific credential, its issuer and dates, and the scope of the experience."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s CKA certification is current on the start date of employment.",
+    "Confirm that the on-call rotation and runbook writing responsibilities were performed in a production environment.",
+    "Ensure that the Terraform modules and Helm charts maintained were for the same cluster fleet described in the job description."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative or causal claims require further verification. The candidate’s CKA certification evidence is based on a practice exam; further confirmation of official certification status may be needed.",
+   "limitations": [
+    "The CKA certification evidence is derived from a practice exam score report; official certification status is not directly documented in the provided sources."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

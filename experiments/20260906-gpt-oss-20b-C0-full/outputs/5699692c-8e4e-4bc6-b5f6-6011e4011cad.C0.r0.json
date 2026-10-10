@@ -1,0 +1,245 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "5699692c-8e4e-4bc6-b5f6-6011e4011cad.C0",
+ "case_id": "5699692c-8e4e-4bc6-b5f6-6011e4011cad",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7758,
+  "promptWords": 940
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 29.921
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 1830,
+ "eval_count": 1642,
+ "prompt_eval_duration_ns": 17311000,
+ "eval_duration_ns": 28198539000,
+ "total_duration_ns": 29919140667,
+ "thinking": "We need to produce JSON with structure. Use provided sources. Need to map requirements. Let's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_65b5ee4a7d04a365\",\"targetRoleTitle\":\"Site Reliability Engineer, After-Sales Service Network\",\"professionalSummary\":[\"Experienced SRE with a focus on monitoring and alerting for dispatch and parts-order services, having designed Prometheus rules and Grafana dashboards validated in staging and deployed via a platform release pipeline. Demonstrated incident review leadership and runbook maintenance over fourteen months.\"],\"experienceHighlights\":[\"Designed and validated alerting rules and dashboards for dispatch API and parts-order queue across four release cycles. Participated in incident reviews, drafting timelines and follow-up actions. Submitted monitoring changes through the platform team's release pipeline, coordinating with on-call engineers. Maintained alerting runbooks, documenting known limitations and hand-over conditions.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Candidate has partial evidence for production monitoring experience but lacks direct production deployment permissions and on-call rotation participation.\"},\"role\":{\"roleTitle\":\"Site Reliability Engineer, After-Sales Service Network\",\"jobDescriptionSource\":\"jd_eb24dead6e98a3a9\",\"requirementIds\":[\"req_bd64b2f9370d\",\"req_02151dff1031\",\"req_4c03059a563a\",\"req_0b0d65c91afb\",\"req_04f7c99e2fd1\"]},\"candidate\":{\"candidateId\":\"cand_65b5ee4a7d04a365\",\"sources\":[\"src_2f935397200c\",\"src_ed66a2889ce5\",\"src_63dc0dfa13e1\",\"src_9a6e512b826b\",\"src_9e13923cec61\",\"src_1b69b4572dc2\",\"src_b2c1222d9e37\",\"src_51bebc4173fc\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_bd64b2f9370d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2f935397200c\",\"text\":\"Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts-order queue, and validated them against replayed traffic in the staging cluster over four release cycles.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates design and deployment through release pipeline.\"},{\"sourceId\":\"src_1b69b4572dc2\",\"text\":\"Work sample: the alerting rule set and dashboard JSON for the dispatch API, with the staging validation log that lists each replayed traffic run, its date and the alert outcome; the log keeps the staging cluster identifiers as a verification trail.\",\"evidenceStrength\":\"high\",\"notes\":\"Provides tangible artifacts.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_02151dff1031\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_63dc0dfa13e1\",\"text\":\"Submitted monitoring changes through the platform team's release pipeline; production releases were executed by the platform team's on-call engineer under their release calendar, and I had no production deployment permissions.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows involvement in production releases but not direct on-call participation.\"}],\"missingEvidence\":[\"Evidence of personal on-call rotation participation or pager handling.\"]},{\"requirementId\":\"req_4c03059a563a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ed66a2889ce5\",\"text\":\"Took part in the incident review for the March dispatch outage as the monitoring owner for staging, drafting the timeline and the follow-up actions that service operations then reviewed.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches incident review role.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0b0d65c91afb\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_63dc0dfa13e1\",\"text\":\"Submitted monitoring changes through the platform team's release pipeline; production releases were executed by the platform team's on-call engineer under their release calendar, and I had no production deployment permissions.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination with platform team and responsibility boundaries.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_04f7c99e2fd1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9a6e512b826b\",\"text\":\"Maintained the alerting runbook for the dispatch service, including the known limitation that queue-depth alerts were tuned only against staging traffic profiles.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates runbook documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Designed and validated alerting rules and dashboards for dispatch API and parts-order queue across multiple release cycles.\",\"supportingRequirementIds\":[\"req_bd64b2f9370d\"],\"sourceIds\":[\"src_2f935397200c\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts-order queue, and validated them against replayed traffic in the staging cluster over four release cycles.\"},{\"claim\":\"Participated in incident reviews, drafting timelines and follow-up actions.\",\"supportingRequirementIds\":[\"req_4c03059a563a\"],\"sourceIds\":[\"src_ed66a2889ce5\"],\"evidenceStrength\":\"high\",\"witness\":\"Took part in the incident review for the March dispatch outage as the monitoring owner for staging, drafting the timeline and the follow-up actions that service operations then reviewed.\"},{\"claim\":\"Maintained alerting runbooks documenting known limitations.\",\"supportingRequirementIds\":[\"req_04f7c99e2fd1\"],\"sourceIds\":[\"src_9a6e512b826b\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the alerting runbook for the dispatch service, including the known limitation that queue-depth alerts were tuned only against staging traffic profiles.\"}],\"unsupportedClaims\":[{\"claim\":\"Has direct production deployment permissions and handles pager on-call rotation.\",\"reason\":\"Evidence shows no production deployment permissions and no on-call participation.\",\"requiredFollowUp\":\"Provide documentation or testimony of on-call rotation participation and pager handling.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_02151dff1031\",\"severity\":\"medium\",\"gap\":\"Evidence of personal on-call rotation participation or pager handling.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_b2c1222d9e37\",\"text\":\"candidate says the alerting rules he wrote are 'now running across the whole service network' and that the March incident was 'caught by my alerts'\",\"signalType\":\"self-reported claim\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify production deployment and incident capture through logs or platform records.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_02151dff1031\",\"question\":\"Can you describe your experience with on-call rotations and pager handling for the service network platform?\",\"evidenceTarget\":\"Direct evidence of on-call participation and pager handling.\"}],\"humanReviewChecklist\":[\"Confirm production deployment permissions and on-call participation\",\"Verify that alerting rules are currently active in production\",\"Assess completeness of runbook documentation\",\"Ensure incident review documentation aligns with service operations records\"],\"auditSummary\":\"The candidate demonstrates strong experience in designing, validating, and documenting monitoring for dispatch and parts-order services, with evidence of incident review participation. However, there is insufficient evidence of direct production deployment permissions and on-call rotation participation, which are critical for the role. Human review should focus on verifying these gaps before proceeding.\",\"limitations\":[\"Evidence limited to resume and work sample; no external verification of production deployment or on-call logs.\"]}}",
+ "content_sha256": "a45d8731840cf75b378fb1d08dde8562fe36efbe2af084062feadeb66bec4b5e",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_65b5ee4a7d04a365",
+   "targetRoleTitle": "Site Reliability Engineer, After-Sales Service Network",
+   "professionalSummary": [
+    "Experienced SRE with a focus on monitoring and alerting for dispatch and parts-order services, having designed Prometheus rules and Grafana dashboards validated in staging and deployed via a platform release pipeline. Demonstrated incident review leadership and runbook maintenance over fourteen months."
+   ],
+   "experienceHighlights": [
+    "Designed and validated alerting rules and dashboards for dispatch API and parts-order queue across four release cycles. Participated in incident reviews, drafting timelines and follow-up actions. Submitted monitoring changes through the platform team's release pipeline, coordinating with on-call engineers. Maintained alerting runbooks, documenting known limitations and hand-over conditions."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Candidate has partial evidence for production monitoring experience but lacks direct production deployment permissions and on-call rotation participation."
+   },
+   "role": {
+    "roleTitle": "Site Reliability Engineer, After-Sales Service Network",
+    "jobDescriptionSource": "jd_eb24dead6e98a3a9",
+    "requirementIds": [
+     "req_bd64b2f9370d",
+     "req_02151dff1031",
+     "req_4c03059a563a",
+     "req_0b0d65c91afb",
+     "req_04f7c99e2fd1"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_65b5ee4a7d04a365",
+    "sources": [
+     "src_2f935397200c",
+     "src_ed66a2889ce5",
+     "src_63dc0dfa13e1",
+     "src_9a6e512b826b",
+     "src_9e13923cec61",
+     "src_1b69b4572dc2",
+     "src_b2c1222d9e37",
+     "src_51bebc4173fc"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bd64b2f9370d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2f935397200c",
+       "text": "Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts-order queue, and validated them against replayed traffic in the staging cluster over four release cycles.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates design and deployment through release pipeline."
+      },
+      {
+       "sourceId": "src_1b69b4572dc2",
+       "text": "Work sample: the alerting rule set and dashboard JSON for the dispatch API, with the staging validation log that lists each replayed traffic run, its date and the alert outcome; the log keeps the staging cluster identifiers as a verification trail.",
+       "evidenceStrength": "high",
+       "notes": "Provides tangible artifacts."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_02151dff1031",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_63dc0dfa13e1",
+       "text": "Submitted monitoring changes through the platform team's release pipeline; production releases were executed by the platform team's on-call engineer under their release calendar, and I had no production deployment permissions.",
+       "evidenceStrength": "medium",
+       "notes": "Shows involvement in production releases but not direct on-call participation."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence of personal on-call rotation participation or pager handling."
+     ]
+    },
+    {
+     "requirementId": "req_4c03059a563a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ed66a2889ce5",
+       "text": "Took part in the incident review for the March dispatch outage as the monitoring owner for staging, drafting the timeline and the follow-up actions that service operations then reviewed.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches incident review role."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0b0d65c91afb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_63dc0dfa13e1",
+       "text": "Submitted monitoring changes through the platform team's release pipeline; production releases were executed by the platform team's on-call engineer under their release calendar, and I had no production deployment permissions.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination with platform team and responsibility boundaries."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_04f7c99e2fd1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9a6e512b826b",
+       "text": "Maintained the alerting runbook for the dispatch service, including the known limitation that queue-depth alerts were tuned only against staging traffic profiles.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates runbook documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed and validated alerting rules and dashboards for dispatch API and parts-order queue across multiple release cycles.",
+     "supportingRequirementIds": [
+      "req_bd64b2f9370d"
+     ],
+     "sourceIds": [
+      "src_2f935397200c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts-order queue, and validated them against replayed traffic in the staging cluster over four release cycles."
+    },
+    {
+     "claim": "Participated in incident reviews, drafting timelines and follow-up actions.",
+     "supportingRequirementIds": [
+      "req_4c03059a563a"
+     ],
+     "sourceIds": [
+      "src_ed66a2889ce5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took part in the incident review for the March dispatch outage as the monitoring owner for staging, drafting the timeline and the follow-up actions that service operations then reviewed."
+    },
+    {
+     "claim": "Maintained alerting runbooks documenting known limitations.",
+     "supportingRequirementIds": [
+      "req_04f7c99e2fd1"
+     ],
+     "sourceIds": [
+      "src_9a6e512b826b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the alerting runbook for the dispatch service, including the known limitation that queue-depth alerts were tuned only against staging traffic profiles."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Has direct production deployment permissions and handles pager on-call rotation.",
+     "reason": "Evidence shows no production deployment permissions and no on-call participation.",
+     "requiredFollowUp": "Provide documentation or testimony of on-call rotation participation and pager handling."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_02151dff1031",
+     "severity": "medium",
+     "gap": "Evidence of personal on-call rotation participation or pager handling."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_b2c1222d9e37",
+     "text": "candidate says the alerting rules he wrote are 'now running across the whole service network' and that the March incident was 'caught by my alerts'",
+     "signalType": "self-reported claim",
+     "jobRelatedBoundary": "yes",
+     "severity": "medium",
+     "recommendedHandling": "Verify production deployment and incident capture through logs or platform records."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_02151dff1031",
+     "question": "Can you describe your experience with on-call rotations and pager handling for the service network platform?",
+     "evidenceTarget": "Direct evidence of on-call participation and pager handling."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm production deployment permissions and on-call participation",
+    "Verify that alerting rules are currently active in production",
+    "Assess completeness of runbook documentation",
+    "Ensure incident review documentation aligns with service operations records"
+   ],
+   "auditSummary": "The candidate demonstrates strong experience in designing, validating, and documenting monitoring for dispatch and parts-order services, with evidence of incident review participation. However, there is insufficient evidence of direct production deployment permissions and on-call rotation participation, which are critical for the role. Human review should focus on verifying these gaps before proceeding.",
+   "limitations": [
+    "Evidence limited to resume and work sample; no external verification of production deployment or on-call logs."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T11:06:12.277310+00:00"
+}

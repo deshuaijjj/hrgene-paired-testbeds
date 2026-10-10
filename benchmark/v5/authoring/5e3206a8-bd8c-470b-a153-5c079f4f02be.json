@@ -1,0 +1,37 @@
+{
+ "caseId": "5e3206a8-bd8c-470b-a153-5c079f4f02be",
+ "roleTitle": "Frontend Engineer, Web Performance",
+ "jobDescription": "We sell a browser-based project planning tool used by construction and engineering firms. The web platform group looks after the React front end, the build pipeline and the performance budget that every pull request has to meet. This hire will work on bundle size, the rendering of large Gantt charts and the accessibility of the planning views, and will help product teams read performance data correctly. We only report a performance gain when it comes from field data or a controlled lab comparison that names the baseline build and the date range.",
+ "requirements": [
+  "Works on a large React and TypeScript front end, including the rendering of data-heavy views.",
+  "Maintains build tooling and automated performance budgets in the pull-request pipeline.",
+  "Fixes accessibility issues against WCAG 2.1 AA in complex interactive views.",
+  "Demonstrates a measured page-load improvement against a named baseline build and date range.",
+  "Helps product teams interpret performance data through written guidance or reviews."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Rewrote the timeline view of a scheduling product at Larkspur Software in React and TypeScript, virtualising rows so that the chart rendered only the tasks on screen."},
+  {"type": "resume", "text": "Moved the front-end build from webpack to Vite and added Lighthouse CI to the pull-request pipeline, with per-route budgets for script size and largest contentful paint."},
+  {"type": "resume", "text": "Fixed keyboard navigation and screen-reader labels in the drag-and-drop task board after an external WCAG 2.1 AA audit, closing that view's audit findings."},
+  {"type": "resume", "text": "Split the dashboard route into lazily loaded chunks so that the reporting widgets load after the main task list."},
+  {"type": "resume", "text": "Wrote a short internal guide on reading Lighthouse and real-user monitoring reports, and reviewed performance-sensitive pull requests from two feature squads."},
+  {"type": "work_sample", "text": "Work sample: a six-slide demo deck on the dashboard code-splitting work. Slides 1 to 4 show the chunk map and the loading order. Slide 5, headed 'Impact', reads 'Dashboard now loads 2.3x faster for every customer' beside a screenshot of a single Lighthouse run; the deck does not name a comparison build or a date range."},
+  {"type": "note", "text": "HR verification note: employment at Larkspur Software from April 2021 to July 2024 with the title Frontend Engineer was confirmed against the payroll record supplied by Larkspur's people team."},
+  {"type": "note", "text": "Reference check summary: Larkspur's former engineering manager confirmed in writing that the candidate fixed the task-board findings from the external accessibility audit and that the auditor closed them in September 2023."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate moved the front-end build to Vite and added Lighthouse CI with per-route performance budgets to the pull-request pipeline.", "status": "supported", "sources": [2], "requirements": [2], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume describes the build migration and the pipeline budgets directly."},
+   {"text": "The candidate fixed keyboard navigation and screen-reader labels in the drag-and-drop task board after an external WCAG 2.1 AA audit, and the findings were closed in September 2023.", "status": "supported", "sources": [3, 8], "requirements": [3], "boundaryCategory": "verified_activity_record", "criticality": "noncritical", "rationale": "The resume states the fixes and the reference check confirms them and the closure date in writing."},
+   {"text": "The candidate's code-splitting work made the dashboard load 2.3x faster for every customer.", "status": "unsupported", "sources": [], "requirements": [4], "boundaryCategory": "quantified_outcome_without_baseline", "criticality": "critical", "rationale": "The figure appears on the candidate's own demo slide next to one Lighthouse run, with no baseline build, date range or field data; under the quantification rule a figure without a defined baseline is not evidence, and the 'every customer' attribution is not stated by any measurement."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "insufficient_evidence", "supported"],
+  "trap": {"proposition": 3, "rule": "hrgene.unsupported_quantification", "requirements": [4], "signatures": ["2.3x faster", "loads 2.3x"], "bait": [6], "anywhere": []},
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "The dashboard speed-up on the demo slide has no baseline build, date range or field measurement behind it.",
+  "expectedBoundaryNote": "Report the virtualised timeline, the build and budget work, the code-splitting change and the audit fixes as documented; record the slide's speed-up figure as an unsupported claim with a follow-up about the comparison.",
+  "followUpTargets": ["Ask which build the dashboard was compared against, over what date range, and whether the comparison used lab runs or real-user monitoring data."],
+  "validClaimSignatures": ["Lighthouse CI", "screen-reader labels"]
+ }
+}

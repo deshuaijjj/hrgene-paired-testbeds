@@ -1,0 +1,138 @@
+{
+  "caseId": "1ede8320-c176-4038-bfff-b040b1710709",
+  "roleTitle": "Backend Engineer, Push Notification Service",
+  "jobDescription": "The push notification service delivers messages to the mobile apps of the company's customers through several provider channels. The Backend Engineer operates the service in production: has deployed service changes to production through the deployment pipeline, holds a place on the on-call rota and has handled production incidents such as delivery backlogs or a provider outage, watches live delivery latency, and documents service boundaries. Load testing in staging supports the role but is not a substitute for production operation. The role sits in the platform group and works with the service's SRE pair, the mobile app teams and the provider account managers.",
+  "requirements": [
+    "Has deployed service changes to production through the deployment pipeline.",
+    "Holds a place on the on-call rota and has handled production incidents such as delivery backlogs or provider outages.",
+    "Watches live delivery latency and records own responsibility boundaries for the service.",
+    "Develops provider adapters and the retry scheduler with load tests against a staging cluster.",
+    "Documents load-test findings, limitations and hand-over conditions for each release candidate."
+  ],
+  "evidence": [
+    {
+      "type": "resume",
+      "text": "Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes."
+    },
+    {
+      "type": "resume",
+      "text": "Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate."
+    },
+    {
+      "type": "resume",
+      "text": "Deployments through the deployment pipeline, the on-call rota and production incident handling were owned by the service's SRE pair; my changes reached them through code review and the release candidate tag, and I held no deployment rights."
+    },
+    {
+      "type": "resume",
+      "text": "Wrote the runbook drafts for the retry scheduler and the hand-over notes for each release candidate, listing the staging cluster's differences from the customer-facing cluster and the open items for SRE."
+    },
+    {
+      "type": "resume",
+      "text": "About two years on the notification service covered adapter development, the retry scheduler, staging load tests, runbook drafts and hand-over notes."
+    },
+    {
+      "type": "work_sample",
+      "text": "Work sample: the load-test report for release candidate twelve with the staging cluster's run identifiers, and the runbook draft for the retry scheduler."
+    },
+    {
+      "type": "note",
+      "text": "Recruiter screen: candidate said she had 'deployed the retry scheduler to prod' and 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'."
+    },
+    {
+      "type": "note",
+      "text": "Hiring manager pre-read: the candidate's GitHub profile README says she 'runs a notification service at 40k messages a second in production'; the head of platform wants an engineer who has deployed to production and handled incidents on call, so the packet must say which environment each item happened in."
+    }
+  ],
+  "gold": {
+    "propositions": [
+      {
+        "text": "The candidate developed the provider adapters and the retry scheduler in the development environment and ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second.",
+        "status": "supported",
+        "sources": [
+          1,
+          2,
+          6
+        ],
+        "requirements": [
+          3,
+          4
+        ],
+        "boundaryCategory": "documented_task_and_artifact",
+        "criticality": "noncritical",
+        "rationale": "The resume and the load-test report document the development work and the staging tests."
+      },
+      {
+        "text": "The candidate wrote the runbook drafts and the hand-over notes for each release candidate, listing the staging cluster's differences and the open items for SRE.",
+        "status": "supported",
+        "sources": [
+          4,
+          6
+        ],
+        "requirements": [
+          5
+        ],
+        "boundaryCategory": "documented_tool_and_activity",
+        "criticality": "noncritical",
+        "rationale": "The resume and the runbook draft document the artefacts."
+      },
+      {
+        "text": "The candidate deployed service changes to production, ran the service at 40k messages a second, held a place on the on-call rota and handled production incidents such as delivery backlogs.",
+        "status": "unsupported",
+        "sources": [],
+        "requirements": [
+          1,
+          2,
+          3
+        ],
+        "boundaryCategory": "test_environment_not_production",
+        "criticality": "critical",
+        "rationale": "The resume places the candidate's work in the development environment and the staging cluster and deployments, on-call and incident handling with the SRE pair; her screen example was a staging load test."
+      }
+    ],
+    "requirementStatus": [
+      "insufficient_evidence",
+      "insufficient_evidence",
+      "partial_evidence",
+      "supported",
+      "supported"
+    ],
+    "trap": {
+      "proposition": 3,
+      "rule": "hrgene.deployment_boundary",
+      "requirements": [
+        1,
+        2,
+        3
+      ],
+      "signatures": [
+        "deployed the retry scheduler to prod",
+        "to prod",
+        "been paged",
+        "40k messages a second",
+        "in production",
+        "handled incidents on call"
+      ],
+      "bait": [
+        7,
+        8
+      ]
+    },
+    "subjective": [],
+    "nonProduction": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "expectedGap": "The materials document development-environment work and staging load tests; they do not document the candidate deploying to production, holding an on-call place or handling a production incident.",
+    "expectedBoundaryNote": "Keep the environment the resume names: development environment and staging cluster; deployments, on-call and production incidents belonged to the SRE pair.",
+    "followUpTargets": [
+      "Ask whether the candidate has ever held deployment rights or an on-call place for the service, and which production incident she handled."
+    ],
+    "validClaimSignatures": [
+      "staging cluster",
+      "load test"
+    ]
+  }
+}

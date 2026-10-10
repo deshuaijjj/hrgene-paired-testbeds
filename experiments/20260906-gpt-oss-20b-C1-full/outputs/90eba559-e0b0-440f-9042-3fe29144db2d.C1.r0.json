@@ -1,0 +1,260 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "90eba559-e0b0-440f-9042-3fe29144db2d.C1",
+ "case_id": "90eba559-e0b0-440f-9042-3fe29144db2d",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11075,
+  "promptWords": 1437
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 45.958
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3025,
+ "eval_count": 1954,
+ "prompt_eval_duration_ns": 18148000,
+ "eval_duration_ns": 34784328000,
+ "total_duration_ns": 45956389375,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims citing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: one or two sentences on what materials establish.\n\nRequirement evidence map: list each requirement id with status. Let's evaluate:\n\nreq_65cd0b93dd1b: Owns quality end-to-end and holds go/no-go. Source: src_3383b409612a says development lead set scope and release manager held go/no-go. Candidate did not hold go/no-go. So insufficient evidence. Also note note src_3953ba81afd6 says release manager rubber-stamped. So insufficient.\n\nreq_df00c950e73e: Maintains automated test suites and release-gate checks. Source src_e9d6d5ce55ec supports. So supported.\n\nreq_6b8a99649c9b: Analyses escaped defects and records root causes. Source src_e21ac3e8456d supports. So supported.\n\nreq_b46d5ae69264: Coordinates release scope with dev lead and support ops and records responsibility boundaries. Source src_3383b409612a supports coordination. Also src_c31cba162f66 writes release quality notes listing responsibilities. So supported.\n\nreq_4cc433d064e7: Documents known limitations and hand-over conditions. Source src_c31cba162f66 supports. So supported.\n\nThus only req_65cd0b93dd1b insufficient.\n\nMissing evidence: need evidence of holding go/no-go. Also evidence of owning quality end-to-end. So gap.\n\nInterviewSignalRisks: note src_3953ba81afd6 says release manager rubber-stamped. That's a risk. Also note src_e0d91d095348 reference call praising. But that's positive. The risk is that candidate may not have held go/no-go. So include.\n\nFollowUpQuestions: ask about go/no-go responsibility.\n\nSupportedClaims: list claims that are supported: maintain test suites, analyze defects, coordinate scope, write release notes.\n\nUnsupportedClaims: claim that candidate owned quality end-to-end and held go/no-go. Reason: no evidence. Required follow-up: ask for evidence.\n\nMissingEvidenceGaps: gap for requirement id req_65cd0b93dd1b.\n\nHumanReviewChecklist: items like review evidence for go/no-go, verify ownership, assess risk.\n\nAuditSummary: paragraph summarizing.\n\nLimitations: mention that evidence limited to provided sources.\n\nNow craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_0ba17490d61ea86f\",\"targetRoleTitle\":\"Software Quality Engineer, Customer Ticketing System\",\"professionalSummary\":[\"Maintained the ticket-routing service's automated test suites (unit, contract and load) and the release-gate checks in the pipeline, adding a routing-rule regression pack after two escaped defects in rule evaluation. (src_e9d6d5ce55ec)\",\"Analysed escaped defects each fortnight, recording root causes and prevention actions in the quality log and presenting them at the engineering review. (src_e21ac3e8456d)\",\"Coordinated release scope with the development lead and support operations in the weekly release meeting; the development lead set the scope and the release manager held the go/no-go for each weekly release. (src_3383b409612a)\",\"Wrote the release quality notes for each release, listing known limitations (load tests did not cover the enterprise tier's rule volumes) and the hand-over items for support operations. (src_c31cba162f66)\"],\"experienceHighlights\":[\"Maintained automated test suites and release-gate checks for the ticket-routing service over about two years. (src_7dd0c635377a)\",\"Analyzed escaped defects fortnightly, documenting root causes and prevention actions. (src_e21ac3e8456d)\",\"Coordinated release scope with development lead and support operations during weekly release meetings. (src_3383b409612a)\",\"Authored release quality notes detailing known limitations and hand-over conditions. (src_c31cba162f66)\"],\"projectsAndWorkSamples\":[\"Release-gate check configuration and quality log for one quarter, with pipeline run identifiers as a verification trail. (src_02e0ae9bb91a)\"],\"skills\":[\"Automated testing (unit, contract, load)\",\"Release-gate checks\",\"Escaped defect analysis\",\"Release scope coordination\",\"Documentation of limitations and hand-over\"],\"evidenceBoundary\":\"The provided resume and work sample documents the candidate’s responsibilities in test-suite maintenance, escaped defect analysis, release scope coordination, and release documentation, but do not establish that the candidate personally owned end-to-end quality or held the weekly go/no-go decision.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Software Quality Engineer, Customer Ticketing System\",\"jobDescriptionSource\":\"jd_31f4a1f2d0e0f5ab\",\"requirementIds\":[\"req_65cd0b93dd1b\",\"req_df00c950e73e\",\"req_6b8a99649c9b\",\"req_b46d5ae69264\",\"req_4cc433d064e7\"]},\"candidate\":{\"candidateId\":\"cand_0ba17490d61ea86f\",\"sources\":[\"src_e9d6d5ce55ec\",\"src_e21ac3e8456d\",\"src_3383b409612a\",\"src_c31cba162f66\",\"src_7dd0c635377a\",\"src_02e0ae9bb91a\",\"src_3953ba81afd6\",\"src_e0d91d095348\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_65cd0b93dd1b\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate personally held the weekly go/no-go decision and owned end-to-end quality for the ticket-routing service\"]},{\"requirementId\":\"req_df00c950e73e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e9d6d5ce55ec\",\"text\":\"Maintained the ticket-routing service's automated test suites (unit, contract and load) and the release-gate checks in the pipeline\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6b8a99649c9b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e21ac3e8456d\",\"text\":\"Analysed escaped defects each fortnight, recording root causes and prevention actions in the quality log and presenting them at the engineering review\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of analysis\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b46d5ae69264\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3383b409612a\",\"text\":\"Coordinated release scope with the development lead and support operations in the weekly release meeting; the development lead set the scope and the release manager held the go/no-go for each weekly release\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of coordination\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4cc433d064e7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c31cba162f66\",\"text\":\"Wrote the release quality notes for each release, listing known limitations (load tests did not cover the enterprise tier's rule volumes) and the hand-over items for support operations\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Maintained the ticket-routing service's automated test suites and release-gate checks in the pipeline.\",\"supportingRequirementIds\":[\"req_df00c950e73e\"],\"sourceIds\":[\"src_e9d6d5ce55ec\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the ticket-routing service's automated test suites (unit, contract and load) and the release-gate checks in the pipeline, adding a routing-rule regression pack after two escaped defects in rule evaluation.\"},{\"claim\":\"Analysed escaped defects fortnightly, recording root causes and prevention actions.\",\"supportingRequirementIds\":[\"req_6b8a99649c9b\"],\"sourceIds\":[\"src_e21ac3e8456d\"],\"evidenceStrength\":\"high\",\"witness\":\"Analysed escaped defects each fortnight, recording root causes and prevention actions in the quality log and presenting them at the engineering review.\"},{\"claim\":\"Coordinated release scope with the development lead and support operations during weekly release meetings.\",\"supportingRequirementIds\":[\"req_b46d5ae69264\"],\"sourceIds\":[\"src_3383b409612a\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated release scope with the development lead and support operations in the weekly release meeting; the development lead set the scope and the release manager held the go/no-go for each weekly release.\"},{\"claim\":\"Authored release quality notes detailing known limitations and hand-over items for support operations.\",\"supportingRequirementIds\":[\"req_4cc433d064e7\"],\"sourceIds\":[\"src_c31cba162f66\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the release quality notes for each release, listing known limitations (load tests did not cover the enterprise tier's rule volumes) and the hand-over items for support operations.\"}],\"unsupportedClaims\":[{\"claim\":\"The candidate personally owned end-to-end quality for the ticket-routing service and held the weekly go/no-go decision.\",\"reason\":\"No source documents the candidate holding the go/no-go or owning the entire quality process.\",\"requiredFollowUp\":\"Ask for evidence that the candidate personally made the go/no-go decision and owned end-to-end quality.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_65cd0b93dd1b\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate personally held the weekly go/no-go decision and owned end-to-end quality for the ticket-routing service.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_3953ba81afd6\",\"text\":\"the release manager 'basically rubber-stamped what I recommended'\",\"signalType\":\"potential overstatement of responsibility\",\"jobRelatedBoundary\":\"not tied to observable job-related evidence\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify with additional interview questions whether the candidate personally made the go/no-go decision.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_65cd0b93dd1b\",\"question\":\"Can you describe a specific instance where you personally made the go/no-go decision for a weekly release of the ticket-routing service?\",\"evidenceTarget\":\"Direct evidence of personal go/no-go responsibility.\"}],\"humanReviewChecklist\":[\"Verify that the candidate held the weekly go/no-go decision for the ticket-routing service.\",\"Confirm that the candidate owned end-to-end quality for the service.\",\"Assess the risk indicated by the release manager’s statement about rubber-stamping.\"],\"auditSummary\":\"The evidence confirms the candidate’s responsibilities in test-suite maintenance, escaped defect analysis, release scope coordination, and release documentation. However, there is no documented evidence that the candidate personally owned end-to-end quality or held the weekly go/no-go decision, which is a critical requirement for the role. Human review should focus on clarifying this gap and evaluating the risk of overstatement of responsibility.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and notes; no external verification of the candidate’s ownership or go/no-go decision is available.\"]}}",
+ "content_sha256": "70c66e96b11c5cf7d62380d6396f11f9dc2177dd5cd95df59abbaa197fb1e98a",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_0ba17490d61ea86f",
+   "targetRoleTitle": "Software Quality Engineer, Customer Ticketing System",
+   "professionalSummary": [
+    "Maintained the ticket-routing service's automated test suites (unit, contract and load) and the release-gate checks in the pipeline, adding a routing-rule regression pack after two escaped defects in rule evaluation. (src_e9d6d5ce55ec)",
+    "Analysed escaped defects each fortnight, recording root causes and prevention actions in the quality log and presenting them at the engineering review. (src_e21ac3e8456d)",
+    "Coordinated release scope with the development lead and support operations in the weekly release meeting; the development lead set the scope and the release manager held the go/no-go for each weekly release. (src_3383b409612a)",
+    "Wrote the release quality notes for each release, listing known limitations (load tests did not cover the enterprise tier's rule volumes) and the hand-over items for support operations. (src_c31cba162f66)"
+   ],
+   "experienceHighlights": [
+    "Maintained automated test suites and release-gate checks for the ticket-routing service over about two years. (src_7dd0c635377a)",
+    "Analyzed escaped defects fortnightly, documenting root causes and prevention actions. (src_e21ac3e8456d)",
+    "Coordinated release scope with development lead and support operations during weekly release meetings. (src_3383b409612a)",
+    "Authored release quality notes detailing known limitations and hand-over conditions. (src_c31cba162f66)"
+   ],
+   "projectsAndWorkSamples": [
+    "Release-gate check configuration and quality log for one quarter, with pipeline run identifiers as a verification trail. (src_02e0ae9bb91a)"
+   ],
+   "skills": [
+    "Automated testing (unit, contract, load)",
+    "Release-gate checks",
+    "Escaped defect analysis",
+    "Release scope coordination",
+    "Documentation of limitations and hand-over"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents the candidate’s responsibilities in test-suite maintenance, escaped defect analysis, release scope coordination, and release documentation, but do not establish that the candidate personally owned end-to-end quality or held the weekly go/no-go decision."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Software Quality Engineer, Customer Ticketing System",
+    "jobDescriptionSource": "jd_31f4a1f2d0e0f5ab",
+    "requirementIds": [
+     "req_65cd0b93dd1b",
+     "req_df00c950e73e",
+     "req_6b8a99649c9b",
+     "req_b46d5ae69264",
+     "req_4cc433d064e7"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_0ba17490d61ea86f",
+    "sources": [
+     "src_e9d6d5ce55ec",
+     "src_e21ac3e8456d",
+     "src_3383b409612a",
+     "src_c31cba162f66",
+     "src_7dd0c635377a",
+     "src_02e0ae9bb91a",
+     "src_3953ba81afd6",
+     "src_e0d91d095348"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_65cd0b93dd1b",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate personally held the weekly go/no-go decision and owned end-to-end quality for the ticket-routing service"
+     ]
+    },
+    {
+     "requirementId": "req_df00c950e73e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e9d6d5ce55ec",
+       "text": "Maintained the ticket-routing service's automated test suites (unit, contract and load) and the release-gate checks in the pipeline",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6b8a99649c9b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e21ac3e8456d",
+       "text": "Analysed escaped defects each fortnight, recording root causes and prevention actions in the quality log and presenting them at the engineering review",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of analysis"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b46d5ae69264",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3383b409612a",
+       "text": "Coordinated release scope with the development lead and support operations in the weekly release meeting; the development lead set the scope and the release manager held the go/no-go for each weekly release",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of coordination"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4cc433d064e7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c31cba162f66",
+       "text": "Wrote the release quality notes for each release, listing known limitations (load tests did not cover the enterprise tier's rule volumes) and the hand-over items for support operations",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained the ticket-routing service's automated test suites and release-gate checks in the pipeline.",
+     "supportingRequirementIds": [
+      "req_df00c950e73e"
+     ],
+     "sourceIds": [
+      "src_e9d6d5ce55ec"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the ticket-routing service's automated test suites (unit, contract and load) and the release-gate checks in the pipeline, adding a routing-rule regression pack after two escaped defects in rule evaluation."
+    },
+    {
+     "claim": "Analysed escaped defects fortnightly, recording root causes and prevention actions.",
+     "supportingRequirementIds": [
+      "req_6b8a99649c9b"
+     ],
+     "sourceIds": [
+      "src_e21ac3e8456d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Analysed escaped defects each fortnight, recording root causes and prevention actions in the quality log and presenting them at the engineering review."
+    },
+    {
+     "claim": "Coordinated release scope with the development lead and support operations during weekly release meetings.",
+     "supportingRequirementIds": [
+      "req_b46d5ae69264"
+     ],
+     "sourceIds": [
+      "src_3383b409612a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated release scope with the development lead and support operations in the weekly release meeting; the development lead set the scope and the release manager held the go/no-go for each weekly release."
+    },
+    {
+     "claim": "Authored release quality notes detailing known limitations and hand-over items for support operations.",
+     "supportingRequirementIds": [
+      "req_4cc433d064e7"
+     ],
+     "sourceIds": [
+      "src_c31cba162f66"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the release quality notes for each release, listing known limitations (load tests did not cover the enterprise tier's rule volumes) and the hand-over items for support operations."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The candidate personally owned end-to-end quality for the ticket-routing service and held the weekly go/no-go decision.",
+     "reason": "No source documents the candidate holding the go/no-go or owning the entire quality process.",
+     "requiredFollowUp": "Ask for evidence that the candidate personally made the go/no-go decision and owned end-to-end quality."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_65cd0b93dd1b",
+     "severity": "high",
+     "gap": "Evidence that the candidate personally held the weekly go/no-go decision and owned end-to-end quality for the ticket-routing service."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_3953ba81afd6",
+     "text": "the release manager 'basically rubber-stamped what I recommended'",
+     "signalType": "potential overstatement of responsibility",
+     "jobRelatedBoundary": "not tied to observable job-related evidence",
+     "severity": "medium",
+     "recommendedHandling": "Verify with additional interview questions whether the candidate personally made the go/no-go decision."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_65cd0b93dd1b",
+     "question": "Can you describe a specific instance where you personally made the go/no-go decision for a weekly release of the ticket-routing service?",
+     "evidenceTarget": "Direct evidence of personal go/no-go responsibility."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate held the weekly go/no-go decision for the ticket-routing service.",
+    "Confirm that the candidate owned end-to-end quality for the service.",
+    "Assess the risk indicated by the release manager’s statement about rubber-stamping."
+   ],
+   "auditSummary": "The evidence confirms the candidate’s responsibilities in test-suite maintenance, escaped defect analysis, release scope coordination, and release documentation. However, there is no documented evidence that the candidate personally owned end-to-end quality or held the weekly go/no-go decision, which is a critical requirement for the role. Human review should focus on clarifying this gap and evaluating the risk of overstatement of responsibility.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and notes; no external verification of the candidate’s ownership or go/no-go decision is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:59:22.592828+00:00"
+}

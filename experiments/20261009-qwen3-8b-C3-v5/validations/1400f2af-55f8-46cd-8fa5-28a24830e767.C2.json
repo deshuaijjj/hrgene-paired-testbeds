@@ -1,0 +1,193 @@
+{
+ "request_id": "1400f2af-55f8-46cd-8fa5-28a24830e767.C2",
+ "case_id": "1400f2af-55f8-46cd-8fa5-28a24830e767",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Organised the parallel run for the Q2 2023 return, reconciling the platform output against the spreadsheet output line by line with the actuarial team.",
+     "sourceIds": [
+      "src_5881c66ff0a5"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Organised the parallel run for the Q2 2023 return, reconciling the platform output against the spreadsheet output line by line with the actuar, ",
+     "sourceId": "src_5881c66ff0a5"
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approved",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approved"
+     ],
+     "sourceIds": [
+      "src_5881c66ff0a5"
+     ],
+     "sourceFamilies": [],
+     "text": "Reports realised benefits measured against the baseline in the approved business case."
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "gap_and_followup_for_unmet",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+    "message": "requirement req_974aef8d5c56 is partial_evidence but has no gap, missingEvidence or follow-up question",
+    "witness": {
+     "requirementId": "req_974aef8d5c56"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_6b7a88f3d21b is not covered",
+    "witness": {
+     "requirementId": "req_6b7a88f3d21b"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket",
+    "message": "16 schema error(s); first: $.hiringEvidencePacket: missing required property 'supportedClaims'",
+    "witness": {
+     "errors": [
+      "$.hiringEvidencePacket: missing required property 'supportedClaims'",
+      "$.hiringEvidencePacket: missing required property 'unsupportedClaims'",
+      "$.hiringEvidencePacket: missing required property 'missingEvidenceGaps'",
+      "$.hiringEvidencePacket: missing required property 'interviewSignalRisks'",
+      "$.hiringEvidencePacket: missing required property 'followUpQuestions'",
+      "$.hiringEvidencePacket: missing required property 'humanReviewChecklist'",
+      "$.hiringEvidencePacket: missing required property 'auditSummary'",
+      "$.hiringEvidencePacket: missing required property 'limitations'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

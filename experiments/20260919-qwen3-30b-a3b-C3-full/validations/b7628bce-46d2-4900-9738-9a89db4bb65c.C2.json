@@ -1,0 +1,201 @@
+{
+ "request_id": "b7628bce-46d2-4900-9738-9a89db4bb65c.C2",
+ "case_id": "b7628bce-46d2-4900-9738-9a89db4bb65c",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "subjective,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Dispatch software engineer at a mining company from 2021 to 2025, delivering algorithm and interface work for the fleet dispatch system against the mine operati",
+     "sourceIds": [
+      "src_9854cb98ba8d",
+      "src_61ee5017cc9c",
+      "src_5cd8e4715cc3",
+      "src_dd9d6e754fe9"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "number(s) not stated by the cited sources: 52, 9",
+    "witness": {
+     "numbers": [
+      "52",
+      "9"
+     ],
+     "sourceIds": [
+      "src_4e3246931971"
+     ],
+     "text": "Carried the pager on the dispatch on-call rota for four years across three control rooms, with 52 night calls including 9 stopped-fleet incidents, each with time-to-restore and control room sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1]",
+    "message": "number(s) not stated by the cited sources: 52, 9",
+    "witness": {
+     "numbers": [
+      "52",
+      "9"
+     ],
+     "sourceIds": [
+      "src_4e3246931971"
+     ],
+     "text": "Carried the pager on the dispatch on-call rota for four years across three control rooms, with 52 night calls including 9 stopped-fleet incidents, each with time-to-restore and control room sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[2]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approved",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approved"
+     ],
+     "sourceIds": [
+      "src_5cd8e4715cc3"
+     ],
+     "sourceFamilies": [
+      "LEAD"
+     ],
+     "text": "Submitted changes through dispatch software review with releases approved by the dispatch software lead, as shown in change records."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[3]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approved",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approved"
+     ],
+     "sourceIds": [
+      "src_5cd8e4715cc3"
+     ],
+     "sourceFamilies": [
+      "LEAD"
+     ],
+     "text": "Submitted changes through dispatch software review with releases approved by the dispatch software lead, as shown in change records."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

@@ -1,0 +1,510 @@
+{
+ "request_id": "1400f2af-55f8-46cd-8fa5-28a24830e767.C2",
+ "case_id": "1400f2af-55f8-46cd-8fa5-28a24830e767",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Organised the parallel run for the Q2 2023 return, reconciling the platform output against the spreadsheet output line by line with the actuarial team.",
+     "sourceIds": [
+      "src_5881c66ff0a5"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Organised the parallel run for the Q2 2023 return, reconciling the platform output against the spreadsheet output line by line with the actuar, ",
+     "sourceId": "src_5881c66ff0a5"
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approved",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approved"
+     ],
+     "sourceIds": [
+      "src_5881c66ff0a5"
+     ],
+     "sourceFamilies": [],
+     "text": "Reports realised benefits measured against the baseline in the approved business case."
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "gap_and_followup_for_unmet",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+    "message": "requirement req_974aef8d5c56 is partial_evidence but has no gap, missingEvidence or follow-up question",
+    "witness": {
+     "requirementId": "req_974aef8d5c56"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_6b7a88f3d21b is not covered",
+    "witness": {
+     "requirementId": "req_6b7a88f3d21b"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket",
+    "message": "16 schema error(s); first: $.hiringEvidencePacket: missing required property 'supportedClaims'",
+    "witness": {
+     "errors": [
+      "$.hiringEvidencePacket: missing required property 'supportedClaims'",
+      "$.hiringEvidencePacket: missing required property 'unsupportedClaims'",
+      "$.hiringEvidencePacket: missing required property 'missingEvidenceGaps'",
+      "$.hiringEvidencePacket: missing required property 'interviewSignalRisks'",
+      "$.hiringEvidencePacket: missing required property 'followUpQuestions'",
+      "$.hiringEvidencePacket: missing required property 'humanReviewChecklist'",
+      "$.hiringEvidencePacket: missing required property 'auditSummary'",
+      "$.hiringEvidencePacket: missing required property 'limitations'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": "Reports realised benefits measured against the baseline in the approved business case."
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_6b7a88f3d21b"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "gap_and_followup_for_unmet",
+   "action": "add_gap_and_followup_for_unmet",
+   "path": "$.hiringEvidencePacket.followUpQuestions",
+   "detail": "req_974aef8d5c56"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Organised the parallel run for the Q2 2023 return, reconciling the platform output against the spreadsheet output line by line with the actuar, ",
+     "sourceId": "src_5881c66ff0a5"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_df0ea992148cac10",
+   "targetRoleTitle": "Project Manager, Regulatory Reporting Change",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "Maintains an integrated project plan and RAID log for a finance or regulatory change project.",
+     "sourceIds": [
+      "src_0f08d845dc0c"
+     ],
+     "requirementIds": [
+      "req_be22a2fda2dd"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the integrated plan and RAID log for moving Marlow Mutual Insurance's quarterly solvency returns from spreadsheets to a vendor reporting platform, from mobilisation in March 2022 to closure in August 2023."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Prepares steering committee packs and records decisions and actions.",
+     "sourceIds": [
+      "src_59e0b26db1d1"
+     ],
+     "requirementIds": [
+      "req_e8c9b78e3f8b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the monthly steering committee pack (status, milestones, top risks, decisions needed) and issued minutes with numbered actions after each meeting."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "Coordinates user acceptance testing with finance users and tracks defects to closure.",
+     "sourceIds": [
+      "src_6375bd3eab4b"
+     ],
+     "requirementIds": [
+      "req_601cb733901c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated three rounds of user acceptance testing with the finance reporting team, triaging 212 defects in the test management tool and chairing the daily defect call during each round."
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The materials establish the candidate's experience with project planning, steering committee packs, user acceptance testing, and vendor milestone tracking. They do not establish the measurement of benefits against the baseline in the approved business case."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience with project planning, steering committee packs, user acceptance testing, and vendor milestone tracking is well-documented. However, the measurement of benefits against the baseline in the approved business case is not explicitly established."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Regulatory Reporting Change",
+    "jobDescriptionSource": "jd_4df2c240a3130b59",
+    "requirementIds": [
+     "req_be22a2fda2dd",
+     "req_e8c9b78e3f8b",
+     "req_601cb733901c",
+     "req_974aef8d5c56",
+     "req_6b7a88f3d21b"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_df0ea992148cac10",
+    "sources": [
+     "src_0f08d845dc0c",
+     "src_59e0b26db1d1",
+     "src_6375bd3eab4b",
+     "src_8e40fc1798bc",
+     "src_3a67d8ad06ff",
+     "src_5881c66ff0a5",
+     "src_86dbd7433ac6",
+     "src_5dff8a6f172b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_be22a2fda2dd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0f08d845dc0c",
+       "text": "Kept the integrated plan and RAID log for moving Marlow Mutual Insurance's quarterly solvency returns from spreadsheets to a vendor reporting platform, from mobilisation in March 2022 to closure in August 2023.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e8c9b78e3f8b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_59e0b26db1d1",
+       "text": "Wrote the monthly steering committee pack (status, milestones, top risks, decisions needed) and issued minutes with numbered actions after each meeting.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_601cb733901c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6375bd3eab4b",
+       "text": "Coordinated three rounds of user acceptance testing with the finance reporting team, triaging 212 defects in the test management tool and chairing the daily defect call during each round.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_974aef8d5c56",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_5881c66ff0a5",
+       "text": "Organised the parallel run for the Q2 2023 return, reconciling the platform output against the spreadsheet output line by line with the actuar, ",
+       "evidenceStrength": "low",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6b7a88f3d21b",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Reports realised benefits measured against the baseline in the approved business case.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "missingEvidenceGaps": [],
+   "followUpQuestions": [
+    {
+     "questionId": "fq_974aef8d5c56_validator",
+     "requirementId": "req_974aef8d5c56",
+     "question": "Which documents, dates and observable outcomes can you provide for this requirement?",
+     "evidenceTarget": "A source that establishes the requirement."
+    }
+   ],
+   "supportedClaims": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "",
+   "limitations": []
+  }
+ },
+ "needsRegeneration": false
+}

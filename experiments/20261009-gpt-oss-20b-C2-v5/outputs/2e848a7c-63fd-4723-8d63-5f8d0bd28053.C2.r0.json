@@ -1,0 +1,275 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2e848a7c-63fd-4723-8d63-5f8d0bd28053.C2",
+ "case_id": "2e848a7c-63fd-4723-8d63-5f8d0bd28053",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14948,
+  "promptWords": 1783
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 46.938
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4184,
+ "eval_count": 1856,
+ "prompt_eval_duration_ns": 312178000,
+ "eval_duration_ns": 33694099000,
+ "total_duration_ns": 46935721792,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Need to map requirements. Let's craft claims.\n\nClaims: low-latency order routing service built in Java, 99th percentile <4ms. Source src_8193cbbb5a29.\n\nCross-team design reviews: wrote proposal and ran two review sessions with clearing and market-data teams. Source src_1d13db6ddf46.\n\nFailover drills: quarterly failover drills, switching traffic between data centres, recording recovery times. Source src_a49197c00d1e.\n\nCoaching: reviewed pull requests and gave design feedback to two engineers who joined in 2024. Source src_77a3046bbb3b.\n\nStaff level: note src_d9106a883dd4 says candidate has effectively been working as a staff engineer for last three years. Also note src_edc1bf29b63d confirms level Software Engineer II. But requirement is at least two years at staff engineer level or equivalent documented level. The note says effectively staff engineer. Might be partial evidence. We can mark requirement partial_evidence and ask follow-up.\n\nAlso requirement 0c74690aecea: leads cross-team design reviews for changes to order path. We have evidence of design proposal and review sessions. That supports.\n\nRequirement 05c75ce09b53: improves resilience including failover testing. We have failover drills. Good.\n\nRequirement 920314ce6acd: coaches other engineers through design feedback and code review. We have review PRs and feedback. Good.\n\nRequirement d68147b461c3: at least two years staff level. We have note but not explicit. So partial evidence.\n\nRequirement 2c48ec533e79: builds low-latency order management services in Java or Kotlin. We have Java order-routing service. Good.\n\nNow produce optimized CV with claims.\n\nEvidenceBoundary: materials establish that candidate built low-latency Java service, led design reviews, ran failover drills, reviewed PRs, but do not establish staff level tenure or cross-team leadership beyond design reviews.\n\nNow hiringEvidencePacket.\n\nRequirementEvidenceMap: for each requirement id.\n\nLet's craft.\n\nAlso unsupportedClaims: maybe claim that candidate has been staff engineer for last three years (source note). But we can treat as partial evidence. But we might list unsupported claim: \"has effectively been working as a staff engineer for last three years\" as unsupported because not documented level. But note says confirmed. Might be considered evidence but not explicit staff level. We'll mark as partial evidence.\n\nBut rule hrgene.claim_provenance: every claim must have source. So we can include claim with source src_d9106a883dd4. But requirement says staff level. We'll mark requirement partial_evidence.\n\nAlso we need missingEvidenceGaps: for requirement d68147b461c3: missing explicit documentation of staff level tenure.\n\nFollow-up question: ask for documentation of staff level tenure.\n\nInterviewSignalRisks: maybe note about \"effectively been working as a staff engineer\" is subjective. So we can put in interviewSignalRisks.\n\nNow produce JSON.\n\n",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_9d08478a20c0a02c\",\"targetRoleTitle\":\"Staff Software Engineer, Trading Platform\",\"professionalSummary\":[\"Senior Java engineer with extensive experience building low‑latency order‑routing services, leading cross‑team design reviews, conducting failover drills, and mentoring junior engineers.\"],\"experienceHighlights\":[\"Built a Java‑based order‑routing service that splits retail orders across two execution venues, maintaining 99th‑percentile internal latency under 4 ms (src_8193cbbb5a29).\",\"Authored an event‑log design proposal for order‑state storage and facilitated two cross‑team review sessions with the clearing and market‑data teams (src_1d13db6ddf46).\",\"Conducted quarterly failover drills for the order‑routing service, switching traffic between data centres and logging recovery times (src_a49197c00d1e).\",\"Reviewed pull requests and provided written design feedback to two new engineers in 2024 (src_77a3046bbb3b).\"],\"projectsAndWorkSamples\":[\"Event‑log design proposal for order‑state storage, including sequence diagrams, replay/snapshot strategy, failure analysis, and decision record from review sessions (src_0d78f8b3fb56).\"],\"skills\":[\"Java\",\"Kotlin\",\"Low‑latency systems\",\"Event‑driven architecture\",\"Failover testing\",\"Design reviews\",\"Code review\",\"Mentoring\"],\"evidenceBoundary\":\"The provided materials demonstrate the candidate’s technical contributions to low‑latency order‑routing services, cross‑team design reviews, failover testing, and engineering mentorship, but do not conclusively establish a documented two‑year staff‑level tenure or broader cross‑team technical leadership beyond the described activities.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess the candidate’s eligibility for the Staff Software Engineer role.\"},\"role\":{\"roleTitle\":\"Staff Software Engineer, Trading Platform\",\"jobDescriptionSource\":\"jd_11e7399eccb67df4\",\"requirementIds\":[\"req_2c48ec533e79\",\"req_0c74690aecea\",\"req_d68147b461c3\",\"req_05c75ce09b53\",\"req_920314ce6acd\"]},\"candidate\":{\"candidateId\":\"cand_9d08478a20c0a02c\",\"sources\":[\"src_8193cbbb5a29\",\"src_1d13db6ddf46\",\"src_a49197c00d1e\",\"src_77a3046bbb3b\",\"src_7e23c006559a\",\"src_0d78f8b3fb56\",\"src_edc1bf29b63d\",\"src_d9106a883dd4\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_2c48ec533e79\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8193cbbb5a29\",\"text\":\"built the order-routing service in Java that splits retail orders across two execution venues, keeping the 99th-percentile internal latency under 4 milliseconds\",\"evidenceStrength\":\"high\",\"notes\":\"directly demonstrates low‑latency Java service\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0c74690aecea\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1d13db6ddf46\",\"text\":\"Wrote the design proposal for moving order-state storage from a single PostgreSQL instance to an event log, and ran the two review sessions with the clearing and market-data teams before the change was approved\",\"evidenceStrength\":\"high\",\"notes\":\"shows cross‑team design review leadership\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d68147b461c3\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_d9106a883dd4\",\"text\":\"For the last three years I have effectively been working as a staff engineer, setting direction for the whole order path\",\"evidenceStrength\":\"medium\",\"notes\":\"suggests staff‑level activity but lacks formal documentation\"}],\"missingEvidence\":[\"Formal documentation of a documented staff‑level tenure or equivalent level at a previous employer\"]},{\"requirementId\":\"req_05c75ce09b53\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a49197c00d1e\",\"text\":\"Ran quarterly failover drills for the order-routing service, switching traffic between data centres and recording recovery times in the resilience log\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of failover testing\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_920314ce6acd\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_77a3046bbb3b\",\"text\":\"Reviewed pull requests for the routing team and gave written design feedback to two engineers who joined in 2024\",\"evidenceStrength\":\"high\",\"notes\":\"demonstrates coaching through design feedback\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_05c75ce09b53\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a49197c00d1e\",\"text\":\"Ran quarterly failover drills for the order-routing service, switching traffic between data centres and recording recovery times in the resilience log\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of failover testing\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Built a Java order‑routing service with 99th‑percentile latency under 4 ms\",\"supportingRequirementIds\":[\"req_2c48ec533e79\"],\"sourceIds\":[\"src_8193cbbb5a29\"],\"evidenceStrength\":\"high\",\"witness\":\"built the order-routing service in Java that splits retail orders across two execution venues, keeping the 99th-percentile internal latency under 4 milliseconds\"},{\"claim\":\"Led cross‑team design reviews for order‑state storage migration\",\"supportingRequirementIds\":[\"req_0c74690aecea\"],\"sourceIds\":[\"src_1d13db6ddf46\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the design proposal for moving order-state storage from a single PostgreSQL instance to an event log, and ran the two review sessions with the clearing and market-data teams before the change was approved\"},{\"claim\":\"Conducted quarterly failover drills for the order‑routing service\",\"supportingRequirementIds\":[\"req_05c75ce09b53\"],\"sourceIds\":[\"src_a49197c00d1e\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran quarterly failover drills for the order-routing service, switching traffic between data centres and recording recovery times in the resilience log\"},{\"claim\":\"Coached engineers through design feedback and code review\",\"supportingRequirementIds\":[\"req_920314ce6acd\"],\"sourceIds\":[\"src_77a3046bbb3b\"],\"evidenceStrength\":\"high\",\"witness\":\"Reviewed pull requests for the routing team and gave written design feedback to two engineers who joined in 2024\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_d68147b461c3\",\"severity\":\"medium\",\"gap\":\"Formal documentation of a documented staff‑level tenure or equivalent level at a previous employer\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_d9106a883dd4\",\"text\":\"For the last three years I have effectively been working as a staff engineer, setting direction for the whole order path\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify formal staff‑level designation and documented tenure during interview\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_d68147b461c3\",\"question\":\"Can you provide documentation or references that confirm your staff‑level tenure and responsibilities at your previous employer?\",\"evidenceTarget\":\"Formal staff‑level designation and tenure records\"}],\"humanReviewChecklist\":[\"Confirm that the candidate’s documented staff‑level tenure meets the two‑year requirement.\",\"Verify that the cross‑team design review leadership aligns with the order‑path scope.\",\"Assess the depth of failover testing and resilience improvements.\",\"Evaluate coaching effectiveness based on code review and mentorship evidence.\"],\"auditSummary\":\"The evidence supports the candidate’s technical capabilities in low‑latency Java services, cross‑team design reviews, failover testing, and engineering mentorship. However, formal documentation of a two‑year staff‑level tenure is missing, creating a gap that requires follow‑up. No protected characteristics are inferred, and no hiring decision is made at this stage.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and notes; external verification is not included.\"]} }",
+ "content_sha256": "6896cfb5546e43f9217fd1521bfb15c2ccbba796afc83306dcfc5dd49e7a6926",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_9d08478a20c0a02c",
+   "targetRoleTitle": "Staff Software Engineer, Trading Platform",
+   "professionalSummary": [
+    "Senior Java engineer with extensive experience building low‑latency order‑routing services, leading cross‑team design reviews, conducting failover drills, and mentoring junior engineers."
+   ],
+   "experienceHighlights": [
+    "Built a Java‑based order‑routing service that splits retail orders across two execution venues, maintaining 99th‑percentile internal latency under 4 ms (src_8193cbbb5a29).",
+    "Authored an event‑log design proposal for order‑state storage and facilitated two cross‑team review sessions with the clearing and market‑data teams (src_1d13db6ddf46).",
+    "Conducted quarterly failover drills for the order‑routing service, switching traffic between data centres and logging recovery times (src_a49197c00d1e).",
+    "Reviewed pull requests and provided written design feedback to two new engineers in 2024 (src_77a3046bbb3b)."
+   ],
+   "projectsAndWorkSamples": [
+    "Event‑log design proposal for order‑state storage, including sequence diagrams, replay/snapshot strategy, failure analysis, and decision record from review sessions (src_0d78f8b3fb56)."
+   ],
+   "skills": [
+    "Java",
+    "Kotlin",
+    "Low‑latency systems",
+    "Event‑driven architecture",
+    "Failover testing",
+    "Design reviews",
+    "Code review",
+    "Mentoring"
+   ],
+   "evidenceBoundary": "The provided materials demonstrate the candidate’s technical contributions to low‑latency order‑routing services, cross‑team design reviews, failover testing, and engineering mentorship, but do not conclusively establish a documented two‑year staff‑level tenure or broader cross‑team technical leadership beyond the described activities."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate’s eligibility for the Staff Software Engineer role."
+   },
+   "role": {
+    "roleTitle": "Staff Software Engineer, Trading Platform",
+    "jobDescriptionSource": "jd_11e7399eccb67df4",
+    "requirementIds": [
+     "req_2c48ec533e79",
+     "req_0c74690aecea",
+     "req_d68147b461c3",
+     "req_05c75ce09b53",
+     "req_920314ce6acd"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_9d08478a20c0a02c",
+    "sources": [
+     "src_8193cbbb5a29",
+     "src_1d13db6ddf46",
+     "src_a49197c00d1e",
+     "src_77a3046bbb3b",
+     "src_7e23c006559a",
+     "src_0d78f8b3fb56",
+     "src_edc1bf29b63d",
+     "src_d9106a883dd4"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2c48ec533e79",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8193cbbb5a29",
+       "text": "built the order-routing service in Java that splits retail orders across two execution venues, keeping the 99th-percentile internal latency under 4 milliseconds",
+       "evidenceStrength": "high",
+       "notes": "directly demonstrates low‑latency Java service"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0c74690aecea",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1d13db6ddf46",
+       "text": "Wrote the design proposal for moving order-state storage from a single PostgreSQL instance to an event log, and ran the two review sessions with the clearing and market-data teams before the change was approved",
+       "evidenceStrength": "high",
+       "notes": "shows cross‑team design review leadership"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d68147b461c3",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_d9106a883dd4",
+       "text": "For the last three years I have effectively been working as a staff engineer, setting direction for the whole order path",
+       "evidenceStrength": "medium",
+       "notes": "suggests staff‑level activity but lacks formal documentation"
+      }
+     ],
+     "missingEvidence": [
+      "Formal documentation of a documented staff‑level tenure or equivalent level at a previous employer"
+     ]
+    },
+    {
+     "requirementId": "req_05c75ce09b53",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a49197c00d1e",
+       "text": "Ran quarterly failover drills for the order-routing service, switching traffic between data centres and recording recovery times in the resilience log",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of failover testing"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_920314ce6acd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_77a3046bbb3b",
+       "text": "Reviewed pull requests for the routing team and gave written design feedback to two engineers who joined in 2024",
+       "evidenceStrength": "high",
+       "notes": "demonstrates coaching through design feedback"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_05c75ce09b53",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a49197c00d1e",
+       "text": "Ran quarterly failover drills for the order-routing service, switching traffic between data centres and recording recovery times in the resilience log",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of failover testing"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built a Java order‑routing service with 99th‑percentile latency under 4 ms",
+     "supportingRequirementIds": [
+      "req_2c48ec533e79"
+     ],
+     "sourceIds": [
+      "src_8193cbbb5a29"
+     ],
+     "evidenceStrength": "high",
+     "witness": "built the order-routing service in Java that splits retail orders across two execution venues, keeping the 99th-percentile internal latency under 4 milliseconds"
+    },
+    {
+     "claim": "Led cross‑team design reviews for order‑state storage migration",
+     "supportingRequirementIds": [
+      "req_0c74690aecea"
+     ],
+     "sourceIds": [
+      "src_1d13db6ddf46"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the design proposal for moving order-state storage from a single PostgreSQL instance to an event log, and ran the two review sessions with the clearing and market-data teams before the change was approved"
+    },
+    {
+     "claim": "Conducted quarterly failover drills for the order‑routing service",
+     "supportingRequirementIds": [
+      "req_05c75ce09b53"
+     ],
+     "sourceIds": [
+      "src_a49197c00d1e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran quarterly failover drills for the order-routing service, switching traffic between data centres and recording recovery times in the resilience log"
+    },
+    {
+     "claim": "Coached engineers through design feedback and code review",
+     "supportingRequirementIds": [
+      "req_920314ce6acd"
+     ],
+     "sourceIds": [
+      "src_77a3046bbb3b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed pull requests for the routing team and gave written design feedback to two engineers who joined in 2024"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_d68147b461c3",
+     "severity": "medium",
+     "gap": "Formal documentation of a documented staff‑level tenure or equivalent level at a previous employer"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_d9106a883dd4",
+     "text": "For the last three years I have effectively been working as a staff engineer, setting direction for the whole order path",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "yes",
+     "severity": "medium",
+     "recommendedHandling": "Verify formal staff‑level designation and documented tenure during interview"
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_d68147b461c3",
+     "question": "Can you provide documentation or references that confirm your staff‑level tenure and responsibilities at your previous employer?",
+     "evidenceTarget": "Formal staff‑level designation and tenure records"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that the candidate’s documented staff‑level tenure meets the two‑year requirement.",
+    "Verify that the cross‑team design review leadership aligns with the order‑path scope.",
+    "Assess the depth of failover testing and resilience improvements.",
+    "Evaluate coaching effectiveness based on code review and mentorship evidence."
+   ],
+   "auditSummary": "The evidence supports the candidate’s technical capabilities in low‑latency Java services, cross‑team design reviews, failover testing, and engineering mentorship. However, formal documentation of a two‑year staff‑level tenure is missing, creating a gap that requires follow‑up. No protected characteristics are inferred, and no hiring decision is made at this stage.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and notes; external verification is not included."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:32:00.170731+00:00"
+}

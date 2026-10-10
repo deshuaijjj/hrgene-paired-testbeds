@@ -1,0 +1,223 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "6cb77b0d-74eb-41a7-b73a-e7e91c1729d1.C1",
+ "case_id": "6cb77b0d-74eb-41a7-b73a-e7e91c1729d1",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11289,
+  "promptWords": 1497
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.66
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3111,
+ "eval_count": 1707,
+ "prompt_eval_duration_ns": 17818000,
+ "eval_duration_ns": 30412300000,
+ "total_duration_ns": 42657198708,
+ "thinking": "We need to produce JSON with optimizedCv and hiringEvidencePacket. Use sources. Ensure citations. Let's craft claims.\n\nOptimized CV: language en, candidateId cand_7460e06b454eddf3, targetRoleTitle Product Requirements Analyst, Equipment Maintenance Services.\n\nProfessionalSummary: maybe one claim: \"Analyst with two years on service-platform team, responsible for gathering requirements, writing user stories, conducting acceptance rounds, coordinating release scope, and preparing trainer hand‑over documentation.\" Cite src_57d74efc1089.\n\nExperienceHighlights: list claims with sources.\n\nProjectsAndWorkSamples: parts-scan story set etc.\n\nSkills: requirement gathering, user story writing, acceptance testing, release coordination, documentation.\n\nEvidenceBoundary: state what materials establish: requirement gathering, user stories, acceptance rounds, release scope coordination, trainer hand‑over. What not established: impact on average visit time.\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review required before any employment decision.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_daca5aaa522bdada, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id.\n\nreq_434696266007: supported. evidence from src_612c3d10e80b. evidenceStrength high? medium. notes: directly states gathering and writing user stories.\n\nreq_21868f413339: supported. evidence src_ff1b266fb4ce.\n\nreq_a3ab32881ab6: insufficient_evidence. missing evidence: no documented measurement of average on‑site visit reduction. Note source 20b13892d8ad is claim but not verified. So missing evidence: documented baseline and measurement.\n\nreq_33e7c8f403: supported. evidence src_b798f0e05727.\n\nreq_120922e6707e: supported. evidence src_8afb40b08d3b.\n\nMissingEvidenceGaps: for req_a3ab32881ab6.\n\nunsupportedClaims: maybe claim about average visit time down 22 minutes. reason: not established. requiredFollowUp: request documented measurement.\n\ninterviewSignalRisks: none? maybe note 20b13892d8ad is a claim but not evidence. But it's not interview. So maybe no risk.\n\nfollowUpQuestions: for req_a3ab32881ab6: question about how they measured average visit time, what baseline, what data source.\n\nhumanReviewChecklist: items: verify measurement evidence, confirm scope coordination, confirm acceptance round results.\n\nauditSummary: paragraph summarizing.\n\nlimitations: mention that evidence limited to resume and notes, no independent verification.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_7460e06b454eddf3\",\"targetRoleTitle\":\"Product Requirements Analyst, Equipment Maintenance Services\",\"professionalSummary\":[\"Analyst with two years on the service‑platform team, responsible for gathering requirements from field technicians and depot staff, writing user stories and acceptance criteria, organising acceptance rounds, coordinating release scope with engineering and field‑service management, and preparing trainer hand‑over documentation.\"],\"experienceHighlights\":[\"Gathered requirements from field technicians and depot staff through ride‑alongs and depot visits, and wrote user stories and acceptance criteria for the offline checklist and parts‑scan features of the technician app (src_612c3d10e80b).\",\"Organised acceptance rounds for four app releases at the training site with a rotating group of technicians, and kept the results per criterion in a shared sheet (src_ff1b266fb4ce).\",\"Coordinated release scope with the engineering lead and the field‑service manager in the release planning meeting; the engineering lead decided scope and dates, and the field‑service manager approved the rollout order across regions (src_b798f0e05727).\",\"Wrote up each app release for the regional trainers, flagging that parts‑scan only worked on the newer handheld model and listing the steps trainers had to take over (src_8afb40b08d3b).\"],\"projectsAndWorkSamples\":[\"Parts‑scan story set with acceptance criteria and the results sheet from one acceptance round; ticket numbers are included so entries can be traced (src_39de926268c5).\"],\"skills\":[\"Requirement gathering\",\"User story writing\",\"Acceptance testing\",\"Release scope coordination\",\"Documentation for trainers\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in requirement gathering, user story creation, acceptance testing, release scope coordination, and trainer hand‑over documentation. They do not establish any documented impact on average on‑site visit time.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review required before any employment decision.\"},\"role\":{\"roleTitle\":\"Product Requirements Analyst, Equipment Maintenance Services\",\"jobDescriptionSource\":\"jd_daca5aaa522bdada\",\"requirementIds\":[\"req_434696266007\",\"req_21868f413339\",\"req_a3ab32881ab6\",\"req_33e7c7c8f403\",\"req_120922e6707e\"]},\"candidate\":{\"candidateId\":\"cand_7460e06b454eddf3\",\"sources\":[\"src_612c3d10e80b\",\"src_ff1b266fb4ce\",\"src_b798f0e05727\",\"src_8afb40b08d3b\",\"src_57d74efc1089\",\"src_39de926268c5\",\"src_20b13892d8ad\",\"src_93f4d0425527\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_434696266007\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_612c3d10e80b\",\"text\":\"Gathered requirements from field technicians and the depot team through ride‑alongs and depot visits, and wrote the user stories and acceptance criteria for the offline checklist and parts‑scan features of the technician app.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states requirement gathering and user story creation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_21868f413339\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ff1b266fb4ce\",\"text\":\"Organised acceptance rounds for four app releases at the training site with a rotating group of technicians, and kept the results per criterion in a shared sheet.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states acceptance rounds and result tracking.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a3ab32881ab6\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_20b13892d8ad\",\"text\":\"a slide from the candidate's portfolio deck says 'average visit time down 22 minutes after parts‑scan'; the slide has no source, period or region, and the candidate said in the screen that the number came from a regional manager's email he no longer has.\",\"evidenceStrength\":\"low\",\"notes\":\"Unverified claim, no documented baseline or measurement.\"}],\"missingEvidence\":[\"Documented measurement of average on‑site visit time before and after feature release, with source and period.\"]},{\"requirementId\":\"req_33e7c7c8f403\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b798f0e05727\",\"text\":\"Coordinated release scope with the engineering lead and the field‑service manager in the release planning meeting; the engineering lead decided scope and dates, and the field‑service manager approved the rollout order across regions.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states scope coordination and decision ownership.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_120922e6707e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8afb40b08d3b\",\"text\":\"Wrote up each app release for the regional trainers, flagging that parts‑scan only worked on the newer handheld model and listing the steps trainers had to take over.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states trainer hand‑over documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Analyst with two years on the service‑platform team, responsible for gathering requirements, writing user stories, conducting acceptance rounds, coordinating release scope, and preparing trainer hand‑over documentation.\",\"supportingRequirementIds\":[\"req_434696266007\",\"req_21868f413339\",\"req_33e7c7c8f403\",\"req_120922e6707e\"],\"sourceIds\":[\"src_57d74efc1089\"],\"evidenceStrength\":\"high\",\"witness\":\"Spent about two years on the service‑platform team as the analyst for the technician app: intake, stories, acceptance rounds and release write‑ups.\"}],\"unsupportedClaims\":[{\"claim\":\"Average visit time decreased by 22 minutes after parts‑scan implementation.\",\"reason\":\"No documented measurement or baseline provided; the claim is based on an unverified slide.\",\"requiredFollowUp\":\"Request documented measurement of average on‑site visit time before and after the feature release, including source, period, and region.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_a3ab32881ab6\",\"severity\":\"high\",\"gap\":\"Documented measurement of average on‑site visit time before and after feature release, with source and period.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_a3ab32881ab6\",\"question\":\"Can you provide the source, period, and region for the documented measurement that shows the average on‑site visit time before and after the parts‑scan feature release?\",\"evidenceTarget\":\"Documented measurement of average on‑site visit time.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s documented experience matches the job requirements for requirement gathering, user story creation, acceptance testing, release scope coordination, and trainer hand‑over.  \\nConfirm that no documented evidence exists for the impact on average on‑site visit time.  \\nAssess the credibility of the unverified claim and determine if additional evidence can be obtained.\"],\"auditSummary\":\"The candidate’s resume and work sample provide clear evidence for most of the role’s requirements, except for the requirement to demonstrate a measurable reduction in average on‑site visit time.  No documented measurement is available; the only reference is an unverified slide.  Human review is required to decide whether the lack of evidence for this critical metric is a disqualifying factor.\",\"limitations\":[\"Evidence is limited to the candidate’s resume, work sample, and a note from the hiring manager; no independent verification of the impact claim is available.\"]}}",
+ "content_sha256": "a19b1238cede5651eb36a102e1ccd699ece3b02130ef475a1188538eb7a807ed",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_7460e06b454eddf3",
+   "targetRoleTitle": "Product Requirements Analyst, Equipment Maintenance Services",
+   "professionalSummary": [
+    "Analyst with two years on the service‑platform team, responsible for gathering requirements from field technicians and depot staff, writing user stories and acceptance criteria, organising acceptance rounds, coordinating release scope with engineering and field‑service management, and preparing trainer hand‑over documentation."
+   ],
+   "experienceHighlights": [
+    "Gathered requirements from field technicians and depot staff through ride‑alongs and depot visits, and wrote user stories and acceptance criteria for the offline checklist and parts‑scan features of the technician app (src_612c3d10e80b).",
+    "Organised acceptance rounds for four app releases at the training site with a rotating group of technicians, and kept the results per criterion in a shared sheet (src_ff1b266fb4ce).",
+    "Coordinated release scope with the engineering lead and the field‑service manager in the release planning meeting; the engineering lead decided scope and dates, and the field‑service manager approved the rollout order across regions (src_b798f0e05727).",
+    "Wrote up each app release for the regional trainers, flagging that parts‑scan only worked on the newer handheld model and listing the steps trainers had to take over (src_8afb40b08d3b)."
+   ],
+   "projectsAndWorkSamples": [
+    "Parts‑scan story set with acceptance criteria and the results sheet from one acceptance round; ticket numbers are included so entries can be traced (src_39de926268c5)."
+   ],
+   "skills": [
+    "Requirement gathering",
+    "User story writing",
+    "Acceptance testing",
+    "Release scope coordination",
+    "Documentation for trainers"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in requirement gathering, user story creation, acceptance testing, release scope coordination, and trainer hand‑over documentation. They do not establish any documented impact on average on‑site visit time."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Product Requirements Analyst, Equipment Maintenance Services",
+    "jobDescriptionSource": "jd_daca5aaa522bdada",
+    "requirementIds": [
+     "req_434696266007",
+     "req_21868f413339",
+     "req_a3ab32881ab6",
+     "req_33e7c7c8f403",
+     "req_120922e6707e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_7460e06b454eddf3",
+    "sources": [
+     "src_612c3d10e80b",
+     "src_ff1b266fb4ce",
+     "src_b798f0e05727",
+     "src_8afb40b08d3b",
+     "src_57d74efc1089",
+     "src_39de926268c5",
+     "src_20b13892d8ad",
+     "src_93f4d0425527"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_434696266007",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_612c3d10e80b",
+       "text": "Gathered requirements from field technicians and the depot team through ride‑alongs and depot visits, and wrote the user stories and acceptance criteria for the offline checklist and parts‑scan features of the technician app.",
+       "evidenceStrength": "high",
+       "notes": "Directly states requirement gathering and user story creation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_21868f413339",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ff1b266fb4ce",
+       "text": "Organised acceptance rounds for four app releases at the training site with a rotating group of technicians, and kept the results per criterion in a shared sheet.",
+       "evidenceStrength": "high",
+       "notes": "Directly states acceptance rounds and result tracking."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a3ab32881ab6",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_20b13892d8ad",
+       "text": "a slide from the candidate's portfolio deck says 'average visit time down 22 minutes after parts‑scan'; the slide has no source, period or region, and the candidate said in the screen that the number came from a regional manager's email he no longer has.",
+       "evidenceStrength": "low",
+       "notes": "Unverified claim, no documented baseline or measurement."
+      }
+     ],
+     "missingEvidence": [
+      "Documented measurement of average on‑site visit time before and after feature release, with source and period."
+     ]
+    },
+    {
+     "requirementId": "req_33e7c7c8f403",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b798f0e05727",
+       "text": "Coordinated release scope with the engineering lead and the field‑service manager in the release planning meeting; the engineering lead decided scope and dates, and the field‑service manager approved the rollout order across regions.",
+       "evidenceStrength": "high",
+       "notes": "Directly states scope coordination and decision ownership."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_120922e6707e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8afb40b08d3b",
+       "text": "Wrote up each app release for the regional trainers, flagging that parts‑scan only worked on the newer handheld model and listing the steps trainers had to take over.",
+       "evidenceStrength": "high",
+       "notes": "Directly states trainer hand‑over documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Analyst with two years on the service‑platform team, responsible for gathering requirements, writing user stories, conducting acceptance rounds, coordinating release scope, and preparing trainer hand‑over documentation.",
+     "supportingRequirementIds": [
+      "req_434696266007",
+      "req_21868f413339",
+      "req_33e7c7c8f403",
+      "req_120922e6707e"
+     ],
+     "sourceIds": [
+      "src_57d74efc1089"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Spent about two years on the service‑platform team as the analyst for the technician app: intake, stories, acceptance rounds and release write‑ups."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Average visit time decreased by 22 minutes after parts‑scan implementation.",
+     "reason": "No documented measurement or baseline provided; the claim is based on an unverified slide.",
+     "requiredFollowUp": "Request documented measurement of average on‑site visit time before and after the feature release, including source, period, and region."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_a3ab32881ab6",
+     "severity": "high",
+     "gap": "Documented measurement of average on‑site visit time before and after feature release, with source and period."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_a3ab32881ab6",
+     "question": "Can you provide the source, period, and region for the documented measurement that shows the average on‑site visit time before and after the parts‑scan feature release?",
+     "evidenceTarget": "Documented measurement of average on‑site visit time."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented experience matches the job requirements for requirement gathering, user story creation, acceptance testing, release scope coordination, and trainer hand‑over.  \nConfirm that no documented evidence exists for the impact on average on‑site visit time.  \nAssess the credibility of the unverified claim and determine if additional evidence can be obtained."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence for most of the role’s requirements, except for the requirement to demonstrate a measurable reduction in average on‑site visit time.  No documented measurement is available; the only reference is an unverified slide.  Human review is required to decide whether the lack of evidence for this critical metric is a disqualifying factor.",
+   "limitations": [
+    "Evidence is limited to the candidate’s resume, work sample, and a note from the hiring manager; no independent verification of the impact claim is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:41:27.600283+00:00"
+}

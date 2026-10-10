@@ -1,0 +1,126 @@
+{
+ "caseId": "96e97ce1-a5b3-4ee7-9af6-57e5c1c0fdbc",
+ "roleTitle": "Data Scientist, Demand Forecasting",
+ "jobDescription": "A soft-drinks manufacturer forecasts weekly demand for around 900 products across grocery, convenience and wholesale channels. The data scientist builds features for and validates the forecasting models in Python, maintains the feature pipelines, presents forecast accuracy to supply planning and documents models to the company's standard. The team wants someone who has owned a forecasting model across its lifecycle, deciding which model changes go ahead and leading the business sign-off with the planning managers. The analytics team of five reports to the head of supply planning and works from the company's Airflow and data-warehouse stack.",
+ "requirements": [
+  "Builds features for and validates demand-forecasting models in Python.",
+  "Maintains scheduled feature pipelines from sales and promotions data.",
+  "Has owned a forecasting model across its lifecycle, deciding model changes and leading the business sign-off.",
+  "Presents forecast-accuracy reviews to the supply-planning team.",
+  "Documents models to the company's model-documentation standard."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Data analyst, then data scientist, at Brightwater Beverages from January 2020 to April 2024, in a demand-planning analytics team of five."
+  },
+  {
+   "type": "resume",
+   "text": "Built the promotional-uplift features (discount depth, display flags, competitor promotions) for the weekly SKU-level forecasting model and kept them running as a scheduled Airflow pipeline."
+  },
+  {
+   "type": "resume",
+   "text": "Ran the monthly backtests of the gradient-boosted forecasting model and wrote up the results for the lead data scientist, who decided which model changes went forward."
+  },
+  {
+   "type": "resume",
+   "text": "Presented the monthly forecast-accuracy review to the supply-planning team, with bias and error broken down by product category and channel, and the actions agreed with the planners."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote the input-data and known-limitations sections of the forecasting model's model card, following the team's documentation template."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: a slide deck the candidate titled 'My year on the forecasting model'. Its closing slide, 'What people said', quotes the planning manager ('owned that model from first prototype to sign-off') and a teammate ('the brains behind every model decision'); the earlier slides list the model's input features."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: employment at Brightwater Beverages and the titles data analyst and data scientist were confirmed in writing by the employer's HR team."
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: the former lead data scientist confirmed in writing that between 2022 and 2024 the candidate built the promotional-uplift features and ran the monthly backtests for the SKU-level forecasting model."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate built the promotional-uplift features for the weekly SKU-level forecasting model and maintained them as a scheduled Airflow pipeline.",
+    "status": "supported",
+    "sources": [
+     2,
+     8
+    ],
+    "requirements": [
+     1,
+     2
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume states the work and the lead data scientist confirmed it in writing."
+   },
+   {
+    "text": "The candidate ran the monthly backtests of the forecasting model and reported the results to the lead data scientist, who decided which model changes went forward.",
+    "status": "supported",
+    "sources": [
+     3,
+     8
+    ],
+    "requirements": [
+     1,
+     3
+    ],
+    "boundaryCategory": "documented_participation_boundary",
+    "criticality": "noncritical",
+    "rationale": "The resume places the change decisions with the lead data scientist and the reference confirms the backtests."
+   },
+   {
+    "text": "The candidate owned the SKU-level forecasting model from prototype to business sign-off and decided its model changes.",
+    "status": "unsupported",
+    "sources": [],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "unsupported_ownership_and_scope",
+    "criticality": "critical",
+    "rationale": "Ownership appears only as praise quoted on a self-prepared slide, which is a subjective remark and not a record of decisions; the resume states that the lead data scientist decided the model changes."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "partial_evidence",
+   "supported",
+   "supported"
+  ],
+  "trap": {
+   "proposition": 3,
+   "rule": "hrgene.ownership_scope",
+   "requirements": [
+    3
+   ],
+   "signatures": [
+    "owned that model from first prototype",
+    "brains behind every model decision"
+   ],
+   "bait": [
+    6
+   ],
+   "anywhere": []
+  },
+  "subjective": [
+   6
+  ],
+  "nonProduction": [],
+  "expectedGap": "The sources document feature, backtest and reporting work on the model; deciding model changes and leading the business sign-off are not documented.",
+  "expectedBoundaryNote": "Keep the features, pipeline, backtests, accuracy reviews and model-card sections as stated; the quoted praise on the slide does not show who decided model changes.",
+  "followUpTargets": [
+   "Ask which model changes or sign-off steps the candidate decided personally, and what the lead data scientist decided."
+  ],
+  "validClaimSignatures": [
+   "promotional-uplift features",
+   "forecast-accuracy review"
+  ]
+ }
+}

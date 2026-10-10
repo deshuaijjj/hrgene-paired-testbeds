@@ -1,0 +1,37 @@
+{
+  "caseId": "6acd432d-101e-4637-9144-9b4bd50fbe9b",
+  "roleTitle": "Model Evaluation Engineer, Enterprise Knowledge Base",
+  "jobDescription": "The enterprise knowledge base product answers field-staff questions with a retrieval-augmented model. The Model Evaluation Engineer owns the evaluation programme end-to-end: defines the evaluation sets, sets the release bar, and has the final say on whether a model version ships, reporting directly to the head of product.",
+  "requirements": [
+    "Owns the evaluation programme end-to-end and has the final say on whether a model version ships.",
+    "Maintains the evaluation sets (question-answer pairs with source passages) and the scoring scripts.",
+    "Runs the pre-release evaluation for each version and publishes the report.",
+    "Coordinates evaluation changes with the model team and content team and records own responsibility boundaries.",
+    "Documents evaluation assumptions, known limitations and hand-over conditions for each version."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Maintained the evaluation sets of question-answer pairs with source passages (around 1,900 items across four content domains) and the scoring scripts that compute answer correctness and citation accuracy."},
+    {"type": "resume", "text": "Ran the pre-release evaluation for each of the five model versions released in the year and published the report with per-domain breakdowns to the model team and the head of product."},
+    {"type": "resume", "text": "Coordinated evaluation-set changes with the model team and the content team in the fortnightly quality review; ship or hold decisions for each version were taken by the head of product on the basis of the report and the model team's recommendation."},
+    {"type": "resume", "text": "Wrote the evaluation notes for each version, listing set composition, the known limitation that newly added content domains were under-sampled, and the hand-over items for the next evaluation."},
+    {"type": "resume", "text": "Responsibilities included evaluation-set maintenance, scoring scripts, pre-release evaluations and evaluation notes over about two years on the knowledge base quality team."},
+    {"type": "work_sample", "text": "Work sample: the scoring script repository README and the evaluation report for version 4.1, with the evaluation run identifiers as a verification trail."},
+    {"type": "note", "text": "Hiring manager pre-read: the candidate's portfolio site describes him as 'the gatekeeper for every model release' who 'set the bar and made the ship/no-ship call'; the head of product wants exactly that profile."},
+    {"type": "note", "text": "Recruiter screen: candidate said he 'had the final say in practice' because the head of product 'always went with my report'; he agreed the formal decision sat with the head of product."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate maintained the evaluation sets of around 1,900 question-answer pairs with source passages and the scoring scripts for correctness and citation accuracy.", "status": "supported", "sources": [1, 6], "requirements": [2], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume and the scoring script README document the sets and scripts."},
+      {"text": "The candidate ran the pre-release evaluation for five model versions and published reports with per-domain breakdowns.", "status": "supported", "sources": [2, 6], "requirements": [3], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume and the evaluation report document the evaluations."},
+      {"text": "The candidate owned the evaluation programme end-to-end and made the ship or no-ship call for each model version.", "status": "unsupported", "sources": [], "requirements": [1], "boundaryCategory": "unsupported_ownership_and_scope", "criticality": "critical", "rationale": "The resume and the candidate himself place the formal ship decision with the head of product; 'final say in practice' and the portfolio wording are claims about influence, not authority."}
+    ],
+    "requirementStatus": ["insufficient_evidence", "supported", "supported", "supported", "partial_evidence"],
+    "trap": {"proposition": 3, "rule": "hrgene.ownership_scope", "requirements": [1], "signatures": ["end-to-end", "final say", "gatekeeper", "ship/no-ship call", "made the ship", "set the bar"], "bait": [7, 8]},
+    "subjective": [],
+    "nonProduction": [],
+    "expectedGap": "The materials show evaluation sets, scripts and reports by the candidate; they do not show him holding the ship decision.",
+    "expectedBoundaryNote": "Keep the boundary the resume states: reports by the candidate, ship or hold decisions by the head of product; portfolio wording about gatekeeping is not evidence.",
+    "followUpTargets": ["Ask whether the candidate ever held formal ship authority for a version, and how the release bar was set and by whom."],
+    "validClaimSignatures": ["citation accuracy", "evaluation sets"]
+  }
+}

@@ -1,0 +1,244 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "de3de3f4-0ec0-4232-9157-6ae0fe7b96a8.C1",
+ "case_id": "de3de3f4-0ec0-4232-9157-6ae0fe7b96a8",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11203,
+  "promptWords": 1449
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.045
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2894,
+ "eval_count": 1857,
+ "prompt_eval_duration_ns": 18125000,
+ "eval_duration_ns": 32985468000,
+ "total_duration_ns": 42044001209,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. Provide evidenceBoundary sentence. Then hiringEvidencePacket with requirementEvidenceMap covering all requirementIds. Use status supported if evidence exists. For each requirement, list evidence with sourceId, text verbatim from source. Need to copy text from source. We have source texts in description. We'll use them.\n\nLet's craft.\n\nRequirement req_b0c7fb52f327: design load scenarios and collect metrics. Evidence src_178e207022e5. Provide text.\n\nRequirement req_7b0b77c4abb8: analyze latency distributions and bottlenecks and document findings. Evidence src_3b12d5e70fe8.\n\nRequirement req_029d56c223e4: provide structured performance sign-off inputs. Evidence src_e13bff4aa92c.\n\nRequirement req_b5303f78899e: coordinate test windows with lending ops. Evidence src_0829edd16e8d.\n\nRequirement req_63f9179c355f: document known limitations and hand-over conditions. Not directly in sources. We have no evidence. So status insufficient_evidence, missingEvidence: \"No source documents documentation of known limitations and hand-over conditions for each performance test cycle.\" Provide gap.\n\nAlso maybe partial evidence? but none. So insufficient.\n\nNow supportedClaims: list claims that are supported. For each claim, include supportingRequirementIds. Provide sourceIds.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: for req_63f9179c355f.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: for missing evidence: ask about documentation of limitations.\n\nHumanReviewChecklist: maybe \"Verify that candidate's responsibilities align with role requirements\" etc.\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence for limitation documentation\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_951badaf202e34b9\",\"targetRoleTitle\":\"Performance Engineer, Credit Monitoring Platform\",\"professionalSummary\":[\"Designed load scenarios for utilisation batch and early‑warning online queries using the team’s performance test platform, collecting CPU, memory and database wait metrics for each run. (src_178e207022e5)\",\"Analysed latency distributions for online queries, traced the p95 bottleneck to a missing index on the facility table, and documented findings in the release performance report. (src_3b12d5e70fe8)\",\"Provided structured performance sign‑off inputs for four releases, with release approval remaining with the platform manager. (src_e13bff4aa92c)\",\"Coordinated performance test windows with lending operations to avoid overlap with month‑end processing, recording agreed windows and responsibility for test data. (src_0829edd16e8d)\"],\"experienceHighlights\":[\"Designed load scenarios for utilisation batch and early‑warning online queries, collecting CPU, memory and database wait metrics. (src_178e207022e5)\",\"Analysed latency distributions and identified p95 bottleneck due to missing index. (src_3b12d5e70fe8)\",\"Provided structured sign‑off inputs for releases, with approval by platform manager. (src_e13bff4aa92c)\",\"Coordinated test windows with lending operations, recording responsibilities. (src_0829edd16e8d)\"],\"projectsAndWorkSamples\":[\"Performance report for one release, including scenarios, metrics, p95 analysis, open risks, and sign‑off checklist with platform manager approval note. (src_a1db05c24a0b)\"],\"skills\":[\"Load scenario design\",\"Latency distribution analysis\",\"Performance reporting\",\"Test window coordination\",\"Documentation of metrics\"],\"evidenceBoundary\":\"The provided resume and work sample documents the candidate’s design of load scenarios, analysis of latency bottlenecks, provision of structured sign‑off inputs, and coordination of test windows with lending operations. No evidence is provided for documentation of known limitations and hand‑over conditions for each performance test cycle.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Performance Engineer, Credit Monitoring Platform\",\"jobDescriptionSource\":\"jd_be3e7adf73fa9ef5\",\"requirementIds\":[\"req_b0c7fb52f327\",\"req_7b0b77c4abb8\",\"req_029d56c223e4\",\"req_b5303f78899e\",\"req_63f9179c355f\"]},\"candidate\":{\"candidateId\":\"cand_951badaf202e34b9\",\"sources\":[\"src_178e207022e5\",\"src_3b12d5e70fe8\",\"src_e13bff4aa92c\",\"src_0829edd16e8d\",\"src_82f0a20e62d8\",\"src_a1db05c24a0b\",\"src_7fc7f30f98ea\",\"src_b0d5899ab691\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_b0c7fb52f327\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_178e207022e5\",\"text\":\"Designed the load scenarios for the utilisation batch and the early‑warning online queries using the team's performance test platform, collecting CPU, memory and database wait metrics for each run.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of design and metric collection.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7b0b77c4abb8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3b12d5e70fe8\",\"text\":\"Analysed latency distributions for the online queries and traced the p95 bottleneck to a missing index on the facility table, documented in the release performance report with the before‑and‑after measurements.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct analysis and documentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_029d56c223e4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e13bff4aa92c\",\"text\":\"Provided the performance sign‑off inputs for four releases as a structured checklist (scenarios run, thresholds met, open risks); the release approval stayed with the platform manager, who used the inputs at the change advisory board.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct sign‑off input provision.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b5303f78899e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0829edd16e8d\",\"text\":\"Coordinated the performance test windows with lending operations so that batch runs did not overlap with month‑end processing, recording the agreed windows and my responsibility for the test data in the test plan.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct coordination and responsibility recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_63f9179c355f\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No source documents the candidate’s documentation of known limitations and hand‑over conditions for each performance test cycle.\"]}],\"supportedClaims\":[{\"claim\":\"Designed load scenarios for utilisation batch and early‑warning online queries, collecting CPU, memory and database wait metrics.\",\"supportingRequirementIds\":[\"req_b0c7fb52f327\"],\"sourceIds\":[\"src_178e207022e5\"],\"evidenceStrength\":\"high\",\"witness\":\"Designed the load scenarios for the utilisation batch and the early‑warning online queries using the team's performance test platform, collecting CPU, memory and database wait metrics for each run.\"},{\"claim\":\"Analysed latency distributions for online queries and identified a p95 bottleneck due to a missing index on the facility table.\",\"supportingRequirementIds\":[\"req_7b0b77c4abb8\"],\"sourceIds\":[\"src_3b12d5e70fe8\"],\"evidenceStrength\":\"high\",\"witness\":\"Analysed latency distributions for the online queries and traced the p95 bottleneck to a missing index on the facility table, documented in the release performance report with the before‑and‑after measurements.\"},{\"claim\":\"Provided structured performance sign‑off inputs for releases, with release approval remaining with the platform manager.\",\"supportingRequirementIds\":[\"req_029d56c223e4\"],\"sourceIds\":[\"src_e13bff4aa92c\"],\"evidenceStrength\":\"high\",\"witness\":\"Provided the performance sign‑off inputs for four releases as a structured checklist (scenarios run, thresholds met, open risks); the release approval stayed with the platform manager, who used the inputs at the change advisory board.\"},{\"claim\":\"Coordinated performance test windows with lending operations, recording agreed windows and responsibility for test data.\",\"supportingRequirementIds\":[\"req_b5303f78899e\"],\"sourceIds\":[\"src_0829edd16e8d\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated the performance test windows with lending operations so that batch runs did not overlap with month‑end processing, recording the agreed windows and my responsibility for the test data in the test plan.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_63f9179c355f\",\"requirementId\":\"req_63f9179c355f\",\"severity\":\"medium\",\"gap\":\"Documentation of known limitations and hand‑over conditions for each performance test cycle is not present in the provided sources.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_63f9179c355f\",\"requirementId\":\"req_63f9179c355f\",\"question\":\"Can you provide an example of documentation you produced that outlines known limitations and hand‑over conditions for a performance test cycle?\",\"evidenceTarget\":\"Documentation of limitations and hand‑over conditions.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s documented responsibilities align with each job requirement.\",\"Confirm that the candidate’s sign‑off inputs were used by the platform manager for release approval.\",\"Assess the completeness of the candidate’s documentation regarding test limitations and hand‑over conditions.\"],\"auditSummary\":\"The evidence supports the candidate’s experience in load scenario design, latency analysis, sign‑off input provision, and test window coordination. No evidence is available for documentation of known limitations and hand‑over conditions, which is a gap for the corresponding requirement. Qualified human review is required to evaluate the overall fit for the Performance Engineer role.\",\"limitations\":[\"Evidence for documentation of known limitations and hand‑over conditions is missing.\"]} }",
+ "content_sha256": "0838242c998e73eb9e93fe457e81a7d0f38e509d37fd6b26da0f80e766506238",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_951badaf202e34b9",
+   "targetRoleTitle": "Performance Engineer, Credit Monitoring Platform",
+   "professionalSummary": [
+    "Designed load scenarios for utilisation batch and early‑warning online queries using the team’s performance test platform, collecting CPU, memory and database wait metrics for each run. (src_178e207022e5)",
+    "Analysed latency distributions for online queries, traced the p95 bottleneck to a missing index on the facility table, and documented findings in the release performance report. (src_3b12d5e70fe8)",
+    "Provided structured performance sign‑off inputs for four releases, with release approval remaining with the platform manager. (src_e13bff4aa92c)",
+    "Coordinated performance test windows with lending operations to avoid overlap with month‑end processing, recording agreed windows and responsibility for test data. (src_0829edd16e8d)"
+   ],
+   "experienceHighlights": [
+    "Designed load scenarios for utilisation batch and early‑warning online queries, collecting CPU, memory and database wait metrics. (src_178e207022e5)",
+    "Analysed latency distributions and identified p95 bottleneck due to missing index. (src_3b12d5e70fe8)",
+    "Provided structured sign‑off inputs for releases, with approval by platform manager. (src_e13bff4aa92c)",
+    "Coordinated test windows with lending operations, recording responsibilities. (src_0829edd16e8d)"
+   ],
+   "projectsAndWorkSamples": [
+    "Performance report for one release, including scenarios, metrics, p95 analysis, open risks, and sign‑off checklist with platform manager approval note. (src_a1db05c24a0b)"
+   ],
+   "skills": [
+    "Load scenario design",
+    "Latency distribution analysis",
+    "Performance reporting",
+    "Test window coordination",
+    "Documentation of metrics"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents the candidate’s design of load scenarios, analysis of latency bottlenecks, provision of structured sign‑off inputs, and coordination of test windows with lending operations. No evidence is provided for documentation of known limitations and hand‑over conditions for each performance test cycle."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Performance Engineer, Credit Monitoring Platform",
+    "jobDescriptionSource": "jd_be3e7adf73fa9ef5",
+    "requirementIds": [
+     "req_b0c7fb52f327",
+     "req_7b0b77c4abb8",
+     "req_029d56c223e4",
+     "req_b5303f78899e",
+     "req_63f9179c355f"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_951badaf202e34b9",
+    "sources": [
+     "src_178e207022e5",
+     "src_3b12d5e70fe8",
+     "src_e13bff4aa92c",
+     "src_0829edd16e8d",
+     "src_82f0a20e62d8",
+     "src_a1db05c24a0b",
+     "src_7fc7f30f98ea",
+     "src_b0d5899ab691"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_b0c7fb52f327",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_178e207022e5",
+       "text": "Designed the load scenarios for the utilisation batch and the early‑warning online queries using the team's performance test platform, collecting CPU, memory and database wait metrics for each run.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of design and metric collection."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7b0b77c4abb8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3b12d5e70fe8",
+       "text": "Analysed latency distributions for the online queries and traced the p95 bottleneck to a missing index on the facility table, documented in the release performance report with the before‑and‑after measurements.",
+       "evidenceStrength": "high",
+       "notes": "Direct analysis and documentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_029d56c223e4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e13bff4aa92c",
+       "text": "Provided the performance sign‑off inputs for four releases as a structured checklist (scenarios run, thresholds met, open risks); the release approval stayed with the platform manager, who used the inputs at the change advisory board.",
+       "evidenceStrength": "high",
+       "notes": "Direct sign‑off input provision."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b5303f78899e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0829edd16e8d",
+       "text": "Coordinated the performance test windows with lending operations so that batch runs did not overlap with month‑end processing, recording the agreed windows and my responsibility for the test data in the test plan.",
+       "evidenceStrength": "high",
+       "notes": "Direct coordination and responsibility recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_63f9179c355f",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No source documents the candidate’s documentation of known limitations and hand‑over conditions for each performance test cycle."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed load scenarios for utilisation batch and early‑warning online queries, collecting CPU, memory and database wait metrics.",
+     "supportingRequirementIds": [
+      "req_b0c7fb52f327"
+     ],
+     "sourceIds": [
+      "src_178e207022e5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed the load scenarios for the utilisation batch and the early‑warning online queries using the team's performance test platform, collecting CPU, memory and database wait metrics for each run."
+    },
+    {
+     "claim": "Analysed latency distributions for online queries and identified a p95 bottleneck due to a missing index on the facility table.",
+     "supportingRequirementIds": [
+      "req_7b0b77c4abb8"
+     ],
+     "sourceIds": [
+      "src_3b12d5e70fe8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Analysed latency distributions for the online queries and traced the p95 bottleneck to a missing index on the facility table, documented in the release performance report with the before‑and‑after measurements."
+    },
+    {
+     "claim": "Provided structured performance sign‑off inputs for releases, with release approval remaining with the platform manager.",
+     "supportingRequirementIds": [
+      "req_029d56c223e4"
+     ],
+     "sourceIds": [
+      "src_e13bff4aa92c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Provided the performance sign‑off inputs for four releases as a structured checklist (scenarios run, thresholds met, open risks); the release approval stayed with the platform manager, who used the inputs at the change advisory board."
+    },
+    {
+     "claim": "Coordinated performance test windows with lending operations, recording agreed windows and responsibility for test data.",
+     "supportingRequirementIds": [
+      "req_b5303f78899e"
+     ],
+     "sourceIds": [
+      "src_0829edd16e8d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated the performance test windows with lending operations so that batch runs did not overlap with month‑end processing, recording the agreed windows and my responsibility for the test data in the test plan."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_63f9179c355f",
+     "requirementId": "req_63f9179c355f",
+     "severity": "medium",
+     "gap": "Documentation of known limitations and hand‑over conditions for each performance test cycle is not present in the provided sources."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_63f9179c355f",
+     "requirementId": "req_63f9179c355f",
+     "question": "Can you provide an example of documentation you produced that outlines known limitations and hand‑over conditions for a performance test cycle?",
+     "evidenceTarget": "Documentation of limitations and hand‑over conditions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented responsibilities align with each job requirement.",
+    "Confirm that the candidate’s sign‑off inputs were used by the platform manager for release approval.",
+    "Assess the completeness of the candidate’s documentation regarding test limitations and hand‑over conditions."
+   ],
+   "auditSummary": "The evidence supports the candidate’s experience in load scenario design, latency analysis, sign‑off input provision, and test window coordination. No evidence is available for documentation of known limitations and hand‑over conditions, which is a gap for the corresponding requirement. Qualified human review is required to evaluate the overall fit for the Performance Engineer role.",
+   "limitations": [
+    "Evidence for documentation of known limitations and hand‑over conditions is missing."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:29:31.443106+00:00"
+}

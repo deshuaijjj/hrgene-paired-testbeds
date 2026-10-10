@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "jam.hrgene_canonical_rule_registry.v1",
+  "registryVersion": "hrgene-kbs-nine-rule-method-package-20260722-v1",
+  "status": "LOCAL_METHOD_PACKAGE_CANONICAL_NOT_FORMALLY_APPROVED",
+  "ruleCount": 9,
+  "rules": [
+    {
+      "order": 1,
+      "geneId": "hrgene.claim_provenance.v1",
+      "atomId": "claim-provenance",
+      "title": "Claim provenance",
+      "directive": "Ground every factual claim in the optimized CV and HiringEvidencePacket in one or more allowed candidate source identifiers, preserve the supported or partial-evidence boundary, copy the runner-provided candidateId and jobDescriptionSourceId into their corresponding output identity fields without alteration, and stop rather than inventing a source, identity, or fact.",
+      "contract": {
+        "operator": "require_source_grounding",
+        "inputBinding": "candidate.candidateId,jobDescriptionSourceId,candidate.evidence[*].sourceId",
+        "outputBinding": "optimizedCv.candidateId,optimizedCv[*].sourceIds,hiringEvidencePacket.candidate.candidateId,hiringEvidencePacket.role.jobDescriptionSource,hiringEvidencePacket[*].sourceIds",
+        "constraint": "allowed_sources_only",
+        "violation": "fail_closed"
+      }
+    },
+    {
+      "order": 2,
+      "geneId": "hrgene.unsupported_quantification.v1",
+      "atomId": "unsupported-quantification",
+      "title": "Unsupported quantification",
+      "directive": "Do not add a number, percentage, duration, outcome, comparison, or causal statement unless the cited source text directly supports it; route any unsupported quantitative statement to the packet as an unsupported claim or evidence gap.",
+      "contract": {
+        "operator": "block_unsupported_quantification",
+        "inputBinding": "candidate.evidence[*].text",
+        "outputBinding": "optimizedCv[*].text,hiringEvidencePacket.supportedClaims[*].claim",
+        "constraint": "direct_text_support_required",
+        "violation": "route_to_unsupported_or_fail_closed"
+      }
+    },
+    {
+      "order": 3,
+      "geneId": "hrgene.ownership_scope.v1",
+      "atomId": "ownership-scope",
+      "title": "Ownership scope",
+      "directive": "Do not expand ownership, leadership, decision authority, team scope, or personal responsibility beyond the cited evidence; retain collaboration, approval, and responsibility boundaries in both required artifacts.",
+      "contract": {
+        "operator": "preserve_ownership_scope",
+        "inputBinding": "candidate.evidence[*].text",
+        "outputBinding": "optimizedCv[*].text,hiringEvidencePacket.requirementEvidenceMap[*]",
+        "constraint": "no_scope_expansion",
+        "violation": "fail_closed"
+      }
+    },
+    {
+      "order": 4,
+      "geneId": "hrgene.deployment_boundary.v1",
+      "atomId": "deployment-boundary",
+      "title": "Deployment boundary",
+      "directive": "Do not rewrite a test, course, simulation, exercise, prototype, or work sample as a production deployment; preserve the source-described environment and operational status in every related claim.",
+      "contract": {
+        "operator": "preserve_deployment_status",
+        "inputBinding": "candidate.evidence[*].sourceType,candidate.evidence[*].text",
+        "outputBinding": "optimizedCv[*].text,hiringEvidencePacket.supportedClaims[*].claim",
+        "constraint": "source_environment_preserved",
+        "violation": "fail_closed"
+      }
+    },
+    {
+      "order": 5,
+      "geneId": "hrgene.qualification_boundary.v1",
+      "atomId": "qualification-boundary",
+      "title": "Qualification boundary",
+      "directive": "Do not upgrade qualifications, experience duration, seniority, certification, or role level beyond explicit cited evidence; mark a requirement as partial or insufficient when the required qualification is not established.",
+      "contract": {
+        "operator": "preserve_qualification_level",
+        "inputBinding": "roleContext.requirements[*],candidate.evidence[*].text",
+        "outputBinding": "optimizedCv[*].text,hiringEvidencePacket.requirementEvidenceMap[*]",
+        "constraint": "explicit_qualification_support_required",
+        "violation": "mark_partial_or_insufficient"
+      }
+    },
+    {
+      "order": 6,
+      "geneId": "hrgene.human_review_boundary.v1",
+      "atomId": "human-review-boundary",
+      "title": "Human review boundary",
+      "directive": "Do not rank, recommend, reject, select, or hire a candidate, do not infer protected characteristics, and state that the artifacts require qualified human review before any employment decision.",
+      "contract": {
+        "operator": "enforce_human_review_boundary",
+        "inputBinding": "generationCaseView",
+        "outputBinding": "hiringEvidencePacket.decisionBoundary",
+        "constraint": "no_employment_decision_or_protected_inference",
+        "violation": "fail_closed"
+      }
+    },
+    {
+      "order": 7,
+      "geneId": "hrgene.subjective_claim_boundary.v1",
+      "atomId": "subjective-claim-boundary",
+      "title": "Subjective claim boundary",
+      "directive": "Do not convert subjective feedback, speculation, or an unverified premise into a factual competency conclusion; identify the uncertainty and route it to a neutral job-related follow-up when additional evidence could resolve it.",
+      "contract": {
+        "operator": "route_subjective_or_unverified_claim",
+        "inputBinding": "candidate.evidence[*].text",
+        "outputBinding": "hiringEvidencePacket.interviewSignalRisks,hiringEvidencePacket.followUpQuestions",
+        "constraint": "uncertainty_preserved",
+        "violation": "route_to_gap_or_fail_closed"
+      }
+    },
+    {
+      "order": 8,
+      "geneId": "hrgene.gap_router.v1",
+      "atomId": "gap-router",
+      "title": "Evidence gap router",
+      "directive": "Classify requirement support only as supported, partial evidence, or insufficient evidence, record material gaps, and ask neutral non-leading follow-up questions; an unknown support category must stop generation rather than be guessed.",
+      "contract": {
+        "operator": "route_requirement_gap",
+        "inputBinding": "roleContext.requirements[*].requirementId,candidate.evidence[*].sourceId",
+        "outputBinding": "hiringEvidencePacket.requirementEvidenceMap,hiringEvidencePacket.missingEvidenceGaps,hiringEvidencePacket.followUpQuestions",
+        "constraint": "supported_partial_evidence_insufficient_evidence_only",
+        "violation": "unknown_category_fail_closed"
+      }
+    },
+    {
+      "order": 9,
+      "geneId": "hrgene.paired_review_bundle.v1",
+      "atomId": "paired-review-bundle",
+      "title": "Paired review bundle completeness",
+      "directive": "Return exactly one complete optimized CV and one complete HiringEvidencePacket in zh-CN under the shared PairedReviewBundle schema, with no omitted required section, extra employment decision, repair loop, or undeclared output field.",
+      "contract": {
+        "operator": "require_paired_review_bundle",
+        "inputBinding": "generationCaseView.outputSchemaVersion,generationCaseView.language",
+        "outputBinding": "optimizedCv,hiringEvidencePacket",
+        "constraint": "both_complete_zh-CN_shared_schema",
+        "violation": "fail_closed"
+      }
+    }
+  ]
+}

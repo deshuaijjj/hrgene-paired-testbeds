@@ -1,0 +1,221 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "93e54be0-857d-4ef7-9ca0-c848dd773fc7.C2",
+ "case_id": "93e54be0-857d-4ef7-9ca0-c848dd773fc7",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14739,
+  "promptWords": 1779
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 39.375
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4150,
+ "eval_count": 1497,
+ "prompt_eval_duration_ns": 19196000,
+ "eval_duration_ns": 27159301000,
+ "total_duration_ns": 39373065583,
+ "thinking": "We need to produce JSON with schema. Must cite sources. All claims must have source. No unsupported claims. All requirements mapped. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Experienced Technical Program Manager with proven track record in managing bi-weekly release calendars, reducing merge-to-release lead time, and coordinating security fast-track processes.\" Need source: src_1588eb2e5f59, src_1033dfa3a08b, src_dcb027463fa7. Provide claimId? Not needed in CV. Just statements.\n\nexperienceHighlights: list claims with sources.\n\nprojectsAndWorkSamples: mention Q3 2023 release review deck.\n\nskills: list: Release Engineering, Program Management, Cross-team Coordination, Security Fast-Track, PMP Certified.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample documents establish the candidate’s experience managing release calendars, tracking dependencies, reducing lead time, coordinating security fixes, and holding a PMP certification.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Human review required to assess fit and remaining gaps.\"\n\nrole: roleTitle same, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_af5b51d436c5: Runs recurring release calendar and go/no-go. Evidence: src_1588eb2e5f59. status supported. missingEvidence none.\n\nreq_7827119477a1: Tracks cross-team dependencies and escalates blocked work. Evidence: src_b8ce0bfe9d0f. status supported.\n\nreq_2689129e6ae2: Shows measured reduction in merge-to-release lead time. Evidence: src_1033dfa3a08b. status supported.\n\nreq_5ebe0e76522d: Coordinates security-fix fast-track process and reports its use. Evidence: src_dcb027463fa7. status supported.\n\nreq_06873b3c2860: Holds a project management certification such as PMP. Evidence: src_bbe1d76992e2 and src_af6a7f772aa8. status supported.\n\nsupportedClaims: list each claim with supportingRequirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note about recruiter logistics note? It's not subjective. It's logistics. No risk.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe items: \"Verify that release calendar is bi-weekly\", \"Confirm security fast-track approval process\", \"Confirm PMP certification validity\".\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"No evidence of direct production deployment responsibility\" but not required.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_2ef69ef0d7f28df7\",\"targetRoleTitle\":\"Technical Program Manager, Release Engineering\",\"professionalSummary\":[\"Experienced Technical Program Manager with a proven track record in managing bi‑weekly release calendars, reducing merge‑to‑release lead time, and coordinating security fast‑track processes.\"],\"experienceHighlights\":[\"Ran the fortnightly release calendar for the database product at Corvid Data and chaired the go/no‑go meeting with the leads of the storage, query and console teams.\",\"Kept the dependency board for the three teams and raised blocked items at the weekly engineering directors' sync.\",\"Introduced a merge‑freeze checklist and an automatically drafted set of release notes; median merge‑to‑release lead time in the release tracker went from 19 days in Q1 2023 to 11 days in Q3 2023.\",\"Agreed a fast‑track route with the security team so that critical fixes could ship outside the train once the security lead approved them.\",\"Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022.\"],\"projectsAndWorkSamples\":[\"Q3 2023 release review deck, including a per‑release chart of median merge‑to‑release lead time (Q1 2023 median 19 days, Q3 2023 median 11 days) and a method slide defining lead time from merge commit to tagged release.\"],\"skills\":[\"Release Engineering\",\"Program Management\",\"Cross‑team Coordination\",\"Security Fast‑Track\",\"PMP Certified\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s experience managing release calendars, tracking dependencies, reducing lead time, coordinating security fixes, and holding a PMP certification.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit and remaining gaps.\"},\"role\":{\"roleTitle\":\"Technical Program Manager, Release Engineering\",\"jobDescriptionSource\":\"jd_78b569a20258a60d\",\"requirementIds\":[\"req_af5b51d436c5\",\"req_7827119477a1\",\"req_2689129e6ae2\",\"req_5ebe0e76522d\",\"req_06873b3c2860\"]},\"candidate\":{\"candidateId\":\"cand_2ef69ef0d7f28df7\",\"sources\":[\"src_1588eb2e5f59\",\"src_b8ce0bfe9d0f\",\"src_1033dfa3a08b\",\"src_dcb027463fa7\",\"src_bbe1d76992e2\",\"src_af6a7f772aa8\",\"src_82b6dc4c3acf\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_af5b51d436c5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1588eb2e5f59\",\"text\":\"Ran the fortnightly release calendar for the database product at Corvid Data and chaired the go/no‑go meeting with the leads of the storage, query and console teams.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly establishes recurring release calendar and go/no‑go meetings.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7827119477a1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b8ce0bfe9d0f\",\"text\":\"Kept the dependency board for the three teams and raised blocked items at the weekly engineering directors' sync.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows cross‑team dependency tracking and escalation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_2689129e6ae2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1033dfa3a08b\",\"text\":\"Introduced a merge‑freeze checklist and an automatically drafted set of release notes; median merge‑to‑release lead time in the release tracker went from 19 days in Q1 2023 to 11 days in Q3 2023.\",\"evidenceStrength\":\"high\",\"notes\":\"Provides measured reduction against baseline.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5ebe0e76522d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_dcb027463fa7\",\"text\":\"Agreed a fast‑track route with the security team so that critical fixes could ship outside the train once the security lead approved them.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows coordination of security‑fix fast‑track process.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_06873b3c2860\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_bbe1d76992e2\",\"text\":\"Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022.\",\"evidenceStrength\":\"high\",\"notes\":\"Certifies PMP credential.\"},{\"sourceId\":\"src_af6a7f772aa8\",\"text\":\"HR verification note: the candidate's PMP certificate was looked up on the Project Management Institute's online certification registry; it is listed as active, with renewal due in March 2027.\",\"evidenceStrength\":\"medium\",\"notes\":\"Verifies active status.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Experienced Technical Program Manager with a proven track record in managing bi‑weekly release calendars, reducing merge‑to‑release lead time, and coordinating security fast‑track processes.\",\"supportingRequirementIds\":[\"req_af5b51d436c5\",\"req_2689129e6ae2\",\"req_5ebe0e76522d\"],\"sourceIds\":[\"src_1588eb2e5f59\",\"src_1033dfa3a08b\",\"src_dcb027463fa7\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the fortnightly release calendar for the database product at Corvid Data and chaired the go/no‑go meeting with the leads of the storage, query and console teams.\"},{\"claim\":\"Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022.\",\"supportingRequirementIds\":[\"req_06873b3c2860\"],\"sourceIds\":[\"src_bbe1d76992e2\"],\"evidenceStrength\":\"high\",\"witness\":\"Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the release calendar is indeed bi‑weekly and includes all relevant teams.\",\"Confirm the security fast‑track approval process and its integration with the release train.\",\"Confirm the current validity and renewal status of the PMP certification.\"],\"auditSummary\":\"All job requirements are supported by evidence from the candidate’s resume and work sample. The evidence demonstrates recurring release calendar management, cross‑team dependency tracking, measurable lead‑time reduction, security fast‑track coordination, and possession of a PMP certification. No gaps or unsupported claims were identified.\",\"limitations\":[\"None identified.\"]}}",
+ "content_sha256": "4604b3367290e8bac3b05172352fb2a5d45cd7e4e063547ac5b3e46ee166b85b",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2ef69ef0d7f28df7",
+   "targetRoleTitle": "Technical Program Manager, Release Engineering",
+   "professionalSummary": [
+    "Experienced Technical Program Manager with a proven track record in managing bi‑weekly release calendars, reducing merge‑to‑release lead time, and coordinating security fast‑track processes."
+   ],
+   "experienceHighlights": [
+    "Ran the fortnightly release calendar for the database product at Corvid Data and chaired the go/no‑go meeting with the leads of the storage, query and console teams.",
+    "Kept the dependency board for the three teams and raised blocked items at the weekly engineering directors' sync.",
+    "Introduced a merge‑freeze checklist and an automatically drafted set of release notes; median merge‑to‑release lead time in the release tracker went from 19 days in Q1 2023 to 11 days in Q3 2023.",
+    "Agreed a fast‑track route with the security team so that critical fixes could ship outside the train once the security lead approved them.",
+    "Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022."
+   ],
+   "projectsAndWorkSamples": [
+    "Q3 2023 release review deck, including a per‑release chart of median merge‑to‑release lead time (Q1 2023 median 19 days, Q3 2023 median 11 days) and a method slide defining lead time from merge commit to tagged release."
+   ],
+   "skills": [
+    "Release Engineering",
+    "Program Management",
+    "Cross‑team Coordination",
+    "Security Fast‑Track",
+    "PMP Certified"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience managing release calendars, tracking dependencies, reducing lead time, coordinating security fixes, and holding a PMP certification."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit and remaining gaps."
+   },
+   "role": {
+    "roleTitle": "Technical Program Manager, Release Engineering",
+    "jobDescriptionSource": "jd_78b569a20258a60d",
+    "requirementIds": [
+     "req_af5b51d436c5",
+     "req_7827119477a1",
+     "req_2689129e6ae2",
+     "req_5ebe0e76522d",
+     "req_06873b3c2860"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2ef69ef0d7f28df7",
+    "sources": [
+     "src_1588eb2e5f59",
+     "src_b8ce0bfe9d0f",
+     "src_1033dfa3a08b",
+     "src_dcb027463fa7",
+     "src_bbe1d76992e2",
+     "src_af6a7f772aa8",
+     "src_82b6dc4c3acf"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_af5b51d436c5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1588eb2e5f59",
+       "text": "Ran the fortnightly release calendar for the database product at Corvid Data and chaired the go/no‑go meeting with the leads of the storage, query and console teams.",
+       "evidenceStrength": "high",
+       "notes": "Directly establishes recurring release calendar and go/no‑go meetings."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7827119477a1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b8ce0bfe9d0f",
+       "text": "Kept the dependency board for the three teams and raised blocked items at the weekly engineering directors' sync.",
+       "evidenceStrength": "high",
+       "notes": "Shows cross‑team dependency tracking and escalation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2689129e6ae2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1033dfa3a08b",
+       "text": "Introduced a merge‑freeze checklist and an automatically drafted set of release notes; median merge‑to‑release lead time in the release tracker went from 19 days in Q1 2023 to 11 days in Q3 2023.",
+       "evidenceStrength": "high",
+       "notes": "Provides measured reduction against baseline."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5ebe0e76522d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_dcb027463fa7",
+       "text": "Agreed a fast‑track route with the security team so that critical fixes could ship outside the train once the security lead approved them.",
+       "evidenceStrength": "high",
+       "notes": "Shows coordination of security‑fix fast‑track process."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_06873b3c2860",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bbe1d76992e2",
+       "text": "Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022.",
+       "evidenceStrength": "high",
+       "notes": "Certifies PMP credential."
+      },
+      {
+       "sourceId": "src_af6a7f772aa8",
+       "text": "HR verification note: the candidate's PMP certificate was looked up on the Project Management Institute's online certification registry; it is listed as active, with renewal due in March 2027.",
+       "evidenceStrength": "medium",
+       "notes": "Verifies active status."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Experienced Technical Program Manager with a proven track record in managing bi‑weekly release calendars, reducing merge‑to‑release lead time, and coordinating security fast‑track processes.",
+     "supportingRequirementIds": [
+      "req_af5b51d436c5",
+      "req_2689129e6ae2",
+      "req_5ebe0e76522d"
+     ],
+     "sourceIds": [
+      "src_1588eb2e5f59",
+      "src_1033dfa3a08b",
+      "src_dcb027463fa7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the fortnightly release calendar for the database product at Corvid Data and chaired the go/no‑go meeting with the leads of the storage, query and console teams."
+    },
+    {
+     "claim": "Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022.",
+     "supportingRequirementIds": [
+      "req_06873b3c2860"
+     ],
+     "sourceIds": [
+      "src_bbe1d76992e2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Earned the Project Management Professional (PMP) certification from the Project Management Institute in 2022."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the release calendar is indeed bi‑weekly and includes all relevant teams.",
+    "Confirm the security fast‑track approval process and its integration with the release train.",
+    "Confirm the current validity and renewal status of the PMP certification."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume and work sample. The evidence demonstrates recurring release calendar management, cross‑team dependency tracking, measurable lead‑time reduction, security fast‑track coordination, and possession of a PMP certification. No gaps or unsupported claims were identified.",
+   "limitations": [
+    "None identified."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:06:57.541988+00:00"
+}

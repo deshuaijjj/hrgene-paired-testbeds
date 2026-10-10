@@ -1,0 +1,256 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "8e22f750-6bce-4270-96e9-631e2e174d16.C2",
+ "case_id": "8e22f750-6bce-4270-96e9-631e2e174d16",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 13967,
+  "promptWords": 1631
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 41.644
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3859,
+ "eval_count": 1704,
+ "prompt_eval_duration_ns": 19016000,
+ "eval_duration_ns": 30844023000,
+ "total_duration_ns": 41642264917,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's map requirements.\n\nreq_cc1f8b12d382: order-state handling partial fills cancellations. Source src_2a0682d500b4 and src_4d7c33f6d0b5. Also src_2a0682d500b4 covers partial fills, cancel-replace, end-of-day expiry. So supported.\n\nreq_5f50313fc823: contract tests for internal routing APIs. src_769158fbfd07. Supported.\n\nreq_35ef8911067d: recognized Java certification or equivalent documented expertise in Java 17. src_9faf54dd8857 provides Oracle Certified Professional Java SE 17 Developer certificate. Also src_c974a8093482 shows moved to Java 17. So supported.\n\nreq_b095dc4ea456: produces data extracts for annual best-execution review. src_d57a66cd6cd2. Supported.\n\nreq_ab2d21b6c6ba: resolves FIX session issues with exchange-connectivity team. src_926af3202b55. Supported.\n\nAll requirements supported. No gaps.\n\nWe need optimizedCv: language en, candidateId, targetRoleTitle. professionalSummary: claims summarizing. Use claims from sources. Provide witness verbatim.\n\nexperienceHighlights: claims from sources.\n\nprojectsAndWorkSamples: claim about pull request.\n\nskills: Java 17, order-state machine, contract testing, data extraction, FIX.\n\nevidenceBoundary: one sentence about what materials establish.\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence array with sourceId, text, evidenceStrength high, notes.\n\nsupportedClaims: list claims with supportingRequirementIds, sourceIds, evidenceStrength high, witness.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Review candidate's fit with team culture and workload.\" but must be relevant. Could include \"Confirm candidate's availability for weekly releases.\" but not required. We can leave empty array.\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"No evidence of experience with weekly release cadence.\" but we have weekly releases in JD but not evidence. So mention limitation.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_e44c084fe5e8405e\",\"targetRoleTitle\":\"Software Engineer, Order Management (Brokerage)\",\"professionalSummary\":[\"Developed a robust order‑state machine for equities order‑management, handling partial fills, cancel‑replace requests and end‑of‑day expiry.\",\"Authored Pact contract tests for the routing API, ensuring contract compliance on every merge.\",\"Produced annual best‑execution data extracts for 2023 and 2024, reconciling counts with compliance figures.\",\"Migrated the service from Java 11 to Java 17, updating date handling and garbage‑collector settings after load tests.\",\"Diagnosed and resolved FIX session drops in collaboration with the exchange‑connectivity team.\"],\"experienceHighlights\":[\"Order‑state machine development covering partial fills and cancellations (src_2a0682d500b4).\",\"Pact contract tests for routing APIs (src_769158fbfd07).\",\"Annual best‑execution data extracts (src_d57a66cd6cd2).\",\"Java 17 migration (src_c974a8093482).\",\"FIX session issue resolution (src_926af3202b55).\"],\"projectsAndWorkSamples\":[\"Pull request adding cancel‑replace handling to the order‑state machine, including state diagram, unit tests, and reviewer approval (src_4d7c33f6d0b5).\"],\"skills\":[\"Java 17\",\"Order‑state machine design\",\"Contract testing (Pact)\",\"Data extraction\",\"FIX protocol troubleshooting\"],\"evidenceBoundary\":\"The provided resume, work sample, and verification notes establish the candidate’s experience and certifications relevant to the role.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit.\"},\"role\":{\"roleTitle\":\"Software Engineer, Order Management (Brokerage)\",\"jobDescriptionSource\":\"jd_eb3bdb5dd1901762\",\"requirementIds\":[\"req_cc1f8b12d382\",\"req_5f50313fc823\",\"req_35ef8911067d\",\"req_b095dc4ea456\",\"req_ab2d21b6c6ba\"]},\"candidate\":{\"candidateId\":\"cand_e44c084fe5e8405e\",\"sources\":[\"src_2a0682d500b4\",\"src_769158fbfd07\",\"src_d57a66cd6cd2\",\"src_c974a8093482\",\"src_926af3202b55\",\"src_4d7c33f6d0b5\",\"src_9faf54dd8857\",\"src_6444735c34f5\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_cc1f8b12d382\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2a0682d500b4\",\"text\":\"Developed the order‑state machine for the equities order‑management service at Penhallow Invest, covering partial fills, cancel‑replace requests and end‑of‑day expiry.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly addresses order‑state handling for partial fills and cancellations.\"},{\"sourceId\":\"src_4d7c33f6d0b5\",\"text\":\"Work sample: a pull request adding cancel‑replace handling to the order‑state machine, with a state diagram, unit tests for each transition and the reviewer's approval.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates implementation of cancel‑replace logic.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5f50313fc823\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_769158fbfd07\",\"text\":\"Wrote Pact contract tests between the order‑management service and the smart order router, run on every merge to either service.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows contract testing for internal routing APIs.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_35ef8911067d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9faf54dd8857\",\"text\":\"Recruiter verification: the candidate's Oracle Certified Professional, Java SE 17 Developer certificate was checked on Oracle's CertView service and is listed against the candidate's name with a 2024 award date.\",\"evidenceStrength\":\"high\",\"notes\":\"Provides recognized Java certification.\"},{\"sourceId\":\"src_c974a8093482\",\"text\":\"Moved the order‑management service from Java 11 to Java 17, replacing the date‑handling library and updating the garbage‑collector settings after load tests.\",\"evidenceStrength\":\"medium\",\"notes\":\"Demonstrates practical Java 17 expertise.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b095dc4ea456\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d57a66cd6cd2\",\"text\":\"Produced the order and execution data extracts for the annual best‑execution review in 2023 and 2024, reconciling counts with the compliance team's figures before submission.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches data extract requirement.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ab2d21b6c6ba\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_926af3202b55\",\"text\":\"Joined calls with the exchange‑connectivity team to diagnose FIX session drops.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows collaboration on FIX session issues.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Developed a robust order‑state machine handling partial fills and cancellations.\",\"supportingRequirementIds\":[\"req_cc1f8b12d382\"],\"sourceIds\":[\"src_2a0682d500b4\"],\"evidenceStrength\":\"high\",\"witness\":\"Developed the order‑state machine for the equities order‑management service at Penhallow Invest, covering partial fills, cancel‑replace requests and end‑of‑day expiry.\"},{\"claim\":\"Authored Pact contract tests for routing APIs.\",\"supportingRequirementIds\":[\"req_5f50313fc823\"],\"sourceIds\":[\"src_769158fbfd07\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote Pact contract tests between the order‑management service and the smart order router, run on every merge to either service.\"},{\"claim\":\"Held Oracle Certified Professional, Java SE 17 Developer certification.\",\"supportingRequirementIds\":[\"req_35ef8911067d\"],\"sourceIds\":[\"src_9faf54dd8857\"],\"evidenceStrength\":\"high\",\"witness\":\"Recruiter verification: the candidate's Oracle Certified Professional, Java SE 17 Developer certificate was checked on Oracle's CertView service and is listed against the candidate's name with a 2024 award date.\"},{\"claim\":\"Produced annual best‑execution data extracts for 2023 and 2024.\",\"supportingRequirementIds\":[\"req_b095dc4ea456\"],\"sourceIds\":[\"src_d57a66cd6cd2\"],\"evidenceStrength\":\"high\",\"witness\":\"Produced the order and execution data extracts for the annual best‑execution review in 2023 and 2024, reconciling counts with the compliance team's figures before submission.\"},{\"claim\":\"Resolved FIX session drops with the exchange‑connectivity team.\",\"supportingRequirementIds\":[\"req_ab2d21b6c6ba\"],\"sourceIds\":[\"src_926af3202b55\"],\"evidenceStrength\":\"high\",\"witness\":\"Joined calls with the exchange‑connectivity team to diagnose FIX session drops.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[],\"auditSummary\":\"All five role requirements are supported by verifiable evidence from the candidate’s resume, work sample, and verification notes. The evidence demonstrates experience with Java 17, order‑state management, contract testing, data extraction, and FIX protocol troubleshooting. No gaps or unsupported claims were identified.\",\"limitations\":[\"No evidence provided regarding the candidate’s experience with weekly release cadence or interaction with the compliance team beyond data extraction.\"]}}",
+ "content_sha256": "3c62ba72b90c3aa581b49561c80f722bcd13d1e17467401542ecb36179e0901d",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_e44c084fe5e8405e",
+   "targetRoleTitle": "Software Engineer, Order Management (Brokerage)",
+   "professionalSummary": [
+    "Developed a robust order‑state machine for equities order‑management, handling partial fills, cancel‑replace requests and end‑of‑day expiry.",
+    "Authored Pact contract tests for the routing API, ensuring contract compliance on every merge.",
+    "Produced annual best‑execution data extracts for 2023 and 2024, reconciling counts with compliance figures.",
+    "Migrated the service from Java 11 to Java 17, updating date handling and garbage‑collector settings after load tests.",
+    "Diagnosed and resolved FIX session drops in collaboration with the exchange‑connectivity team."
+   ],
+   "experienceHighlights": [
+    "Order‑state machine development covering partial fills and cancellations (src_2a0682d500b4).",
+    "Pact contract tests for routing APIs (src_769158fbfd07).",
+    "Annual best‑execution data extracts (src_d57a66cd6cd2).",
+    "Java 17 migration (src_c974a8093482).",
+    "FIX session issue resolution (src_926af3202b55)."
+   ],
+   "projectsAndWorkSamples": [
+    "Pull request adding cancel‑replace handling to the order‑state machine, including state diagram, unit tests, and reviewer approval (src_4d7c33f6d0b5)."
+   ],
+   "skills": [
+    "Java 17",
+    "Order‑state machine design",
+    "Contract testing (Pact)",
+    "Data extraction",
+    "FIX protocol troubleshooting"
+   ],
+   "evidenceBoundary": "The provided resume, work sample, and verification notes establish the candidate’s experience and certifications relevant to the role."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Order Management (Brokerage)",
+    "jobDescriptionSource": "jd_eb3bdb5dd1901762",
+    "requirementIds": [
+     "req_cc1f8b12d382",
+     "req_5f50313fc823",
+     "req_35ef8911067d",
+     "req_b095dc4ea456",
+     "req_ab2d21b6c6ba"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_e44c084fe5e8405e",
+    "sources": [
+     "src_2a0682d500b4",
+     "src_769158fbfd07",
+     "src_d57a66cd6cd2",
+     "src_c974a8093482",
+     "src_926af3202b55",
+     "src_4d7c33f6d0b5",
+     "src_9faf54dd8857",
+     "src_6444735c34f5"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_cc1f8b12d382",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2a0682d500b4",
+       "text": "Developed the order‑state machine for the equities order‑management service at Penhallow Invest, covering partial fills, cancel‑replace requests and end‑of‑day expiry.",
+       "evidenceStrength": "high",
+       "notes": "Directly addresses order‑state handling for partial fills and cancellations."
+      },
+      {
+       "sourceId": "src_4d7c33f6d0b5",
+       "text": "Work sample: a pull request adding cancel‑replace handling to the order‑state machine, with a state diagram, unit tests for each transition and the reviewer's approval.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates implementation of cancel‑replace logic."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5f50313fc823",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_769158fbfd07",
+       "text": "Wrote Pact contract tests between the order‑management service and the smart order router, run on every merge to either service.",
+       "evidenceStrength": "high",
+       "notes": "Shows contract testing for internal routing APIs."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_35ef8911067d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9faf54dd8857",
+       "text": "Recruiter verification: the candidate's Oracle Certified Professional, Java SE 17 Developer certificate was checked on Oracle's CertView service and is listed against the candidate's name with a 2024 award date.",
+       "evidenceStrength": "high",
+       "notes": "Provides recognized Java certification."
+      },
+      {
+       "sourceId": "src_c974a8093482",
+       "text": "Moved the order‑management service from Java 11 to Java 17, replacing the date‑handling library and updating the garbage‑collector settings after load tests.",
+       "evidenceStrength": "medium",
+       "notes": "Demonstrates practical Java 17 expertise."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b095dc4ea456",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d57a66cd6cd2",
+       "text": "Produced the order and execution data extracts for the annual best‑execution review in 2023 and 2024, reconciling counts with the compliance team's figures before submission.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches data extract requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ab2d21b6c6ba",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_926af3202b55",
+       "text": "Joined calls with the exchange‑connectivity team to diagnose FIX session drops.",
+       "evidenceStrength": "high",
+       "notes": "Shows collaboration on FIX session issues."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed a robust order‑state machine handling partial fills and cancellations.",
+     "supportingRequirementIds": [
+      "req_cc1f8b12d382"
+     ],
+     "sourceIds": [
+      "src_2a0682d500b4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed the order‑state machine for the equities order‑management service at Penhallow Invest, covering partial fills, cancel‑replace requests and end‑of‑day expiry."
+    },
+    {
+     "claim": "Authored Pact contract tests for routing APIs.",
+     "supportingRequirementIds": [
+      "req_5f50313fc823"
+     ],
+     "sourceIds": [
+      "src_769158fbfd07"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote Pact contract tests between the order‑management service and the smart order router, run on every merge to either service."
+    },
+    {
+     "claim": "Held Oracle Certified Professional, Java SE 17 Developer certification.",
+     "supportingRequirementIds": [
+      "req_35ef8911067d"
+     ],
+     "sourceIds": [
+      "src_9faf54dd8857"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Recruiter verification: the candidate's Oracle Certified Professional, Java SE 17 Developer certificate was checked on Oracle's CertView service and is listed against the candidate's name with a 2024 award date."
+    },
+    {
+     "claim": "Produced annual best‑execution data extracts for 2023 and 2024.",
+     "supportingRequirementIds": [
+      "req_b095dc4ea456"
+     ],
+     "sourceIds": [
+      "src_d57a66cd6cd2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Produced the order and execution data extracts for the annual best‑execution review in 2023 and 2024, reconciling counts with the compliance team's figures before submission."
+    },
+    {
+     "claim": "Resolved FIX session drops with the exchange‑connectivity team.",
+     "supportingRequirementIds": [
+      "req_ab2d21b6c6ba"
+     ],
+     "sourceIds": [
+      "src_926af3202b55"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Joined calls with the exchange‑connectivity team to diagnose FIX session drops."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "All five role requirements are supported by verifiable evidence from the candidate’s resume, work sample, and verification notes. The evidence demonstrates experience with Java 17, order‑state management, contract testing, data extraction, and FIX protocol troubleshooting. No gaps or unsupported claims were identified.",
+   "limitations": [
+    "No evidence provided regarding the candidate’s experience with weekly release cadence or interaction with the compliance team beyond data extraction."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:04:19.848549+00:00"
+}

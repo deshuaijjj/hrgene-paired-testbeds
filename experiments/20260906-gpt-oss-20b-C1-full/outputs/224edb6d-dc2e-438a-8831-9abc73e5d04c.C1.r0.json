@@ -1,0 +1,292 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "224edb6d-dc2e-438a-8831-9abc73e5d04c.C1",
+ "case_id": "224edb6d-dc2e-438a-8831-9abc73e5d04c",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10829,
+  "promptWords": 1371
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 48.491
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2853,
+ "eval_count": 2187,
+ "prompt_eval_duration_ns": 18142000,
+ "eval_duration_ns": 38830484000,
+ "total_duration_ns": 48488721000,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. For each claim, include sourceIds. Use evidenceBoundary sentence. Then hiringEvidencePacket with all required fields.\n\nWe must map each requirement id.\n\nLet's analyze evidence:\n\nreq_a5e455b132d5: Runs renewal-processing procedure. Source src_ae45f23b8822 and src_e40d13eeccf4 mention renewal processing. So supported.\n\nreq_0ec963e90a7b: Maintains billing-correction checklist. Sources src_635c17666f2e, src_e40d13eeccf4. Supported.\n\nreq_2b9b87eb4342: Lowers share of renewals needing manual correction. Claim in src_53a93546397b but no figure source. So insufficient evidence. Gap: need documented evidence of reduction. Follow-up question.\n\nreq_63922021ba44: Coordinates disputed invoices with finance and customer success. Sources src_bbd3a0c1254a, src_e40d13eeccf4. Supported.\n\nreq_c37004e9dae5: Documents known limitations and hand-over conditions at each quarter-end. Source src_c6a2755a260c, src_e40d13eeccf4. Supported.\n\nNow produce evidence map.\n\nAlso unsupportedClaims: the claim about manual corrections dropped from about one in five renewals to almost none is unsupported because no report. So record.\n\nMissingEvidenceGaps: for req_2b9b87eb4342.\n\nInterviewSignalRisks: maybe note about finance controller wanting evidence. But that's not interview. Could be risk: candidate's claim not documented. So include.\n\nFollowUpQuestions: ask for documented evidence of reduction.\n\nHumanReviewChecklist: items like \"Verify documented evidence of renewal processing\", \"Confirm checklist maintenance\", \"Assess evidence of reduction in manual corrections\", \"Confirm dispute handling coordination\", \"Confirm quarter-end hand-over documentation\".\n\nAuditSummary: paragraph summarizing.\n\nLimitations: mention that evidence limited to resume and notes, no independent verification.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_3bc5105b59c79dd4\",\"targetRoleTitle\":\"Operations Process Specialist, Collaboration Software Subscriptions\",\"professionalSummary\":[\"Processed monthly and annual renewals for business subscriptions in the billing system, checking seat counts against the customer's admin console export before each invoice run. (src_ae45f23b8822)\",\"Maintained the billing‑correction checklist and the running list of correction causes, adding a pre‑invoice seat check after a wave of seat‑count corrections. (src_635c17666f2e)\",\"Handled disputed invoices with finance and customer success through the dispute queue; credit notes above the agreed limit were approved by the finance controller. (src_bbd3a0c1254a)\",\"Prepared the quarter‑end hand‑over note for the subscription operations lead, listing open disputes, corrections in progress and the causes still unresolved. (src_c6a2755a260c)\"],\"experienceHighlights\":[\"Renewal processing for business subscriptions in the billing system. (src_ae45f23b8822)\",\"Maintenance of billing‑correction checklist and correction‑cause list. (src_635c17666f2e)\",\"Dispute handling coordination with finance and customer success. (src_bbd3a0c1254a)\",\"Quarter‑end hand‑over documentation. (src_c6a2755a260c)\"],\"projectsAndWorkSamples\":[\"Billing‑correction checklist with pre‑invoice seat check and correction‑cause list for one quarter, including billing system case numbers as verification trail. (src_e4c9d314ad2f)\"],\"skills\":[\"Renewal processing\",\"Billing‑correction checklist maintenance\",\"Dispute coordination\",\"Quarter‑end hand‑over documentation\"],\"evidenceBoundary\":\"The resume and work sample provide evidence of renewal processing, checklist maintenance, dispute coordination, and quarter‑end hand‑over. No documented evidence is provided for a reduction in manual corrections.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Operations Process Specialist, Collaboration Software Subscriptions\",\"jobDescriptionSource\":\"jd_168785c6bb3aab38\",\"requirementIds\":[\"req_a5e455b132d5\",\"req_0ec963e90a7b\",\"req_2b9b87eb4342\",\"req_63922021ba44\",\"req_c37004e9dae5\"]},\"candidate\":{\"candidateId\":\"cand_3bc5105b59c79dd4\",\"sources\":[\"src_ae45f23b8822\",\"src_635c17666f2e\",\"src_bbd3a0c1254a\",\"src_c6a2755a260c\",\"src_e40d13eeccf4\",\"src_e4c9d314ad2f\",\"src_53a93546397b\",\"src_38f0fe92b927\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_a5e455b132d5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ae45f23b8822\",\"text\":\"Processed monthly and annual renewals for business subscriptions in the billing system, checking seat counts against the customer's admin console export before each invoice run.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of renewal processing.\"},{\"sourceId\":\"src_e40d13eeccf4\",\"text\":\"Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Broad responsibility includes renewal processing.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0ec963e90a7b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_635c17666f2e\",\"text\":\"Maintained the billing‑correction checklist and the running list of correction causes (seat‑count drift, expired purchase orders, currency mismatch), adding a pre‑invoice seat check after a wave of seat‑count corrections.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of checklist maintenance.\"},{\"sourceId\":\"src_e40d13eeccf4\",\"text\":\"Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Broad responsibility includes checklist maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_2b9b87eb4342\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_53a93546397b\",\"text\":\"'After I introduced the pre‑invoice seat check, manual corrections dropped from about one in five renewals to almost none.'\",\"evidenceStrength\":\"low\",\"notes\":\"Claim without attached report or figure.\"}],\"missingEvidence\":[\"Documented evidence of reduction in manual corrections, such as a quarterly report or audit trail.\"],\"gapId\":\"gap_req_2b9b87eb4342\"},{\"requirementId\":\"req_63922021ba44\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_bbd3a0c1254a\",\"text\":\"Handled disputed invoices with finance and customer success through the dispute queue; credit notes above the agreed limit were approved by the finance controller.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of dispute coordination.\"},{\"sourceId\":\"src_e40d13eeccf4\",\"text\":\"Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Broad responsibility includes dispute handling.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c37004e9dae5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c6a2755a260c\",\"text\":\"Prepared the quarter‑end hand‑over note for the subscription operations lead, listing open disputes, corrections in progress and the causes still unresolved.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of quarter‑end hand‑over.\"},{\"sourceId\":\"src_e40d13eeccf4\",\"text\":\"Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Broad responsibility includes hand‑over.\"}],\"missingEvidence[]\":[]}],\"supportedClaims\":[{\"claim\":\"Processed monthly and annual renewals for business subscriptions in the billing system.\",\"supportingRequirementIds\":[\"req_a5e455b132d5\"],\"sourceIds\":[\"src_ae45f23b8822\"],\"evidenceStrength\":\"high\",\"witness\":\"Processed monthly and annual renewals for business subscriptions in the billing system, checking seat counts against the customer's admin console export before each invoice run.\"},{\"claim\":\"Maintained the billing‑correction checklist and the running list of correction causes.\",\"supportingRequirementIds\":[\"req_0ec963e90a7b\"],\"sourceIds\":[\"src_635c17666f2e\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the billing‑correction checklist and the running list of correction causes (seat‑count drift, expired purchase orders, currency mismatch), adding a pre‑invoice seat check after a wave of seat‑count corrections.\"},{\"claim\":\"Handled disputed invoices with finance and customer success through the dispute queue.\",\"supportingRequirementIds\":[\"req_63922021ba44\"],\"sourceIds\":[\"src_bbd3a0c1254a\"],\"evidenceStrength\":\"high\",\"witness\":\"Handled disputed invoices with finance and customer success through the dispute queue; credit notes above the agreed limit were approved by the finance controller.\"},{\"claim\":\"Prepared the quarter‑end hand‑over note for the subscription operations lead.\",\"supportingRequirementIds\":[\"req_c37004e9dae5\"],\"sourceIds\":[\"src_c6a2755a260c\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the quarter‑end hand‑over note for the subscription operations lead, listing open disputes, corrections in progress and the causes still unresolved.\"}],\"unsupportedClaims\":[{\"claim\":\"Manual corrections dropped from about one in five renewals to almost none after introducing the pre‑invoice seat check.\",\"reason\":\"No documented report or figure source attached to support the claim.\",\"requiredFollowUp\":\"Provide a quarterly report or audit trail that documents the reduction in manual corrections.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_req_2b9b87eb4342\",\"requirementId\":\"req_2b9b87eb4342\",\"severity\":\"medium\",\"gap\":\"Documented evidence of reduction in manual corrections, such as a quarterly report or audit trail.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_38f0fe92b927\",\"text\":\"The finance controller wants the correction rate down this year and has asked for evidence that the candidate has moved that number before; please separate what is documented from what is claimed.\",\"signalType\":\"clarification\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Ask the candidate to provide documented evidence of past correction rate improvements.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_2b9b87eb4342\",\"question\":\"Can you provide a documented report or audit trail that shows the reduction in manual corrections for renewals during your tenure?\",\"evidenceTarget\":\"Documented evidence of reduction in manual corrections.\"}],\"humanReviewChecklist\":[\"Verify documented evidence of renewal processing in the billing system.\",\"Confirm maintenance of the billing‑correction checklist and correction‑cause list.\",\"Assess evidence of reduction in manual corrections for renewals.\",\"Confirm coordination of disputed invoices with finance and customer success.\",\"Confirm quarter‑end hand‑over documentation.\"],\"auditSummary\":\"The candidate’s resume and work sample provide clear evidence of renewal processing, billing‑correction checklist maintenance, dispute coordination, and quarter‑end hand‑over. However, there is no documented evidence supporting the claim of a reduction in manual corrections, which is a key requirement. A neutral follow‑up question is recommended to obtain the missing evidence before a hiring decision can be made.\",\"limitations\":[\"Evidence is limited to the candidate’s resume, work sample, and internal notes; no independent verification or external audit reports are provided.\"]}}",
+ "content_sha256": "baaf3b9f2db1ccd0b282aa9950f524f92d26a61b6b391914dc9470f16cf866d0",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_3bc5105b59c79dd4",
+   "targetRoleTitle": "Operations Process Specialist, Collaboration Software Subscriptions",
+   "professionalSummary": [
+    "Processed monthly and annual renewals for business subscriptions in the billing system, checking seat counts against the customer's admin console export before each invoice run. (src_ae45f23b8822)",
+    "Maintained the billing‑correction checklist and the running list of correction causes, adding a pre‑invoice seat check after a wave of seat‑count corrections. (src_635c17666f2e)",
+    "Handled disputed invoices with finance and customer success through the dispute queue; credit notes above the agreed limit were approved by the finance controller. (src_bbd3a0c1254a)",
+    "Prepared the quarter‑end hand‑over note for the subscription operations lead, listing open disputes, corrections in progress and the causes still unresolved. (src_c6a2755a260c)"
+   ],
+   "experienceHighlights": [
+    "Renewal processing for business subscriptions in the billing system. (src_ae45f23b8822)",
+    "Maintenance of billing‑correction checklist and correction‑cause list. (src_635c17666f2e)",
+    "Dispute handling coordination with finance and customer success. (src_bbd3a0c1254a)",
+    "Quarter‑end hand‑over documentation. (src_c6a2755a260c)"
+   ],
+   "projectsAndWorkSamples": [
+    "Billing‑correction checklist with pre‑invoice seat check and correction‑cause list for one quarter, including billing system case numbers as verification trail. (src_e4c9d314ad2f)"
+   ],
+   "skills": [
+    "Renewal processing",
+    "Billing‑correction checklist maintenance",
+    "Dispute coordination",
+    "Quarter‑end hand‑over documentation"
+   ],
+   "evidenceBoundary": "The resume and work sample provide evidence of renewal processing, checklist maintenance, dispute coordination, and quarter‑end hand‑over. No documented evidence is provided for a reduction in manual corrections."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Operations Process Specialist, Collaboration Software Subscriptions",
+    "jobDescriptionSource": "jd_168785c6bb3aab38",
+    "requirementIds": [
+     "req_a5e455b132d5",
+     "req_0ec963e90a7b",
+     "req_2b9b87eb4342",
+     "req_63922021ba44",
+     "req_c37004e9dae5"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_3bc5105b59c79dd4",
+    "sources": [
+     "src_ae45f23b8822",
+     "src_635c17666f2e",
+     "src_bbd3a0c1254a",
+     "src_c6a2755a260c",
+     "src_e40d13eeccf4",
+     "src_e4c9d314ad2f",
+     "src_53a93546397b",
+     "src_38f0fe92b927"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a5e455b132d5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ae45f23b8822",
+       "text": "Processed monthly and annual renewals for business subscriptions in the billing system, checking seat counts against the customer's admin console export before each invoice run.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of renewal processing."
+      },
+      {
+       "sourceId": "src_e40d13eeccf4",
+       "text": "Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.",
+       "evidenceStrength": "medium",
+       "notes": "Broad responsibility includes renewal processing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0ec963e90a7b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_635c17666f2e",
+       "text": "Maintained the billing‑correction checklist and the running list of correction causes (seat‑count drift, expired purchase orders, currency mismatch), adding a pre‑invoice seat check after a wave of seat‑count corrections.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of checklist maintenance."
+      },
+      {
+       "sourceId": "src_e40d13eeccf4",
+       "text": "Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.",
+       "evidenceStrength": "medium",
+       "notes": "Broad responsibility includes checklist maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2b9b87eb4342",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_53a93546397b",
+       "text": "'After I introduced the pre‑invoice seat check, manual corrections dropped from about one in five renewals to almost none.'",
+       "evidenceStrength": "low",
+       "notes": "Claim without attached report or figure."
+      }
+     ],
+     "missingEvidence": [
+      "Documented evidence of reduction in manual corrections, such as a quarterly report or audit trail."
+     ],
+     "gapId": "gap_req_2b9b87eb4342"
+    },
+    {
+     "requirementId": "req_63922021ba44",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bbd3a0c1254a",
+       "text": "Handled disputed invoices with finance and customer success through the dispute queue; credit notes above the agreed limit were approved by the finance controller.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of dispute coordination."
+      },
+      {
+       "sourceId": "src_e40d13eeccf4",
+       "text": "Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.",
+       "evidenceStrength": "medium",
+       "notes": "Broad responsibility includes dispute handling."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c37004e9dae5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c6a2755a260c",
+       "text": "Prepared the quarter‑end hand‑over note for the subscription operations lead, listing open disputes, corrections in progress and the causes still unresolved.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of quarter‑end hand‑over."
+      },
+      {
+       "sourceId": "src_e40d13eeccf4",
+       "text": "Responsibilities included renewal processing, checklist maintenance, dispute handling and quarter‑end hand‑over for the subscription operations team over roughly two years.",
+       "evidenceStrength": "medium",
+       "notes": "Broad responsibility includes hand‑over."
+      }
+     ],
+     "missingEvidence[]": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Processed monthly and annual renewals for business subscriptions in the billing system.",
+     "supportingRequirementIds": [
+      "req_a5e455b132d5"
+     ],
+     "sourceIds": [
+      "src_ae45f23b8822"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Processed monthly and annual renewals for business subscriptions in the billing system, checking seat counts against the customer's admin console export before each invoice run."
+    },
+    {
+     "claim": "Maintained the billing‑correction checklist and the running list of correction causes.",
+     "supportingRequirementIds": [
+      "req_0ec963e90a7b"
+     ],
+     "sourceIds": [
+      "src_635c17666f2e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the billing‑correction checklist and the running list of correction causes (seat‑count drift, expired purchase orders, currency mismatch), adding a pre‑invoice seat check after a wave of seat‑count corrections."
+    },
+    {
+     "claim": "Handled disputed invoices with finance and customer success through the dispute queue.",
+     "supportingRequirementIds": [
+      "req_63922021ba44"
+     ],
+     "sourceIds": [
+      "src_bbd3a0c1254a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Handled disputed invoices with finance and customer success through the dispute queue; credit notes above the agreed limit were approved by the finance controller."
+    },
+    {
+     "claim": "Prepared the quarter‑end hand‑over note for the subscription operations lead.",
+     "supportingRequirementIds": [
+      "req_c37004e9dae5"
+     ],
+     "sourceIds": [
+      "src_c6a2755a260c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the quarter‑end hand‑over note for the subscription operations lead, listing open disputes, corrections in progress and the causes still unresolved."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Manual corrections dropped from about one in five renewals to almost none after introducing the pre‑invoice seat check.",
+     "reason": "No documented report or figure source attached to support the claim.",
+     "requiredFollowUp": "Provide a quarterly report or audit trail that documents the reduction in manual corrections."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_req_2b9b87eb4342",
+     "requirementId": "req_2b9b87eb4342",
+     "severity": "medium",
+     "gap": "Documented evidence of reduction in manual corrections, such as a quarterly report or audit trail."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_38f0fe92b927",
+     "text": "The finance controller wants the correction rate down this year and has asked for evidence that the candidate has moved that number before; please separate what is documented from what is claimed.",
+     "signalType": "clarification",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Ask the candidate to provide documented evidence of past correction rate improvements."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_2b9b87eb4342",
+     "question": "Can you provide a documented report or audit trail that shows the reduction in manual corrections for renewals during your tenure?",
+     "evidenceTarget": "Documented evidence of reduction in manual corrections."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify documented evidence of renewal processing in the billing system.",
+    "Confirm maintenance of the billing‑correction checklist and correction‑cause list.",
+    "Assess evidence of reduction in manual corrections for renewals.",
+    "Confirm coordination of disputed invoices with finance and customer success.",
+    "Confirm quarter‑end hand‑over documentation."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence of renewal processing, billing‑correction checklist maintenance, dispute coordination, and quarter‑end hand‑over. However, there is no documented evidence supporting the claim of a reduction in manual corrections, which is a key requirement. A neutral follow‑up question is recommended to obtain the missing evidence before a hiring decision can be made.",
+   "limitations": [
+    "Evidence is limited to the candidate’s resume, work sample, and internal notes; no independent verification or external audit reports are provided."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:13:15.463555+00:00"
+}

@@ -1,0 +1,604 @@
+{
+ "request_id": "a040768c-5af1-4d9d-913f-f5764f35e914.C2",
+ "case_id": "a040768c-5af1-4d9d-913f-f5764f35e914",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: leading",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "leading"
+     ],
+     "sourceIds": [
+      "src_917316ea61e1"
+     ],
+     "sourceFamilies": [],
+     "text": "Program manager leading the replacement of the in‑house billing system with a vendor platform across engineering, finance and customer support at Kinloch Software since February 2021."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: leading",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "leading"
+     ],
+     "sourceIds": [
+      "src_917316ea61e1"
+     ],
+     "sourceFamilies": [],
+     "text": "Program manager leading the replacement of the in‑house billing system with a vendor platform across engineering, finance and customer support at Kinloch Software since February 2021."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its ownership term(s) [MANAGE] (manages) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_42365e10d483",
+     "family": "MANAGE",
+     "terms": [
+      "manages"
+     ],
+     "sourceIds": [
+      "src_7442860654c4"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[1]",
+    "message": "qualification term(s) [SENIORITY] not licensed by the cited sources: senior",
+    "witness": {
+     "family": "SENIORITY",
+     "terms": [
+      "senior"
+     ],
+     "sourceIds": [
+      "src_708cadbe82d0"
+     ],
+     "sourceFamilies": [],
+     "text": "Escalation handling with senior directors"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "req_42365e10d483: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Program manager leading the replacement of the in‑house billing system with a vendor platform across engineering, financ"
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "qualification_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[1]",
+   "detail": "Escalation handling with senior directors"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Program manager leading the replacement of the in‑house billing system with a vendor platform across engineering, financ"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_e4468dd52ee1ba7d",
+   "targetRoleTitle": "Program Manager, Billing System Replacement",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Raised the March 2024 invoice‑numbering conflict with finance and engineering directors, presented two options with cost and delay estimates, and recorded the directors’ decision and rationale in the programme decision log.",
+     "sourceIds": [
+      "src_708cadbe82d0"
+     ],
+     "requirementIds": [
+      "req_6e6d59e36e4f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Raised the March 2024 invoice-numbering conflict with the finance and engineering directors, set out two options with their cost and delay, and recorded the directors' decision and rationale in the programme decision log"
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Tracked vendor contractual milestones and ran acceptance testing of each delivery against agreed acceptance criteria, returning two deliveries with defect lists.",
+     "sourceIds": [
+      "src_7442860654c4"
+     ],
+     "requirementIds": [
+      "req_42365e10d483"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Tracked the vendor's contractual milestones and ran acceptance testing of each delivery against the agreed acceptance criteria, returning two deliveries with defect lists"
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Planned three cutover rehearsals with finance operations, each with a timed runbook and a reconciliation of invoices between the old and new systems.",
+     "sourceIds": [
+      "src_ccd3bdd73265"
+     ],
+     "requirementIds": [
+      "req_7bcdcae361db"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Planned three cutover rehearsals with finance operations, each with a timed runbook and a reconciliation of invoices between the old and new systems"
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Reported spend against the programme budget each quarter from the finance system's cost‑centre extract, splitting vendor fees, contractor days and internal engineering time.",
+     "sourceIds": [
+      "src_9cc58b736202"
+     ],
+     "requirementIds": [
+      "req_33b65ea2650f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reported spend against the programme budget each quarter from the finance system's cost‑centre extract, splitting vendor fees, contractor days and internal engineering time"
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_6",
+     "text": "Extract of the programme decision log showing the March 2024 escalation entry, options, cost and delay estimates, directors’ choice and rationale, and the date the candidate circulated the outcome to the workstreams.",
+     "sourceIds": [
+      "src_1ec799156767"
+     ],
+     "requirementIds": [
+      "req_6e6d59e36e4f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: an extract of the programme decision log showing the March 2024 escalation entry, with the two options, their cost and delay estimates, the directors' choice and rationale, and the date the candidate circulated the outcome to the workstreams"
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_7",
+     "text": "Program management across cross‑functional teams",
+     "sourceIds": [
+      "src_917316ea61e1"
+     ],
+     "requirementIds": [
+      "req_2c0a2cefa1ea"
+     ],
+     "supportBoundary": "supported",
+     "witness": "running the replacement of the in‑house billing system with a vendor platform across engineering, finance and customer support"
+    },
+    {
+     "claimId": "claim_9",
+     "text": "Vendor milestone tracking and acceptance testing",
+     "sourceIds": [
+      "src_7442860654c4"
+     ],
+     "requirementIds": [
+      "req_42365e10d483"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Tracked the vendor's contractual milestones and ran acceptance testing of each delivery against the agreed acceptance criteria, returning two deliveries with defect lists"
+    },
+    {
+     "claimId": "claim_10",
+     "text": "Cutover rehearsal planning with finance operations",
+     "sourceIds": [
+      "src_ccd3bdd73265"
+     ],
+     "requirementIds": [
+      "req_7bcdcae361db"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Planned three cutover rehearsals with finance operations, each with a timed runbook and a reconciliation of invoices between the old and new systems"
+    },
+    {
+     "claimId": "claim_11",
+     "text": "Programme budget tracking and forecasting",
+     "sourceIds": [
+      "src_9cc58b736202"
+     ],
+     "requirementIds": [
+      "req_33b65ea2650f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reported spend against the programme budget each quarter from the finance system's cost‑centre extract, splitting vendor fees, contractor days and internal engineering time"
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience managing billing system replacement, escalation handling, vendor milestone tracking, cutover rehearsals, and budget reporting at Kinloch Software."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit for Program Manager, Billing System Replacement role."
+   },
+   "role": {
+    "roleTitle": "Program Manager, Billing System Replacement",
+    "jobDescriptionSource": "jd_35ea1d64426b3313",
+    "requirementIds": [
+     "req_2c0a2cefa1ea",
+     "req_6e6d59e36e4f",
+     "req_42365e10d483",
+     "req_7bcdcae361db",
+     "req_33b65ea2650f"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_e4468dd52ee1ba7d",
+    "sources": [
+     "src_917316ea61e1",
+     "src_708cadbe82d0",
+     "src_7442860654c4",
+     "src_ccd3bdd73265",
+     "src_9cc58b736202",
+     "src_1ec799156767",
+     "src_8b8e7d2b82c7",
+     "src_0df66645af87"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2c0a2cefa1ea",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_917316ea61e1",
+       "text": "running the replacement of the in‑house billing system with a vendor platform across engineering, finance and customer support",
+       "evidenceStrength": "high",
+       "notes": "direct statement of programme scope"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6e6d59e36e4f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_708cadbe82d0",
+       "text": "Raised the March 2024 invoice‑numbering conflict with the finance and engineering directors, set out two options with their cost and delay, and recorded the directors' decision and rationale in the programme decision log",
+       "evidenceStrength": "high",
+       "notes": "direct escalation handling"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_42365e10d483",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_7442860654c4",
+       "text": "Tracked the vendor's contractual milestones and ran acceptance testing of each delivery against the agreed acceptance criteria, returning two deliveries with defect lists",
+       "evidenceStrength": "high",
+       "notes": "vendor milestone tracking"
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's manage element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_7bcdcae361db",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ccd3bdd73265",
+       "text": "Planned three cutover rehearsals with finance operations, each with a timed runbook and a reconciliation of invoices between the old and new systems",
+       "evidenceStrength": "high",
+       "notes": "cutover rehearsal planning"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_33b65ea2650f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9cc58b736202",
+       "text": "Reported spend against the programme budget each quarter from the finance system's cost‑centre extract, splitting vendor fees, contractor days and internal engineering time",
+       "evidenceStrength": "high",
+       "notes": "budget tracking"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Raised the March 2024 invoice‑numbering conflict with finance and engineering directors, presented two options with cost and delay estimates, and recorded the directors’ decision and rationale in the programme decision log.",
+     "supportingRequirementIds": [
+      "req_6e6d59e36e4f"
+     ],
+     "sourceIds": [
+      "src_708cadbe82d0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Raised the March 2024 invoice‑numbering conflict with the finance and engineering directors, set out two options with their cost and delay, and recorded the directors' decision and rationale in the programme decision log"
+    },
+    {
+     "claim": "Tracked vendor contractual milestones and ran acceptance testing of each delivery against agreed acceptance criteria, returning two deliveries with defect lists.",
+     "supportingRequirementIds": [
+      "req_42365e10d483"
+     ],
+     "sourceIds": [
+      "src_7442860654c4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Tracked the vendor's contractual milestones and ran acceptance testing of each delivery against the agreed acceptance criteria, returning two deliveries with defect lists"
+    },
+    {
+     "claim": "Planned three cutover rehearsals with finance operations, each with a timed runbook and a reconciliation of invoices between the old and new systems.",
+     "supportingRequirementIds": [
+      "req_7bcdcae361db"
+     ],
+     "sourceIds": [
+      "src_ccd3bdd73265"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Planned three cutover rehearsals with finance operations, each with a timed runbook and a reconciliation of invoices between the old and new systems"
+    },
+    {
+     "claim": "Reported spend against the programme budget each quarter from the finance system's cost‑centre extract, splitting vendor fees, contractor days and internal engineering time.",
+     "supportingRequirementIds": [
+      "req_33b65ea2650f"
+     ],
+     "sourceIds": [
+      "src_9cc58b736202"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reported spend against the programme budget each quarter from the finance system's cost‑centre extract, splitting vendor fees, contractor days and internal engineering time"
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Program manager leading the replacement of the in‑house billing system with a vendor platform across engineering, finance and customer support at Kinloch Software since February 2021.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    },
+    {
+     "claim": "Escalation handling with senior directors",
+     "reason": "The cited sources do not establish this qualification, seniority or duration.",
+     "requiredFollowUp": "Ask for the specific credential, its issuer and dates, and the scope of the experience."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the programme did not disrupt invoicing for the approximately 9,000 customers."
+   ],
+   "auditSummary": "All requirements for the Program Manager, Billing System Replacement role are supported by the candidate’s resume and work sample. The evidence demonstrates experience in programme planning across engineering, finance and customer support; escalation handling with directors; vendor milestone tracking and acceptance; cutover rehearsal planning; and budget tracking. No quantitative claims beyond those directly cited are made, and no ownership or deployment boundaries are overstated.",
+   "limitations": [
+    "Evidence is limited to the provided resume and work sample; external verification of programme impact on invoicing is not available."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

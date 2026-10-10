@@ -1,0 +1,259 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "8584acc6-2d32-44f4-9956-bbb245cc4291.C2",
+ "case_id": "8584acc6-2d32-44f4-9956-bbb245cc4291",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14843,
+  "promptWords": 1781
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 41.089
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3684,
+ "eval_count": 1885,
+ "prompt_eval_duration_ns": 18356000,
+ "eval_duration_ns": 34042744000,
+ "total_duration_ns": 41087081542,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Need to map requirements. Provide evidence. No subjective. All claims must have source. For quantitative claims like halved first-response time, not supported. So that claim is unsupported. Also CSAT 94% unsupported. So in CV we should not include that claim. We can include other claims with sources. Provide evidenceBoundary. Provide hiringEvidencePacket with requirementEvidenceMap covering all req ids. For each, status supported/partial/insufficient. Provide evidence entries. For unsupported claims, list. Provide missingEvidenceGaps. Provide interviewSignalRisks? No subjective. Provide followUpQuestions for gaps. Provide humanReviewChecklist. Provide auditSummary. Provide limitations.\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_8f8d6574b0cbeb1a\",\"targetRoleTitle\":\"Support Operations Analyst\",\"professionalSummary\":[\"Experienced Support Operations Analyst with a proven track record in optimizing help‑desk routing, forecasting staffing needs, executing quality‑sampling programs, and preparing quarterly business review materials for senior leadership.\"],\"experienceHighlights\":[\"Rebuilt Zendesk routing rules at Echofield Voice, aligning chats and tickets to queues by product line and customer tier, and retired 40 obsolete triggers.\",\"Built a weekly staffing forecast for phone and chat queues using Python and Erlang C based on 18 months of contact volume data.\",\"Implemented a ticket quality‑sampling program, scoring five resolved tickets per agent each month against a written scoring guide agreed with team leads.\",\"Prepared the support section of the quarterly business review deck, covering volumes, backlog, and staffing, for the customer experience director over four consecutive quarters.\",\"Authored internal help‑centre articles and conducted training sessions on the new queue structure at both support hubs.\"],\"projectsAndWorkSamples\":[\"One‑page 'Support wins' summary for a quarterly business review, detailing new queue names and retired triggers.\",\"Internal help‑centre articles and training materials for agents on the updated queue structure.\"],\"skills\":[\"Zendesk routing & automation\",\"Python scripting\",\"Erlang C staffing models\",\"Quality sampling & scoring\",\"Business review preparation\",\"Training & documentation\"],\"evidenceBoundary\":\"The provided resume and work‑sample sources establish the candidate’s experience in routing rule maintenance, staffing forecast construction, quality‑sampling execution, and quarterly business review preparation. Quantitative claims about first‑response time and CSAT improvements are not supported by the evidence and are omitted.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit based on the evidence and gaps identified.\"},\"role\":{\"roleTitle\":\"Support Operations Analyst\",\"jobDescriptionSource\":\"jd_253bf8b36ca4cb31\",\"requirementIds\":[\"req_4d246a917dba\",\"req_2bb4ab965428\",\"req_96bb69b50300\",\"req_5db98518ade6\",\"req_4ea2525df2a6\"]},\"candidate\":{\"candidateId\":\"cand_8f8d6574b0cbeb1a\",\"sources\":[\"src_3f885e2c9cf7\",\"src_ba511b7e44bb\",\"src_b09717a14794\",\"src_3ac78e090a54\",\"src_c2bc3fd8b4a1\",\"src_2093a6f99aaa\",\"src_2559681e2958\",\"src_934a705b330c\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_4d246a917dba\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3f885e2c9cf7\",\"text\":\"Rebuilt the Zendesk routing rules at Echofield Voice so that chats and tickets go to queues by product line and customer tier, and retired 40 triggers that no longer fired.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates maintenance of routing and automation rules.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_2bb4ab965428\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ba511b7e44bb\",\"text\":\"Built the weekly staffing forecast for the phone and chat queues in Python from 18 months of contact volumes, using Erlang C to set agents per half‑hour interval.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows construction of staffing forecasts from historical data.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_96bb69b50300\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b09717a14794\",\"text\":\"Ran the quality‑sampling programme, scoring five resolved tickets per agent each month against a written scoring guide agreed with the team leads.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates execution of a quality‑sampling program with a written guide.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5db98518ade6\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_3f885e2c9cf7\",\"text\":\"Rebuilt the Zendesk routing rules at Echofield Voice so that chats and tickets go to queues by product line and customer tier, and retired 40 triggers that no longer fired.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows routing changes but no help‑desk report data on first‑response time or CSAT.\"}],\"missingEvidence\":[\"Help‑desk reports showing changes in first‑response time or customer satisfaction for comparable periods.\"]},{\"requirementId\":\"req_4ea2525df2a6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3ac78e090a54\",\"text\":\"Put together the support section of the quarterly business review deck (volumes, backlog, staffing) for the customer experience director over four quarters.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches preparation of quarterly business review material.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Rebuilt Zendesk routing rules at Echofield Voice, aligning chats and tickets to queues by product line and customer tier, and retired 40 obsolete triggers.\",\"supportingRequirementIds\":[\"req_4d246a917dba\"],\"sourceIds\":[\"src_3f885e2c9cf7\"],\"evidenceStrength\":\"high\",\"witness\":\"Rebuilt the Zendesk routing rules at Echofield Voice so that chats and tickets go to queues by product line and customer tier, and retired 40 triggers that no longer fired.\"},{\"claim\":\"Built a weekly staffing forecast for phone and chat queues using Python and Erlang C based on 18 months of contact volume data.\",\"supportingRequirementIds\":[\"req_2bb4ab965428\"],\"sourceIds\":[\"src_ba511b7e44bb\"],\"evidenceStrength\":\"high\",\"witness\":\"Built the weekly staffing forecast for the phone and chat queues in Python from 18 months of contact volumes, using Erlang C to set agents per half‑hour interval.\"},{\"claim\":\"Implemented a ticket quality‑sampling program, scoring five resolved tickets per agent each month against a written scoring guide agreed with team leads.\",\"supportingRequirementIds\":[\"req_96bb69b50300\"],\"sourceIds\":[\"src_b09717a14794\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the quality‑sampling programme, scoring five resolved tickets per agent each month against a written scoring guide agreed with the team leads.\"},{\"claim\":\"Prepared the support section of the quarterly business review deck, covering volumes, backlog, and staffing, for the customer experience director over four consecutive quarters.\",\"supportingRequirementIds\":[\"req_4ea2525df2a6\"],\"sourceIds\":[\"src_3ac78e090a54\"],\"evidenceStrength\":\"high\",\"witness\":\"Put together the support section of the quarterly business review deck (volumes, backlog, staffing) for the customer experience director over four quarters.\"}],\"unsupportedClaims\":[{\"claim\":\"Routing changes halved first‑response time and lifted CSAT to 94%.\",\"reason\":\"No source provides ticket counts, survey response numbers, or earlier‑quarter figures to substantiate the claim.\",\"requiredFollowUp\":\"Provide help‑desk reports or survey data showing the before and after metrics for comparable periods.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_5db98518ade6\",\"severity\":\"medium\",\"gap\":\"Help‑desk reports indicating changes in first‑response time or customer satisfaction for comparable periods are missing.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_5db98518ade6\",\"question\":\"Can you provide the help‑desk reports that document changes in first‑response time or customer satisfaction for comparable periods?\",\"evidenceTarget\":\"Help‑desk report data for first‑response time and CSAT.\"}],\"humanReviewChecklist\":[\"Verify that all claims in the CV are supported by the cited sources.\",\"Confirm that quantitative claims are omitted unless evidence is provided.\",\"Ensure that the requirement evidence map covers every requirement exactly once.\",\"Check that the missing evidence gap and follow-up question are appropriate for the partial requirement.\"],\"auditSummary\":\"The candidate’s resume and work samples provide clear evidence for routing rule maintenance, staffing forecast construction, quality‑sampling execution, and quarterly business review preparation. Quantitative claims about first‑response time and CSAT improvements are unsupported and have been removed from the CV. A single evidence gap remains for reporting changes in first‑response time or customer satisfaction, with a follow‑up question to elicit the necessary data.\",\"limitations\":[\"The analysis is limited to the provided sources; additional evidence not included in the sources cannot be assessed.\"]}}",
+ "content_sha256": "ee23406009af4217921b3e2ab09c8f90ce8ca94947eee08c951b4239f85b9113",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_8f8d6574b0cbeb1a",
+   "targetRoleTitle": "Support Operations Analyst",
+   "professionalSummary": [
+    "Experienced Support Operations Analyst with a proven track record in optimizing help‑desk routing, forecasting staffing needs, executing quality‑sampling programs, and preparing quarterly business review materials for senior leadership."
+   ],
+   "experienceHighlights": [
+    "Rebuilt Zendesk routing rules at Echofield Voice, aligning chats and tickets to queues by product line and customer tier, and retired 40 obsolete triggers.",
+    "Built a weekly staffing forecast for phone and chat queues using Python and Erlang C based on 18 months of contact volume data.",
+    "Implemented a ticket quality‑sampling program, scoring five resolved tickets per agent each month against a written scoring guide agreed with team leads.",
+    "Prepared the support section of the quarterly business review deck, covering volumes, backlog, and staffing, for the customer experience director over four consecutive quarters.",
+    "Authored internal help‑centre articles and conducted training sessions on the new queue structure at both support hubs."
+   ],
+   "projectsAndWorkSamples": [
+    "One‑page 'Support wins' summary for a quarterly business review, detailing new queue names and retired triggers.",
+    "Internal help‑centre articles and training materials for agents on the updated queue structure."
+   ],
+   "skills": [
+    "Zendesk routing & automation",
+    "Python scripting",
+    "Erlang C staffing models",
+    "Quality sampling & scoring",
+    "Business review preparation",
+    "Training & documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work‑sample sources establish the candidate’s experience in routing rule maintenance, staffing forecast construction, quality‑sampling execution, and quarterly business review preparation. Quantitative claims about first‑response time and CSAT improvements are not supported by the evidence and are omitted."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit based on the evidence and gaps identified."
+   },
+   "role": {
+    "roleTitle": "Support Operations Analyst",
+    "jobDescriptionSource": "jd_253bf8b36ca4cb31",
+    "requirementIds": [
+     "req_4d246a917dba",
+     "req_2bb4ab965428",
+     "req_96bb69b50300",
+     "req_5db98518ade6",
+     "req_4ea2525df2a6"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_8f8d6574b0cbeb1a",
+    "sources": [
+     "src_3f885e2c9cf7",
+     "src_ba511b7e44bb",
+     "src_b09717a14794",
+     "src_3ac78e090a54",
+     "src_c2bc3fd8b4a1",
+     "src_2093a6f99aaa",
+     "src_2559681e2958",
+     "src_934a705b330c"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_4d246a917dba",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3f885e2c9cf7",
+       "text": "Rebuilt the Zendesk routing rules at Echofield Voice so that chats and tickets go to queues by product line and customer tier, and retired 40 triggers that no longer fired.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates maintenance of routing and automation rules."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2bb4ab965428",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ba511b7e44bb",
+       "text": "Built the weekly staffing forecast for the phone and chat queues in Python from 18 months of contact volumes, using Erlang C to set agents per half‑hour interval.",
+       "evidenceStrength": "high",
+       "notes": "Shows construction of staffing forecasts from historical data."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_96bb69b50300",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b09717a14794",
+       "text": "Ran the quality‑sampling programme, scoring five resolved tickets per agent each month against a written scoring guide agreed with the team leads.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates execution of a quality‑sampling program with a written guide."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5db98518ade6",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_3f885e2c9cf7",
+       "text": "Rebuilt the Zendesk routing rules at Echofield Voice so that chats and tickets go to queues by product line and customer tier, and retired 40 triggers that no longer fired.",
+       "evidenceStrength": "medium",
+       "notes": "Shows routing changes but no help‑desk report data on first‑response time or CSAT."
+      }
+     ],
+     "missingEvidence": [
+      "Help‑desk reports showing changes in first‑response time or customer satisfaction for comparable periods."
+     ]
+    },
+    {
+     "requirementId": "req_4ea2525df2a6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3ac78e090a54",
+       "text": "Put together the support section of the quarterly business review deck (volumes, backlog, staffing) for the customer experience director over four quarters.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches preparation of quarterly business review material."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Rebuilt Zendesk routing rules at Echofield Voice, aligning chats and tickets to queues by product line and customer tier, and retired 40 obsolete triggers.",
+     "supportingRequirementIds": [
+      "req_4d246a917dba"
+     ],
+     "sourceIds": [
+      "src_3f885e2c9cf7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rebuilt the Zendesk routing rules at Echofield Voice so that chats and tickets go to queues by product line and customer tier, and retired 40 triggers that no longer fired."
+    },
+    {
+     "claim": "Built a weekly staffing forecast for phone and chat queues using Python and Erlang C based on 18 months of contact volume data.",
+     "supportingRequirementIds": [
+      "req_2bb4ab965428"
+     ],
+     "sourceIds": [
+      "src_ba511b7e44bb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the weekly staffing forecast for the phone and chat queues in Python from 18 months of contact volumes, using Erlang C to set agents per half‑hour interval."
+    },
+    {
+     "claim": "Implemented a ticket quality‑sampling program, scoring five resolved tickets per agent each month against a written scoring guide agreed with team leads.",
+     "supportingRequirementIds": [
+      "req_96bb69b50300"
+     ],
+     "sourceIds": [
+      "src_b09717a14794"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the quality‑sampling programme, scoring five resolved tickets per agent each month against a written scoring guide agreed with the team leads."
+    },
+    {
+     "claim": "Prepared the support section of the quarterly business review deck, covering volumes, backlog, and staffing, for the customer experience director over four consecutive quarters.",
+     "supportingRequirementIds": [
+      "req_4ea2525df2a6"
+     ],
+     "sourceIds": [
+      "src_3ac78e090a54"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Put together the support section of the quarterly business review deck (volumes, backlog, staffing) for the customer experience director over four quarters."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Routing changes halved first‑response time and lifted CSAT to 94%.",
+     "reason": "No source provides ticket counts, survey response numbers, or earlier‑quarter figures to substantiate the claim.",
+     "requiredFollowUp": "Provide help‑desk reports or survey data showing the before and after metrics for comparable periods."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_5db98518ade6",
+     "severity": "medium",
+     "gap": "Help‑desk reports indicating changes in first‑response time or customer satisfaction for comparable periods are missing."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_5db98518ade6",
+     "question": "Can you provide the help‑desk reports that document changes in first‑response time or customer satisfaction for comparable periods?",
+     "evidenceTarget": "Help‑desk report data for first‑response time and CSAT."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that all claims in the CV are supported by the cited sources.",
+    "Confirm that quantitative claims are omitted unless evidence is provided.",
+    "Ensure that the requirement evidence map covers every requirement exactly once.",
+    "Check that the missing evidence gap and follow-up question are appropriate for the partial requirement."
+   ],
+   "auditSummary": "The candidate’s resume and work samples provide clear evidence for routing rule maintenance, staffing forecast construction, quality‑sampling execution, and quarterly business review preparation. Quantitative claims about first‑response time and CSAT improvements are unsupported and have been removed from the CV. A single evidence gap remains for reporting changes in first‑response time or customer satisfaction, with a follow‑up question to elicit the necessary data.",
+   "limitations": [
+    "The analysis is limited to the provided sources; additional evidence not included in the sources cannot be assessed."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:01:29.853872+00:00"
+}

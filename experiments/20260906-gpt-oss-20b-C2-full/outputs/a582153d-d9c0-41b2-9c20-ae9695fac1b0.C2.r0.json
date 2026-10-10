@@ -1,0 +1,283 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "a582153d-d9c0-41b2-9c20-ae9695fac1b0.C2",
+ "case_id": "a582153d-d9c0-41b2-9c20-ae9695fac1b0",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15484,
+  "promptWords": 1885
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 58.381
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4314,
+ "eval_count": 2258,
+ "prompt_eval_duration_ns": 18940000,
+ "eval_duration_ns": 41834529000,
+ "total_duration_ns": 58372454833,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Need to map requirements. Let's craft claims.\n\nClaims: professional summary: \"Eight years of plant procurement experience, including five years at a regional cement producer and two years as purchasing assistant.\" But source says five years at cement producer, two years assistant. That's 7 years. Recruiter note says eight years. But we cannot claim eight unless source. So claim 7 years. But requirement needs at least 8 years. So insufficient evidence. So claim: \"Seven years of plant procurement experience.\" Source src_9d05ad456645 and src_47a010909b59. But we need to be careful: source says five years at cement producer, two years assistant. That's 7. So claim supported.\n\nExperience highlights: \"Buyer for three plants' maintenance parts and contracted services under group procurement policy.\" Source src_9d05ad456645. \"Operated supplier risk process for three plants' critical parts.\" Source src_a679dc0ba8bd. \"Supported capital equipment tenders for kiln refurbishment.\" Source src_44cf1756c287. \"Wrote procurement boundary notes and closed audit findings.\" Source src_8c5e99f16245.\n\nProjects: supplier risk register, bid comparison, audit closure memo. Source src_dd7280cb8ef1.\n\nSkills: procurement, supplier risk, tendering, audit compliance.\n\nEvidence boundary: materials establish 7 years procurement, 5 years at cement, 2 years assistant, roles, risk process, support tender, boundary notes, audit closure. They do not establish 8 years, team leadership, capital tender above delegated limit, documented supplier risk process? yes. But requirement 1: at least 8 years and 3 years running team. We have 5 years at cement, but not team leader. So insufficient.\n\nRequirement mapping:\n\nreq_454fa930aac7: evidence: src_9d05ad456645 shows 5 years at cement, but not team leader. src_87c731918afa says he ran procurement team but not source. So partial evidence. Need gap: 8 years, 3 years team.\n\nreq_c33b4742fd8f: capital equipment tenders above delegated limit. Source src_44cf1756c287 says supported, but team leader ran. So partial.\n\nreq_2952c26a3332: documented supplier risk process. Source src_a679dc0ba8bd shows operated risk process. So supported.\n\nreq_cf82ba2f6cca: runs maintenance parts and contracted services buying. Source src_9d05ad456645 shows buyer for three plants. So supported.\n\nreq_2de1fca29d8d: documents procurement boundaries and audit findings. Source src_8c5e99f16245 shows wrote boundary note and closed audit findings. So supported.\n\nUnsupported claims: claim of 8 years, team leadership, capital tender above limit.\n\nMissing evidence gaps: for req_454fa930aac7: need 8 years and 3 years team. For req_c33b4742fd8f: need evidence of tender above delegated limit and that candidate ran it.\n\nInterview signal risks: source src_87c731918afa subjective claim of team leadership and tender. So risk.\n\nFollow up questions: ask for years by role, who ran team, who ran tender, evidence of tender above limit.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_040c8fb68e7f9bfd\",\"targetRoleTitle\":\"Plant Procurement Manager, Industrial Gas Supply Network\",\"professionalSummary\":[\"Seven years of plant procurement experience, including five years at a regional cement producer and two years as a purchasing assistant at an engineering distributor.\"],\"experienceHighlights\":[\"Buyer for three plants’ maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader.\",\"Operated the supplier risk process for three plants’ critical parts, maintaining the critical supplier register and conducting quarterly risk reviews with plant maintenance managers.\",\"Supported capital equipment tenders for kiln refurbishment, preparing tender documents and bid comparisons; the tender board submissions were made by the team leader.\",\"Authored annual procurement boundary notes for each of the three plants and closed two internal audit findings related to purchase order controls in 2024.\"],\"projectsAndWorkSamples\":[\"Critical supplier register and quarterly risk review pack for one plant.\",\"Bid comparison for the kiln refurbishment tender.\",\"Audit closure memo for the two 2024 findings, with purchase order system references as verification trail.\"],\"skills\":[\"Plant procurement\",\"Supplier risk management\",\"Capital equipment tendering\",\"Procurement policy compliance\",\"Audit findings closure\"],\"evidenceBoundary\":\"The provided materials establish seven years of plant procurement experience, roles as buyer and risk process operator, support for capital equipment tenders, procurement boundary documentation, and audit findings closure. They do not establish eight years of experience, leadership of a procurement team, or that the candidate personally ran capital equipment tenders above the group’s delegated limit.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess evidence gaps and interview signals.\"},\"role\":{\"roleTitle\":\"Plant Procurement Manager, Industrial Gas Supply Network\",\"jobDescriptionSource\":\"jd_cc32b30619c3dc77\",\"requirementIds\":[\"req_454fa930aac7\",\"req_c33b4742fd8f\",\"req_2952c26a3332\",\"req_cf82ba2f6cca\",\"req_2de1fca29d8d\"]},\"candidate\":{\"candidateId\":\"cand_040c8fb68e7f9bfd\",\"sources\":[\"src_9d05ad456645\",\"src_a679dc0ba8bd\",\"src_44cf1756c287\",\"src_8c5e99f16245\",\"src_47a010909b59\",\"src_dd7280cb8ef1\",\"src_87c731918afa\",\"src_cf27161235d0\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_454fa930aac7\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_9d05ad456645\",\"text\":\"Five years in plant procurement at a regional cement producer, the last two as the buyer for three plants' maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows five years at cement producer but not total years or team leadership\"},{\"sourceId\":\"src_87c731918afa\",\"text\":\"candidate said he has 'eight years in procurement, all of it in heavy industry' and that he 'ran the procurement team for the plants'; asked about the kiln tender, he said the team leader 'fronted it at the board' but that the work was his.\",\"evidenceStrength\":\"low\",\"notes\":\"Subjective claim, no documented evidence of team leadership or total years\"}],\"missingEvidence\":[\"Need documented evidence of eight total years in plant or heavy‑industry procurement and at least three years running a plant procurement team\"]},{\"requirementId\":\"req_c33b4742fd8f\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_44cf1756c287\",\"text\":\"Supported the capital equipment tenders run by the team leader for the kiln refurbishment, preparing the tender documents and the bid comparison; the tender board submissions were made by the team leader.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows support but not that candidate ran the tender or that it was above delegated limit\"}],\"missingEvidence\":[\"Need evidence that the candidate personally ran a capital equipment tender above the group’s delegated limit and that it was presented to the tender board\"]},{\"requirementId\":\"req_2952c26a3332\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a679dc0ba8bd\",\"text\":\"Operated the supplier risk process for the three plants' critical parts, keeping the critical supplier register and the quarterly risk review with the plant maintenance managers.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates documented supplier risk process\"}]},{\"requirementId\":\"req_cf82ba2f6cca\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9d05ad456645\",\"text\":\"Five years in plant procurement at a regional cement producer, the last two as the buyer for three plants' maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows buyer role for maintenance parts and contracted services\"}]},{\"requirementId\":\"req_2de1fca29d8d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8c5e99f16245\",\"text\":\"Wrote the annual procurement boundary note for each of the three plants and closed the two internal audit findings raised against the plants' purchase order controls in 2024.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates procurement boundaries and audit findings closure\"}]}],\"supportedClaims\":[{\"claim\":\"Seven years of plant procurement experience, including five years at a regional cement producer and two years as a purchasing assistant at an engineering distributor.\",\"supportingRequirementIds\":[\"req_454fa930aac7\"],\"sourceIds\":[\"src_9d05ad456645\",\"src_47a010909b59\"],\"evidenceStrength\":\"medium\",\"witness\":\"Five years in plant procurement at a regional cement producer, the last two as the buyer for three plants' maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader.\"},{\"claim\":\"Operated the supplier risk process for three plants' critical parts, maintaining the critical supplier register and conducting quarterly risk reviews with plant maintenance managers.\",\"supportingRequirementIds\":[\"req_2952c26a3332\"],\"sourceIds\":[\"src_a679dc0ba8bd\"],\"evidenceStrength\":\"high\",\"witness\":\"Operated the supplier risk process for the three plants' critical parts, keeping the critical supplier register and the quarterly risk review with the plant maintenance managers.\"},{\"claim\":\"Authored annual procurement boundary notes for each of the three plants and closed two internal audit findings related to purchase order controls in 2024.\",\"supportingRequirementIds\":[\"req_2de1fca29d8d\"],\"sourceIds\":[\"src_8c5e99f16245\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the annual procurement boundary note for each of the three plants and closed the two internal audit findings raised against the plants' purchase order controls in 2024.\"}],\"unsupportedClaims\":[{\"claim\":\"Eight years of plant procurement experience.\",\"reason\":\"No source documents the total of eight years; the resume cites five years at the cement producer and two years as a purchasing assistant, totaling seven years.\",\"requiredFollowUp\":\"Provide documented evidence of the remaining year(s) of procurement experience.\"},{\"claim\":\"Ran the plant procurement team for the plants.\",\"reason\":\"Only a recruiter note claims this; no source documents the candidate’s leadership role.\",\"requiredFollowUp\":\"Provide documentation (e.g., organizational chart, team roster, or supervisor statement) confirming the candidate ran the procurement team.\"},{\"claim\":\"Ran capital equipment tenders above the group’s delegated limit.\",\"reason\":\"Resume shows support but not that the candidate ran the tender or that it exceeded the delegated limit.\",\"requiredFollowUp\":\"Provide evidence that the candidate personally led a capital equipment tender above the delegated limit and that it was presented to the tender board.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_454fa930aac7_1\",\"requirementId\":\"req_454fa930aac7\",\"severity\":\"high\",\"gap\":\"Evidence of eight total years in plant or heavy‑industry procurement and at least three years running a plant procurement team.\"},{\"gapId\":\"gap_c33b4742fd8f_1\",\"requirementId\":\"req_c33b4742fd8f\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate personally ran a capital equipment tender above the group’s delegated limit and that it was presented to the tender board.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_87c731918afa\",\"text\":\"candidate said he has 'eight years in procurement, all of it in heavy industry' and that he 'ran the procurement team for the plants'; asked about the kiln tender, he said the team leader 'fronted it at the board' but that the work was his.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"true\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify the candidate’s actual years of experience, leadership role, and tender ownership through documented evidence or a structured interview.\"}],\"followUpQuestions\":[{\"questionId\":\"q_454fa930aac7_1\",\"requirementId\":\"req_454fa930aac7\",\"question\":\"Can you provide documentation or a supervisor statement confirming that you have eight years of plant or heavy‑industry procurement experience and that you have led a plant procurement team for at least three years?\",\"evidenceTarget\":\"Years of experience by role and evidence of team leadership\"},{\"questionId\":\"q_c33b4742fd8f_1\",\"requirementId\":\"req_c33b4742fd8f\",\"question\":\"Could you share the tender documentation or board minutes that show you personally ran a capital equipment tender above the group’s delegated limit?\",\"evidenceTarget\":\"Tender ownership and limit compliance\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s documented experience meets the minimum 8‑year requirement and 3‑year team leadership.\",\"Confirm that the candidate personally ran a capital equipment tender above the delegated limit and that it was presented to the tender board.\",\"Assess the reliability of subjective recruiter notes and ensure they are corroborated by documented evidence.\"],\"auditSummary\":\"The evidence establishes seven years of plant procurement experience, risk process operation, procurement boundary documentation, and audit findings closure. It does not establish the required eight years of experience, leadership of a procurement team, or that the candidate personally ran capital equipment tenders above the delegated limit. Human review is required to evaluate these gaps and interview signals.\",\"limitations\":[\"The analysis is limited to the provided sources; any additional evidence not included here is not considered.\"]}}",
+ "content_sha256": "1c6ffa5b95e43954dec74fb856e57961355556ae8fc81e497012aed6800a1966",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_040c8fb68e7f9bfd",
+   "targetRoleTitle": "Plant Procurement Manager, Industrial Gas Supply Network",
+   "professionalSummary": [
+    "Seven years of plant procurement experience, including five years at a regional cement producer and two years as a purchasing assistant at an engineering distributor."
+   ],
+   "experienceHighlights": [
+    "Buyer for three plants’ maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader.",
+    "Operated the supplier risk process for three plants’ critical parts, maintaining the critical supplier register and conducting quarterly risk reviews with plant maintenance managers.",
+    "Supported capital equipment tenders for kiln refurbishment, preparing tender documents and bid comparisons; the tender board submissions were made by the team leader.",
+    "Authored annual procurement boundary notes for each of the three plants and closed two internal audit findings related to purchase order controls in 2024."
+   ],
+   "projectsAndWorkSamples": [
+    "Critical supplier register and quarterly risk review pack for one plant.",
+    "Bid comparison for the kiln refurbishment tender.",
+    "Audit closure memo for the two 2024 findings, with purchase order system references as verification trail."
+   ],
+   "skills": [
+    "Plant procurement",
+    "Supplier risk management",
+    "Capital equipment tendering",
+    "Procurement policy compliance",
+    "Audit findings closure"
+   ],
+   "evidenceBoundary": "The provided materials establish seven years of plant procurement experience, roles as buyer and risk process operator, support for capital equipment tenders, procurement boundary documentation, and audit findings closure. They do not establish eight years of experience, leadership of a procurement team, or that the candidate personally ran capital equipment tenders above the group’s delegated limit."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess evidence gaps and interview signals."
+   },
+   "role": {
+    "roleTitle": "Plant Procurement Manager, Industrial Gas Supply Network",
+    "jobDescriptionSource": "jd_cc32b30619c3dc77",
+    "requirementIds": [
+     "req_454fa930aac7",
+     "req_c33b4742fd8f",
+     "req_2952c26a3332",
+     "req_cf82ba2f6cca",
+     "req_2de1fca29d8d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_040c8fb68e7f9bfd",
+    "sources": [
+     "src_9d05ad456645",
+     "src_a679dc0ba8bd",
+     "src_44cf1756c287",
+     "src_8c5e99f16245",
+     "src_47a010909b59",
+     "src_dd7280cb8ef1",
+     "src_87c731918afa",
+     "src_cf27161235d0"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_454fa930aac7",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_9d05ad456645",
+       "text": "Five years in plant procurement at a regional cement producer, the last two as the buyer for three plants' maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader.",
+       "evidenceStrength": "medium",
+       "notes": "Shows five years at cement producer but not total years or team leadership"
+      },
+      {
+       "sourceId": "src_87c731918afa",
+       "text": "candidate said he has 'eight years in procurement, all of it in heavy industry' and that he 'ran the procurement team for the plants'; asked about the kiln tender, he said the team leader 'fronted it at the board' but that the work was his.",
+       "evidenceStrength": "low",
+       "notes": "Subjective claim, no documented evidence of team leadership or total years"
+      }
+     ],
+     "missingEvidence": [
+      "Need documented evidence of eight total years in plant or heavy‑industry procurement and at least three years running a plant procurement team"
+     ]
+    },
+    {
+     "requirementId": "req_c33b4742fd8f",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_44cf1756c287",
+       "text": "Supported the capital equipment tenders run by the team leader for the kiln refurbishment, preparing the tender documents and the bid comparison; the tender board submissions were made by the team leader.",
+       "evidenceStrength": "medium",
+       "notes": "Shows support but not that candidate ran the tender or that it was above delegated limit"
+      }
+     ],
+     "missingEvidence": [
+      "Need evidence that the candidate personally ran a capital equipment tender above the group’s delegated limit and that it was presented to the tender board"
+     ]
+    },
+    {
+     "requirementId": "req_2952c26a3332",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a679dc0ba8bd",
+       "text": "Operated the supplier risk process for the three plants' critical parts, keeping the critical supplier register and the quarterly risk review with the plant maintenance managers.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates documented supplier risk process"
+      }
+     ]
+    },
+    {
+     "requirementId": "req_cf82ba2f6cca",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9d05ad456645",
+       "text": "Five years in plant procurement at a regional cement producer, the last two as the buyer for three plants' maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader.",
+       "evidenceStrength": "high",
+       "notes": "Shows buyer role for maintenance parts and contracted services"
+      }
+     ]
+    },
+    {
+     "requirementId": "req_2de1fca29d8d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8c5e99f16245",
+       "text": "Wrote the annual procurement boundary note for each of the three plants and closed the two internal audit findings raised against the plants' purchase order controls in 2024.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates procurement boundaries and audit findings closure"
+      }
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Seven years of plant procurement experience, including five years at a regional cement producer and two years as a purchasing assistant at an engineering distributor.",
+     "supportingRequirementIds": [
+      "req_454fa930aac7"
+     ],
+     "sourceIds": [
+      "src_9d05ad456645",
+      "src_47a010909b59"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Five years in plant procurement at a regional cement producer, the last two as the buyer for three plants' maintenance parts and contracted services under the group procurement policy, reporting to the plant procurement team leader."
+    },
+    {
+     "claim": "Operated the supplier risk process for three plants' critical parts, maintaining the critical supplier register and conducting quarterly risk reviews with plant maintenance managers.",
+     "supportingRequirementIds": [
+      "req_2952c26a3332"
+     ],
+     "sourceIds": [
+      "src_a679dc0ba8bd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Operated the supplier risk process for the three plants' critical parts, keeping the critical supplier register and the quarterly risk review with the plant maintenance managers."
+    },
+    {
+     "claim": "Authored annual procurement boundary notes for each of the three plants and closed two internal audit findings related to purchase order controls in 2024.",
+     "supportingRequirementIds": [
+      "req_2de1fca29d8d"
+     ],
+     "sourceIds": [
+      "src_8c5e99f16245"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the annual procurement boundary note for each of the three plants and closed the two internal audit findings raised against the plants' purchase order controls in 2024."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Eight years of plant procurement experience.",
+     "reason": "No source documents the total of eight years; the resume cites five years at the cement producer and two years as a purchasing assistant, totaling seven years.",
+     "requiredFollowUp": "Provide documented evidence of the remaining year(s) of procurement experience."
+    },
+    {
+     "claim": "Ran the plant procurement team for the plants.",
+     "reason": "Only a recruiter note claims this; no source documents the candidate’s leadership role.",
+     "requiredFollowUp": "Provide documentation (e.g., organizational chart, team roster, or supervisor statement) confirming the candidate ran the procurement team."
+    },
+    {
+     "claim": "Ran capital equipment tenders above the group’s delegated limit.",
+     "reason": "Resume shows support but not that the candidate ran the tender or that it exceeded the delegated limit.",
+     "requiredFollowUp": "Provide evidence that the candidate personally led a capital equipment tender above the delegated limit and that it was presented to the tender board."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_454fa930aac7_1",
+     "requirementId": "req_454fa930aac7",
+     "severity": "high",
+     "gap": "Evidence of eight total years in plant or heavy‑industry procurement and at least three years running a plant procurement team."
+    },
+    {
+     "gapId": "gap_c33b4742fd8f_1",
+     "requirementId": "req_c33b4742fd8f",
+     "severity": "high",
+     "gap": "Evidence that the candidate personally ran a capital equipment tender above the group’s delegated limit and that it was presented to the tender board."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_87c731918afa",
+     "text": "candidate said he has 'eight years in procurement, all of it in heavy industry' and that he 'ran the procurement team for the plants'; asked about the kiln tender, he said the team leader 'fronted it at the board' but that the work was his.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Verify the candidate’s actual years of experience, leadership role, and tender ownership through documented evidence or a structured interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_454fa930aac7_1",
+     "requirementId": "req_454fa930aac7",
+     "question": "Can you provide documentation or a supervisor statement confirming that you have eight years of plant or heavy‑industry procurement experience and that you have led a plant procurement team for at least three years?",
+     "evidenceTarget": "Years of experience by role and evidence of team leadership"
+    },
+    {
+     "questionId": "q_c33b4742fd8f_1",
+     "requirementId": "req_c33b4742fd8f",
+     "question": "Could you share the tender documentation or board minutes that show you personally ran a capital equipment tender above the group’s delegated limit?",
+     "evidenceTarget": "Tender ownership and limit compliance"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented experience meets the minimum 8‑year requirement and 3‑year team leadership.",
+    "Confirm that the candidate personally ran a capital equipment tender above the delegated limit and that it was presented to the tender board.",
+    "Assess the reliability of subjective recruiter notes and ensure they are corroborated by documented evidence."
+   ],
+   "auditSummary": "The evidence establishes seven years of plant procurement experience, risk process operation, procurement boundary documentation, and audit findings closure. It does not establish the required eight years of experience, leadership of a procurement team, or that the candidate personally ran capital equipment tenders above the delegated limit. Human review is required to evaluate these gaps and interview signals.",
+   "limitations": [
+    "The analysis is limited to the provided sources; any additional evidence not included here is not considered."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:49:54.528459+00:00"
+}

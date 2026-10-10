@@ -1,0 +1,264 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3af4b651-9e88-4dd4-84d9-609202c3e844.C1",
+ "case_id": "3af4b651-9e88-4dd4-84d9-609202c3e844",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11300,
+  "promptWords": 1490
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 43.831
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2880,
+ "eval_count": 1975,
+ "prompt_eval_duration_ns": 17945000,
+ "eval_duration_ns": 35134500000,
+ "total_duration_ns": 43827366166,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims citing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: one or two sentences on what materials establish.\n\nRequirement evidence map: for each requirement id, status. We have evidence for all. So supported. Provide evidence entries with sourceId and text verbatim from source. Need to copy text from source. We have source texts in description. We'll use the resume lines.\n\nWe need to include witness text verbatim. Use the exact text from source. For example src_e32c1055241e text: \"Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations.\" We'll use that.\n\nSimilarly others.\n\nAlso need supportedClaims array: maybe each claim from CV. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high? Since direct. Use high.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: none.\n\nInterviewSignalRisks: from notes: src_f4770e688dd7 and src_02a756d0897a. Provide signalType maybe \"behavioral\" or \"culture fit\". Not tied to job evidence. Severity medium. RecommendedHandling: ask neutral follow-up about contractor management firmness.\n\nFollowUpQuestions: maybe for gaps none. But we can still ask about contractor firmness? But requirement evidence is supported. But interview signals risk: ask follow-up question: \"Can you describe a situation where you had to assert authority with a contractor to ensure project deliverables?\" That would address risk.\n\nHumanReviewChecklist: items like \"Verify contractor management firmness\", \"Assess interview signals\".\n\nAuditSummary: paragraph summarizing.\n\nLimitations: maybe \"Based on provided materials only\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_30ef5aef43d2bf85\",\"targetRoleTitle\":\"Project Manager, Water Treatment Plant Upgrades\",\"professionalSummary\":[\"Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations. (src_e32c1055241e)\"],\"experienceHighlights\":[\"Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets. (src_d9713d30d434)\",\"Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository. (src_6642f41f8cad)\",\"Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'. (src_6c87fb5681b5)\",\"Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer. (src_aac8b0236432)\"],\"projectsAndWorkSamples\":[\"Work sample: one project plan with its outage schedule, the contract records extract with instructions, variations and defect notices for one project, one board report and one closure report, with the capital programme repository references as a verification trail. (src_8b00f24bbe7c)\"],\"skills\":[\"Project planning\",\"Outage scheduling\",\"Contractor management\",\"Monthly reporting\",\"Commissioning documentation\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s experience managing plant upgrade projects, contractor interactions, reporting, outage requests, and closure documentation within a water utility capital programme. They do not provide independent verification of outcomes or performance metrics.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Project Manager, Water Treatment Plant Upgrades\",\"jobDescriptionSource\":\"jd_27fea861eb64921d\",\"requirementIds\":[\"req_25115a7a5358\",\"req_082d15d21e10\",\"req_8c8d117deef0\",\"req_930bcfefaf63\",\"req_a26c43a7aa11\"]},\"candidate\":{\"candidateId\":\"cand_30ef5aef43d2bf85\",\"sources\":[\"src_e32c1055241e\",\"src_d9713d30d434\",\"src_6642f41f8cad\",\"src_6c87fb5681b5\",\"src_aac8b0236432\",\"src_8b00f24bbe7c\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_25115a7a5358\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e32c1055241e\",\"text\":\"Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of project planning and outage scheduling\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_082d15d21e10\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d9713d30d434\",\"text\":\"Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct contractor management record\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_8c8d117deef0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6642f41f8cad\",\"text\":\"Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct reporting activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_930bcfefaf63\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6c87fb5681b5\",\"text\":\"Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct outage request preparation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a26c43a7aa11\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_aac8b0236432\",\"text\":\"Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct closure documentation\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations.\",\"sourceIds\":[\"src_e32c1055241e\"],\"requirementIds\":[\"req_25115a7a5358\"],\"evidenceStrength\":\"high\",\"witness\":\"Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations.\"},{\"claim\":\"Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets.\",\"sourceIds\":[\"src_d9713d30d434\"],\"requirementIds\":[\"req_082d15d21e10\"],\"evidenceStrength\":\"high\",\"witness\":\"Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets.\"},{\"claim\":\"Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository.\",\"sourceIds\":[\"src_6642f41f8cad\"],\"requirementIds\":[\"req_8c8d117deef0\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository.\"},{\"claim\":\"Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'.\",\"sourceIds\":[\"src_6c87fb5681b5\"],\"requirementIds\":[\"req_930bcfefaf63\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'.\"},{\"claim\":\"Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer.\",\"sourceIds\":[\"src_aac8b0236432\"],\"requirementIds\":[\"req_a26c43a7aa11\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_f4770e688dd7\",\"text\":\"he was too nice and a bit hesitant in the contractor scenario; my impression is that he'd be a pushover with a hard-nosed contractor and lacks the toughness for site.\",\"signalType\":\"behavioral\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Ask a neutral follow-up question about contractor management firmness.\"},{\"sourceId\":\"src_02a756d0897a\",\"text\":\"our main contractor walks over weak project managers, so the packet should say whether he can be firm with them.\",\"signalType\":\"culture_fit\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Ask a neutral follow-up question about contractor management firmness.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_082d15d21e10\",\"question\":\"Can you describe a situation where you had to assert authority with a contractor to ensure project deliverables were met?\",\"evidenceTarget\":\"Evidence of contractor management firmness\"}],\"humanReviewChecklist\":[\"Verify that the candidate can assert authority with contractors as required by the role.\",\"Confirm that interview signals regarding firmness are addressed by follow-up questions.\"],\"auditSummary\":\"The candidate’s resume and work sample provide direct evidence for all five job requirements, with high‑strength citations. Interview notes raise a potential concern about contractor firmness, which is not directly evidenced in the provided materials. A neutral follow-up question is recommended to clarify this aspect before a hiring decision.\",\"limitations\":[\"Analysis is limited to the provided candidate materials and interview notes; no external verification of performance or outcomes is available.\"]} }",
+ "content_sha256": "620446b9b10951b9a6cfbecccfef27fe94293fd4ab1ed48d7693ebbe580a797e",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_30ef5aef43d2bf85",
+   "targetRoleTitle": "Project Manager, Water Treatment Plant Upgrades",
+   "professionalSummary": [
+    "Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations. (src_e32c1055241e)"
+   ],
+   "experienceHighlights": [
+    "Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets. (src_d9713d30d434)",
+    "Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository. (src_6642f41f8cad)",
+    "Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'. (src_6c87fb5681b5)",
+    "Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer. (src_aac8b0236432)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: one project plan with its outage schedule, the contract records extract with instructions, variations and defect notices for one project, one board report and one closure report, with the capital programme repository references as a verification trail. (src_8b00f24bbe7c)"
+   ],
+   "skills": [
+    "Project planning",
+    "Outage scheduling",
+    "Contractor management",
+    "Monthly reporting",
+    "Commissioning documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience managing plant upgrade projects, contractor interactions, reporting, outage requests, and closure documentation within a water utility capital programme. They do not provide independent verification of outcomes or performance metrics."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Water Treatment Plant Upgrades",
+    "jobDescriptionSource": "jd_27fea861eb64921d",
+    "requirementIds": [
+     "req_25115a7a5358",
+     "req_082d15d21e10",
+     "req_8c8d117deef0",
+     "req_930bcfefaf63",
+     "req_a26c43a7aa11"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_30ef5aef43d2bf85",
+    "sources": [
+     "src_e32c1055241e",
+     "src_d9713d30d434",
+     "src_6642f41f8cad",
+     "src_6c87fb5681b5",
+     "src_aac8b0236432",
+     "src_8b00f24bbe7c"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_25115a7a5358",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e32c1055241e",
+       "text": "Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of project planning and outage scheduling"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_082d15d21e10",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d9713d30d434",
+       "text": "Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets.",
+       "evidenceStrength": "high",
+       "notes": "Direct contractor management record"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8c8d117deef0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6642f41f8cad",
+       "text": "Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository.",
+       "evidenceStrength": "high",
+       "notes": "Direct reporting activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_930bcfefaf63",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6c87fb5681b5",
+       "text": "Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'.",
+       "evidenceStrength": "high",
+       "notes": "Direct outage request preparation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a26c43a7aa11",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_aac8b0236432",
+       "text": "Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer.",
+       "evidenceStrength": "high",
+       "notes": "Direct closure documentation"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations.",
+     "sourceIds": [
+      "src_e32c1055241e"
+     ],
+     "requirementIds": [
+      "req_25115a7a5358"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Project manager on a water utility's capital programme for four years, running three treatment plant upgrade projects under the utility's project framework with their project plans and outage schedules agreed with plant operations."
+    },
+    {
+     "claim": "Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets.",
+     "sourceIds": [
+      "src_d9713d30d434"
+     ],
+     "requirementIds": [
+      "req_082d15d21e10"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed the works contractor on site under the works contract on all three projects; the contract records hold the forty-one site instructions, the nine variations and the six defect notices I issued, with the contractor's responses and the final accounts settled within the approved budgets."
+    },
+    {
+     "claim": "Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository.",
+     "sourceIds": [
+      "src_6642f41f8cad"
+     ],
+     "requirementIds": [
+      "req_8c8d117deef0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly project board report for each project, filed with the board's decisions in the capital programme repository."
+    },
+    {
+     "claim": "Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'.",
+     "sourceIds": [
+      "src_6c87fb5681b5"
+     ],
+     "requirementIds": [
+      "req_930bcfefaf63"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the outage requests for each project's works; the approvals were the plant operations manager's, recorded on each request together with which checks were mine and which were plant operations'."
+    },
+    {
+     "claim": "Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer.",
+     "sourceIds": [
+      "src_aac8b0236432"
+     ],
+     "requirementIds": [
+      "req_a26c43a7aa11"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the closure report for each project with the project boundary statement and the commissioning evidence signed by the commissioning engineer."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_f4770e688dd7",
+     "text": "he was too nice and a bit hesitant in the contractor scenario; my impression is that he'd be a pushover with a hard-nosed contractor and lacks the toughness for site.",
+     "signalType": "behavioral",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Ask a neutral follow-up question about contractor management firmness."
+    },
+    {
+     "sourceId": "src_02a756d0897a",
+     "text": "our main contractor walks over weak project managers, so the packet should say whether he can be firm with them.",
+     "signalType": "culture_fit",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Ask a neutral follow-up question about contractor management firmness."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_082d15d21e10",
+     "question": "Can you describe a situation where you had to assert authority with a contractor to ensure project deliverables were met?",
+     "evidenceTarget": "Evidence of contractor management firmness"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate can assert authority with contractors as required by the role.",
+    "Confirm that interview signals regarding firmness are addressed by follow-up questions."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide direct evidence for all five job requirements, with high‑strength citations. Interview notes raise a potential concern about contractor firmness, which is not directly evidenced in the provided materials. A neutral follow-up question is recommended to clarify this aspect before a hiring decision.",
+   "limitations": [
+    "Analysis is limited to the provided candidate materials and interview notes; no external verification of performance or outcomes is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:21:12.376917+00:00"
+}

@@ -1,0 +1,249 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "b286192b-a6d5-4419-a9ea-9dc20e544e99.C2",
+ "case_id": "b286192b-a6d5-4419-a9ea-9dc20e544e99",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14658,
+  "promptWords": 1742
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 46.196
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4369,
+ "eval_count": 1604,
+ "prompt_eval_duration_ns": 19624000,
+ "eval_duration_ns": 29341493000,
+ "total_duration_ns": 46194110916,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. All claims must have source. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Support Operations Analyst with proven experience configuring Zendesk, building automations, reporting, and macro maintenance for a 45-agent team.\" Need source. Use src_a7a9e85838d2 etc. Provide evidenceBoundary sentence.\n\nExperienceHighlights: list claims mapping to requirements. Each claim with source. Use same source as evidence.\n\nProjectsAndWorkSamples: mention work sample.\n\nSkills: list skills like Zendesk configuration, automation design, reporting, macro maintenance, staffing planning.\n\nEvidenceBoundary: \"The provided resume and work sample establish the candidate’s experience in ticketing platform configuration, automation design, reporting, macro maintenance, and staffing support planning, but do not provide evidence of direct reporting to a head of support or approval processes beyond the sandbox testing.\"\n\nNow HiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nWe need evidence entries with sourceId, text verbatim passage, evidenceStrength, notes.\n\nWe must quote verbatim passage from source. Use resume lines.\n\nLet's extract passages:\n\nsrc_a7a9e85838d2: \"Configured Zendesk for a 45-agent support team at Ledgerly: ticket forms, custom fields, agent groups and role permissions across three product lines.\"\n\nsrc_baf6d0fa1d3a: \"Designed and rolled out 18 Zendesk triggers and automations that route tickets by product and plan tier and raise the priority of payroll-deadline issues, testing each one in the sandbox before switching it on.\"\n\nsrc_5431899fe5b0: \"Produced the weekly service-level report on first-response and full-resolution times by queue, sent to the head of support every Monday.\"\n\nsrc_98756d69f2b5: \"Updated macros and saved replies after each monthly release, working from the release manager's change notes.\"\n\nsrc_4e50a5567283: \"Helped the workforce planner gather ticket-volume history before the January peak.\"\n\nsrc_2f391ada8cec: \"Work sample: the change record for the payroll-deadline routing automation, with the trigger conditions, the sandbox test cases and their results, the switch-on date and the support director's approval.\"\n\nAlso note HR verification note but not needed.\n\nNow map:\n\nreq_ef2b9ead4bc2: evidence from src_a7a9e85838d2. Strength high.\n\nreq_94f36de5fd5c: evidence from src_baf6d0fa1d3a and src_2f391ada8cec. Strength high.\n\nreq_3b92c34c223a: evidence from src_5431899fe5b0. Strength high.\n\nreq_72c55cce4e08: evidence from src_4e50a5567283. Strength medium? It's about helping gather history, not planning staffing. So partial evidence. missingEvidence: \"Direct evidence of planning staffing for seasonal peaks.\" Gap.\n\nreq_46bfa884e328: evidence from src_98756d69f2b5. Strength high.\n\nNow supportedClaims: maybe list claims that are supported: e.g., \"Configured Zendesk for a 45-agent support team\" etc. Provide requirementIds.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: for req_72c55cce4e08.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: for staffing planning: question about how they planned staffing.\n\nHumanReviewChecklist: maybe items: \"Review evidence for each requirement, verify gaps, assess interview questions.\"\n\nAuditSummary: paragraph summarizing.\n\nLimitations: maybe \"No evidence of direct reporting to head of support beyond email.\"\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_2f3c2447f7e74d5a\",\"targetRoleTitle\":\"Support Operations Specialist\",\"professionalSummary\":[\"Support Operations Analyst with proven experience configuring Zendesk, designing and rolling out ticketing automations, producing weekly service‑level reports, maintaining help‑centre macros, and assisting with staffing planning for peak periods.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit based on evidence and gaps.\"},\"role\":{\"roleTitle\":\"Support Operations Specialist\",\"jobDescriptionSource\":\"jd_1490abbf02fed6dd\",\"requirementIds\":[\"req_ef2b9ead4bc2\",\"req_94f36de5fd5c\",\"req_3b92c34c223a\",\"req_72c55cce4e08\",\"req_46bfa884e328\"]},\"candidate\":{\"candidateId\":\"cand_2f3c2447f7e74d5a\",\"sources\":[\"src_a7a9e85838d2\",\"src_baf6d0fa1d3a\",\"src_5431899fe5b0\",\"src_98756d69f2b5\",\"src_4e50a5567283\",\"src_2f391ada8cec\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_ef2b9ead4bc2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a7a9e85838d2\",\"text\":\"Configured Zendesk for a 45-agent support team at Ledgerly: ticket forms, custom fields, agent groups and role permissions across three product lines.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct configuration of ticketing platform\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_94f36de5fd5c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_baf6d0fa1d3a\",\"text\":\"Designed and rolled out 18 Zendesk triggers and automations that route tickets by product and plan tier and raise the priority of payroll-deadline issues, testing each one in the sandbox before switching it on.\",\"evidenceStrength\":\"high\",\"notes\":\"Automation design and sandbox testing\"},{\"sourceId\":\"src_2f391ada8cec\",\"text\":\"Work sample: the change record for the payroll-deadline routing automation, with the trigger conditions, the sandbox test cases and their results, the switch-on date and the support director's approval.\",\"evidenceStrength\":\"high\",\"notes\":\"Documented approval and sandbox results\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3b92c34c223a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_5431899fe5b0\",\"text\":\"Produced the weekly service-level report on first-response and full-resolution times by queue, sent to the head of support every Monday.\",\"evidenceStrength\":\"high\",\"notes\":\"Weekly reporting\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_72c55cce4e08\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_4e50a5567283\",\"text\":\"Helped the workforce planner gather ticket-volume history before the January peak.\",\"evidenceStrength\":\"medium\",\"notes\":\"Assisted with data collection\"}],\"missingEvidence\":[\"Direct evidence of planning staffing for seasonal peaks such as the end of the tax year\"]},{\"requirementId\":\"req_46bfa884e328\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_98756d69f2b5\",\"text\":\"Updated macros and saved replies after each monthly release, working from the release manager's change notes.\",\"evidenceStrength\":\"high\",\"notes\":\"Macro maintenance aligned with releases\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Configured Zendesk for a 45-agent support team at Ledgerly: ticket forms, custom fields, agent groups and role permissions across three product lines.\",\"supportingRequirementIds\":[\"req_ef2b9ead4bc2\"],\"sourceIds\":[\"src_a7a9e85838d2\"],\"evidenceStrength\":\"high\",\"witness\":\"Configured Zendesk for a 45-agent support team at Ledgerly: ticket forms, custom fields, agent groups and role permissions across three product lines.\"},{\"claim\":\"Designed and rolled out 18 Zendesk triggers and automations that route tickets by product and plan tier and raise the priority of payroll-deadline issues, testing each one in the sandbox before switching it on.\",\"supportingRequirementIds\":[\"req_94f36de5fd5c\"],\"sourceIds\":[\"src_baf6d0fa1d3a\"],\"evidenceStrength\":\"high\",\"witness\":\"Designed and rolled out 18 Zendesk triggers and automations that route tickets by product and plan tier and raise the priority of payroll-deadline issues, testing each one in the sandbox before switching it on.\"},{\"claim\":\"Produced the weekly service-level report on first-response and full-resolution times by queue, sent to the head of support every Monday.\",\"supportingRequirementIds\":[\"req_3b92c34c223a\"],\"sourceIds\":[\"src_5431899fe5b0\"],\"evidenceStrength\":\"high\",\"witness\":\"Produced the weekly service-level report on first-response and full-resolution times by queue, sent to the head of support every Monday.\"},{\"claim\":\"Updated macros and saved replies after each monthly release, working from the release manager's change notes.\",\"supportingRequirementIds\":[\"req_46bfa884e328\"],\"sourceIds\":[\"src_98756d69f2b5\"],\"evidenceStrength\":\"high\",\"witness\":\"Updated macros and saved replies after each monthly release, working from the release manager's change notes.\"},{\"claim\":\"Helped the workforce planner gather ticket-volume history before the January peak.\",\"supportingRequirementIds\":[\"req_72c55cce4e08\"],\"sourceIds\":[\"src_4e50a5567283\"],\"evidenceStrength\":\"medium\",\"witness\":\"Helped the workforce planner gather ticket-volume history before the January peak.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_72c55cce4e08\",\"requirementId\":\"req_72c55cce4e08\",\"severity\":\"medium\",\"gap\":\"Direct evidence of planning staffing for seasonal peaks such as the end of the tax year.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_72c55cce4e08\",\"requirementId\":\"req_72c55cce4e08\",\"question\":\"Can you describe how you planned staffing levels for the January peak, including any forecasting methods or staffing models you used?\",\"evidenceTarget\":\"Detailed description of staffing planning process and outcomes.\"}],\"humanReviewChecklist\":[\"Verify that each requirement has at least one cited evidence entry.\",\"Confirm that gaps are documented and follow-up questions are appropriate.\",\"Ensure no unsupported quantitative claims are present.\",\"Check that all sourceIds are from the provided materials.\"],\"auditSummary\":\"The evidence demonstrates the candidate’s experience in ticketing platform configuration, automation design, reporting, macro maintenance, and assistance with staffing data collection. However, there is no direct evidence of planning staffing for seasonal peaks, which is a partial requirement. Human review is needed to evaluate the significance of this gap and to assess the candidate’s fit for the role.\",\"limitations\":[\"No evidence of direct reporting to the head of support beyond the weekly report email.\",\"No quantitative metrics on automation impact or staffing outcomes.\"]}}",
+ "content_sha256": "ed53cf8bc9a037d74309ed8acfb7490926150bba66f7ca435896e6b092139d8b",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2f3c2447f7e74d5a",
+   "targetRoleTitle": "Support Operations Specialist",
+   "professionalSummary": [
+    "Support Operations Analyst with proven experience configuring Zendesk, designing and rolling out ticketing automations, producing weekly service‑level reports, maintaining help‑centre macros, and assisting with staffing planning for peak periods."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Support Operations Specialist",
+    "jobDescriptionSource": "jd_1490abbf02fed6dd",
+    "requirementIds": [
+     "req_ef2b9ead4bc2",
+     "req_94f36de5fd5c",
+     "req_3b92c34c223a",
+     "req_72c55cce4e08",
+     "req_46bfa884e328"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2f3c2447f7e74d5a",
+    "sources": [
+     "src_a7a9e85838d2",
+     "src_baf6d0fa1d3a",
+     "src_5431899fe5b0",
+     "src_98756d69f2b5",
+     "src_4e50a5567283",
+     "src_2f391ada8cec"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_ef2b9ead4bc2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a7a9e85838d2",
+       "text": "Configured Zendesk for a 45-agent support team at Ledgerly: ticket forms, custom fields, agent groups and role permissions across three product lines.",
+       "evidenceStrength": "high",
+       "notes": "Direct configuration of ticketing platform"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_94f36de5fd5c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_baf6d0fa1d3a",
+       "text": "Designed and rolled out 18 Zendesk triggers and automations that route tickets by product and plan tier and raise the priority of payroll-deadline issues, testing each one in the sandbox before switching it on.",
+       "evidenceStrength": "high",
+       "notes": "Automation design and sandbox testing"
+      },
+      {
+       "sourceId": "src_2f391ada8cec",
+       "text": "Work sample: the change record for the payroll-deadline routing automation, with the trigger conditions, the sandbox test cases and their results, the switch-on date and the support director's approval.",
+       "evidenceStrength": "high",
+       "notes": "Documented approval and sandbox results"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3b92c34c223a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5431899fe5b0",
+       "text": "Produced the weekly service-level report on first-response and full-resolution times by queue, sent to the head of support every Monday.",
+       "evidenceStrength": "high",
+       "notes": "Weekly reporting"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_72c55cce4e08",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_4e50a5567283",
+       "text": "Helped the workforce planner gather ticket-volume history before the January peak.",
+       "evidenceStrength": "medium",
+       "notes": "Assisted with data collection"
+      }
+     ],
+     "missingEvidence": [
+      "Direct evidence of planning staffing for seasonal peaks such as the end of the tax year"
+     ]
+    },
+    {
+     "requirementId": "req_46bfa884e328",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_98756d69f2b5",
+       "text": "Updated macros and saved replies after each monthly release, working from the release manager's change notes.",
+       "evidenceStrength": "high",
+       "notes": "Macro maintenance aligned with releases"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Configured Zendesk for a 45-agent support team at Ledgerly: ticket forms, custom fields, agent groups and role permissions across three product lines.",
+     "supportingRequirementIds": [
+      "req_ef2b9ead4bc2"
+     ],
+     "sourceIds": [
+      "src_a7a9e85838d2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Configured Zendesk for a 45-agent support team at Ledgerly: ticket forms, custom fields, agent groups and role permissions across three product lines."
+    },
+    {
+     "claim": "Designed and rolled out 18 Zendesk triggers and automations that route tickets by product and plan tier and raise the priority of payroll-deadline issues, testing each one in the sandbox before switching it on.",
+     "supportingRequirementIds": [
+      "req_94f36de5fd5c"
+     ],
+     "sourceIds": [
+      "src_baf6d0fa1d3a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed and rolled out 18 Zendesk triggers and automations that route tickets by product and plan tier and raise the priority of payroll-deadline issues, testing each one in the sandbox before switching it on."
+    },
+    {
+     "claim": "Produced the weekly service-level report on first-response and full-resolution times by queue, sent to the head of support every Monday.",
+     "supportingRequirementIds": [
+      "req_3b92c34c223a"
+     ],
+     "sourceIds": [
+      "src_5431899fe5b0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Produced the weekly service-level report on first-response and full-resolution times by queue, sent to the head of support every Monday."
+    },
+    {
+     "claim": "Updated macros and saved replies after each monthly release, working from the release manager's change notes.",
+     "supportingRequirementIds": [
+      "req_46bfa884e328"
+     ],
+     "sourceIds": [
+      "src_98756d69f2b5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Updated macros and saved replies after each monthly release, working from the release manager's change notes."
+    },
+    {
+     "claim": "Helped the workforce planner gather ticket-volume history before the January peak.",
+     "supportingRequirementIds": [
+      "req_72c55cce4e08"
+     ],
+     "sourceIds": [
+      "src_4e50a5567283"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Helped the workforce planner gather ticket-volume history before the January peak."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_72c55cce4e08",
+     "requirementId": "req_72c55cce4e08",
+     "severity": "medium",
+     "gap": "Direct evidence of planning staffing for seasonal peaks such as the end of the tax year."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_72c55cce4e08",
+     "requirementId": "req_72c55cce4e08",
+     "question": "Can you describe how you planned staffing levels for the January peak, including any forecasting methods or staffing models you used?",
+     "evidenceTarget": "Detailed description of staffing planning process and outcomes."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that each requirement has at least one cited evidence entry.",
+    "Confirm that gaps are documented and follow-up questions are appropriate.",
+    "Ensure no unsupported quantitative claims are present.",
+    "Check that all sourceIds are from the provided materials."
+   ],
+   "auditSummary": "The evidence demonstrates the candidate’s experience in ticketing platform configuration, automation design, reporting, macro maintenance, and assistance with staffing data collection. However, there is no direct evidence of planning staffing for seasonal peaks, which is a partial requirement. Human review is needed to evaluate the significance of this gap and to assess the candidate’s fit for the role.",
+   "limitations": [
+    "No evidence of direct reporting to the head of support beyond the weekly report email.",
+    "No quantitative metrics on automation impact or staffing outcomes."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:18:52.391759+00:00"
+}

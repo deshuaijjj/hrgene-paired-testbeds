@@ -1,0 +1,251 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "b8e94709-abbf-4242-84e4-01853bc784a4.C2",
+ "case_id": "b8e94709-abbf-4242-84e4-01853bc784a4",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14871,
+  "promptWords": 1787
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 53.65
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4809,
+ "eval_count": 1612,
+ "prompt_eval_duration_ns": 19773000,
+ "eval_duration_ns": 29680971000,
+ "total_duration_ns": 53648095875,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft claims.\n\nWe have requirements:\n\nreq_2c8af048c46f: Builds and maintains billing services in Go. Evidence: src_62dea18e7c3d says building invoice-generation and proration services in Go. Also src_59fe1b577775? not. So claim supported.\n\nreq_e18fe4669ea5: Writes design documents for service changes and takes them through review. Evidence: src_59fe1b577775 says wrote two design documents and tech lead reviewed and approved. Also src_c79f449cb84d shows design document. So supported.\n\nreq_bfcb7c91a7b0: Has technically led a service extraction or migration, owning the design decisions and the rollout plan. Evidence: src_c79f449cb84d peer comments say basically drove extraction, owned rollout, technical lead in all but name. But source says staff engineer wrote design and rollout plan. So claim partially supported? The peer comments claim technical lead but not confirmed. So partial_evidence. Need gap: ownership not established. Follow-up question: Did candidate own design decisions and rollout plan? Also note src_03d8acf77e75 says rollout plan written and run by staff engineer. So not owned. So insufficient evidence.\n\nreq_091d9c2d0558: Takes part in on-call and writes incident reviews. Evidence: src_ff5f005cd144 says on weekly on-call rotation and wrote incident review. So supported.\n\nreq_cdc962334169: Improves automated tests and the CI pipeline. Evidence: src_7aef337d4a8f says added contract tests and set up quarantine stage. So supported.\n\nNow CV: need optimized CV with claims. Use evidence boundary sentence.\n\nWe must include candidateId, targetRoleTitle, language.\n\nClaims arrays: professionalSummary, experienceHighlights, projectsAndWorkSamples, skills. We can craft claims referencing sources.\n\nWe must include witness verbatim passage.\n\nLet's craft claims:\n\nprofessionalSummary: claim: \"Backend engineer with experience building billing services in Go, leading design and extraction efforts, and improving test and CI pipelines.\" Source: src_62dea18e7c3d, src_7aef337d4a8f. Provide witness.\n\nexperienceHighlights: claim: \"Built invoice-generation and proration services in Go at Lumenfold (2021-2024).\" Source src_62dea18e7c3d.\n\nclaim: \"Contributed data-access layer and dual-write adapter for invoicing service extraction from monolith.\" Source src_e1db854946b5.\n\nclaim: \"Authored design documents for retry policy and idempotency keys, reviewed by tech lead.\" Source src_59fe1b577775.\n\nclaim: \"Participated in weekly on-call rotation and authored incident review for duplicate-charge incident.\" Source src_ff5f005cd144.\n\nclaim: \"Implemented contract tests and quarantine stage in CI pipeline.\" Source src_7aef337d4a8f.\n\nprojectsAndWorkSamples: claim: \"Portfolio page showcases invoicing-service extraction with peer kudos highlighting technical lead role.\" Source src_c79f449cb84d.\n\nskills: claim: \"Go, design documentation, on-call incident management, automated testing, CI/CD.\" Sources: multiple.\n\nEvidence boundary: \"The provided resume and work sample establish the candidate’s experience in Go billing services, design documentation, on-call participation, and CI improvements, but do not conclusively prove ownership of the extraction design and rollout plan.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Human review required to assess ownership claim and other gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_2c8af048c46f: status supported. evidence: src_62dea18e7c3d. evidenceStrength high. missingEvidence empty.\n\nreq_e18fe4669ea5: supported. evidence src_59fe1b577775. high.\n\nreq_bfcb7c91a7b0: status partial_evidence. evidence: src_c79f449cb84d (peer comments). notes: peer comments suggest lead but not confirmed. missingEvidence: ownership of design decisions and rollout plan not established. Also note src_03d8acf77e75 indicates staff engineer wrote plan. So gap.\n\nreq_091d9c2d0558: supported. evidence src_ff5f005cd144. high.\n\nreq_cdc962334169: supported. evidence src_7aef337d4a8f. high.\n\nsupportedClaims array: list claims that are supported with requirementIds.\n\nunsupportedClaims: none? maybe claim of ownership? But we already marked partial. So no unsupported.\n\nmissingEvidenceGaps: one gap for req_bfcb7c91a7b0: gap: ownership of design decisions and rollout plan. severity high.\n\ninterviewSignalRisks: none? maybe subjective peer comments. But we treat as evidence. But subjective? The peer comments are subjective. According to rule, subjective content should go to interviewSignalRisks. The peer comments are subjective. So we should route them. So we need interviewSignalRisks entry: sourceId src_c79f449cb84d, text: peer comments, signalType subjective, jobRelatedBoundary true, severity low? maybe medium. recommendedHandling: verify ownership via interview.\n\nfollowUpQuestions: one question: \"Can you describe your specific ownership of the design decisions and rollout plan for the invoicing-service extraction?\" requirementId req_bfcb7c91a7b0.\n\nhumanReviewChecklist: items: \"Verify ownership claim\", \"Confirm design document authorship\", \"Assess CI improvements\".\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"Limited evidence on ownership\".\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_4193d4807968e56a\",\"targetRoleTitle\":\"Backend Engineer, Billing Platform\",\"professionalSummary\":[\"Backend engineer with experience building billing services in Go, leading design and extraction efforts, and improving test and CI pipelines.\"],\"experienceHighlights\":[\"Built invoice-generation and proration services in Go at Lumenfold (2021-2024).\",\"Contributed data-access layer and dual-write adapter for invoicing service extraction from monolith.\",\"Authored design documents for retry policy and idempotency keys, reviewed by tech lead.\",\"Participated in weekly on-call rotation and authored incident review for duplicate-charge incident.\",\"Implemented contract tests and quarantine stage in CI pipeline.\"],\"projectsAndWorkSamples\":[\"Portfolio page showcases invoicing-service extraction with peer kudos highlighting technical lead role.\"],\"skills\":[\"Go\",\"Design documentation\",\"On-call incident management\",\"Automated testing\",\"CI/CD\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in Go billing services, design documentation, on-call participation, and CI improvements, but do not conclusively prove ownership of the extraction design and rollout plan.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess ownership claim and other gaps.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Billing Platform\",\"jobDescriptionSource\":\"jd_941b6a9713af6bde\",\"requirementIds\":[\"req_2c8af048c46f\",\"req_e18fe4669ea5\",\"req_bfcb7c91a7b0\",\"req_091d9c2d0558\",\"req_cdc962334169\"]},\"candidate\":{\"candidateId\":\"cand_4193d4807968e56a\",\"sources\":[\"src_62dea18e7c3d\",\"src_e1db854946b5\",\"src_59fe1b577775\",\"src_ff5f005cd144\",\"src_7aef337d4a8f\",\"src_c79f449cb84d\",\"src_03d8acf77e75\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_2c8af048c46f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_62dea18e7c3d\",\"text\":\"Backend engineer at Lumenfold, a scheduling-software company, from 2021 to 2024, building the invoice-generation and proration services in Go.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of Go service development.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e18fe4669ea5\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_59fe1b577775\",\"text\":\"Wrote two design documents, 'Retry policy for payment webhooks' and 'Idempotency keys for invoice creation'; the team's tech lead reviewed and approved both.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit design document authorship and review.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_bfcb7c91a7b0\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_c79f449cb84d\",\"text\":\"Under an architecture diagram copied from the design document sits a 'Kudos' panel of peer comments: 'basically drove the whole extraction', 'owned the rollout and every design call' and 'the technical lead in all but name'.\",\"evidenceStrength\":\"medium\",\"notes\":\"Peer comments suggest lead role but not confirmed.\"}],\"missingEvidence\":[\"Ownership of design decisions and rollout plan not established; staff engineer wrote design and rollout plan per note.\"  ]},{\"requirementId\":\"req_091d9c2d0558\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ff5f005cd144\",\"text\":\"On the weekly on-call rotation; wrote the incident review for a 2023 duplicate-charge incident with the timeline, contributing causes and four follow-up actions.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct on-call participation and incident review.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_cdc962334169\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_7aef337d4a8f\",\"text\":\"Added contract tests for the invoicing API and set up a quarantine stage in the CI pipeline for unstable test suites.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct CI improvement work.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Backend engineer with experience building billing services in Go, leading design and extraction efforts, and improving test and CI pipelines.\",\"supportingRequirementIds\":[\"req_2c8af048c46f\",\"req_e18fe4669ea5\",\"req_cdc962334169\"],\"sourceIds\":[\"src_62dea18e7c3d\",\"src_59fe1b577775\",\"src_7aef337d4a8f\"],\"evidenceStrength\":\"high\",\"witness\":\"Backend engineer at Lumenfold, a scheduling-software company, from 2021 to 2024, building the invoice-generation and proration services in Go.\"},{\"claim\":\"Authored design documents for retry policy and idempotency keys, reviewed by tech lead.\",\"supportingRequirementIds\":[\"req_e18fe4669ea5\"],\"sourceIds\":[\"src_59fe1b577775\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote two design documents, 'Retry policy for payment webhooks' and 'Idempotency keys for invoice creation'; the team's tech lead reviewed and approved both.\"},{\"claim\":\"Implemented contract tests and quarantine stage in CI pipeline.\",\"supportingRequirementIds\":[\"req_cdc962334169\"],\"sourceIds\":[\"src_7aef337d4a8f\"],\"evidenceStrength\":\"high\",\"witness\":\"Added contract tests for the invoicing API and set up a quarantine stage in the CI pipeline for unstable test suites.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_bfcb7c91a7b0\",\"severity\":\"high\",\"gap\":\"Ownership of design decisions and rollout plan not established; staff engineer wrote design and rollout plan per note.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_c79f449cb84d\",\"text\":\"Under an architecture diagram copied from the design document sits a 'Kudos' panel of peer comments: 'basically drove the whole extraction', 'owned the rollout and every design call' and 'the technical lead in all but name'.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":true,\"severity\":\"medium\",\"recommendedHandling\":\"Verify ownership claim through interview and corroborating documentation.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_bfcb7c91a7b0\",\"question\":\"Can you describe your specific ownership of the design decisions and rollout plan for the invoicing-service extraction?\",\"evidenceTarget\":\"Clarify ownership and decision-making authority.\"}],\"humanReviewChecklist\":[\"Verify ownership claim for extraction and rollout plan\",\"Confirm design document authorship and review process\",\"Assess CI improvement scope and impact\"],\"auditSummary\":\"The evidence confirms the candidate’s technical experience in Go billing services, design documentation, on-call participation, and CI improvements. However, ownership of the extraction design and rollout plan is only partially supported by peer comments and contradicted by a note indicating staff engineer responsibility. Human review is required to resolve this gap and assess fit for the role.\",\"limitations\":[\"Limited evidence on ownership of extraction design and rollout plan.\"]}}",
+ "content_sha256": "84c51f75a473ec45f1bd9c03657b0d2cf870812536e40ad724448115db156fc8",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4193d4807968e56a",
+   "targetRoleTitle": "Backend Engineer, Billing Platform",
+   "professionalSummary": [
+    "Backend engineer with experience building billing services in Go, leading design and extraction efforts, and improving test and CI pipelines."
+   ],
+   "experienceHighlights": [
+    "Built invoice-generation and proration services in Go at Lumenfold (2021-2024).",
+    "Contributed data-access layer and dual-write adapter for invoicing service extraction from monolith.",
+    "Authored design documents for retry policy and idempotency keys, reviewed by tech lead.",
+    "Participated in weekly on-call rotation and authored incident review for duplicate-charge incident.",
+    "Implemented contract tests and quarantine stage in CI pipeline."
+   ],
+   "projectsAndWorkSamples": [
+    "Portfolio page showcases invoicing-service extraction with peer kudos highlighting technical lead role."
+   ],
+   "skills": [
+    "Go",
+    "Design documentation",
+    "On-call incident management",
+    "Automated testing",
+    "CI/CD"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in Go billing services, design documentation, on-call participation, and CI improvements, but do not conclusively prove ownership of the extraction design and rollout plan."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess ownership claim and other gaps."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Billing Platform",
+    "jobDescriptionSource": "jd_941b6a9713af6bde",
+    "requirementIds": [
+     "req_2c8af048c46f",
+     "req_e18fe4669ea5",
+     "req_bfcb7c91a7b0",
+     "req_091d9c2d0558",
+     "req_cdc962334169"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4193d4807968e56a",
+    "sources": [
+     "src_62dea18e7c3d",
+     "src_e1db854946b5",
+     "src_59fe1b577775",
+     "src_ff5f005cd144",
+     "src_7aef337d4a8f",
+     "src_c79f449cb84d",
+     "src_03d8acf77e75"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2c8af048c46f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_62dea18e7c3d",
+       "text": "Backend engineer at Lumenfold, a scheduling-software company, from 2021 to 2024, building the invoice-generation and proration services in Go.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of Go service development."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e18fe4669ea5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_59fe1b577775",
+       "text": "Wrote two design documents, 'Retry policy for payment webhooks' and 'Idempotency keys for invoice creation'; the team's tech lead reviewed and approved both.",
+       "evidenceStrength": "high",
+       "notes": "Explicit design document authorship and review."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_bfcb7c91a7b0",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_c79f449cb84d",
+       "text": "Under an architecture diagram copied from the design document sits a 'Kudos' panel of peer comments: 'basically drove the whole extraction', 'owned the rollout and every design call' and 'the technical lead in all but name'.",
+       "evidenceStrength": "medium",
+       "notes": "Peer comments suggest lead role but not confirmed."
+      }
+     ],
+     "missingEvidence": [
+      "Ownership of design decisions and rollout plan not established; staff engineer wrote design and rollout plan per note."
+     ]
+    },
+    {
+     "requirementId": "req_091d9c2d0558",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ff5f005cd144",
+       "text": "On the weekly on-call rotation; wrote the incident review for a 2023 duplicate-charge incident with the timeline, contributing causes and four follow-up actions.",
+       "evidenceStrength": "high",
+       "notes": "Direct on-call participation and incident review."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cdc962334169",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7aef337d4a8f",
+       "text": "Added contract tests for the invoicing API and set up a quarantine stage in the CI pipeline for unstable test suites.",
+       "evidenceStrength": "high",
+       "notes": "Direct CI improvement work."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Backend engineer with experience building billing services in Go, leading design and extraction efforts, and improving test and CI pipelines.",
+     "supportingRequirementIds": [
+      "req_2c8af048c46f",
+      "req_e18fe4669ea5",
+      "req_cdc962334169"
+     ],
+     "sourceIds": [
+      "src_62dea18e7c3d",
+      "src_59fe1b577775",
+      "src_7aef337d4a8f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Backend engineer at Lumenfold, a scheduling-software company, from 2021 to 2024, building the invoice-generation and proration services in Go."
+    },
+    {
+     "claim": "Authored design documents for retry policy and idempotency keys, reviewed by tech lead.",
+     "supportingRequirementIds": [
+      "req_e18fe4669ea5"
+     ],
+     "sourceIds": [
+      "src_59fe1b577775"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote two design documents, 'Retry policy for payment webhooks' and 'Idempotency keys for invoice creation'; the team's tech lead reviewed and approved both."
+    },
+    {
+     "claim": "Implemented contract tests and quarantine stage in CI pipeline.",
+     "supportingRequirementIds": [
+      "req_cdc962334169"
+     ],
+     "sourceIds": [
+      "src_7aef337d4a8f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added contract tests for the invoicing API and set up a quarantine stage in the CI pipeline for unstable test suites."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_bfcb7c91a7b0",
+     "severity": "high",
+     "gap": "Ownership of design decisions and rollout plan not established; staff engineer wrote design and rollout plan per note."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_c79f449cb84d",
+     "text": "Under an architecture diagram copied from the design document sits a 'Kudos' panel of peer comments: 'basically drove the whole extraction', 'owned the rollout and every design call' and 'the technical lead in all but name'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": true,
+     "severity": "medium",
+     "recommendedHandling": "Verify ownership claim through interview and corroborating documentation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_bfcb7c91a7b0",
+     "question": "Can you describe your specific ownership of the design decisions and rollout plan for the invoicing-service extraction?",
+     "evidenceTarget": "Clarify ownership and decision-making authority."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify ownership claim for extraction and rollout plan",
+    "Confirm design document authorship and review process",
+    "Assess CI improvement scope and impact"
+   ],
+   "auditSummary": "The evidence confirms the candidate’s technical experience in Go billing services, design documentation, on-call participation, and CI improvements. However, ownership of the extraction design and rollout plan is only partially supported by peer comments and contradicted by a note indicating staff engineer responsibility. Human review is required to resolve this gap and assess fit for the role.",
+   "limitations": [
+    "Limited evidence on ownership of extraction design and rollout plan."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:21:21.801329+00:00"
+}

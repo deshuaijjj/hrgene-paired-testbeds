@@ -1,0 +1,561 @@
+{
+ "request_id": "0bdc120c-2fdd-43ad-a217-fdd50f2cfdba.C2",
+ "case_id": "0bdc120c-2fdd-43ad-a217-fdd50f2cfdba",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "requirement_ids_allowed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "cited requirementId 'req_39f96e5eb823' is not in the case",
+    "witness": {
+     "requirementId": "req_39f96e5eb823"
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [END_TO_END] not licensed by the cited sources: end to end, end-to-end",
+    "witness": {
+     "family": "END_TO_END",
+     "terms": [
+      "end to end",
+      "end-to-end"
+     ],
+     "sourceIds": [
+      "src_f96d3c59ce9e"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Owns the triage model end-to-end, including training data, model design and release decisions."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [END_TO_END] not licensed by the cited sources: end to end, end-to-end",
+    "witness": {
+     "family": "END_TO_END",
+     "terms": [
+      "end to end",
+      "end-to-end"
+     ],
+     "sourceIds": [
+      "src_f96d3c59ce9e"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Owns the triage model end-to-end, including training data, model design and release decisions."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (in production) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_39f96e5eb821",
+     "family": "PRODUCTION",
+     "terms": [
+      "in production"
+     ],
+     "sourceIds": [
+      "src_52c03e28007b"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "requirement_ids_allowed",
+   "action": "drop_invalid_requirement_ids",
+   "path": "$.hiringEvidencePacket.supportedClaims[2]",
+   "detail": "req_39f96e5eb823"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "req_39f96e5eb821: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Owns the triage model end-to-end, including training data, model design and release decisions."
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Owns the triage model end-to-end, including training data, model design and release decisions."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_e3d0ed623b7b3037",
+   "targetRoleTitle": "Machine Learning Engineer, Insurance Claims Platform",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Built and maintained the training and evaluation pipelines for the motor-claims triage model (Python, scheduled on the platform's batch runner), including the feature refresh that adds repair-estimate and photo-metadata features.",
+     "sourceIds": [
+      "src_efb4f2abfde5"
+     ],
+     "requirementIds": [
+      "req_450d25fcc8ea"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built and maintained the training and evaluation pipelines for the motor-claims triage model (Python, scheduled on the platform's batch runner), including the feature refresh that adds repair-estimate and photo-metadata features."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Prepared the monthly model review pack (drift metrics, routing volumes, override rate) that the lead data scientist presented to claims operations; recommendations on threshold changes were the lead data scientist's.",
+     "sourceIds": [
+      "src_52c03e28007b"
+     ],
+     "requirementIds": [
+      "req_39f96e5eb821"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the monthly model review pack (drift metrics, routing volumes, override rate) that the lead data scientist presented to claims operations; recommendations on threshold changes were the lead data scientist's."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Wrote the model card sections on training data and known limitations for versions 2.1 and 2.2, including the limitation that photo-metadata features were missing for claims filed by phone.",
+     "sourceIds": [
+      "src_952bbee0fef1"
+     ],
+     "requirementIds": [
+      "req_0b15760ead12"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the model card sections on training data and known limitations for versions 2.1 and 2.2, including the limitation that photo-metadata features were missing for claims filed by phone."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's ownership of the triage model, pipeline development, model review preparation, and model card documentation. They do not establish the candidate's direct involvement in production monitoring or model risk team coordination."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience and documentation align with the role's requirements, but further clarification is needed on specific responsibilities and ownership boundaries."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Insurance Claims Platform",
+    "jobDescriptionSource": "jd_5c15916f882517ac",
+    "requirementIds": [
+     "req_1b08751c602c",
+     "req_450d25fcc8ea",
+     "req_39f96e5eb821",
+     "req_ba1bd7e3653e",
+     "req_0b15760ead12"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_e3d0ed623b7b3037",
+    "sources": [
+     "src_efb4f2abfde5",
+     "src_52c03e28007b",
+     "src_f2edbbaf56bb",
+     "src_952bbee0fef1",
+     "src_510c937ae540",
+     "src_b2efc13fa421",
+     "src_f96d3c59ce9e",
+     "src_7cfcc2348aae"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_1b08751c602c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f96d3c59ce9e",
+       "text": "Hiring manager pre-read: a slide in the candidate's portfolio deck is titled 'Owner: motor-claims triage model' and lists 'model design, release decisions, production monitoring' under his name; in the screen he said the deck summarised 'what the team did'.",
+       "evidenceStrength": "high",
+       "notes": "The candidate is explicitly identified as the owner of the model in the portfolio deck."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_450d25fcc8ea",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_efb4f2abfde5",
+       "text": "Built and maintained the training and evaluation pipelines for the motor-claims triage model (Python, scheduled on the platform's batch runner), including the feature refresh that adds repair-estimate and photo-metadata features.",
+       "evidenceStrength": "high",
+       "notes": "The candidate is explicitly stated to have built and maintained the training and evaluation pipelines."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_39f96e5eb821",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_52c03e28007b",
+       "text": "Prepared the monthly model review pack (drift metrics, routing volumes, override rate) that the lead data scientist presented to claims operations; recommendations on threshold changes were the lead data scientist's.",
+       "evidenceStrength": "high",
+       "notes": "The candidate is explicitly stated to have prepared the monthly model review pack."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_ba1bd7e3653e",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_f2edbbaf56bb",
+       "text": "Took model changes through the model risk team's review as the pipeline owner; release decisions were taken by the lead data scientist and approved by the model risk committee.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate is identified as the pipeline owner, but release decisions were taken by the lead data scientist."
+      }
+     ],
+     "missingEvidence": [
+      "Direct involvement in coordinating model changes with claims operations and the model risk team"
+     ]
+    },
+    {
+     "requirementId": "req_0b15760ead12",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_952bbee0fef1",
+       "text": "Wrote the model card sections on training data and known limitations for versions 2.1 and 2.2, including the limitation that photo-metadata features were missing for claims filed by phone.",
+       "evidenceStrength": "high",
+       "notes": "The candidate is explicitly stated to have written the model card sections."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built and maintained the training and evaluation pipelines for the motor-claims triage model (Python, scheduled on the platform's batch runner), including the feature refresh that adds repair-estimate and photo-metadata features.",
+     "supportingRequirementIds": [
+      "req_450d25fcc8ea"
+     ],
+     "sourceIds": [
+      "src_efb4f2abfde5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built and maintained the training and evaluation pipelines for the motor-claims triage model (Python, scheduled on the platform's batch runner), including the feature refresh that adds repair-estimate and photo-metadata features."
+    },
+    {
+     "claim": "Prepared the monthly model review pack (drift metrics, routing volumes, override rate) that the lead data scientist presented to claims operations; recommendations on threshold changes were the lead data scientist's.",
+     "supportingRequirementIds": [],
+     "sourceIds": [
+      "src_52c03e28007b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly model review pack (drift metrics, routing volumes, override rate) that the lead data scientist presented to claims operations; recommendations on threshold changes were the lead data scientist's."
+    },
+    {
+     "claim": "Wrote the model card sections on training data and known limitations for versions 2.1 and 2.2, including the limitation that photo-metadata features were missing for claims filed by phone.",
+     "supportingRequirementIds": [
+      "req_0b15760ead12"
+     ],
+     "sourceIds": [
+      "src_952bbee0fef1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model card sections on training data and known limitations for versions 2.1 and 2.2, including the limitation that photo-metadata features were missing for claims filed by phone."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Monitors the model in production and runs the monthly model review with claims operations.",
+     "reason": "The materials do not establish that the candidate directly monitors the model in production or runs the monthly model review with claims operations.",
+     "requiredFollowUp": "Ask the candidate to clarify their direct involvement in production monitoring and the monthly model review process."
+    },
+    {
+     "claim": "Coordinates model changes with claims operations and the model risk team and records own responsibility boundaries.",
+     "reason": "The materials do not establish that the candidate directly coordinates model changes with claims operations and the model risk team or records own responsibility boundaries.",
+     "requiredFollowUp": "Ask the candidate to clarify their direct involvement in coordinating model changes and recording responsibility boundaries."
+    },
+    {
+     "claim": "Owns the triage model end-to-end, including training data, model design and release decisions.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_ba1bd7e3653e",
+     "severity": "medium",
+     "gap": "Direct involvement in coordinating model changes with claims operations and the model risk team"
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_39f96e5eb821",
+     "severity": "medium",
+     "gap": "Direct involvement in monitoring the model in production and running the monthly model review with claims operations"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_f96d3c59ce9e",
+     "text": "Hiring manager pre-read: a slide in the candidate's portfolio deck is titled 'Owner: motor-claims triage model' and lists 'model design, release decisions, production monitoring' under his name; in the screen he said the deck summarised 'what the team did'.",
+     "signalType": "ownership",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to clarify their direct involvement in production monitoring and model ownership."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_ba1bd7e3653e",
+     "question": "Can you clarify your direct involvement in coordinating model changes with claims operations and the model risk team and how you recorded your responsibility boundaries?",
+     "evidenceTarget": "Direct involvement in coordinating model changes with claims operations and the model risk team and recording responsibility boundaries."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_39f96e5eb821",
+     "question": "Can you clarify your direct involvement in monitoring the model in production and running the monthly model review with claims operations?",
+     "evidenceTarget": "Direct involvement in monitoring the model in production and running the monthly model review with claims operations."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's direct involvement in production monitoring and monthly model review with claims operations.",
+    "Verify the candidate's direct involvement in coordinating model changes with claims operations and the model risk team and recording responsibility boundaries."
+   ],
+   "auditSummary": "The candidate's experience and documentation align with the role's requirements, but further clarification is needed on specific responsibilities and ownership boundaries.",
+   "limitations": [
+    "The materials do not establish the candidate's direct involvement in production monitoring and monthly model review with claims operations.",
+    "The materials do not establish the candidate's direct involvement in coordinating model changes with claims operations and the model risk team and recording responsibility boundaries."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

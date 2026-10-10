@@ -1,0 +1,251 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "640e2cbc-687f-46c6-ad24-456153f9a5d4.C1",
+ "case_id": "640e2cbc-687f-46c6-ad24-456153f9a5d4",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11251,
+  "promptWords": 1483
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 38.21
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2712,
+ "eval_count": 1840,
+ "prompt_eval_duration_ns": 17725000,
+ "eval_duration_ns": 32473881000,
+ "total_duration_ns": 38207578375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use same language en. Provide evidenceBoundary sentence. Then hiringEvidencePacket with all fields.\n\nWe must list requirementEvidenceMap for each requirement id. All supported. Provide evidence from resume sources. No gaps.\n\nAlso supportedClaims array: maybe same as claims in CV. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high? Since directly from resume, high.\n\nUnsupportedClaims none.\n\nMissingEvidenceGaps none.\n\nInterviewSignalRisks: maybe note about caregiver? Not job-related. So risk: source src_8c9573aaa006, signalType \"personal circumstance\", not tied to job-related evidence, severity low, recommendedHandling \"verify flexibility needs\".\n\nFollowUpQuestions: none.\n\nHumanReviewChecklist: maybe \"Review candidate's experience against role requirements\", \"Verify work samples\".\n\nAuditSummary: brief.\n\nLimitations: maybe \"No independent verification of production deployment\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_d0f47d1ab2b042b6\",\"targetRoleTitle\":\"Backend Engineer, Loan Servicing Platform\",\"professionalSummary\":[\"Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name. (src_3f952e1027be)\"],\"experienceHighlights\":[\"Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket. (src_7ec845b1f04a)\",\"Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket. (src_4be766ba2571)\",\"Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval. (src_0f1d3c949c9d)\",\"Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section. (src_b1bf33e9cff6)\"],\"projectsAndWorkSamples\":[\"Work sample: three change tickets with their test coverage reports, review records and release approvals, and one month's query request log, with the ticket system references as a verification trail. (src_254d40dc13ee)\"],\"skills\":[\"Schedule and interest change implementation\",\"Automated testing\",\"Code review and release process\",\"Data query support\",\"Documentation of limitations and hand-over\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s direct involvement in implementing schedule and interest changes, writing automated tests, navigating the code review and release process, supporting data queries, and documenting limitations and hand-over conditions for the loan servicing platform. They do not provide independent verification of production deployment or external stakeholder feedback.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Loan Servicing Platform\",\"jobDescriptionSource\":\"jd_aeae4bc4c895378b\",\"requirementIds\":[\"req_155e1d029b7c\",\"req_a038f5acf4b8\",\"req_c65bd7d24ce8\",\"req_64df5ffa8e06\",\"req_374386389baf\"]},\"candidate\":{\"candidateId\":\"cand_d0f47d1ab2b042b6\",\"sources\":[\"src_3f952e1027be\",\"src_7ec845b1f04a\",\"src_4be766ba2571\",\"src_0f1d3c949c9d\",\"src_b1bf33e9cff6\",\"src_254d40dc13ee\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_155e1d029b7c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3f952e1027be\",\"text\":\"Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct implementation of schedule and interest changes\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a038f5acf4b8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_7ec845b1f04a\",\"text\":\"Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket.\",\"evidenceStrength\":\"high\",\"notes\":\"Automated testing per team standard\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c65bd7d24ce8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4be766ba2571\",\"text\":\"Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket.\",\"evidenceStrength\":\"high\",\"notes\":\"Code review and release process participation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_64df5ffa8e06\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0f1d3c949c9d\",\"text\":\"Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval.\",\"evidenceStrength\":\"high\",\"notes\":\"Data query support with responsibility boundaries\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_374386389baf\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b1bf33e9cff6\",\"text\":\"Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section.\",\"evidenceStrength\":\"high\",\"notes\":\"Documentation of limitations and hand-over\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name.\",\"supportingRequirementIds\":[\"req_155e1d029b7c\"],\"sourceIds\":[\"src_3f952e1027be\"],\"evidenceStrength\":\"high\",\"witness\":\"Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name.\"},{\"claim\":\"Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket.\",\"supportingRequirementIds\":[\"req_a038f5acf4b8\"],\"sourceIds\":[\"src_7ec845b1f04a\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket.\"},{\"claim\":\"Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket.\",\"supportingRequirementIds\":[\"req_c65bd7d24ce8\"],\"sourceIds\":[\"src_4be766ba2571\"],\"evidenceStrength\":\"high\",\"witness\":\"Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket.\"},{\"claim\":\"Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval.\",\"supportingRequirementIds\":[\"req_64df5ffa8e06\"],\"sourceIds\":[\"src_0f1d3c949c9d\"],\"evidenceStrength\":\"high\",\"witness\":\"Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval.\"},{\"claim\":\"Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section.\",\"supportingRequirementIds\":[\"req_374386389baf\"],\"sourceIds\":[\"src_b1bf33e9cff6\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_8c9573aaa006\",\"text\":\"Candidate mentioned she is the primary caregiver for her elderly mother and would need flexibility around hospital appointments; she asked about the compressed-hours policy.\",\"signalType\":\"personal circumstance\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify flexibility needs and policy compatibility during interview.\"}],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s work samples match the described change tickets.\",\"Confirm that the automated tests meet the team’s test standard.\",\"Ensure that the candidate’s documentation of limitations and hand-over aligns with platform lead expectations.\"],\"auditSummary\":\"All job requirements are directly supported by the candidate’s resume and work sample. No evidence gaps or insufficient evidence were identified. The only interview signal risk relates to a personal circumstance that is not job‑related and requires verification of flexibility needs. Qualified human review is required before any employment decision.\",\"limitations\":[\"Evidence is limited to the candidate’s self‑reported resume and work sample; independent verification of production deployment or external stakeholder feedback is not provided.\"]} }",
+ "content_sha256": "f37b7d4a0ab01ff7ba68538650a2094ccd29826f9b371d6665d3f21e04e22f51",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d0f47d1ab2b042b6",
+   "targetRoleTitle": "Backend Engineer, Loan Servicing Platform",
+   "professionalSummary": [
+    "Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name. (src_3f952e1027be)"
+   ],
+   "experienceHighlights": [
+    "Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket. (src_7ec845b1f04a)",
+    "Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket. (src_4be766ba2571)",
+    "Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval. (src_0f1d3c949c9d)",
+    "Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section. (src_b1bf33e9cff6)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: three change tickets with their test coverage reports, review records and release approvals, and one month's query request log, with the ticket system references as a verification trail. (src_254d40dc13ee)"
+   ],
+   "skills": [
+    "Schedule and interest change implementation",
+    "Automated testing",
+    "Code review and release process",
+    "Data query support",
+    "Documentation of limitations and hand-over"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s direct involvement in implementing schedule and interest changes, writing automated tests, navigating the code review and release process, supporting data queries, and documenting limitations and hand-over conditions for the loan servicing platform. They do not provide independent verification of production deployment or external stakeholder feedback."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Loan Servicing Platform",
+    "jobDescriptionSource": "jd_aeae4bc4c895378b",
+    "requirementIds": [
+     "req_155e1d029b7c",
+     "req_a038f5acf4b8",
+     "req_c65bd7d24ce8",
+     "req_64df5ffa8e06",
+     "req_374386389baf"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d0f47d1ab2b042b6",
+    "sources": [
+     "src_3f952e1027be",
+     "src_7ec845b1f04a",
+     "src_4be766ba2571",
+     "src_0f1d3c949c9d",
+     "src_b1bf33e9cff6",
+     "src_254d40dc13ee"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_155e1d029b7c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3f952e1027be",
+       "text": "Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name.",
+       "evidenceStrength": "high",
+       "notes": "Direct implementation of schedule and interest changes"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a038f5acf4b8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7ec845b1f04a",
+       "text": "Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket.",
+       "evidenceStrength": "high",
+       "notes": "Automated testing per team standard"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c65bd7d24ce8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4be766ba2571",
+       "text": "Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket.",
+       "evidenceStrength": "high",
+       "notes": "Code review and release process participation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_64df5ffa8e06",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0f1d3c949c9d",
+       "text": "Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval.",
+       "evidenceStrength": "high",
+       "notes": "Data query support with responsibility boundaries"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_374386389baf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b1bf33e9cff6",
+       "text": "Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section.",
+       "evidenceStrength": "high",
+       "notes": "Documentation of limitations and hand-over"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name.",
+     "supportingRequirementIds": [
+      "req_155e1d029b7c"
+     ],
+     "sourceIds": [
+      "src_3f952e1027be"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Backend engineer on the loan servicing platform of a retail bank for four years, implementing schedule and interest changes on the servicing services against the product specialists' specifications; thirty-eight changes in the period, each on a change ticket in my name."
+    },
+    {
+     "claim": "Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket.",
+     "supportingRequirementIds": [
+      "req_a038f5acf4b8"
+     ],
+     "sourceIds": [
+      "src_7ec845b1f04a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the automated tests for each change under the team's test standard, with the test coverage report attached to each change ticket."
+    },
+    {
+     "claim": "Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket.",
+     "supportingRequirementIds": [
+      "req_c65bd7d24ce8"
+     ],
+     "sourceIds": [
+      "src_4be766ba2571"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took each change through the team's code review and release process; the release approval was the platform lead's, recorded on the change ticket."
+    },
+    {
+     "claim": "Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval.",
+     "supportingRequirementIds": [
+      "req_64df5ffa8e06"
+     ],
+     "sourceIds": [
+      "src_0f1d3c949c9d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Supported the servicing operations team with data queries through the query request log, recording which queries I answered directly and which needed the platform lead's data access approval."
+    },
+    {
+     "claim": "Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section.",
+     "supportingRequirementIds": [
+      "req_374386389baf"
+     ],
+     "sourceIds": [
+      "src_b1bf33e9cff6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the limitation note and the hand-over conditions for each change in the change ticket's closure section."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_8c9573aaa006",
+     "text": "Candidate mentioned she is the primary caregiver for her elderly mother and would need flexibility around hospital appointments; she asked about the compressed-hours policy.",
+     "signalType": "personal circumstance",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify flexibility needs and policy compatibility during interview."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s work samples match the described change tickets.",
+    "Confirm that the automated tests meet the team’s test standard.",
+    "Ensure that the candidate’s documentation of limitations and hand-over aligns with platform lead expectations."
+   ],
+   "auditSummary": "All job requirements are directly supported by the candidate’s resume and work sample. No evidence gaps or insufficient evidence were identified. The only interview signal risk relates to a personal circumstance that is not job‑related and requires verification of flexibility needs. Qualified human review is required before any employment decision.",
+   "limitations": [
+    "Evidence is limited to the candidate’s self‑reported resume and work sample; independent verification of production deployment or external stakeholder feedback is not provided."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:37:21.191286+00:00"
+}

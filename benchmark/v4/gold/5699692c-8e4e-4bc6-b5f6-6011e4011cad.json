@@ -1,0 +1,94 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "5699692c-8e4e-4bc6-b5f6-6011e4011cad",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_cf6dd28bedac",
+   "canonicalProposition": "The candidate wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts-order queue and validated them in the staging cluster.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_2f935397200c",
+    "src_1b69b4572dc2"
+   ],
+   "relevantRequirementIds": [
+    "req_bd64b2f9370d"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume and the work sample document the rules, dashboards and staging validation."
+  },
+  {
+   "atomicPropositionId": "prop_22cfdc38aab5",
+   "canonicalProposition": "The candidate drafted the timeline and follow-up actions for the March dispatch outage review.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_ed66a2889ce5"
+   ],
+   "relevantRequirementIds": [
+    "req_4c03059a563a"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume states the incident-review contribution directly."
+  },
+  {
+   "atomicPropositionId": "prop_f7020e2c8dee",
+   "canonicalProposition": "The candidate deployed the alerting rules to production and operated production monitoring for the service network.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_bd64b2f9370d",
+    "req_02151dff1031"
+   ],
+   "boundaryCategory": "test_environment_not_production",
+   "criticality": "critical",
+   "rationale": "The resume says validation happened in staging, production releases were executed by the platform team, and the candidate had no production deployment permissions; the recruiter note is a self-report."
+  }
+ ],
+ "requirementStatus": {
+  "req_bd64b2f9370d": "partial_evidence",
+  "req_02151dff1031": "insufficient_evidence",
+  "req_4c03059a563a": "supported",
+  "req_0b0d65c91afb": "supported",
+  "req_04f7c99e2fd1": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_2f935397200c",
+  "src_63dc0dfa13e1",
+  "src_1b69b4572dc2"
+ ],
+ "expectedGap": "The materials document alert design and staging validation; they do not document a production deployment by the candidate or participation in the production on-call rotation.",
+ "expectedBoundaryNote": "Preserve the environment the resume names: staging validation, with production releases executed by the platform team; do not rewrite the staging work as production operation.",
+ "permittedFollowUpTargets": [
+  "Ask which environment each alert ran in, who executed the production releases, whether the candidate held production permissions, and whether he was on the production on-call rota."
+ ],
+ "validClaimSignatures": [
+  "staging cluster",
+  "Grafana"
+ ],
+ "trap": {
+  "propositionId": "prop_f7020e2c8dee",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_bd64b2f9370d",
+   "req_02151dff1031"
+  ],
+  "signatures": [
+   "to production",
+   "in production",
+   "production monitoring",
+   "production on-call",
+   "operated production",
+   "running across the whole service network",
+   "carried the pager",
+   "caught by my alerts"
+  ],
+  "baitSourceIds": [
+   "src_b2c1222d9e37",
+   "src_51bebc4173fc"
+  ]
+ }
+}

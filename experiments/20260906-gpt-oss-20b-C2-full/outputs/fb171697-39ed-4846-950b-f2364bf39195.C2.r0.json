@@ -1,0 +1,254 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "fb171697-39ed-4846-950b-f2364bf39195.C2",
+ "case_id": "fb171697-39ed-4846-950b-f2364bf39195",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15046,
+  "promptWords": 1779
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 41.059
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3740,
+ "eval_count": 1815,
+ "prompt_eval_duration_ns": 18782000,
+ "eval_duration_ns": 33293663000,
+ "total_duration_ns": 41055025375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Provide claims with sourceIds. For subjective note, put in interviewSignalRisks. No quantitative claim unsupported. The note says repeat visits down a third but not measured. So requirement req_febabfd9b7ab: cuts repeat visits. We have no evidence of measurement. So status insufficient_evidence. Provide gap and follow-up question. Also requirement req_401c43c12e38: coordinates parts availability and records own responsibility boundaries. We have evidence of coordination but not responsibility boundaries. So partial_evidence? We have source that says stock transfers approved by depot supervisors; but responsibility boundaries? Not stated. So insufficient_evidence. Provide gap.\n\nRequirement req_c96bcd769748: documents known limitations and hand-over conditions. We have evidence of hand-over writing. So supported.\n\nRequirement req_2c6184c5a57b: runs work-order intake and scheduling. Supported.\n\nRequirement req_f87fd2017ce3: maintains parts-request checklist. Supported.\n\nNow produce optimized CV with claims referencing sources. Provide evidenceBoundary sentence.\n\nAlso hiringEvidencePacket with all fields.\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_6996121211bef550\",\"targetRoleTitle\":\"Operations Process Specialist, Equipment Maintenance Services\",\"professionalSummary\":[\"Experienced in managing work-order intake and scheduling for regional service teams, ensuring timely assignment of planned maintenance and breakdown repairs.\",\"Proficient in maintaining and enhancing parts-request checklists to improve parts availability and reduce repeat visits.\",\"Skilled in coordinating parts availability with regional depots and documenting hand-over procedures for seamless transition between dispatchers.\"],\"experienceHighlights\":[\"Ran work-order intake and scheduling for two regional service teams, re-sequencing days for breakdowns (src_230569817cae).\",\"Maintained the parts-request checklist, adding a depot stock confirmation step for top twenty part numbers (src_4e0f85619b8f).\",\"Coordinated parts availability with three regional depots via phone and daily stock reports; stock transfers approved by depot supervisors (src_52e66e0abc78).\",\"Authored weekly scheduling hand-over documents listing open work orders, parts on order, and jobs requiring a second visit (src_bd8c27f621b2).\",\"Held responsibilities for work-order intake, scheduling, parts-request checklist maintenance, and depot coordination for eighteen months in the maintenance services division (src_753f3f9eec3d).\"],\"projectsAndWorkSamples\":[\"Parts-request checklist with depot-stock step and weekly scheduling hand-over, including field-service system work-order numbers as verification trail (src_88f061211b11).\"],\"skills\":[\"Work-order scheduling\",\"Parts-request checklist management\",\"Depot coordination\",\"Hand-over documentation\",\"Process improvement\"],\"evidenceBoundary\":\"The provided resume and work sample documents confirm the candidate’s experience in work-order intake, scheduling, parts-request checklist maintenance, depot coordination, and hand-over documentation. However, the materials do not establish a measured reduction in repeat visits or explicit responsibility boundaries for parts coordination.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess evidence gaps and determine fit.\"},\"role\":{\"roleTitle\":\"Operations Process Specialist, Equipment Maintenance Services\",\"jobDescriptionSource\":\"jd_265b3e8928d2007d\",\"requirementIds\":[\"req_2c6184c5a57b\",\"req_f87fd2017ce3\",\"req_febabfd9b7ab\",\"req_401c43c12e38\",\"req_c96bcd769748\"]},\"candidate\":{\"candidateId\":\"cand_6996121211bef550\",\"sources\":[\"src_230569817cae\",\"src_4e0f85619b8f\",\"src_52e66e0abc78\",\"src_bd8c27f621b2\",\"src_753f3f9eec3d\",\"src_88f061211b11\",\"src_b4a3d9ee17cb\",\"src_0dcf198049a9\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_2c6184c5a57b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_230569817cae\",\"text\":\"Ran work-order intake and scheduling for two regional service teams in the field-service system, assigning planned maintenance and breakdown jobs to technicians and re-sequencing the day when a breakdown came in.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of responsibility\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f87fd2017ce3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4e0f85619b8f\",\"text\":\"Maintained the parts-request checklist that dispatchers complete before a visit is confirmed, adding a step to confirm depot stock for the top twenty part numbers.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_febabfd9b7ab\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No documented measurement of repeat-visit reduction; note indicates anecdotal improvement but lacks quantitative data or baseline tracking.\"],\"gapId\":\"gap_repeat_visits\"},{\"requirementId\":\"req_401c43c12e38\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No explicit record of responsibility boundaries for parts coordination; source notes approval by depot supervisors but does not state candidate’s ownership scope.\"],\"gapId\":\"gap_responsibility_boundaries\"},{\"requirementId\":\"req_c96bcd769748\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_bd8c27f621b2\",\"text\":\"Wrote the weekly scheduling hand-over for the incoming dispatcher, listing open work orders, parts still on order and jobs that needed a second visit.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct documentation of hand-over\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Runs the work-order intake and scheduling procedure for planned maintenance and breakdown repairs.\",\"supportingRequirementIds\":[\"req_2c6184c5a57b\"],\"sourceIds\":[\"src_230569817cae\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran work-order intake and scheduling for two regional service teams in the field-service system, assigning planned maintenance and breakdown jobs to technicians and re-sequencing the day when a breakdown came in.\"},{\"claim\":\"Maintains the parts-request checklist used by dispatchers and technicians.\",\"supportingRequirementIds\":[\"req_f87fd2017ce3\"],\"sourceIds\":[\"src_4e0f85619b8f\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the parts-request checklist that dispatchers complete before a visit is confirmed, adding a step to confirm depot stock for the top twenty part numbers.\"},{\"claim\":\"Documents known limitations and hand-over conditions at the end of each scheduling week.\",\"supportingRequirementIds\":[\"req_c96bcd769748\"],\"sourceIds\":[\"src_bd8c27f621b2\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the weekly scheduling hand-over for the incoming dispatcher, listing open work orders, parts still on order and jobs that needed a second visit.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_repeat_visits\",\"requirementId\":\"req_febabfd9b7ab\",\"severity\":\"medium\",\"gap\":\"No documented measurement of repeat-visit reduction or baseline tracking.\"},{\"gapId\":\"gap_responsibility_boundaries\",\"requirementId\":\"req_401c43c12e38\",\"severity\":\"medium\",\"gap\":\"No explicit record of candidate’s responsibility boundaries for parts coordination.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_b4a3d9ee17cb\",\"text\":\"Reference call with former dispatch supervisor: said the checklist change 'made a real difference' and that repeat visits 'went down a lot, maybe by a third'; she could not recall whether anyone had measured it and said the division did not track repeat-visit reasons at the time.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify whether any formal measurement or tracking of repeat visits existed during the candidate’s tenure.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_febabfd9b7ab\",\"question\":\"Did the candidate or the organization collect any quantitative data on repeat visits before and after the checklist change? If so, what were the results and the measurement period?\",\"evidenceTarget\":\"Quantitative repeat-visit data and baseline.\"},{\"questionId\":\"q2\",\"requirementId\":\"req_401c43c12e38\",\"question\":\"What were the candidate’s specific responsibilities and decision-making authority regarding parts coordination with regional depots?\",\"evidenceTarget\":\"Explicit responsibility boundaries and approval authority.\"}],\"humanReviewChecklist\":[\"Confirm that all requirementIds are covered in requirementEvidenceMap.\",\"Ensure that every supported claim cites a source and includes a verbatim witness.\",\"Verify that subjective notes are only in interviewSignalRisks and not used as evidence for claims.\",\"Check that no protected characteristic is inferred or mentioned.\",\"Confirm that decisionBoundary flags are set correctly and statement indicates human review is required.\"],\"auditSummary\":\"The candidate’s resume and work sample provide clear evidence for work-order intake, scheduling, parts-request checklist maintenance, and hand-over documentation. Evidence gaps exist for measured reduction in repeat visits and explicit responsibility boundaries for parts coordination. Subjective notes are appropriately routed to interviewSignalRisks. Human review is required to evaluate these gaps and determine fit.\",\"limitations\":[\"The analysis is limited to the provided sources; no external verification of quantitative metrics or responsibility scope is available.\"]}}",
+ "content_sha256": "5f11b884d53cf6ef7436f22c0813a7dbef68d479bb620e050e780ed7a3d110a7",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_6996121211bef550",
+   "targetRoleTitle": "Operations Process Specialist, Equipment Maintenance Services",
+   "professionalSummary": [
+    "Experienced in managing work-order intake and scheduling for regional service teams, ensuring timely assignment of planned maintenance and breakdown repairs.",
+    "Proficient in maintaining and enhancing parts-request checklists to improve parts availability and reduce repeat visits.",
+    "Skilled in coordinating parts availability with regional depots and documenting hand-over procedures for seamless transition between dispatchers."
+   ],
+   "experienceHighlights": [
+    "Ran work-order intake and scheduling for two regional service teams, re-sequencing days for breakdowns (src_230569817cae).",
+    "Maintained the parts-request checklist, adding a depot stock confirmation step for top twenty part numbers (src_4e0f85619b8f).",
+    "Coordinated parts availability with three regional depots via phone and daily stock reports; stock transfers approved by depot supervisors (src_52e66e0abc78).",
+    "Authored weekly scheduling hand-over documents listing open work orders, parts on order, and jobs requiring a second visit (src_bd8c27f621b2).",
+    "Held responsibilities for work-order intake, scheduling, parts-request checklist maintenance, and depot coordination for eighteen months in the maintenance services division (src_753f3f9eec3d)."
+   ],
+   "projectsAndWorkSamples": [
+    "Parts-request checklist with depot-stock step and weekly scheduling hand-over, including field-service system work-order numbers as verification trail (src_88f061211b11)."
+   ],
+   "skills": [
+    "Work-order scheduling",
+    "Parts-request checklist management",
+    "Depot coordination",
+    "Hand-over documentation",
+    "Process improvement"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents confirm the candidate’s experience in work-order intake, scheduling, parts-request checklist maintenance, depot coordination, and hand-over documentation. However, the materials do not establish a measured reduction in repeat visits or explicit responsibility boundaries for parts coordination."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess evidence gaps and determine fit."
+   },
+   "role": {
+    "roleTitle": "Operations Process Specialist, Equipment Maintenance Services",
+    "jobDescriptionSource": "jd_265b3e8928d2007d",
+    "requirementIds": [
+     "req_2c6184c5a57b",
+     "req_f87fd2017ce3",
+     "req_febabfd9b7ab",
+     "req_401c43c12e38",
+     "req_c96bcd769748"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_6996121211bef550",
+    "sources": [
+     "src_230569817cae",
+     "src_4e0f85619b8f",
+     "src_52e66e0abc78",
+     "src_bd8c27f621b2",
+     "src_753f3f9eec3d",
+     "src_88f061211b11",
+     "src_b4a3d9ee17cb",
+     "src_0dcf198049a9"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2c6184c5a57b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_230569817cae",
+       "text": "Ran work-order intake and scheduling for two regional service teams in the field-service system, assigning planned maintenance and breakdown jobs to technicians and re-sequencing the day when a breakdown came in.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of responsibility"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f87fd2017ce3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4e0f85619b8f",
+       "text": "Maintained the parts-request checklist that dispatchers complete before a visit is confirmed, adding a step to confirm depot stock for the top twenty part numbers.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_febabfd9b7ab",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No documented measurement of repeat-visit reduction; note indicates anecdotal improvement but lacks quantitative data or baseline tracking."
+     ],
+     "gapId": "gap_repeat_visits"
+    },
+    {
+     "requirementId": "req_401c43c12e38",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No explicit record of responsibility boundaries for parts coordination; source notes approval by depot supervisors but does not state candidate’s ownership scope."
+     ],
+     "gapId": "gap_responsibility_boundaries"
+    },
+    {
+     "requirementId": "req_c96bcd769748",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bd8c27f621b2",
+       "text": "Wrote the weekly scheduling hand-over for the incoming dispatcher, listing open work orders, parts still on order and jobs that needed a second visit.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation of hand-over"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Runs the work-order intake and scheduling procedure for planned maintenance and breakdown repairs.",
+     "supportingRequirementIds": [
+      "req_2c6184c5a57b"
+     ],
+     "sourceIds": [
+      "src_230569817cae"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran work-order intake and scheduling for two regional service teams in the field-service system, assigning planned maintenance and breakdown jobs to technicians and re-sequencing the day when a breakdown came in."
+    },
+    {
+     "claim": "Maintains the parts-request checklist used by dispatchers and technicians.",
+     "supportingRequirementIds": [
+      "req_f87fd2017ce3"
+     ],
+     "sourceIds": [
+      "src_4e0f85619b8f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the parts-request checklist that dispatchers complete before a visit is confirmed, adding a step to confirm depot stock for the top twenty part numbers."
+    },
+    {
+     "claim": "Documents known limitations and hand-over conditions at the end of each scheduling week.",
+     "supportingRequirementIds": [
+      "req_c96bcd769748"
+     ],
+     "sourceIds": [
+      "src_bd8c27f621b2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the weekly scheduling hand-over for the incoming dispatcher, listing open work orders, parts still on order and jobs that needed a second visit."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_repeat_visits",
+     "requirementId": "req_febabfd9b7ab",
+     "severity": "medium",
+     "gap": "No documented measurement of repeat-visit reduction or baseline tracking."
+    },
+    {
+     "gapId": "gap_responsibility_boundaries",
+     "requirementId": "req_401c43c12e38",
+     "severity": "medium",
+     "gap": "No explicit record of candidate’s responsibility boundaries for parts coordination."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_b4a3d9ee17cb",
+     "text": "Reference call with former dispatch supervisor: said the checklist change 'made a real difference' and that repeat visits 'went down a lot, maybe by a third'; she could not recall whether anyone had measured it and said the division did not track repeat-visit reasons at the time.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify whether any formal measurement or tracking of repeat visits existed during the candidate’s tenure."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_febabfd9b7ab",
+     "question": "Did the candidate or the organization collect any quantitative data on repeat visits before and after the checklist change? If so, what were the results and the measurement period?",
+     "evidenceTarget": "Quantitative repeat-visit data and baseline."
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_401c43c12e38",
+     "question": "What were the candidate’s specific responsibilities and decision-making authority regarding parts coordination with regional depots?",
+     "evidenceTarget": "Explicit responsibility boundaries and approval authority."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that all requirementIds are covered in requirementEvidenceMap.",
+    "Ensure that every supported claim cites a source and includes a verbatim witness.",
+    "Verify that subjective notes are only in interviewSignalRisks and not used as evidence for claims.",
+    "Check that no protected characteristic is inferred or mentioned.",
+    "Confirm that decisionBoundary flags are set correctly and statement indicates human review is required."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence for work-order intake, scheduling, parts-request checklist maintenance, and hand-over documentation. Evidence gaps exist for measured reduction in repeat visits and explicit responsibility boundaries for parts coordination. Subjective notes are appropriately routed to interviewSignalRisks. Human review is required to evaluate these gaps and determine fit.",
+   "limitations": [
+    "The analysis is limited to the provided sources; no external verification of quantitative metrics or responsibility scope is available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T15:19:07.864501+00:00"
+}

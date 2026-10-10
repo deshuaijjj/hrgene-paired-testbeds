@@ -1,0 +1,262 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "8ef936ae-d6e0-4e95-b8fd-4d4f729067ea.C2",
+ "case_id": "8ef936ae-d6e0-4e95-b8fd-4d4f729067ea",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14608,
+  "promptWords": 1749
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 58.89
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4753,
+ "eval_count": 1821,
+ "prompt_eval_duration_ns": 19402000,
+ "eval_duration_ns": 33665966000,
+ "total_duration_ns": 58881133125,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from resume. Ensure no unsupported claims. No subjective. The note src_c59684c113c6 is subjective. Should go to interviewSignalRisks. Also note about bot 'basically went live' is subjective. So not used as evidence. We must map requirements.\n\nRequirements mapping:\n\nreq_da94ce0e6890: Maps manual operations processes and identifies automation candidates. Evidence: src_1dead272e63c (mapped daily suspense-account reconciliation, identified four steps). Also src_eacb94dcebcb (kept backlog). So supported.\n\nreq_992df032eecb: Specifies and tests robotic process automation in a development environment. Evidence: src_2738b1670d1e (wrote bot spec, built bot in RPA dev env, tested against six weeks). So supported.\n\nreq_56ca717f522d: Has moved an automation from test into live operation under a control framework and reported on its run results. Evidence: src_c59684c113c6 is subjective. Not enough. We have no evidence of live operation. So insufficient evidence. Gap: need confirmation of live deployment and run results.\n\nreq_7cbfbb4dd5b3: Documents process controls for the operational risk team. Evidence: src_e84e016b41d9 (control description and exception-handling procedure reviewed by operational risk partner). So supported.\n\nreq_a7867be2cb4a: Runs user acceptance testing with operations staff. Evidence: src_f218ea3e19f4 (ran UAT with four clerks, recorded 23 test cases). Also src_277484048b47 (work sample). So supported.\n\nNow produce optimized CV with claims referencing sources.\n\nClaims list: professionalSummary: maybe one claim: \"Operations Analyst with experience mapping manual reconciliation processes, specifying and testing RPA solutions, and documenting operational risk controls.\" Source: src_1dead272e63c, src_2738b1670d1e, src_e84e016b41d9.\n\nexperienceHighlights: list claims: mapping manual processes (src_1dead272e63c), writing bot spec and building bot (src_2738b1670d1e), running UAT (src_f218ea3e19f4), documenting controls (src_e84e016b41d9), backlog management (src_eacb94dcebcb).\n\nprojectsAndWorkSamples: claim: UAT evidence pack (src_277484048b47).\n\nskills: RPA development, process mapping, UAT, operational risk controls, backlog prioritization.\n\nEvidenceBoundary: \"The provided materials establish the candidate's experience in mapping manual processes, specifying and testing RPA in a development environment, running UAT with staff, and documenting controls, but do not establish evidence of moving an automation into live operation under a control framework or reporting run results.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence gaps.\"\n\nrole: roleTitle same, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nFor req_da94ce0e6890: status supported, evidence list with src_1dead272e63c and src_eacb94dcebcb. evidenceStrength high maybe.\n\nFor req_992df032eecb: supported, evidence src_2738b1670d1e.\n\nFor req_56ca717f522d: insufficient_evidence, missingEvidence: \"No evidence of live deployment or run results.\" No evidence entries.\n\nFor req_7cbfbb4dd5b3: supported, evidence src_e84e016b41d9.\n\nFor req_a7867be2cb4a: supported, evidence src_f218ea3e19f4 and src_277484048b47.\n\nsupportedClaims array: include claims that map to requirements. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness verbatim passage.\n\nWe need verbatim passage from source. Use short excerpt.\n\nFrom src_1dead272e63c: \"mapped the daily suspense-account reconciliation as a swim-lane diagram and timed each manual step over a fortnight, identifying four steps that followed fixed rules.\"\n\nFrom src_2738b1670d1e: \"Wrote the bot specification for the reconciliation and built the bot with the automation team in the RPA development environment, testing it against six weeks of anonymised statement files supplied by the finance team.\"\n\nFrom src_f218ea3e19f4: \"Ran user acceptance testing with four reconciliation clerks in the RPA test environment, recording 23 test cases and their outcomes.\"\n\nFrom src_e84e016b41d9: \"Wrote the bot's control description and exception-handling procedure, which the operational risk partner reviewed and commented on, setting out who handles breaks the bot cannot clear.\"\n\nFrom src_277484048b47: \"Work sample: the UAT evidence pack for the reconciliation bot, listing the 23 test cases, screenshots from the RPA test environment, two defects with their retest results and the clerks' sign-off.\"\n\nunsupportedClaims: maybe none.\n\nmissingEvidenceGaps: for req_56ca717f522d: gapId maybe gap_1, requirementId, severity high, gap: \"No evidence of live deployment or run results.\"\n\ninterviewSignalRisks: source src_c59684c113c6: text \"the candidate said the bot 'basically went live' shortly before leaving, and that a former colleague later mentioned it now runs the morning reconciliation without any clerk involvement.\" signalType subjective, jobRelatedBoundary false? It's about live operation but subjective. So risk. severity medium. recommendedHandling: \"Verify live deployment status and run results through documentation.\"\n\nfollowUpQuestions: for req_56ca717f522d: question about live deployment. Provide questionId q1.\n\nhumanReviewChecklist: items: \"Review evidence for live deployment and run results\", \"Assess gaps for requirement req_56ca717f522d\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Limited to provided sources; no external verification of live deployment.\"\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_c19ce3fb9b584259\",\"targetRoleTitle\":\"Operations Automation Analyst, Payments Operations\",\"professionalSummary\":[\"Operations Analyst with experience mapping manual reconciliation processes, specifying and testing RPA solutions, and documenting operational risk controls.\"],\"experienceHighlights\":[\"Mapped daily suspense-account reconciliation as a swim‑lane diagram and timed each manual step, identifying four steps that followed fixed rules.\",\"Wrote the bot specification for the reconciliation and built the bot with the automation team in the RPA development environment, testing it against six weeks of anonymised statement files supplied by the finance team.\",\"Ran user acceptance testing with four reconciliation clerks in the RPA test environment, recording 23 test cases and their outcomes.\",\"Wrote the bot's control description and exception‑handling procedure, which the operational risk partner reviewed and commented on, setting out who handles breaks the bot cannot clear.\",\"Kept the payments operations backlog of automation ideas, scoring each by monthly volume and manual minutes, and presented the top five to the operations manager each quarter.\"],\"projectsAndWorkSamples\":[\"UAT evidence pack for the reconciliation bot, listing the 23 test cases, screenshots from the RPA test environment, two defects with their retest results and the clerks' sign‑off.\"],\"skills\":[\"RPA development\",\"Process mapping\",\"User acceptance testing\",\"Operational risk controls\",\"Backlog prioritisation\"],\"evidenceBoundary\":\"The provided materials establish the candidate's experience in mapping manual processes, specifying and testing RPA in a development environment, running UAT with staff, and documenting controls, but do not establish evidence of moving an automation into live operation under a control framework or reporting run results.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit based on evidence gaps.\"},\"role\":{\"roleTitle\":\"Operations Automation Analyst, Payments Operations\",\"jobDescriptionSource\":\"jd_00c08b866b2af26e\",\"requirementIds\":[\"req_da94ce0e6890\",\"req_992df032eecb\",\"req_56ca717f522d\",\"req_7cbfbb4dd5b3\",\"req_a7867be2cb4a\"]},\"candidate\":{\"candidateId\":\"cand_c19ce3fb9b584259\",\"sources\":[\"src_1dead272e63c\",\"src_2738b1670d1e\",\"src_f218ea3e19f4\",\"src_e84e016b41d9\",\"src_eacb94dcebcb\",\"src_277484048b47\",\"src_c59684c113c6\",\"src_c35d3cccec65\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_da94ce0e6890\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1dead272e63c\",\"text\":\"mapped the daily suspense-account reconciliation as a swim‑lane diagram and timed each manual step over a fortnight, identifying four steps that followed fixed rules.\",\"evidenceStrength\":\"high\",\"notes\":\"process mapping and automation candidate identification\"},{\"sourceId\":\"src_eacb94dcebcb\",\"text\":\"Kept the payments operations backlog of automation ideas, scoring each by monthly volume and manual minutes, and presented the top five to the operations manager each quarter.\",\"evidenceStrength\":\"medium\",\"notes\":\"backlog prioritisation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_992df032eecb\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2738b1670d1e\",\"text\":\"Wrote the bot specification for the reconciliation and built the bot with the automation team in the RPA development environment, testing it against six weeks of anonymised statement files supplied by the finance team.\",\"evidenceStrength\":\"high\",\"notes\":\"specification, build and test in dev environment\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_56ca717f522d\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No evidence of live deployment or run results under a control framework.\"]},{\"requirementId\":\"req_7cbfbb4dd5b3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e84e016b41d9\",\"text\":\"Wrote the bot's control description and exception‑handling procedure, which the operational risk partner reviewed and commented on, setting out who handles breaks the bot cannot clear.\",\"evidenceStrength\":\"high\",\"notes\":\"control documentation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a7867be2cb4a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f218ea3e19f4\",\"text\":\"Ran user acceptance testing with four reconciliation clerks in the RPA test environment, recording 23 test cases and their outcomes.\",\"evidenceStrength\":\"high\",\"notes\":\"UAT with staff\"},{\"sourceId\":\"src_277484048b47\",\"text\":\"Work sample: the UAT evidence pack for the reconciliation bot, listing the 23 test cases, screenshots from the RPA test environment, two defects with their retest results and the clerks' sign‑off.\",\"evidenceStrength\":\"medium\",\"notes\":\"UAT evidence pack\"}],\"missingEvidence\":[] }],\"supportedClaims\":[{\"claim\":\"Mapped daily suspense-account reconciliation and identified automation candidates.\",\"supportingRequirementIds\":[\"req_da94ce0e6890\"],\"sourceIds\":[\"src_1dead272e63c\"],\"evidenceStrength\":\"high\",\"witness\":\"mapped the daily suspense-account reconciliation as a swim‑lane diagram and timed each manual step over a fortnight, identifying four steps that followed fixed rules.\"},{\"claim\":\"Specified and built an RPA bot in a development environment and tested it against anonymised statement files.\",\"supportingRequirementIds\":[\"req_992df032eecb\"],\"sourceIds\":[\"src_2738b1670d1e\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the bot specification for the reconciliation and built the bot with the automation team in the RPA development environment, testing it against six weeks of anonymised statement files supplied by the finance team.\"},{\"claim\":\"Ran user acceptance testing with operations staff, recording 23 test cases and outcomes.\",\"supportingRequirementIds\":[\"req_a7867be2cb4a\"],\"sourceIds\":[\"src_f218ea3e19f4\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran user acceptance testing with four reconciliation clerks in the RPA test environment, recording 23 test cases and their outcomes.\"},{\"claim\":\"Documented process controls and exception handling for operational risk partner review.\",\"supportingRequirementIds\":[\"req_7cbfbb4dd5b3\"],\"sourceIds\":[\"src_e84e016b41d9\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the bot's control description and exception‑handling procedure, which the operational risk partner reviewed and commented on, setting out who handles breaks the bot cannot clear.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_56ca717f522d\",\"severity\":\"high\",\"gap\":\"No evidence of live deployment or run results under a control framework.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_c59684c113c6\",\"text\":\"the candidate said the bot 'basically went live' shortly before leaving, and that a former colleague later mentioned it now runs the morning reconciliation without any clerk involvement.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify live deployment status and run results through documentation.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_56ca717f522d\",\"question\":\"Can you provide documentation or evidence that the bot was moved from test into live operation under the bank's automation control framework and that run results were reported?\",\"evidenceTarget\":\"Live deployment and run results evidence\"}],\"humanReviewChecklist\":[\"Review evidence for live deployment and run results for req_56ca717f522d\",\"Assess gaps for requirement req_56ca717f522d\"],\"auditSummary\":\"The candidate demonstrates strong experience in mapping manual reconciliation processes, specifying and testing RPA solutions in a development environment, running UAT with staff, and documenting operational risk controls. However, there is no documented evidence that an automation was moved into live operation under a control framework or that run results were reported, which is a critical requirement for the role. Human review is required to evaluate the significance of this gap and to determine whether additional evidence can be obtained.\",\"limitations\":[\"Limited to provided sources; no external verification of live deployment.\"]}}",
+ "content_sha256": "1671d818f7df70a25676535872dfae24658bafab8e9c654fd8122dd244f73a6a",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_c19ce3fb9b584259",
+   "targetRoleTitle": "Operations Automation Analyst, Payments Operations",
+   "professionalSummary": [
+    "Operations Analyst with experience mapping manual reconciliation processes, specifying and testing RPA solutions, and documenting operational risk controls."
+   ],
+   "experienceHighlights": [
+    "Mapped daily suspense-account reconciliation as a swim‑lane diagram and timed each manual step, identifying four steps that followed fixed rules.",
+    "Wrote the bot specification for the reconciliation and built the bot with the automation team in the RPA development environment, testing it against six weeks of anonymised statement files supplied by the finance team.",
+    "Ran user acceptance testing with four reconciliation clerks in the RPA test environment, recording 23 test cases and their outcomes.",
+    "Wrote the bot's control description and exception‑handling procedure, which the operational risk partner reviewed and commented on, setting out who handles breaks the bot cannot clear.",
+    "Kept the payments operations backlog of automation ideas, scoring each by monthly volume and manual minutes, and presented the top five to the operations manager each quarter."
+   ],
+   "projectsAndWorkSamples": [
+    "UAT evidence pack for the reconciliation bot, listing the 23 test cases, screenshots from the RPA test environment, two defects with their retest results and the clerks' sign‑off."
+   ],
+   "skills": [
+    "RPA development",
+    "Process mapping",
+    "User acceptance testing",
+    "Operational risk controls",
+    "Backlog prioritisation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate's experience in mapping manual processes, specifying and testing RPA in a development environment, running UAT with staff, and documenting controls, but do not establish evidence of moving an automation into live operation under a control framework or reporting run results."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Operations Automation Analyst, Payments Operations",
+    "jobDescriptionSource": "jd_00c08b866b2af26e",
+    "requirementIds": [
+     "req_da94ce0e6890",
+     "req_992df032eecb",
+     "req_56ca717f522d",
+     "req_7cbfbb4dd5b3",
+     "req_a7867be2cb4a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_c19ce3fb9b584259",
+    "sources": [
+     "src_1dead272e63c",
+     "src_2738b1670d1e",
+     "src_f218ea3e19f4",
+     "src_e84e016b41d9",
+     "src_eacb94dcebcb",
+     "src_277484048b47",
+     "src_c59684c113c6",
+     "src_c35d3cccec65"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_da94ce0e6890",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1dead272e63c",
+       "text": "mapped the daily suspense-account reconciliation as a swim‑lane diagram and timed each manual step over a fortnight, identifying four steps that followed fixed rules.",
+       "evidenceStrength": "high",
+       "notes": "process mapping and automation candidate identification"
+      },
+      {
+       "sourceId": "src_eacb94dcebcb",
+       "text": "Kept the payments operations backlog of automation ideas, scoring each by monthly volume and manual minutes, and presented the top five to the operations manager each quarter.",
+       "evidenceStrength": "medium",
+       "notes": "backlog prioritisation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_992df032eecb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2738b1670d1e",
+       "text": "Wrote the bot specification for the reconciliation and built the bot with the automation team in the RPA development environment, testing it against six weeks of anonymised statement files supplied by the finance team.",
+       "evidenceStrength": "high",
+       "notes": "specification, build and test in dev environment"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_56ca717f522d",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No evidence of live deployment or run results under a control framework."
+     ]
+    },
+    {
+     "requirementId": "req_7cbfbb4dd5b3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e84e016b41d9",
+       "text": "Wrote the bot's control description and exception‑handling procedure, which the operational risk partner reviewed and commented on, setting out who handles breaks the bot cannot clear.",
+       "evidenceStrength": "high",
+       "notes": "control documentation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a7867be2cb4a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f218ea3e19f4",
+       "text": "Ran user acceptance testing with four reconciliation clerks in the RPA test environment, recording 23 test cases and their outcomes.",
+       "evidenceStrength": "high",
+       "notes": "UAT with staff"
+      },
+      {
+       "sourceId": "src_277484048b47",
+       "text": "Work sample: the UAT evidence pack for the reconciliation bot, listing the 23 test cases, screenshots from the RPA test environment, two defects with their retest results and the clerks' sign‑off.",
+       "evidenceStrength": "medium",
+       "notes": "UAT evidence pack"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Mapped daily suspense-account reconciliation and identified automation candidates.",
+     "supportingRequirementIds": [
+      "req_da94ce0e6890"
+     ],
+     "sourceIds": [
+      "src_1dead272e63c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "mapped the daily suspense-account reconciliation as a swim‑lane diagram and timed each manual step over a fortnight, identifying four steps that followed fixed rules."
+    },
+    {
+     "claim": "Specified and built an RPA bot in a development environment and tested it against anonymised statement files.",
+     "supportingRequirementIds": [
+      "req_992df032eecb"
+     ],
+     "sourceIds": [
+      "src_2738b1670d1e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the bot specification for the reconciliation and built the bot with the automation team in the RPA development environment, testing it against six weeks of anonymised statement files supplied by the finance team."
+    },
+    {
+     "claim": "Ran user acceptance testing with operations staff, recording 23 test cases and outcomes.",
+     "supportingRequirementIds": [
+      "req_a7867be2cb4a"
+     ],
+     "sourceIds": [
+      "src_f218ea3e19f4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran user acceptance testing with four reconciliation clerks in the RPA test environment, recording 23 test cases and their outcomes."
+    },
+    {
+     "claim": "Documented process controls and exception handling for operational risk partner review.",
+     "supportingRequirementIds": [
+      "req_7cbfbb4dd5b3"
+     ],
+     "sourceIds": [
+      "src_e84e016b41d9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the bot's control description and exception‑handling procedure, which the operational risk partner reviewed and commented on, setting out who handles breaks the bot cannot clear."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_56ca717f522d",
+     "severity": "high",
+     "gap": "No evidence of live deployment or run results under a control framework."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_c59684c113c6",
+     "text": "the candidate said the bot 'basically went live' shortly before leaving, and that a former colleague later mentioned it now runs the morning reconciliation without any clerk involvement.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify live deployment status and run results through documentation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_56ca717f522d",
+     "question": "Can you provide documentation or evidence that the bot was moved from test into live operation under the bank's automation control framework and that run results were reported?",
+     "evidenceTarget": "Live deployment and run results evidence"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Review evidence for live deployment and run results for req_56ca717f522d",
+    "Assess gaps for requirement req_56ca717f522d"
+   ],
+   "auditSummary": "The candidate demonstrates strong experience in mapping manual reconciliation processes, specifying and testing RPA solutions in a development environment, running UAT with staff, and documenting operational risk controls. However, there is no documented evidence that an automation was moved into live operation under a control framework or that run results were reported, which is a critical requirement for the role. Human review is required to evaluate the significance of this gap and to determine whether additional evidence can be obtained.",
+   "limitations": [
+    "Limited to provided sources; no external verification of live deployment."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:05:18.743666+00:00"
+}

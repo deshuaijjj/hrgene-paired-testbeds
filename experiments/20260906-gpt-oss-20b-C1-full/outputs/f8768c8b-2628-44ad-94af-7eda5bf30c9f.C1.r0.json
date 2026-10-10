@@ -1,0 +1,254 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f8768c8b-2628-44ad-94af-7eda5bf30c9f.C1",
+ "case_id": "f8768c8b-2628-44ad-94af-7eda5bf30c9f",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11384,
+  "promptWords": 1549
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.48
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2866,
+ "eval_count": 1972,
+ "prompt_eval_duration_ns": 18484000,
+ "eval_duration_ns": 34997450000,
+ "total_duration_ns": 42475476959,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: one or two sentences on what materials establish.\n\nRequirementEvidenceMap: for each requirement id, status and evidence.\n\nWe have evidence for all requirements. Let's map:\n\nreq_6322e3d1ef14: releases and reads dashboards. Evidence: src_319b5228c5b1, src_0ff7eb0d6d2e. status supported.\n\nreq_83c88ef4cfe1: on-call duty. Evidence src_08cfb853c4a7. supported.\n\nreq_e85b9b7f470a: coordinates release with platform team and records checks. Evidence src_c3fede5f312d. supported.\n\nreq_4091e50b787c: evaluates offline. Evidence src_c3fede5f312d. supported.\n\nreq_dc7937d53975: writes model card. Evidence src_e76613203470. supported.\n\nAll supported.\n\nsupportedClaims: we can list each claim with requirement ids.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Verify source authenticity\" etc.\n\nauditSummary: summary.\n\nlimitations: maybe \"Based on provided resume only\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_bd174d8e539cc2a4\",\"targetRoleTitle\":\"Ranking Engineer, Marketplace Search\",\"professionalSummary\":[\"Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name. (src_319b5228c5b1)\",\"Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was handled by me, and the search incident log carries my incident record for it. (src_08cfb853c4a7)\",\"Read the live relevance and conversion dashboards after every release and in the weekly ranking review, and rolled one release back in 2024 when the conversion dashboard showed a regression on low-traffic categories. (src_0ff7eb0d6d2e)\",\"Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine. (src_c3fede5f312d)\",\"Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know. (src_e76613203470)\"],\"experienceHighlights\":[\"Released five ranking models to production with traffic ramps and release tickets. (src_319b5228c5b1)\",\"Handled on-call duty for ranking incidents, including a feature store outage. (src_08cfb853c4a7)\",\"Monitored live relevance and conversion dashboards post-release and performed rollback when necessary. (src_0ff7eb0d6d2e)\",\"Coordinated release reviews with the search platform team and documented check ownership. (src_c3fede5f312d)\",\"Authored comprehensive model cards for each model. (src_e76613203470)\"],\"projectsAndWorkSamples\":[\"Five release tickets with traffic ramp records. (src_002282b31271)\",\"Search incident log record for the feature store outage. (src_002282b31271)\",\"Weekly ranking review deck for the last quarter. (src_002282b31271)\"],\"skills\":[\"Release management\",\"On-call incident handling\",\"Dashboard monitoring\",\"Offline evaluation\",\"Model card documentation\"],\"evidenceBoundary\":\"The resume and work sample documents establish the candidate’s direct involvement in releasing ranking models, on-call duties, dashboard monitoring, offline evaluation, release coordination, and model card creation, as evidenced by the cited source passages.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Ranking Engineer, Marketplace Search\",\"jobDescriptionSource\":\"jd_f05a51599fcdb5eb\",\"requirementIds\":[\"req_6322e3d1ef14\",\"req_83c88ef4cfe1\",\"req_e85b9b7f470a\",\"req_4091e50b787c\",\"req_dc7937d53975\"]},\"candidate\":{\"candidateId\":\"cand_bd174d8e539cc2a4\",\"sources\":[\"src_319b5228c5b1\",\"src_08cfb853c4a7\",\"src_0ff7eb0d6d2e\",\"src_c3fede5f312d\",\"src_e76613203470\",\"src_002282b31271\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_6322e3d1ef14\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_319b5228c5b1\",\"text\":\"Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of release activity and traffic ramp.\"},{\"sourceId\":\"src_0ff7eb0d6d2e\",\"text\":\"Read the live relevance and conversion dashboards after every release and in the weekly ranking review, and rolled one release back in 2024 when the conversion dashboard showed a regression on low-traffic categories.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of dashboard monitoring.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_83c88ef4cfe1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_08cfb853c4a7\",\"text\":\"Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was mine to handle, and the search incident log carries my incident record for it.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of on-call duty.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e85b9b7f470a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c3fede5f312d\",\"text\":\"Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of coordination and check ownership.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4091e50b787c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c3fede5f312d\",\"text\":\"Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of offline evaluation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_dc7937d53975\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e76613203470\",\"text\":\"Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of model card creation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Released five ranking models to production with traffic ramps and release tickets.\",\"supportingRequirementIds\":[\"req_6322e3d1ef14\"],\"sourceIds\":[\"src_319b5228c5b1\"],\"evidenceStrength\":\"high\",\"witness\":\"Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name.\"},{\"claim\":\"Handled on-call duty for ranking incidents, including a feature store outage.\",\"supportingRequirementIds\":[\"req_83c88ef4cfe1\"],\"sourceIds\":[\"src_08cfb853c4a7\"],\"evidenceStrength\":\"high\",\"witness\":\"Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was mine to handle, and the search incident log carries my incident record for it.\"},{\"claim\":\"Coordinated release reviews with the search platform team and documented check ownership.\",\"supportingRequirementIds\":[\"req_e85b9b7f470a\"],\"sourceIds\":[\"src_c3fede5f312d\"],\"evidenceStrength\":\"high\",\"witness\":\"Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine.\"},{\"claim\":\"Evaluated every model offline against held-out interaction data under the agreed evaluation protocol.\",\"supportingRequirementIds\":[\"req_4091e50b787c\"],\"sourceIds\":[\"src_c3fede5f312d\"],\"evidenceStrength\":\"high\",\"witness\":\"Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine.\"},{\"claim\":\"Authored comprehensive model cards for each model.\",\"supportingRequirementIds\":[\"req_dc7937d53975\"],\"sourceIds\":[\"src_e76613203470\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify authenticity of source documents\",\"Confirm that traffic ramp ranges match company policy\",\"Ensure that model card content meets internal standards\"],\"auditSummary\":\"All five job requirements are directly supported by statements in the candidate’s resume and work samples. The evidence is high strength, with clear source citations. No gaps or unsupported claims were identified. Human review is recommended to confirm document authenticity and alignment with internal processes.\",\"limitations\":[\"Evidence is limited to the provided resume and work sample; external verification is not included.\"]} }",
+ "content_sha256": "f4e9ff5ee66b27db7a3375a641a206c6da1985a38e6096f89b84e25d8166f80c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bd174d8e539cc2a4",
+   "targetRoleTitle": "Ranking Engineer, Marketplace Search",
+   "professionalSummary": [
+    "Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name. (src_319b5228c5b1)",
+    "Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was handled by me, and the search incident log carries my incident record for it. (src_08cfb853c4a7)",
+    "Read the live relevance and conversion dashboards after every release and in the weekly ranking review, and rolled one release back in 2024 when the conversion dashboard showed a regression on low-traffic categories. (src_0ff7eb0d6d2e)",
+    "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine. (src_c3fede5f312d)",
+    "Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know. (src_e76613203470)"
+   ],
+   "experienceHighlights": [
+    "Released five ranking models to production with traffic ramps and release tickets. (src_319b5228c5b1)",
+    "Handled on-call duty for ranking incidents, including a feature store outage. (src_08cfb853c4a7)",
+    "Monitored live relevance and conversion dashboards post-release and performed rollback when necessary. (src_0ff7eb0d6d2e)",
+    "Coordinated release reviews with the search platform team and documented check ownership. (src_c3fede5f312d)",
+    "Authored comprehensive model cards for each model. (src_e76613203470)"
+   ],
+   "projectsAndWorkSamples": [
+    "Five release tickets with traffic ramp records. (src_002282b31271)",
+    "Search incident log record for the feature store outage. (src_002282b31271)",
+    "Weekly ranking review deck for the last quarter. (src_002282b31271)"
+   ],
+   "skills": [
+    "Release management",
+    "On-call incident handling",
+    "Dashboard monitoring",
+    "Offline evaluation",
+    "Model card documentation"
+   ],
+   "evidenceBoundary": "The resume and work sample documents establish the candidate’s direct involvement in releasing ranking models, on-call duties, dashboard monitoring, offline evaluation, release coordination, and model card creation, as evidenced by the cited source passages."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Ranking Engineer, Marketplace Search",
+    "jobDescriptionSource": "jd_f05a51599fcdb5eb",
+    "requirementIds": [
+     "req_6322e3d1ef14",
+     "req_83c88ef4cfe1",
+     "req_e85b9b7f470a",
+     "req_4091e50b787c",
+     "req_dc7937d53975"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bd174d8e539cc2a4",
+    "sources": [
+     "src_319b5228c5b1",
+     "src_08cfb853c4a7",
+     "src_0ff7eb0d6d2e",
+     "src_c3fede5f312d",
+     "src_e76613203470",
+     "src_002282b31271"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_6322e3d1ef14",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_319b5228c5b1",
+       "text": "Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of release activity and traffic ramp."
+      },
+      {
+       "sourceId": "src_0ff7eb0d6d2e",
+       "text": "Read the live relevance and conversion dashboards after every release and in the weekly ranking review, and rolled one release back in 2024 when the conversion dashboard showed a regression on low-traffic categories.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of dashboard monitoring."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_83c88ef4cfe1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_08cfb853c4a7",
+       "text": "Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was mine to handle, and the search incident log carries my incident record for it.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of on-call duty."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e85b9b7f470a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c3fede5f312d",
+       "text": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of coordination and check ownership."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4091e50b787c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c3fede5f312d",
+       "text": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of offline evaluation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dc7937d53975",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e76613203470",
+       "text": "Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of model card creation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Released five ranking models to production with traffic ramps and release tickets.",
+     "supportingRequirementIds": [
+      "req_6322e3d1ef14"
+     ],
+     "sourceIds": [
+      "src_319b5228c5b1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name."
+    },
+    {
+     "claim": "Handled on-call duty for ranking incidents, including a feature store outage.",
+     "supportingRequirementIds": [
+      "req_83c88ef4cfe1"
+     ],
+     "sourceIds": [
+      "src_08cfb853c4a7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was mine to handle, and the search incident log carries my incident record for it."
+    },
+    {
+     "claim": "Coordinated release reviews with the search platform team and documented check ownership.",
+     "supportingRequirementIds": [
+      "req_e85b9b7f470a"
+     ],
+     "sourceIds": [
+      "src_c3fede5f312d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine."
+    },
+    {
+     "claim": "Evaluated every model offline against held-out interaction data under the agreed evaluation protocol.",
+     "supportingRequirementIds": [
+      "req_4091e50b787c"
+     ],
+     "sourceIds": [
+      "src_c3fede5f312d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine."
+    },
+    {
+     "claim": "Authored comprehensive model cards for each model.",
+     "supportingRequirementIds": [
+      "req_dc7937d53975"
+     ],
+     "sourceIds": [
+      "src_e76613203470"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify authenticity of source documents",
+    "Confirm that traffic ramp ranges match company policy",
+    "Ensure that model card content meets internal standards"
+   ],
+   "auditSummary": "All five job requirements are directly supported by statements in the candidate’s resume and work samples. The evidence is high strength, with clear source citations. No gaps or unsupported claims were identified. Human review is recommended to confirm document authenticity and alignment with internal processes.",
+   "limitations": [
+    "Evidence is limited to the provided resume and work sample; external verification is not included."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:36:34.818834+00:00"
+}

@@ -1,0 +1,563 @@
+{
+ "request_id": "90a178d2-b0d1-437d-b3ba-e8d734c0c2ca.C2",
+ "case_id": "90a178d2-b0d1-437d-b3ba-e8d734c0c2ca",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "subjective,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.candidate.candidateId",
+    "message": "candidateId differs from the case",
+    "witness": {
+     "expected": "cand_4796e17ffef8d57e",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "identity_copied",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.jobDescriptionSource",
+    "message": "jobDescriptionSource differs from the case",
+    "witness": {
+     "expected": "jd_428b7ccc45a8f93b",
+     "actual": null
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "boundary_flags",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.decisionBoundary",
+    "message": "decisionBoundary missing",
+    "witness": {}
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_sources_routed",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.interviewSignalRisks",
+    "message": "subjective/hearsay source src_bc70f787610b is not routed to interviewSignalRisks / gaps / follow-up",
+    "witness": {
+     "sourceId": "src_bc70f787610b"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_e994a096dfb0 is not covered",
+    "witness": {
+     "requirementId": "req_e994a096dfb0"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_12cac7bf8f75 is not covered",
+    "witness": {
+     "requirementId": "req_12cac7bf8f75"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_17ec99705c81 is not covered",
+    "witness": {
+     "requirementId": "req_17ec99705c81"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_c0c5eb929c4a is not covered",
+    "witness": {
+     "requirementId": "req_c0c5eb929c4a"
+    }
+   },
+   {
+    "rule": "hrgene.evidence_gap_router",
+    "code": "requirement_coverage",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+    "message": "requirement req_a6713bb8f52a is not covered",
+    "witness": {
+     "requirementId": "req_a6713bb8f52a"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$",
+    "message": "1 schema error(s); first: $: missing required property 'hiringEvidencePacket'",
+    "witness": {
+     "errors": [
+      "$: missing required property 'hiringEvidencePacket'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 5,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "identity_copied",
+   "action": "copy_identity_from_case",
+   "path": "$",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.human_review_boundary",
+   "code": "boundary_flags",
+   "action": "reset_boundary_flags",
+   "path": "$.hiringEvidencePacket.decisionBoundary",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_e994a096dfb0"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_12cac7bf8f75"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_17ec99705c81"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_c0c5eb929c4a"
+  },
+  {
+   "rule": "hrgene.evidence_gap_router",
+   "code": "requirement_coverage",
+   "action": "add_missing_requirement_entries",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap",
+   "detail": "req_a6713bb8f52a"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "subjective,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_sources_routed",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.interviewSignalRisks",
+    "message": "subjective/hearsay source src_bc70f787610b is not routed to interviewSignalRisks / gaps / follow-up",
+    "witness": {
+     "sourceId": "src_bc70f787610b"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4796e17ffef8d57e",
+   "targetRoleTitle": "Backend Engineer, Payments Platform",
+   "professionalSummary": [
+    {
+     "claimId": "sum_1",
+     "text": "Backend engineer at Northgate Building Society since March 2021, working on the faster-payments gateway written in Kotlin.",
+     "sourceIds": [
+      "src_a4b1429c0106"
+     ],
+     "requirementIds": [
+      "req_e994a096dfb0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_1",
+     "text": "Designed the idempotency-key scheme for the payment initiation API to handle client retries without duplicate transfers.",
+     "sourceIds": [
+      "src_b9f88c17cccc"
+     ],
+     "requirementIds": [
+      "req_12cac7bf8f75"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer."
+    },
+    {
+     "claimId": "exp_2",
+     "text": "Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.",
+     "sourceIds": [
+      "src_87219351c0f7"
+     ],
+     "requirementIds": [
+      "req_e994a096dfb0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue."
+    },
+    {
+     "claimId": "exp_3",
+     "text": "Implemented transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.",
+     "sourceIds": [
+      "src_90aa184f7a67"
+     ],
+     "requirementIds": [
+      "req_c0c5eb929c4a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off."
+    },
+    {
+     "claimId": "exp_4",
+     "text": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.",
+     "sourceIds": [
+      "src_bcb55898844a"
+     ],
+     "requirementIds": [
+      "req_a6713bb8f52a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_1",
+     "text": "Design document for the payment initiation API's idempotency handling, including key format, 24-hour retention period, sequence diagram for retried requests, and test cases.",
+     "sourceIds": [
+      "src_907a21a6ac68"
+     ],
+     "requirementIds": [
+      "req_12cac7bf8f75"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: a design document for the payment initiation API's idempotency handling, giving the key format, the 24-hour retention period, a sequence diagram for retried requests and the test cases."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_1",
+     "text": "Kotlin and Java services with automated tests",
+     "sourceIds": [
+      "src_a4b1429c0106"
+     ],
+     "requirementIds": [
+      "req_e994a096dfb0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's work on the faster-payments gateway in Kotlin, idempotency design, reconciliation job, transaction-monitoring rule implementation, and post-incident reviews. They do not establish on-call rotation participation, incident-commander role during outages, or deployment environment (production vs. test)."
+  },
+  "hiringEvidencePacket": {
+   "candidate": {
+    "candidateId": "cand_4796e17ffef8d57e",
+    "sources": []
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Payments Platform",
+    "jobDescriptionSource": "jd_428b7ccc45a8f93b",
+    "requirementIds": []
+   },
+   "unsupportedClaims": [],
+   "interviewSignalRisks": [],
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "This packet supports qualified human review. It makes no employment decision, ranking or recommendation and infers no protected characteristics."
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_e994a096dfb0",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_12cac7bf8f75",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_17ec99705c81",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_c0c5eb929c4a",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    },
+    {
+     "requirementId": "req_a6713bb8f52a",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No cited evidence was located for this requirement."
+     ]
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "followUpQuestions": [],
+   "supportedClaims": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "",
+   "limitations": []
+  }
+ },
+ "needsRegeneration": false
+}

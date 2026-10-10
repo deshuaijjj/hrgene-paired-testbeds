@@ -1,0 +1,339 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "9f0a38ca-4127-4cd7-b300-bc4ed9ac6e39.C1",
+ "case_id": "9f0a38ca-4127-4cd7-b300-bc4ed9ac6e39",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11382,
+  "promptWords": 1458
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 67.291
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3521,
+ "eval_count": 2628,
+ "prompt_eval_duration_ns": 18062000,
+ "eval_duration_ns": 47802214000,
+ "total_duration_ns": 67289482792,
+ "thinking": "We need to produce JSON with optimizedCv and hiringEvidencePacket. Use sources. Ensure citations. Let's craft claims.\n\nOptimized CV: language en, candidateId cand_20c13c1a03e764e8, targetRoleTitle Data Analytics Engineer, Collaboration Software Subscriptions.\n\nprofessionalSummary: maybe one claim: \"Data Analytics Engineer with experience maintaining subscription data models, building renewal-risk datasets, coordinating with cross-functional teams, and documenting metrics for a collaboration-software vendor.\" Cite src_5a99fe17d99a, src_2f6d6d36ebc7, src_17a19db9d13b, src_b97dd752e001, src_1fa11fb18653.\n\nexperienceHighlights: list claims: \"Maintained subscription data models for seats, plans, and renewals in the analytics warehouse (dbt on Snowflake).\" cite src_5a99fe17d99a. \"Built and refreshed nightly the renewal-risk dataset combining seat-usage trend, support-ticket volume, and days to renewal, surfaced to customer success dashboard.\" cite src_2f6d6d36ebc7. \"Coordinated data-model changes with customer success and data engineering through weekly data review; owned model definitions.\" cite src_17a19db9d13b. \"Maintained metric definitions page for seat usage and renewal metrics, noting known limitation.\" cite src_b97dd752e001. \"Managed responsibilities over about two years.\" cite src_1fa11fb18653.\n\nprojectsAndWorkSamples: \"Renewal-risk dataset specification and metric definitions page export with warehouse query history as verification trail.\" cite src_f4d9f7b90725.\n\nskills: list: \"dbt\", \"Snowflake\", \"data modeling\", \"dataset development\", \"cross-functional coordination\", \"metric documentation\". cite relevant sources.\n\nevidenceBoundary: \"The provided resume and work sample establish the candidate’s experience in subscription data modeling, renewal-risk dataset development, coordination with customer success and data engineering, and metric documentation. They do not provide quantitative evidence of churn‑risk flag accuracy improvements or documented baseline metrics.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_d4c9151971e78226, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_799b0995a21b: Maintains subscription data models. Supported. evidence: src_5a99fe17d99a. evidenceStrength high. notes: direct statement.\n\nreq_0416458a892d: Builds and refreshes renewal-risk dataset. Supported. evidence: src_2f6d6d36ebc7. high.\n\nreq_4d1aa549a18d: Improves accuracy of churn-risk flag. Insufficient evidence. missingEvidence: \"Quantitative evidence of churn‑risk flag accuracy improvement and comparison to documented baseline.\" Also note that note src_b0320f930bdc mentions improvement but not documented. So partial? We have some mention but not documented baseline. So status partial_evidence? The requirement asks to improve accuracy measured against documented baseline. We have no documented baseline or measurement. So insufficient_evidence. Provide missingEvidence.\n\nreq_4b01f739cfd4: Coordinates model changes with CS and data engineering and records responsibility boundaries. Supported. evidence: src_17a19db9d13b. high.\n\nreq_f4ecee2410fa: Documents metric definitions, known limitations and hand-over conditions. Supported. evidence: src_b97dd752e001. high.\n\nsupportedClaims: maybe list claims that are supported: each of the above except churn. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness verbatim.\n\nunsupportedClaims: none? maybe none.\n\nmissingEvidenceGaps: one gap for churn accuracy.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: one question for churn accuracy: \"Can you provide documented baseline metrics and evaluation results for the churn‑risk flag before and after the renewal‑risk dataset deployment?\" requirementId req_4d1aa549a18d.\n\nhumanReviewChecklist: [\"Verify that the candidate’s documented experience aligns with the role requirements.\", \"Confirm availability of quantitative churn‑risk accuracy data.\"]\n\nauditSummary: \"The candidate’s resume and work sample provide clear evidence for most role requirements, except for quantitative improvement of churn‑risk accuracy against a documented baseline. Human review should focus on obtaining that evidence.\"\n\nlimitations: [\"No quantitative metrics for churn‑risk accuracy improvement provided in the materials.\"]\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_20c13c1a03e764e8\",\n    \"targetRoleTitle\": \"Data Analytics Engineer, Collaboration Software Subscriptions\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv_1\",\n        \"text\": \"Data Analytics Engineer with experience maintaining subscription data models, building renewal‑risk datasets, coordinating with cross‑functional teams, and documenting metrics for a collaboration‑software vendor.\",\n        \"sourceIds\": [\n          \"src_5a99fe17d99a\",\n          \"src_2f6d6d36ebc7\",\n          \"src_17a19db9d13b\",\n          \"src_b97dd752e001\",\n          \"src_1fa11fb18653\"\n        ],\n        \"witness\": \"\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"cv_2\",\n        \"text\": \"Maintained subscription data models for seats, plans, and renewals in the analytics warehouse (dbt on Snowflake).\",\n        \"sourceIds\": [\n          \"src_5a99fe17d99a\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_3\",\n        \"text\": \"Built and refreshed nightly the renewal‑risk dataset combining seat‑usage trend, support‑ticket volume, and days to renewal, surfaced to customer success dashboard.\",\n        \"sourceIds\": [\n          \"src_2f6d6d36ebc7\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_4\",\n        \"text\": \"Coordinated data‑model changes with customer success and data engineering through weekly data review; owned model definitions.\",\n        \"sourceIds\": [\n          \"src_17a19db9d13b\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_5\",\n        \"text\": \"Maintained metric definitions page for seat usage and renewal metrics, noting known limitation that trial‑to‑paid conversions were not attributed to a plan until the following month.\",\n        \"sourceIds\": [\n          \"src_b97dd752e001\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_6\",\n        \"text\": \"Managed responsibilities over about two years.\",\n        \"sourceIds\": [\n          \"src_1fa11fb18653\"\n        ],\n        \"witness\": \"\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"cv_7\",\n        \"text\": \"Renewal‑risk dataset specification and metric definitions page export with warehouse query history as verification trail.\",\n        \"sourceIds\": [\n          \"src_f4d9f7b90725\"\n        ],\n        \"witness\": \"\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"cv_8\",\n        \"text\": \"dbt\",\n        \"sourceIds\": [\n          \"src_5a99fe17d99a\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_9\",\n        \"text\": \"Snowflake\",\n        \"sourceIds\": [\n          \"src_5a99fe17d99a\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_10\",\n        \"text\": \"data modeling\",\n        \"sourceIds\": [\n          \"src_5a99fe17d99a\",\n          \"src_17a19db9d13b\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_11\",\n        \"text\": \"dataset development\",\n        \"sourceIds\": [\n          \"src_2f6d6d36ebc7\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_12\",\n        \"text\": \"cross‑functional coordination\",\n        \"sourceIds\": [\n          \"src_17a19db9d13b\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"cv_13\",\n        \"text\": \"metric documentation\",\n        \"sourceIds\": [\n          \"src_b97dd752e001\"\n        ],\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s experience in subscription data modeling, renewal‑risk dataset development, coordination with customer success and data engineering, and metric documentation. They do not provide quantitative evidence of churn‑risk flag accuracy improvements or documented baseline metrics.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Qualified human review is required before any employment decision.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Data Analytics Engineer, Collaboration Software Subscriptions\",\n      \"jobDescriptionSource\": \"jd_d4c9151971e78226\",\n      \"requirementIds\": [\n        \"req_799b0995a21b\",\n        \"req_0416458a892d\",\n        \"req_4d1aa549a18d\",\n        \"req_4b01f739cfd4\",\n        \"req_f4ecee2410fa\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_20c13c1a03e764e8\",\n      \"sources\": [\n        \"src_5a99fe17d99a\",\n        \"src_2f6d6d36ebc7\",\n        \"src_17a19db9d13b\",\n        \"src_b97dd752e001\",\n        \"src_1fa11fb18653\",\n        \"src_f4d9f7b90725\",\n        \"src_b0320f930bdc\",\n        \"src_3dbbee8f5919\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_799b0995a21b\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_5a99fe17d99a\",\n            \"text\": \"Maintained the subscription data models for seats, plans and renewals in the analytics warehouse (dbt on Snowflake)\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_0416458a892d\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_2f6d6d36ebc7\",\n            \"text\": \"Built the renewal-risk dataset that combines seat-usage trend, support-ticket volume and days to renewal, refreshed nightly and surfaced to customer success in their dashboard\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_4d1aa549a18d\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [],\n        \"missingEvidence\": [\n          \"Quantitative evidence of churn‑risk flag accuracy improvement and comparison to a documented baseline\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_4b01f739cfd4\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_17a19db9d13b\",\n            \"text\": \"Coordinated data-model changes with customer success and data engineering through the weekly data review; data engineering owned the pipelines and approved schema changes, and I owned the model definitions\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_f4ecee2410fa\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_b97dd752e001\",\n            \"text\": \"Maintained the metric definitions page for seat usage and renewal metrics, listing the known limitation that trial-to-paid conversions were not attributed to a plan until the following month\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Maintained subscription data models for seats, plans, and renewals in the analytics warehouse (dbt on Snowflake).\",\n        \"supportingRequirementIds\": [\n          \"req_799b0995a21b\"\n        ],\n        \"sourceIds\": [\n          \"src_5a99fe17d99a\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintained the subscription data models for seats, plans and renewals in the analytics warehouse (dbt on Snowflake)\"\n      },\n      {\n        \"claim\": \"Built and refreshed nightly the renewal‑risk dataset combining seat‑usage trend, support‑ticket volume, and days to renewal, surfaced to customer success dashboard.\",\n        \"supportingRequirementIds\": [\n          \"req_0416458a892d\"\n        ],\n        \"sourceIds\": [\n          \"src_2f6d6d36ebc7\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built the renewal-risk dataset that combines seat-usage trend, support-ticket volume and days to renewal, refreshed nightly and surfaced to customer success in their dashboard\"\n      },\n      {\n        \"claim\": \"Coordinated data‑model changes with customer success and data engineering through weekly data review; owned model definitions.\",\n        \"supportingRequirementIds\": [\n          \"req_4b01f739cfd4\"\n        ],\n        \"sourceIds\": [\n          \"src_17a19db9d13b\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Coordinated data-model changes with customer success and data engineering through the weekly data review; data engineering owned the pipelines and approved schema changes, and I owned the model definitions\"\n      },\n      {\n        \"claim\": \"Maintained metric definitions page for seat usage and renewal metrics, noting known limitation that trial‑to‑paid conversions were not attributed to a plan until the following month.\",\n        \"supportingRequirementIds\": [\n          \"req_f4ecee2410fa\"\n        ],\n        \"sourceIds\": [\n          \"src_b97dd752e001\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintained the metric definitions page for seat usage and renewal metrics, listing the known limitation that trial-to-paid conversions were not attributed to a plan until the following month\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_4d1aa549a18d\",\n        \"severity\": \"medium\",\n        \"gap\": \"Quantitative evidence of churn‑risk flag accuracy improvement and comparison to a documented baseline\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_4d1aa549a18d\",\n        \"question\": \"Can you provide documented baseline metrics and evaluation results for the churn‑risk flag before and after the renewal‑risk dataset deployment?\",\n        \"evidenceTarget\": \"Quantitative churn‑risk accuracy metrics and baseline comparison\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s documented experience aligns with the role requirements.\",\n      \"Confirm availability of quantitative churn‑risk accuracy data.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and work sample provide clear evidence for most role requirements, except for quantitative improvement of churn‑risk accuracy against a documented baseline. Human review should focus on obtaining that evidence.\",\n    \"limitations\": [\n      \"No quantitative metrics for churn‑risk accuracy improvement provided in the materials.\"\n    ]\n  }\n}",
+ "content_sha256": "22efebe34949feaaaf51e835ee48959046386c5da841050c845d5735f7b65e18",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_20c13c1a03e764e8",
+   "targetRoleTitle": "Data Analytics Engineer, Collaboration Software Subscriptions",
+   "professionalSummary": [
+    {
+     "claimId": "cv_1",
+     "text": "Data Analytics Engineer with experience maintaining subscription data models, building renewal‑risk datasets, coordinating with cross‑functional teams, and documenting metrics for a collaboration‑software vendor.",
+     "sourceIds": [
+      "src_5a99fe17d99a",
+      "src_2f6d6d36ebc7",
+      "src_17a19db9d13b",
+      "src_b97dd752e001",
+      "src_1fa11fb18653"
+     ],
+     "witness": ""
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cv_2",
+     "text": "Maintained subscription data models for seats, plans, and renewals in the analytics warehouse (dbt on Snowflake).",
+     "sourceIds": [
+      "src_5a99fe17d99a"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_3",
+     "text": "Built and refreshed nightly the renewal‑risk dataset combining seat‑usage trend, support‑ticket volume, and days to renewal, surfaced to customer success dashboard.",
+     "sourceIds": [
+      "src_2f6d6d36ebc7"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_4",
+     "text": "Coordinated data‑model changes with customer success and data engineering through weekly data review; owned model definitions.",
+     "sourceIds": [
+      "src_17a19db9d13b"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_5",
+     "text": "Maintained metric definitions page for seat usage and renewal metrics, noting known limitation that trial‑to‑paid conversions were not attributed to a plan until the following month.",
+     "sourceIds": [
+      "src_b97dd752e001"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_6",
+     "text": "Managed responsibilities over about two years.",
+     "sourceIds": [
+      "src_1fa11fb18653"
+     ],
+     "witness": ""
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv_7",
+     "text": "Renewal‑risk dataset specification and metric definitions page export with warehouse query history as verification trail.",
+     "sourceIds": [
+      "src_f4d9f7b90725"
+     ],
+     "witness": ""
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv_8",
+     "text": "dbt",
+     "sourceIds": [
+      "src_5a99fe17d99a"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_9",
+     "text": "Snowflake",
+     "sourceIds": [
+      "src_5a99fe17d99a"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_10",
+     "text": "data modeling",
+     "sourceIds": [
+      "src_5a99fe17d99a",
+      "src_17a19db9d13b"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_11",
+     "text": "dataset development",
+     "sourceIds": [
+      "src_2f6d6d36ebc7"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_12",
+     "text": "cross‑functional coordination",
+     "sourceIds": [
+      "src_17a19db9d13b"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "cv_13",
+     "text": "metric documentation",
+     "sourceIds": [
+      "src_b97dd752e001"
+     ],
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in subscription data modeling, renewal‑risk dataset development, coordination with customer success and data engineering, and metric documentation. They do not provide quantitative evidence of churn‑risk flag accuracy improvements or documented baseline metrics."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Data Analytics Engineer, Collaboration Software Subscriptions",
+    "jobDescriptionSource": "jd_d4c9151971e78226",
+    "requirementIds": [
+     "req_799b0995a21b",
+     "req_0416458a892d",
+     "req_4d1aa549a18d",
+     "req_4b01f739cfd4",
+     "req_f4ecee2410fa"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_20c13c1a03e764e8",
+    "sources": [
+     "src_5a99fe17d99a",
+     "src_2f6d6d36ebc7",
+     "src_17a19db9d13b",
+     "src_b97dd752e001",
+     "src_1fa11fb18653",
+     "src_f4d9f7b90725",
+     "src_b0320f930bdc",
+     "src_3dbbee8f5919"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_799b0995a21b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5a99fe17d99a",
+       "text": "Maintained the subscription data models for seats, plans and renewals in the analytics warehouse (dbt on Snowflake)",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0416458a892d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2f6d6d36ebc7",
+       "text": "Built the renewal-risk dataset that combines seat-usage trend, support-ticket volume and days to renewal, refreshed nightly and surfaced to customer success in their dashboard",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4d1aa549a18d",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Quantitative evidence of churn‑risk flag accuracy improvement and comparison to a documented baseline"
+     ]
+    },
+    {
+     "requirementId": "req_4b01f739cfd4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_17a19db9d13b",
+       "text": "Coordinated data-model changes with customer success and data engineering through the weekly data review; data engineering owned the pipelines and approved schema changes, and I owned the model definitions",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f4ecee2410fa",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b97dd752e001",
+       "text": "Maintained the metric definitions page for seat usage and renewal metrics, listing the known limitation that trial-to-paid conversions were not attributed to a plan until the following month",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained subscription data models for seats, plans, and renewals in the analytics warehouse (dbt on Snowflake).",
+     "supportingRequirementIds": [
+      "req_799b0995a21b"
+     ],
+     "sourceIds": [
+      "src_5a99fe17d99a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the subscription data models for seats, plans and renewals in the analytics warehouse (dbt on Snowflake)"
+    },
+    {
+     "claim": "Built and refreshed nightly the renewal‑risk dataset combining seat‑usage trend, support‑ticket volume, and days to renewal, surfaced to customer success dashboard.",
+     "supportingRequirementIds": [
+      "req_0416458a892d"
+     ],
+     "sourceIds": [
+      "src_2f6d6d36ebc7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the renewal-risk dataset that combines seat-usage trend, support-ticket volume and days to renewal, refreshed nightly and surfaced to customer success in their dashboard"
+    },
+    {
+     "claim": "Coordinated data‑model changes with customer success and data engineering through weekly data review; owned model definitions.",
+     "supportingRequirementIds": [
+      "req_4b01f739cfd4"
+     ],
+     "sourceIds": [
+      "src_17a19db9d13b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated data-model changes with customer success and data engineering through the weekly data review; data engineering owned the pipelines and approved schema changes, and I owned the model definitions"
+    },
+    {
+     "claim": "Maintained metric definitions page for seat usage and renewal metrics, noting known limitation that trial‑to‑paid conversions were not attributed to a plan until the following month.",
+     "supportingRequirementIds": [
+      "req_f4ecee2410fa"
+     ],
+     "sourceIds": [
+      "src_b97dd752e001"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the metric definitions page for seat usage and renewal metrics, listing the known limitation that trial-to-paid conversions were not attributed to a plan until the following month"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_4d1aa549a18d",
+     "severity": "medium",
+     "gap": "Quantitative evidence of churn‑risk flag accuracy improvement and comparison to a documented baseline"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_4d1aa549a18d",
+     "question": "Can you provide documented baseline metrics and evaluation results for the churn‑risk flag before and after the renewal‑risk dataset deployment?",
+     "evidenceTarget": "Quantitative churn‑risk accuracy metrics and baseline comparison"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented experience aligns with the role requirements.",
+    "Confirm availability of quantitative churn‑risk accuracy data."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence for most role requirements, except for quantitative improvement of churn‑risk accuracy against a documented baseline. Human review should focus on obtaining that evidence.",
+   "limitations": [
+    "No quantitative metrics for churn‑risk accuracy improvement provided in the materials."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:06:33.143558+00:00"
+}

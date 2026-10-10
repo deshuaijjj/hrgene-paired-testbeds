@@ -1,0 +1,36 @@
+{
+ "caseId": "f78ce57f-3c34-43fa-be1f-b276ad20ce99",
+ "roleTitle": "Backend Engineer, Search Infrastructure",
+ "jobDescription": "A developer-tools company hosts source repositories for software teams and offers full-text code search across them. The search infrastructure team runs the indexing workers, the query service and the search clusters on Kubernetes. The engineer will tune query latency, keep the indexing pipeline healthy during large repository imports, write capacity plans and join the team's weekday on-call. Latency work is judged on percentiles from the query service's own metrics, compared over fixed windows before and after a change with similar traffic.",
+ "requirements": [
+  "Operates Elasticsearch or OpenSearch clusters running on Kubernetes.",
+  "Improves query latency and shows the result as percentiles over fixed windows before and after the change.",
+  "Keeps a high-volume indexing pipeline reliable, including back-pressure and retry handling.",
+  "Writes capacity plans for search clusters covering compute, memory and storage.",
+  "Holds a current Kubernetes certification."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Ran four OpenSearch clusters on Kubernetes at Quillmark, a code-hosting company, handling node-pool upgrades and shard rebalancing during maintenance windows."},
+  {"type": "resume", "text": "Reduced p99 latency of the code-search query service from 2.4 seconds to 0.9 seconds, comparing the two weeks before with the two weeks after the switch to per-repository routing in May 2023."},
+  {"type": "resume", "text": "Added back-pressure to the indexing workers so that large repository imports paused queue consumption instead of overloading the clusters, with retries capped at five attempts."},
+  {"type": "resume", "text": "Took part in the weekday on-call rotation for the search stack and wrote two post-incident reviews."},
+  {"type": "resume", "text": "Drafted the 2024 storage forecast for the search clusters from twelve months of index-growth data; the infrastructure lead reviewed it before the hardware order."},
+  {"type": "work_sample", "text": "Work sample: the latency write-up for per-repository routing, with the query service's p50, p95 and p99 tables for 1 to 14 May 2023 (p99 2.4 s) and 22 May to 4 June 2023 (p99 0.9 s), the routing design diagram and a check showing query volume within 5% across the two windows."},
+  {"type": "note", "text": "Recruiter verification: the candidate's Certified Kubernetes Administrator certificate (number CKA-2306-118842) was checked on the issuer's online verification tool on 2 October and is shown as active through August 2026."},
+  {"type": "note", "text": "Logistics note from the recruiting coordinator: the candidate has a four-week notice period and can attend the on-site system-design interview in the week of 21 October."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate reduced p99 latency of the code-search query service from 2.4 seconds to 0.9 seconds, comparing two-week windows before and after the May 2023 routing change.", "status": "supported", "sources": [2, 6], "requirements": [2], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The resume states the figures and windows, and the work sample carries the percentile tables for both windows and the traffic check."},
+   {"text": "The candidate holds a Certified Kubernetes Administrator certificate shown as active through August 2026.", "status": "supported", "sources": [7], "requirements": [5], "boundaryCategory": "verified_credential_record", "criticality": "noncritical", "rationale": "The recruiter verification records a check on the issuer's verification tool."},
+   {"text": "The candidate ran four OpenSearch clusters on Kubernetes, handling node-pool upgrades and shard rebalancing.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the cluster operations directly."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "partial_evidence", "supported"],
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "A storage forecast is documented, but compute and memory capacity planning is not described.",
+  "expectedBoundaryNote": "Keep the latency result with its percentile, service and two-week windows, and keep the verified certificate; do not extend the forecast work into full capacity planning.",
+  "followUpTargets": ["Ask whether the candidate has planned compute and memory capacity for search clusters, and how growth was projected."],
+  "validClaimSignatures": ["Certified Kubernetes Administrator", "2.4 seconds to 0.9 seconds", "OpenSearch clusters"]
+ }
+}

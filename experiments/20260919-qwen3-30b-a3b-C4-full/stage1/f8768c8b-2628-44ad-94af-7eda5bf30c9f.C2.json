@@ -1,0 +1,573 @@
+{
+ "request_id": "f8768c8b-2628-44ad-94af-7eda5bf30c9f.C2",
+ "case_id": "f8768c8b-2628-44ad-94af-7eda5bf30c9f",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "ownership term(s) [OWN] not licensed by the cited sources: ownership, ownership of",
+    "witness": {
+     "family": "OWN",
+     "terms": [
+      "ownership",
+      "ownership of"
+     ],
+     "sourceIds": [
+      "src_c3fede5f312d"
+     ],
+     "sourceFamilies": [],
+     "text": "Coordinated release reviews with search platform team, with release tickets documenting ownership of checks."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].notes",
+    "message": "ownership term(s) [OWN] not licensed by the cited sources: ownership, ownership of",
+    "witness": {
+     "family": "OWN",
+     "terms": [
+      "ownership",
+      "ownership of"
+     ],
+     "sourceIds": [
+      "src_c3fede5f312d"
+     ],
+     "sourceFamilies": [],
+     "text": "Release tickets document ownership of checks but not coordination with search platform team."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "Coordinated release reviews with search platform team, with release tickets documenting ownership of checks."
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science b"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bd174d8e539cc2a4",
+   "targetRoleTitle": "Ranking Engineer, Marketplace Search",
+   "professionalSummary": [
+    {
+     "claimId": "sum_01",
+     "text": "Released five ranking models to production search service under traffic ramp from 1% to full traffic, documented on release tickets in candidate's name.",
+     "sourceIds": [
+      "src_319b5228c5b1"
+     ],
+     "requirementIds": [
+      "req_6322e3d1ef14"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name."
+    },
+    {
+     "claimId": "sum_02",
+     "text": "Handled feature store outage incident in autumn 2024 as on-call duty, with incident record in search incident log.",
+     "sourceIds": [
+      "src_08cfb853c4a7"
+     ],
+     "requirementIds": [
+      "req_83c88ef4cfe1"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was mine to handle, and the search incident log carries my incident record for it."
+    },
+    {
+     "claimId": "sum_03",
+     "text": "Reviewed live relevance and conversion dashboards after releases and rolled back one release in 2024 due to dashboard regression on low-traffic categories.",
+     "sourceIds": [
+      "src_0ff7eb0d6d2e"
+     ],
+     "requirementIds": [
+      "req_6322e3d1ef14"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Read the live relevance and conversion dashboards after every release and in the weekly ranking review, and rolled one release back in 2024 when the conversion dashboard showed a regression on low-traffic categories."
+    },
+    {
+     "claimId": "sum_04",
+     "text": "Evaluated models offline against held-out data under agreed protocol with data science before release review.",
+     "sourceIds": [
+      "src_c3fede5f312d"
+     ],
+     "requirementIds": [
+      "req_4091e50b787c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine."
+    },
+    {
+     "claimId": "sum_05",
+     "text": "Wrote model cards for all five models including training window, offline/post-release results, known weaknesses, and hand-over conditions.",
+     "sourceIds": [
+      "src_e76613203470"
+     ],
+     "requirementIds": [
+      "req_dc7937d53975"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_02",
+     "text": "Documented traffic ramp records for all five models on release tickets.",
+     "sourceIds": [
+      "src_319b5228c5b1"
+     ],
+     "requirementIds": [
+      "req_6322e3d1ef14"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Five release tickets with traffic ramp records, search incident log for feature store outage, and weekly ranking review deck for last quarter.",
+     "sourceIds": [
+      "src_002282b31271",
+      "src_002282b31271"
+     ],
+     "requirementIds": [
+      "req_6322e3d1ef14",
+      "req_83c88ef4cfe1",
+      "req_6322e3d1ef14"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the five release tickets with their traffic ramp records, the search incident log record for the feature store outage and the weekly ranking review deck for the last quarter."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "Model evaluation protocol adherence, dashboard review, incident handling, model card writing.",
+     "sourceIds": [
+      "src_c3fede5f312d",
+      "src_0ff7eb0d6d2e",
+      "src_08cfb853c4a7",
+      "src_e76613203470"
+     ],
+     "requirementIds": [
+      "req_4091e50b787c",
+      "req_6322e3d1ef14",
+      "req_83c88ef4cfe1",
+      "req_dc7937d53975"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's direct involvement in model releases, incident handling, dashboard review, offline evaluation, and model card writing, but do not establish coordination with the search platform team beyond release tickets or the specific evaluation protocol details."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess coordination with search platform team and evaluation protocol details."
+   },
+   "role": {
+    "roleTitle": "Ranking Engineer, Marketplace Search",
+    "jobDescriptionSource": "jd_f05a51599fcdb5eb",
+    "requirementIds": [
+     "req_6322e3d1ef14",
+     "req_83c88ef4cfe1",
+     "req_e85b9b7f470a",
+     "req_4091e50b787c",
+     "req_dc7937d53975"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bd174d8e539cc2a4",
+    "sources": [
+     "src_319b5228c5b1",
+     "src_08cfb853c4a7",
+     "src_0ff7eb0d6d2e",
+     "src_c3fede5f312d",
+     "src_e76613203470",
+     "src_002282b31271",
+     "src_d050c3ab6202",
+     "src_23b2697d264a"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_6322e3d1ef14",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_319b5228c5b1",
+       "text": "Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name.",
+       "evidenceStrength": "high",
+       "notes": "Traffic ramp from 1% to full traffic documented on release tickets."
+      },
+      {
+       "sourceId": "src_0ff7eb0d6d2e",
+       "text": "Read the live relevance and conversion dashboards after every release and in the weekly ranking review, and rolled one release back in 2024 when the conversion dashboard showed a regression on low-traffic categories.",
+       "evidenceStrength": "high",
+       "notes": "Dashboard review and rollback documented."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_83c88ef4cfe1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_08cfb853c4a7",
+       "text": "Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was mine to handle, and the search incident log carries my incident record for it.",
+       "evidenceStrength": "high",
+       "notes": "Feature store outage handled as on-call duty with incident log record."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e85b9b7f470a",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Coordination with search platform team beyond release tickets"
+     ]
+    },
+    {
+     "requirementId": "req_4091e50b787c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c3fede5f312d",
+       "text": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine.",
+       "evidenceStrength": "high",
+       "notes": "Offline evaluation under agreed protocol documented."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dc7937d53975",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e76613203470",
+       "text": "Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know.",
+       "evidenceStrength": "high",
+       "notes": "Model card includes training window, results, weaknesses, and hand-over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Released five ranking models to production search service under traffic ramp from 1% to full traffic, documented on release tickets in candidate's name.",
+     "supportingRequirementIds": [
+      "req_6322e3d1ef14"
+     ],
+     "sourceIds": [
+      "src_319b5228c5b1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Released five ranking models to the production search service of the marketplace between 2023 and 2025, each under a traffic ramp from one per cent to full traffic and each on a release ticket in my name."
+    },
+    {
+     "claim": "Handled feature store outage incident in autumn 2024 as on-call duty, with incident record in search incident log.",
+     "supportingRequirementIds": [
+      "req_83c88ef4cfe1"
+     ],
+     "sourceIds": [
+      "src_08cfb853c4a7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took on-call duty for ranking incidents throughout that period; the feature store outage of autumn 2024 was mine to handle, and the search incident log carries my incident record for it."
+    },
+    {
+     "claim": "Reviewed live relevance and conversion dashboards after releases and rolled back one release in 2024 due to dashboard regression on low-traffic categories.",
+     "supportingRequirementIds": [
+      "req_6322e3d1ef14"
+     ],
+     "sourceIds": [
+      "src_0ff7eb0d6d2e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Read the live relevance and conversion dashboards after every release and in the weekly ranking review, and rolled one release back in 2024 when the conversion dashboard showed a regression on low-traffic categories."
+    },
+    {
+     "claim": "Evaluated models offline against held-out data under agreed protocol with data science before release review.",
+     "supportingRequirementIds": [
+      "req_4091e50b787c"
+     ],
+     "sourceIds": [
+      "src_c3fede5f312d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Evaluated every model offline against held-out interaction data under the evaluation protocol agreed with data science before it went to the release review with the search platform team, where the release ticket recorded which checks were mine."
+    },
+    {
+     "claim": "Wrote model cards for all five models including training window, offline/post-release results, known weaknesses, and hand-over conditions.",
+     "supportingRequirementIds": [
+      "req_dc7937d53975"
+     ],
+     "sourceIds": [
+      "src_e76613203470"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model card for each of the five models: training window, offline and post-release results, the known weakness on low-traffic categories, and what the next engineer needed to know."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Coordinated release reviews with search platform team, with release tickets documenting ownership of checks.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_01",
+     "requirementId": "req_e85b9b7f470a",
+     "severity": "medium",
+     "gap": "Coordination with search platform team beyond release tickets"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_01",
+     "requirementId": "req_e85b9b7f470a",
+     "question": "Can you describe the specific coordination steps taken with the search platform team during release reviews, including how ownership of checks was communicated and confirmed?",
+     "evidenceTarget": "Coordination process with search platform team"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify coordination with search platform team beyond release tickets",
+    "Confirm evaluation protocol details with data science"
+   ],
+   "auditSummary": "The optimized CV and evidence packet are fully sourced, with all claims backed by verbatim passages from provided sources. Evidence gaps are clearly identified for coordination requirements, and follow-up questions are job-relevant. No unsupported claims or subjective language were included.",
+   "limitations": [
+    "The materials do not establish the specific evaluation protocol details beyond 'agreed with data science'."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

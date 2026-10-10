@@ -1,0 +1,603 @@
+{
+ "request_id": "40957e5f-9e04-4c02-ad59-68728ebc3de4.C2",
+ "case_id": "40957e5f-9e04-4c02-ad59-68728ebc3de4",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[2]",
+    "message": "causal/comparative wording not present in the cited sources: reduction",
+    "witness": {
+     "terms": [
+      "reduction"
+     ],
+     "sourceIds": [
+      "src_79bcd4d01976",
+      "src_affd005de700"
+     ],
+     "text": "Measured reduction in purchase-order approval time from 6.8 to 2.9 working days between Q1 2024 and Q3 2024 using Coupa timestamps."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_79bcd4d01976",
+      "src_affd005de700"
+     ],
+     "text": "Reduced average purchase-order approval time from 6.8 to 2.9 working days by optimizing approval workflows."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "causal/comparative wording not present in the cited sources: reduction",
+    "witness": {
+     "terms": [
+      "reduction"
+     ],
+     "sourceIds": [
+      "src_79bcd4d01976",
+      "src_affd005de700"
+     ],
+     "text": "Measured reduction in purchase-order approval time from 6.8 to 2.9 working days between Q1 2024 and Q3 2024 using Coupa timestamps."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its ownership term(s) [OWN] (owner) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_e71599e7b7a5",
+     "family": "OWN",
+     "terms": [
+      "owner"
+     ],
+     "sourceIds": [
+      "src_17fb0278375a"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[0]",
+   "detail": "req_e71599e7b7a5: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[2]",
+   "detail": "Measured reduction in purchase-order approval time from 6.8 to 2.9 working days between Q1 2024 and Q3 2024 using Coupa "
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "Reduced average purchase-order approval time from 6.8 to 2.9 working days by optimizing approval workflows."
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[2]",
+   "detail": "Measured reduction in purchase-order approval time from 6.8 to 2.9 working days between Q1 2024 and Q3 2024 using Coupa "
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_48e0a5fc511cf408",
+   "targetRoleTitle": "Procurement Operations Analyst",
+   "professionalSummary": [
+    {
+     "claimId": "sum_1",
+     "text": "Triaged purchase requests in Coupa, routing to category buyers and providing checklists for incomplete requests.",
+     "sourceIds": [
+      "src_17fb0278375a"
+     ],
+     "requirementIds": [
+      "req_e71599e7b7a5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Triaged incoming purchase requests in Coupa at Northvale Software, routing each one to the category buyer and sending incomplete requests back with a checklist of the fields to complete."
+    },
+    {
+     "claimId": "sum_2",
+     "text": "Rewrote approval matrix with financial controller, removing two approval tiers for budget renewals, and configured workflow in Coupa.",
+     "sourceIds": [
+      "src_fad39a544490"
+     ],
+     "requirementIds": [
+      "req_ef7bf7faf3c7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Rewrote the approval matrix with the financial controller, removing two approval tiers for renewals within budget, and configured the new workflow in Coupa."
+    },
+    {
+     "claimId": "sum_4",
+     "text": "Merged 312 duplicate supplier records and applied call-back checks to bank-detail changes.",
+     "sourceIds": [
+      "src_4cddc515e2e6"
+     ],
+     "requirementIds": [
+      "req_cffa3ed7863b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Merged 312 duplicate supplier records and applied the call-back check to every supplier bank-detail change request."
+    },
+    {
+     "claimId": "sum_5",
+     "text": "Built monthly procurement report in Looker for finance leadership, covering spend by category, approval times, and requests on hold.",
+     "sourceIds": [
+      "src_aa6e1074962a"
+     ],
+     "requirementIds": [
+      "req_287ec6265703"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_2",
+     "text": "Maintained supplier master data by merging duplicates and implementing bank-detail change controls.",
+     "sourceIds": [
+      "src_4cddc515e2e6"
+     ],
+     "requirementIds": [
+      "req_cffa3ed7863b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Merged 312 duplicate supplier records and applied the call-back check to every supplier bank-detail change request."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_1",
+     "text": "Approval-time analysis workbook containing timestamp extracts, working-day calculations, and financial controller's review comments.",
+     "sourceIds": [
+      "src_affd005de700"
+     ],
+     "requirementIds": [
+      "req_f569a6744aad"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the approval-time analysis workbook, containing the Q1 2024 and Q3 2024 timestamp extracts, the working-day calculation excluding public holidays, the two averages (6.8 and 2.9 working days) and the financial controller's review comments."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_1",
+     "text": "Coupa procurement system",
+     "sourceIds": [
+      "src_17fb0278375a",
+      "src_fad39a544490",
+      "src_79bcd4d01976"
+     ],
+     "requirementIds": [
+      "req_e71599e7b7a5",
+      "req_ef7bf7faf3c7",
+      "req_f569a6744aad"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Triaged incoming purchase requests in Coupa at Northvale Software, routing each one to the category buyer and sending incomplete requests back with a checklist of the fields to complete."
+    },
+    {
+     "claimId": "skill_2",
+     "text": "Looker reporting tool",
+     "sourceIds": [
+      "src_aa6e1074962a"
+     ],
+     "requirementIds": [
+      "req_287ec6265703"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's work in Coupa and Looker, including specific metrics and workflows, but do not establish the candidate's role in the finance team's approval matrix maintenance or the exact nature of the supplier risk reviews."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess the candidate's fit for the role based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Procurement Operations Analyst",
+    "jobDescriptionSource": "jd_1d2fd7a9dd9c1485",
+    "requirementIds": [
+     "req_e71599e7b7a5",
+     "req_ef7bf7faf3c7",
+     "req_f569a6744aad",
+     "req_cffa3ed7863b",
+     "req_287ec6265703"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_48e0a5fc511cf408",
+    "sources": [
+     "src_17fb0278375a",
+     "src_fad39a544490",
+     "src_79bcd4d01976",
+     "src_4cddc515e2e6",
+     "src_aa6e1074962a",
+     "src_affd005de700",
+     "src_07756740ade5",
+     "src_e59ecf3f1a97"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_e71599e7b7a5",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_17fb0278375a",
+       "text": "Triaged incoming purchase requests in Coupa at Northvale Software, routing each one to the category buyer and sending incomplete requests back with a checklist of the fields to complete.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's own element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_ef7bf7faf3c7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_fad39a544490",
+       "text": "Rewrote the approval matrix with the financial controller, removing two approval tiers for renewals within budget, and configured the new workflow in Coupa.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f569a6744aad",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_79bcd4d01976",
+       "text": "Average purchase-order approval time went from 6.8 working days in Q1 2024 to 2.9 working days in Q3 2024, measured between the request-submitted and final-approval timestamps in Coupa.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      },
+      {
+       "sourceId": "src_affd005de700",
+       "text": "Work sample: the approval-time analysis workbook, containing the Q1 2024 and Q3 2024 timestamp extracts, the working-day calculation excluding public holidays, the two averages (6.8 and 2.9 working days) and the financial controller's review comments.",
+       "evidenceStrength": "medium",
+       "notes": "Supports the metric calculation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cffa3ed7863b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4cddc515e2e6",
+       "text": "Merged 312 duplicate supplier records and applied the call-back check to every supplier bank-detail change request.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_287ec6265703",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_aa6e1074962a",
+       "text": "Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Triaged purchase requests in Coupa, routing to category buyers and providing checklists for incomplete requests.",
+     "supportingRequirementIds": [
+      "req_e71599e7b7a5"
+     ],
+     "sourceIds": [
+      "src_17fb0278375a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Triaged incoming purchase requests in Coupa at Northvale Software, routing each one to the category buyer and sending incomplete requests back with a checklist of the fields to complete."
+    },
+    {
+     "claim": "Rewrote approval matrix with financial controller, removing two approval tiers for budget renewals, and configured workflow in Coupa.",
+     "supportingRequirementIds": [
+      "req_ef7bf7faf3c7"
+     ],
+     "sourceIds": [
+      "src_fad39a544490"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rewrote the approval matrix with the financial controller, removing two approval tiers for renewals within budget, and configured the new workflow in Coupa."
+    },
+    {
+     "claim": "Merged 312 duplicate supplier records and applied call-back checks to bank-detail changes.",
+     "supportingRequirementIds": [
+      "req_cffa3ed7863b"
+     ],
+     "sourceIds": [
+      "src_4cddc515e2e6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Merged 312 duplicate supplier records and applied the call-back check to every supplier bank-detail change request."
+    },
+    {
+     "claim": "Built monthly procurement report in Looker for finance leadership, covering spend by category, approval times, and requests on hold.",
+     "supportingRequirementIds": [
+      "req_287ec6265703"
+     ],
+     "sourceIds": [
+      "src_aa6e1074962a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the monthly procurement report in Looker for the finance leadership team, covering spend by category, approval times and requests on hold."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Measured reduction in purchase-order approval time from 6.8 to 2.9 working days between Q1 2024 and Q3 2024 using Coupa timestamps.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    },
+    {
+     "claim": "Reduced average purchase-order approval time from 6.8 to 2.9 working days by optimizing approval workflows.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify the candidate's role in the finance team's approval matrix maintenance",
+    "Confirm the exact nature of supplier risk reviews",
+    "Validate the metrics calculation methodology"
+   ],
+   "auditSummary": "The evidence is fully sourced and matches the requirements. The candidate's work in Coupa and Looker is well-documented with specific metrics and workflows. The only gaps are the lack of confirmation on the candidate's role in the finance team's approval matrix maintenance and the exact nature of supplier risk reviews, which require human review.",
+   "limitations": [
+    "The materials do not establish the candidate's role in the finance team's approval matrix maintenance beyond the stated collaboration with the financial controller.",
+    "The materials do not specify the details of the annual supplier risk reviews mentioned in the requirement."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

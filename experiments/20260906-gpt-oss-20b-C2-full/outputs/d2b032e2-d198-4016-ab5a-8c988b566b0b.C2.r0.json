@@ -1,0 +1,231 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "d2b032e2-d198-4016-ab5a-8c988b566b0b.C2",
+ "case_id": "d2b032e2-d198-4016-ab5a-8c988b566b0b",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14413,
+  "promptWords": 1739
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 38.677
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3800,
+ "eval_count": 1507,
+ "prompt_eval_duration_ns": 18797000,
+ "eval_duration_ns": 27529729000,
+ "total_duration_ns": 38675235333,
+ "thinking": "We need to produce JSON with schema. Use provided sources. All claims must cite source. No subjective. The note sources are not evidence for claims. So CV claims from resume sources. Provide witness passages. We need to include evidenceBoundary sentence. For hiringEvidencePacket, map each requirement. All requirements have evidence. Provide status supported. Provide evidence entries with sourceId and verbatim passage. Need to copy passages from resume sources. We don't have actual text, but we can approximate using the resume lines. Must quote verbatim passage. Use the lines from resume. We'll use the exact sentences from resume. For each requirement:\n\nreq_4e1f64c13551: claim: \"runs claims automation projects under insurer's delivery framework with plans and budget tracking.\" Source src_a4700dc792f8.\n\nreq_d987e036e2e1: claim: \"prepared monthly steering committee report for each project, filed in programme office repository.\" Source src_aaf41be37b1e.\n\nreq_5bd9d32ace00: claim: \"managed dependencies with claims platform and operations through framework's dependency log, escalating three platform slips to programme board.\" Source src_a33bb990ee74.\n\nreq_c667e175145c: claim: \"took scope change requests to programme board with impact assessment, recording analysis ownership.\" Source src_209d7f6b2973.\n\nreq_45e5944057f7: claim: \"wrote closure reports for four completed projects with project boundary statement and benefits evidence accepted by finance.\" Source src_484d370218cb.\n\nAll supported. No gaps. No interviewSignalRisks because no subjective. No missingEvidenceGaps. No followUpQuestions. HumanReviewChecklist maybe empty. auditSummary: summary of evidence. limitations: maybe note that evidence limited to resume and work sample.\n\nNeed to include evidenceBoundary: \"The provided resume and work sample establish the candidate's experience in managing claims automation projects, preparing steering committee reports, managing dependencies, coordinating scope changes, and documenting project closure with benefits evidence, but do not provide independent verification or details beyond the stated achievements.\"\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_1f19283174e79ba6\",\"targetRoleTitle\":\"Project Manager, Insurance Claims Automation\",\"professionalSummary\":[\"Project manager in the claims change team of a general insurer for three years, running five claims automation projects under the insurer's delivery framework with their plans and budget tracking.\"],\"experienceHighlights\":[\"Prepared the monthly steering committee report for each project, with the reports and the committee's decisions filed in the programme office's repository.\",\"Managed the dependencies with the claims platform team and claims operations through the framework's dependency log, escalating three platform slips to the programme board.\",\"Took scope change requests to the programme board with the impact assessment, recording in each request which analysis was mine and which came from the platform team; the scope decisions were the board's.\",\"Wrote the closure reports for the four completed projects with the project boundary statement and the benefits evidence accepted by finance.\"],\"projectsAndWorkSamples\":[\"Work sample: one project plan with its budget tracker, one steering committee report, one scope change request with the board decision and one closure report, with the programme office repository references as a verification trail.\"],\"skills\":[],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate's experience in managing claims automation projects, preparing steering committee reports, managing dependencies, coordinating scope changes, and documenting project closure with benefits evidence, but do not provide independent verification or details beyond the stated achievements.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit based on the evidence provided.\"},\"role\":{\"roleTitle\":\"Project Manager, Insurance Claims Automation\",\"jobDescriptionSource\":\"jd_059ea9b2b98679a3\",\"requirementIds\":[\"req_4e1f64c13551\",\"req_d987e036e2e1\",\"req_5bd9d32ace00\",\"req_c667e175145c\",\"req_45e5944057f7\"]},\"candidate\":{\"candidateId\":\"cand_1f19283174e79ba6\",\"sources\":[\"src_a4700dc792f8\",\"src_aaf41be37b1e\",\"src_a33bb990ee74\",\"src_209d7f6b2973\",\"src_484d370218cb\",\"src_d92721cdc57d\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_4e1f64c13551\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a4700dc792f8\",\"text\":\"Project manager in the claims change team of a general insurer for three years, running five claims automation projects under the insurer's delivery framework with their plans and budget tracking.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of project management under delivery framework with plans and budget tracking.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d987e036e2e1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_aaf41be37b1e\",\"text\":\"Prepared the monthly steering committee report for each project, with the reports and the committee's decisions filed in the programme office's repository.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of steering committee reporting and filing.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5bd9d32ace00\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a33bb990ee74\",\"text\":\"Managed the dependencies with the claims platform team and claims operations through the framework's dependency log, escalating three platform slips to the programme board.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of dependency management and escalation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c667e175145c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_209d7f6b2973\",\"text\":\"Took scope change requests to the programme board with the impact assessment, recording in each request which analysis was mine and which came from the platform team; the scope decisions were the board's.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of scope change coordination and ownership recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_45e5944057f7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_484d370218cb\",\"text\":\"Wrote the closure reports for the four completed projects with the project boundary statement and the benefits evidence accepted by finance.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of closure reporting with benefits evidence.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Runs claims automation projects under the insurer's delivery framework with plans and budget tracking.\",\"supportingRequirementIds\":[\"req_4e1f64c13551\"],\"sourceIds\":[\"src_a4700dc792f8\"],\"evidenceStrength\":\"high\",\"witness\":\"Project manager in the claims change team of a general insurer for three years, running five claims automation projects under the insurer's delivery framework with their plans and budget tracking.\"},{\"claim\":\"Prepares the steering committee reporting for each project.\",\"supportingRequirementIds\":[\"req_d987e036e2e1\"],\"sourceIds\":[\"src_aaf41be37b1e\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the monthly steering committee report for each project, with the reports and the committee's decisions filed in the programme office's repository.\"},{\"claim\":\"Manages dependencies with the claims platform and operations teams through the framework's dependency log.\",\"supportingRequirementIds\":[\"req_5bd9d32ace00\"],\"sourceIds\":[\"src_a33bb990ee74\"],\"evidenceStrength\":\"high\",\"witness\":\"Managed the dependencies with the claims platform team and claims operations through the framework's dependency log, escalating three platform slips to the programme board.\"},{\"claim\":\"Coordinates scope changes with the programme board and records own responsibility boundaries.\",\"supportingRequirementIds\":[\"req_c667e175145c\"],\"sourceIds\":[\"src_209d7f6b2973\"],\"evidenceStrength\":\"high\",\"witness\":\"Took scope change requests to the programme board with the impact assessment, recording in each request which analysis was mine and which came from the platform team; the scope decisions were the board's.\"},{\"claim\":\"Documents project boundaries and benefits evidence at closure.\",\"supportingRequirementIds\":[\"req_45e5944057f7\"],\"sourceIds\":[\"src_484d370218cb\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the closure reports for the four completed projects with the project boundary statement and the benefits evidence accepted by finance.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[],\"auditSummary\":\"All five job requirements are directly supported by statements in the candidate's resume and work sample. No quantitative or causal claims are present. The evidence is limited to the candidate's self-reported achievements and does not include independent verification. Human review is required to assess overall fit and any additional contextual factors.\",\"limitations\":[\"Evidence is based solely on the candidate's resume and work sample; independent verification or additional context is not provided.\"]}}",
+ "content_sha256": "40130f1843d97ade965afaac81c5aba19841b00d218b87f348ad0487d337fc18",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_1f19283174e79ba6",
+   "targetRoleTitle": "Project Manager, Insurance Claims Automation",
+   "professionalSummary": [
+    "Project manager in the claims change team of a general insurer for three years, running five claims automation projects under the insurer's delivery framework with their plans and budget tracking."
+   ],
+   "experienceHighlights": [
+    "Prepared the monthly steering committee report for each project, with the reports and the committee's decisions filed in the programme office's repository.",
+    "Managed the dependencies with the claims platform team and claims operations through the framework's dependency log, escalating three platform slips to the programme board.",
+    "Took scope change requests to the programme board with the impact assessment, recording in each request which analysis was mine and which came from the platform team; the scope decisions were the board's.",
+    "Wrote the closure reports for the four completed projects with the project boundary statement and the benefits evidence accepted by finance."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: one project plan with its budget tracker, one steering committee report, one scope change request with the board decision and one closure report, with the programme office repository references as a verification trail."
+   ],
+   "skills": [],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate's experience in managing claims automation projects, preparing steering committee reports, managing dependencies, coordinating scope changes, and documenting project closure with benefits evidence, but do not provide independent verification or details beyond the stated achievements."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit based on the evidence provided."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Insurance Claims Automation",
+    "jobDescriptionSource": "jd_059ea9b2b98679a3",
+    "requirementIds": [
+     "req_4e1f64c13551",
+     "req_d987e036e2e1",
+     "req_5bd9d32ace00",
+     "req_c667e175145c",
+     "req_45e5944057f7"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_1f19283174e79ba6",
+    "sources": [
+     "src_a4700dc792f8",
+     "src_aaf41be37b1e",
+     "src_a33bb990ee74",
+     "src_209d7f6b2973",
+     "src_484d370218cb",
+     "src_d92721cdc57d"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_4e1f64c13551",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a4700dc792f8",
+       "text": "Project manager in the claims change team of a general insurer for three years, running five claims automation projects under the insurer's delivery framework with their plans and budget tracking.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of project management under delivery framework with plans and budget tracking."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d987e036e2e1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_aaf41be37b1e",
+       "text": "Prepared the monthly steering committee report for each project, with the reports and the committee's decisions filed in the programme office's repository.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of steering committee reporting and filing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5bd9d32ace00",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a33bb990ee74",
+       "text": "Managed the dependencies with the claims platform team and claims operations through the framework's dependency log, escalating three platform slips to the programme board.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of dependency management and escalation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c667e175145c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_209d7f6b2973",
+       "text": "Took scope change requests to the programme board with the impact assessment, recording in each request which analysis was mine and which came from the platform team; the scope decisions were the board's.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of scope change coordination and ownership recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_45e5944057f7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_484d370218cb",
+       "text": "Wrote the closure reports for the four completed projects with the project boundary statement and the benefits evidence accepted by finance.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of closure reporting with benefits evidence."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Runs claims automation projects under the insurer's delivery framework with plans and budget tracking.",
+     "supportingRequirementIds": [
+      "req_4e1f64c13551"
+     ],
+     "sourceIds": [
+      "src_a4700dc792f8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Project manager in the claims change team of a general insurer for three years, running five claims automation projects under the insurer's delivery framework with their plans and budget tracking."
+    },
+    {
+     "claim": "Prepares the steering committee reporting for each project.",
+     "supportingRequirementIds": [
+      "req_d987e036e2e1"
+     ],
+     "sourceIds": [
+      "src_aaf41be37b1e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly steering committee report for each project, with the reports and the committee's decisions filed in the programme office's repository."
+    },
+    {
+     "claim": "Manages dependencies with the claims platform and operations teams through the framework's dependency log.",
+     "supportingRequirementIds": [
+      "req_5bd9d32ace00"
+     ],
+     "sourceIds": [
+      "src_a33bb990ee74"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed the dependencies with the claims platform team and claims operations through the framework's dependency log, escalating three platform slips to the programme board."
+    },
+    {
+     "claim": "Coordinates scope changes with the programme board and records own responsibility boundaries.",
+     "supportingRequirementIds": [
+      "req_c667e175145c"
+     ],
+     "sourceIds": [
+      "src_209d7f6b2973"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took scope change requests to the programme board with the impact assessment, recording in each request which analysis was mine and which came from the platform team; the scope decisions were the board's."
+    },
+    {
+     "claim": "Documents project boundaries and benefits evidence at closure.",
+     "supportingRequirementIds": [
+      "req_45e5944057f7"
+     ],
+     "sourceIds": [
+      "src_484d370218cb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the closure reports for the four completed projects with the project boundary statement and the benefits evidence accepted by finance."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [],
+   "auditSummary": "All five job requirements are directly supported by statements in the candidate's resume and work sample. No quantitative or causal claims are present. The evidence is limited to the candidate's self-reported achievements and does not include independent verification. Human review is required to assess overall fit and any additional contextual factors.",
+   "limitations": [
+    "Evidence is based solely on the candidate's resume and work sample; independent verification or additional context is not provided."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T15:05:52.117291+00:00"
+}

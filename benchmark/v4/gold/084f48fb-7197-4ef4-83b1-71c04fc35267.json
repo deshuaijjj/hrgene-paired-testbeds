@@ -1,0 +1,93 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "084f48fb-7197-4ef4-83b1-71c04fc35267",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_34be7437e370",
+   "canonicalProposition": "The candidate ran the staging environment for the console as service coordinator, executing release rehearsals for eleven candidate releases and leading incident drills.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_1adc9fc86cdf",
+    "src_3f0eef48bb65"
+   ],
+   "relevantRequirementIds": [
+    "req_17df1af41ebb"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume and the drill log document the staging coordination and drills."
+  },
+  {
+   "atomicPropositionId": "prop_dc37b43960c4",
+   "canonicalProposition": "The candidate maintained the service runbooks and the availability report template and updated the runbooks after each rehearsal.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_faf0d7237852"
+   ],
+   "relevantRequirementIds": [
+    "req_a903e178cdb9"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume states the runbook and template maintenance."
+  },
+  {
+   "atomicPropositionId": "prop_147699099133",
+   "canonicalProposition": "The candidate ran the console's live service and led production incident response for customer-facing outages.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_bb6818ef1e6f",
+    "req_ac0708d2a2e4"
+   ],
+   "boundaryCategory": "test_environment_not_production",
+   "criticality": "critical",
+   "rationale": "The resume places the candidate in staging with synthetic accounts and outside the live on-call rota; the incidents he led were drills, as he confirmed in the screen."
+  }
+ ],
+ "requirementStatus": {
+  "req_bb6818ef1e6f": "insufficient_evidence",
+  "req_ac0708d2a2e4": "insufficient_evidence",
+  "req_17df1af41ebb": "supported",
+  "req_a903e178cdb9": "supported",
+  "req_17df3aa4ce51": "partial_evidence"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_1adc9fc86cdf",
+  "src_faf0d7237852",
+  "src_a6e8e28a0cec",
+  "src_044e73bdd899",
+  "src_3f0eef48bb65"
+ ],
+ "expectedGap": "The materials document staging rehearsals and drills; they do not document the candidate operating the live service, holding production on-call or handling customer-facing incidents.",
+ "expectedBoundaryNote": "Preserve the environment the resume names: staging drills with synthetic accounts; production incidents were the live service team's, whose on-call rota the candidate was not on.",
+ "permittedFollowUpTargets": [
+  "Ask whether the candidate has ever been on a production on-call rota or led a customer-facing incident, and when."
+ ],
+ "validClaimSignatures": [
+  "rehearsal checklist",
+  "staging"
+ ],
+ "trap": {
+  "propositionId": "prop_147699099133",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_bb6818ef1e6f",
+   "req_ac0708d2a2e4"
+  ],
+  "signatures": [
+   "led incident response for the console",
+   "production incident response",
+   "customer-facing outages",
+   "real enough",
+   "production on-call"
+  ],
+  "baitSourceIds": [
+   "src_463336a89a5d",
+   "src_f036a2709fe9"
+  ]
+ }
+}

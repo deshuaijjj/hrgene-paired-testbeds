@@ -1,0 +1,182 @@
+{
+ "request_id": "6a6b6e2d-564c-4508-a70b-18a77692712e.C2",
+ "case_id": "6a6b6e2d-564c-4508-a70b-18a77692712e",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].status",
+    "message": "requirement marked supported but its ownership term(s) [OWN] (owns) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_414e51bf7f2a",
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_192c2d4ec51b",
+      "src_2c9bd984f0ac"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "no_decision_language",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[1].text",
+    "message": "employment-decision language: percentile",
+    "witness": {
+     "terms": [
+      "percentile"
+     ],
+     "text": "Wrote Gatling performance tests for the authorisation path that fail the build when 99th-percentile latency in the test environment goes over the 150-millisecond budget."
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "no_protected_characteristics",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0].text",
+    "message": "protected-characteristic wording: maternity, maternity leave",
+    "witness": {
+     "terms": [
+      "maternity",
+      "maternity leave"
+     ],
+     "text": "Career break, May 2022 to February 2023: maternity leave following the birth of twins."
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "no_decision_language",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].evidence[0].text",
+    "message": "employment-decision language: percentile",
+    "witness": {
+     "terms": [
+      "percentile"
+     ],
+     "text": "Wrote Gatling performance tests for the authorisation path that fail the build when 99th-percentile latency in the test environment goes over the 150-millisecond budget."
+    }
+   },
+   {
+    "rule": "hrgene.human_review_boundary",
+    "code": "no_decision_language",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1].claim",
+    "message": "employment-decision language: percentile",
+    "witness": {
+     "terms": [
+      "percentile"
+     ],
+     "text": "Wrote Gatling performance tests for the authorisation path that fail the build when 99th-percentile latency in the test environment goes over the 150-millisecond budget."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 4,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

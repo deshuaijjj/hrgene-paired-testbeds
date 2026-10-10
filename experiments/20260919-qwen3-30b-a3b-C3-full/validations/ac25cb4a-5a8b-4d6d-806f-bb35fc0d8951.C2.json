@@ -1,0 +1,184 @@
+{
+ "request_id": "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951.C2",
+ "case_id": "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "causal/comparative wording not present in the cited sources: reducing",
+    "witness": {
+     "terms": [
+      "reducing"
+     ],
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Idempotency keys implemented to prevent duplicate work orders from retried syncs, reducing support-ticket volume related to sync issues."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[4]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managing",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managing"
+     ],
+     "sourceIds": [
+      "src_97afd7c82f91"
+     ],
+     "sourceFamilies": [],
+     "text": "Two and a half years on the service-platform team, managing work-order and parts services, integration tests, release line-up, and change logs."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "subjective/hearsay source cited as support: src_38ec5aa9aba7",
+    "witness": {
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Idempotency keys implemented to prevent duplicate work orders from retried syncs, reducing support-ticket volume related to sync issues."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0]",
+    "message": "subjective/hearsay source cited as support: src_38ec5aa9aba7",
+    "witness": {
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Reference call with former engineering manager: said the idempotency change 'basically made the duplicate problem go away' and guessed sync failures dropped 'from a few hundred a week to a handful'; h"
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].notes",
+    "message": "subjective/hearsay source cited as support: src_38ec5aa9aba7",
+    "witness": {
+     "sourceIds": [
+      "src_38ec5aa9aba7"
+     ],
+     "text": "Support-ticket volume cited, not platform metric."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

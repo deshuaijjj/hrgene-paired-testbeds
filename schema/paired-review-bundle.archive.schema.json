@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jam.local/schemas/paired-review-bundle-archive.v1.schema.json",
+  "title": "Runner-archived PairedReviewBundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "bundleId",
+    "content",
+    "lineage"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "jam.hrgene_paired_review_bundle.archive.v1"
+    },
+    "bundleId": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "content": {
+      "$ref": "paired-review-bundle.schema.json"
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority",
+        "runId",
+        "requestId",
+        "pairId",
+        "caseId",
+        "condition",
+        "commonInputHash",
+        "promptHash",
+        "behaviorHash",
+        "outputSchemaClosureHash",
+        "modelSettingsRetryHash",
+        "providerResponseHash",
+        "validation",
+        "repairApplied"
+      ],
+      "properties": {
+        "authority": {
+          "const": "runner"
+        },
+        "runId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "requestId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "pairId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "caseId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "condition": {
+          "enum": [
+            "P2_MATCHED_PROSE",
+            "K3_CONTRACT"
+          ]
+        },
+        "commonInputHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "promptHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "behaviorHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "outputSchemaClosureHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "modelSettingsRetryHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "providerResponseHash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "validation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema",
+            "crossReferences",
+            "language",
+            "complete"
+          ],
+          "properties": {
+            "schema": {
+              "const": "PASS"
+            },
+            "crossReferences": {
+              "const": "PASS"
+            },
+            "language": {
+              "const": "PASS"
+            },
+            "complete": {
+              "const": "PASS"
+            }
+          }
+        },
+        "repairApplied": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

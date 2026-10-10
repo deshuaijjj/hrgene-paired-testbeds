@@ -1,0 +1,266 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "21ec9376-8245-4e60-8108-434de7b51b2c.C1",
+ "case_id": "21ec9376-8245-4e60-8108-434de7b51b2c",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11308,
+  "promptWords": 1466
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 52.087
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3342,
+ "eval_count": 1970,
+ "prompt_eval_duration_ns": 18137000,
+ "eval_duration_ns": 35369591000,
+ "total_duration_ns": 52084409541,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidence, use verbatim passages. We have source texts but not full verbatim; we can approximate but must use text from source. We have source descriptions but not full text. We can use the quoted sentences as verbatim. We'll use the same sentences.\n\nLet's create claims:\n\nprofessionalSummary: maybe one claim: \"Product Requirements Analyst with two years on subscription product team, experienced in turning intake into user stories with acceptance criteria, leading acceptance sessions, agreeing release scope, and publishing release notes.\" Source: src_9bf27667d28d, src_8847ab837aa8, src_06bdfd882e1e, src_0d7db63f3064, src_4f53644b62ce.\n\nexperienceHighlights: each bullet as claim with source.\n\nprojectsAndWorkSamples: mention work sample source.\n\nskills: maybe list: user story writing, acceptance testing, release planning, release notes, collaboration with engineering, subscription operations, customer success.\n\nevidenceBoundary: \"The provided resume and work sample establish the candidate’s experience in user story creation, acceptance session facilitation, scope agreement, and release note publication, but do not provide evidence of measurable ticket reduction or detailed acceptance testing outcomes beyond logged pass/fail.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle same, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_bf0362d575bf: Turns requests into user stories with acceptance criteria. Supported. Evidence: src_8847ab837aa8. Provide text. missingEvidence none.\n\nreq_dbe9a0ccd930: Leads acceptance sessions and logs passed/failed. Supported. Evidence: src_06bdfd882e1e. missing none.\n\nreq_3e46120095e0: Shows that delivered self-service features reduce billing support tickets, measured against baseline. Insufficient evidence. Missing: documented reduction metrics, baseline data. Provide note. evidence: src_a28c7900feb5 (candidate said tickets fell about 30%) but not documented. So partial? The source says candidate said but not documented. So status partial_evidence? The requirement needs documented evidence. So insufficient_evidence. Provide missingEvidence: \"Documented reduction in billing support tickets with baseline comparison.\" Provide evidence: src_a28c7900feb5.\n\nreq_d8c75ce1ba01: Agrees release scope with engineering and subscription operations and keeps record of who decided what. Supported. Evidence: src_0d7db63f3064. missing none.\n\nreq_c29ea3c0f542: Publishes release notes covering limitations and what support team needs to take over. Supported. Evidence: src_4f53644b62ce. missing none.\n\nsupportedClaims: maybe list claims that are supported: user story creation, acceptance sessions, scope agreement, release notes. Provide sourceIds.\n\nunsupportedClaims: maybe claim about ticket reduction. Provide reason: not documented. requiredFollowUp: ask for documented ticket reduction evidence.\n\nmissingEvidenceGaps: for requirement req_3e46120095e0.\n\ninterviewSignalRisks: source src_a28c7900feb5: candidate said tickets fell about 30% but not documented. signalType: unverified claim. jobRelatedBoundary: false. severity medium. recommendedHandling: verify with documented ticket reports.\n\nfollowUpQuestions: question about documented ticket reduction metrics. Provide questionId.\n\nhumanReviewChecklist: items: verify documented ticket reduction, confirm scope agreement records, confirm acceptance session logs.\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Limited to provided resume and notes; no external verification of metrics.\"\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_f8b9e6a8bdbc21d5\",\"targetRoleTitle\":\"Product Requirements Analyst, Collaboration Software Subscriptions\",\"professionalSummary\":[\"Product Requirements Analyst with two years on the subscription product team, experienced in turning intake from subscription operations and customer success into user stories with acceptance criteria, leading acceptance sessions, agreeing release scope with engineering and subscription operations, and publishing release notes. (src_9bf27667d28d, src_8847ab837aa8, src_06bdfd882e1e, src_0d7db63f3064, src_4f53644b62ce)\"],\"experienceHighlights\":[\"Turned the weekly intake from subscription operations and customer success into user stories for the self-service seat-change and invoice-download pages, each story carrying its acceptance criteria. (src_8847ab837aa8)\",\"Led acceptance sessions for three billing-page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed. (src_06bdfd882e1e)\",\"Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call. (src_0d7db63f3064)\",\"Published release notes for the seat-change and invoice-download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over. (src_4f53644b62ce)\"],\"projectsAndWorkSamples\":[\"Work sample: the story set for the invoice-download page with its acceptance criteria, plus the pass/fail log from one acceptance session; ticket identifiers are included so the entries can be traced. (src_06fba15f0656)\"],\"skills\":[\"User story writing\",\"Acceptance testing\",\"Scope agreement\",\"Release note publication\",\"Collaboration with engineering\",\"Subscription operations\",\"Customer success\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in user story creation, acceptance session facilitation, scope agreement, and release note publication, but do not provide evidence of measurable ticket reduction or detailed acceptance testing outcomes beyond logged pass/fail.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Product Requirements Analyst, Collaboration Software Subscriptions\",\"jobDescriptionSource\":\"jd_19b1e32dbf4bbd3a\",\"requirementIds\":[\"req_bf0362d575bf\",\"req_dbe9a0ccd930\",\"req_3e46120095e0\",\"req_d8c75ce1ba01\",\"req_c29ea3c0f542\"]},\"candidate\":{\"candidateId\":\"cand_f8b9e6a8bdbc21d5\",\"sources\":[\"src_8847ab837aa8\",\"src_06bdfd882e1e\",\"src_0d7db63f3064\",\"src_4f53644b62ce\",\"src_9bf27667d28d\",\"src_06fba15f0656\",\"src_a28c7900feb5\",\"src_a193ca9f7a5b\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_bf0362d575bf\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8847ab837aa8\",\"text\":\"Turned the weekly intake from subscription operations and customer success into user stories for the self-service seat-change and invoice-download pages, each story carrying its acceptance criteria.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of user story creation with acceptance criteria.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_dbe9a0ccd930\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_06bdfd882e1e\",\"text\":\"Led acceptance sessions for three billing-page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of leading acceptance sessions and logging outcomes.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3e46120095e0\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_a28c7900feb5\",\"text\":\"candidate said billing tickets 'fell by about 30 percent' after the invoice-download page launched; he said the support team had mentioned it in a stand-up and that he had not seen a ticket report himself.\",\"evidenceStrength\":\"low\",\"notes\":\"Unverified claim without documented baseline or metrics.\"}],\"missingEvidence\":[\"Documented reduction in billing support tickets with baseline comparison\"]},{\"requirementId\":\"req_d8c75ce1ba01\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0d7db63f3064\",\"text\":\"Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of scope agreement and record of decision.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c29ea3c0f542\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4f53644b62ce\",\"text\":\"Published release notes for the seat-change and invoice-download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of release note publication covering limitations and support handover.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Turned intake from subscription operations and customer success into user stories with acceptance criteria.\",\"supportingRequirementIds\":[\"req_bf0362d575bf\"],\"sourceIds\":[\"src_8847ab837aa8\"],\"evidenceStrength\":\"high\",\"witness\":\"Turned the weekly intake from subscription operations and customer success into user stories for the self-service seat-change and invoice-download pages, each story carrying its acceptance criteria.\"},{\"claim\":\"Led acceptance sessions and logged pass/fail outcomes.\",\"supportingRequirementIds\":[\"req_dbe9a0ccd930\"],\"sourceIds\":[\"src_06bdfd882e1e\"],\"evidenceStrength\":\"high\",\"witness\":\"Led acceptance sessions for three billing-page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed.\"},{\"claim\":\"Agreed release scope with engineering and subscription operations and recorded decisions.\",\"supportingRequirementIds\":[\"req_d8c75ce1ba01\"],\"sourceIds\":[\"src_0d7db63f3064\"],\"evidenceStrength\":\"high\",\"witness\":\"Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call.\"},{\"claim\":\"Published release notes covering limitations and support handover.\",\"supportingRequirementIds\":[\"req_c29ea3c0f542\"],\"sourceIds\":[\"src_4f53644b62ce\"],\"evidenceStrength\":\"high\",\"witness\":\"Published release notes for the seat-change and invoice-download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over.\"}],\"unsupportedClaims\":[{\"claim\":\"Delivered self-service features reduced billing support tickets by a measurable amount compared to the monthly baseline.\",\"reason\":\"No documented evidence of ticket reduction or baseline comparison is provided.\",\"requiredFollowUp\":\"Request documented ticket volume reports before and after feature launch, including baseline data.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_3e46120095e0\",\"severity\":\"medium\",\"gap\":\"Documented reduction in billing support tickets with baseline comparison.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_a28c7900feb5\",\"text\":\"candidate said billing tickets 'fell by about 30 percent' after the invoice-download page launched; he said the support team had mentioned it in a stand-up and that he had not seen a ticket report himself.\",\"signalType\":\"unverified claim\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify with documented ticket reports and baseline data.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_3e46120095e0\",\"question\":\"Can you provide documented evidence of billing support ticket volume before and after the launch of the invoice-download page, including the monthly baseline used for comparison?\",\"evidenceTarget\":\"Documented ticket reduction metrics.\"}],\"humanReviewChecklist\":[\"Verify documented ticket reduction evidence for req_3e46120095e0\",\"Confirm scope agreement records for req_d8c75ce1ba01\",\"Confirm acceptance session logs for req_dbe9a0ccd930\"],\"auditSummary\":\"The candidate’s resume and work sample provide clear evidence for user story creation, acceptance session facilitation, scope agreement, and release note publication. However, there is no documented evidence of measurable ticket reduction, which is a key requirement. Human review should focus on obtaining and verifying ticket volume data and confirming that scope and acceptance logs were properly recorded.\",\"limitations\":[\"Limited to the provided resume, work sample, and recruiter notes; no external verification of metrics or independent confirmation of scope agreement records.\"]}}",
+ "content_sha256": "a990e88e2016c7db55ce960054961b5b6efc2ce2fe0ccec8a966f6e0e5ac304f",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_f8b9e6a8bdbc21d5",
+   "targetRoleTitle": "Product Requirements Analyst, Collaboration Software Subscriptions",
+   "professionalSummary": [
+    "Product Requirements Analyst with two years on the subscription product team, experienced in turning intake from subscription operations and customer success into user stories with acceptance criteria, leading acceptance sessions, agreeing release scope with engineering and subscription operations, and publishing release notes. (src_9bf27667d28d, src_8847ab837aa8, src_06bdfd882e1e, src_0d7db63f3064, src_4f53644b62ce)"
+   ],
+   "experienceHighlights": [
+    "Turned the weekly intake from subscription operations and customer success into user stories for the self-service seat-change and invoice-download pages, each story carrying its acceptance criteria. (src_8847ab837aa8)",
+    "Led acceptance sessions for three billing-page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed. (src_06bdfd882e1e)",
+    "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call. (src_0d7db63f3064)",
+    "Published release notes for the seat-change and invoice-download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over. (src_4f53644b62ce)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the story set for the invoice-download page with its acceptance criteria, plus the pass/fail log from one acceptance session; ticket identifiers are included so the entries can be traced. (src_06fba15f0656)"
+   ],
+   "skills": [
+    "User story writing",
+    "Acceptance testing",
+    "Scope agreement",
+    "Release note publication",
+    "Collaboration with engineering",
+    "Subscription operations",
+    "Customer success"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in user story creation, acceptance session facilitation, scope agreement, and release note publication, but do not provide evidence of measurable ticket reduction or detailed acceptance testing outcomes beyond logged pass/fail."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Product Requirements Analyst, Collaboration Software Subscriptions",
+    "jobDescriptionSource": "jd_19b1e32dbf4bbd3a",
+    "requirementIds": [
+     "req_bf0362d575bf",
+     "req_dbe9a0ccd930",
+     "req_3e46120095e0",
+     "req_d8c75ce1ba01",
+     "req_c29ea3c0f542"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_f8b9e6a8bdbc21d5",
+    "sources": [
+     "src_8847ab837aa8",
+     "src_06bdfd882e1e",
+     "src_0d7db63f3064",
+     "src_4f53644b62ce",
+     "src_9bf27667d28d",
+     "src_06fba15f0656",
+     "src_a28c7900feb5",
+     "src_a193ca9f7a5b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_bf0362d575bf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8847ab837aa8",
+       "text": "Turned the weekly intake from subscription operations and customer success into user stories for the self-service seat-change and invoice-download pages, each story carrying its acceptance criteria.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of user story creation with acceptance criteria."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dbe9a0ccd930",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_06bdfd882e1e",
+       "text": "Led acceptance sessions for three billing-page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of leading acceptance sessions and logging outcomes."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3e46120095e0",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_a28c7900feb5",
+       "text": "candidate said billing tickets 'fell by about 30 percent' after the invoice-download page launched; he said the support team had mentioned it in a stand-up and that he had not seen a ticket report himself.",
+       "evidenceStrength": "low",
+       "notes": "Unverified claim without documented baseline or metrics."
+      }
+     ],
+     "missingEvidence": [
+      "Documented reduction in billing support tickets with baseline comparison"
+     ]
+    },
+    {
+     "requirementId": "req_d8c75ce1ba01",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0d7db63f3064",
+       "text": "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of scope agreement and record of decision."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c29ea3c0f542",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4f53644b62ce",
+       "text": "Published release notes for the seat-change and invoice-download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of release note publication covering limitations and support handover."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Turned intake from subscription operations and customer success into user stories with acceptance criteria.",
+     "supportingRequirementIds": [
+      "req_bf0362d575bf"
+     ],
+     "sourceIds": [
+      "src_8847ab837aa8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Turned the weekly intake from subscription operations and customer success into user stories for the self-service seat-change and invoice-download pages, each story carrying its acceptance criteria."
+    },
+    {
+     "claim": "Led acceptance sessions and logged pass/fail outcomes.",
+     "supportingRequirementIds": [
+      "req_dbe9a0ccd930"
+     ],
+     "sourceIds": [
+      "src_06bdfd882e1e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Led acceptance sessions for three billing-page releases with two operations analysts and a customer success manager, logging every criterion as passed or failed."
+    },
+    {
+     "claim": "Agreed release scope with engineering and subscription operations and recorded decisions.",
+     "supportingRequirementIds": [
+      "req_d8c75ce1ba01"
+     ],
+     "sourceIds": [
+      "src_0d7db63f3064"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed release scope in sprint planning with the engineering manager and the subscription operations lead; scope and the release date were the engineering manager's call."
+    },
+    {
+     "claim": "Published release notes covering limitations and support handover.",
+     "supportingRequirementIds": [
+      "req_c29ea3c0f542"
+     ],
+     "sourceIds": [
+      "src_4f53644b62ce"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Published release notes for the seat-change and invoice-download pages that spelled out one limitation (invoices older than twelve months could not be downloaded) and what the support team needed to take over."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Delivered self-service features reduced billing support tickets by a measurable amount compared to the monthly baseline.",
+     "reason": "No documented evidence of ticket reduction or baseline comparison is provided.",
+     "requiredFollowUp": "Request documented ticket volume reports before and after feature launch, including baseline data."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_3e46120095e0",
+     "severity": "medium",
+     "gap": "Documented reduction in billing support tickets with baseline comparison."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_a28c7900feb5",
+     "text": "candidate said billing tickets 'fell by about 30 percent' after the invoice-download page launched; he said the support team had mentioned it in a stand-up and that he had not seen a ticket report himself.",
+     "signalType": "unverified claim",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify with documented ticket reports and baseline data."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_3e46120095e0",
+     "question": "Can you provide documented evidence of billing support ticket volume before and after the launch of the invoice-download page, including the monthly baseline used for comparison?",
+     "evidenceTarget": "Documented ticket reduction metrics."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify documented ticket reduction evidence for req_3e46120095e0",
+    "Confirm scope agreement records for req_d8c75ce1ba01",
+    "Confirm acceptance session logs for req_dbe9a0ccd930"
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence for user story creation, acceptance session facilitation, scope agreement, and release note publication. However, there is no documented evidence of measurable ticket reduction, which is a key requirement. Human review should focus on obtaining and verifying ticket volume data and confirming that scope and acceptance logs were properly recorded.",
+   "limitations": [
+    "Limited to the provided resume, work sample, and recruiter notes; no external verification of metrics or independent confirmation of scope agreement records."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:12:26.967411+00:00"
+}

@@ -1,0 +1,86 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "096d28f0-ba43-44b6-9b63-f0d6687c606f",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_f0b826f89f04",
+   "canonicalProposition": "The candidate compiled a weekly backlog report for four support leads showing open tickets by age band and first-response times.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_03ea4c510e46",
+    "src_ba804943ffc5"
+   ],
+   "relevantRequirementIds": [
+    "req_7f6526798a1a"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the report and the reference check confirms it in writing."
+  },
+  {
+   "atomicPropositionId": "prop_27edf8ae975c",
+   "canonicalProposition": "The candidate put the new routing rules into live operation on the EMEA support queue from 2 September and monitored them after release.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_7f0602e0ce4a"
+   ],
+   "boundaryCategory": "readiness_checklist_presented_as_go_live",
+   "criticality": "critical",
+   "rationale": "The pack documents sandbox UAT, and its go-live line is a target date pending change-board approval; no source says the rules ran on a live queue. The deployment rule requires the environment and status to be kept as the source gives them, so a planned go-live in a sandbox pack is not live operation."
+  },
+  {
+   "atomicPropositionId": "prop_f33851048102",
+   "canonicalProposition": "The candidate designed routing rules in the helpdesk's sandbox instance and ran two rounds of user acceptance testing with eight agents.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_415298893314",
+    "src_3404a4b42395"
+   ],
+   "relevantRequirementIds": [
+    "req_84561a87a422"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "Both resume entries place the routing design and the testing in the sandbox instance."
+  }
+ ],
+ "requirementStatus": {
+  "req_7f6526798a1a": "supported",
+  "req_b8a538cc07be": "supported",
+  "req_7f0602e0ce4a": "partial_evidence",
+  "req_84561a87a422": "supported",
+  "req_0cd4edd893ae": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_415298893314",
+  "src_3404a4b42395",
+  "src_b379668095b1"
+ ],
+ "expectedGap": "The routing rules are documented only in the sandbox instance and UAT; whether they were approved and switched on for a live queue is not documented.",
+ "expectedBoundaryNote": "Report the routing design, the historical replay and the UAT as sandbox work; keep the go-live line as a target pending change-board approval.",
+ "permittedFollowUpTargets": [
+  "Ask whether the change board approved the routing rules, who enabled them on a live queue and when, and what the candidate monitored after they were switched on."
+ ],
+ "validClaimSignatures": [
+  "120 macros",
+  "user acceptance testing"
+ ],
+ "trap": {
+  "propositionId": "prop_27edf8ae975c",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_7f0602e0ce4a"
+  ],
+  "signatures": [
+   "live on the EMEA queue",
+   "EMEA support queue from 2 September"
+  ],
+  "baitSourceIds": [
+   "src_b379668095b1"
+  ]
+ }
+}

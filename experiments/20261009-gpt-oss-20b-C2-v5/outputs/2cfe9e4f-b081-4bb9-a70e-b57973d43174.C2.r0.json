@@ -1,0 +1,258 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2cfe9e4f-b081-4bb9-a70e-b57973d43174.C2",
+ "case_id": "2cfe9e4f-b081-4bb9-a70e-b57973d43174",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14245,
+  "promptWords": 1702
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 38.261
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3609,
+ "eval_count": 1811,
+ "prompt_eval_duration_ns": 18311000,
+ "eval_duration_ns": 32617213000,
+ "total_duration_ns": 38259476917,
+ "thinking": "We need to produce JSON with schema. Use provided sources. Ensure claims with sourceId and witness verbatim passage. Need to extract verbatim passages from sources. We have source texts but not full content; we can quote short passage. Use the resume lines as witness. For each claim, include sourceId and witness. For CV sections: professionalSummary, experienceHighlights, projectsAndWorkSamples, skills. Use claims from resume. Provide evidenceBoundary sentence.\n\nRequirementEvidenceMap: cover all requirementIds. For each, status supported if evidence. All seem supported. Provide evidence entries with sourceId and witness. MissingEvidence empty.\n\nSupportedClaims: list claims that map to requirements. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high maybe, witness.\n\nUnsupportedClaims: none.\n\nMissingEvidenceGaps: none.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: none.\n\nHumanReviewChecklist: maybe \"Review evidence for scope control, cutover decision, milestone review, decision log, client communication plan\".\n\nAuditSummary: summary.\n\nLimitations: maybe \"Based on provided resume and work samples only\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_cc1b51264c2e2df5\",\"targetRoleTitle\":\"Programme Manager, Wealth Platform Migration\",\"professionalSummary\":[\"Programme manager with four years of experience leading the migration of 38,000 private‑client accounts to a vendor wealth‑management platform, managing scope, vendor milestones, cutover decisions, and client communication plans.\"],\"experienceHighlights\":[\"Led delivery of a large‑scale platform migration at Ashgrove Investment Partners (Apr 2020‑Jul 2024).\",\"Approved scope changes up to ten person‑days under delegated authority and escalated larger changes to the executive sponsor with an options paper.\",\"Chaired weekly milestone reviews with the platform vendor and data‑conversion contractor, recording slippage against the contract schedule and agreeing recovery dates.\",\"Made the go decision for the final migration weekend in March 2024 against the charter’s cutover criteria; entered the decision in the decision log and countersigned by the executive sponsor.\",\"Authored the timeline and FAQ sections of the client‑communication plan, which the marketing team prepared and owned.\"],\"projectsAndWorkSamples\":[\"Programme charter excerpts showing delivery lead role and ten person‑day approval limit.\",\"Four pages of the decision log showing sign‑offs on scope changes and the March 2024 cutover decision.\"],\"skills\":[\"Platform migration management\",\"Scope control\",\"Vendor & contractor milestone tracking\",\"Cutover decision making\",\"Client communication planning\",\"Decision & change log maintenance\"],\"evidenceBoundary\":\"The resume and work samples confirm the candidate’s role, responsibilities, and deliverables related to platform migration, scope control, milestone management, cutover decisions, and client communication planning, but do not provide independent verification of outcomes or performance metrics.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the Programme Manager, Wealth Platform Migration role.\"},\"role\":{\"roleTitle\":\"Programme Manager, Wealth Platform Migration\",\"jobDescriptionSource\":\"jd_ca2777befad178d2\",\"requirementIds\":[\"req_f5404a75e38d\",\"req_1a92a244d4bf\",\"req_9a1611fc8355\",\"req_f1331a9ed49c\",\"req_157fdb601068\"]},\"candidate\":{\"candidateId\":\"cand_cc1b51264c2e2df5\",\"sources\":[\"src_a90226c771f2\",\"src_c12924da1ab4\",\"src_a023e36c9be7\",\"src_e14b5af3d2a0\",\"src_e9d56d6ef4a5\",\"src_bf4610cdfb8f\",\"src_db36a987e02e\",\"src_dadb3219f6da\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_f5404a75e38d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a90226c771f2\",\"text\":\"Programme manager at Ashgrove Investment Partners from April 2020 to July 2024, delivery lead for moving 38,000 private-client accounts onto a vendor wealth-management platform.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of delivery lead role\"},{\"sourceId\":\"src_a023e36c9be7\",\"text\":\"Chaired the weekly milestone review with the platform vendor and the data-conversion contractor, recording slippage against the contract schedule and agreeing recovery dates.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows milestone management\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_1a92a244d4bf\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e14b5af3d2a0\",\"text\":\"Made the go decision for the final migration weekend in March 2024 against the charter's cutover criteria; the decision is entered in the decision log and countersigned by the executive sponsor.\",\"evidenceStrength\":\"high\",\"notes\":\"Decision log entry\"},{\"sourceId\":\"src_bf4610cdfb8f\",\"text\":\"Work sample: extracts from the programme charter, whose role table lists the candidate under 'Delivery lead' with a ten person-day approval limit, and four pages of the decision log showing the candidate's sign-off on scope changes and on the March 2024 cutover decision.\",\"evidenceStrength\":\"high\",\"notes\":\"Decision log evidence\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9a1611fc8355\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a023e36c9be7\",\"text\":\"Chaired the weekly milestone review with the platform vendor and the data-conversion contractor, recording slippage against the contract schedule and agreeing recovery dates.\",\"evidenceStrength\":\"high\",\"notes\":\"Milestone tracking\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f1331a9ed49c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c12924da1ab4\",\"text\":\"Approved scope changes of up to ten person-days under the delegated authority set out in the programme charter, and took larger changes to the executive sponsor with an options paper.\",\"evidenceStrength\":\"high\",\"notes\":\"Escalation of scope changes\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_157fdb601068\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e9d56d6ef4a5\",\"text\":\"Wrote the timeline and frequently-asked-questions sections of the client-communication plan, which the marketing team prepared and owned.\",\"evidenceStrength\":\"high\",\"notes\":\"Client communication planning\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Led delivery of a platform migration for 38,000 private-client accounts.\",\"supportingRequirementIds\":[\"req_f5404a75e38d\"],\"sourceIds\":[\"src_a90226c771f2\"],\"evidenceStrength\":\"high\",\"witness\":\"Programme manager at Ashgrove Investment Partners from April 2020 to July 2024, delivery lead for moving 38,000 private-client accounts onto a vendor wealth-management platform.\"},{\"claim\":\"Made the go decision for the final migration weekend in March 2024 against the charter’s cutover criteria.\",\"supportingRequirementIds\":[\"req_1a92a244d4bf\"],\"sourceIds\":[\"src_e14b5af3d2a0\"],\"evidenceStrength\":\"high\",\"witness\":\"Made the go decision for the final migration weekend in March 2024 against the charter's cutover criteria; the decision is entered in the decision log and countersigned by the executive sponsor.\"},{\"claim\":\"Chaired weekly milestone reviews with vendor and contractor, recording slippage against the contract schedule.\",\"supportingRequirementIds\":[\"req_9a1611fc8355\"],\"sourceIds\":[\"src_a023e36c9be7\"],\"evidenceStrength\":\"high\",\"witness\":\"Chaired the weekly milestone review with the platform vendor and the data-conversion contractor, recording slippage against the contract schedule and agreeing recovery dates.\"},{\"claim\":\"Escalated scope changes beyond delegated limits to the executive sponsor.\",\"supportingRequirementIds\":[\"req_f1331a9ed49c\"],\"sourceIds\":[\"src_c12924da1ab4\"],\"evidenceStrength\":\"high\",\"witness\":\"Approved scope changes of up to ten person-days under the delegated authority set out in the programme charter, and took larger changes to the executive sponsor with an options paper.\"},{\"claim\":\"Authored the timeline and FAQ sections of the client-communication plan.\",\"supportingRequirementIds\":[\"req_157fdb601068\"],\"sourceIds\":[\"src_e9d56d6ef4a5\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the timeline and frequently-asked-questions sections of the client-communication plan, which the marketing team prepared and owned.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s scope control and cutover decision processes align with the firm’s governance model.\",\"Confirm that the decision log and milestone review records are complete and accurate.\",\"Assess the candidate’s experience with client communication planning in a migration context.\"],\"auditSummary\":\"The evidence from the resume and work samples fully supports all five job requirements for the Programme Manager, Wealth Platform Migration role. No quantitative outcomes or performance metrics are provided, and no independent verification beyond HR confirmation is present. Human review should focus on governance alignment and completeness of documentation.\",\"limitations\":[\"Evidence is limited to the candidate’s own resume and provided work samples; independent verification of outcomes or performance metrics is not available.\"]}}",
+ "content_sha256": "bae4bf9d394dbc558f52eb33215f2b773a7de0142a5c1ab61b1be89f4433b0a5",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_cc1b51264c2e2df5",
+   "targetRoleTitle": "Programme Manager, Wealth Platform Migration",
+   "professionalSummary": [
+    "Programme manager with four years of experience leading the migration of 38,000 private‑client accounts to a vendor wealth‑management platform, managing scope, vendor milestones, cutover decisions, and client communication plans."
+   ],
+   "experienceHighlights": [
+    "Led delivery of a large‑scale platform migration at Ashgrove Investment Partners (Apr 2020‑Jul 2024).",
+    "Approved scope changes up to ten person‑days under delegated authority and escalated larger changes to the executive sponsor with an options paper.",
+    "Chaired weekly milestone reviews with the platform vendor and data‑conversion contractor, recording slippage against the contract schedule and agreeing recovery dates.",
+    "Made the go decision for the final migration weekend in March 2024 against the charter’s cutover criteria; entered the decision in the decision log and countersigned by the executive sponsor.",
+    "Authored the timeline and FAQ sections of the client‑communication plan, which the marketing team prepared and owned."
+   ],
+   "projectsAndWorkSamples": [
+    "Programme charter excerpts showing delivery lead role and ten person‑day approval limit.",
+    "Four pages of the decision log showing sign‑offs on scope changes and the March 2024 cutover decision."
+   ],
+   "skills": [
+    "Platform migration management",
+    "Scope control",
+    "Vendor & contractor milestone tracking",
+    "Cutover decision making",
+    "Client communication planning",
+    "Decision & change log maintenance"
+   ],
+   "evidenceBoundary": "The resume and work samples confirm the candidate’s role, responsibilities, and deliverables related to platform migration, scope control, milestone management, cutover decisions, and client communication planning, but do not provide independent verification of outcomes or performance metrics."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the Programme Manager, Wealth Platform Migration role."
+   },
+   "role": {
+    "roleTitle": "Programme Manager, Wealth Platform Migration",
+    "jobDescriptionSource": "jd_ca2777befad178d2",
+    "requirementIds": [
+     "req_f5404a75e38d",
+     "req_1a92a244d4bf",
+     "req_9a1611fc8355",
+     "req_f1331a9ed49c",
+     "req_157fdb601068"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_cc1b51264c2e2df5",
+    "sources": [
+     "src_a90226c771f2",
+     "src_c12924da1ab4",
+     "src_a023e36c9be7",
+     "src_e14b5af3d2a0",
+     "src_e9d56d6ef4a5",
+     "src_bf4610cdfb8f",
+     "src_db36a987e02e",
+     "src_dadb3219f6da"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f5404a75e38d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a90226c771f2",
+       "text": "Programme manager at Ashgrove Investment Partners from April 2020 to July 2024, delivery lead for moving 38,000 private-client accounts onto a vendor wealth-management platform.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of delivery lead role"
+      },
+      {
+       "sourceId": "src_a023e36c9be7",
+       "text": "Chaired the weekly milestone review with the platform vendor and the data-conversion contractor, recording slippage against the contract schedule and agreeing recovery dates.",
+       "evidenceStrength": "high",
+       "notes": "Shows milestone management"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1a92a244d4bf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e14b5af3d2a0",
+       "text": "Made the go decision for the final migration weekend in March 2024 against the charter's cutover criteria; the decision is entered in the decision log and countersigned by the executive sponsor.",
+       "evidenceStrength": "high",
+       "notes": "Decision log entry"
+      },
+      {
+       "sourceId": "src_bf4610cdfb8f",
+       "text": "Work sample: extracts from the programme charter, whose role table lists the candidate under 'Delivery lead' with a ten person-day approval limit, and four pages of the decision log showing the candidate's sign-off on scope changes and on the March 2024 cutover decision.",
+       "evidenceStrength": "high",
+       "notes": "Decision log evidence"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9a1611fc8355",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a023e36c9be7",
+       "text": "Chaired the weekly milestone review with the platform vendor and the data-conversion contractor, recording slippage against the contract schedule and agreeing recovery dates.",
+       "evidenceStrength": "high",
+       "notes": "Milestone tracking"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f1331a9ed49c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c12924da1ab4",
+       "text": "Approved scope changes of up to ten person-days under the delegated authority set out in the programme charter, and took larger changes to the executive sponsor with an options paper.",
+       "evidenceStrength": "high",
+       "notes": "Escalation of scope changes"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_157fdb601068",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e9d56d6ef4a5",
+       "text": "Wrote the timeline and frequently-asked-questions sections of the client-communication plan, which the marketing team prepared and owned.",
+       "evidenceStrength": "high",
+       "notes": "Client communication planning"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Led delivery of a platform migration for 38,000 private-client accounts.",
+     "supportingRequirementIds": [
+      "req_f5404a75e38d"
+     ],
+     "sourceIds": [
+      "src_a90226c771f2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Programme manager at Ashgrove Investment Partners from April 2020 to July 2024, delivery lead for moving 38,000 private-client accounts onto a vendor wealth-management platform."
+    },
+    {
+     "claim": "Made the go decision for the final migration weekend in March 2024 against the charter’s cutover criteria.",
+     "supportingRequirementIds": [
+      "req_1a92a244d4bf"
+     ],
+     "sourceIds": [
+      "src_e14b5af3d2a0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Made the go decision for the final migration weekend in March 2024 against the charter's cutover criteria; the decision is entered in the decision log and countersigned by the executive sponsor."
+    },
+    {
+     "claim": "Chaired weekly milestone reviews with vendor and contractor, recording slippage against the contract schedule.",
+     "supportingRequirementIds": [
+      "req_9a1611fc8355"
+     ],
+     "sourceIds": [
+      "src_a023e36c9be7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Chaired the weekly milestone review with the platform vendor and the data-conversion contractor, recording slippage against the contract schedule and agreeing recovery dates."
+    },
+    {
+     "claim": "Escalated scope changes beyond delegated limits to the executive sponsor.",
+     "supportingRequirementIds": [
+      "req_f1331a9ed49c"
+     ],
+     "sourceIds": [
+      "src_c12924da1ab4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Approved scope changes of up to ten person-days under the delegated authority set out in the programme charter, and took larger changes to the executive sponsor with an options paper."
+    },
+    {
+     "claim": "Authored the timeline and FAQ sections of the client-communication plan.",
+     "supportingRequirementIds": [
+      "req_157fdb601068"
+     ],
+     "sourceIds": [
+      "src_e9d56d6ef4a5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the timeline and frequently-asked-questions sections of the client-communication plan, which the marketing team prepared and owned."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s scope control and cutover decision processes align with the firm’s governance model.",
+    "Confirm that the decision log and milestone review records are complete and accurate.",
+    "Assess the candidate’s experience with client communication planning in a migration context."
+   ],
+   "auditSummary": "The evidence from the resume and work samples fully supports all five job requirements for the Programme Manager, Wealth Platform Migration role. No quantitative outcomes or performance metrics are provided, and no independent verification beyond HR confirmation is present. Human review should focus on governance alignment and completeness of documentation.",
+   "limitations": [
+    "Evidence is limited to the candidate’s own resume and provided work samples; independent verification of outcomes or performance metrics is not available."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:30:24.066821+00:00"
+}

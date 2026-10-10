@@ -1,0 +1,277 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "6a75f43d-a67b-4903-ba3d-e1eb168b090c.C2",
+ "case_id": "6a75f43d-a67b-4903-ba3d-e1eb168b090c",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14376,
+  "promptWords": 1725
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 40.052
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3449,
+ "eval_count": 2106,
+ "prompt_eval_duration_ns": 18189000,
+ "eval_duration_ns": 37930515000,
+ "total_duration_ns": 40050304833,
+ "thinking": "Need to map requirements. Provide claims with source. No quantitative claim unsupported. Provide gaps.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_4eca8a2c4f1664c3\",\"targetRoleTitle\":\"Backend Engineer, Card Payments Platform\",\"professionalSummary\":[\"Experienced backend engineer with a focus on payment authorisation, retry, and reversal services in Go. Demonstrated ability to design idempotent systems, manage on‑call incident response, and ship database schema changes through formal approval processes.\"],\"experienceHighlights\":[\"Wrote a Go retry service for soft‑declined card authorisations, ensuring idempotency via PostgreSQL keys.\",\"Maintained a reversal API that voids authorisations, adding contract tests against a card‑scheme simulator.\",\"Served on the settlement batch on‑call rota (Oct 2022‑Jan 2024), handling incidents through runbooks and documenting post‑incident reviews.\",\"Moved three ledger tables to a partitioned schema, raising each migration as a change request approved by the change‑advisory board.\",\"Reviewed pull requests for the authorisation gateway team and authored a guide to structured logging for payment events.\"],\"projectsAndWorkSamples\":[\"Eleven‑page design document for the soft‑decline retry service, covering retry schedule, idempotency‑key lifecycle, timeout behaviour, and rollback plan (no payment statistics).\"],\"skills\":[\"Go\",\"PostgreSQL\",\"Idempotency\",\"Change‑advisory process\",\"On‑call incident management\",\"Design documentation\",\"Structured logging\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience with Go services, idempotency, on‑call participation, and schema change approval, but do not provide quantitative metrics or evidence of failure‑rate reduction.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the Backend Engineer, Card Payments Platform role.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Card Payments Platform\",\"jobDescriptionSource\":\"jd_9a702ba1be843eea\",\"requirementIds\":[\"req_d3874cc8a313\",\"req_3f4b0d6751b6\",\"req_89e4b19f7203\",\"req_8224bdc8c570\",\"req_818abf672b3a\"]},\"candidate\":{\"candidateId\":\"cand_4eca8a2c4f1664c3\",\"sources\":[\"src_c4a655c4af39\",\"src_4191a2e02715\",\"src_c75d89397e04\",\"src_f58fbb3a68a7\",\"src_b4d615440553\",\"src_e8e7c5e69005\",\"src_7d23be6724c4\",\"src_8771d43e6985\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_d3874cc8a313\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c4a655c4af39\",\"text\":\"Wrote a Go retry service for soft‑declined card authorisations at Kestrel Merchant Services, storing idempotency keys in PostgreSQL so that a retried request could never be charged twice.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates Go service development for payment retries.\"},{\"sourceId\":\"src_4191a2e02715\",\"text\":\"Maintained the reversal API that voids an authorisation when a merchant cancels an order, adding contract tests against the card‑scheme simulator before each release.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows Go service maintenance for reversals.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3f4b0d6751b6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e8e7c5e69005\",\"text\":\"Work sample: the eleven‑page design document for the soft‑decline retry service, covering the retry schedule, the idempotency‑key lifecycle, behaviour when the card scheme times out and the rollback plan.\",\"evidenceStrength\":\"high\",\"notes\":\"Design document covers failure modes, idempotency, and rollback.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_89e4b19f7203\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c75d89397e04\",\"text\":\"Served on the settlement batch on‑call rota from October 2022 to January 2024, working incidents through the team's runbooks and filing post‑incident reviews for two batch overruns.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of on‑call participation and incident handling.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_8224bdc8c570\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No documented baseline, metric definition, or measurement window for reduction in failed or wrongly declined payments.\"]},{\"requirementId\":\"req_818abf672b3a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f58fbb3a68a7\",\"text\":\"Moved three ledger tables to a partitioned schema, raising each migration as a change request that the change‑advisory board approved ahead of the weekend window.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows schema changes shipped through formal approval process.\"}],\"missingEvidence\":[] }],\"supportedClaims\":[{\"claim\":\"Wrote a Go retry service for soft‑declined card authorisations at Kestrel Merchant Services, ensuring idempotency via PostgreSQL.\",\"supportingRequirementIds\":[\"req_d3874cc8a313\"],\"sourceIds\":[\"src_c4a655c4af39\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote a Go retry service for soft‑declined card authorisations at Kestrel Merchant Services, storing idempotency keys in PostgreSQL so that a retried request could never be charged twice.\"},{\"claim\":\"Maintained a reversal API that voids authorisations, adding contract tests against a card‑scheme simulator before each release.\",\"supportingRequirementIds\":[\"req_d3874cc8a313\"],\"sourceIds\":[\"src_4191a2e02715\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the reversal API that voids an authorisation when a merchant cancels an order, adding contract tests against the card‑scheme simulator before each release.\"},{\"claim\":\"Served on the settlement batch on‑call rota from October 2022 to January 2024, handling incidents through runbooks and filing post‑incident reviews.\",\"supportingRequirementIds\":[\"req_89e4b19f7203\"],\"sourceIds\":[\"src_c75d89397e04\"],\"evidenceStrength\":\"high\",\"witness\":\"Served on the settlement batch on‑call rota from October 2022 to January 2024, working incidents through the team's runbooks and filing post‑incident reviews for two batch overruns.\"},{\"claim\":\"Designed the soft‑decline retry service, covering retry schedule, idempotency‑key lifecycle, timeout behaviour, and rollback plan.\",\"supportingRequirementIds\":[\"req_3f4b0d6751b6\"],\"sourceIds\":[\"src_e8e7c5e69005\"],\"evidenceStrength\":\"high\",\"witness\":\"Work sample: the eleven‑page design document for the soft‑decline retry service, covering the retry schedule, the idempotency‑key lifecycle, behaviour when the card scheme times out and the rollback plan.\"},{\"claim\":\"Moved three ledger tables to a partitioned schema, raising each migration as a change request approved by the change‑advisory board.\",\"supportingRequirementIds\":[\"req_818abf672b3a\"],\"sourceIds\":[\"src_f58fbb3a68a7\"],\"evidenceStrength\":\"high\",\"witness\":\"Moved three ledger tables to a partitioned schema, raising each migration as a change request that the change‑advisory board approved ahead of the weekend window.\"}],\"unsupportedClaims\":[{\"claim\":\"The retry service cut failed card payments by roughly 40%.\",\"reason\":\"The source notes the remark but does not provide the underlying figures, metric definition, baseline, or measurement window.\",\"requiredFollowUp\":\"Provide documented baseline, metric definition, and measurement window for the 40% reduction claim.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_8224bdc8c570\",\"requirementId\":\"req_8224bdc8c570\",\"severity\":\"medium\",\"gap\":\"No evidence of a documented baseline, metric definition, or measurement window for reduction in failed or wrongly declined payments.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_8771d43e6985\",\"text\":\"Candidate passed on a remark that the retry service 'cut failed card payments by roughly 40%'.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify the claim with quantitative data and a documented measurement window.\"}],\"followUpQuestions\":[{\"questionId\":\"q_8224bdc8c570_1\",\"requirementId\":\"req_8224bdc8c570\",\"question\":\"Can you provide the documented baseline, metric definition, and measurement window that support the claimed reduction in failed or wrongly declined payments?\",\"evidenceTarget\":\"Quantitative evidence of failure‑rate reduction.\"}],\"humanReviewChecklist\":[\"Confirm that all claims are sourced and verbatim witnesses are provided.\",\"Verify that no subjective or unverified statements are listed as supported claims.\",\"Ensure that the requirement evidence map covers every requirement exactly once.\",\"Check that the missing evidence gap for req_8224bdc8c570 is noted and a follow‑up question is provided.\"],\"auditSummary\":\"All requirements are mapped; claims are sourced; quantitative claim is flagged as unsupported; a gap and follow‑up question are provided for the failure‑rate reduction requirement. No protected characteristics are inferred. Human review is required to assess fit.\",\"limitations\":[\"The evidence does not include quantitative metrics for failure‑rate reduction; the candidate’s impact on payment success rates remains unverified.\"]} }",
+ "content_sha256": "62cb528a15fc54e2dd3bba0a9acddf627023e26159acf1770f8a71cab045c65c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4eca8a2c4f1664c3",
+   "targetRoleTitle": "Backend Engineer, Card Payments Platform",
+   "professionalSummary": [
+    "Experienced backend engineer with a focus on payment authorisation, retry, and reversal services in Go. Demonstrated ability to design idempotent systems, manage on‑call incident response, and ship database schema changes through formal approval processes."
+   ],
+   "experienceHighlights": [
+    "Wrote a Go retry service for soft‑declined card authorisations, ensuring idempotency via PostgreSQL keys.",
+    "Maintained a reversal API that voids authorisations, adding contract tests against a card‑scheme simulator.",
+    "Served on the settlement batch on‑call rota (Oct 2022‑Jan 2024), handling incidents through runbooks and documenting post‑incident reviews.",
+    "Moved three ledger tables to a partitioned schema, raising each migration as a change request approved by the change‑advisory board.",
+    "Reviewed pull requests for the authorisation gateway team and authored a guide to structured logging for payment events."
+   ],
+   "projectsAndWorkSamples": [
+    "Eleven‑page design document for the soft‑decline retry service, covering retry schedule, idempotency‑key lifecycle, timeout behaviour, and rollback plan (no payment statistics)."
+   ],
+   "skills": [
+    "Go",
+    "PostgreSQL",
+    "Idempotency",
+    "Change‑advisory process",
+    "On‑call incident management",
+    "Design documentation",
+    "Structured logging"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience with Go services, idempotency, on‑call participation, and schema change approval, but do not provide quantitative metrics or evidence of failure‑rate reduction."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the Backend Engineer, Card Payments Platform role."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Card Payments Platform",
+    "jobDescriptionSource": "jd_9a702ba1be843eea",
+    "requirementIds": [
+     "req_d3874cc8a313",
+     "req_3f4b0d6751b6",
+     "req_89e4b19f7203",
+     "req_8224bdc8c570",
+     "req_818abf672b3a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4eca8a2c4f1664c3",
+    "sources": [
+     "src_c4a655c4af39",
+     "src_4191a2e02715",
+     "src_c75d89397e04",
+     "src_f58fbb3a68a7",
+     "src_b4d615440553",
+     "src_e8e7c5e69005",
+     "src_7d23be6724c4",
+     "src_8771d43e6985"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d3874cc8a313",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c4a655c4af39",
+       "text": "Wrote a Go retry service for soft‑declined card authorisations at Kestrel Merchant Services, storing idempotency keys in PostgreSQL so that a retried request could never be charged twice.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates Go service development for payment retries."
+      },
+      {
+       "sourceId": "src_4191a2e02715",
+       "text": "Maintained the reversal API that voids an authorisation when a merchant cancels an order, adding contract tests against the card‑scheme simulator before each release.",
+       "evidenceStrength": "high",
+       "notes": "Shows Go service maintenance for reversals."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3f4b0d6751b6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e8e7c5e69005",
+       "text": "Work sample: the eleven‑page design document for the soft‑decline retry service, covering the retry schedule, the idempotency‑key lifecycle, behaviour when the card scheme times out and the rollback plan.",
+       "evidenceStrength": "high",
+       "notes": "Design document covers failure modes, idempotency, and rollback."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_89e4b19f7203",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c75d89397e04",
+       "text": "Served on the settlement batch on‑call rota from October 2022 to January 2024, working incidents through the team's runbooks and filing post‑incident reviews for two batch overruns.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of on‑call participation and incident handling."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8224bdc8c570",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No documented baseline, metric definition, or measurement window for reduction in failed or wrongly declined payments."
+     ]
+    },
+    {
+     "requirementId": "req_818abf672b3a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f58fbb3a68a7",
+       "text": "Moved three ledger tables to a partitioned schema, raising each migration as a change request that the change‑advisory board approved ahead of the weekend window.",
+       "evidenceStrength": "high",
+       "notes": "Shows schema changes shipped through formal approval process."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Wrote a Go retry service for soft‑declined card authorisations at Kestrel Merchant Services, ensuring idempotency via PostgreSQL.",
+     "supportingRequirementIds": [
+      "req_d3874cc8a313"
+     ],
+     "sourceIds": [
+      "src_c4a655c4af39"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote a Go retry service for soft‑declined card authorisations at Kestrel Merchant Services, storing idempotency keys in PostgreSQL so that a retried request could never be charged twice."
+    },
+    {
+     "claim": "Maintained a reversal API that voids authorisations, adding contract tests against a card‑scheme simulator before each release.",
+     "supportingRequirementIds": [
+      "req_d3874cc8a313"
+     ],
+     "sourceIds": [
+      "src_4191a2e02715"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the reversal API that voids an authorisation when a merchant cancels an order, adding contract tests against the card‑scheme simulator before each release."
+    },
+    {
+     "claim": "Served on the settlement batch on‑call rota from October 2022 to January 2024, handling incidents through runbooks and filing post‑incident reviews.",
+     "supportingRequirementIds": [
+      "req_89e4b19f7203"
+     ],
+     "sourceIds": [
+      "src_c75d89397e04"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Served on the settlement batch on‑call rota from October 2022 to January 2024, working incidents through the team's runbooks and filing post‑incident reviews for two batch overruns."
+    },
+    {
+     "claim": "Designed the soft‑decline retry service, covering retry schedule, idempotency‑key lifecycle, timeout behaviour, and rollback plan.",
+     "supportingRequirementIds": [
+      "req_3f4b0d6751b6"
+     ],
+     "sourceIds": [
+      "src_e8e7c5e69005"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Work sample: the eleven‑page design document for the soft‑decline retry service, covering the retry schedule, the idempotency‑key lifecycle, behaviour when the card scheme times out and the rollback plan."
+    },
+    {
+     "claim": "Moved three ledger tables to a partitioned schema, raising each migration as a change request approved by the change‑advisory board.",
+     "supportingRequirementIds": [
+      "req_818abf672b3a"
+     ],
+     "sourceIds": [
+      "src_f58fbb3a68a7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Moved three ledger tables to a partitioned schema, raising each migration as a change request that the change‑advisory board approved ahead of the weekend window."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The retry service cut failed card payments by roughly 40%.",
+     "reason": "The source notes the remark but does not provide the underlying figures, metric definition, baseline, or measurement window.",
+     "requiredFollowUp": "Provide documented baseline, metric definition, and measurement window for the 40% reduction claim."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_8224bdc8c570",
+     "requirementId": "req_8224bdc8c570",
+     "severity": "medium",
+     "gap": "No evidence of a documented baseline, metric definition, or measurement window for reduction in failed or wrongly declined payments."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_8771d43e6985",
+     "text": "Candidate passed on a remark that the retry service 'cut failed card payments by roughly 40%'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify the claim with quantitative data and a documented measurement window."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_8224bdc8c570_1",
+     "requirementId": "req_8224bdc8c570",
+     "question": "Can you provide the documented baseline, metric definition, and measurement window that support the claimed reduction in failed or wrongly declined payments?",
+     "evidenceTarget": "Quantitative evidence of failure‑rate reduction."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that all claims are sourced and verbatim witnesses are provided.",
+    "Verify that no subjective or unverified statements are listed as supported claims.",
+    "Ensure that the requirement evidence map covers every requirement exactly once.",
+    "Check that the missing evidence gap for req_8224bdc8c570 is noted and a follow‑up question is provided."
+   ],
+   "auditSummary": "All requirements are mapped; claims are sourced; quantitative claim is flagged as unsupported; a gap and follow‑up question are provided for the failure‑rate reduction requirement. No protected characteristics are inferred. Human review is required to assess fit.",
+   "limitations": [
+    "The evidence does not include quantitative metrics for failure‑rate reduction; the candidate’s impact on payment success rates remains unverified."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:52:47.980650+00:00"
+}

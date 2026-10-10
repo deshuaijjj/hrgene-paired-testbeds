@@ -1,0 +1,175 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "d2261600-73a6-4eb8-af89-d0f9131605eb.C2",
+ "case_id": "d2261600-73a6-4eb8-af89-d0f9131605eb",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14470,
+  "promptWords": 1761
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 27.201
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3858,
+ "eval_count": 1030,
+ "prompt_eval_duration_ns": 18868000,
+ "eval_duration_ns": 18521969000,
+ "total_duration_ns": 27199116375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft claims.\n\nClaims: professionalSummary: maybe one claim: \"Backend Developer at Tollgate Logistics maintaining Kotlin route-planning service for 1,100 van routes across 14 depots.\" source src_e50a16ee7f52.\n\nExperienceHighlights: multiple claims.\n\nProjectsAndWorkSamples: release record OPS-3318.\n\nSkills: Kotlin, Java, Python? only Kotlin mentioned. address validation, deployment, operational support.\n\nEvidenceBoundary: what materials establish.\n\nRequirement evidence map: for each requirement.\n\nLet's map:\n\nreq_57bc8d76e93c: Maintains route-planning services in Kotlin, Java or Python. Evidence: src_e50a16ee7f52. status supported.\n\nreq_311f31d22f9e: Integrates third-party address or traffic data with validation. Evidence: src_0f4a253dd403. status supported.\n\nreq_d5b0e55210db: Has released changes to a live operational planning system and supported them through the first operating days. Evidence: src_780b947cd848 and src_2430997504e4. status supported.\n\nreq_15346654a3b7: Takes part in an operational support rota for depot users. Evidence: src_e8aef43bb70b. status supported.\n\nreq_4eb868db9cf4: Measures the effect of planning changes on on-time delivery rates. Evidence: src_6692dda08cf1. status supported.\n\nAll supported.\n\nUnsupportedClaims none.\n\nMissingEvidenceGaps none.\n\nInterviewSignalRisks none.\n\nFollowUpQuestions none.\n\nHumanReviewChecklist: maybe \"Review evidence for quantitative impact on on-time delivery rates\" but we have evidence. But still include.\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of Java/Python usage\" etc.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_93c96d1a1c08498b\",\"targetRoleTitle\":\"Software Engineer, Route Planning\",\"professionalSummary\":[\"Backend Developer at Tollgate Logistics maintaining a Kotlin service that sequences stops for 1,100 van routes each morning across 14 depots.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the role.\"},\"role\":{\"roleTitle\":\"Software Engineer, Route Planning\",\"jobDescriptionSource\":\"jd_ffa9be61e1d55491\",\"requirementIds\":[\"req_57bc8d76e93c\",\"req_311f31d22f9e\",\"req_d5b0e55210db\",\"req_15346654a3b7\",\"req_4eb868db9cf4\"]},\"candidate\":{\"candidateId\":\"cand_93c96d1a1c08498b\",\"sources\":[\"src_e50a16ee7f52\",\"src_0f4a253dd403\",\"src_780b947cd848\",\"src_e8aef43bb70b\",\"src_6692dda08cf1\",\"src_2430997504e4\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_57bc8d76e93c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e50a16ee7f52\",\"text\":\"Maintained the Kotlin service that sequences stops for 1,100 van routes each morning across 14 depots\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states maintenance of a Kotlin route-planning service\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_311f31d22f9e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0f4a253dd403\",\"text\":\"Added a postcode-validation step to the address import that quarantines records failing the national address file lookup for manual review and produces a daily exception list for the depot teams\",\"evidenceStrength\":\"high\",\"notes\":\"Shows integration of address data with validation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d5b0e55210db\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_780b947cd848\",\"text\":\"Released the delivery time-window constraint to the live route planner on 6 June 2023 under change ticket OPS-3318, deploying in the 02:00 maintenance window and watching the first three morning planning runs with the depot leads\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates release to live system and monitoring\"},{\"sourceId\":\"src_2430997504e4\",\"text\":\"Work sample: the release record for OPS-3318, containing the change-board approval, the deployment log from the 02:00 window, the checklist for the three monitored planning runs and a short incident note about one depot whose routes were rebuilt by hand on the first morning\",\"evidenceStrength\":\"high\",\"notes\":\"Provides supporting documentation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_15346654a3b7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e8aef43bb70b\",\"text\":\"Covered the depot-support rota one week in four from 2022, answering planners' questions and fixing failed route builds before dispatch, and writing a short note in the rota log after each shift\",\"evidenceStrength\":\"high\",\"notes\":\"Shows participation in operational support rota\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4eb868db9cf4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6692dda08cf1\",\"text\":\"Compared planned route length for the four weeks before and after the time-window change, using the planner's own output files; the comparison was shared with the depot operations manager\",\"evidenceStrength\":\"high\",\"notes\":\"Measures effect of planning change\"}],\"missingEvidence\":[]}],\"supportedClaims\":[],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s experience with Kotlin aligns with the required language stack for the role.\",\"Confirm that the release and monitoring activities were performed in a production environment as defined by the company.\",\"Assess the candidate’s ability to measure on-time delivery impact using the provided comparison data.\"],\"auditSummary\":\"All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative claims beyond the comparison of route lengths are made, and no subjective statements are present. The evidence establishes the candidate’s technical and operational experience relevant to the Software Engineer, Route Planning role.\",\"limitations\":[\"No evidence of Java or Python usage; only Kotlin is documented.\",\"No explicit measurement of on-time delivery rates, only route length comparison is provided.\"]} }",
+ "content_sha256": "68809e312692a83e6eafd3545c2877bf06ede1a9f4e0d52895a36b2ec369d148",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_93c96d1a1c08498b",
+   "targetRoleTitle": "Software Engineer, Route Planning",
+   "professionalSummary": [
+    "Backend Developer at Tollgate Logistics maintaining a Kotlin service that sequences stops for 1,100 van routes each morning across 14 depots."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Route Planning",
+    "jobDescriptionSource": "jd_ffa9be61e1d55491",
+    "requirementIds": [
+     "req_57bc8d76e93c",
+     "req_311f31d22f9e",
+     "req_d5b0e55210db",
+     "req_15346654a3b7",
+     "req_4eb868db9cf4"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_93c96d1a1c08498b",
+    "sources": [
+     "src_e50a16ee7f52",
+     "src_0f4a253dd403",
+     "src_780b947cd848",
+     "src_e8aef43bb70b",
+     "src_6692dda08cf1",
+     "src_2430997504e4"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_57bc8d76e93c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e50a16ee7f52",
+       "text": "Maintained the Kotlin service that sequences stops for 1,100 van routes each morning across 14 depots",
+       "evidenceStrength": "high",
+       "notes": "Directly states maintenance of a Kotlin route-planning service"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_311f31d22f9e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0f4a253dd403",
+       "text": "Added a postcode-validation step to the address import that quarantines records failing the national address file lookup for manual review and produces a daily exception list for the depot teams",
+       "evidenceStrength": "high",
+       "notes": "Shows integration of address data with validation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d5b0e55210db",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_780b947cd848",
+       "text": "Released the delivery time-window constraint to the live route planner on 6 June 2023 under change ticket OPS-3318, deploying in the 02:00 maintenance window and watching the first three morning planning runs with the depot leads",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates release to live system and monitoring"
+      },
+      {
+       "sourceId": "src_2430997504e4",
+       "text": "Work sample: the release record for OPS-3318, containing the change-board approval, the deployment log from the 02:00 window, the checklist for the three monitored planning runs and a short incident note about one depot whose routes were rebuilt by hand on the first morning",
+       "evidenceStrength": "high",
+       "notes": "Provides supporting documentation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_15346654a3b7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e8aef43bb70b",
+       "text": "Covered the depot-support rota one week in four from 2022, answering planners' questions and fixing failed route builds before dispatch, and writing a short note in the rota log after each shift",
+       "evidenceStrength": "high",
+       "notes": "Shows participation in operational support rota"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4eb868db9cf4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6692dda08cf1",
+       "text": "Compared planned route length for the four weeks before and after the time-window change, using the planner's own output files; the comparison was shared with the depot operations manager",
+       "evidenceStrength": "high",
+       "notes": "Measures effect of planning change"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s experience with Kotlin aligns with the required language stack for the role.",
+    "Confirm that the release and monitoring activities were performed in a production environment as defined by the company.",
+    "Assess the candidate’s ability to measure on-time delivery impact using the provided comparison data."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative claims beyond the comparison of route lengths are made, and no subjective statements are present. The evidence establishes the candidate’s technical and operational experience relevant to the Software Engineer, Route Planning role.",
+   "limitations": [
+    "No evidence of Java or Python usage; only Kotlin is documented.",
+    "No explicit measurement of on-time delivery rates, only route length comparison is provided."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:31:05.465432+00:00"
+}

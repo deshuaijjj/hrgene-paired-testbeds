@@ -1,0 +1,233 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "369e9d69-0c94-499a-9a7b-62b0b8815337.C2",
+ "case_id": "369e9d69-0c94-499a-9a7b-62b0b8815337",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14243,
+  "promptWords": 1709
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 32.718
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3735,
+ "eval_count": 1396,
+ "prompt_eval_duration_ns": 18312000,
+ "eval_duration_ns": 25104162000,
+ "total_duration_ns": 32716105291,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. All claims must have source. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Data Scientist with experience developing dealer-level replenishment models for seasonal outdoor power equipment.\" source src_23e7d6804de2. evidenceBoundary: what materials establish: model development, weather quantification, S&OP briefing, code version control, training sessions. Not establish: leadership, production deployment, etc.\n\nRequirementEvidenceMap: for each requirement id.\n\nreq_99c8ed26045a: supported. evidence src_23e7d6804de2. evidenceStrength high.\n\nreq_9632273778d6: supported. evidence src_f33d2c446cce. high.\n\nreq_b185d6a4a153: supported. evidence src_55ae5826b066. high.\n\nreq_9059d65f775e: supported. evidence src_ea5a523671a7 and src_766d30592c3a. high.\n\nreq_7cb433953d59: supported. evidence src_c405cdc426a5. high.\n\nNo gaps.\n\nsupportedClaims array: list claims with requirementIds.\n\nunsupportedClaims empty.\n\nmissingEvidenceGaps empty.\n\ninterviewSignalRisks empty.\n\nfollowUpQuestions empty.\n\nhumanReviewChecklist: maybe \"Review evidence for each requirement\" etc.\n\nauditSummary: brief.\n\nlimitations: maybe \"No evidence of production deployment environment\" but not required.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_ce0cfdbaeffe2f4a\",\"targetRoleTitle\":\"Supply Chain Data Scientist, Outdoor Power Equipment\",\"professionalSummary\":[\"Data Scientist with experience developing dealer-level replenishment models for seasonal outdoor power equipment.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the role.\"},\"role\":{\"roleTitle\":\"Supply Chain Data Scientist, Outdoor Power Equipment\",\"jobDescriptionSource\":\"jd_1304b0e084861d63\",\"requirementIds\":[\"req_99c8ed26045a\",\"req_9632273778d6\",\"req_b185d6a4a153\",\"req_9059d65f775e\",\"req_7cb433953d59\"]},\"candidate\":{\"candidateId\":\"cand_ce0cfdbaeffe2f4a\",\"sources\":[\"src_23e7d6804de2\",\"src_55ae5826b066\",\"src_ea5a523671a7\",\"src_c405cdc426a5\",\"src_f33d2c446cce\",\"src_766d30592c3a\",\"src_671a2f923468\",\"src_c891b9fb880b\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_99c8ed26045a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_23e7d6804de2\",\"text\":\"Developed the dealer-level replenishment model for 640 garden-equipment dealers at Corvane Outdoor, setting weekly order-up-to levels from sell-through, supplier lead times and dealer stock reports.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct model development claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9632273778d6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f33d2c446cce\",\"text\":\"Ran two lunchtime sessions for the dealer-support desk on reading the replenishment screen.\",\"evidenceStrength\":\"high\",\"notes\":\"Training sessions claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b185d6a4a153\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_55ae5826b066\",\"text\":\"Added regional temperature and rainfall series to the spring sell-through model and estimated their effect with a hierarchical regression fitted on the 2019 to 2023 seasons.\",\"evidenceStrength\":\"high\",\"notes\":\"Weather effect quantification claim.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9059d65f775e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ea5a523671a7\",\"text\":\"Briefed the monthly S&OP review from September 2023 to August 2024 on demand risks and proposed changes to replenishment parameters; the review minutes record each briefing.\",\"evidenceStrength\":\"high\",\"notes\":\"Briefing claim.\"},{\"sourceId\":\"src_766d30592c3a\",\"text\":\"Work sample: an extract of the S&OP review minutes for March 2024 that lists the candidate as presenter of the demand-risk item, with the slide used: the mower forecast range by region, the weather assumption and a proposed safety-stock change for two dealer clusters.\",\"evidenceStrength\":\"high\",\"notes\":\"Supporting evidence of briefing.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7cb433953d59\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c405cdc426a5\",\"text\":\"Kept all model code in the team's Git repository and opened merge requests that a second data scientist reviewed before each release to the scheduling job.\",\"evidenceStrength\":\"high\",\"notes\":\"Version control and peer review claim.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Developed a dealer-level replenishment model for 640 garden-equipment dealers.\",\"supportingRequirementIds\":[\"req_99c8ed26045a\"],\"sourceIds\":[\"src_23e7d6804de2\"],\"evidenceStrength\":\"high\",\"witness\":\"Developed the dealer-level replenishment model for 640 garden-equipment dealers at Corvane Outdoor, setting weekly order-up-to levels from sell-through, supplier lead times and dealer stock reports.\"},{\"claim\":\"Trained dealer-support staff to read the replenishment screen.\",\"supportingRequirementIds\":[\"req_9632273778d6\"],\"sourceIds\":[\"src_f33d2c446cce\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran two lunchtime sessions for the dealer-support desk on reading the replenishment screen.\"},{\"claim\":\"Quantified the effect of weather variables on spring sell-through.\",\"supportingRequirementIds\":[\"req_b185d6a4a153\"],\"sourceIds\":[\"src_55ae5826b066\"],\"evidenceStrength\":\"high\",\"witness\":\"Added regional temperature and rainfall series to the spring sell-through model and estimated their effect with a hierarchical regression fitted on the 2019 to 2023 seasons.\"},{\"claim\":\"Briefed the monthly S&OP review on demand risks and replenishment changes.\",\"supportingRequirementIds\":[\"req_9059d65f775e\"],\"sourceIds\":[\"src_ea5a523671a7\",\"src_766d30592c3a\"],\"evidenceStrength\":\"high\",\"witness\":\"Briefed the monthly S&OP review from September 2023 to August 2024 on demand risks and proposed changes to replenishment parameters; the review minutes record each briefing.\"},{\"claim\":\"Kept model code under version control with peer-reviewed merge requests.\",\"supportingRequirementIds\":[\"req_7cb433953d59\"],\"sourceIds\":[\"src_c405cdc426a5\"],\"evidenceStrength\":\"high\",\"witness\":\"Kept all model code in the team's Git repository and opened merge requests that a second data scientist reviewed before each release to the scheduling job.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the model was deployed to the plants' planning system as described.\",\"Confirm that the weather variables were indeed used in the S&OP briefing.\",\"Ensure that the peer review process followed the company's code review policy.\"],\"auditSummary\":\"All job requirements are supported by evidence from the candidate's resume and work sample. No gaps or unsupported claims were identified. Human review is required to confirm contextual details and assess overall fit.\",\"limitations\":[\"Evidence does not cover production deployment environment or end-to-end ownership beyond the peer-reviewed merge requests.\"]}}",
+ "content_sha256": "7148144319707b78e4f1dfc9d279aa05ed6cb422f581085d6e33d1da4fb7722c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_ce0cfdbaeffe2f4a",
+   "targetRoleTitle": "Supply Chain Data Scientist, Outdoor Power Equipment",
+   "professionalSummary": [
+    "Data Scientist with experience developing dealer-level replenishment models for seasonal outdoor power equipment."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Supply Chain Data Scientist, Outdoor Power Equipment",
+    "jobDescriptionSource": "jd_1304b0e084861d63",
+    "requirementIds": [
+     "req_99c8ed26045a",
+     "req_9632273778d6",
+     "req_b185d6a4a153",
+     "req_9059d65f775e",
+     "req_7cb433953d59"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_ce0cfdbaeffe2f4a",
+    "sources": [
+     "src_23e7d6804de2",
+     "src_55ae5826b066",
+     "src_ea5a523671a7",
+     "src_c405cdc426a5",
+     "src_f33d2c446cce",
+     "src_766d30592c3a",
+     "src_671a2f923468",
+     "src_c891b9fb880b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_99c8ed26045a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_23e7d6804de2",
+       "text": "Developed the dealer-level replenishment model for 640 garden-equipment dealers at Corvane Outdoor, setting weekly order-up-to levels from sell-through, supplier lead times and dealer stock reports.",
+       "evidenceStrength": "high",
+       "notes": "Direct model development claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9632273778d6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f33d2c446cce",
+       "text": "Ran two lunchtime sessions for the dealer-support desk on reading the replenishment screen.",
+       "evidenceStrength": "high",
+       "notes": "Training sessions claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b185d6a4a153",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_55ae5826b066",
+       "text": "Added regional temperature and rainfall series to the spring sell-through model and estimated their effect with a hierarchical regression fitted on the 2019 to 2023 seasons.",
+       "evidenceStrength": "high",
+       "notes": "Weather effect quantification claim."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9059d65f775e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ea5a523671a7",
+       "text": "Briefed the monthly S&OP review from September 2023 to August 2024 on demand risks and proposed changes to replenishment parameters; the review minutes record each briefing.",
+       "evidenceStrength": "high",
+       "notes": "Briefing claim."
+      },
+      {
+       "sourceId": "src_766d30592c3a",
+       "text": "Work sample: an extract of the S&OP review minutes for March 2024 that lists the candidate as presenter of the demand-risk item, with the slide used: the mower forecast range by region, the weather assumption and a proposed safety-stock change for two dealer clusters.",
+       "evidenceStrength": "high",
+       "notes": "Supporting evidence of briefing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7cb433953d59",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c405cdc426a5",
+       "text": "Kept all model code in the team's Git repository and opened merge requests that a second data scientist reviewed before each release to the scheduling job.",
+       "evidenceStrength": "high",
+       "notes": "Version control and peer review claim."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed a dealer-level replenishment model for 640 garden-equipment dealers.",
+     "supportingRequirementIds": [
+      "req_99c8ed26045a"
+     ],
+     "sourceIds": [
+      "src_23e7d6804de2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed the dealer-level replenishment model for 640 garden-equipment dealers at Corvane Outdoor, setting weekly order-up-to levels from sell-through, supplier lead times and dealer stock reports."
+    },
+    {
+     "claim": "Trained dealer-support staff to read the replenishment screen.",
+     "supportingRequirementIds": [
+      "req_9632273778d6"
+     ],
+     "sourceIds": [
+      "src_f33d2c446cce"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran two lunchtime sessions for the dealer-support desk on reading the replenishment screen."
+    },
+    {
+     "claim": "Quantified the effect of weather variables on spring sell-through.",
+     "supportingRequirementIds": [
+      "req_b185d6a4a153"
+     ],
+     "sourceIds": [
+      "src_55ae5826b066"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added regional temperature and rainfall series to the spring sell-through model and estimated their effect with a hierarchical regression fitted on the 2019 to 2023 seasons."
+    },
+    {
+     "claim": "Briefed the monthly S&OP review on demand risks and replenishment changes.",
+     "supportingRequirementIds": [
+      "req_9059d65f775e"
+     ],
+     "sourceIds": [
+      "src_ea5a523671a7",
+      "src_766d30592c3a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Briefed the monthly S&OP review from September 2023 to August 2024 on demand risks and proposed changes to replenishment parameters; the review minutes record each briefing."
+    },
+    {
+     "claim": "Kept model code under version control with peer-reviewed merge requests.",
+     "supportingRequirementIds": [
+      "req_7cb433953d59"
+     ],
+     "sourceIds": [
+      "src_c405cdc426a5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept all model code in the team's Git repository and opened merge requests that a second data scientist reviewed before each release to the scheduling job."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the model was deployed to the plants' planning system as described.",
+    "Confirm that the weather variables were indeed used in the S&OP briefing.",
+    "Ensure that the peer review process followed the company's code review policy."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate's resume and work sample. No gaps or unsupported claims were identified. Human review is required to confirm contextual details and assess overall fit.",
+   "limitations": [
+    "Evidence does not cover production deployment environment or end-to-end ownership beyond the peer-reviewed merge requests."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:36:04.336634+00:00"
+}

@@ -1,0 +1,339 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "7926015e-7a75-4c48-b30c-b4bd734057a7.C2",
+ "case_id": "7926015e-7a75-4c48-b30c-b4bd734057a7",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14735,
+  "promptWords": 1764
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 68.937
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4258,
+ "eval_count": 2932,
+ "prompt_eval_duration_ns": 19507000,
+ "eval_duration_ns": 54288063000,
+ "total_duration_ns": 68935328125,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. All claims must have source. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Accountable owner of product event-tracking pipeline at Brindle Analytics, managing dbt models, data quality, contracts, and warehouse spend.\" Need source. Use src_3935d2dbae49 and src_9ac1fd1506e6 etc. Provide evidenceBoundary.\n\nExperienceHighlights: list claims with sources.\n\nProjectsAndWorkSamples: include data contract sample.\n\nSkills: list dbt, data quality, contracts, budgeting.\n\nEvidenceBoundary: \"The provided resume and work sample establish the candidate’s ownership, dbt modeling, incident response, contract negotiation, and budget reporting for the product event-tracking pipeline at Brindle Analytics. They do not provide evidence of ownership or budget management at any other organization or of any additional responsibilities beyond those described.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_48211b57f7ac: evidence: src_064c9cfbe84e (owner and approval rights). Also src_3935d2dbae49 (owner). status supported. evidenceStrength high? maybe medium. notes.\n\nreq_3785ec63f417: evidence src_c74180b9203e. status supported.\n\nreq_3f8f5e442225: evidence src_3e54ee698434. status supported.\n\nreq_b8123038ba86: evidence src_7b39240963d0. status supported.\n\nreq_db134d4df096: evidence src_9ac1fd1506e6. status supported.\n\nsupportedClaims: maybe list each claim with requirementIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Verify that the candidate’s ownership and budget responsibilities were at production level and not limited to test or staging.\" But we have evidence of production? The resume says pipeline behind customer-facing dashboards, likely production. But we should still include a question: \"Confirm that the data-quality incident rota was for production environment.\" But we have source? src_3e54ee698434 says \"Ran the data-quality incident rota for the pipeline\". Not specify environment. Could be production. Might add a follow-up question.\n\nBut rule: if uncertain, add missingEvidenceGaps and followUpQuestions. Since environment not specified, we can add gap: \"Production environment confirmation for incident rota.\" severity medium. requirementId req_3f8f5e442225. Provide follow-up question.\n\nAlso for budget: source says reported monthly warehouse spend to head of data and proposed changes. That implies budget management. Good.\n\nAdd missingEvidenceGaps for req_3f8f5e442225.\n\nAlso maybe for req_48211b57f7ac: ownership of production pipeline. Source says pipeline behind dashboards, likely production. But still could be ambiguous. But we can assume production. Might not need gap.\n\nLet's add gap for incident rota environment.\n\nFollowUpQuestions: question about production environment.\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_58e1879147af5663\",\n    \"targetRoleTitle\": \"Senior Data Engineer, Product Analytics\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv_1\",\n        \"text\": \"Accountable owner of Brindle Analytics’ product event‑tracking pipeline, responsible for dbt modeling, data‑quality incident response, event‑contract negotiation, and cloud data‑warehouse budget reporting.\",\n        \"sourceIds\": [\"src_3935d2dbae49\", \"src_9ac1fd1506e6\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Data engineer at Brindle Analytics from March 2020 to April 2024, working on the product event‑tracking pipeline behind the customer‑facing dashboards, which ingests web, mobile and billing events.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"cv_2\",\n        \"text\": \"Built and maintained dbt models for event tables, implementing not‑null, uniqueness and accepted‑value tests on every pull request.\",\n        \"sourceIds\": [\"src_c74180b9203e\"],\n        \"requirementIds\": [\"req_3785ec63f417\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Built and maintained the dbt models for the event tables, with not‑null, uniqueness and accepted‑value tests running on every pull request.\"\n      },\n      {\n        \"claimId\": \"cv_3\",\n        \"text\": \"Ran the data‑quality incident rota, opening incidents for failed freshness checks and documenting causes, fixes and backfills.\",\n        \"sourceIds\": [\"src_3e54ee698434\"],\n        \"requirementIds\": [\"req_3f8f5e442225\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Ran the data‑quality incident rota for the pipeline, opening an incident whenever a freshness check failed and writing the follow‑up for each, with the cause, the fix and any backfill needed.\"\n      },\n      {\n        \"claimId\": \"cv_4\",\n        \"text\": \"Agreed data contracts with three producer teams (web app, mobile, billing), defining event names, required fields and a 30‑day change‑notice period, and reviewed contracts biannually.\",\n        \"sourceIds\": [\"src_7b39240963d0\"],\n        \"requirementIds\": [\"req_b8123038ba86\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Agreed data contracts with three producer teams (web app, mobile and billing) setting out event names, required fields and a change‑notice period, and reviewed each contract with its producer team every six months.\"\n      },\n      {\n        \"claimId\": \"cv_5\",\n        \"text\": \"Reported monthly warehouse spend to the head of data, proposed table‑partitioning changes, and implemented approved budget‑optimizing measures.\",\n        \"sourceIds\": [\"src_9ac1fd1506e6\"],\n        \"requirementIds\": [\"req_db134d4df096\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Reported the pipeline's monthly warehouse spend to the head of data and proposed table‑partitioning changes, which the head of data approved and the candidate then implemented.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"cv_6\",\n        \"text\": \"Data contract with the billing team, including event schema, field definitions, a 30‑day change‑notice clause and signatures of both team leads.\",\n        \"sourceIds\": [\"src_689e3101583a\"],\n        \"requirementIds\": [\"req_b8123038ba86\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the data contract agreed with the billing team, with the event schema, field definitions, a 30‑day change‑notice clause and the signatures of both team leads.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"cv_7\",\n        \"text\": \"dbt, data‑quality incident management, event‑contract negotiation, cloud data‑warehouse budgeting\",\n        \"sourceIds\": [\"src_c74180b9203e\", \"src_3e54ee698434\", \"src_7b39240963d0\", \"src_9ac1fd1506e6\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s ownership, dbt modeling, incident response, contract negotiation, and budget reporting for the product event‑tracking pipeline at Brindle Analytics. They do not provide evidence of ownership or budget management at any other organization or of any additional responsibilities beyond those described.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Senior Data Engineer, Product Analytics\",\n      \"jobDescriptionSource\": \"jd_25ccd3b43918224e\",\n      \"requirementIds\": [\n        \"req_48211b57f7ac\",\n        \"req_3785ec63f417\",\n        \"req_3f8f5e442225\",\n        \"req_b8123038ba86\",\n        \"req_db134d4df096\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_58e1879147af5663\",\n      \"sources\": [\n        \"src_3935d2dbae49\",\n        \"src_c74180b9203e\",\n        \"src_3e54ee698434\",\n        \"src_7b39240963d0\",\n        \"src_9ac1fd1506e6\",\n        \"src_689e3101583a\",\n        \"src_43d38d18d856\",\n        \"src_064c9cfbe84e\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_48211b57f7ac\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_064c9cfbe84e\",\n            \"text\": \"Reference check summary: the former vice president of data confirmed in writing that from 2022 the candidate was the named owner of the event‑tracking pipeline, with approval rights over every schema change to the event tables.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Explicit ownership and approval rights.\"\n          },\n          {\n            \"sourceId\": \"src_3935d2dbae49\",\n            \"text\": \"Data engineer at Brindle Analytics from March 2020 to April 2024, working on the product event‑tracking pipeline behind the customer‑facing dashboards, which ingests web, mobile and billing events.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Describes pipeline ownership context.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3785ec63f417\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_c74180b9203e\",\n            \"text\": \"Built and maintained the dbt models for the event tables, with not‑null, uniqueness and accepted‑value tests running on every pull request.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of dbt modeling and automated tests.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3f8f5e442225\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_3e54ee698434\",\n            \"text\": \"Ran the data‑quality incident rota for the pipeline, opening an incident whenever a freshness check failed and writing the follow‑up for each, with the cause, the fix and any backfill needed.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Shows incident response process.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Confirmation that the incident rota was for a production environment.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_b8123038ba86\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_7b39240963d0\",\n            \"text\": \"Agreed data contracts with three producer teams (web app, mobile and billing) setting out event names, required fields and a change‑notice period, and reviewed each contract with its producer team every six months.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of contract negotiation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_db134d4df096\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9ac1fd1506e6\",\n            \"text\": \"Reported the pipeline's monthly warehouse spend to the head of data and proposed table‑partitioning changes, which the head of data approved and the candidate then implemented.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Shows budget reporting and management.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Accountable owner of Brindle Analytics’ product event‑tracking pipeline.\",\n        \"supportingRequirementIds\": [\"req_48211b57f7ac\"],\n        \"sourceIds\": [\"src_064c9cfbe84e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Reference check summary: the former vice president of data confirmed in writing that from 2022 the candidate was the named owner of the event‑tracking pipeline, with approval rights over every schema change to the event tables.\"\n      },\n      {\n        \"claim\": \"Built and maintained dbt models with automated tests.\",\n        \"supportingRequirementIds\": [\"req_3785ec63f417\"],\n        \"sourceIds\": [\"src_c74180b9203e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built and maintained the dbt models for the event tables, with not‑null, uniqueness and accepted‑value tests running on every pull request.\"\n      },\n      {\n        \"claim\": \"Ran data‑quality incident response for the pipeline.\",\n        \"supportingRequirementIds\": [\"req_3f8f5e442225\"],\n        \"sourceIds\": [\"src_3e54ee698434\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Ran the data‑quality incident rota for the pipeline, opening an incident whenever a freshness check failed and writing the follow‑up for each, with the cause, the fix and any backfill needed.\"\n      },\n      {\n        \"claim\": \"Agreed data contracts with event‑producing teams.\",\n        \"supportingRequirementIds\": [\"req_b8123038ba86\"],\n        \"sourceIds\": [\"src_7b39240963d0\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Agreed data contracts with three producer teams (web app, mobile and billing) setting out event names, required fields and a change‑notice period, and reviewed each contract with its producer team every six months.\"\n      },\n      {\n        \"claim\": \"Held and managed a cloud data‑warehouse budget.\",\n        \"supportingRequirementIds\": [\"req_db134d4df096\"],\n        \"sourceIds\": [\"src_9ac1fd1506e6\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Reported the pipeline's monthly warehouse spend to the head of data and proposed table‑partitioning changes, which the head of data approved and the candidate then implemented.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_3f8f5e442225\",\n        \"severity\": \"medium\",\n        \"gap\": \"Confirmation that the data‑quality incident rota was performed in a production environment.\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_3f8f5e442225\",\n        \"question\": \"Can you confirm that the data‑quality incident rota you ran was for the production pipeline and not a test or staging environment?\",\n        \"evidenceTarget\": \"Production environment confirmation for incident response.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s ownership and budget responsibilities were at production level.\",\n      \"Confirm that the incident response was performed in production.\"\n    ],\n    \"auditSummary\": \"All claims are supported by the provided resume and work sample. The only evidence gap concerns the production environment of the incident rota, which requires clarification during interview.\",\n    \"limitations\": [\n      \"Evidence is limited to the candidate’s tenure at Brindle Analytics; no information is available about prior or concurrent roles.\",\n      \"The provided sources do not detail the scale of the budget managed or the exact scope of ownership beyond the event‑tracking pipeline.\"\n    ]\n  }\n}",
+ "content_sha256": "09ba1e5f8c0179dba1cb83d898c16641b9b210fc5bd2d077a15804c2d91f005a",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_58e1879147af5663",
+   "targetRoleTitle": "Senior Data Engineer, Product Analytics",
+   "professionalSummary": [
+    {
+     "claimId": "cv_1",
+     "text": "Accountable owner of Brindle Analytics’ product event‑tracking pipeline, responsible for dbt modeling, data‑quality incident response, event‑contract negotiation, and cloud data‑warehouse budget reporting.",
+     "sourceIds": [
+      "src_3935d2dbae49",
+      "src_9ac1fd1506e6"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Data engineer at Brindle Analytics from March 2020 to April 2024, working on the product event‑tracking pipeline behind the customer‑facing dashboards, which ingests web, mobile and billing events."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cv_2",
+     "text": "Built and maintained dbt models for event tables, implementing not‑null, uniqueness and accepted‑value tests on every pull request.",
+     "sourceIds": [
+      "src_c74180b9203e"
+     ],
+     "requirementIds": [
+      "req_3785ec63f417"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built and maintained the dbt models for the event tables, with not‑null, uniqueness and accepted‑value tests running on every pull request."
+    },
+    {
+     "claimId": "cv_3",
+     "text": "Ran the data‑quality incident rota, opening incidents for failed freshness checks and documenting causes, fixes and backfills.",
+     "sourceIds": [
+      "src_3e54ee698434"
+     ],
+     "requirementIds": [
+      "req_3f8f5e442225"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the data‑quality incident rota for the pipeline, opening an incident whenever a freshness check failed and writing the follow‑up for each, with the cause, the fix and any backfill needed."
+    },
+    {
+     "claimId": "cv_4",
+     "text": "Agreed data contracts with three producer teams (web app, mobile, billing), defining event names, required fields and a 30‑day change‑notice period, and reviewed contracts biannually.",
+     "sourceIds": [
+      "src_7b39240963d0"
+     ],
+     "requirementIds": [
+      "req_b8123038ba86"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Agreed data contracts with three producer teams (web app, mobile and billing) setting out event names, required fields and a change‑notice period, and reviewed each contract with its producer team every six months."
+    },
+    {
+     "claimId": "cv_5",
+     "text": "Reported monthly warehouse spend to the head of data, proposed table‑partitioning changes, and implemented approved budget‑optimizing measures.",
+     "sourceIds": [
+      "src_9ac1fd1506e6"
+     ],
+     "requirementIds": [
+      "req_db134d4df096"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reported the pipeline's monthly warehouse spend to the head of data and proposed table‑partitioning changes, which the head of data approved and the candidate then implemented."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv_6",
+     "text": "Data contract with the billing team, including event schema, field definitions, a 30‑day change‑notice clause and signatures of both team leads.",
+     "sourceIds": [
+      "src_689e3101583a"
+     ],
+     "requirementIds": [
+      "req_b8123038ba86"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the data contract agreed with the billing team, with the event schema, field definitions, a 30‑day change‑notice clause and the signatures of both team leads."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv_7",
+     "text": "dbt, data‑quality incident management, event‑contract negotiation, cloud data‑warehouse budgeting",
+     "sourceIds": [
+      "src_c74180b9203e",
+      "src_3e54ee698434",
+      "src_7b39240963d0",
+      "src_9ac1fd1506e6"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s ownership, dbt modeling, incident response, contract negotiation, and budget reporting for the product event‑tracking pipeline at Brindle Analytics. They do not provide evidence of ownership or budget management at any other organization or of any additional responsibilities beyond those described."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Senior Data Engineer, Product Analytics",
+    "jobDescriptionSource": "jd_25ccd3b43918224e",
+    "requirementIds": [
+     "req_48211b57f7ac",
+     "req_3785ec63f417",
+     "req_3f8f5e442225",
+     "req_b8123038ba86",
+     "req_db134d4df096"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_58e1879147af5663",
+    "sources": [
+     "src_3935d2dbae49",
+     "src_c74180b9203e",
+     "src_3e54ee698434",
+     "src_7b39240963d0",
+     "src_9ac1fd1506e6",
+     "src_689e3101583a",
+     "src_43d38d18d856",
+     "src_064c9cfbe84e"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_48211b57f7ac",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_064c9cfbe84e",
+       "text": "Reference check summary: the former vice president of data confirmed in writing that from 2022 the candidate was the named owner of the event‑tracking pipeline, with approval rights over every schema change to the event tables.",
+       "evidenceStrength": "high",
+       "notes": "Explicit ownership and approval rights."
+      },
+      {
+       "sourceId": "src_3935d2dbae49",
+       "text": "Data engineer at Brindle Analytics from March 2020 to April 2024, working on the product event‑tracking pipeline behind the customer‑facing dashboards, which ingests web, mobile and billing events.",
+       "evidenceStrength": "medium",
+       "notes": "Describes pipeline ownership context."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3785ec63f417",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c74180b9203e",
+       "text": "Built and maintained the dbt models for the event tables, with not‑null, uniqueness and accepted‑value tests running on every pull request.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of dbt modeling and automated tests."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3f8f5e442225",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3e54ee698434",
+       "text": "Ran the data‑quality incident rota for the pipeline, opening an incident whenever a freshness check failed and writing the follow‑up for each, with the cause, the fix and any backfill needed.",
+       "evidenceStrength": "high",
+       "notes": "Shows incident response process."
+      }
+     ],
+     "missingEvidence": [
+      "Confirmation that the incident rota was for a production environment."
+     ]
+    },
+    {
+     "requirementId": "req_b8123038ba86",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7b39240963d0",
+       "text": "Agreed data contracts with three producer teams (web app, mobile and billing) setting out event names, required fields and a change‑notice period, and reviewed each contract with its producer team every six months.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of contract negotiation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_db134d4df096",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9ac1fd1506e6",
+       "text": "Reported the pipeline's monthly warehouse spend to the head of data and proposed table‑partitioning changes, which the head of data approved and the candidate then implemented.",
+       "evidenceStrength": "high",
+       "notes": "Shows budget reporting and management."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Accountable owner of Brindle Analytics’ product event‑tracking pipeline.",
+     "supportingRequirementIds": [
+      "req_48211b57f7ac"
+     ],
+     "sourceIds": [
+      "src_064c9cfbe84e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reference check summary: the former vice president of data confirmed in writing that from 2022 the candidate was the named owner of the event‑tracking pipeline, with approval rights over every schema change to the event tables."
+    },
+    {
+     "claim": "Built and maintained dbt models with automated tests.",
+     "supportingRequirementIds": [
+      "req_3785ec63f417"
+     ],
+     "sourceIds": [
+      "src_c74180b9203e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built and maintained the dbt models for the event tables, with not‑null, uniqueness and accepted‑value tests running on every pull request."
+    },
+    {
+     "claim": "Ran data‑quality incident response for the pipeline.",
+     "supportingRequirementIds": [
+      "req_3f8f5e442225"
+     ],
+     "sourceIds": [
+      "src_3e54ee698434"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the data‑quality incident rota for the pipeline, opening an incident whenever a freshness check failed and writing the follow‑up for each, with the cause, the fix and any backfill needed."
+    },
+    {
+     "claim": "Agreed data contracts with event‑producing teams.",
+     "supportingRequirementIds": [
+      "req_b8123038ba86"
+     ],
+     "sourceIds": [
+      "src_7b39240963d0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed data contracts with three producer teams (web app, mobile and billing) setting out event names, required fields and a change‑notice period, and reviewed each contract with its producer team every six months."
+    },
+    {
+     "claim": "Held and managed a cloud data‑warehouse budget.",
+     "supportingRequirementIds": [
+      "req_db134d4df096"
+     ],
+     "sourceIds": [
+      "src_9ac1fd1506e6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reported the pipeline's monthly warehouse spend to the head of data and proposed table‑partitioning changes, which the head of data approved and the candidate then implemented."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_3f8f5e442225",
+     "severity": "medium",
+     "gap": "Confirmation that the data‑quality incident rota was performed in a production environment."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_3f8f5e442225",
+     "question": "Can you confirm that the data‑quality incident rota you ran was for the production pipeline and not a test or staging environment?",
+     "evidenceTarget": "Production environment confirmation for incident response."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s ownership and budget responsibilities were at production level.",
+    "Confirm that the incident response was performed in production."
+   ],
+   "auditSummary": "All claims are supported by the provided resume and work sample. The only evidence gap concerns the production environment of the incident rota, which requires clarification during interview.",
+   "limitations": [
+    "Evidence is limited to the candidate’s tenure at Brindle Analytics; no information is available about prior or concurrent roles.",
+    "The provided sources do not detail the scale of the budget managed or the exact scope of ownership beyond the event‑tracking pipeline."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:56:51.962037+00:00"
+}

@@ -1,0 +1,243 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "17f13107-e0c4-4ca2-8066-a445dd4f977d.C2",
+ "case_id": "17f13107-e0c4-4ca2-8066-a445dd4f977d",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14867,
+  "promptWords": 1774
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.275
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4102,
+ "eval_count": 1660,
+ "prompt_eval_duration_ns": 19659000,
+ "eval_duration_ns": 30219494000,
+ "total_duration_ns": 42272382292,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. All claims must have source. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Project Manager with experience delivering digital change projects across multiple engineering squads.\" Need source. Use src_73374ed04d61. evidenceBoundary: what materials establish: delivery planning, change board, workshops, reporting, identity verification. Not establish regulatory change or anti-money-laundering controls? Actually identity verification step relates to AML? but not explicit. So evidenceBoundary: materials establish delivery planning, change board, workshops, reporting, identity verification; do not establish anti-money-laundering onboarding controls design.\n\nExperienceHighlights: list claims with sources.\n\nProjectsAndWorkSamples: mention pilot workshop log sample.\n\nSkills: planning, change management, stakeholder reporting, workshop facilitation, identity verification.\n\nNow HiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nreq_903a5272e262: Plans and tracks delivery across two engineering squads with product owner. Evidence: src_73374ed04d61. status supported. missingEvidence none.\n\nreq_13ded740c07f: Takes changes through change-approval board with complete impact and back-out plans. Evidence: src_bf25b6c48c23. status supported.\n\nreq_fe3acccfaae6: Designs anti-money-laundering onboarding controls into customer journeys. Evidence: none. status insufficient_evidence. missingEvidence: \"Design of AML onboarding controls.\" gap.\n\nreq_51e019a5db64: Runs pilot workshops with end customers and front-line staff. Evidence: src_39e02908d436. status supported.\n\nreq_e14235806acd: Reports delivery progress, risks and spend to a senior sponsor every month. Evidence: src_9b5d2f80b70d. status supported.\n\nsupportedClaims: list claims that map to requirements. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness verbatim.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: one for AML.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: for AML requirement: question about designing AML controls. Provide questionId.\n\nhumanReviewChecklist: maybe \"Review evidence for AML control design, confirm regulatory alignment, verify change board process details.\"\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"Limited to provided sources; no external verification.\"\n\nEnsure no protected characteristic mention.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_970127aed54e8a4f\",\"targetRoleTitle\":\"Project Manager, Merchant Onboarding Change\",\"professionalSummary\":[\"Project Manager with proven experience delivering digital change projects across multiple engineering squads, managing change approvals, running pilot workshops, and reporting progress to senior sponsors.\"],\"experienceHighlights\":[\"Planned and tracked delivery for the account-opening rebuild at Tamberline Credit Union, running fortnightly planning with the product owner and two engineering squads against a single release plan.\",\"Took 23 releases through the change-approval board, each submitted with an impact assessment, test evidence and a back-out plan; the board deferred two of them, which were re-submitted the following week.\",\"Ran six pilot workshops with members and branch staff to test the new online application before launch, recording every change request raised in the sessions.\",\"Sent a monthly progress report to the chief operating officer covering milestones, the risk log and spend against the approved budget.\",\"Worked with the financial-crime team on the identity-verification step of the application, documenting which checks the vendor's service runs.\"],\"projectsAndWorkSamples\":[\"Pilot workshop log: six sessions with dates and attendee groups, 31 change requests raised and the product owner's decision on each one.\"],\"skills\":[\"Delivery planning\",\"Change management\",\"Stakeholder reporting\",\"Workshop facilitation\",\"Identity verification\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience in planning and tracking delivery across engineering squads, managing change approvals with impact and back-out plans, running pilot workshops with end customers and front-line staff, reporting progress, risks and spend to senior sponsors, and documenting identity verification steps. They do not establish design of anti-money-laundering onboarding controls or regulatory change alignment.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit.\"},\"role\":{\"roleTitle\":\"Project Manager, Merchant Onboarding Change\",\"jobDescriptionSource\":\"jd_f2763626f07ddfec\",\"requirementIds\":[\"req_903a5272e262\",\"req_13ded740c07f\",\"req_fe3acccfaae6\",\"req_51e019a5db64\",\"req_e14235806acd\"]},\"candidate\":{\"candidateId\":\"cand_970127aed54e8a4f\",\"sources\":[\"src_73374ed04d61\",\"src_bf25b6c48c23\",\"src_39e02908d436\",\"src_9b5d2f80b70d\",\"src_1c15f4f3890b\",\"src_6261ab9cf2a3\",\"src_bb8bb2496120\",\"src_596f80d7f826\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_903a5272e262\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_73374ed04d61\",\"text\":\"Planned and tracked delivery for the account-opening rebuild at Tamberline Credit Union, running fortnightly planning with the product owner and two engineering squads against a single release plan.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of planning and tracking across two squads with product owner.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_13ded740c07f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_bf25b6c48c23\",\"text\":\"Took 23 releases through the change-approval board, each submitted with an impact assessment, test evidence and a back-out plan; the board deferred two of them, which were re-submitted the following week.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows complete impact and back-out plans for change approvals.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fe3acccfaae6\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Design of anti-money-laundering onboarding controls into customer journeys.\"]},{\"requirementId\":\"req_51e019a5db64\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_39e02908d436\",\"text\":\"Ran six pilot workshops with members and branch staff to test the new online application before launch, recording every change request raised in the sessions.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of running pilot workshops with end customers and front-line staff.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e14235806acd\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9b5d2f80b70d\",\"text\":\"Sent a monthly progress report to the chief operating officer covering milestones, the risk log and spend against the approved budget.\",\"evidenceStrength\":\"high\",\"notes\":\"Monthly reporting to senior sponsor.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Planned and tracked delivery across two engineering squads with the product owner.\",\"supportingRequirementIds\":[\"req_903a5272e262\"],\"sourceIds\":[\"src_73374ed04d61\"],\"evidenceStrength\":\"high\",\"witness\":\"Planned and tracked delivery for the account-opening rebuild at Tamberline Credit Union, running fortnightly planning with the product owner and two engineering squads against a single release plan.\"},{\"claim\":\"Took changes through the change-approval board with complete impact and back-out plans.\",\"supportingRequirementIds\":[\"req_13ded740c07f\"],\"sourceIds\":[\"src_bf25b6c48c23\"],\"evidenceStrength\":\"high\",\"witness\":\"Took 23 releases through the change-approval board, each submitted with an impact assessment, test evidence and a back-out plan; the board deferred two of them, which were re-submitted the following week.\"},{\"claim\":\"Ran pilot workshops with end customers and front-line staff.\",\"supportingRequirementIds\":[\"req_51e019a5db64\"],\"sourceIds\":[\"src_39e02908d436\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran six pilot workshops with members and branch staff to test the new online application before launch, recording every change request raised in the sessions.\"},{\"claim\":\"Reported delivery progress, risks and spend to a senior sponsor every month.\",\"supportingRequirementIds\":[\"req_e14235806acd\"],\"sourceIds\":[\"src_9b5d2f80b70d\"],\"evidenceStrength\":\"high\",\"witness\":\"Sent a monthly progress report to the chief operating officer covering milestones, the risk log and spend against the approved budget.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_aml_design\",\"requirementId\":\"req_fe3acccfaae6\",\"severity\":\"medium\",\"gap\":\"Evidence of designing anti-money-laundering onboarding controls into customer journeys is missing.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_aml_design\",\"requirementId\":\"req_fe3acccfaae6\",\"question\":\"Can you describe any experience you have designing anti-money-laundering onboarding controls into customer journeys, including specific controls and how they were integrated?\",\"evidenceTarget\":\"Evidence of AML onboarding control design.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s change-approval board process aligns with the firm’s regulatory change requirements.\",\"Confirm the candidate’s experience with anti-money-laundering onboarding controls or clarify the gap.\",\"Assess the candidate’s ability to manage multiple engineering squads and stakeholder reporting based on the provided evidence.\"],\"auditSummary\":\"The candidate has documented experience in planning and tracking delivery across engineering squads, managing change approvals with impact and back-out plans, running pilot workshops, and reporting progress to senior sponsors. Evidence for designing anti-money-laundering onboarding controls is not provided, representing a gap that requires further inquiry. All other requirements are fully supported by the supplied sources.\",\"limitations\":[\"Evidence is limited to the provided sources; no external verification of claims is available.\"]}}",
+ "content_sha256": "93f78d624d085038098c1865c1d1875e30a0b3e96e06e09a0132f25ccded5bf0",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_970127aed54e8a4f",
+   "targetRoleTitle": "Project Manager, Merchant Onboarding Change",
+   "professionalSummary": [
+    "Project Manager with proven experience delivering digital change projects across multiple engineering squads, managing change approvals, running pilot workshops, and reporting progress to senior sponsors."
+   ],
+   "experienceHighlights": [
+    "Planned and tracked delivery for the account-opening rebuild at Tamberline Credit Union, running fortnightly planning with the product owner and two engineering squads against a single release plan.",
+    "Took 23 releases through the change-approval board, each submitted with an impact assessment, test evidence and a back-out plan; the board deferred two of them, which were re-submitted the following week.",
+    "Ran six pilot workshops with members and branch staff to test the new online application before launch, recording every change request raised in the sessions.",
+    "Sent a monthly progress report to the chief operating officer covering milestones, the risk log and spend against the approved budget.",
+    "Worked with the financial-crime team on the identity-verification step of the application, documenting which checks the vendor's service runs."
+   ],
+   "projectsAndWorkSamples": [
+    "Pilot workshop log: six sessions with dates and attendee groups, 31 change requests raised and the product owner's decision on each one."
+   ],
+   "skills": [
+    "Delivery planning",
+    "Change management",
+    "Stakeholder reporting",
+    "Workshop facilitation",
+    "Identity verification"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in planning and tracking delivery across engineering squads, managing change approvals with impact and back-out plans, running pilot workshops with end customers and front-line staff, reporting progress, risks and spend to senior sponsors, and documenting identity verification steps. They do not establish design of anti-money-laundering onboarding controls or regulatory change alignment."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Merchant Onboarding Change",
+    "jobDescriptionSource": "jd_f2763626f07ddfec",
+    "requirementIds": [
+     "req_903a5272e262",
+     "req_13ded740c07f",
+     "req_fe3acccfaae6",
+     "req_51e019a5db64",
+     "req_e14235806acd"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_970127aed54e8a4f",
+    "sources": [
+     "src_73374ed04d61",
+     "src_bf25b6c48c23",
+     "src_39e02908d436",
+     "src_9b5d2f80b70d",
+     "src_1c15f4f3890b",
+     "src_6261ab9cf2a3",
+     "src_bb8bb2496120",
+     "src_596f80d7f826"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_903a5272e262",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_73374ed04d61",
+       "text": "Planned and tracked delivery for the account-opening rebuild at Tamberline Credit Union, running fortnightly planning with the product owner and two engineering squads against a single release plan.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of planning and tracking across two squads with product owner."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_13ded740c07f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bf25b6c48c23",
+       "text": "Took 23 releases through the change-approval board, each submitted with an impact assessment, test evidence and a back-out plan; the board deferred two of them, which were re-submitted the following week.",
+       "evidenceStrength": "high",
+       "notes": "Shows complete impact and back-out plans for change approvals."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fe3acccfaae6",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Design of anti-money-laundering onboarding controls into customer journeys."
+     ]
+    },
+    {
+     "requirementId": "req_51e019a5db64",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_39e02908d436",
+       "text": "Ran six pilot workshops with members and branch staff to test the new online application before launch, recording every change request raised in the sessions.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of running pilot workshops with end customers and front-line staff."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e14235806acd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9b5d2f80b70d",
+       "text": "Sent a monthly progress report to the chief operating officer covering milestones, the risk log and spend against the approved budget.",
+       "evidenceStrength": "high",
+       "notes": "Monthly reporting to senior sponsor."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Planned and tracked delivery across two engineering squads with the product owner.",
+     "supportingRequirementIds": [
+      "req_903a5272e262"
+     ],
+     "sourceIds": [
+      "src_73374ed04d61"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Planned and tracked delivery for the account-opening rebuild at Tamberline Credit Union, running fortnightly planning with the product owner and two engineering squads against a single release plan."
+    },
+    {
+     "claim": "Took changes through the change-approval board with complete impact and back-out plans.",
+     "supportingRequirementIds": [
+      "req_13ded740c07f"
+     ],
+     "sourceIds": [
+      "src_bf25b6c48c23"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took 23 releases through the change-approval board, each submitted with an impact assessment, test evidence and a back-out plan; the board deferred two of them, which were re-submitted the following week."
+    },
+    {
+     "claim": "Ran pilot workshops with end customers and front-line staff.",
+     "supportingRequirementIds": [
+      "req_51e019a5db64"
+     ],
+     "sourceIds": [
+      "src_39e02908d436"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran six pilot workshops with members and branch staff to test the new online application before launch, recording every change request raised in the sessions."
+    },
+    {
+     "claim": "Reported delivery progress, risks and spend to a senior sponsor every month.",
+     "supportingRequirementIds": [
+      "req_e14235806acd"
+     ],
+     "sourceIds": [
+      "src_9b5d2f80b70d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Sent a monthly progress report to the chief operating officer covering milestones, the risk log and spend against the approved budget."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_aml_design",
+     "requirementId": "req_fe3acccfaae6",
+     "severity": "medium",
+     "gap": "Evidence of designing anti-money-laundering onboarding controls into customer journeys is missing."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_aml_design",
+     "requirementId": "req_fe3acccfaae6",
+     "question": "Can you describe any experience you have designing anti-money-laundering onboarding controls into customer journeys, including specific controls and how they were integrated?",
+     "evidenceTarget": "Evidence of AML onboarding control design."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s change-approval board process aligns with the firm’s regulatory change requirements.",
+    "Confirm the candidate’s experience with anti-money-laundering onboarding controls or clarify the gap.",
+    "Assess the candidate’s ability to manage multiple engineering squads and stakeholder reporting based on the provided evidence."
+   ],
+   "auditSummary": "The candidate has documented experience in planning and tracking delivery across engineering squads, managing change approvals with impact and back-out plans, running pilot workshops, and reporting progress to senior sponsors. Evidence for designing anti-money-laundering onboarding controls is not provided, representing a gap that requires further inquiry. All other requirements are fully supported by the supplied sources.",
+   "limitations": [
+    "Evidence is limited to the provided sources; no external verification of claims is available."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:24:36.991972+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "caseId": "f93c3571-7fca-448f-94ba-f0ade84388f6",
+  "roleTitle": "Web Frontend Engineer, Warehouse Scheduling",
+  "jobDescription": "The warehouse scheduling product gives distribution-centre planners a web application for dock slots and labour shifts. The Web Frontend Engineer develops and maintains the dock-schedule board and the shift planner, owns the frontend test suites, works with the backend team on API changes, and is expected to reduce the schedule board's error rate reported by planners, measured against the product's published monthly baseline.",
+  "requirements": [
+    "Builds and looks after the dock-schedule board and the shift planner in the planners' web app.",
+    "Keeps the app's component and browser test suites green and extends them with each change.",
+    "Reduces the schedule board's client-side error rate, measured against the published monthly baseline.",
+    "Works API changes through with the backend team and keeps a record of who approved what.",
+    "Writes up limitations and on-call hand-over for every app release."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Built and looked after the dock-schedule board and shift planner in the warehouse scheduling app (Vue): the drag-and-drop slot editor, the overlap highlighting for shifts and the printable day view planners asked for."},
+    {"type": "resume", "text": "Looked after the Vitest component tests and the Playwright browser tests; a board-render smoke test I added now has to pass before a release can go out."},
+    {"type": "resume", "text": "The schedule board's client-side error rate fell from 4.1 errors per thousand sessions to 0.9 after the state-management rewrite, measured by the application's error monitoring over the following two months against the published baseline of 4.1."},
+    {"type": "resume", "text": "Took API changes through the backend team's review, where the backend lead had the final say on endpoints; my side was adapting the board and planner to whatever was approved."},
+    {"type": "resume", "text": "Kept the app's release write-ups, which recorded among other things that the slot editor could not yet handle multi-day slots, and the hand-over sheet the frontend on-call engineer reads."},
+    {"type": "work_sample", "text": "Work sample: a twelve-week export from the error monitoring tool (weekly errors per thousand sessions, with the baseline and the rewrite release marked) plus the Playwright smoke test; pipeline run numbers are included so the entries can be traced."},
+    {"type": "note", "text": "Reference call with the candidate's former engineering manager: the error-rate numbers are from the app's error monitoring tool, the state-management rewrite was the candidate's own work, and the employment dates match the CV."},
+    {"type": "note", "text": "Recruiter logistics note: one month's notice; happy to do a pairing session on site."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate built and looked after the dock-schedule board and the shift planner, including the drag-and-drop slot editor and the overlap highlighting for shifts.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the board and planner directly."},
+      {"text": "The candidate looked after the Vitest and Playwright test suites and added a board-render smoke test that gates releases.", "status": "supported", "sources": [2, 6], "requirements": [2], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume and the smoke test document the test ownership."},
+      {"text": "The schedule board's client-side error rate fell from 4.1 to 0.9 errors per thousand sessions after the state-management rewrite, measured over two months against the published baseline of 4.1.", "status": "supported", "sources": [3, 6, 7], "requirements": [3], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The resume states the rates, period, baseline and monitoring source; the work sample and reference confirm them."}
+    ],
+    "requirementStatus": ["supported", "supported", "supported", "supported", "partial_evidence"],
+    "subjective": [],
+    "nonProduction": [],
+    "expectedGap": "Hand-over conditions for each application release are only partly documented in the release notes.",
+    "expectedBoundaryNote": "Keep the error-rate result as stated for the schedule board and the two-month window; do not extend it to the shift planner.",
+    "followUpTargets": ["Ask how hand-over conditions were recorded for each application release."],
+    "validClaimSignatures": ["4.1 errors per thousand", "state-management rewrite"]
+  }
+}

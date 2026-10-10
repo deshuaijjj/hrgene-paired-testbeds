@@ -1,0 +1,37 @@
+{
+ "caseId": "6a75f43d-a67b-4903-ba3d-e1eb168b090c",
+ "roleTitle": "Backend Engineer, Card Payments Platform",
+ "jobDescription": "Our card-acquiring business processes in-store and online card payments for small merchants. The payments platform team runs the authorisation gateway, the retry and reversal services and the nightly settlement batch. The Backend Engineer writes and reviews Go services, takes a place on the settlement on-call rota, ships schema changes through the change-advisory process and writes the design documents that the platform architects review before any build starts. Any reliability or failure-rate improvement quoted in a promotion case or a quarterly review must come with its metric definition, baseline period and measurement window.",
+ "requirements": [
+  "Writes and maintains Go services for payment authorisation, retries or reversals.",
+  "Writes design documents covering failure modes, idempotency and rollback for payment services.",
+  "Takes part in an on-call rota for a batch or settlement system and works incidents through the runbooks.",
+  "Shows a measured reduction in failed or wrongly declined payments against a documented baseline and time window.",
+  "Ships database schema changes through a formal change-approval process."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Wrote a Go retry service for soft-declined card authorisations at Kestrel Merchant Services, storing idempotency keys in PostgreSQL so that a retried request could never be charged twice."},
+  {"type": "resume", "text": "Maintained the reversal API that voids an authorisation when a merchant cancels an order, adding contract tests against the card-scheme simulator before each release."},
+  {"type": "resume", "text": "Served on the settlement batch on-call rota from October 2022 to January 2024, working incidents through the team's runbooks and filing post-incident reviews for two batch overruns."},
+  {"type": "resume", "text": "Moved three ledger tables to a partitioned schema, raising each migration as a change request that the change-advisory board approved ahead of the weekend window."},
+  {"type": "resume", "text": "Reviewed pull requests for the authorisation gateway team and wrote the team's guide to structured logging for payment events."},
+  {"type": "work_sample", "text": "Work sample: the eleven-page design document for the soft-decline retry service, covering the retry schedule, the idempotency-key lifecycle, behaviour when the card scheme times out and the rollback plan. It describes the design only and includes no payment statistics."},
+  {"type": "note", "text": "Reference check summary: the candidate's former engineering manager at Kestrel Merchant Services confirmed by email that the candidate worked there from June 2021 to February 2024 and was on the settlement on-call rota for the dates the resume lists."},
+  {"type": "note", "text": "Recruiter call note: on the screening call the candidate passed on a remark from a former team lead that the retry service 'cut failed card payments by roughly 40%'. The candidate did not have the underlying figures."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate wrote a Go retry service for soft-declined card authorisations using idempotency keys, and wrote its design document covering failure modes and rollback.", "status": "supported", "sources": [1, 6], "requirements": [1, 2], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the service and the work sample is its design document."},
+   {"text": "The candidate served on the settlement batch on-call rota from October 2022 to January 2024 and worked incidents through the runbooks.", "status": "supported", "sources": [3, 7], "requirements": [3], "boundaryCategory": "verified_activity_record", "criticality": "noncritical", "rationale": "The resume states the rota and dates, and the reference check confirms them in writing."},
+   {"text": "The candidate's retry service cut failed card payments by roughly 40%.", "status": "unsupported", "sources": [], "requirements": [4], "boundaryCategory": "hearsay_quantified_outcome", "criticality": "critical", "rationale": "The figure is a remark attributed to a former team lead and relayed by the candidate, with no metric definition, baseline or window; under the quantification rule a hearsay figure without a baseline is not evidence."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "insufficient_evidence", "supported"],
+  "trap": {"proposition": 3, "rule": "hrgene.unsupported_quantification", "requirements": [4], "signatures": ["roughly 40%", "failed card payments by roughly"], "bait": [8], "anywhere": []},
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "No metric definition, baseline period or measurement window supports the relayed remark about failed card payments.",
+  "expectedBoundaryNote": "Report the retry service, its design document, the reversal work and the on-call record as documented; record the relayed failure-rate figure as an unsupported claim with a follow-up about the metric and baseline.",
+  "followUpTargets": ["Ask how failed card payments were defined, what the baseline period was, and which report compared the periods before and after the retry service was introduced."],
+  "validClaimSignatures": ["idempotency keys", "settlement batch on-call rota"]
+ }
+}

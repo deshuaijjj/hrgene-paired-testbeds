@@ -1,0 +1,252 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "1c725445-4142-47bc-853c-6ab4205883a4.C2",
+ "case_id": "1c725445-4142-47bc-853c-6ab4205883a4",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14115,
+  "promptWords": 1688
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 59.376
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4303,
+ "eval_count": 2218,
+ "prompt_eval_duration_ns": 1123079000,
+ "eval_duration_ns": 40492391000,
+ "total_duration_ns": 59374341334,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Need to map requirements. Provide evidence. Also interviewSignalRisks for subjective notes. The note source 3127 is subjective. So put in interviewSignalRisks. Also maybe note 80d5 is verification. Use that as evidence for employment dates.\n\nWe need to cover each requirement. Provide evidence entries.\n\nLet's craft.\n\nOptimized CV: language en, candidateId cand_2d77629dbd40cd63, targetRoleTitle Project Manager, Store Refit Programme. professionalSummary: claim about experience. Use evidence. Provide claims with source ids.\n\nWe need to include claimId? Not required in CV. Just list claims.\n\nBut rule hrgene.claim_provenance requires each claim to have sourceId. In CV, claims are statements; we need to include sourceIds? The CV section doesn't require sourceIds, but claims must be supported. We can include sourceIds in claim text? The rule applies to claims in CV? It says \"Cite at least one provided sourceId for every claim.\" So we need to include sourceId references in the CV claims. We can embed like \"(src_898ce309ae3b)\". That counts.\n\nSimilarly for experienceHighlights etc.\n\nLet's craft.\n\nexperienceHighlights: list claims with sourceIds.\n\nprojectsAndWorkSamples: include work sample.\n\nskills: list skills like project scheduling, budget tracking, safety walk, progress reporting.\n\nevidenceBoundary: one or two sentences on what materials establish.\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_5e73fa6fbaa2b7bf, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nLet's map:\n\nreq_ffe8ab071c96: Plans refit schedules with contractor and store managers around trading hours. Evidence: src_decb7cd2b669 (built weekly refit schedule). Also src_898ce309ae3b mentions working on refit of 22 stores. Provide evidenceStrength high.\n\nreq_e79ca4c521a2: Tracks spend against store budgets and prepares variation requests. Evidence: src_2a59622ddaf9.\n\nreq_0d1bd60bffbf: Has led a multi-site refit programme, holding contractor relationship and budget sign-off. Evidence: src_898ce309ae3b (worked on 22 stores), src_3127e3e91f83 is subjective note but can be interviewSignalRisk. So requirement status partial_evidence? We have evidence of leading multi-site refit but not explicit budget sign-off. We have variation requests drafted but not sign-off. So partial_evidence. missingEvidence: \"Evidence of holding contractor relationship and budget sign-off authority.\"\n\nreq_151c92e1bbc4: Runs pre-handover safety walks and snagging with contractor. Evidence: src_9c8a20c99831.\n\nreq_1d6056f02227: Prepares monthly progress reporting for regional property board. Evidence: src_d3b5e686d077.\n\nsupportedClaims: list claims that are supported. For example: \"Led multi-site refit programme of 22 stores\" supported by src_898ce309ae3b. Also \"Built weekly refit schedule\" etc.\n\nBut we need to list claims with supportingRequirementIds, sourceIds, evidenceStrength, witness.\n\nLet's create a few claims.\n\nUnsupportedClaims: maybe \"held the purse strings\" from subjective note is unsupported. So claim: \"Held the purse strings for the contractor\" reason: subjective. requiredFollowUp: ask for evidence of budget sign-off.\n\nMissingEvidenceGaps: for req_0d1bd60bffbf.\n\nInterviewSignalRisks: subjective note 3127. Also note 80d5 is verification but not subjective.\n\nFollowUpQuestions: for requirement 0d1bd60bffbf: question about budget sign-off authority.\n\nHumanReviewChecklist: items like \"Verify contractor relationship and budget sign-off authority\", \"Confirm pre-handover safety walk details\".\n\nAuditSummary: paragraph summarizing evidence.\n\nLimitations: maybe \"Limited to provided sources; no external verification\".\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_2d77629dbd40cd63\",\n    \"targetRoleTitle\": \"Project Manager, Store Refit Programme\",\n    \"professionalSummary\": [\n      \"Experienced project coordinator and assistant project manager with a proven track record of leading multi‑site refit programmes across 22 convenience stores, ensuring on‑time delivery, budget compliance and safety standards (src_898ce309ae3b).\"\n    ],\n    \"experienceHighlights\": [\n      \"Built weekly refit schedules in collaboration with shopfitting contractors and store managers, aligning noisy work to overnight hours to minimise trading disruption (src_decb7cd2b669).\",\n      \"Tracked spend against individual store budgets using the property team’s cost tracker and drafted variation requests for programme‑level approval (src_2a59622ddaf9).\",\n      \"Conducted pre‑handover safety walks with contractor site supervisors, logged snags in handover checklists and ensured closure before handover (src_9c8a20c99831).\",\n      \"Compiled monthly progress summaries detailing completed stores, open snags and budget variances for presentation to the regional property board (src_d3b5e686d077).\"\n    ],\n    \"projectsAndWorkSamples\": [\n      \"Completed handover checklist for a single store, listing 31 snag items with owners, due dates and close‑out dates, signed by the contractor’s site supervisor and the candidate (src_03ca5b720c16).\"\n    ],\n    \"skills\": [\n      \"Project scheduling\",\n      \"Budget tracking and variation management\",\n      \"Contractor relationship management\",\n      \"Safety walk and snagging\",\n      \"Progress reporting\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample confirm the candidate’s roles, responsibilities and deliverables for a multi‑site refit programme, but do not independently verify contractor relationship authority or budget sign‑off responsibility.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Project Manager, Store Refit Programme\",\n      \"jobDescriptionSource\": \"jd_5e73fa6fbaa2b7bf\",\n      \"requirementIds\": [\n        \"req_ffe8ab071c96\",\n        \"req_e79ca4c521a2\",\n        \"req_0d1bd60bffbf\",\n        \"req_151c92e1bbc4\",\n        \"req_1d6056f02227\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_2d77629dbd40cd63\",\n      \"sources\": [\n        \"src_898ce309ae3b\",\n        \"src_decb7cd2b669\",\n        \"src_2a59622ddaf9\",\n        \"src_9c8a20c99831\",\n        \"src_d3b5e686d077\",\n        \"src_03ca5b720c16\",\n        \"src_3127e3e91f83\",\n        \"src_80d5c6ca7c88\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_ffe8ab071c96\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_decb7cd2b669\",\n            \"text\": \"Built the weekly refit schedule for each store with the shopfitting contractor and the store manager, putting noisy work into the overnight hours when the store was closed.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of schedule planning around trading hours.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_e79ca4c521a2\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_2a59622ddaf9\",\n            \"text\": \"Tracked spend against each store's budget in the property team's cost tracker and drafted variation requests for the programme manager to approve.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of spend tracking and variation drafting.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_0d1bd60bffbf\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_898ce309ae3b\",\n            \"text\": \"Project coordinator, then assistant project manager, at Fernhill Foodstores from May 2021 to August 2024, working on the 2023 refit of 22 convenience stores across the south‑west region.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows multi‑site refit leadership but does not confirm budget sign‑off authority.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Evidence that the candidate held the contractor relationship and had authority to sign off budgets.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_151c92e1bbc4\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9c8a20c99831\",\n            \"text\": \"Ran the pre-handover safety walk with the contractor's site supervisor at each store and logged snags in the handover checklist.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of safety walk and snag logging.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_1d6056f02227\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_d3b5e686d077\",\n            \"text\": \"Compiled the monthly progress summary, covering stores completed, open snags and budget variances, which the programme manager presented to the regional property board.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of monthly progress reporting.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Led a multi‑site refit programme of 22 convenience stores.\",\n        \"supportingRequirementIds\": [\n          \"req_0d1bd60bffbf\"\n        ],\n        \"sourceIds\": [\n          \"src_898ce309ae3b\"\n        ],\n        \"evidenceStrength\": \"medium\",\n        \"witness\": \"Project coordinator, then assistant project manager, at Fernhill Foodstores from May 2021 to August 2024, working on the 2023 refit of 22 convenience stores across the south‑west region.\"\n      },\n      {\n        \"claim\": \"Built weekly refit schedules aligned with trading hours.\",\n        \"supportingRequirementIds\": [\n          \"req_ffe8ab071c96\"\n        ],\n        \"sourceIds\": [\n          \"src_decb7cd2b669\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built the weekly refit schedule for each store with the shopfitting contractor and the store manager, putting noisy work into the overnight hours when the store was closed.\"\n      },\n      {\n        \"claim\": \"Tracked spend and drafted variation requests.\",\n        \"supportingRequirementIds\": [\n          \"req_e79ca4c521a2\"\n        ],\n        \"sourceIds\": [\n          \"src_2a59622ddaf9\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Tracked spend against each store's budget in the property team's cost tracker and drafted variation requests for the programme manager to approve.\"\n      }\n    ],\n    \"unsupportedClaims\": [\n      {\n        \"claim\": \"Held the purse strings for the contractor.\",\n        \"reason\": \"Subjective statement from a former site supervisor, not independently verified.\",\n        \"requiredFollowUp\": \"Request documentation of budget sign‑off authority or formal approval records.\"\n      }\n    ],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_001\",\n        \"requirementId\": \"req_0d1bd60bffbf\",\n        \"severity\": \"medium\",\n        \"gap\": \"No evidence that the candidate had formal authority to sign off budgets or manage the contractor relationship.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_3127e3e91f83\",\n        \"text\": \"said the candidate 'was the one really running the refit programme', 'held the purse strings for us' and that the programme manager 'mostly left it to the candidate'.\",\n        \"signalType\": \"subjective\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"medium\",\n        \"recommendedHandling\": \"Verify with formal documentation or additional stakeholder confirmation.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_001\",\n        \"requirementId\": \"req_0d1bd60bffbf\",\n        \"question\": \"Can you provide evidence of your authority to sign off budgets and manage the contractor relationship during the 2023 refit programme?\",\n        \"evidenceTarget\": \"Formal approval records, budget sign‑off documents, or contractual agreements.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Confirm contractor relationship and budget sign‑off authority.\",\n      \"Validate that safety walks and snag logging were performed as described.\",\n      \"Ensure monthly progress reporting was presented to the regional property board.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and work sample provide strong evidence for schedule planning, spend tracking, safety walks, and progress reporting across a multi‑site refit programme. Evidence for formal budget sign‑off authority and contractor relationship management is incomplete, requiring further verification. Subjective notes raise potential interview signals that should be clarified through documentation or additional stakeholder confirmation.\",\n    \"limitations\": [\n      \"Evidence limited to the provided resume, work sample, and informal notes; no external verification of contractor relationship or budget sign‑off authority.\"\n    ]\n  }\n}",
+ "content_sha256": "5cb85460bff5375f6f1dccd38b2abc2a489d4a1a930067bb00de5cfce48e88cf",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2d77629dbd40cd63",
+   "targetRoleTitle": "Project Manager, Store Refit Programme",
+   "professionalSummary": [
+    "Experienced project coordinator and assistant project manager with a proven track record of leading multi‑site refit programmes across 22 convenience stores, ensuring on‑time delivery, budget compliance and safety standards (src_898ce309ae3b)."
+   ],
+   "experienceHighlights": [
+    "Built weekly refit schedules in collaboration with shopfitting contractors and store managers, aligning noisy work to overnight hours to minimise trading disruption (src_decb7cd2b669).",
+    "Tracked spend against individual store budgets using the property team’s cost tracker and drafted variation requests for programme‑level approval (src_2a59622ddaf9).",
+    "Conducted pre‑handover safety walks with contractor site supervisors, logged snags in handover checklists and ensured closure before handover (src_9c8a20c99831).",
+    "Compiled monthly progress summaries detailing completed stores, open snags and budget variances for presentation to the regional property board (src_d3b5e686d077)."
+   ],
+   "projectsAndWorkSamples": [
+    "Completed handover checklist for a single store, listing 31 snag items with owners, due dates and close‑out dates, signed by the contractor’s site supervisor and the candidate (src_03ca5b720c16)."
+   ],
+   "skills": [
+    "Project scheduling",
+    "Budget tracking and variation management",
+    "Contractor relationship management",
+    "Safety walk and snagging",
+    "Progress reporting"
+   ],
+   "evidenceBoundary": "The provided resume and work sample confirm the candidate’s roles, responsibilities and deliverables for a multi‑site refit programme, but do not independently verify contractor relationship authority or budget sign‑off responsibility."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Store Refit Programme",
+    "jobDescriptionSource": "jd_5e73fa6fbaa2b7bf",
+    "requirementIds": [
+     "req_ffe8ab071c96",
+     "req_e79ca4c521a2",
+     "req_0d1bd60bffbf",
+     "req_151c92e1bbc4",
+     "req_1d6056f02227"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2d77629dbd40cd63",
+    "sources": [
+     "src_898ce309ae3b",
+     "src_decb7cd2b669",
+     "src_2a59622ddaf9",
+     "src_9c8a20c99831",
+     "src_d3b5e686d077",
+     "src_03ca5b720c16",
+     "src_3127e3e91f83",
+     "src_80d5c6ca7c88"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_ffe8ab071c96",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_decb7cd2b669",
+       "text": "Built the weekly refit schedule for each store with the shopfitting contractor and the store manager, putting noisy work into the overnight hours when the store was closed.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of schedule planning around trading hours."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e79ca4c521a2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2a59622ddaf9",
+       "text": "Tracked spend against each store's budget in the property team's cost tracker and drafted variation requests for the programme manager to approve.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of spend tracking and variation drafting."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0d1bd60bffbf",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_898ce309ae3b",
+       "text": "Project coordinator, then assistant project manager, at Fernhill Foodstores from May 2021 to August 2024, working on the 2023 refit of 22 convenience stores across the south‑west region.",
+       "evidenceStrength": "medium",
+       "notes": "Shows multi‑site refit leadership but does not confirm budget sign‑off authority."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate held the contractor relationship and had authority to sign off budgets."
+     ]
+    },
+    {
+     "requirementId": "req_151c92e1bbc4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9c8a20c99831",
+       "text": "Ran the pre-handover safety walk with the contractor's site supervisor at each store and logged snags in the handover checklist.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of safety walk and snag logging."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1d6056f02227",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d3b5e686d077",
+       "text": "Compiled the monthly progress summary, covering stores completed, open snags and budget variances, which the programme manager presented to the regional property board.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of monthly progress reporting."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Led a multi‑site refit programme of 22 convenience stores.",
+     "supportingRequirementIds": [
+      "req_0d1bd60bffbf"
+     ],
+     "sourceIds": [
+      "src_898ce309ae3b"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Project coordinator, then assistant project manager, at Fernhill Foodstores from May 2021 to August 2024, working on the 2023 refit of 22 convenience stores across the south‑west region."
+    },
+    {
+     "claim": "Built weekly refit schedules aligned with trading hours.",
+     "supportingRequirementIds": [
+      "req_ffe8ab071c96"
+     ],
+     "sourceIds": [
+      "src_decb7cd2b669"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the weekly refit schedule for each store with the shopfitting contractor and the store manager, putting noisy work into the overnight hours when the store was closed."
+    },
+    {
+     "claim": "Tracked spend and drafted variation requests.",
+     "supportingRequirementIds": [
+      "req_e79ca4c521a2"
+     ],
+     "sourceIds": [
+      "src_2a59622ddaf9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Tracked spend against each store's budget in the property team's cost tracker and drafted variation requests for the programme manager to approve."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Held the purse strings for the contractor.",
+     "reason": "Subjective statement from a former site supervisor, not independently verified.",
+     "requiredFollowUp": "Request documentation of budget sign‑off authority or formal approval records."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_0d1bd60bffbf",
+     "severity": "medium",
+     "gap": "No evidence that the candidate had formal authority to sign off budgets or manage the contractor relationship."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_3127e3e91f83",
+     "text": "said the candidate 'was the one really running the refit programme', 'held the purse strings for us' and that the programme manager 'mostly left it to the candidate'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": true,
+     "severity": "medium",
+     "recommendedHandling": "Verify with formal documentation or additional stakeholder confirmation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_0d1bd60bffbf",
+     "question": "Can you provide evidence of your authority to sign off budgets and manage the contractor relationship during the 2023 refit programme?",
+     "evidenceTarget": "Formal approval records, budget sign‑off documents, or contractual agreements."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm contractor relationship and budget sign‑off authority.",
+    "Validate that safety walks and snag logging were performed as described.",
+    "Ensure monthly progress reporting was presented to the regional property board."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence for schedule planning, spend tracking, safety walks, and progress reporting across a multi‑site refit programme. Evidence for formal budget sign‑off authority and contractor relationship management is incomplete, requiring further verification. Subjective notes raise potential interview signals that should be clarified through documentation or additional stakeholder confirmation.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and informal notes; no external verification of contractor relationship or budget sign‑off authority."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:27:04.155740+00:00"
+}

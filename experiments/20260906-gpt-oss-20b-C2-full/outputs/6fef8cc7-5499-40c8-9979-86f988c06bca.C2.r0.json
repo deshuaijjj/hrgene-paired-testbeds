@@ -1,0 +1,244 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "6fef8cc7-5499-40c8-9979-86f988c06bca.C2",
+ "case_id": "6fef8cc7-5499-40c8-9979-86f988c06bca",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14020,
+  "promptWords": 1673
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 43.801
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3850,
+ "eval_count": 1719,
+ "prompt_eval_duration_ns": 19219000,
+ "eval_duration_ns": 31169411000,
+ "total_duration_ns": 43797962125,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from resume. Ensure no unsupported claims. All claims must have source. Provide evidence. Requirements mapping. Let's craft.\n\nClaims: from resume lines. We'll create claims for each requirement.\n\nRequirement mapping:\n\nreq_5e2e5cd3943a: Owns application quality end-to-end and holds sign-off before each release goes to stores. Evidence: src_282a82db7240 (prepared readiness summary, sign-off). Also note that sign-off by store systems manager. Claim: \"Prepared release readiness summary and held sign-off before release to stores.\" Source: src_282a82db7240. Also maybe src_fe667cb616f8 note says accountable. But note is not evidence of sign-off. Use resume.\n\nreq_4767acc4de6c: Maintains automated test suite. Evidence: src_fa616aacd166.\n\nreq_59f8dc07e142: Runs pilot-store test rounds with store staff and records outcomes. Evidence: src_eff4ecc98aa8.\n\nreq_f41ce583f5e8: Coordinates release readiness with dev lead and store ops and records responsibility boundaries. Evidence: src_282a82db7240 (prepared readiness summary, coordination). Also src_b3afd255903c (release notes). But coordination: src_282a82db7240.\n\nreq_4ccb8596a09a: Documents known limitations and hand-over conditions for each store release. Evidence: src_b3afd255903c.\n\nAlso mention responsibilities over two years: src_28fa87b2e372.\n\nWe need to include evidenceBoundary sentence.\n\nNow requirementEvidenceMap: each requirement with status supported, evidence entries.\n\nAlso missingEvidence none.\n\nsupportedClaims array: include claims that map to requirements.\n\nunsupportedClaims none.\n\nmissingEvidenceGaps none.\n\ninterviewSignalRisks: maybe note src_fe667cb616f8 is a note about accountability. It's subjective? It's a note from hiring manager pre-read. Could be interview signal risk? It's a note, but not evidence. We can treat as interviewSignalRisk: sourceId src_fe667cb616f8, text \"candidate's CV cover note says he was 'accountable for store release quality end-to-end'\". signalType subjective. jobRelatedBoundary false? It's about accountability. Might be job-related. We'll include.\n\nfollowUpQuestions: maybe none.\n\nhumanReviewChecklist: items like \"Verify sign-off authority\", \"Confirm release readiness responsibilities\".\n\nauditSummary: summary.\n\nlimitations: maybe none.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_c5355abf907b8953\",\"targetRoleTitle\":\"Software Quality Engineer, Retail Store Operations\",\"professionalSummary\":[\"Experienced quality engineer with a two‑year track record of maintaining automated test suites, conducting pilot‑store test rounds, preparing release readiness summaries, and documenting release limitations for a handheld store‑task application.\"],\"experienceHighlights\":[\"Maintained the automated test suite for the store‑task application on the handheld fleet (Appium against the two device models in use), adding offline‑sync scenarios after a store outage.\",\"Ran pilot‑store test rounds with store staff in three pilot stores before each release, recording outcomes per scenario and escalating blocking defects to the development lead.\",\"Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.\",\"Wrote the release notes for store operations, listing known limitations (the task‑photo feature needed the newer device model) and the hand‑over items for the store support desk.\"],\"projectsAndWorkSamples\":[\"Work sample: the Appium suite's scenario list and one pilot‑store round's results sheet, with the device‑farm run identifiers as a verification trail.\"],\"skills\":[\"Automated testing (Appium), test suite maintenance, pilot‑store testing, release readiness coordination, documentation of limitations and hand‑over conditions\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s responsibilities and actions related to test suite maintenance, pilot‑store testing, release readiness, sign‑off, and documentation of limitations, but do not provide independent verification of authority or production deployment.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit based on the evidence and gaps identified.\"},\"role\":{\"roleTitle\":\"Software Quality Engineer, Retail Store Operations\",\"jobDescriptionSource\":\"jd_cb74000c64615094\",\"requirementIds\":[\"req_5e2e5cd3943a\",\"req_4767acc4de6c\",\"req_59f8dc07e142\",\"req_f41ce583f5e8\",\"req_4ccb8596a09a\"]},\"candidate\":{\"candidateId\":\"cand_c5355abf907b8953\",\"sources\":[\"src_fa616aacd166\",\"src_eff4ecc98aa8\",\"src_282a82db7240\",\"src_b3afd255903c\",\"src_28fa87b2e372\",\"src_c92c96538091\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_5e2e5cd3943a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_282a82db7240\",\"text\":\"Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows end‑to‑end quality ownership and sign‑off responsibility.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4767acc4de6c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_fa616aacd166\",\"text\":\"Maintained the automated test suite for the store‑task application on the handheld fleet (Appium against the two device models in use), adding the offline‑sync scenarios after a store outage.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of test suite maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_59f8dc07e142\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_eff4ecc98aa8\",\"text\":\"Ran the pilot‑store test rounds with store staff in three pilot stores before each release, recording outcomes per scenario and escalating blocking defects to the development lead.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows pilot‑store testing and outcome recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f41ce583f5e8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_282a82db7240\",\"text\":\"Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates coordination with dev lead and store ops.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4ccb8596a09a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b3afd255903c\",\"text\":\"Wrote the release notes for store operations, listing known limitations (the task‑photo feature needed the newer device model) and the hand‑over items for the store support desk.\",\"evidenceStrength\":\"high\",\"notes\":\"Documents limitations and hand‑over conditions.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Prepared the release readiness summary and held sign‑off before release to stores.\",\"supportingRequirementIds\":[\"req_5e2e5cd3943a\"],\"sourceIds\":[\"src_282a82db7240\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.\"},{\"claim\":\"Maintained the automated test suite for the store‑task application on handheld devices.\",\"supportingRequirementIds\":[\"req_4767acc4de6c\"],\"sourceIds\":[\"src_fa616aacd166\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the automated test suite for the store‑task application on the handheld fleet (Appium against the two device models in use), adding the offline‑sync scenarios after a store outage.\"},{\"claim\":\"Ran pilot‑store test rounds with store staff and recorded outcomes.\",\"supportingRequirementIds\":[\"req_59f8dc07e142\"],\"sourceIds\":[\"src_eff4ecc98aa8\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the pilot‑store test rounds with store staff in three pilot stores before each release, recording outcomes per scenario and escalating blocking defects to the development lead.\"},{\"claim\":\"Coordinated release readiness with development lead and store operations and documented responsibility boundaries.\",\"supportingRequirementIds\":[\"req_f41ce583f5e8\"],\"sourceIds\":[\"src_282a82db7240\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.\"},{\"claim\":\"Documented known limitations and hand‑over conditions for each store release.\",\"supportingRequirementIds\":[\"req_4ccb8596a09a\"],\"sourceIds\":[\"src_b3afd255903c\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the release notes for store operations, listing known limitations (the task‑photo feature needed the newer device model) and the hand‑over items for the store support desk.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_fe667cb616f8\",\"text\":\"Candidate's CV cover note says he was 'accountable for store release quality end‑to‑end'; the head of store systems wants exactly that, so the packet must show what accountability he actually held.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":true,\"severity\":\"medium\",\"recommendedHandling\":\"Verify sign‑off authority with the store systems manager.\"}],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate had authority to sign off releases to stores.\",\"Confirm that release readiness coordination involved both development lead and store operations.\",\"Ensure that documented limitations and hand‑over conditions were reviewed by store support desk.\"],\"auditSummary\":\"The evidence demonstrates that the candidate performed all required activities for the Software Quality Engineer role, including test suite maintenance, pilot‑store testing, release readiness coordination, sign‑off, and documentation of limitations. The only uncertainty is the extent of sign‑off authority, which requires confirmation from the store systems manager.\",\"limitations\":[]}}",
+ "content_sha256": "47bab33ec530790ae0e863bab94408eaffc3dd38f942bbae091dbb98bff0b468",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_c5355abf907b8953",
+   "targetRoleTitle": "Software Quality Engineer, Retail Store Operations",
+   "professionalSummary": [
+    "Experienced quality engineer with a two‑year track record of maintaining automated test suites, conducting pilot‑store test rounds, preparing release readiness summaries, and documenting release limitations for a handheld store‑task application."
+   ],
+   "experienceHighlights": [
+    "Maintained the automated test suite for the store‑task application on the handheld fleet (Appium against the two device models in use), adding offline‑sync scenarios after a store outage.",
+    "Ran pilot‑store test rounds with store staff in three pilot stores before each release, recording outcomes per scenario and escalating blocking defects to the development lead.",
+    "Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.",
+    "Wrote the release notes for store operations, listing known limitations (the task‑photo feature needed the newer device model) and the hand‑over items for the store support desk."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the Appium suite's scenario list and one pilot‑store round's results sheet, with the device‑farm run identifiers as a verification trail."
+   ],
+   "skills": [
+    "Automated testing (Appium), test suite maintenance, pilot‑store testing, release readiness coordination, documentation of limitations and hand‑over conditions"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s responsibilities and actions related to test suite maintenance, pilot‑store testing, release readiness, sign‑off, and documentation of limitations, but do not provide independent verification of authority or production deployment."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit based on the evidence and gaps identified."
+   },
+   "role": {
+    "roleTitle": "Software Quality Engineer, Retail Store Operations",
+    "jobDescriptionSource": "jd_cb74000c64615094",
+    "requirementIds": [
+     "req_5e2e5cd3943a",
+     "req_4767acc4de6c",
+     "req_59f8dc07e142",
+     "req_f41ce583f5e8",
+     "req_4ccb8596a09a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_c5355abf907b8953",
+    "sources": [
+     "src_fa616aacd166",
+     "src_eff4ecc98aa8",
+     "src_282a82db7240",
+     "src_b3afd255903c",
+     "src_28fa87b2e372",
+     "src_c92c96538091"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_5e2e5cd3943a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_282a82db7240",
+       "text": "Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.",
+       "evidenceStrength": "high",
+       "notes": "Shows end‑to‑end quality ownership and sign‑off responsibility."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4767acc4de6c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_fa616aacd166",
+       "text": "Maintained the automated test suite for the store‑task application on the handheld fleet (Appium against the two device models in use), adding the offline‑sync scenarios after a store outage.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of test suite maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_59f8dc07e142",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_eff4ecc98aa8",
+       "text": "Ran the pilot‑store test rounds with store staff in three pilot stores before each release, recording outcomes per scenario and escalating blocking defects to the development lead.",
+       "evidenceStrength": "high",
+       "notes": "Shows pilot‑store testing and outcome recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f41ce583f5e8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_282a82db7240",
+       "text": "Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates coordination with dev lead and store ops."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4ccb8596a09a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b3afd255903c",
+       "text": "Wrote the release notes for store operations, listing known limitations (the task‑photo feature needed the newer device model) and the hand‑over items for the store support desk.",
+       "evidenceStrength": "high",
+       "notes": "Documents limitations and hand‑over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Prepared the release readiness summary and held sign‑off before release to stores.",
+     "supportingRequirementIds": [
+      "req_5e2e5cd3943a"
+     ],
+     "sourceIds": [
+      "src_282a82db7240"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores."
+    },
+    {
+     "claim": "Maintained the automated test suite for the store‑task application on handheld devices.",
+     "supportingRequirementIds": [
+      "req_4767acc4de6c"
+     ],
+     "sourceIds": [
+      "src_fa616aacd166"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the automated test suite for the store‑task application on the handheld fleet (Appium against the two device models in use), adding the offline‑sync scenarios after a store outage."
+    },
+    {
+     "claim": "Ran pilot‑store test rounds with store staff and recorded outcomes.",
+     "supportingRequirementIds": [
+      "req_59f8dc07e142"
+     ],
+     "sourceIds": [
+      "src_eff4ecc98aa8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the pilot‑store test rounds with store staff in three pilot stores before each release, recording outcomes per scenario and escalating blocking defects to the development lead."
+    },
+    {
+     "claim": "Coordinated release readiness with development lead and store operations and documented responsibility boundaries.",
+     "supportingRequirementIds": [
+      "req_f41ce583f5e8"
+     ],
+     "sourceIds": [
+      "src_282a82db7240"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the release readiness summary for the store systems manager, who decided the test scope with the development lead and gave the sign‑off for the release to go to stores."
+    },
+    {
+     "claim": "Documented known limitations and hand‑over conditions for each store release.",
+     "supportingRequirementIds": [
+      "req_4ccb8596a09a"
+     ],
+     "sourceIds": [
+      "src_b3afd255903c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the release notes for store operations, listing known limitations (the task‑photo feature needed the newer device model) and the hand‑over items for the store support desk."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_fe667cb616f8",
+     "text": "Candidate's CV cover note says he was 'accountable for store release quality end‑to‑end'; the head of store systems wants exactly that, so the packet must show what accountability he actually held.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": true,
+     "severity": "medium",
+     "recommendedHandling": "Verify sign‑off authority with the store systems manager."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate had authority to sign off releases to stores.",
+    "Confirm that release readiness coordination involved both development lead and store operations.",
+    "Ensure that documented limitations and hand‑over conditions were reviewed by store support desk."
+   ],
+   "auditSummary": "The evidence demonstrates that the candidate performed all required activities for the Software Quality Engineer role, including test suite maintenance, pilot‑store testing, release readiness coordination, sign‑off, and documentation of limitations. The only uncertainty is the extent of sign‑off authority, which requires confirmation from the store systems manager.",
+   "limitations": []
+  }
+ },
+ "finished_at": "2026-09-07T14:22:52.878486+00:00"
+}

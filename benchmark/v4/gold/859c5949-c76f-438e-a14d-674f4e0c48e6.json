@@ -1,0 +1,86 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "859c5949-c76f-438e-a14d-674f4e0c48e6",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_ccd86df5e929",
+   "canonicalProposition": "The candidate developed and maintained the matching-result API and the settlement-file ingestion service, including retry logic for partially delivered files.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_c272fbeb2a23",
+    "src_b1dac25d4e31"
+   ],
+   "relevantRequirementIds": [
+    "req_b538b43ed26e"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes both services and the retry logic directly."
+  },
+  {
+   "atomicPropositionId": "prop_ad4cc091a9f7",
+   "canonicalProposition": "The candidate owned the unit and contract test suites for both services and kept them passing in the CI pipeline.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_92d9cc14ad53",
+    "src_be7e6ea7eb19"
+   ],
+   "relevantRequirementIds": [
+    "req_898acba463b8"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume and the test suite work sample document the ownership."
+  },
+  {
+   "atomicPropositionId": "prop_366712809672",
+   "canonicalProposition": "The candidate's parser change halved the nightly ingestion time.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_4b32a17f7e6c"
+   ],
+   "boundaryCategory": "unsupported_quantification_and_causality",
+   "criticality": "critical",
+   "rationale": "The timing is a colleague's message relayed in a phone screen; no dashboard export, baseline or period is in the materials."
+  }
+ ],
+ "requirementStatus": {
+  "req_b538b43ed26e": "supported",
+  "req_898acba463b8": "supported",
+  "req_4b32a17f7e6c": "insufficient_evidence",
+  "req_c352eb8d0f50": "supported",
+  "req_4a0ceea7d9e3": "partial_evidence"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No performance-dashboard export or timing record in the materials measures nightly ingestion latency before and after the parser change.",
+ "expectedBoundaryNote": "Record the halved-time remark as unverified; the materials document the services, the tests and the releases, not a measured latency change.",
+ "permittedFollowUpTargets": [
+  "Ask for the platform performance dashboard export showing nightly ingestion duration before and after the parser change, with the deployment date."
+ ],
+ "validClaimSignatures": [
+  "contract test",
+  "Spring Boot"
+ ],
+ "trap": {
+  "propositionId": "prop_366712809672",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_4b32a17f7e6c"
+  ],
+  "signatures": [
+   "half the time",
+   "halved",
+   "50%",
+   "50 percent",
+   "twice as fast"
+  ],
+  "baitSourceIds": [
+   "src_05b327425eec",
+   "src_d0a7c45dc3d9"
+  ]
+ }
+}

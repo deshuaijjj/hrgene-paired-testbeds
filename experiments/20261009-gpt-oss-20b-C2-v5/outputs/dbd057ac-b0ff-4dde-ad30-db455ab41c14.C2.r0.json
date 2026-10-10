@@ -1,0 +1,293 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "dbd057ac-b0ff-4dde-ad30-db455ab41c14.C2",
+ "case_id": "dbd057ac-b0ff-4dde-ad30-db455ab41c14",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15116,
+  "promptWords": 1818
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 65.86
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4589,
+ "eval_count": 2393,
+ "prompt_eval_duration_ns": 1217254000,
+ "eval_duration_ns": 44297935000,
+ "total_duration_ns": 65856827125,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Provide claims. Need to handle PMP certification: source src_46da3a6e286c is note, says candidate said they got PMP a couple of years ago, but not verified. So requirement req_cafbad9f4518 is insufficient evidence. So partial_evidence or insufficient_evidence. We'll mark insufficient_evidence and gap: need proof of PMP certificate. Follow-up question.\n\nOther requirements: all supported by resume sources. Provide evidence.\n\nAlso need interviewSignalRisks for subjective note? The note is subjective but about PMP claim. That is a claim. We should route to unsupportedClaims? The note says candidate said they got PMP. That's a claim but not verified. So unsupportedClaims with reason. Also missing evidence.\n\nAlso need to include evidenceBoundary sentence.\n\nLet's craft.\n\nWe need to include claim objects? In optimizedCv, we just list claims as strings. But we need to cite sourceIds for each claim. The rule requires each claim to have at least one source. So we need to include sourceIds in the claim? The schema for optimizedCv doesn't include sourceIds. But rule hrgene.claim_provenance requires citing at least one provided sourceId for every claim. That applies to claims in optimizedCv? The rule says \"Cite at least one provided sourceId for every claim.\" But the optimizedCv structure doesn't have sourceIds. Maybe we need to embed sourceIds in claim text? But rule expects claim objects? Wait the schema for optimizedCv: fields: professionalSummary: [CLAIM...] where CLAIM is defined earlier: {\"claimId\": \"<id>\", \"text\": \"<statement>\", \"sourceIds\": [\"<id>\"], ...}. So we need to use that structure. So professionalSummary array of CLAIM objects. Similarly for experienceHighlights, projectsAndWorkSamples, skills. So we need to create CLAIM objects with sourceIds.\n\nThus we need to create claim objects for each summary. Provide claimId unique. Provide sourceIds referencing sources.\n\nLet's craft.\n\nProfessionalSummary: claim about experience as Project Engineer, etc. Use src_de3bf699eac5.\n\nExperienceHighlights: claim about managing suppliers and contractors: src_4ab056d2c574.\n\nProjectsAndWorkSamples: claim about site acceptance test protocol: src_80068bcb1807 and src_df34d2aa39db.\n\nSkills: claim about cost and schedule reporting: src_a8a92dafd890.\n\nAlso maybe skill about PMP? But not verified.\n\nEvidenceBoundary: one sentence: \"The provided resume and work sample establish the candidate’s experience in planning, supplier management, site acceptance testing, and cost/schedule reporting for capital equipment projects, but do not confirm PMP certification.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Human review required to assess PMP certification and other gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nreq_9378541330e4: supported. evidence from src_de3bf699eac5. evidenceStrength high.\n\nreq_897624f96bed: supported. evidence from src_4ab056d2c574.\n\nreq_d296772b23fd: supported. evidence from src_80068bcb1807.\n\nreq_ab5679b9ce92: supported. evidence from src_a8a92dafd890.\n\nreq_cafbad9f4518: insufficient_evidence. missingEvidence: \"Proof of PMP certification (e.g., certificate copy or verification from PMI).\"\n\nsupportedClaims: list claims that are supported. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness verbatim passage.\n\nWe can include claim about planning and controlling projects: claim text, sourceIds src_de3bf699eac5.\n\nAlso claim about managing suppliers: src_4ab056d2c574.\n\nClaim about site acceptance tests: src_80068bcb1807.\n\nClaim about cost/schedule reporting: src_a8a92dafd890.\n\nunsupportedClaims: claim about PMP certification: reason \"source is a recruiter note stating candidate claimed PMP but no verification.\" requiredFollowUp: \"Provide official PMP certificate or verification from PMI.\"\n\nmissingEvidenceGaps: for req_cafbad9f4518.\n\ninterviewSignalRisks: maybe note about recruiter screening note is subjective. But it's about PMP claim. We can include as interviewSignalRisk: sourceId src_46da3a6e286c, text \"candidate said they 'got the PMP a couple of years ago'\", signalType \"subjective claim\", jobRelatedBoundary true, severity medium, recommendedHandling \"Verify certification through official documentation.\"\n\nfollowUpQuestions: question about PMP certification.\n\nhumanReviewChecklist: items: \"Verify PMP certification\", \"Confirm project management experience aligns with plant capital governance policy\".\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"Limited to provided sources; no external verification of PMP.\"\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_547ff730880f4c9a\",\n    \"targetRoleTitle\": \"Capital Projects Manager, Bottling Plant\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cs_001\",\n        \"text\": \"Planned the replacement of a yoghurt cup filler and a case erector, maintaining a baseline schedule in MS Project and tracking committed and actual cost against the approved budget.\",\n        \"sourceIds\": [\"src_de3bf699eac5\"],\n        \"requirementIds\": [\"req_9378541330e4\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"planned the replacement of a yoghurt cup filler and a case erector, keeping the baseline schedule in MS Project and tracking committed and actual cost against the approved budget.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"eh_001\",\n        \"text\": \"Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.\",\n        \"sourceIds\": [\"src_4ab056d2c574\"],\n        \"requirementIds\": [\"req_897624f96bed\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"pw_001\",\n        \"text\": \"Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.\",\n        \"sourceIds\": [\"src_80068bcb1807\"],\n        \"requirementIds\": [\"req_d296772b23fd\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"sk_001\",\n        \"text\": \"Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.\",\n        \"sourceIds\": [\"src_a8a92dafd890\"],\n        \"requirementIds\": [\"req_ab5679b9ce92\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s experience in planning, supplier management, site acceptance testing, and cost/schedule reporting for capital equipment projects, but do not confirm PMP certification.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess PMP certification and other gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Capital Projects Manager, Bottling Plant\",\n      \"jobDescriptionSource\": \"jd_ad4e7493832a10a7\",\n      \"requirementIds\": [\n        \"req_9378541330e4\",\n        \"req_897624f96bed\",\n        \"req_d296772b23fd\",\n        \"req_ab5679b9ce92\",\n        \"req_cafbad9f4518\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_547ff730880f4c9a\",\n      \"sources\": [\n        \"src_de3bf699eac5\",\n        \"src_4ab056d2c574\",\n        \"src_80068bcb1807\",\n        \"src_a8a92dafd890\",\n        \"src_03fa8e7955de\",\n        \"src_df34d2aa39db\",\n        \"src_46da3a6e286c\",\n        \"src_a0bd011931f4\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_9378541330e4\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_de3bf699eac5\",\n            \"text\": \"planned the replacement of a yoghurt cup filler and a case erector, keeping the baseline schedule in MS Project and tracking committed and actual cost against the approved budget.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of baseline schedule and cost tracking.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_897624f96bed\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_4ab056d2c574\",\n            \"text\": \"Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of supplier and contractor management.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d296772b23fd\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_80068bcb1807\",\n            \"text\": \"Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of site acceptance testing.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_ab5679b9ce92\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a8a92dafd890\",\n            \"text\": \"Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct evidence of reporting to governance forum.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_cafbad9f4518\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [],\n        \"missingEvidence\": [\n          \"Proof of PMP certification (e.g., certificate copy or verification from PMI).\"\n        ]\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Planned the replacement of a yoghurt cup filler and a case erector, maintaining a baseline schedule in MS Project and tracking committed and actual cost against the approved budget.\",\n        \"supportingRequirementIds\": [\"req_9378541330e4\"],\n        \"sourceIds\": [\"src_de3bf699eac5\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"planned the replacement of a yoghurt cup filler and a case erector, keeping the baseline schedule in MS Project and tracking committed and actual cost against the approved budget.\"\n      },\n      {\n        \"claim\": \"Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.\",\n        \"supportingRequirementIds\": [\"req_897624f96bed\"],\n        \"sourceIds\": [\"src_4ab056d2c574\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.\"\n      },\n      {\n        \"claim\": \"Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.\",\n        \"supportingRequirementIds\": [\"req_d296772b23fd\"],\n        \"sourceIds\": [\"src_80068bcb1807\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.\"\n      },\n      {\n        \"claim\": \"Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.\",\n        \"supportingRequirementIds\": [\"req_ab5679b9ce92\"],\n        \"sourceIds\": [\"src_a8a92dafd890\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.\"\n      }\n    ],\n    \"unsupportedClaims\": [\n      {\n        \"claim\": \"Candidate holds a PMP certification.\",\n        \"reason\": \"The only evidence is a recruiter note stating the candidate claimed to have obtained PMP a couple of years ago, with no verification.\",\n        \"requiredFollowUp\": \"Provide official PMP certificate or verification from PMI.\"\n      }\n    ],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_001\",\n        \"requirementId\": \"req_cafbad9f4518\",\n        \"severity\": \"high\",\n        \"gap\": \"No documented proof of PMP certification.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_46da3a6e286c\",\n        \"text\": \"candidate said they 'got the PMP a couple of years ago' and offered to look for the certificate and send it after the interview.\",\n        \"signalType\": \"subjective claim\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"medium\",\n        \"recommendedHandling\": \"Verify certification through official documentation.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_001\",\n        \"requirementId\": \"req_cafbad9f4518\",\n        \"question\": \"Can you provide a copy of your PMP certification or a verification from PMI?\",\n        \"evidenceTarget\": \"Official PMP certificate or PMI verification.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify PMP certification status.\",\n      \"Confirm that project management experience aligns with the plant’s capital governance policy.\"\n    ],\n    \"auditSummary\": \"The candidate demonstrates relevant experience in planning, supplier and contractor management, site acceptance testing, and cost/schedule reporting for capital equipment projects. However, there is no verifiable evidence of PMP certification, which is a mandatory requirement. Human review is required to confirm certification and assess overall fit.\",\n    \"limitations\": [\n      \"Evidence limited to provided resume, work sample, and notes; no external verification of PMP certification.\"\n    ]\n  }\n}",
+ "content_sha256": "4f9fa7ea58eb19b03171ce9ac27b699f5b058cb6f89e34db6419d29dc68e33d7",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_547ff730880f4c9a",
+   "targetRoleTitle": "Capital Projects Manager, Bottling Plant",
+   "professionalSummary": [
+    {
+     "claimId": "cs_001",
+     "text": "Planned the replacement of a yoghurt cup filler and a case erector, maintaining a baseline schedule in MS Project and tracking committed and actual cost against the approved budget.",
+     "sourceIds": [
+      "src_de3bf699eac5"
+     ],
+     "requirementIds": [
+      "req_9378541330e4"
+     ],
+     "supportBoundary": "supported",
+     "witness": "planned the replacement of a yoghurt cup filler and a case erector, keeping the baseline schedule in MS Project and tracking committed and actual cost against the approved budget."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_001",
+     "text": "Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.",
+     "sourceIds": [
+      "src_4ab056d2c574"
+     ],
+     "requirementIds": [
+      "req_897624f96bed"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "pw_001",
+     "text": "Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.",
+     "sourceIds": [
+      "src_80068bcb1807"
+     ],
+     "requirementIds": [
+      "req_d296772b23fd"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "sk_001",
+     "text": "Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.",
+     "sourceIds": [
+      "src_a8a92dafd890"
+     ],
+     "requirementIds": [
+      "req_ab5679b9ce92"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in planning, supplier management, site acceptance testing, and cost/schedule reporting for capital equipment projects, but do not confirm PMP certification."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess PMP certification and other gaps."
+   },
+   "role": {
+    "roleTitle": "Capital Projects Manager, Bottling Plant",
+    "jobDescriptionSource": "jd_ad4e7493832a10a7",
+    "requirementIds": [
+     "req_9378541330e4",
+     "req_897624f96bed",
+     "req_d296772b23fd",
+     "req_ab5679b9ce92",
+     "req_cafbad9f4518"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_547ff730880f4c9a",
+    "sources": [
+     "src_de3bf699eac5",
+     "src_4ab056d2c574",
+     "src_80068bcb1807",
+     "src_a8a92dafd890",
+     "src_03fa8e7955de",
+     "src_df34d2aa39db",
+     "src_46da3a6e286c",
+     "src_a0bd011931f4"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_9378541330e4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_de3bf699eac5",
+       "text": "planned the replacement of a yoghurt cup filler and a case erector, keeping the baseline schedule in MS Project and tracking committed and actual cost against the approved budget.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of baseline schedule and cost tracking."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_897624f96bed",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4ab056d2c574",
+       "text": "Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of supplier and contractor management."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d296772b23fd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_80068bcb1807",
+       "text": "Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of site acceptance testing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ab5679b9ce92",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a8a92dafd890",
+       "text": "Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of reporting to governance forum."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cafbad9f4518",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Proof of PMP certification (e.g., certificate copy or verification from PMI)."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Planned the replacement of a yoghurt cup filler and a case erector, maintaining a baseline schedule in MS Project and tracking committed and actual cost against the approved budget.",
+     "supportingRequirementIds": [
+      "req_9378541330e4"
+     ],
+     "sourceIds": [
+      "src_de3bf699eac5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "planned the replacement of a yoghurt cup filler and a case erector, keeping the baseline schedule in MS Project and tracking committed and actual cost against the approved budget."
+    },
+    {
+     "claim": "Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval.",
+     "supportingRequirementIds": [
+      "req_897624f96bed"
+     ],
+     "sourceIds": [
+      "src_4ab056d2c574"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed the filler supplier and two installation contractors during a three‑week shutdown, logging each contract change request with its cost and the plant engineering manager's approval."
+    },
+    {
+     "claim": "Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production.",
+     "supportingRequirementIds": [
+      "req_d296772b23fd"
+     ],
+     "sourceIds": [
+      "src_80068bcb1807"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the site acceptance test protocol for the new filler with the production and quality leads and recorded each test result and deviation until the line was released back to production."
+    },
+    {
+     "claim": "Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project.",
+     "supportingRequirementIds": [
+      "req_ab5679b9ce92"
+     ],
+     "sourceIds": [
+      "src_a8a92dafd890"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly cost and schedule report for the site capital review, showing committed spend, forecast to complete and milestone status for each open project."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate holds a PMP certification.",
+     "reason": "The only evidence is a recruiter note stating the candidate claimed to have obtained PMP a couple of years ago, with no verification.",
+     "requiredFollowUp": "Provide official PMP certificate or verification from PMI."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_cafbad9f4518",
+     "severity": "high",
+     "gap": "No documented proof of PMP certification."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_46da3a6e286c",
+     "text": "candidate said they 'got the PMP a couple of years ago' and offered to look for the certificate and send it after the interview.",
+     "signalType": "subjective claim",
+     "jobRelatedBoundary": true,
+     "severity": "medium",
+     "recommendedHandling": "Verify certification through official documentation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_cafbad9f4518",
+     "question": "Can you provide a copy of your PMP certification or a verification from PMI?",
+     "evidenceTarget": "Official PMP certificate or PMI verification."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify PMP certification status.",
+    "Confirm that project management experience aligns with the plant’s capital governance policy."
+   ],
+   "auditSummary": "The candidate demonstrates relevant experience in planning, supplier and contractor management, site acceptance testing, and cost/schedule reporting for capital equipment projects. However, there is no verifiable evidence of PMP certification, which is a mandatory requirement. Human review is required to confirm certification and assess overall fit.",
+   "limitations": [
+    "Evidence limited to provided resume, work sample, and notes; no external verification of PMP certification."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:34:55.708107+00:00"
+}

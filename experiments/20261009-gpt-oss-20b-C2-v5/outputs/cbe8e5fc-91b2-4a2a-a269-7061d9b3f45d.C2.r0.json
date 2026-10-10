@@ -1,0 +1,245 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "cbe8e5fc-91b2-4a2a-a269-7061d9b3f45d.C2",
+ "case_id": "cbe8e5fc-91b2-4a2a-a269-7061d9b3f45d",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14905,
+  "promptWords": 1742
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.044
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4151,
+ "eval_count": 1638,
+ "prompt_eval_duration_ns": 18964000,
+ "eval_duration_ns": 29840613000,
+ "total_duration_ns": 42041953000,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure no subjective. Provide evidence for each requirement. Let's map.\n\nRequirements:\n\nreq_f779497ce5f4: develop features and scorecards in Python or SAS. Evidence: src_3bcd04f4e707 (Python). Also src_3bcd04f4e707 mentions logistic regression and weight-of-evidence binning. So supported.\n\nreq_fa95b9836507: validates scorecards on out-of-time samples and reports discrimination and stability measures. Evidence: src_0c5422c3d69d (Gini 0.58, PSI 0.04). Also src_0c5422c3d69d. So supported.\n\nreq_77e0e0958a24: writes model documentation that passes independent validation. Evidence: src_d719e84d7094 (wrote doc, validation team closed review with two minor findings resolved). So supported.\n\nreq_c20d1d62e9a7: shows effect of scorecard on delinquency or losses from cohort comparison with defined observation window. Evidence: src_b40264bc6b3a (rebuilt scorecard lowered 90-day delinquencies by 18 basis points). Observation window 90 days defined. So supported.\n\nreq_e9b5a86a5eb1: maintains monthly scorecard monitoring reports, including population stability. Evidence: src_3d7f089d7fec (produced monthly monitoring pack covering population stability, characteristic stability, approval rates). So supported.\n\nAll requirements supported. No gaps.\n\nNeed CV optimized: professionalSummary, experienceHighlights, projectsAndWorkSamples, skills. Use claims with source citations.\n\nEvidenceBoundary: one or two sentences on what materials establish.\n\nHiringEvidencePacket: decisionBoundary flags: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list (all sourceIds used).\n\nrequirementEvidenceMap: each requirement with status supported, evidence array with sourceId, text, evidenceStrength high? medium? We'll set high for direct evidence. notes empty.\n\nsupportedClaims: list of claims from CV. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high, witness verbatim passage.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Review candidate's overall fit and alignment with team culture.\" but must be generic. Provide one item.\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"No evidence of experience with SAS or collections strategy team collaboration.\" but we have Python. Provide limitation.\n\nEnsure no subjective. Provide language en.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_2bdad0123b273750\",\"targetRoleTitle\":\"Credit Risk Data Scientist, Consumer Lending\",\"professionalSummary\":[\"Data scientist with proven experience in developing and validating consumer credit scorecards using Python, delivering measurable improvements in delinquency rates and maintaining robust monitoring reports.\"],\"experienceHighlights\":[\"Engineered bureau and open‑banking affordability features for a personal‑loan application scorecard at Granby Finance, employing logistic regression and weight‑of‑evidence binning in Python.\",\"Validated the scorecard on an out‑of‑time sample of 2022 applications, reporting a Gini coefficient of 0.58 and a population stability index of 0.04.\",\"Rebuilt the application scorecard, reducing 90‑day delinquencies by 18 basis points and saving the business millions in charge‑offs.\",\"Authored the model development document for independent validation; the validation team closed its review with two minor findings, both resolved before sign‑off.\",\"Produced the monthly monitoring pack for the scorecard, covering population stability, characteristic stability and approval rates by score band.\"],\"projectsAndWorkSamples\":[\"Work sample: excerpt of the model development document, including variable list, binning tables for three features, out‑of‑time results (Gini 0.58, PSI 0.04) and the validation team’s closure memo.\"],\"skills\":[\"Python\",\"Logistic Regression\",\"Weight‑of‑Evidence Binning\",\"Scorecard Development\",\"Out‑of‑Time Validation\",\"Model Documentation\",\"Monitoring Reports\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in feature engineering, scorecard development, out‑of‑time validation, documentation for independent validation, and monthly monitoring of scorecard performance.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess overall fit and alignment with team culture.\"},\"role\":{\"roleTitle\":\"Credit Risk Data Scientist, Consumer Lending\",\"jobDescriptionSource\":\"jd_e58a6fcc1da5c184\",\"requirementIds\":[\"req_f779497ce5f4\",\"req_fa95b9836507\",\"req_77e0e0958a24\",\"req_c20d1d62e9a7\",\"req_e9b5a86a5eb1\"]},\"candidate\":{\"candidateId\":\"cand_2bdad0123b273750\",\"sources\":[\"src_3bcd04f4e707\",\"src_0c5422c3d69d\",\"src_b40264bc6b3a\",\"src_d719e84d7094\",\"src_3d7f089d7fec\",\"src_389e132f4e67\",\"src_d820673e475d\",\"src_89e5dc3e6a0b\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_f779497ce5f4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3bcd04f4e707\",\"text\":\"Engineered bureau and open‑banking affordability features for the personal‑loan application scorecard at Granby Finance, working in Python with logistic regression and weight‑of‑evidence binning.\",\"evidenceStrength\":\"high\",\"notes\":\"\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fa95b9836507\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0c5422c3d69d\",\"text\":\"Validated the scorecard on an out‑of‑time sample of 2022 applications, reporting a Gini coefficient of 0.58 and a population stability index of 0.04 against the development sample.\",\"evidenceStrength\":\"high\",\"notes\":\"\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_77e0e0958a24\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d719e84d7094\",\"text\":\"Wrote the model development document for independent validation; the validation team closed its review with two minor findings, both resolved before sign‑off.\",\"evidenceStrength\":\"high\",\"notes\":\"\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c20d1d62e9a7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b40264bc6b3a\",\"text\":\"Rebuilt the application scorecard, which lowered 90‑day delinquencies by 18 basis points and saved the business millions in charge‑offs.\",\"evidenceStrength\":\"high\",\"notes\":\"\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e9b5a86a5eb1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3d7f089d7fec\",\"text\":\"Produced the monthly monitoring pack for the scorecard, covering population stability, characteristic stability and approval rates by score band.\",\"evidenceStrength\":\"high\",\"notes\":\"\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Developed consumer credit scorecards in Python, including feature engineering and weight‑of‑evidence binning.\",\"supportingRequirementIds\":[\"req_f779497ce5f4\"],\"sourceIds\":[\"src_3bcd04f4e707\"],\"evidenceStrength\":\"high\",\"witness\":\"Engineered bureau and open‑banking affordability features for the personal‑loan application scorecard at Granby Finance, working in Python with logistic regression and weight‑of‑evidence binning.\"},{\"claim\":\"Validated scorecards on out‑of‑time samples, reporting Gini and PSI metrics.\",\"supportingRequirementIds\":[\"req_fa95b9836507\"],\"sourceIds\":[\"src_0c5422c3d69d\"],\"evidenceStrength\":\"high\",\"witness\":\"Validated the scorecard on an out‑of‑time sample of 2022 applications, reporting a Gini coefficient of 0.58 and a population stability index of 0.04 against the development sample.\"},{\"claim\":\"Authored model development documentation that passed independent validation.\",\"supportingRequirementIds\":[\"req_77e0e0958a24\"],\"sourceIds\":[\"src_d719e84d7094\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the model development document for independent validation; the validation team closed its review with two minor findings, both resolved before sign‑off.\"},{\"claim\":\"Demonstrated scorecard impact on delinquency rates through cohort comparison over a 90‑day window.\",\"supportingRequirementIds\":[\"req_c20d1d62e9a7\"],\"sourceIds\":[\"src_b40264bc6b3a\"],\"evidenceStrength\":\"high\",\"witness\":\"Rebuilt the application scorecard, which lowered 90‑day delinquencies by 18 basis points and saved the business millions in charge‑offs.\"},{\"claim\":\"Maintained monthly monitoring reports covering population stability and other key metrics.\",\"supportingRequirementIds\":[\"req_e9b5a86a5eb1\"],\"sourceIds\":[\"src_3d7f089d7fec\"],\"evidenceStrength\":\"high\",\"witness\":\"Produced the monthly monitoring pack for the scorecard, covering population stability, characteristic stability and approval rates by score band.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Review candidate’s overall fit and alignment with team culture.\"],\"auditSummary\":\"All five job requirements are supported by direct evidence from the candidate’s resume and work sample. The evidence includes specific metrics, documentation, and monitoring activities that align with the role’s responsibilities. No gaps or unsupported claims were identified.\",\"limitations\":[\"No evidence of experience with SAS or collaboration with collections strategy team; these areas are not covered in the provided materials.\"]} }",
+ "content_sha256": "76bfb60c5d33fd6441ef6bd09edd3cb01bcc446e792a21815b5fbe152c60060c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2bdad0123b273750",
+   "targetRoleTitle": "Credit Risk Data Scientist, Consumer Lending",
+   "professionalSummary": [
+    "Data scientist with proven experience in developing and validating consumer credit scorecards using Python, delivering measurable improvements in delinquency rates and maintaining robust monitoring reports."
+   ],
+   "experienceHighlights": [
+    "Engineered bureau and open‑banking affordability features for a personal‑loan application scorecard at Granby Finance, employing logistic regression and weight‑of‑evidence binning in Python.",
+    "Validated the scorecard on an out‑of‑time sample of 2022 applications, reporting a Gini coefficient of 0.58 and a population stability index of 0.04.",
+    "Rebuilt the application scorecard, reducing 90‑day delinquencies by 18 basis points and saving the business millions in charge‑offs.",
+    "Authored the model development document for independent validation; the validation team closed its review with two minor findings, both resolved before sign‑off.",
+    "Produced the monthly monitoring pack for the scorecard, covering population stability, characteristic stability and approval rates by score band."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: excerpt of the model development document, including variable list, binning tables for three features, out‑of‑time results (Gini 0.58, PSI 0.04) and the validation team’s closure memo."
+   ],
+   "skills": [
+    "Python",
+    "Logistic Regression",
+    "Weight‑of‑Evidence Binning",
+    "Scorecard Development",
+    "Out‑of‑Time Validation",
+    "Model Documentation",
+    "Monitoring Reports"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in feature engineering, scorecard development, out‑of‑time validation, documentation for independent validation, and monthly monitoring of scorecard performance."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess overall fit and alignment with team culture."
+   },
+   "role": {
+    "roleTitle": "Credit Risk Data Scientist, Consumer Lending",
+    "jobDescriptionSource": "jd_e58a6fcc1da5c184",
+    "requirementIds": [
+     "req_f779497ce5f4",
+     "req_fa95b9836507",
+     "req_77e0e0958a24",
+     "req_c20d1d62e9a7",
+     "req_e9b5a86a5eb1"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2bdad0123b273750",
+    "sources": [
+     "src_3bcd04f4e707",
+     "src_0c5422c3d69d",
+     "src_b40264bc6b3a",
+     "src_d719e84d7094",
+     "src_3d7f089d7fec",
+     "src_389e132f4e67",
+     "src_d820673e475d",
+     "src_89e5dc3e6a0b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f779497ce5f4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3bcd04f4e707",
+       "text": "Engineered bureau and open‑banking affordability features for the personal‑loan application scorecard at Granby Finance, working in Python with logistic regression and weight‑of‑evidence binning.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fa95b9836507",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0c5422c3d69d",
+       "text": "Validated the scorecard on an out‑of‑time sample of 2022 applications, reporting a Gini coefficient of 0.58 and a population stability index of 0.04 against the development sample.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_77e0e0958a24",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d719e84d7094",
+       "text": "Wrote the model development document for independent validation; the validation team closed its review with two minor findings, both resolved before sign‑off.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c20d1d62e9a7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b40264bc6b3a",
+       "text": "Rebuilt the application scorecard, which lowered 90‑day delinquencies by 18 basis points and saved the business millions in charge‑offs.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e9b5a86a5eb1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3d7f089d7fec",
+       "text": "Produced the monthly monitoring pack for the scorecard, covering population stability, characteristic stability and approval rates by score band.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed consumer credit scorecards in Python, including feature engineering and weight‑of‑evidence binning.",
+     "supportingRequirementIds": [
+      "req_f779497ce5f4"
+     ],
+     "sourceIds": [
+      "src_3bcd04f4e707"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Engineered bureau and open‑banking affordability features for the personal‑loan application scorecard at Granby Finance, working in Python with logistic regression and weight‑of‑evidence binning."
+    },
+    {
+     "claim": "Validated scorecards on out‑of‑time samples, reporting Gini and PSI metrics.",
+     "supportingRequirementIds": [
+      "req_fa95b9836507"
+     ],
+     "sourceIds": [
+      "src_0c5422c3d69d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Validated the scorecard on an out‑of‑time sample of 2022 applications, reporting a Gini coefficient of 0.58 and a population stability index of 0.04 against the development sample."
+    },
+    {
+     "claim": "Authored model development documentation that passed independent validation.",
+     "supportingRequirementIds": [
+      "req_77e0e0958a24"
+     ],
+     "sourceIds": [
+      "src_d719e84d7094"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model development document for independent validation; the validation team closed its review with two minor findings, both resolved before sign‑off."
+    },
+    {
+     "claim": "Demonstrated scorecard impact on delinquency rates through cohort comparison over a 90‑day window.",
+     "supportingRequirementIds": [
+      "req_c20d1d62e9a7"
+     ],
+     "sourceIds": [
+      "src_b40264bc6b3a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rebuilt the application scorecard, which lowered 90‑day delinquencies by 18 basis points and saved the business millions in charge‑offs."
+    },
+    {
+     "claim": "Maintained monthly monitoring reports covering population stability and other key metrics.",
+     "supportingRequirementIds": [
+      "req_e9b5a86a5eb1"
+     ],
+     "sourceIds": [
+      "src_3d7f089d7fec"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Produced the monthly monitoring pack for the scorecard, covering population stability, characteristic stability and approval rates by score band."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Review candidate’s overall fit and alignment with team culture."
+   ],
+   "auditSummary": "All five job requirements are supported by direct evidence from the candidate’s resume and work sample. The evidence includes specific metrics, documentation, and monitoring activities that align with the role’s responsibilities. No gaps or unsupported claims were identified.",
+   "limitations": [
+    "No evidence of experience with SAS or collaboration with collections strategy team; these areas are not covered in the provided materials."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:27:16.289896+00:00"
+}

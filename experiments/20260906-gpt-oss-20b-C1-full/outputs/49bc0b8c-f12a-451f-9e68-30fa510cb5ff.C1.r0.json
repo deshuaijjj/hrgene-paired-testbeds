@@ -1,0 +1,268 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "49bc0b8c-f12a-451f-9e68-30fa510cb5ff.C1",
+ "case_id": "49bc0b8c-f12a-451f-9e68-30fa510cb5ff",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11276,
+  "promptWords": 1456
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 48.219
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3218,
+ "eval_count": 1884,
+ "prompt_eval_duration_ns": 18280000,
+ "eval_duration_ns": 33676850000,
+ "total_duration_ns": 48216135000,
+ "thinking": "We need to produce JSON with optimizedCv and hiringEvidencePacket. Use sources. Need to cite. Let's craft claims.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Experienced Data Analytics Engineer with two years of pipeline development, feature maintenance, and data lineage documentation for industrial equipment maintenance analytics.\" Cite src_9f9904c14d97.\n\nexperienceHighlights: list claims: pipeline join, feature set maintenance, schema coordination, lineage documentation. Each cite relevant source.\n\nprojectsAndWorkSamples: mention feature-set change log and lineage note sample. cite src_5f82770fdf55.\n\nskills: list: Spark, Databricks, telemetry integration, feature engineering, data lineage, schema coordination. Cite sources.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample documents demonstrate the candidate’s involvement in pipeline development, feature maintenance, schema coordination, and lineage documentation, but do not provide evidence of measurable improvement in early failure detection or explicit responsibility boundaries beyond coordination.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle same, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_0c9ef8bd4a97: Build pipeline join telemetry and work-order. Supported. evidence: src_8388544bcd04. evidenceStrength high. notes: direct statement.\n\nreq_1fd5f01d9d1a: Maintains failure-prediction feature set. Supported. evidence: src_472cc652ea61. high.\n\nreq_042cceef67d8: measurable increase in failures caught before unplanned stop. Insufficient evidence. missingEvidence: \"No documented metric or baseline demonstrating improvement attributable to candidate.\" gap severity high. evidence: none.\n\nreq_b672f5378d1b: coordinates schema and feature changes with planning and platform teams and records responsibility boundaries. Partial evidence: we have coordination but no explicit responsibility boundaries recorded. evidence: src_99cb20791d52. evidenceStrength medium. missingEvidence: \"Explicit record of responsibility boundaries.\" gap severity medium.\n\nreq_172141294aa0: documents data lineage, known limitations and hand-over conditions for each pipeline release. Supported. evidence: src_31f0e7a7c348. high.\n\nsupportedClaims: list claims that are supported: pipeline join, feature set maintenance, schema coordination, lineage documentation. Provide sourceIds.\n\nunsupportedClaims: maybe claim about measurable increase. Provide reason: not established. requiredFollowUp: ask for documentation of evaluation metrics.\n\nmissingEvidenceGaps: list gaps for req_042cceef67d8 and req_b672f5378d1b.\n\ninterviewSignalRisks: source src_8bd232e44822: recruiter screen mention planning team numbers. signalType: \"uncertain metric attribution\". jobRelatedBoundary false. severity medium. recommendedHandling: verify metrics and attribution.\n\nfollowUpQuestions: for each gap: question about measurable improvement, question about responsibility boundaries.\n\nhumanReviewChecklist: items: verify metric attribution, confirm responsibility boundaries, assess alignment with role.\n\nauditSummary: paragraph summarizing.\n\nlimitations: e.g., limited to provided materials, no external verification.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_88a1be75efa1f7b1\",\"targetRoleTitle\":\"Data Analytics Engineer, Equipment Maintenance Services\",\"professionalSummary\":[\"Experienced Data Analytics Engineer with two years of pipeline development, feature maintenance, and data lineage documentation for industrial equipment maintenance analytics.\"],\"experienceHighlights\":[\"Built the hourly pipeline that joins vibration and temperature telemetry from customer machines with work-order history in the analytics warehouse (Spark jobs on Databricks), including late‑arrival handling for telemetry uploaded after a site visit.\"],\"projectsAndWorkSamples\":[\"Feature‑set change log for one quarter and the lineage note for the telemetry‑work‑order join, with Databricks job identifiers as a verification trail.\"],\"skills\":[\"Spark\",\"Databricks\",\"telemetry integration\",\"feature engineering\",\"data lineage\",\"schema coordination\"],\"evidenceBoundary\":\"The provided resume and work sample documents demonstrate the candidate’s involvement in pipeline development, feature maintenance, schema coordination, and lineage documentation, but do not provide evidence of measurable improvement in early failure detection or explicit responsibility boundaries beyond coordination.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Data Analytics Engineer, Equipment Maintenance Services\",\"jobDescriptionSource\":\"jd_d48342cc2e61f32c\",\"requirementIds\":[\"req_0c9ef8bd4a97\",\"req_1fd5f01d9d1a\",\"req_042cceef67d8\",\"req_b672f5378d1b\",\"req_172141294aa0\"]},\"candidate\":{\"candidateId\":\"cand_88a1be75efa1f7b1\",\"sources\":[\"src_8388544bcd04\",\"src_472cc652ea61\",\"src_99cb20791d52\",\"src_31f0e7a7c348\",\"src_9f9904c14d97\",\"src_5f82770fdf55\",\"src_8bd232e44822\",\"src_38ef25ded657\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_0c9ef8bd4a97\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8388544bcd04\",\"text\":\"Built the hourly pipeline that joins vibration and temperature telemetry from customer machines with work-order history in the analytics warehouse (Spark jobs on Databricks), including the late-arrival handling for telemetry uploaded after a site visit.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of pipeline construction.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_1fd5f01d9d1a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_472cc652ea61\",\"text\":\"Maintained the failure-prediction feature set (rolling vibration statistics, days since last service, part age) consumed by the planning team's model, versioning each feature change with a note on the affected machine families.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of feature maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_042cceef67d8\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No documented metric or baseline demonstrating improvement in failures caught before an unplanned stop attributable to the candidate.\"]},{\"requirementId\":\"req_b672f5378d1b\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_99cb20791d52\",\"text\":\"Coordinated schema changes with the planning and platform teams in the fortnightly data review; the platform lead approved warehouse schema changes and the planning lead approved feature changes.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination but no explicit responsibility boundary record.\"}],\"missingEvidence\":[\"Explicit record of responsibility boundaries for schema and feature changes.\"]},{\"requirementId\":\"req_172141294aa0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_31f0e7a7c348\",\"text\":\"Wrote the lineage note for the telemetry-work-order join, listing the source tables, the late-arrival rule and the known limitation that machines without a telemetry gateway are absent from the features.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of lineage documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Built the hourly pipeline that joins vibration and temperature telemetry with work-order history in the analytics warehouse.\",\"supportingRequirementIds\":[\"req_0c9ef8bd4a97\"],\"sourceIds\":[\"src_8388544bcd04\"],\"evidenceStrength\":\"high\",\"witness\":\"Built the hourly pipeline that joins vibration and temperature telemetry from customer machines with work-order history in the analytics warehouse (Spark jobs on Databricks), including the late-arrival handling for telemetry uploaded after a site visit.\"},{\"claim\":\"Maintained the failure-prediction feature set consumed by the planning team's model.\",\"supportingRequirementIds\":[\"req_1fd5f01d9d1a\"],\"sourceIds\":[\"src_472cc652ea61\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the failure-prediction feature set (rolling vibration statistics, days since last service, part age) consumed by the planning team's model, versioning each feature change with a note on the affected machine families.\"},{\"claim\":\"Coordinated schema changes with the planning and platform teams.\",\"supportingRequirementIds\":[\"req_b672f5378d1b\"],\"sourceIds\":[\"src_99cb20791d52\"],\"evidenceStrength\":\"medium\",\"witness\":\"Coordinated schema changes with the planning and platform teams in the fortnightly data review; the platform lead approved warehouse schema changes and the planning lead approved feature changes.\"},{\"claim\":\"Documented data lineage for the telemetry-work-order join.\",\"supportingRequirementIds\":[\"req_172141294aa0\"],\"sourceIds\":[\"src_31f0e7a7c348\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the lineage note for the telemetry-work-order join, listing the source tables, the late-arrival rule and the known limitation that machines without a telemetry gateway are absent from the features.\"}],\"unsupportedClaims\":[{\"claim\":\"Demonstrated a measurable increase in failures caught before an unplanned stop against the division's published baseline.\",\"reason\":\"No evidence of a documented metric or baseline showing improvement attributable to the candidate.\",\"requiredFollowUp\":\"Request documentation of evaluation metrics, baseline, and attribution of improvement to the candidate.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_042cceef67d8\",\"requirementId\":\"req_042cceef67d8\",\"severity\":\"high\",\"gap\":\"No documented metric or baseline demonstrating improvement in failures caught before an unplanned stop attributable to the candidate.\"},{\"gapId\":\"gap_b672f5378d1b\",\"requirementId\":\"req_b672f5378d1b\",\"severity\":\"medium\",\"gap\":\"Explicit record of responsibility boundaries for schema and feature changes is missing.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_8bd232e44822\",\"text\":\"Recruiter screen: candidate said the planning team told him the model 'now catches about two thirds of failures early, up from maybe half'; he said the numbers were the planning team's, that he had not seen the evaluation, and that several other changes were made to the model in the same period.\",\"signalType\":\"uncertain metric attribution\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify the metrics, baseline, and attribution of improvement to the candidate through documentation.\"}],\"followUpQuestions\":[{\"questionId\":\"q_042cceef67d8\",\"requirementId\":\"req_042cceef67d8\",\"question\":\"Can you provide documentation of the baseline failure‑catch rate and the evaluation that attributes the improvement to your work?\",\"evidenceTarget\":\"Baseline metric and attribution evidence.\"},{\"questionId\":\"q_b672f5378d1b\",\"requirementId\":\"req_b672f5378d1b\",\"question\":\"Do you have a written record that specifies your responsibility boundaries for schema and feature changes?\",\"evidenceTarget\":\"Explicit responsibility boundary documentation.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s pipeline and feature maintenance work aligns with the role’s technical requirements.\",\"Confirm that any claimed improvement in early failure detection is documented and attributable to the candidate.\",\"Assess the completeness of responsibility boundary documentation for schema and feature changes.\"],\"auditSummary\":\"The evidence indicates that the candidate has performed pipeline development, feature maintenance, schema coordination, and lineage documentation as required for the role. However, there is no documented evidence of measurable improvement in early failure detection or explicit responsibility boundaries. Human review should focus on verifying metrics attribution and responsibility documentation before any hiring decision.\",\"limitations\":[\"Analysis is limited to the provided resume, work sample, and notes; external verification of metrics or responsibility boundaries is not available.\"]}}",
+ "content_sha256": "4187ce7cd7b68f47415a68f3fe221510efee219f40c3c5aab6c2e33fcbd29b71",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_88a1be75efa1f7b1",
+   "targetRoleTitle": "Data Analytics Engineer, Equipment Maintenance Services",
+   "professionalSummary": [
+    "Experienced Data Analytics Engineer with two years of pipeline development, feature maintenance, and data lineage documentation for industrial equipment maintenance analytics."
+   ],
+   "experienceHighlights": [
+    "Built the hourly pipeline that joins vibration and temperature telemetry from customer machines with work-order history in the analytics warehouse (Spark jobs on Databricks), including late‑arrival handling for telemetry uploaded after a site visit."
+   ],
+   "projectsAndWorkSamples": [
+    "Feature‑set change log for one quarter and the lineage note for the telemetry‑work‑order join, with Databricks job identifiers as a verification trail."
+   ],
+   "skills": [
+    "Spark",
+    "Databricks",
+    "telemetry integration",
+    "feature engineering",
+    "data lineage",
+    "schema coordination"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents demonstrate the candidate’s involvement in pipeline development, feature maintenance, schema coordination, and lineage documentation, but do not provide evidence of measurable improvement in early failure detection or explicit responsibility boundaries beyond coordination."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Data Analytics Engineer, Equipment Maintenance Services",
+    "jobDescriptionSource": "jd_d48342cc2e61f32c",
+    "requirementIds": [
+     "req_0c9ef8bd4a97",
+     "req_1fd5f01d9d1a",
+     "req_042cceef67d8",
+     "req_b672f5378d1b",
+     "req_172141294aa0"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_88a1be75efa1f7b1",
+    "sources": [
+     "src_8388544bcd04",
+     "src_472cc652ea61",
+     "src_99cb20791d52",
+     "src_31f0e7a7c348",
+     "src_9f9904c14d97",
+     "src_5f82770fdf55",
+     "src_8bd232e44822",
+     "src_38ef25ded657"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0c9ef8bd4a97",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8388544bcd04",
+       "text": "Built the hourly pipeline that joins vibration and temperature telemetry from customer machines with work-order history in the analytics warehouse (Spark jobs on Databricks), including the late-arrival handling for telemetry uploaded after a site visit.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of pipeline construction."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1fd5f01d9d1a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_472cc652ea61",
+       "text": "Maintained the failure-prediction feature set (rolling vibration statistics, days since last service, part age) consumed by the planning team's model, versioning each feature change with a note on the affected machine families.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of feature maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_042cceef67d8",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No documented metric or baseline demonstrating improvement in failures caught before an unplanned stop attributable to the candidate."
+     ]
+    },
+    {
+     "requirementId": "req_b672f5378d1b",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_99cb20791d52",
+       "text": "Coordinated schema changes with the planning and platform teams in the fortnightly data review; the platform lead approved warehouse schema changes and the planning lead approved feature changes.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination but no explicit responsibility boundary record."
+      }
+     ],
+     "missingEvidence": [
+      "Explicit record of responsibility boundaries for schema and feature changes."
+     ]
+    },
+    {
+     "requirementId": "req_172141294aa0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_31f0e7a7c348",
+       "text": "Wrote the lineage note for the telemetry-work-order join, listing the source tables, the late-arrival rule and the known limitation that machines without a telemetry gateway are absent from the features.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of lineage documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built the hourly pipeline that joins vibration and temperature telemetry with work-order history in the analytics warehouse.",
+     "supportingRequirementIds": [
+      "req_0c9ef8bd4a97"
+     ],
+     "sourceIds": [
+      "src_8388544bcd04"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the hourly pipeline that joins vibration and temperature telemetry from customer machines with work-order history in the analytics warehouse (Spark jobs on Databricks), including the late-arrival handling for telemetry uploaded after a site visit."
+    },
+    {
+     "claim": "Maintained the failure-prediction feature set consumed by the planning team's model.",
+     "supportingRequirementIds": [
+      "req_1fd5f01d9d1a"
+     ],
+     "sourceIds": [
+      "src_472cc652ea61"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the failure-prediction feature set (rolling vibration statistics, days since last service, part age) consumed by the planning team's model, versioning each feature change with a note on the affected machine families."
+    },
+    {
+     "claim": "Coordinated schema changes with the planning and platform teams.",
+     "supportingRequirementIds": [
+      "req_b672f5378d1b"
+     ],
+     "sourceIds": [
+      "src_99cb20791d52"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Coordinated schema changes with the planning and platform teams in the fortnightly data review; the platform lead approved warehouse schema changes and the planning lead approved feature changes."
+    },
+    {
+     "claim": "Documented data lineage for the telemetry-work-order join.",
+     "supportingRequirementIds": [
+      "req_172141294aa0"
+     ],
+     "sourceIds": [
+      "src_31f0e7a7c348"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the lineage note for the telemetry-work-order join, listing the source tables, the late-arrival rule and the known limitation that machines without a telemetry gateway are absent from the features."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Demonstrated a measurable increase in failures caught before an unplanned stop against the division's published baseline.",
+     "reason": "No evidence of a documented metric or baseline showing improvement attributable to the candidate.",
+     "requiredFollowUp": "Request documentation of evaluation metrics, baseline, and attribution of improvement to the candidate."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_042cceef67d8",
+     "requirementId": "req_042cceef67d8",
+     "severity": "high",
+     "gap": "No documented metric or baseline demonstrating improvement in failures caught before an unplanned stop attributable to the candidate."
+    },
+    {
+     "gapId": "gap_b672f5378d1b",
+     "requirementId": "req_b672f5378d1b",
+     "severity": "medium",
+     "gap": "Explicit record of responsibility boundaries for schema and feature changes is missing."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_8bd232e44822",
+     "text": "Recruiter screen: candidate said the planning team told him the model 'now catches about two thirds of failures early, up from maybe half'; he said the numbers were the planning team's, that he had not seen the evaluation, and that several other changes were made to the model in the same period.",
+     "signalType": "uncertain metric attribution",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify the metrics, baseline, and attribution of improvement to the candidate through documentation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_042cceef67d8",
+     "requirementId": "req_042cceef67d8",
+     "question": "Can you provide documentation of the baseline failure‑catch rate and the evaluation that attributes the improvement to your work?",
+     "evidenceTarget": "Baseline metric and attribution evidence."
+    },
+    {
+     "questionId": "q_b672f5378d1b",
+     "requirementId": "req_b672f5378d1b",
+     "question": "Do you have a written record that specifies your responsibility boundaries for schema and feature changes?",
+     "evidenceTarget": "Explicit responsibility boundary documentation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s pipeline and feature maintenance work aligns with the role’s technical requirements.",
+    "Confirm that any claimed improvement in early failure detection is documented and attributable to the candidate.",
+    "Assess the completeness of responsibility boundary documentation for schema and feature changes."
+   ],
+   "auditSummary": "The evidence indicates that the candidate has performed pipeline development, feature maintenance, schema coordination, and lineage documentation as required for the role. However, there is no documented evidence of measurable improvement in early failure detection or explicit responsibility boundaries. Human review should focus on verifying metrics attribution and responsibility documentation before any hiring decision.",
+   "limitations": [
+    "Analysis is limited to the provided resume, work sample, and notes; external verification of metrics or responsibility boundaries is not available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:28:03.441835+00:00"
+}

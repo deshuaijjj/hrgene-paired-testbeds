@@ -1,0 +1,199 @@
+{
+ "request_id": "c198aff1-f6ad-4669-a785-d389ac5e6dc6.C2",
+ "case_id": "c198aff1-f6ad-4669-a785-d389ac5e6dc6",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].notes",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: sign off, sign-off",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "sign off",
+      "sign-off"
+     ],
+     "sourceIds": [
+      "src_40cd24c53f1e"
+     ],
+     "sourceFamilies": [],
+     "text": "Clear evidence of taking workflows into live operation with go-live sign-off and hypercare period."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its ownership term(s) [APPROVE] (sign off, sign-off) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_639ac8efb4ae",
+     "family": "APPROVE",
+     "terms": [
+      "sign off",
+      "sign-off"
+     ],
+     "sourceIds": [
+      "src_40cd24c53f1e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].notes",
+    "message": "production/live wording not licensed by the cited sources: operational",
+    "witness": {
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_a61fe3523acf"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Clear evidence of maintaining the operational procedures library."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (operational) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_04aa13b7c3e7",
+     "family": "PRODUCTION",
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_7806baab6b3e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (operational) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_1d0414781cb3",
+     "family": "PRODUCTION",
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_a61fe3523acf"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

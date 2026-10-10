@@ -1,0 +1,110 @@
+{
+ "caseId": "5432b0df-b67f-442e-914b-cb8b712b1ffa",
+ "roleTitle": "MLOps Engineer, Customer Analytics",
+ "jobDescription": "Hollowbrook sells accounting software to small firms and scores each account for churn risk to guide its customer-success team. The MLOps Engineer runs the training and batch-scoring pipelines, keeps the feature store documented, moves approved models to production through the change process and owns monitoring and alerting for production models. The team is also asked to show whether the scores improve retention. The data platform team has six engineers working in Airflow, a cloud warehouse and a feature store, production model changes go through the weekly change review, and the scores feed a weekly call list for the customer-success managers.",
+ "requirements": [
+  "Builds and schedules training and batch-scoring pipelines.",
+  "Maintains a feature store with documented feature definitions.",
+  "Has moved a model pipeline to production through a change process and owned its monitoring.",
+  "Sets up drift and data-quality alerts for production models.",
+  "Measures whether model scores improve customer-success outcomes."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Data Engineer, Cobalt Ledger, May 2021 to June 2024: built the Airflow DAGs that retrain the churn model monthly and score 48,000 accounts every night, with retries and failure alerts on each task."
+  },
+  {
+   "type": "resume",
+   "text": "Documented 70 feature definitions in the feature store, each with an owner, a refresh schedule and the SQL behind it, and reviewed new features with the analysts who requested them."
+  },
+  {
+   "type": "resume",
+   "text": "Promoted the churn-scoring pipeline from the staging project to the production project after a two-week parallel run in staging that compared the nightly scores account by account."
+  },
+  {
+   "type": "resume",
+   "text": "Set up data-quality checks on each nightly feature load and a weekly drift alert on the score distribution, paging the data team's on-call channel when thresholds were crossed."
+  },
+  {
+   "type": "resume",
+   "text": "Met the customer-success leads monthly to explain score changes and noted their comments on accounts flagged as high risk, passing them to the data science team."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the monitoring runbook for the churn-scoring pipeline, giving the drift thresholds, the data-quality checks, the alert routing and the steps for re-running a failed nightly score, as approved by the head of data."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: the former employer's change-management export lists the candidate as requester and implementer of release ML-2291, which moved the churn-scoring pipeline to production on 7 August 2023."
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: Cobalt Ledger's head of data confirmed in writing that the candidate was the named owner of the churn-scoring pipeline's production alerts from August 2023 until leaving in June 2024."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "Release ML-2291, with the candidate as requester and implementer, moved the churn-scoring pipeline to production on 7 August 2023 after a two-week parallel run in staging.",
+    "status": "supported",
+    "sources": [
+     3,
+     7
+    ],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "verified_production_record",
+    "criticality": "noncritical",
+    "rationale": "The change-management export recorded in the HR verification note gives the release and date, and the resume describes the promotion and the parallel run."
+   },
+   {
+    "text": "The candidate set up nightly data-quality checks and a weekly drift alert on the score distribution, and was the named owner of the pipeline's production alerts.",
+    "status": "supported",
+    "sources": [
+     4,
+     6,
+     8
+    ],
+    "requirements": [
+     4
+    ],
+    "boundaryCategory": "documented_task_and_tooling",
+    "criticality": "noncritical",
+    "rationale": "The resume and the runbook describe the checks and alerts, and the reference check confirms the alert ownership."
+   },
+   {
+    "text": "The candidate documented 70 feature definitions in the feature store.",
+    "status": "supported",
+    "sources": [
+     2
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the feature documentation directly."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "partial_evidence"
+  ],
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "Monthly discussions with customer-success leads are documented; no measurement of whether the scores changed retention or other outcomes is.",
+  "expectedBoundaryNote": "Keep the production release record with its date, the parallel run, the alerting and the verified alert ownership; do not add retention effects.",
+  "followUpTargets": [
+   "Ask whether the effect of churn scores on customer-success outcomes was measured, and how."
+  ],
+  "validClaimSignatures": [
+   "ML-2291",
+   "70 feature definitions"
+  ]
+ }
+}

@@ -1,0 +1,248 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "9fac316b-9bd1-4976-8879-4f521f032d55.C1",
+ "case_id": "9fac316b-9bd1-4976-8879-4f521f032d55",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11286,
+  "promptWords": 1457
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 34.688
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2703,
+ "eval_count": 1629,
+ "prompt_eval_duration_ns": 17826000,
+ "eval_duration_ns": 28683535000,
+ "total_duration_ns": 34685264375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimized CV with claims referencing sources. Use source IDs. For each claim, include sourceIds. For evidenceBoundary: one or two sentences on what materials establish and not.\n\nRequirement evidence map: list each requirement id with status. We have evidence for all. So all supported. Provide evidence entries with sourceId and text verbatim. Need to copy text from sources. We have source texts in description. We'll use them.\n\nAlso need supportedClaims array: maybe each claim from CV. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high? Since direct. Use high.\n\nUnsupportedClaims empty.\n\nMissingEvidenceGaps empty.\n\nInterviewSignalRisks: maybe note from src_777e405fef2c about workshop exercise. It's evidence of workshop method. Not a risk. No risk.\n\nFollowUpQuestions empty.\n\nHumanReviewChecklist: maybe \"Review evidence for each requirement\".\n\nAuditSummary: paragraph.\n\nLimitations: maybe \"No evidence of go-live approval process beyond manager approval\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_1fe8af674a5e4bbe\",\"targetRoleTitle\":\"Implementation Consultant, HR Software\",\"professionalSummary\":[\"Implementation consultant with three years of experience configuring payroll and absence products for mid‑sized employers under the configuration standard.\",\"Conducted policy workshops, data reconciliation, training, and documentation for each implementation.\",\"Collaborated with data migration and support teams to ensure smooth hand‑over.\"],\"experienceHighlights\":[\"Configured payroll and absence products for twenty‑three mid‑sized employers under the configuration standard.\",\"Ran policy workshops using the workshop method, capturing policy decisions and resolving internal disagreements into recorded decisions with customer sign‑off.\",\"Loaded and reconciled customer employee data with the data migration team, producing reconciliation reports signed by the customer HR lead.\",\"Trained customers’ HR administrators following a training plan; go‑live approval remained with the implementation manager and was recorded on the go‑live checklist.\",\"Authored limitation notes and hand‑over conditions for each implementation in the hand‑over pack to the support team.\"],\"projectsAndWorkSamples\":[\"Workshop records with customer sign‑off\",\"Reconciliation report\",\"Go‑live checklist with manager approval\",\"Hand‑over pack\"],\"skills\":[\"Product configuration\",\"Workshop facilitation\",\"Data reconciliation\",\"Training delivery\",\"Documentation\"],\"evidenceBoundary\":\"The provided resume and work samples establish the candidate’s direct involvement in configuration, workshop facilitation, data reconciliation, training, and documentation for HR software implementations. They do not provide evidence of independent ownership, leadership, or production‑level deployment beyond the described activities.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Implementation Consultant, HR Software\",\"jobDescriptionSource\":\"jd_ab3ceb505879758f\",\"requirementIds\":[\"req_f6bd00328fed\",\"req_f0c2ef165325\",\"req_66a46175c863\",\"req_71566409838b\",\"req_11e1186b89bb\"]},\"candidate\":{\"candidateId\":\"cand_1fe8af674a5e4bbe\",\"sources\":[\"src_7e49dd25f708\",\"src_71c929824723\",\"src_6a74076ca1e6\",\"src_412517805c96\",\"src_d49f1fc763bc\",\"src_097a7224d9aa\",\"src_777e405fef2c\",\"src_91c24640e328\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_f6bd00328fed\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_7e49dd25f708\",\"text\":\"Implementation consultant at an HR software company for three years, configuring the payroll and absence products for twenty‑three mid‑sized employers under the configuration standard.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of configuration activity.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f0c2ef165325\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_71c929824723\",\"text\":\"Ran the policy workshops for each implementation under the workshop method; the workshop records show the policy decisions captured, including the disagreements within customer teams resolved into a recorded decision, with the customers' sign‑off on each workshop record.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of workshop facilitation and resolution.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_66a46175c863\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6a74076ca1e6\",\"text\":\"Loaded and reconciled each customer's employee data with the data migration team, with the reconciliation report signed by the customer's HR lead.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of data loading and reconciliation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_71566409838b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_412517805c96\",\"text\":\"Trained the customers' HR administrators under the training plan; go‑live approval was the implementation manager's, recorded on the go‑live checklist together with which checks were mine.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of training and go‑live approval.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_11e1186b89bb\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d49f1fc763bc\",\"text\":\"Wrote the limitation note and the hand‑over conditions for each implementation in the hand‑over pack to the support team.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Configured payroll and absence products for twenty‑three mid‑sized employers under the configuration standard.\",\"sourceIds\":[\"src_7e49dd25f708\"],\"supportingRequirementIds\":[\"req_f6bd00328fed\"],\"evidenceStrength\":\"high\",\"witness\":\"Implementation consultant at an HR software company for three years, configuring the payroll and absence products for twenty‑three mid‑sized employers under the configuration standard.\"},{\"claim\":\"Ran policy workshops using the workshop method, capturing policy decisions and resolving internal disagreements into recorded decisions with customer sign‑off.\",\"sourceIds\":[\"src_71c929824723\"],\"supportingRequirementIds\":[\"req_f0c2ef165325\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the policy workshops for each implementation under the workshop method; the workshop records show the policy decisions captured, including the disagreements within customer teams resolved into a recorded decision, with the customers' sign‑off on each workshop record.\"},{\"claim\":\"Loaded and reconciled customer employee data with the data migration team, producing reconciliation reports signed by the customer HR lead.\",\"sourceIds\":[\"src_6a74076ca1e6\"],\"supportingRequirementIds\":[\"req_66a46175c863\"],\"evidenceStrength\":\"high\",\"witness\":\"Loaded and reconciled each customer's employee data with the data migration team, with the reconciliation report signed by the customer's HR lead.\"},{\"claim\":\"Trained customers’ HR administrators following a training plan; go‑live approval remained with the implementation manager and was recorded on the go‑live checklist.\",\"sourceIds\":[\"src_412517805c96\"],\"supportingRequirementIds\":[\"req_71566409838b\"],\"evidenceStrength\":\"high\",\"witness\":\"Trained the customers' HR administrators under the training plan; go‑live approval was the implementation manager's, recorded on the go‑live checklist together with which checks were mine.\"},{\"claim\":\"Authored limitation notes and hand‑over conditions for each implementation in the hand‑over pack to the support team.\",\"sourceIds\":[\"src_d49f1fc763bc\"],\"supportingRequirementIds\":[\"req_11e1186b89bb\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the limitation note and the hand‑over conditions for each implementation in the hand‑over pack to the support team.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that each requirement is fully satisfied by the cited evidence.\",\"Confirm that the candidate’s role scope aligns with the job description.\"],\"auditSummary\":\"All five job requirements are directly supported by the candidate’s resume and work samples. The evidence establishes the candidate’s involvement in configuration, workshop facilitation, data reconciliation, training, and documentation. No evidence of independent ownership or production deployment beyond the described activities is provided. Human review is recommended to confirm alignment with organizational expectations.\",\"limitations\":[\"Evidence does not confirm independent ownership or leadership beyond the described collaborative activities.\"]} }",
+ "content_sha256": "34070b55732674dcc78f58ccbc05ab0af2a420c2c722a5b554fccfe5972d54a3",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_1fe8af674a5e4bbe",
+   "targetRoleTitle": "Implementation Consultant, HR Software",
+   "professionalSummary": [
+    "Implementation consultant with three years of experience configuring payroll and absence products for mid‑sized employers under the configuration standard.",
+    "Conducted policy workshops, data reconciliation, training, and documentation for each implementation.",
+    "Collaborated with data migration and support teams to ensure smooth hand‑over."
+   ],
+   "experienceHighlights": [
+    "Configured payroll and absence products for twenty‑three mid‑sized employers under the configuration standard.",
+    "Ran policy workshops using the workshop method, capturing policy decisions and resolving internal disagreements into recorded decisions with customer sign‑off.",
+    "Loaded and reconciled customer employee data with the data migration team, producing reconciliation reports signed by the customer HR lead.",
+    "Trained customers’ HR administrators following a training plan; go‑live approval remained with the implementation manager and was recorded on the go‑live checklist.",
+    "Authored limitation notes and hand‑over conditions for each implementation in the hand‑over pack to the support team."
+   ],
+   "projectsAndWorkSamples": [
+    "Workshop records with customer sign‑off",
+    "Reconciliation report",
+    "Go‑live checklist with manager approval",
+    "Hand‑over pack"
+   ],
+   "skills": [
+    "Product configuration",
+    "Workshop facilitation",
+    "Data reconciliation",
+    "Training delivery",
+    "Documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work samples establish the candidate’s direct involvement in configuration, workshop facilitation, data reconciliation, training, and documentation for HR software implementations. They do not provide evidence of independent ownership, leadership, or production‑level deployment beyond the described activities."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Implementation Consultant, HR Software",
+    "jobDescriptionSource": "jd_ab3ceb505879758f",
+    "requirementIds": [
+     "req_f6bd00328fed",
+     "req_f0c2ef165325",
+     "req_66a46175c863",
+     "req_71566409838b",
+     "req_11e1186b89bb"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_1fe8af674a5e4bbe",
+    "sources": [
+     "src_7e49dd25f708",
+     "src_71c929824723",
+     "src_6a74076ca1e6",
+     "src_412517805c96",
+     "src_d49f1fc763bc",
+     "src_097a7224d9aa",
+     "src_777e405fef2c",
+     "src_91c24640e328"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f6bd00328fed",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7e49dd25f708",
+       "text": "Implementation consultant at an HR software company for three years, configuring the payroll and absence products for twenty‑three mid‑sized employers under the configuration standard.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of configuration activity."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f0c2ef165325",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_71c929824723",
+       "text": "Ran the policy workshops for each implementation under the workshop method; the workshop records show the policy decisions captured, including the disagreements within customer teams resolved into a recorded decision, with the customers' sign‑off on each workshop record.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of workshop facilitation and resolution."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_66a46175c863",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6a74076ca1e6",
+       "text": "Loaded and reconciled each customer's employee data with the data migration team, with the reconciliation report signed by the customer's HR lead.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of data loading and reconciliation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_71566409838b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_412517805c96",
+       "text": "Trained the customers' HR administrators under the training plan; go‑live approval was the implementation manager's, recorded on the go‑live checklist together with which checks were mine.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of training and go‑live approval."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_11e1186b89bb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d49f1fc763bc",
+       "text": "Wrote the limitation note and the hand‑over conditions for each implementation in the hand‑over pack to the support team.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Configured payroll and absence products for twenty‑three mid‑sized employers under the configuration standard.",
+     "sourceIds": [
+      "src_7e49dd25f708"
+     ],
+     "supportingRequirementIds": [
+      "req_f6bd00328fed"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Implementation consultant at an HR software company for three years, configuring the payroll and absence products for twenty‑three mid‑sized employers under the configuration standard."
+    },
+    {
+     "claim": "Ran policy workshops using the workshop method, capturing policy decisions and resolving internal disagreements into recorded decisions with customer sign‑off.",
+     "sourceIds": [
+      "src_71c929824723"
+     ],
+     "supportingRequirementIds": [
+      "req_f0c2ef165325"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the policy workshops for each implementation under the workshop method; the workshop records show the policy decisions captured, including the disagreements within customer teams resolved into a recorded decision, with the customers' sign‑off on each workshop record."
+    },
+    {
+     "claim": "Loaded and reconciled customer employee data with the data migration team, producing reconciliation reports signed by the customer HR lead.",
+     "sourceIds": [
+      "src_6a74076ca1e6"
+     ],
+     "supportingRequirementIds": [
+      "req_66a46175c863"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Loaded and reconciled each customer's employee data with the data migration team, with the reconciliation report signed by the customer's HR lead."
+    },
+    {
+     "claim": "Trained customers’ HR administrators following a training plan; go‑live approval remained with the implementation manager and was recorded on the go‑live checklist.",
+     "sourceIds": [
+      "src_412517805c96"
+     ],
+     "supportingRequirementIds": [
+      "req_71566409838b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Trained the customers' HR administrators under the training plan; go‑live approval was the implementation manager's, recorded on the go‑live checklist together with which checks were mine."
+    },
+    {
+     "claim": "Authored limitation notes and hand‑over conditions for each implementation in the hand‑over pack to the support team.",
+     "sourceIds": [
+      "src_d49f1fc763bc"
+     ],
+     "supportingRequirementIds": [
+      "req_11e1186b89bb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the limitation note and the hand‑over conditions for each implementation in the hand‑over pack to the support team."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that each requirement is fully satisfied by the cited evidence.",
+    "Confirm that the candidate’s role scope aligns with the job description."
+   ],
+   "auditSummary": "All five job requirements are directly supported by the candidate’s resume and work samples. The evidence establishes the candidate’s involvement in configuration, workshop facilitation, data reconciliation, training, and documentation. No evidence of independent ownership or production deployment beyond the described activities is provided. Human review is recommended to confirm alignment with organizational expectations.",
+   "limitations": [
+    "Evidence does not confirm independent ownership or leadership beyond the described collaborative activities."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:08:32.075383+00:00"
+}

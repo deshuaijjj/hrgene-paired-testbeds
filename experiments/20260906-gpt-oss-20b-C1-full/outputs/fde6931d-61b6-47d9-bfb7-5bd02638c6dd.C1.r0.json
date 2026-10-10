@@ -1,0 +1,238 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "fde6931d-61b6-47d9-bfb7-5bd02638c6dd.C1",
+ "case_id": "fde6931d-61b6-47d9-bfb7-5bd02638c6dd",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11114,
+  "promptWords": 1464
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 36.792
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2884,
+ "eval_count": 1596,
+ "prompt_eval_duration_ns": 17957000,
+ "eval_duration_ns": 28160831000,
+ "total_duration_ns": 36783970042,
+ "thinking": "We need to produce JSON with schema. Use sources. Let's craft optimizedCv. Claims: professionalSummary: statements about role, owner, etc. Must cite sources. Use src_e1eb6be190c6 for owner, src_39b852ad3bec for degree, src_577594308b52 for supervision, src_cadf6731a7d7 for presentation, src_fa768714b986 for documentation. evidenceBoundary: what established.\n\nRequirementEvidenceMap: list each requirement id.\n\nreq_85a17c73af43: master's degree. source src_39b852ad3bec. evidenceStrength high.\n\nreq_a0dcedc319d3: model owner of record for a model that passed independent validation, signing documentation. source src_e1eb6be190c6. evidenceStrength high.\n\nreq_e1e63069bea2: supervises data scientists. source src_577594308b52. evidenceStrength high.\n\nreq_5c511bfee978: presents models to credit risk committee. source src_cadf6731a7d7. evidenceStrength high.\n\nreq_1106ccd2bfc1: documents limitations and monitoring boundaries. source src_fa768714b986. evidenceStrength high.\n\nAll supported.\n\nsupportedClaims: maybe each claim.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe \"Verify that the model documentation sign-off page and committee minutes are authentic.\" but that's evidence already. maybe \"Confirm that the candidate has supervised two data scientists.\" but evidence exists. So maybe empty.\n\nauditSummary: summary.\n\nlimitations: maybe \"No evidence of independent validation beyond dates\" but we have. So maybe none.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_bb85b01386a34287\",\"targetRoleTitle\":\"Senior Data Scientist, Credit Decisioning Models\",\"professionalSummary\":[\"Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for two application scorecards that passed independent validation in 2023 and 2025 with my signature on the model documentation. (src_e1eb6be190c6)\",\"Holds an MSc in Statistics (2017) and a BSc in Mathematics (2016). (src_39b852ad3bec)\"],\"experienceHighlights\":[\"Supervised the two data scientists on the scorecard rebuilds, reviewing their feature work and the rebuild test plans before each validation submission. (src_577594308b52)\",\"Presented both scorecards to the credit risk committee at approval and at the annual review, with the committee minutes recording the presentations. (src_cadf6731a7d7)\",\"Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation, updated after each annual review. (src_fa768714b986)\"],\"projectsAndWorkSamples\":[\"Signed model documentation for one scorecard with the validation sign-off page, the committee minutes extract for its approval and the degree certificate, with the model inventory identifiers as a verification trail. (src_e7adb1bc7d15)\"],\"skills\":[\"Model ownership\",\"Independent validation\",\"Scorecard rebuild supervision\",\"Credit risk committee presentation\",\"Model limitation documentation\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s role as a senior data scientist, ownership of two validated scorecards, supervision of two data scientists, presentation to the credit risk committee, and documentation of model limitations and monitoring boundaries. They also confirm the candidate’s MSc in Statistics.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Senior Data Scientist, Credit Decisioning Models\",\"jobDescriptionSource\":\"jd_0ccdfd13d823c7cf\",\"requirementIds\":[\"req_85a17c73af43\",\"req_a0dcedc319d3\",\"req_e1e63069bea2\",\"req_5c511bfee978\",\"req_1106ccd2bfc1\"]},\"candidate\":{\"candidateId\":\"cand_bb85b01386a34287\",\"sources\":[\"src_e1eb6be190c6\",\"src_39b852ad3bec\",\"src_577594308b52\",\"src_cadf6731a7d7\",\"src_fa768714b986\",\"src_e7adb1bc7d15\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_85a17c73af43\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_39b852ad3bec\",\"text\":\"Education: MSc Statistics, 2017; BSc Mathematics, 2016.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of master’s degree.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a0dcedc319d3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e1eb6be190c6\",\"text\":\"Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for the two application scorecards, both of which passed independent validation in 2023 and 2025 with my signature on the model documentation.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of ownership and validation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e1e63069bea2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_577594308b52\",\"text\":\"Supervised the two data scientists on the scorecard rebuilds, reviewing their feature work and the rebuild test plans before each validation submission.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of supervision.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5c511bfee978\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_cadf6731a7d7\",\"text\":\"Presented both scorecards to the credit risk committee at approval and at the annual review, with the committee minutes recording the presentations.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of presentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_1106ccd2bfc1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_fa768714b986\",\"text\":\"Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation, updated after each annual review.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for two application scorecards that passed independent validation in 2023 and 2025 with my signature on the model documentation.\",\"sourceIds\":[\"src_e1eb6be190c6\"],\"requirementIds\":[\"req_a0dcedc319d3\"],\"evidenceStrength\":\"high\",\"witness\":\"Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for the two application scorecards, both of which passed independent validation in 2023 and 2025 with my signature on the model documentation.\"},{\"claim\":\"Holds an MSc in Statistics (2017).\",\"sourceIds\":[\"src_39b852ad3bec\"],\"requirementIds\":[\"req_85a17c73af43\"],\"evidenceStrength\":\"high\",\"witness\":\"Education: MSc Statistics, 2017; BSc Mathematics, 2016.\"},{\"claim\":\"Supervised the two data scientists on the scorecard rebuilds.\",\"sourceIds\":[\"src_577594308b52\"],\"requirementIds\":[\"req_e1e63069bea2\"],\"evidenceStrength\":\"high\",\"witness\":\"Supervised the two data scientists on the scorecard rebuilds, reviewing their feature work and the rebuild test plans before each validation submission.\"},{\"claim\":\"Presented both scorecards to the credit risk committee at approval and at the annual review.\",\"sourceIds\":[\"src_cadf6731a7d7\"],\"requirementIds\":[\"req_5c511bfee978\"],\"evidenceStrength\":\"high\",\"witness\":\"Presented both scorecards to the credit risk committee at approval and at the annual review, with the committee minutes recording the presentations.\"},{\"claim\":\"Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation.\",\"sourceIds\":[\"src_fa768714b986\"],\"requirementIds\":[\"req_1106ccd2bfc1\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation, updated after each annual review.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify authenticity of the signed model documentation, validation sign-off page, and committee minutes as provided in the work sample.\"],\"auditSummary\":\"All job requirements are fully supported by the candidate’s resume and work sample. The evidence is clear, directly cited, and meets the specified criteria for each requirement. No gaps or unsupported claims are identified. Qualified human review is recommended to confirm the authenticity of the provided documents before proceeding with an employment decision.\",\"limitations\":[]}}",
+ "content_sha256": "4c51124a0af987dd92df2acc19c753ccc9248a6653af204f0e60cc0bd0d06e02",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bb85b01386a34287",
+   "targetRoleTitle": "Senior Data Scientist, Credit Decisioning Models",
+   "professionalSummary": [
+    "Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for two application scorecards that passed independent validation in 2023 and 2025 with my signature on the model documentation. (src_e1eb6be190c6)",
+    "Holds an MSc in Statistics (2017) and a BSc in Mathematics (2016). (src_39b852ad3bec)"
+   ],
+   "experienceHighlights": [
+    "Supervised the two data scientists on the scorecard rebuilds, reviewing their feature work and the rebuild test plans before each validation submission. (src_577594308b52)",
+    "Presented both scorecards to the credit risk committee at approval and at the annual review, with the committee minutes recording the presentations. (src_cadf6731a7d7)",
+    "Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation, updated after each annual review. (src_fa768714b986)"
+   ],
+   "projectsAndWorkSamples": [
+    "Signed model documentation for one scorecard with the validation sign-off page, the committee minutes extract for its approval and the degree certificate, with the model inventory identifiers as a verification trail. (src_e7adb1bc7d15)"
+   ],
+   "skills": [
+    "Model ownership",
+    "Independent validation",
+    "Scorecard rebuild supervision",
+    "Credit risk committee presentation",
+    "Model limitation documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s role as a senior data scientist, ownership of two validated scorecards, supervision of two data scientists, presentation to the credit risk committee, and documentation of model limitations and monitoring boundaries. They also confirm the candidate’s MSc in Statistics."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Senior Data Scientist, Credit Decisioning Models",
+    "jobDescriptionSource": "jd_0ccdfd13d823c7cf",
+    "requirementIds": [
+     "req_85a17c73af43",
+     "req_a0dcedc319d3",
+     "req_e1e63069bea2",
+     "req_5c511bfee978",
+     "req_1106ccd2bfc1"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bb85b01386a34287",
+    "sources": [
+     "src_e1eb6be190c6",
+     "src_39b852ad3bec",
+     "src_577594308b52",
+     "src_cadf6731a7d7",
+     "src_fa768714b986",
+     "src_e7adb1bc7d15"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_85a17c73af43",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_39b852ad3bec",
+       "text": "Education: MSc Statistics, 2017; BSc Mathematics, 2016.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of master’s degree."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a0dcedc319d3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e1eb6be190c6",
+       "text": "Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for the two application scorecards, both of which passed independent validation in 2023 and 2025 with my signature on the model documentation.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of ownership and validation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e1e63069bea2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_577594308b52",
+       "text": "Supervised the two data scientists on the scorecard rebuilds, reviewing their feature work and the rebuild test plans before each validation submission.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of supervision."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5c511bfee978",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_cadf6731a7d7",
+       "text": "Presented both scorecards to the credit risk committee at approval and at the annual review, with the committee minutes recording the presentations.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of presentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1106ccd2bfc1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_fa768714b986",
+       "text": "Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation, updated after each annual review.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for two application scorecards that passed independent validation in 2023 and 2025 with my signature on the model documentation.",
+     "sourceIds": [
+      "src_e1eb6be190c6"
+     ],
+     "requirementIds": [
+      "req_a0dcedc319d3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Senior Data Scientist in the credit decisioning team of a consumer lender for four years, model owner of record for the two application scorecards, both of which passed independent validation in 2023 and 2025 with my signature on the model documentation."
+    },
+    {
+     "claim": "Holds an MSc in Statistics (2017).",
+     "sourceIds": [
+      "src_39b852ad3bec"
+     ],
+     "requirementIds": [
+      "req_85a17c73af43"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Education: MSc Statistics, 2017; BSc Mathematics, 2016."
+    },
+    {
+     "claim": "Supervised the two data scientists on the scorecard rebuilds.",
+     "sourceIds": [
+      "src_577594308b52"
+     ],
+     "requirementIds": [
+      "req_e1e63069bea2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Supervised the two data scientists on the scorecard rebuilds, reviewing their feature work and the rebuild test plans before each validation submission."
+    },
+    {
+     "claim": "Presented both scorecards to the credit risk committee at approval and at the annual review.",
+     "sourceIds": [
+      "src_cadf6731a7d7"
+     ],
+     "requirementIds": [
+      "req_5c511bfee978"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented both scorecards to the credit risk committee at approval and at the annual review, with the committee minutes recording the presentations."
+    },
+    {
+     "claim": "Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation.",
+     "sourceIds": [
+      "src_fa768714b986"
+     ],
+     "requirementIds": [
+      "req_1106ccd2bfc1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model limitation section and the monitoring boundary section of each scorecard's documentation, updated after each annual review."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify authenticity of the signed model documentation, validation sign-off page, and committee minutes as provided in the work sample."
+   ],
+   "auditSummary": "All job requirements are fully supported by the candidate’s resume and work sample. The evidence is clear, directly cited, and meets the specified criteria for each requirement. No gaps or unsupported claims are identified. Qualified human review is recommended to confirm the authenticity of the provided documents before proceeding with an employment decision.",
+   "limitations": []
+  }
+ },
+ "finished_at": "2026-09-07T13:39:05.037139+00:00"
+}

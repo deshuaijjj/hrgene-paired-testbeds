@@ -1,0 +1,251 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3c94aef2-b801-47ef-8933-1abc728b44cd.C1",
+ "case_id": "3c94aef2-b801-47ef-8933-1abc728b44cd",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11126,
+  "promptWords": 1454
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.822
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2868,
+ "eval_count": 1900,
+ "prompt_eval_duration_ns": 18085000,
+ "eval_duration_ns": 33900263000,
+ "total_duration_ns": 42819201458,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. Use only provided sources. For each claim, include sourceIds. For evidenceBoundary: say what materials establish and not.\n\nRequirement evidence map: for each requirement id, determine status.\n\nreq_854243b435c2: has run system in production through month-end closes, including incident handling. Evidence: src_5ca20080639d says candidate said he 'ran the close for the group's reporting system' and that the system 'is in production now'; but also says supplier still had pager. Not clear if production close. So insufficient evidence. Missing: confirmation of production close and incident handling.\n\nreq_e14642933ef1: owns production support rota and close-window escalation procedure. Evidence: src_71fa0dce8acb drafted rota and procedure. But ownership? Not clear. So partial evidence.\n\nreq_1b4792af297a: coordinates production changes with finance and IT during change window and records responsibility boundaries. Evidence: src_a5d120a706db coordinated pre-production changes; but production changes? Not production. So insufficient.\n\nreq_57c63ab78040: maintains close runbook and service dashboard. Evidence: src_9b8afb92b45f. So supported.\n\nreq_725fdf33540c: documents known limitations and hand-over conditions after each close cycle. No evidence. So insufficient.\n\nNow craft missingEvidenceGaps and followUpQuestions.\n\nInterviewSignalRisks: note from hiring manager about need production runs. Source src_3b38b37759e0. Signal type: requirement mismatch. Not tied to evidence. Severity medium. Recommended handling: ask for clarification.\n\nUnsupportedClaims: maybe claim \"ran the close for the group's reporting system\" not proven. But we can list.\n\nSupportedClaims: maintain runbook etc.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_d9a5f2b06262e4d6\",\"targetRoleTitle\":\"Service Operations Manager, Financial Reporting System\",\"professionalSummary\":[\"Candidate has experience conducting month‑end close rehearsals in a pre‑production environment and maintaining close runbooks and service dashboards for a reporting system replacement programme.\",\"Candidate drafted a production support rota and close‑window escalation procedure reviewed by the head of finance systems.\",\"Candidate coordinated pre‑production change windows with finance and IT during the programme change window.\"],\"experienceHighlights\":[\"Ran five month‑end close rehearsals in a pre‑production environment, executing the close runbook end to end against a masked copy of the ledger and logging deviations for the programme team (src_3b9d51dcc2e6).\",\"Maintained the close runbook and a service dashboard prototype, updating both after each rehearsal cycle with timings and open defects (src_9b8afb92b45f).\",\"Coordinated pre‑production changes with finance and IT in the programme change window; the live service was operated by the incumbent supplier during the parallel period (src_a5d120a706db).\",\"Drafted the production support rota and close‑window escalation procedure that the programme planned to adopt at cut‑over, reviewed by the head of finance systems (src_71fa0dce8acb).\"],\"projectsAndWorkSamples\":[\"Work sample: close runbook with rehearsal timing log for five cycles and draft support rota, including pre‑production job identifiers as a verification trail (src_24acb52e47e0).\"],\"skills\":[\"Close runbook maintenance\",\"Service dashboard prototype\",\"Production support rota drafting\",\"Pre‑production change coordination\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s involvement in pre‑production close rehearsals, runbook and dashboard maintenance, and drafting of a support rota and escalation procedure. They do not establish that the candidate has run the system in production through month‑end closes, handled production incidents, owned the production support rota, coordinated production changes, or documented limitations and hand‑over conditions after each close cycle.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Service Operations Manager, Financial Reporting System\",\"jobDescriptionSource\":\"jd_dd6ebe94227b69a4\",\"requirementIds\":[\"req_854243b435c2\",\"req_e14642933ef1\",\"req_1b4792af297a\",\"req_57c63ab78040\",\"req_725fdf33540c\"]},\"candidate\":{\"candidateId\":\"cand_d9a5f2b06262e4d6\",\"sources\":[\"src_3b9d51dcc2e6\",\"src_9b8afb92b45f\",\"src_a5d120a706db\",\"src_71fa0dce8acb\",\"src_24acb52e47e0\",\"src_5ca20080639d\",\"src_3b38b37759e0\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_854243b435c2\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Confirmation that the candidate ran the financial reporting system in production through month‑end closes and handled production incidents\"]},{\"requirementId\":\"req_e14642933ef1\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_71fa0dce8acb\",\"text\":\"Drafted the production support rota and the close-window escalation procedure that the programme planned to adopt at cut-over, reviewed by the head of finance systems.\",\"evidenceStrength\":\"medium\",\"notes\":\"Drafting does not confirm ownership\"}],\"missingEvidence\":[\"Evidence that the candidate owns the production support rota and the close-window escalation procedure\"]},{\"requirementId\":\"req_1b4792af297a\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate coordinated production changes with finance and IT during the production change window and recorded responsibility boundaries\"]},{\"requirementId\":\"req_57c63ab78040\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9b8afb92b45f\",\"text\":\"Maintained the close runbook and the service dashboard prototype for the reporting system, updating both after each rehearsal cycle with the timings and the open defects.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly supports runbook and dashboard maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_725fdf33540c\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate documents known limitations and hand-over conditions after each close cycle\"]}],\"supportedClaims\":[{\"claim\":\"Maintained the close runbook and the service dashboard prototype for the reporting system, updating both after each rehearsal cycle with the timings and the open defects.\",\"supportingRequirementIds\":[\"req_57c63ab78040\"],\"sourceIds\":[\"src_9b8afb92b45f\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the close runbook and the service dashboard prototype for the reporting system, updating both after each rehearsal cycle with the timings and the open defects.\"}],\"unsupportedClaims\":[{\"claim\":\"Ran the close for the group's reporting system in production and handled production incidents.\",\"reason\":\"The materials only describe rehearsals in a pre‑production environment and a note that the supplier still had the pager; no explicit evidence of a production close or incident handling.\",\"requiredFollowUp\":\"Ask for documentation or testimony confirming a production month‑end close and incident handling.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_854243b435c2\",\"severity\":\"high\",\"gap\":\"Confirmation that the candidate ran the financial reporting system in production through month‑end closes and handled production incidents.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_e14642933ef1\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate owns the production support rota and the close-window escalation procedure.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_1b4792af297a\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate coordinated production changes with finance and IT during the production change window and recorded responsibility boundaries.\"},{\"gapId\":\"gap_4\",\"requirementId\":\"req_725fdf33540c\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate documents known limitations and hand-over conditions after each close cycle.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_3b38b37759e0\",\"text\":\"The head of finance systems wants someone who has actually run production closes and carried the escalation, not rehearsals; please make the packet explicit about which environment each close happened in.\",\"signalType\":\"requirement mismatch\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Ask the candidate to clarify whether any production month‑end close was performed and whether they carried the escalation procedure.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_854243b435c2\",\"question\":\"Can you provide evidence that you ran a month‑end close in the production environment of the financial reporting system and handled any production incidents that arose?\",\"evidenceTarget\":\"Production close log, incident reports, or supervisor confirmation.\"},{\"questionId\":\"q_2\",\"requirementId\":\"req_e14642933ef1\",\"question\":\"Did you own the production support rota and the close-window escalation procedure during the live service operation?\",\"evidenceTarget\":\"Documentation of ownership or sign-off from relevant stakeholders.\"},{\"questionId\":\"q_3\",\"requirementId\":\"req_1b4792af297a\",\"question\":\"Did you coordinate production changes with finance and IT during the production change window, and how did you record your responsibility boundaries?\",\"evidenceTarget\":\"Change coordination records or meeting minutes.\"},{\"questionId\":\"q_4\",\"requirementId\":\"req_725fdf33540c\",\"question\":\"Did you document known limitations and hand-over conditions after each close cycle?\",\"evidenceTarget\":\"Post-close documentation or hand-over checklists.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s experience in pre‑production rehearsals does not substitute for production experience required by the role.\",\"Confirm ownership claims for the production support rota and escalation procedure.\",\"Confirm that the candidate coordinated production changes and documented limitations as required.\"],\"auditSummary\":\"The evidence indicates strong experience in pre‑production close rehearsals, runbook and dashboard maintenance, and drafting of support procedures. However, there is no evidence that the candidate has performed production month‑end closes, handled production incidents, owned the production support rota, coordinated production changes, or documented limitations and hand‑over conditions. Human review is required to assess whether the gaps are critical for the Service Operations Manager role.\",\"limitations\":[\"The analysis is limited to the provided candidate materials and does not include external verification or additional interview data.\"]}}",
+ "content_sha256": "9fe137b43dae1590941ca8bd0d118552daf5aec048490b84793acced04eee8a3",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d9a5f2b06262e4d6",
+   "targetRoleTitle": "Service Operations Manager, Financial Reporting System",
+   "professionalSummary": [
+    "Candidate has experience conducting month‑end close rehearsals in a pre‑production environment and maintaining close runbooks and service dashboards for a reporting system replacement programme.",
+    "Candidate drafted a production support rota and close‑window escalation procedure reviewed by the head of finance systems.",
+    "Candidate coordinated pre‑production change windows with finance and IT during the programme change window."
+   ],
+   "experienceHighlights": [
+    "Ran five month‑end close rehearsals in a pre‑production environment, executing the close runbook end to end against a masked copy of the ledger and logging deviations for the programme team (src_3b9d51dcc2e6).",
+    "Maintained the close runbook and a service dashboard prototype, updating both after each rehearsal cycle with timings and open defects (src_9b8afb92b45f).",
+    "Coordinated pre‑production changes with finance and IT in the programme change window; the live service was operated by the incumbent supplier during the parallel period (src_a5d120a706db).",
+    "Drafted the production support rota and close‑window escalation procedure that the programme planned to adopt at cut‑over, reviewed by the head of finance systems (src_71fa0dce8acb)."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: close runbook with rehearsal timing log for five cycles and draft support rota, including pre‑production job identifiers as a verification trail (src_24acb52e47e0)."
+   ],
+   "skills": [
+    "Close runbook maintenance",
+    "Service dashboard prototype",
+    "Production support rota drafting",
+    "Pre‑production change coordination"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s involvement in pre‑production close rehearsals, runbook and dashboard maintenance, and drafting of a support rota and escalation procedure. They do not establish that the candidate has run the system in production through month‑end closes, handled production incidents, owned the production support rota, coordinated production changes, or documented limitations and hand‑over conditions after each close cycle."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Service Operations Manager, Financial Reporting System",
+    "jobDescriptionSource": "jd_dd6ebe94227b69a4",
+    "requirementIds": [
+     "req_854243b435c2",
+     "req_e14642933ef1",
+     "req_1b4792af297a",
+     "req_57c63ab78040",
+     "req_725fdf33540c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d9a5f2b06262e4d6",
+    "sources": [
+     "src_3b9d51dcc2e6",
+     "src_9b8afb92b45f",
+     "src_a5d120a706db",
+     "src_71fa0dce8acb",
+     "src_24acb52e47e0",
+     "src_5ca20080639d",
+     "src_3b38b37759e0"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_854243b435c2",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Confirmation that the candidate ran the financial reporting system in production through month‑end closes and handled production incidents"
+     ]
+    },
+    {
+     "requirementId": "req_e14642933ef1",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_71fa0dce8acb",
+       "text": "Drafted the production support rota and the close-window escalation procedure that the programme planned to adopt at cut-over, reviewed by the head of finance systems.",
+       "evidenceStrength": "medium",
+       "notes": "Drafting does not confirm ownership"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate owns the production support rota and the close-window escalation procedure"
+     ]
+    },
+    {
+     "requirementId": "req_1b4792af297a",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate coordinated production changes with finance and IT during the production change window and recorded responsibility boundaries"
+     ]
+    },
+    {
+     "requirementId": "req_57c63ab78040",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9b8afb92b45f",
+       "text": "Maintained the close runbook and the service dashboard prototype for the reporting system, updating both after each rehearsal cycle with the timings and the open defects.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports runbook and dashboard maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_725fdf33540c",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate documents known limitations and hand-over conditions after each close cycle"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained the close runbook and the service dashboard prototype for the reporting system, updating both after each rehearsal cycle with the timings and the open defects.",
+     "supportingRequirementIds": [
+      "req_57c63ab78040"
+     ],
+     "sourceIds": [
+      "src_9b8afb92b45f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the close runbook and the service dashboard prototype for the reporting system, updating both after each rehearsal cycle with the timings and the open defects."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Ran the close for the group's reporting system in production and handled production incidents.",
+     "reason": "The materials only describe rehearsals in a pre‑production environment and a note that the supplier still had the pager; no explicit evidence of a production close or incident handling.",
+     "requiredFollowUp": "Ask for documentation or testimony confirming a production month‑end close and incident handling."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_854243b435c2",
+     "severity": "high",
+     "gap": "Confirmation that the candidate ran the financial reporting system in production through month‑end closes and handled production incidents."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_e14642933ef1",
+     "severity": "medium",
+     "gap": "Evidence that the candidate owns the production support rota and the close-window escalation procedure."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_1b4792af297a",
+     "severity": "high",
+     "gap": "Evidence that the candidate coordinated production changes with finance and IT during the production change window and recorded responsibility boundaries."
+    },
+    {
+     "gapId": "gap_4",
+     "requirementId": "req_725fdf33540c",
+     "severity": "medium",
+     "gap": "Evidence that the candidate documents known limitations and hand-over conditions after each close cycle."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_3b38b37759e0",
+     "text": "The head of finance systems wants someone who has actually run production closes and carried the escalation, not rehearsals; please make the packet explicit about which environment each close happened in.",
+     "signalType": "requirement mismatch",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to clarify whether any production month‑end close was performed and whether they carried the escalation procedure."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_854243b435c2",
+     "question": "Can you provide evidence that you ran a month‑end close in the production environment of the financial reporting system and handled any production incidents that arose?",
+     "evidenceTarget": "Production close log, incident reports, or supervisor confirmation."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_e14642933ef1",
+     "question": "Did you own the production support rota and the close-window escalation procedure during the live service operation?",
+     "evidenceTarget": "Documentation of ownership or sign-off from relevant stakeholders."
+    },
+    {
+     "questionId": "q_3",
+     "requirementId": "req_1b4792af297a",
+     "question": "Did you coordinate production changes with finance and IT during the production change window, and how did you record your responsibility boundaries?",
+     "evidenceTarget": "Change coordination records or meeting minutes."
+    },
+    {
+     "questionId": "q_4",
+     "requirementId": "req_725fdf33540c",
+     "question": "Did you document known limitations and hand-over conditions after each close cycle?",
+     "evidenceTarget": "Post-close documentation or hand-over checklists."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s experience in pre‑production rehearsals does not substitute for production experience required by the role.",
+    "Confirm ownership claims for the production support rota and escalation procedure.",
+    "Confirm that the candidate coordinated production changes and documented limitations as required."
+   ],
+   "auditSummary": "The evidence indicates strong experience in pre‑production close rehearsals, runbook and dashboard maintenance, and drafting of support procedures. However, there is no evidence that the candidate has performed production month‑end closes, handled production incidents, owned the production support rota, coordinated production changes, or documented limitations and hand‑over conditions. Human review is required to assess whether the gaps are critical for the Service Operations Manager role.",
+   "limitations": [
+    "The analysis is limited to the provided candidate materials and does not include external verification or additional interview data."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:22:36.053491+00:00"
+}

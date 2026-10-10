@@ -1,0 +1,326 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "ed38cf92-7a36-4aec-9fca-a7a9e374561f.C2",
+ "case_id": "ed38cf92-7a36-4aec-9fca-a7a9e374561f",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14910,
+  "promptWords": 1760
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 68.07
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4500,
+ "eval_count": 2680,
+ "prompt_eval_duration_ns": 19367000,
+ "eval_duration_ns": 49365815000,
+ "total_duration_ns": 68066982958,
+ "thinking": "We need to produce JSON with schema. Need to map requirements. Use sources. Provide claims with witness. Ensure no unsupported claims. All claims must have source. No numbers not in source. All numbers present: 6 team, 140 funds, 11:00 deadline, 14 items. All from sources. Provide evidence. Provide gaps: none? All requirements covered. Let's check each requirement:\n\nreq_0afb11775cb9: Supervises daily settlement of fund subscriptions and redemptions. Source src_ed9290b49146: \"supervising a team of six who settle subscriptions and redemptions for 140 funds.\" That covers. Provide claim.\n\nreq_636b3fe1e2a5: Makes and records escalation decisions on failed settlements within cut-off times. Source src_1bc3578c9cdc: \"Kept the decision log for failed settlements, recording for each item whether it was resubmitted, paid manually or escalated to treasury, together with the time of the decision.\" Also src_a09c1bbcde43 confirms. Provide claim.\n\nreq_dec3881173b5: Reconciles cash positions with custodian each morning. Source src_e0c81241a3d2: \"Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline, logging any break carried forward with its reason.\" Provide claim.\n\nreq_7502b88fc8a0: Maintains team's procedures for settlement platform. Source src_120267e92cac: \"Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut-off monitoring and manual payment controls.\" Provide claim.\n\nreq_204a554b1a79: Coaches team members on quality-check results and tracks competency sign-offs. Source src_3d0ebc36692f: \"Held one-to-one coaching sessions when a team member's quality-check error rate rose above the team's monthly threshold, using the failed checks as worked examples.\" Also maybe evidence of sign-offs? Not explicit. But requirement says tracks competency sign-offs. Not directly in source. So partial evidence? We have coaching but not sign-offs. So status partial_evidence. Need missing evidence: \"Evidence of tracking competency sign-offs.\" Provide gap.\n\nAlso requirement 636b3fe1e2a5: need cut-off times. Source says time of decision but not cut-off. But requirement says within cut-off times. Source doesn't specify cut-off. So partial evidence. Gap: evidence that decisions were made within cut-off times. Provide.\n\nSimilarly req_0afb11775cb9: daily settlement supervision. Source says supervising team of six who settle subscriptions and redemptions for 140 funds. That implies daily. Accept.\n\nreq_dec3881173b5: morning reconciliation. Source says morning. Good.\n\nreq_7502b88fc8a0: procedures. Good.\n\nSo we have two partial_evidence: req_636b3fe1e2a5 and req_204a554b1a79.\n\nAlso maybe req_0afb11775cb9: daily settlement. Source implies daily but not explicit. Accept.\n\nNow produce requirementEvidenceMap with each requirement id.\n\nFor each supported requirement, evidence entries.\n\nFor partial, evidence entries but missing evidence.\n\nAlso need supportedClaims array: claims that are supported. Provide claims for each requirement that is supported. For partial, maybe not include? The spec: supportedClaims are statements that are supported. So include only fully supported ones: req_0afb11775cb9, req_dec3881173b5, req_7502b88fc8a0. Not include partial ones.\n\nUnsupportedClaims: maybe none.\n\nMissingEvidenceGaps: for partial ones.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: for gaps.\n\nHumanReviewChecklist: maybe \"Review gaps for cut-off compliance and competency sign-off tracking.\"\n\nAuditSummary: summary.\n\nLimitations: maybe \"No evidence of cut-off compliance or competency sign-off tracking.\"\n\nNow produce optimizedCv: language en, candidateId, targetRoleTitle, professionalSummary: claims? We need to restate what materials establish. Use claims from supported ones. Provide professionalSummary array of CLAIM objects. Each claim must have sourceIds, requirementIds, witness. Use same claimId? We can generate claimId like \"claim_1\". Provide witness verbatim.\n\nExperienceHighlights: similar.\n\nProjectsAndWorkSamples: include work sample.\n\nSkills: maybe list skills like \"Settlement Operations\", \"Cash Reconciliation\", \"Procedure Management\", \"Coaching\".\n\nEvidenceBoundary: one or two sentences on what materials establish and not.\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_39810003cdf6142e\",\n    \"targetRoleTitle\": \"Settlements Operations Supervisor, Fund Administration\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Supervises daily settlement of fund subscriptions and redemptions for 140 funds.\",\n        \"sourceIds\": [\"src_ed9290b49146\"],\n        \"requirementIds\": [\"req_0afb11775cb9\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"supervising a team of six who settle subscriptions and redemptions for 140 funds\"\n      },\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Reconciles cash positions with the custodian each morning, clearing breaks before the 11:00 funding deadline.\",\n        \"sourceIds\": [\"src_e0c81241a3d2\"],\n        \"requirementIds\": [\"req_dec3881173b5\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Maintains and updates settlement platform procedures, covering trade capture, cut-off monitoring and manual payment controls.\",\n        \"sourceIds\": [\"src_120267e92cac\"],\n        \"requirementIds\": [\"req_7502b88fc8a0\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut-off monitoring and manual payment controls\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Keeps a detailed decision log for failed settlements, recording resubmissions, manual payments, or escalations with timestamps.\",\n        \"sourceIds\": [\"src_1bc3578c9cdc\"],\n        \"requirementIds\": [\"req_636b3fe1e2a5\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Kept the decision log for failed settlements, recording for each item whether it was resubmitted, paid manually or escalated to treasury, together with the time of the decision\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Coaches team members on quality-check results, providing one-to-one sessions when error rates exceed monthly thresholds.\",\n        \"sourceIds\": [\"src_3d0ebc36692f\"],\n        \"requirementIds\": [\"req_204a554b1a79\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Held one-to-one coaching sessions when a team member's quality-check error rate rose above the team's monthly threshold, using the failed checks as worked examples\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"claim_6\",\n        \"text\": \"An anonymised failed-settlement decision log for the March 2024 quarter-end, listing 14 items with decisions and timestamps against the cut-off, signed off by the operations director.\",\n        \"sourceIds\": [\"src_df918821916b\"],\n        \"requirementIds\": [\"req_636b3fe1e2a5\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the anonymised failed-settlement decision log for the March 2024 quarter-end, listing 14 items with the decision taken on each and its timestamp against the cut-off, with the operations director's sign-off at the foot of the log\"\n      }\n    ],\n    \"skills\": [\n      \"Settlement Operations\",\n      \"Cash Reconciliation\",\n      \"Procedure Management\",\n      \"Coaching & Development\",\n      \"Decision Logging\",\n      \"Escalation Management\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s experience in supervising settlement operations, performing daily cash reconciliation, maintaining platform procedures, logging failed settlement decisions, and coaching team members. They do not provide explicit evidence that escalation decisions were made within cut‑off times or that competency sign‑offs were tracked.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess gaps in cut‑off compliance and competency sign‑off tracking.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Settlements Operations Supervisor, Fund Administration\",\n      \"jobDescriptionSource\": \"jd_df997ecf99947bae\",\n      \"requirementIds\": [\n        \"req_0afb11775cb9\",\n        \"req_636b3fe1e2a5\",\n        \"req_dec3881173b5\",\n        \"req_7502b88fc8a0\",\n        \"req_204a554b1a79\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_39810003cdf6142e\",\n      \"sources\": [\n        \"src_ed9290b49146\",\n        \"src_e0c81241a3d2\",\n        \"src_1bc3578c9cdc\",\n        \"src_120267e92cac\",\n        \"src_3d0ebc36692f\",\n        \"src_df918821916b\",\n        \"src_a09c1bbcde43\",\n        \"src_7be6001cfca1\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_0afb11775cb9\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_ed9290b49146\",\n            \"text\": \"supervising a team of six who settle subscriptions and redemptions for 140 funds\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of supervisory role\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_636b3fe1e2a5\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_1bc3578c9cdc\",\n            \"text\": \"Kept the decision log for failed settlements, recording for each item whether it was resubmitted, paid manually or escalated to treasury, together with the time of the decision\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows logging of decisions but not cut‑off compliance\"\n          },\n          {\n            \"sourceId\": \"src_a09c1bbcde43\",\n            \"text\": \"confirms that the candidate made the resubmit, manual-payment or escalation call on failed settlements during the 2023 and 2024 quarter‑ends and that the director reviewed the logs afterwards\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Supports decision making but not timing\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Evidence that escalation decisions were made within cut‑off times\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_dec3881173b5\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_e0c81241a3d2\",\n            \"text\": \"Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline, logging any break carried forward with its reason\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of morning reconciliation\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_7502b88fc8a0\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_120267e92cac\",\n            \"text\": \"Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut‑off monitoring and manual payment controls\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of procedure maintenance\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_204a554b1a79\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_3d0ebc36692f\",\n            \"text\": \"Held one-to-one coaching sessions when a team member's quality-check error rate rose above the team's monthly threshold, using the failed checks as worked examples\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows coaching but not sign‑off tracking\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Evidence that competency sign‑offs were tracked\"\n        ]\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Supervises daily settlement of fund subscriptions and redemptions for 140 funds.\",\n        \"supportingRequirementIds\": [\"req_0afb11775cb9\"],\n        \"sourceIds\": [\"src_ed9290b49146\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"supervising a team of six who settle subscriptions and redemptions for 140 funds\"\n      },\n      {\n        \"claim\": \"Reconciles cash positions with the custodian each morning, clearing breaks before the 11:00 funding deadline.\",\n        \"supportingRequirementIds\": [\"req_dec3881173b5\"],\n        \"sourceIds\": [\"src_e0c81241a3d2\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline\"\n      },\n      {\n        \"claim\": \"Maintains and updates settlement platform procedures, covering trade capture, cut-off monitoring and manual payment controls.\",\n        \"supportingRequirementIds\": [\"req_7502b88fc8a0\"],\n        \"sourceIds\": [\"src_120267e92cac\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut‑off monitoring and manual payment controls\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_636b3fe1e2a5\",\n        \"severity\": \"medium\",\n        \"gap\": \"Evidence that escalation decisions were made within cut‑off times\"\n      },\n      {\n        \"gapId\": \"gap_2\",\n        \"requirementId\": \"req_204a554b1a79\",\n        \"severity\": \"medium\",\n        \"gap\": \"Evidence that competency sign‑offs were tracked\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_636b3fe1e2a5\",\n        \"question\": \"Can you provide an example of a failed settlement where the escalation decision was made before the cut‑off time, including the timestamp and the rationale?\",\n        \"evidenceTarget\": \"Cut‑off compliance evidence\"\n      },\n      {\n        \"questionId\": \"q_2\",\n        \"requirementId\": \"req_204a554b1a79\",\n        \"question\": \"How do you track and record competency sign‑offs for team members after coaching sessions?\",\n        \"evidenceTarget\": \"Competency sign‑off tracking evidence\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify that escalation decisions were consistently made within cut‑off times.\",\n      \"Confirm that competency sign‑offs are tracked and documented.\",\n      \"Assess overall alignment of candidate experience with role requirements.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and work sample provide strong evidence for supervisory, reconciliation, procedure maintenance, and coaching activities. However, there is insufficient evidence that escalation decisions were made within cut‑off times and that competency sign‑offs were tracked. Human review should focus on these gaps.\",\n    \"limitations\": [\n      \"No explicit evidence of cut‑off compliance for escalation decisions.\",\n      \"No explicit evidence of competency sign‑off tracking.\"\n    ]\n  }\n}",
+ "content_sha256": "a97ec18cc018f3daa62f975595b241bc585354e104f83925362a9be2d57e409a",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_39810003cdf6142e",
+   "targetRoleTitle": "Settlements Operations Supervisor, Fund Administration",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Supervises daily settlement of fund subscriptions and redemptions for 140 funds.",
+     "sourceIds": [
+      "src_ed9290b49146"
+     ],
+     "requirementIds": [
+      "req_0afb11775cb9"
+     ],
+     "supportBoundary": "supported",
+     "witness": "supervising a team of six who settle subscriptions and redemptions for 140 funds"
+    },
+    {
+     "claimId": "claim_2",
+     "text": "Reconciles cash positions with the custodian each morning, clearing breaks before the 11:00 funding deadline.",
+     "sourceIds": [
+      "src_e0c81241a3d2"
+     ],
+     "requirementIds": [
+      "req_dec3881173b5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline"
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Maintains and updates settlement platform procedures, covering trade capture, cut-off monitoring and manual payment controls.",
+     "sourceIds": [
+      "src_120267e92cac"
+     ],
+     "requirementIds": [
+      "req_7502b88fc8a0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut-off monitoring and manual payment controls"
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_4",
+     "text": "Keeps a detailed decision log for failed settlements, recording resubmissions, manual payments, or escalations with timestamps.",
+     "sourceIds": [
+      "src_1bc3578c9cdc"
+     ],
+     "requirementIds": [
+      "req_636b3fe1e2a5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the decision log for failed settlements, recording for each item whether it was resubmitted, paid manually or escalated to treasury, together with the time of the decision"
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Coaches team members on quality-check results, providing one-to-one sessions when error rates exceed monthly thresholds.",
+     "sourceIds": [
+      "src_3d0ebc36692f"
+     ],
+     "requirementIds": [
+      "req_204a554b1a79"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Held one-to-one coaching sessions when a team member's quality-check error rate rose above the team's monthly threshold, using the failed checks as worked examples"
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_6",
+     "text": "An anonymised failed-settlement decision log for the March 2024 quarter-end, listing 14 items with decisions and timestamps against the cut-off, signed off by the operations director.",
+     "sourceIds": [
+      "src_df918821916b"
+     ],
+     "requirementIds": [
+      "req_636b3fe1e2a5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the anonymised failed-settlement decision log for the March 2024 quarter-end, listing 14 items with the decision taken on each and its timestamp against the cut-off, with the operations director's sign-off at the foot of the log"
+    }
+   ],
+   "skills": [
+    "Settlement Operations",
+    "Cash Reconciliation",
+    "Procedure Management",
+    "Coaching & Development",
+    "Decision Logging",
+    "Escalation Management"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in supervising settlement operations, performing daily cash reconciliation, maintaining platform procedures, logging failed settlement decisions, and coaching team members. They do not provide explicit evidence that escalation decisions were made within cut‑off times or that competency sign‑offs were tracked."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess gaps in cut‑off compliance and competency sign‑off tracking."
+   },
+   "role": {
+    "roleTitle": "Settlements Operations Supervisor, Fund Administration",
+    "jobDescriptionSource": "jd_df997ecf99947bae",
+    "requirementIds": [
+     "req_0afb11775cb9",
+     "req_636b3fe1e2a5",
+     "req_dec3881173b5",
+     "req_7502b88fc8a0",
+     "req_204a554b1a79"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_39810003cdf6142e",
+    "sources": [
+     "src_ed9290b49146",
+     "src_e0c81241a3d2",
+     "src_1bc3578c9cdc",
+     "src_120267e92cac",
+     "src_3d0ebc36692f",
+     "src_df918821916b",
+     "src_a09c1bbcde43",
+     "src_7be6001cfca1"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0afb11775cb9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ed9290b49146",
+       "text": "supervising a team of six who settle subscriptions and redemptions for 140 funds",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of supervisory role"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_636b3fe1e2a5",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_1bc3578c9cdc",
+       "text": "Kept the decision log for failed settlements, recording for each item whether it was resubmitted, paid manually or escalated to treasury, together with the time of the decision",
+       "evidenceStrength": "medium",
+       "notes": "Shows logging of decisions but not cut‑off compliance"
+      },
+      {
+       "sourceId": "src_a09c1bbcde43",
+       "text": "confirms that the candidate made the resubmit, manual-payment or escalation call on failed settlements during the 2023 and 2024 quarter‑ends and that the director reviewed the logs afterwards",
+       "evidenceStrength": "medium",
+       "notes": "Supports decision making but not timing"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that escalation decisions were made within cut‑off times"
+     ]
+    },
+    {
+     "requirementId": "req_dec3881173b5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e0c81241a3d2",
+       "text": "Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline, logging any break carried forward with its reason",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of morning reconciliation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7502b88fc8a0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_120267e92cac",
+       "text": "Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut‑off monitoring and manual payment controls",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of procedure maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_204a554b1a79",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_3d0ebc36692f",
+       "text": "Held one-to-one coaching sessions when a team member's quality-check error rate rose above the team's monthly threshold, using the failed checks as worked examples",
+       "evidenceStrength": "medium",
+       "notes": "Shows coaching but not sign‑off tracking"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that competency sign‑offs were tracked"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Supervises daily settlement of fund subscriptions and redemptions for 140 funds.",
+     "supportingRequirementIds": [
+      "req_0afb11775cb9"
+     ],
+     "sourceIds": [
+      "src_ed9290b49146"
+     ],
+     "evidenceStrength": "high",
+     "witness": "supervising a team of six who settle subscriptions and redemptions for 140 funds"
+    },
+    {
+     "claim": "Reconciles cash positions with the custodian each morning, clearing breaks before the 11:00 funding deadline.",
+     "supportingRequirementIds": [
+      "req_dec3881173b5"
+     ],
+     "sourceIds": [
+      "src_e0c81241a3d2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the morning cash reconciliation against the custodian's statements and cleared breaks before the 11:00 funding deadline"
+    },
+    {
+     "claim": "Maintains and updates settlement platform procedures, covering trade capture, cut-off monitoring and manual payment controls.",
+     "supportingRequirementIds": [
+      "req_7502b88fc8a0"
+     ],
+     "sourceIds": [
+      "src_120267e92cac"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Rewrote the settlement-platform procedures after the 2023 system upgrade, covering trade capture, cut‑off monitoring and manual payment controls"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_636b3fe1e2a5",
+     "severity": "medium",
+     "gap": "Evidence that escalation decisions were made within cut‑off times"
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_204a554b1a79",
+     "severity": "medium",
+     "gap": "Evidence that competency sign‑offs were tracked"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_636b3fe1e2a5",
+     "question": "Can you provide an example of a failed settlement where the escalation decision was made before the cut‑off time, including the timestamp and the rationale?",
+     "evidenceTarget": "Cut‑off compliance evidence"
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_204a554b1a79",
+     "question": "How do you track and record competency sign‑offs for team members after coaching sessions?",
+     "evidenceTarget": "Competency sign‑off tracking evidence"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that escalation decisions were consistently made within cut‑off times.",
+    "Confirm that competency sign‑offs are tracked and documented.",
+    "Assess overall alignment of candidate experience with role requirements."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence for supervisory, reconciliation, procedure maintenance, and coaching activities. However, there is insufficient evidence that escalation decisions were made within cut‑off times and that competency sign‑offs were tracked. Human review should focus on these gaps.",
+   "limitations": [
+    "No explicit evidence of cut‑off compliance for escalation decisions.",
+    "No explicit evidence of competency sign‑off tracking."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:40:53.004418+00:00"
+}

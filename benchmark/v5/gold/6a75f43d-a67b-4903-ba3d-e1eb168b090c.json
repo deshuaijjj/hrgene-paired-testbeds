@@ -1,0 +1,83 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "6a75f43d-a67b-4903-ba3d-e1eb168b090c",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_7ab737759409",
+   "canonicalProposition": "The candidate wrote a Go retry service for soft-declined card authorisations using idempotency keys, and wrote its design document covering failure modes and rollback.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_c4a655c4af39",
+    "src_e8e7c5e69005"
+   ],
+   "relevantRequirementIds": [
+    "req_d3874cc8a313",
+    "req_3f4b0d6751b6"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the service and the work sample is its design document."
+  },
+  {
+   "atomicPropositionId": "prop_5570cccbe38d",
+   "canonicalProposition": "The candidate served on the settlement batch on-call rota from October 2022 to January 2024 and worked incidents through the runbooks.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_c75d89397e04",
+    "src_7d23be6724c4"
+   ],
+   "relevantRequirementIds": [
+    "req_89e4b19f7203"
+   ],
+   "boundaryCategory": "verified_activity_record",
+   "criticality": "noncritical",
+   "rationale": "The resume states the rota and dates, and the reference check confirms them in writing."
+  },
+  {
+   "atomicPropositionId": "prop_589751afa7e9",
+   "canonicalProposition": "The candidate's retry service cut failed card payments by roughly 40%.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_8224bdc8c570"
+   ],
+   "boundaryCategory": "hearsay_quantified_outcome",
+   "criticality": "critical",
+   "rationale": "The figure is a remark attributed to a former team lead and relayed by the candidate, with no metric definition, baseline or window; under the quantification rule a hearsay figure without a baseline is not evidence."
+  }
+ ],
+ "requirementStatus": {
+  "req_d3874cc8a313": "supported",
+  "req_3f4b0d6751b6": "supported",
+  "req_89e4b19f7203": "supported",
+  "req_8224bdc8c570": "insufficient_evidence",
+  "req_818abf672b3a": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No metric definition, baseline period or measurement window supports the relayed remark about failed card payments.",
+ "expectedBoundaryNote": "Report the retry service, its design document, the reversal work and the on-call record as documented; record the relayed failure-rate figure as an unsupported claim with a follow-up about the metric and baseline.",
+ "permittedFollowUpTargets": [
+  "Ask how failed card payments were defined, what the baseline period was, and which report compared the periods before and after the retry service was introduced."
+ ],
+ "validClaimSignatures": [
+  "idempotency keys",
+  "settlement batch on-call rota"
+ ],
+ "trap": {
+  "propositionId": "prop_589751afa7e9",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_8224bdc8c570"
+  ],
+  "signatures": [
+   "roughly 40%",
+   "failed card payments by roughly"
+  ],
+  "baitSourceIds": [
+   "src_8771d43e6985"
+  ]
+ }
+}

@@ -1,0 +1,270 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "b4fc09ab-cf6b-4f73-84d7-faba0176cf4b.C2",
+ "case_id": "b4fc09ab-cf6b-4f73-84d7-faba0176cf4b",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14444,
+  "promptWords": 1723
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 62.586
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4160,
+ "eval_count": 2407,
+ "prompt_eval_duration_ns": 19090000,
+ "eval_duration_ns": 44899697000,
+ "total_duration_ns": 62583639541,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Need to map requirements. Let's craft claims.\n\nClaims: from resume sources.\n\nWe need evidence for each requirement.\n\nRequirement 90b986cad0ca: deployed compliance procedures to live partner network and operates live checks. Evidence: src_f4fcfb3416aa says release scheduled and executed by portal product team after legal sign-off. But not that candidate deployed. Also note src_fb2090a2b344 says candidate saw them go-live but release executed by portal product team. So we have partial evidence: candidate coordinated but not deployed. So status partial_evidence. Need gap: who executed release? Ask.\n\nRequirement ed329616c930: maintains recall-handling procedure and compliance check definitions. Evidence: src_f649f41b2649 shows wrote procedure and definitions. Also src_f4fcfb3416aa? not. So supported.\n\nRequirement 0f3c29ec40f0: runs monthly compliance review with legal and partner management and records outcomes. Evidence: src_be709220ff53. Supported.\n\nRequirement 5323c35578df: coordinates rule changes with legal and partner management and records own responsibility boundaries. Evidence: src_f4fcfb3416aa shows coordinated rule changes. Also src_00862003e73c release note lists hand-over items. So supported.\n\nRequirement f53451e97de0: documents known limitations and hand-over conditions for each procedure release. Evidence: src_00862003e73c. Supported.\n\nNow CV: professional summary: maybe \"Experienced compliance operations specialist with proven record in developing recall-handling procedures, coordinating rule changes, and conducting monthly compliance reviews across partner networks.\" Use evidence.\n\nExperience highlights: list claims with evidence.\n\nProjects: compliance check definitions and sandbox test outcome sheet.\n\nSkills: compliance procedures, partner portal, coordination, documentation.\n\nEvidenceBoundary: materials establish candidate wrote procedures, coordinated rule changes, ran reviews, documented limitations; do not establish that candidate deployed procedures to live network.\n\nNow hiringEvidencePacket.\n\nDecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess gaps and verify deployment to live network.\"\n\nRole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\nCandidate: candidateId, sources list all sourceIds used.\n\nRequirementEvidenceMap: for each requirement id.\n\nFor req_90b986cad0ca: status partial_evidence. evidence: src_f4fcfb3416aa (quote). missingEvidence: \"Evidence that candidate personally deployed the procedures to the live partner network.\" Also note that src_fb2090a2b344 indicates release executed by portal product team.\n\nFor others: status supported, evidence entries.\n\nSupportedClaims array: include claims that are supported: e.g., \"Wrote recall-handling procedure and compliance check definitions\" etc.\n\nUnsupportedClaims: maybe \"Deployed compliance procedures to live partner network\" is unsupported. Reason: no evidence of candidate's deployment. RequiredFollowUp: ask for documentation of deployment.\n\nMissingEvidenceGaps: for req_90b986cad0ca.\n\nInterviewSignalRisks: maybe note src_fb2090a2b344 is subjective? It's a note from hiring manager. It's not subjective? It's a note. But we can treat as interview signal risk: sourceId src_fb2090a2b344, text \"candidate's LinkedIn summary says she 'rolled out recall compliance checks to the live partner network'\". SignalType: subjective impression. jobRelatedBoundary: true. severity low. recommendedHandling: verify with release logs.\n\nFollowUpQuestions: for req_90b986cad0ca: question about who executed release, what evidence.\n\nHumanReviewChecklist: items: verify deployment evidence, confirm release responsibility, assess documentation completeness.\n\nAuditSummary: brief.\n\nLimitations: mention that evidence limited to provided sources, no external verification.\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_c1b8c35ad8946d7f\",\n    \"targetRoleTitle\": \"Compliance Operations Specialist, After-Sales Service Network\",\n    \"professionalSummary\": [\n      \"Compliance operations specialist with a proven track record of developing recall‑handling procedures, defining compliance checks, coordinating rule changes with legal and partner management, and conducting monthly compliance reviews across partner networks.\"\n    ],\n    \"experienceHighlights\": [\n      \"Authored the recall‑handling procedure and compliance check definitions for the partner portal, tested them with three volunteer partners in the sandbox tenant over two quarters, and recorded outcomes per check.\",\n      \"Ran the monthly compliance review with legal and partner management, presented sandbox test results, addressed open questions, and logged outcomes.\",\n      \"Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off.\",\n      \"Wrote the release note for the recall‑handling procedure, documenting known limitations (sandbox tenant did not include partners’ own service systems) and hand‑over items for the portal team.\"\n    ],\n    \"projectsAndWorkSamples\": [\n      \"Compliance check definitions and sandbox test outcome sheet for three volunteer partners, including sandbox tenant record identifiers as a verification trail.\"\n    ],\n    \"skills\": [\n      \"Recall‑handling procedure development\",\n      \"Compliance check definition\",\n      \"Partner portal operations\",\n      \"Rule change coordination\",\n      \"Documentation of limitations and hand‑over\",\n      \"Monthly compliance review\"\n    ],\n    \"evidenceBoundary\": \"The provided materials establish that the candidate wrote procedures, coordinated rule changes, ran compliance reviews, and documented limitations, but they do not establish that the candidate personally deployed the procedures to the live partner network.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess gaps and verify deployment to live network.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Compliance Operations Specialist, After-Sales Service Network\",\n      \"jobDescriptionSource\": \"jd_cfc4b4f02730498e\",\n      \"requirementIds\": [\n        \"req_90b986cad0ca\",\n        \"req_ed329616c930\",\n        \"req_0f3c29ec40f0\",\n        \"req_5323c35578df\",\n        \"req_f53451e97de0\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_c1b8c35ad8946d7f\",\n      \"sources\": [\n        \"src_f649f41b2649\",\n        \"src_be709220ff53\",\n        \"src_f4fcfb3416aa\",\n        \"src_00862003e73c\",\n        \"src_129566a1bcbe\",\n        \"src_ce9dd804e2f9\",\n        \"src_fb2090a2b344\",\n        \"src_89aac9f7b07e\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_90b986cad0ca\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_f4fcfb3416aa\",\n            \"text\": \"Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows coordination but not personal deployment.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Documentation that the candidate personally deployed the procedures to the live partner network.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_ed329616c930\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_f649f41b2649\",\n            \"text\": \"Wrote the recall‑handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_0f3c29ec40f0\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_be709220ff53\",\n            \"text\": \"Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_5323c35578df\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_f4fcfb3416aa\",\n            \"text\": \"Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"\"\n          },\n          {\n            \"sourceId\": \"src_00862003e73c\",\n            \"text\": \"Wrote the release note for the recall‑handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand‑over items for the portal team.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Documents responsibility boundaries.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_f53451e97de0\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_00862003e73c\",\n            \"text\": \"Wrote the release note for the recall‑handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand‑over items for the portal team.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Authored the recall‑handling procedure and compliance check definitions for the partner portal.\",\n        \"supportingRequirementIds\": [\n          \"req_ed329616c930\"\n        ],\n        \"sourceIds\": [\n          \"src_f649f41b2649\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the recall‑handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check.\"\n      },\n      {\n        \"claim\": \"Ran the monthly compliance review with legal and partner management and recorded outcomes.\",\n        \"supportingRequirementIds\": [\n          \"req_0f3c29ec40f0\"\n        ],\n        \"sourceIds\": [\n          \"src_be709220ff53\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log.\"\n      },\n      {\n        \"claim\": \"Coordinated rule changes with legal and partner management and documented hand‑over items.\",\n        \"supportingRequirementIds\": [\n          \"req_5323c35578df\",\n          \"req_f53451e97de0\"\n        ],\n        \"sourceIds\": [\n          \"src_f4fcfb3416aa\",\n          \"src_00862003e73c\"\n        ],\n        \"evidenceStrength\": \"medium\",\n        \"witness\": \"Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off.\"\n      }\n    ],\n    \"unsupportedClaims\": [\n      {\n        \"claim\": \"Deployed compliance procedures to the live partner network.\",\n        \"reason\": \"No source documents indicate that the candidate personally performed the deployment to the live network.\",\n        \"requiredFollowUp\": \"Request release logs or statements confirming the candidate’s direct involvement in the live deployment.\"\n      }\n    ],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_90b986cad0ca\",\n        \"requirementId\": \"req_90b986cad0ca\",\n        \"severity\": \"medium\",\n        \"gap\": \"Evidence that the candidate personally deployed the procedures to the live partner network.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_fb2090a2b344\",\n        \"text\": \"The candidate’s LinkedIn summary says she 'rolled out recall compliance checks to the live partner network'; the head of partner compliance wants someone who has done exactly that.\",\n        \"signalType\": \"subjective impression\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Verify with release logs or direct confirmation from the portal product team.\"\n      },\n      {\n        \"sourceId\": \"src_89aac9f7b07e\",\n        \"text\": \"Candidate said the checks 'are live across the network now' and that she 'saw them through to go‑live'; asked who executed the release, she named the portal product team.\",\n        \"signalType\": \"subjective statement\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Confirm the candidate’s role in the deployment process.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_90b986cad0ca_1\",\n        \"requirementId\": \"req_90b986cad0ca\",\n        \"question\": \"Can you provide documentation or a statement that confirms your direct involvement in deploying the recall‑handling procedure to the live partner network?\",\n        \"evidenceTarget\": \"Release logs, deployment checklist, or signed confirmation from the portal product team.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s deployment claim is supported by concrete evidence.\",\n      \"Confirm the candidate’s responsibility boundaries in the release process.\",\n      \"Assess completeness of documentation for known limitations and hand‑over items.\"\n    ],\n    \"auditSummary\": \"The evidence establishes the candidate’s experience in writing procedures, coordinating rule changes, conducting compliance reviews, and documenting limitations. However, it does not confirm that the candidate personally deployed the procedures to the live partner network, which is a key requirement. Human review should focus on obtaining deployment evidence and clarifying the candidate’s role in the live release.\",\n    \"limitations\": [\n      \"Evidence is limited to the provided sources; external verification is not available.\",\n      \"Subjective notes are treated as interview signals and not as definitive evidence.\"\n    ]\n  }\n}",
+ "content_sha256": "53b09f1dc45d49931297a246592117f143565b5183c896692c011f3e873d1838",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_c1b8c35ad8946d7f",
+   "targetRoleTitle": "Compliance Operations Specialist, After-Sales Service Network",
+   "professionalSummary": [
+    "Compliance operations specialist with a proven track record of developing recall‑handling procedures, defining compliance checks, coordinating rule changes with legal and partner management, and conducting monthly compliance reviews across partner networks."
+   ],
+   "experienceHighlights": [
+    "Authored the recall‑handling procedure and compliance check definitions for the partner portal, tested them with three volunteer partners in the sandbox tenant over two quarters, and recorded outcomes per check.",
+    "Ran the monthly compliance review with legal and partner management, presented sandbox test results, addressed open questions, and logged outcomes.",
+    "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off.",
+    "Wrote the release note for the recall‑handling procedure, documenting known limitations (sandbox tenant did not include partners’ own service systems) and hand‑over items for the portal team."
+   ],
+   "projectsAndWorkSamples": [
+    "Compliance check definitions and sandbox test outcome sheet for three volunteer partners, including sandbox tenant record identifiers as a verification trail."
+   ],
+   "skills": [
+    "Recall‑handling procedure development",
+    "Compliance check definition",
+    "Partner portal operations",
+    "Rule change coordination",
+    "Documentation of limitations and hand‑over",
+    "Monthly compliance review"
+   ],
+   "evidenceBoundary": "The provided materials establish that the candidate wrote procedures, coordinated rule changes, ran compliance reviews, and documented limitations, but they do not establish that the candidate personally deployed the procedures to the live partner network."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess gaps and verify deployment to live network."
+   },
+   "role": {
+    "roleTitle": "Compliance Operations Specialist, After-Sales Service Network",
+    "jobDescriptionSource": "jd_cfc4b4f02730498e",
+    "requirementIds": [
+     "req_90b986cad0ca",
+     "req_ed329616c930",
+     "req_0f3c29ec40f0",
+     "req_5323c35578df",
+     "req_f53451e97de0"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_c1b8c35ad8946d7f",
+    "sources": [
+     "src_f649f41b2649",
+     "src_be709220ff53",
+     "src_f4fcfb3416aa",
+     "src_00862003e73c",
+     "src_129566a1bcbe",
+     "src_ce9dd804e2f9",
+     "src_fb2090a2b344",
+     "src_89aac9f7b07e"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_90b986cad0ca",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_f4fcfb3416aa",
+       "text": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination but not personal deployment."
+      }
+     ],
+     "missingEvidence": [
+      "Documentation that the candidate personally deployed the procedures to the live partner network."
+     ]
+    },
+    {
+     "requirementId": "req_ed329616c930",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f649f41b2649",
+       "text": "Wrote the recall‑handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0f3c29ec40f0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_be709220ff53",
+       "text": "Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5323c35578df",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f4fcfb3416aa",
+       "text": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off.",
+       "evidenceStrength": "medium",
+       "notes": ""
+      },
+      {
+       "sourceId": "src_00862003e73c",
+       "text": "Wrote the release note for the recall‑handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand‑over items for the portal team.",
+       "evidenceStrength": "medium",
+       "notes": "Documents responsibility boundaries."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f53451e97de0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_00862003e73c",
+       "text": "Wrote the release note for the recall‑handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand‑over items for the portal team.",
+       "evidenceStrength": "medium",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Authored the recall‑handling procedure and compliance check definitions for the partner portal.",
+     "supportingRequirementIds": [
+      "req_ed329616c930"
+     ],
+     "sourceIds": [
+      "src_f649f41b2649"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the recall‑handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check."
+    },
+    {
+     "claim": "Ran the monthly compliance review with legal and partner management and recorded outcomes.",
+     "supportingRequirementIds": [
+      "req_0f3c29ec40f0"
+     ],
+     "sourceIds": [
+      "src_be709220ff53"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log."
+    },
+    {
+     "claim": "Coordinated rule changes with legal and partner management and documented hand‑over items.",
+     "supportingRequirementIds": [
+      "req_5323c35578df",
+      "req_f53451e97de0"
+     ],
+     "sourceIds": [
+      "src_f4fcfb3416aa",
+      "src_00862003e73c"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign‑off."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Deployed compliance procedures to the live partner network.",
+     "reason": "No source documents indicate that the candidate personally performed the deployment to the live network.",
+     "requiredFollowUp": "Request release logs or statements confirming the candidate’s direct involvement in the live deployment."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_90b986cad0ca",
+     "requirementId": "req_90b986cad0ca",
+     "severity": "medium",
+     "gap": "Evidence that the candidate personally deployed the procedures to the live partner network."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_fb2090a2b344",
+     "text": "The candidate’s LinkedIn summary says she 'rolled out recall compliance checks to the live partner network'; the head of partner compliance wants someone who has done exactly that.",
+     "signalType": "subjective impression",
+     "jobRelatedBoundary": true,
+     "severity": "low",
+     "recommendedHandling": "Verify with release logs or direct confirmation from the portal product team."
+    },
+    {
+     "sourceId": "src_89aac9f7b07e",
+     "text": "Candidate said the checks 'are live across the network now' and that she 'saw them through to go‑live'; asked who executed the release, she named the portal product team.",
+     "signalType": "subjective statement",
+     "jobRelatedBoundary": true,
+     "severity": "low",
+     "recommendedHandling": "Confirm the candidate’s role in the deployment process."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_90b986cad0ca_1",
+     "requirementId": "req_90b986cad0ca",
+     "question": "Can you provide documentation or a statement that confirms your direct involvement in deploying the recall‑handling procedure to the live partner network?",
+     "evidenceTarget": "Release logs, deployment checklist, or signed confirmation from the portal product team."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s deployment claim is supported by concrete evidence.",
+    "Confirm the candidate’s responsibility boundaries in the release process.",
+    "Assess completeness of documentation for known limitations and hand‑over items."
+   ],
+   "auditSummary": "The evidence establishes the candidate’s experience in writing procedures, coordinating rule changes, conducting compliance reviews, and documenting limitations. However, it does not confirm that the candidate personally deployed the procedures to the live partner network, which is a key requirement. Human review should focus on obtaining deployment evidence and clarifying the candidate’s role in the live release.",
+   "limitations": [
+    "Evidence is limited to the provided sources; external verification is not available.",
+    "Subjective notes are treated as interview signals and not as definitive evidence."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:55:35.656642+00:00"
+}

@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jam.local/schemas/hrgene-generation-case-view.v1.schema.json",
+  "title": "HRgene generation case view v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "caseId",
+    "language",
+    "task",
+    "roleContext",
+    "jobDescriptionSourceId",
+    "candidate",
+    "outputSchemaVersion"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "jam.hrgene_generation_case_view.v1"
+    },
+    "caseId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "language": {
+      "const": "zh-CN"
+    },
+    "task": {
+      "const": "Generate one evidence-bounded optimized CV and one complete HiringEvidencePacket for qualified human review."
+    },
+    "roleContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "roleTitle",
+        "jobDescription",
+        "requirements"
+      ],
+      "properties": {
+        "roleTitle": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "jobDescription": {
+          "type": "string",
+          "minLength": 20
+        },
+        "requirements": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "requirementId",
+              "text"
+            ],
+            "properties": {
+              "requirementId": {
+                "type": "string",
+                "pattern": "^req_[a-f0-9]{12}$"
+              },
+              "text": {
+                "$ref": "#/$defs/nonEmptyString"
+              }
+            }
+          }
+        }
+      }
+    },
+    "jobDescriptionSourceId": {
+      "type": "string",
+      "pattern": "^jd_[a-f0-9]{16}$"
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidateId",
+        "originalCvMarkdown",
+        "evidence"
+      ],
+      "properties": {
+        "candidateId": {
+          "type": "string",
+          "pattern": "^cand_[a-f0-9]{16}$"
+        },
+        "originalCvMarkdown": {
+          "type": "string",
+          "minLength": 100
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourceId",
+              "sourceType",
+              "text"
+            ],
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "pattern": "^src_[a-f0-9]{12}$"
+              },
+              "sourceType": {
+                "enum": [
+                  "resume",
+                  "note",
+                  "work_sample"
+                ]
+              },
+              "text": {
+                "$ref": "#/$defs/nonEmptyString"
+              }
+            }
+          }
+        }
+      }
+    },
+    "outputSchemaVersion": {
+      "const": "jam.hrgene_paired_review_bundle.model_output.v1"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

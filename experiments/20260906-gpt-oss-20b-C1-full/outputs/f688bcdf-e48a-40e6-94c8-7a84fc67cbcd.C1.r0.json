@@ -1,0 +1,333 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f688bcdf-e48a-40e6-94c8-7a84fc67cbcd.C1",
+ "case_id": "f688bcdf-e48a-40e6-94c8-7a84fc67cbcd",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11087,
+  "promptWords": 1445
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 66.178
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3912,
+ "eval_count": 2152,
+ "prompt_eval_duration_ns": 18820000,
+ "eval_duration_ns": 39290925000,
+ "total_duration_ns": 66176324959,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. Ensure no unsupported claims. Use evidenceBoundary. Then hiringEvidencePacket mapping each requirement.\n\nLet's list requirements ids: req_31d1eabe867c, req_d3d3c9ce9e10, req_f38f188de7af, req_96e09edd385f, req_baca23f0b050.\n\nWe need evidence for each.\n\nFrom sources:\n\n- src_7dfa4b73218c: built and maintained labelling and training pipelines. supports req_d3d3c9ce9e10.\n\n- src_359621592782: ran offline evaluation, wrote results for CV lead, who decided version to pilot stores. This indicates model release decision? The CV lead decided. Candidate did not decide. So requirement req_31d1eabe867c: Owns model end-to-end and decides releases. Evidence: none that candidate decided. So insufficient_evidence. Missing: evidence that candidate decided releases.\n\n- src_ebd5455e549b: maintained production monitoring dashboards and prepared monthly review pack; CV lead presented to store ops. This supports monitoring and monthly review: req_f38f188de7af. Candidate maintained dashboards and prepared pack. So partial evidence? He did not run review? He prepared pack. So partial_evidence.\n\n- src_988d4072d18e: wrote model card sections. Supports req_baca23f0b050.\n\n- src_89970f0a1c2d: work sample of active-learning pipeline config and model card. Supports pipeline and model card.\n\n- src_c7a2256daa9f: note that candidate was 'the one keeping the whole model running day to day' and 'in practice it was his model'; confirms employment dates. This supports ownership of running model but not release decisions.\n\n- src_4b25b72aa4b3: note about store ops director wants engineer who has personally decided model releases. This is requirement context.\n\n- req_96e09edd385f: coordinates releases with store ops and platform team and records responsibility boundaries. Evidence: none that candidate coordinated releases. So insufficient_evidence.\n\nThus mapping.\n\nNow produce JSON.\n\nNeed fields: schemaVersion, optimizedCv with language, candidateId, targetRoleTitle, professionalSummary array of CLAIM objects? Wait spec: professionalSummary: [CLAIM...] where CLAIM is object with claimId, text, sourceIds, requirementIds, supportBoundary, witness. We need to create claims. Let's create few claims.\n\nClaims:\n\n1. claimId: c1, text: \"Built and maintained the labelling and training pipelines for the shelf-gap detection model, including an active-learning loop that queues low-confidence images for the labelling team.\" sourceIds: [src_7dfa4b73218c], requirementIds: [req_d3d3c9ce9e10], supportBoundary: supported, witness: same text.\n\n2. claimId: c2, text: \"Maintained production monitoring dashboards for pilot stores and prepared the monthly review pack presented to store operations.\" sourceIds: [src_ebd5455e549b], requirementIds: [req_f38f188de7af], supportBoundary: supported, witness: same.\n\n3. claimId: c3, text: \"Wrote model card sections on training data and limitations for versions 1.3 to 1.5.\" sourceIds: [src_988d4072d18e], requirementIds: [req_baca23f0b050], supportBoundary: supported, witness: same.\n\n4. claimId: c4, text: \"Responsible for pipeline development, offline evaluation, monitoring dashboards and model-card documentation over about eighteen months, reporting to the computer vision lead.\" sourceIds: [src_e65063bdc38a], requirementIds: [], supportBoundary: supported, witness: same.\n\nAlso maybe claim about ownership: \"Acted as the primary engineer keeping the model running day to day.\" sourceIds: [src_c7a2256daa9f], requirementIds: [], supportBoundary: supported.\n\nNow experienceHighlights: maybe same claims.\n\nProjectsAndWorkSamples: include work sample.\n\nSkills: maybe list: active-learning, pipeline development, offline evaluation, production monitoring, model card documentation.\n\nEvidenceBoundary: \"The provided resume and notes establish the candidate’s involvement in pipeline development, monitoring, and documentation, but do not establish ownership of release decisions or coordination with store operations and platform teams.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds array.\n\ncandidate: candidateId, sources array: list all sourceIds used.\n\nrequirementEvidenceMap: array of objects for each requirement.\n\nFor each requirement:\n\n- req_31d1eabe867c: status insufficient_evidence. evidence empty. missingEvidence: \"Evidence that the candidate personally decided when new model versions were released to stores.\" Also note that CV lead decided.\n\n- req_d3d3c9ce9e10: status supported. evidence: source src_7dfa4b73218c. evidenceStrength high. notes: \"Built and maintained pipelines.\"\n\n- req_f38f188de7af: status partial_evidence. evidence: src_ebd5455e549b. evidenceStrength medium. notes: \"Maintained dashboards and prepared review pack; did not run review.\"\n\n- req_96e09edd385f: status insufficient_evidence. missingEvidence: \"Evidence of coordinating releases with store operations and platform team and recording responsibility boundaries.\"\n\n- req_baca23f0b050: status supported. evidence: src_988d4072d18e. evidenceStrength high.\n\nsupportedClaims array: include claims that are supported. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength, witness.\n\nunsupportedClaims array: maybe claim about deciding releases. Provide reason.\n\nmissingEvidenceGaps array: for each gap.\n\ninterviewSignalRisks: maybe note from src_c7a2256daa9f about 'keeping the whole model running day to day' but not release decisions. Not a risk? maybe risk of overclaiming ownership. signalType: \"ownership claim\". severity low. recommendedHandling: verify release decision.\n\nfollowUpQuestions: for gaps: question about release decision, coordination.\n\nhumanReviewChecklist: items: \"Verify candidate’s decision authority on model releases\", \"Confirm coordination with store operations and platform team\", \"Assess ownership of production monitoring\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"No evidence of release decision authority or coordination with store operations; limited to pipeline and monitoring responsibilities.\"\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_f9cda3a4c1dd1e98\",\"targetRoleTitle\":\"Machine Learning Engineer, Retail Store Operations\",\"professionalSummary\":[{\"claimId\":\"c1\",\"text\":\"Built and maintained the labelling and training pipelines for the shelf-gap detection model, including an active-learning loop that queues low-confidence images for the labelling team.\",\"sourceIds\":[\"src_7dfa4b73218c\"],\"requirementIds\":[\"req_d3d3c9ce9e10\"],\"supportBoundary\":\"supported\",\"witness\":\"Built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop that queues low-confidence images for the labelling team.\"},{\"claimId\":\"c2\",\"text\":\"Maintained production monitoring dashboards for pilot stores and prepared the monthly review pack presented to store operations.\",\"sourceIds\":[\"src_ebd5455e549b\"],\"requirementIds\":[\"req_f38f188de7af\"],\"supportBoundary\":\"supported\",\"witness\":\"Maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack; the computer vision lead presented it to store operations.\"},{\"claimId\":\"c3\",\"text\":\"Wrote model card sections on training data and limitations for versions 1.3 to 1.5.\",\"sourceIds\":[\"src_988d4072d18e\"],\"requirementIds\":[\"req_baca23f0b050\"],\"supportBoundary\":\"supported\",\"witness\":\"Wrote the model card sections on training data and limitations for versions 1.3 to 1.5, including the limitation that promotional end-cap displays were under-represented in training images.\"},{\"claimId\":\"c4\",\"text\":\"Responsible for pipeline development, offline evaluation, monitoring dashboards and model-card documentation over about eighteen months, reporting to the computer vision lead.\",\"sourceIds\":[\"src_e65063bdc38a\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"Responsibilities included pipeline development, offline evaluation, monitoring dashboards and model-card documentation for the detection model over about eighteen months, reporting to the computer vision lead.\"},{\"claimId\":\"c5\",\"text\":\"Acted as the primary engineer keeping the model running day to day.\",\"sourceIds\":[\"src_c7a2256daa9f\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"the candidate was 'the one keeping the whole model running day to day' and that 'in practice it was his model'.\"}],\"experienceHighlights\":[{\"claimId\":\"c1\"},{\"claimId\":\"c2\"},{\"claimId\":\"c3\"},{\"claimId\":\"c4\"},{\"claimId\":\"c5\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"c6\",\"text\":\"Active-learning pipeline configuration and model card for version 1.5, with training job identifiers as verification trail.\",\"sourceIds\":[\"src_89970f0a1c2d\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"Work sample: the active-learning pipeline configuration and the model card for version 1.5, with the training job identifiers as a verification trail.\"}],\"skills\":[\"Active-learning\",\"Pipeline development\",\"Offline evaluation\",\"Production monitoring\",\"Model card documentation\"],\"evidenceBoundary\":\"The provided resume and notes establish the candidate’s involvement in pipeline development, monitoring, and documentation, but do not establish ownership of release decisions or coordination with store operations and platform teams.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Machine Learning Engineer, Retail Store Operations\",\"jobDescriptionSource\":\"jd_b5936c9b5b561c3f\",\"requirementIds\":[\"req_31d1eabe867c\",\"req_d3d3c9ce9e10\",\"req_f38f188de7af\",\"req_96e09edd385f\",\"req_baca23f0b050\"]},\"candidate\":{\"candidateId\":\"cand_f9cda3a4c1dd1e98\",\"sources\":[\"src_7dfa4b73218c\",\"src_359621592782\",\"src_ebd5455e549b\",\"src_988d4072d18e\",\"src_e65063bdc38a\",\"src_89970f0a1c2d\",\"src_c7a2256daa9f\",\"src_4b25b72aa4b3\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_31d1eabe867c\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate personally decided when new model versions were released to stores.\"]},{\"requirementId\":\"req_d3d3c9ce9e10\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_7dfa4b73218c\",\"text\":\"Built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop that queues low-confidence images for the labelling team.\",\"evidenceStrength\":\"high\",\"notes\":\"Pipeline development and maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f38f188de7af\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_ebd5455e549b\",\"text\":\"Maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack; the computer vision lead presented it to store operations.\",\"evidenceStrength\":\"medium\",\"notes\":\"Dashboard maintenance and review pack preparation; did not run the review.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_96e09edd385f\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence of coordinating releases with store operations and the platform team and recording responsibility boundaries.\"]},{\"requirementId\":\"req_baca23f0b050\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_988d4072d18e\",\"text\":\"Wrote the model card sections on training data and limitations for versions 1.3 to 1.5, including the limitation that promotional end-cap displays were under-represented in training images.\",\"evidenceStrength\":\"high\",\"notes\":\"Model card documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Built and maintained the labelling and training pipelines for the shelf-gap detection model, including an active-learning loop that queues low-confidence images for the labelling team.\",\"supportingRequirementIds\":[\"req_d3d3c9ce9e10\"],\"sourceIds\":[\"src_7dfa4b73218c\"],\"evidenceStrength\":\"high\",\"witness\":\"Built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop that queues low-confidence images for the labelling team.\"},{\"claim\":\"Maintained production monitoring dashboards for pilot stores and prepared the monthly review pack presented to store operations.\",\"supportingRequirementIds\":[\"req_f38f188de7af\"],\"sourceIds\":[\"src_ebd5455e549b\"],\"evidenceStrength\":\"medium\",\"witness\":\"Maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack; the computer vision lead presented it to store operations.\"},{\"claim\":\"Wrote model card sections on training data and limitations for versions 1.3 to 1.5.\",\"supportingRequirementIds\":[\"req_baca23f0b050\"],\"sourceIds\":[\"src_988d4072d18e\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the model card sections on training data and limitations for versions 1.3 to 1.5, including the limitation that promotional end-cap displays were under-represented in training images.\"}],\"unsupportedClaims\":[{\"claim\":\"The candidate personally decided when new model versions were released to stores.\",\"reason\":\"The resume indicates that the computer vision lead decided which version went to pilot stores.\",\"requiredFollowUp\":\"Ask the candidate to provide evidence of release decision authority.\"},{\"claim\":\"The candidate coordinated releases with store operations and the platform team and recorded responsibility boundaries.\",\"reason\":\"No evidence of coordination or boundary documentation is present.\",\"requiredFollowUp\":\"Request documentation or statements confirming coordination and boundary recording.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_31d1eabe867c\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate personally decided when new model versions were released to stores.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_96e09edd385f\",\"severity\":\"high\",\"gap\":\"Evidence of coordinating releases with store operations and the platform team and recording responsibility boundaries.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_c7a2256daa9f\",\"text\":\"the candidate was 'the one keeping the whole model running day to day' and that 'in practice it was his model'\",\"signalType\":\"ownership claim\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify release decision authority during interview.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_31d1eabe867c\",\"question\":\"Can you describe the process you used to decide when a new version of the shelf-gap detection model should be released to stores?\",\"evidenceTarget\":\"Evidence of release decision authority.\"},{\"questionId\":\"q2\",\"requirementId\":\"req_96e09edd385f\",\"question\":\"How did you coordinate model releases with store operations and the platform team, and what documentation did you produce to record responsibility boundaries?\",\"evidenceTarget\":\"Evidence of coordination and boundary documentation.\"}],\"humanReviewChecklist\":[\"Verify candidate’s decision authority on model releases\",\"Confirm coordination with store operations and platform team\",\"Assess ownership of production monitoring\"],\"auditSummary\":\"The candidate demonstrates experience in pipeline development, monitoring, and model card documentation for a shelf-gap detection model. However, there is no evidence that the candidate personally decided release timing or coordinated releases with store operations and platform teams, which are critical requirements for the target role. Human review is required to confirm these missing responsibilities before any hiring decision.\",\"limitations\":[\"No evidence of release decision authority or coordination with store operations; limited to pipeline and monitoring responsibilities.\"]}}",
+ "content_sha256": "eb01a5c2b2aa5f89b56a97ee3828400e1be76494995d411e0fe1a0d0a530a8c5",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_f9cda3a4c1dd1e98",
+   "targetRoleTitle": "Machine Learning Engineer, Retail Store Operations",
+   "professionalSummary": [
+    {
+     "claimId": "c1",
+     "text": "Built and maintained the labelling and training pipelines for the shelf-gap detection model, including an active-learning loop that queues low-confidence images for the labelling team.",
+     "sourceIds": [
+      "src_7dfa4b73218c"
+     ],
+     "requirementIds": [
+      "req_d3d3c9ce9e10"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop that queues low-confidence images for the labelling team."
+    },
+    {
+     "claimId": "c2",
+     "text": "Maintained production monitoring dashboards for pilot stores and prepared the monthly review pack presented to store operations.",
+     "sourceIds": [
+      "src_ebd5455e549b"
+     ],
+     "requirementIds": [
+      "req_f38f188de7af"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack; the computer vision lead presented it to store operations."
+    },
+    {
+     "claimId": "c3",
+     "text": "Wrote model card sections on training data and limitations for versions 1.3 to 1.5.",
+     "sourceIds": [
+      "src_988d4072d18e"
+     ],
+     "requirementIds": [
+      "req_baca23f0b050"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the model card sections on training data and limitations for versions 1.3 to 1.5, including the limitation that promotional end-cap displays were under-represented in training images."
+    },
+    {
+     "claimId": "c4",
+     "text": "Responsible for pipeline development, offline evaluation, monitoring dashboards and model-card documentation over about eighteen months, reporting to the computer vision lead.",
+     "sourceIds": [
+      "src_e65063bdc38a"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Responsibilities included pipeline development, offline evaluation, monitoring dashboards and model-card documentation for the detection model over about eighteen months, reporting to the computer vision lead."
+    },
+    {
+     "claimId": "c5",
+     "text": "Acted as the primary engineer keeping the model running day to day.",
+     "sourceIds": [
+      "src_c7a2256daa9f"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "the candidate was 'the one keeping the whole model running day to day' and that 'in practice it was his model'."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "c1"
+    },
+    {
+     "claimId": "c2"
+    },
+    {
+     "claimId": "c3"
+    },
+    {
+     "claimId": "c4"
+    },
+    {
+     "claimId": "c5"
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "c6",
+     "text": "Active-learning pipeline configuration and model card for version 1.5, with training job identifiers as verification trail.",
+     "sourceIds": [
+      "src_89970f0a1c2d"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the active-learning pipeline configuration and the model card for version 1.5, with the training job identifiers as a verification trail."
+    }
+   ],
+   "skills": [
+    "Active-learning",
+    "Pipeline development",
+    "Offline evaluation",
+    "Production monitoring",
+    "Model card documentation"
+   ],
+   "evidenceBoundary": "The provided resume and notes establish the candidate’s involvement in pipeline development, monitoring, and documentation, but do not establish ownership of release decisions or coordination with store operations and platform teams."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Retail Store Operations",
+    "jobDescriptionSource": "jd_b5936c9b5b561c3f",
+    "requirementIds": [
+     "req_31d1eabe867c",
+     "req_d3d3c9ce9e10",
+     "req_f38f188de7af",
+     "req_96e09edd385f",
+     "req_baca23f0b050"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_f9cda3a4c1dd1e98",
+    "sources": [
+     "src_7dfa4b73218c",
+     "src_359621592782",
+     "src_ebd5455e549b",
+     "src_988d4072d18e",
+     "src_e65063bdc38a",
+     "src_89970f0a1c2d",
+     "src_c7a2256daa9f",
+     "src_4b25b72aa4b3"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_31d1eabe867c",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate personally decided when new model versions were released to stores."
+     ]
+    },
+    {
+     "requirementId": "req_d3d3c9ce9e10",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7dfa4b73218c",
+       "text": "Built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop that queues low-confidence images for the labelling team.",
+       "evidenceStrength": "high",
+       "notes": "Pipeline development and maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f38f188de7af",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_ebd5455e549b",
+       "text": "Maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack; the computer vision lead presented it to store operations.",
+       "evidenceStrength": "medium",
+       "notes": "Dashboard maintenance and review pack preparation; did not run the review."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_96e09edd385f",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence of coordinating releases with store operations and the platform team and recording responsibility boundaries."
+     ]
+    },
+    {
+     "requirementId": "req_baca23f0b050",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_988d4072d18e",
+       "text": "Wrote the model card sections on training data and limitations for versions 1.3 to 1.5, including the limitation that promotional end-cap displays were under-represented in training images.",
+       "evidenceStrength": "high",
+       "notes": "Model card documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built and maintained the labelling and training pipelines for the shelf-gap detection model, including an active-learning loop that queues low-confidence images for the labelling team.",
+     "supportingRequirementIds": [
+      "req_d3d3c9ce9e10"
+     ],
+     "sourceIds": [
+      "src_7dfa4b73218c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop that queues low-confidence images for the labelling team."
+    },
+    {
+     "claim": "Maintained production monitoring dashboards for pilot stores and prepared the monthly review pack presented to store operations.",
+     "supportingRequirementIds": [
+      "req_f38f188de7af"
+     ],
+     "sourceIds": [
+      "src_ebd5455e549b"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack; the computer vision lead presented it to store operations."
+    },
+    {
+     "claim": "Wrote model card sections on training data and limitations for versions 1.3 to 1.5.",
+     "supportingRequirementIds": [
+      "req_baca23f0b050"
+     ],
+     "sourceIds": [
+      "src_988d4072d18e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model card sections on training data and limitations for versions 1.3 to 1.5, including the limitation that promotional end-cap displays were under-represented in training images."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The candidate personally decided when new model versions were released to stores.",
+     "reason": "The resume indicates that the computer vision lead decided which version went to pilot stores.",
+     "requiredFollowUp": "Ask the candidate to provide evidence of release decision authority."
+    },
+    {
+     "claim": "The candidate coordinated releases with store operations and the platform team and recorded responsibility boundaries.",
+     "reason": "No evidence of coordination or boundary documentation is present.",
+     "requiredFollowUp": "Request documentation or statements confirming coordination and boundary recording."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_31d1eabe867c",
+     "severity": "high",
+     "gap": "Evidence that the candidate personally decided when new model versions were released to stores."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_96e09edd385f",
+     "severity": "high",
+     "gap": "Evidence of coordinating releases with store operations and the platform team and recording responsibility boundaries."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_c7a2256daa9f",
+     "text": "the candidate was 'the one keeping the whole model running day to day' and that 'in practice it was his model'",
+     "signalType": "ownership claim",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify release decision authority during interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_31d1eabe867c",
+     "question": "Can you describe the process you used to decide when a new version of the shelf-gap detection model should be released to stores?",
+     "evidenceTarget": "Evidence of release decision authority."
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_96e09edd385f",
+     "question": "How did you coordinate model releases with store operations and the platform team, and what documentation did you produce to record responsibility boundaries?",
+     "evidenceTarget": "Evidence of coordination and boundary documentation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify candidate’s decision authority on model releases",
+    "Confirm coordination with store operations and platform team",
+    "Assess ownership of production monitoring"
+   ],
+   "auditSummary": "The candidate demonstrates experience in pipeline development, monitoring, and model card documentation for a shelf-gap detection model. However, there is no evidence that the candidate personally decided release timing or coordinated releases with store operations and platform teams, which are critical requirements for the target role. Human review is required to confirm these missing responsibilities before any hiring decision.",
+   "limitations": [
+    "No evidence of release decision authority or coordination with store operations; limited to pipeline and monitoring responsibilities."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:35:14.033526+00:00"
+}

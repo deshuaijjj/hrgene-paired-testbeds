@@ -1,0 +1,497 @@
+{
+ "request_id": "82f39ee3-1ecd-4a3c-84f0-116972ef840c.C2",
+ "case_id": "82f39ee3-1ecd-4a3c-84f0-116972ef840c",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0]",
+    "message": "subjective/hearsay source cited as support: src_2d8e22626e6e",
+    "witness": {
+     "sourceIds": [
+      "src_2d8e22626e6e"
+     ],
+     "text": "HR verification note: the model performance memo the candidate mentioned at interview was obtained directly from Saltire Card Services' model risk office. At a fixed alert rate of 0.5%, it records car"
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].notes",
+    "message": "subjective/hearsay source cited as support: src_2d8e22626e6e",
+    "witness": {
+     "sourceIds": [
+      "src_2d8e22626e6e"
+     ],
+     "text": "Provides evidence of a change in fraud detection, but does not explicitly state the comparison periods or the fixed alert rate."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective_source_cited_as_support",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "HR verification note: the model performance memo the candidate mentioned at interview was obtained directly from Saltire"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_f68261065d5dbbc4",
+   "targetRoleTitle": "Data Scientist, Card Fraud Analytics",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Built labelled training data from confirmed fraud and chargeback records, including first-party fraud labels.",
+     "sourceIds": [
+      "src_5ed7be43466f"
+     ],
+     "requirementIds": [
+      "req_f98238095dee"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the labelled training set for the card-not-present fraud model at Saltire Card Services, joining confirmed fraud reports and chargeback reason codes to transactions with a 90-day label delay."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Retrained and recalibrated a card fraud model with the fraud strategy team.",
+     "sourceIds": [
+      "src_717a31c2cf41"
+     ],
+     "requirementIds": [
+      "req_b4bf21717cf3"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Retrained the gradient-boosted fraud model on 2022 data and recalibrated its alert thresholds with the fraud strategy managers over a series of threshold workshops."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Analyses strategy-rule performance and proposes rule retirements.",
+     "sourceIds": [
+      "src_63e5e4d76520"
+     ],
+     "requirementIds": [
+      "req_6a59b1114604"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reviewed the performance of 64 strategy rules and proposed retiring 17 that rarely fired or duplicated the model; the fraud strategy managers approved 15 of them."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Prepares model performance material for a model risk committee.",
+     "sourceIds": [
+      "src_377de9dd1b3d"
+     ],
+     "requirementIds": [
+      "req_d4faa95e371b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the quarterly model performance paper for the model risk committee, covering detection, alert volumes and drift indicators."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience in building training data, retraining models, analysing strategy rules, and preparing performance reports. They do not establish the candidate's ability to show a measured change in fraud detection at a fixed alert rate over defined periods."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience aligns with the role's requirements, but further evidence is needed to confirm the ability to show a measured change in fraud detection at a fixed alert rate over defined periods."
+   },
+   "role": {
+    "roleTitle": "Data Scientist, Card Fraud Analytics",
+    "jobDescriptionSource": "jd_723f2794f5199fa1",
+    "requirementIds": [
+     "req_f98238095dee",
+     "req_b4bf21717cf3",
+     "req_1ae1cf5b4085",
+     "req_6a59b1114604",
+     "req_d4faa95e371b"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_f68261065d5dbbc4",
+    "sources": [
+     "src_5ed7be43466f",
+     "src_717a31c2cf41",
+     "src_63e5e4d76520",
+     "src_377de9dd1b3d",
+     "src_c68aa0c5c064",
+     "src_2d8e22626e6e",
+     "src_f635d31fbaaa"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f98238095dee",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5ed7be43466f",
+       "text": "Built the labelled training set for the card-not-present fraud model at Saltire Card Services, joining confirmed fraud reports and chargeback reason codes to transactions with a 90-day label delay.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b4bf21717cf3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_717a31c2cf41",
+       "text": "Retrained the gradient-boosted fraud model on 2022 data and recalibrated its alert thresholds with the fraud strategy managers over a series of threshold workshops.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1ae1cf5b4085",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "comparison periods",
+      "fixed alert rate"
+     ]
+    },
+    {
+     "requirementId": "req_6a59b1114604",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_63e5e4d76520",
+       "text": "Reviewed the performance of 64 strategy rules and proposed retiring 17 that rarely fired or duplicated the model; the fraud strategy managers approved 15 of them.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d4faa95e371b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_377de9dd1b3d",
+       "text": "Prepared the quarterly model performance paper for the model risk committee, covering detection, alert volumes and drift indicators.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built labelled training data from confirmed fraud and chargeback records, including first-party fraud labels.",
+     "supportingRequirementIds": [
+      "req_f98238095dee"
+     ],
+     "sourceIds": [
+      "src_5ed7be43466f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the labelled training set for the card-not-present fraud model at Saltire Card Services, joining confirmed fraud reports and chargeback reason codes to transactions with a 90-day label delay."
+    },
+    {
+     "claim": "Retrained and recalibrated a card fraud model with the fraud strategy team.",
+     "supportingRequirementIds": [
+      "req_b4bf21717cf3"
+     ],
+     "sourceIds": [
+      "src_717a31c2cf41"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Retrained the gradient-boosted fraud model on 2022 data and recalibrated its alert thresholds with the fraud strategy managers over a series of threshold workshops."
+    },
+    {
+     "claim": "Analyses strategy-rule performance and proposes rule retirements.",
+     "supportingRequirementIds": [
+      "req_6a59b1114604"
+     ],
+     "sourceIds": [
+      "src_63e5e4d76520"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed the performance of 64 strategy rules and proposed retiring 17 that rarely fired or duplicated the model; the fraud strategy managers approved 15 of them."
+    },
+    {
+     "claim": "Prepares model performance material for a model risk committee.",
+     "supportingRequirementIds": [
+      "req_d4faa95e371b"
+     ],
+     "sourceIds": [
+      "src_377de9dd1b3d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the quarterly model performance paper for the model risk committee, covering detection, alert volumes and drift indicators."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Shows a measured change in fraud detection at a fixed alert rate over defined comparison periods.",
+     "reason": "The materials do not explicitly state the comparison periods or the fixed alert rate, though there is indirect evidence of a change in fraud detection.",
+     "requiredFollowUp": "Ask the candidate to provide the comparison periods and the fixed alert rate used in the analysis."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_1ae1cf5b4085",
+     "severity": "medium",
+     "gap": "The materials do not explicitly state the comparison periods or the fixed alert rate used in the analysis of fraud detection."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_2d8e22626e6e",
+     "text": "HR verification note: the model performance memo the candidate mentioned at interview was obtained directly from Saltire Card Services' model risk office. At a fixed alert rate of 0.5%, it records card-not-present fraud value detected rising from 61% (January to March 2023) to 74% (July to September 2023), after the retrained model went into use in May 2023.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to provide the comparison periods and the fixed alert rate used in the analysis."
+    },
+    {
+     "sourceId": "src_2d8e22626e6e",
+     "text": "HR verification note: the model performance memo the candidate mentioned at interview was obtained directly from Saltire Card Services' model risk office. At a fixed alert rate of 0.5%, it records card-not-present fraud value detected rising from 61% (January to March 2023) to 74% (July to September 2023), after the retrained model went into use in May 2023.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_1",
+     "requirementId": "req_1ae1cf5b4085",
+     "question": "Can you provide the comparison periods and the fixed alert rate used in the analysis of fraud detection?",
+     "evidenceTarget": "To confirm the ability to show a measured change in fraud detection at a fixed alert rate over defined comparison periods."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's ability to show a measured change in fraud detection at a fixed alert rate over defined comparison periods.",
+    "Confirm the comparison periods and the fixed alert rate used in the analysis."
+   ],
+   "auditSummary": "The candidate's experience aligns with the role's requirements, but further evidence is needed to confirm the ability to show a measured change in fraud detection at a fixed alert rate over defined comparison periods.",
+   "limitations": [
+    "The materials do not explicitly state the comparison periods or the fixed alert rate used in the analysis of fraud detection."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

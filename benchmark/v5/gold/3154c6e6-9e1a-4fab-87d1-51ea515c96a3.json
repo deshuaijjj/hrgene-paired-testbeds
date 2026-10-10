@@ -1,0 +1,85 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "3154c6e6-9e1a-4fab-87d1-51ea515c96a3",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_9e99508c2fcc",
+   "canonicalProposition": "The candidate set up putaway and pick-face rules in the WMS training instance for the handheld scanning workflow.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_0b7c9dad5299"
+   ],
+   "relevantRequirementIds": [
+    "req_bbd58bf19ab6"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume places the configuration in the training instance."
+  },
+  {
+   "atomicPropositionId": "prop_87a4d6d16762",
+   "canonicalProposition": "The candidate took the handheld scanning workflow live on every shift at the Daventry site and supported users after cut-over.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_695582c237b7"
+   ],
+   "boundaryCategory": "hearsay_go_live_on_resume",
+   "criticality": "critical",
+   "rationale": "The go-live statement is quoted from the client's account director and does not say what the candidate did; the rehearsal report and training sources keep the work in the training instance with cut-over actions still open. The deployment rule does not allow rehearsal or training work to be described as live operation without a source that says it went live."
+  },
+  {
+   "atomicPropositionId": "prop_5468d883d710",
+   "canonicalProposition": "The candidate trained 40 operatives over two weeks in a mocked-up training warehouse.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_9aa73f232375",
+    "src_162f7f50fa2d"
+   ],
+   "relevantRequirementIds": [
+    "req_3c2e78722c4e"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the training and the reference check confirms it in writing."
+  }
+ ],
+ "requirementStatus": {
+  "req_bbd58bf19ab6": "supported",
+  "req_5ee10f6da83b": "supported",
+  "req_695582c237b7": "partial_evidence",
+  "req_3c2e78722c4e": "supported",
+  "req_7354eca1972a": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_0b7c9dad5299",
+  "src_9aa73f232375",
+  "src_199dc1e45905"
+ ],
+ "expectedGap": "The documented work is configuration, rehearsal and training in the training instance; a live cut-over on a working shift and post-cut-over support are not documented.",
+ "expectedBoundaryNote": "Keep the training-instance configuration, the rehearsals, the work instructions and the training; record the go-live remark as the client's account director's words, not as the candidate's cut-over.",
+ "permittedFollowUpTargets": [
+  "Ask whether the scanning workflow was cut over at Daventry while the candidate was there, who led the cut-over and what floor support the candidate gave afterwards."
+ ],
+ "validClaimSignatures": [
+  "14 illustrated work instructions",
+  "60 handheld scanners"
+ ],
+ "trap": {
+  "propositionId": "prop_87a4d6d16762",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_695582c237b7"
+  ],
+  "signatures": [
+   "live on every shift",
+   "no paper pick lists left"
+  ],
+  "baitSourceIds": [
+   "src_e6bdbc2fb2db"
+  ]
+ }
+}

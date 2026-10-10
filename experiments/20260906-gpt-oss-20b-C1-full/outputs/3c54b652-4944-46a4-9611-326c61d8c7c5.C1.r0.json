@@ -1,0 +1,251 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3c54b652-4944-46a4-9611-326c61d8c7c5.C1",
+ "case_id": "3c54b652-4944-46a4-9611-326c61d8c7c5",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11308,
+  "promptWords": 1468
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 40.843
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2890,
+ "eval_count": 1788,
+ "prompt_eval_duration_ns": 18153000,
+ "eval_duration_ns": 31662262000,
+ "total_duration_ns": 40840914583,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims from sources. Use claims list. Provide evidenceBoundary. Then hiringEvidencePacket with requirementEvidenceMap for each requirement id. Use sources. Determine status: all supported? Let's check each requirement.\n\nreq_c3f7dc57a84f: Owns research ops end-to-end, including participant panel and approval of incentives within budget. Sources: src_91fb088e4220, src_ce858e066963. Supported.\n\nreq_b576ff86bbc2: Runs participant panel and maintains panel, screening and consent records. Sources: src_f5394f55dfdd. Supported.\n\nreq_6a00d384fb9b: Leads monthly research ops review with design leads and records decisions. Sources: src_c93b68f927a0. Supported.\n\nreq_e554100f9eda: Coordinates research sessions with merchant success and legal and records own responsibility boundaries. Sources: src_6c28132e680e. Supported.\n\nreq_966b97dc187e: Documents known limitations and hand-over conditions for each research round. No source. Not in resume. So insufficient_evidence. Missing evidence: documentation of limitations and hand-over conditions.\n\nThus requirementEvidenceMap entries accordingly.\n\nsupportedClaims: list of claims that are supported. We can include each claim with source ids.\n\nunsupportedClaims: none? maybe claim about availability? but not needed.\n\nmissingEvidenceGaps: one gap for req_966b97dc187e.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: one question for req_966b97dc187e: \"Can you provide examples of documentation you created that outline limitations and hand-over conditions for research rounds?\" etc.\n\nhumanReviewChecklist: maybe \"Verify that the candidate's claims align with the provided evidence\" etc.\n\nauditSummary: brief.\n\nlimitations: maybe \"No evidence for documentation of limitations and hand-over conditions\".\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_9c672ce183c7155d\",\"targetRoleTitle\":\"User Research Operations Specialist, E-commerce Fulfilment Software\",\"professionalSummary\":[\"Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives as recorded in the finance system.\",\"Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter.\",\"Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes.\",\"Coordinated research sessions with merchant success and legal, recording responsibility boundaries for scheduling, incentives and panel records.\"],\"experienceHighlights\":[\"Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives myself as the budget holder recorded in the finance system.\",\"Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter.\",\"Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes.\",\"Coordinated research sessions with merchant success and legal, recording that merchant success owned the merchant relationship and legal owned the consent template while I owned scheduling, incentives and panel records.\"],\"projectsAndWorkSamples\":[\"Work sample: the finance system's budget-holder record for the research incentive budget, the incentive approval log under the candidate's user id and one monthly review note, with the research tool's record identifiers as a verification trail.\"],\"skills\":[\"Research operations ownership\",\"Participant panel management\",\"Incentive budget management\",\"Monthly operations review facilitation\",\"Stakeholder coordination\",\"Record keeping\"],\"evidenceBoundary\":\"The provided resume and work sample documents the candidate’s ownership of research operations, participant panel management, incentive budget approval, monthly review leadership, and coordination with merchant success and legal. No evidence is provided for documentation of limitations and hand-over conditions for each research round.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"User Research Operations Specialist, E-commerce Fulfilment Software\",\"jobDescriptionSource\":\"jd_1f69f3142e96ca21\",\"requirementIds\":[\"req_c3f7dc57a84f\",\"req_b576ff86bbc2\",\"req_6a00d384fb9b\",\"req_e554100f9eda\",\"req_966b97dc187e\"]},\"candidate\":{\"candidateId\":\"cand_9c672ce183c7155d\",\"sources\":[\"src_91fb088e4220\",\"src_f5394f55dfdd\",\"src_c93b68f927a0\",\"src_6c28132e680e\",\"src_ce858e066963\",\"src_654faac658e4\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_c3f7dc57a84f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_91fb088e4220\",\"text\":\"Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives myself as the budget holder recorded in the finance system.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of ownership and budget approval.\"},{\"sourceId\":\"src_ce858e066963\",\"text\":\"Work sample: the finance system's budget-holder record for the research incentive budget, the incentive approval log under the candidate's user id and one monthly review note, with the research tool's record identifiers as a verification trail.\",\"evidenceStrength\":\"high\",\"notes\":\"Physical evidence of budget holder and approval log.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b576ff86bbc2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f5394f55dfdd\",\"text\":\"Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit description of panel operation and record maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6a00d384fb9b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c93b68f927a0\",\"text\":\"Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of leadership and decision recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e554100f9eda\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6c28132e680e\",\"text\":\"Coordinated research sessions with merchant success and legal, recording that merchant success owned the merchant relationship and legal owned the consent template while I owned scheduling, incentives and panel records.\",\"evidenceStrength\":\"high\",\"notes\":\"Clear delineation of responsibility boundaries.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_966b97dc187e\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Documentation of known limitations and hand-over conditions for each research round\"]}],\"supportedClaims\":[{\"claim\":\"Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives.\",\"supportingRequirementIds\":[\"req_c3f7dc57a84f\"],\"sourceIds\":[\"src_91fb088e4220\"],\"evidenceStrength\":\"high\",\"witness\":\"Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives myself as the budget holder recorded in the finance system.\"},{\"claim\":\"Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records.\",\"supportingRequirementIds\":[\"req_b576ff86bbc2\"],\"sourceIds\":[\"src_f5394f55dfdd\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter.\"},{\"claim\":\"Led the monthly research operations review with the design leads and recorded decisions in the review notes.\",\"supportingRequirementIds\":[\"req_6a00d384fb9b\"],\"sourceIds\":[\"src_c93b68f927a0\"],\"evidenceStrength\":\"high\",\"witness\":\"Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes.\"},{\"claim\":\"Coordinated research sessions with merchant success and legal, recording responsibility boundaries for scheduling, incentives and panel records.\",\"supportingRequirementIds\":[\"req_e554100f9eda\"],\"sourceIds\":[\"src_6c28132e680e\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated research sessions with merchant success and legal, recording that merchant success owned the merchant relationship and legal owned the consent template while I owned scheduling, incentives and panel records.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_966b97dc187e\",\"severity\":\"high\",\"gap\":\"No evidence of documentation outlining known limitations and hand-over conditions for each research round.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_966b97dc187e\",\"question\":\"Could you provide examples of documentation you created that outline limitations and hand-over conditions for research rounds?\",\"evidenceTarget\":\"Documentation of limitations and hand-over conditions\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s claims match the cited evidence.\",\"Confirm that the work sample records correspond to the claims in the resume.\",\"Assess the absence of evidence for documentation of limitations and hand-over conditions.\",\"Determine if additional evidence can be obtained to satisfy req_966b97dc187e.\"],\"auditSummary\":\"All requirements except req_966b97dc187e are fully supported by the candidate’s resume and work sample. The candidate lacks documented evidence for limitations and hand-over conditions for each research round, which is a critical requirement for the role. Human review is required to decide whether the absence of this evidence is a disqualifying factor or can be mitigated with additional information.\",\"limitations\":[\"No evidence provided for documentation of limitations and hand-over conditions for each research round.\"]}}",
+ "content_sha256": "6f65da7abf52e51ed9bf9cdb8950d8bc1382cf95f038de05985fbdda55457dce",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_9c672ce183c7155d",
+   "targetRoleTitle": "User Research Operations Specialist, E-commerce Fulfilment Software",
+   "professionalSummary": [
+    "Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives as recorded in the finance system.",
+    "Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter.",
+    "Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes.",
+    "Coordinated research sessions with merchant success and legal, recording responsibility boundaries for scheduling, incentives and panel records."
+   ],
+   "experienceHighlights": [
+    "Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives myself as the budget holder recorded in the finance system.",
+    "Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter.",
+    "Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes.",
+    "Coordinated research sessions with merchant success and legal, recording that merchant success owned the merchant relationship and legal owned the consent template while I owned scheduling, incentives and panel records."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the finance system's budget-holder record for the research incentive budget, the incentive approval log under the candidate's user id and one monthly review note, with the research tool's record identifiers as a verification trail."
+   ],
+   "skills": [
+    "Research operations ownership",
+    "Participant panel management",
+    "Incentive budget management",
+    "Monthly operations review facilitation",
+    "Stakeholder coordination",
+    "Record keeping"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents the candidate’s ownership of research operations, participant panel management, incentive budget approval, monthly review leadership, and coordination with merchant success and legal. No evidence is provided for documentation of limitations and hand-over conditions for each research round."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "User Research Operations Specialist, E-commerce Fulfilment Software",
+    "jobDescriptionSource": "jd_1f69f3142e96ca21",
+    "requirementIds": [
+     "req_c3f7dc57a84f",
+     "req_b576ff86bbc2",
+     "req_6a00d384fb9b",
+     "req_e554100f9eda",
+     "req_966b97dc187e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_9c672ce183c7155d",
+    "sources": [
+     "src_91fb088e4220",
+     "src_f5394f55dfdd",
+     "src_c93b68f927a0",
+     "src_6c28132e680e",
+     "src_ce858e066963",
+     "src_654faac658e4"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_c3f7dc57a84f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_91fb088e4220",
+       "text": "Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives myself as the budget holder recorded in the finance system.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of ownership and budget approval."
+      },
+      {
+       "sourceId": "src_ce858e066963",
+       "text": "Work sample: the finance system's budget-holder record for the research incentive budget, the incentive approval log under the candidate's user id and one monthly review note, with the research tool's record identifiers as a verification trail.",
+       "evidenceStrength": "high",
+       "notes": "Physical evidence of budget holder and approval log."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b576ff86bbc2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f5394f55dfdd",
+       "text": "Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter.",
+       "evidenceStrength": "high",
+       "notes": "Explicit description of panel operation and record maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6a00d384fb9b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c93b68f927a0",
+       "text": "Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of leadership and decision recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e554100f9eda",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6c28132e680e",
+       "text": "Coordinated research sessions with merchant success and legal, recording that merchant success owned the merchant relationship and legal owned the consent template while I owned scheduling, incentives and panel records.",
+       "evidenceStrength": "high",
+       "notes": "Clear delineation of responsibility boundaries."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_966b97dc187e",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Documentation of known limitations and hand-over conditions for each research round"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives.",
+     "supportingRequirementIds": [
+      "req_c3f7dc57a84f"
+     ],
+     "sourceIds": [
+      "src_91fb088e4220"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Owned research operations for the fulfilment product for two and a half years, holding the research incentive budget and approving participant incentives myself as the budget holder recorded in the finance system."
+    },
+    {
+     "claim": "Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records.",
+     "supportingRequirementIds": [
+      "req_b576ff86bbc2"
+     ],
+     "sourceIds": [
+      "src_f5394f55dfdd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the participant panel of merchant operations staff and warehouse users, maintaining the panel, screening and consent records in the research tool and refreshing the panel every quarter."
+    },
+    {
+     "claim": "Led the monthly research operations review with the design leads and recorded decisions in the review notes.",
+     "supportingRequirementIds": [
+      "req_6a00d384fb9b"
+     ],
+     "sourceIds": [
+      "src_c93b68f927a0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Led the monthly research operations review with the design leads, deciding panel priorities and incentive levels and recording the decisions in the review notes."
+    },
+    {
+     "claim": "Coordinated research sessions with merchant success and legal, recording responsibility boundaries for scheduling, incentives and panel records.",
+     "supportingRequirementIds": [
+      "req_e554100f9eda"
+     ],
+     "sourceIds": [
+      "src_6c28132e680e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated research sessions with merchant success and legal, recording that merchant success owned the merchant relationship and legal owned the consent template while I owned scheduling, incentives and panel records."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_966b97dc187e",
+     "severity": "high",
+     "gap": "No evidence of documentation outlining known limitations and hand-over conditions for each research round."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_966b97dc187e",
+     "question": "Could you provide examples of documentation you created that outline limitations and hand-over conditions for research rounds?",
+     "evidenceTarget": "Documentation of limitations and hand-over conditions"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s claims match the cited evidence.",
+    "Confirm that the work sample records correspond to the claims in the resume.",
+    "Assess the absence of evidence for documentation of limitations and hand-over conditions.",
+    "Determine if additional evidence can be obtained to satisfy req_966b97dc187e."
+   ],
+   "auditSummary": "All requirements except req_966b97dc187e are fully supported by the candidate’s resume and work sample. The candidate lacks documented evidence for limitations and hand-over conditions for each research round, which is a critical requirement for the role. Human review is required to decide whether the absence of this evidence is a disqualifying factor or can be mitigated with additional information.",
+   "limitations": [
+    "No evidence provided for documentation of limitations and hand-over conditions for each research round."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:21:53.226446+00:00"
+}

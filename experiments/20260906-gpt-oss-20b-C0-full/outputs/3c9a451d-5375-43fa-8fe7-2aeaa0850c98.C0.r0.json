@@ -1,0 +1,255 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3c9a451d-5375-43fa-8fe7-2aeaa0850c98.C0",
+ "case_id": "3c9a451d-5375-43fa-8fe7-2aeaa0850c98",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7460,
+  "promptWords": 963
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 35.856
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2134,
+ "eval_count": 1681,
+ "prompt_eval_duration_ns": 17260000,
+ "eval_duration_ns": 29081661000,
+ "total_duration_ns": 35853387417,
+ "thinking": "We need to produce JSON with structure. Use provided sources. Let's craft optimized CV: language en, candidateId cand_2bd272bbd6b4be5e, targetRoleTitle Software Engineer, Factory Execution System. professionalSummary: claims from resume. experienceHighlights: same. projectsAndWorkSamples: mention work sample. skills: maybe \"Execution system development\", \"Pilot line testing\", \"Supervisor training\", \"Change documentation\". evidenceBoundary: one or two sentences.\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Candidate meets all listed requirements based on evidence, but further verification of certain details is recommended.\"\n\nrole: roleTitle same, jobDescriptionSource copy id, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence array with sourceId and text verbatim from resume. Provide missingEvidence empty.\n\nsupportedClaims: list claims from resume with supportingRequirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note from src_91ab445aef38 about training demonstration; risk low? It's evidence of training. Not risk.\n\nfollowUpQuestions: maybe none.\n\nhumanReviewChecklist: items like \"Verify lead go-ahead records\", \"Confirm pilot line record retention\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Based on provided sources only; no external verification\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_2bd272bbd6b4be5e\",\"targetRoleTitle\":\"Software Engineer, Factory Execution System\",\"professionalSummary\":[\"Experienced execution system engineer with four years at an electronics manufacturer, building process engineer‑specified changes under the plant software standard.\",\"Proven ability to train line supervisors during running shifts, completing 61 sessions with signed records.\",\"Skilled in pilot line testing, lead approval coordination, and comprehensive change documentation.\"],\"experienceHighlights\":[\"Built execution system changes for two assembly plants following plant software standards.\",\"Conducted 61 supervisor training sessions on live lines, each documented with supervisor‑signed records.\",\"Ensured every change ran on the pilot line first, with pilot records filed and countersigned by process engineers.\",\"Obtained execution system lead approval for every release, recording checks performed.\",\"Documented impact of each change and hand‑over conditions in change records.\"],\"projectsAndWorkSamples\":[\"Provided two change records with pilot records, lead approvals, and notes, plus three supervisor‑signed training records as verification trail.\"],\"skills\":[\"Execution System Development\",\"Pilot Line Testing\",\"Supervisor Training\",\"Change Documentation\",\"Process Engineer Collaboration\"],\"evidenceBoundary\":\"The provided resume and work sample confirm the candidate’s experience and actions that satisfy each job requirement; no contradictory evidence is present.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Candidate meets all listed requirements based on evidence, but further verification of certain details is recommended.\"},\"role\":{\"roleTitle\":\"Software Engineer, Factory Execution System\",\"jobDescriptionSource\":\"jd_bbb9dfdf4ed8916a\",\"requirementIds\":[\"req_c22c82b0b0e7\",\"req_c9ce1dfb45db\",\"req_9950155784b8\",\"req_7e55b74921d3\",\"req_93c56f2beb2e\"]},\"candidate\":{\"candidateId\":\"cand_2bd272bbd6b4be5e\",\"sources\":[\"src_06b05a276e99\",\"src_87647442d9b4\",\"src_de91daa1df97\",\"src_1076da3e8f67\",\"src_44502490b4c6\",\"src_11ee3e941152\",\"src_91ab445aef38\",\"src_1175bed2b55d\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_c22c82b0b0e7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_06b05a276e99\",\"text\":\"Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of role and compliance with plant software standard.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c9ce1dfb45db\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_87647442d9b4\",\"text\":\"Taught the supervisors each change on the line during a running shift under the line training standard; sixty-one line sessions across the two plants, every one with a supervisor-signed training record.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit count and documentation of training sessions.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9950155784b8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_de91daa1df97\",\"text\":\"Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.\",\"evidenceStrength\":\"high\",\"notes\":\"Clear statement of pilot testing and record keeping.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7e55b74921d3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1076da3e8f67\",\"text\":\"The execution system lead gave the go-ahead for every release, recorded on the change alongside the checks that were mine.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct confirmation of lead approval process.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_93c56f2beb2e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_44502490b4c6\",\"text\":\"A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit documentation of hand‑over notes.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Built execution system changes for two assembly plants under plant software standards.\",\"supportingRequirementIds\":[\"req_c22c82b0b0e7\"],\"sourceIds\":[\"src_06b05a276e99\"],\"evidenceStrength\":\"high\",\"witness\":\"Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.\"},{\"claim\":\"Conducted 61 supervisor training sessions on live lines, each documented with supervisor‑signed records.\",\"supportingRequirementIds\":[\"req_c9ce1dfb45db\"],\"sourceIds\":[\"src_87647442d9b4\"],\"evidenceStrength\":\"high\",\"witness\":\"Taught the supervisors each change on the line during a running shift under the line training standard; sixty-one line sessions across the two plants, every one with a supervisor-signed training record.\"},{\"claim\":\"Ensured every change ran on the pilot line first, with pilot records filed and countersigned by process engineers.\",\"supportingRequirementIds\":[\"req_9950155784b8\"],\"sourceIds\":[\"src_de91daa1df97\"],\"evidenceStrength\":\"high\",\"witness\":\"Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.\"},{\"claim\":\"Obtained execution system lead approval for every release, recording checks performed.\",\"supportingRequirementIds\":[\"req_7e55b74921d3\"],\"sourceIds\":[\"src_1076da3e8f67\"],\"evidenceStrength\":\"high\",\"witness\":\"The execution system lead gave the go-ahead for every release, recorded on the change alongside the checks that were mine.\"},{\"claim\":\"Documented impact of each change and hand‑over conditions in change records.\",\"supportingRequirementIds\":[\"req_93c56f2beb2e\"],\"sourceIds\":[\"src_44502490b4c6\"],\"evidenceStrength\":\"high\",\"witness\":\"A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_91ab445aef38\",\"text\":\"Interviewer 2 note: asked to train the panel as line supervisors on a sample change, the candidate showed the new quality hold screen on the tablet, had each panel member release a sample hold themselves, pointed out the one step that differed from the old screen, and handed over a one-page card with the three steps.\",\"signalType\":\"training demonstration\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"low\",\"recommendedHandling\":\"Verify that the demonstration aligns with documented training procedures.\"}],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the lead approval records are consistently maintained for all releases.\",\"Confirm that pilot line records are filed and countersigned for every change.\",\"Ensure that supervisor training records are signed and stored per line training standard.\"],\"auditSummary\":\"All five job requirements are directly supported by statements in the candidate’s resume and work sample. The evidence is high‑strength and consistent across multiple sources. No contradictory or missing evidence was identified. Human review is recommended to confirm record‑keeping practices and to verify that the documented processes are still current.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and interview notes; external verification of processes and current practices is not included.\"]}}",
+ "content_sha256": "3308ae93f3a365c325792afadd432e0eb87563a1b9c9f9a77c3e1d7750c549df",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2bd272bbd6b4be5e",
+   "targetRoleTitle": "Software Engineer, Factory Execution System",
+   "professionalSummary": [
+    "Experienced execution system engineer with four years at an electronics manufacturer, building process engineer‑specified changes under the plant software standard.",
+    "Proven ability to train line supervisors during running shifts, completing 61 sessions with signed records.",
+    "Skilled in pilot line testing, lead approval coordination, and comprehensive change documentation."
+   ],
+   "experienceHighlights": [
+    "Built execution system changes for two assembly plants following plant software standards.",
+    "Conducted 61 supervisor training sessions on live lines, each documented with supervisor‑signed records.",
+    "Ensured every change ran on the pilot line first, with pilot records filed and countersigned by process engineers.",
+    "Obtained execution system lead approval for every release, recording checks performed.",
+    "Documented impact of each change and hand‑over conditions in change records."
+   ],
+   "projectsAndWorkSamples": [
+    "Provided two change records with pilot records, lead approvals, and notes, plus three supervisor‑signed training records as verification trail."
+   ],
+   "skills": [
+    "Execution System Development",
+    "Pilot Line Testing",
+    "Supervisor Training",
+    "Change Documentation",
+    "Process Engineer Collaboration"
+   ],
+   "evidenceBoundary": "The provided resume and work sample confirm the candidate’s experience and actions that satisfy each job requirement; no contradictory evidence is present."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Candidate meets all listed requirements based on evidence, but further verification of certain details is recommended."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Factory Execution System",
+    "jobDescriptionSource": "jd_bbb9dfdf4ed8916a",
+    "requirementIds": [
+     "req_c22c82b0b0e7",
+     "req_c9ce1dfb45db",
+     "req_9950155784b8",
+     "req_7e55b74921d3",
+     "req_93c56f2beb2e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2bd272bbd6b4be5e",
+    "sources": [
+     "src_06b05a276e99",
+     "src_87647442d9b4",
+     "src_de91daa1df97",
+     "src_1076da3e8f67",
+     "src_44502490b4c6",
+     "src_11ee3e941152",
+     "src_91ab445aef38",
+     "src_1175bed2b55d"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_c22c82b0b0e7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_06b05a276e99",
+       "text": "Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of role and compliance with plant software standard."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c9ce1dfb45db",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_87647442d9b4",
+       "text": "Taught the supervisors each change on the line during a running shift under the line training standard; sixty-one line sessions across the two plants, every one with a supervisor-signed training record.",
+       "evidenceStrength": "high",
+       "notes": "Explicit count and documentation of training sessions."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9950155784b8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_de91daa1df97",
+       "text": "Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.",
+       "evidenceStrength": "high",
+       "notes": "Clear statement of pilot testing and record keeping."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7e55b74921d3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1076da3e8f67",
+       "text": "The execution system lead gave the go-ahead for every release, recorded on the change alongside the checks that were mine.",
+       "evidenceStrength": "high",
+       "notes": "Direct confirmation of lead approval process."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_93c56f2beb2e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_44502490b4c6",
+       "text": "A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.",
+       "evidenceStrength": "high",
+       "notes": "Explicit documentation of hand‑over notes."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built execution system changes for two assembly plants under plant software standards.",
+     "supportingRequirementIds": [
+      "req_c22c82b0b0e7"
+     ],
+     "sourceIds": [
+      "src_06b05a276e99"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard."
+    },
+    {
+     "claim": "Conducted 61 supervisor training sessions on live lines, each documented with supervisor‑signed records.",
+     "supportingRequirementIds": [
+      "req_c9ce1dfb45db"
+     ],
+     "sourceIds": [
+      "src_87647442d9b4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Taught the supervisors each change on the line during a running shift under the line training standard; sixty-one line sessions across the two plants, every one with a supervisor-signed training record."
+    },
+    {
+     "claim": "Ensured every change ran on the pilot line first, with pilot records filed and countersigned by process engineers.",
+     "supportingRequirementIds": [
+      "req_9950155784b8"
+     ],
+     "sourceIds": [
+      "src_de91daa1df97"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer."
+    },
+    {
+     "claim": "Obtained execution system lead approval for every release, recording checks performed.",
+     "supportingRequirementIds": [
+      "req_7e55b74921d3"
+     ],
+     "sourceIds": [
+      "src_1076da3e8f67"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The execution system lead gave the go-ahead for every release, recorded on the change alongside the checks that were mine."
+    },
+    {
+     "claim": "Documented impact of each change and hand‑over conditions in change records.",
+     "supportingRequirementIds": [
+      "req_93c56f2beb2e"
+     ],
+     "sourceIds": [
+      "src_44502490b4c6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_91ab445aef38",
+     "text": "Interviewer 2 note: asked to train the panel as line supervisors on a sample change, the candidate showed the new quality hold screen on the tablet, had each panel member release a sample hold themselves, pointed out the one step that differed from the old screen, and handed over a one-page card with the three steps.",
+     "signalType": "training demonstration",
+     "jobRelatedBoundary": "yes",
+     "severity": "low",
+     "recommendedHandling": "Verify that the demonstration aligns with documented training procedures."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the lead approval records are consistently maintained for all releases.",
+    "Confirm that pilot line records are filed and countersigned for every change.",
+    "Ensure that supervisor training records are signed and stored per line training standard."
+   ],
+   "auditSummary": "All five job requirements are directly supported by statements in the candidate’s resume and work sample. The evidence is high‑strength and consistent across multiple sources. No contradictory or missing evidence was identified. Human review is recommended to confirm record‑keeping practices and to verify that the documented processes are still current.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and interview notes; external verification of processes and current practices is not included."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T10:56:40.883673+00:00"
+}

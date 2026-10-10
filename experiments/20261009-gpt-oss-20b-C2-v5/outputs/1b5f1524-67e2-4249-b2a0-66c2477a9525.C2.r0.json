@@ -1,0 +1,279 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "1b5f1524-67e2-4249-b2a0-66c2477a9525.C2",
+ "case_id": "1b5f1524-67e2-4249-b2a0-66c2477a9525",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14303,
+  "promptWords": 1698
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 38.394
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3393,
+ "eval_count": 2018,
+ "prompt_eval_duration_ns": 18489000,
+ "eval_duration_ns": 36247689000,
+ "total_duration_ns": 38391500333,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. Let's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_eaf07e775ecc9231\",\"targetRoleTitle\":\"Software Engineer, Building Controls Platform\",\"professionalSummary\":[\"Software engineer with experience building Go services that poll building controllers over BACnet and Modbus, leading root‑cause investigations, maintaining alarm‑routing services, writing integration tests against controller simulators, and contributing to architecture decision records.\"],\"experienceHighlights\":[\"Built a Go service that polls building controllers over BACnet and Modbus every minute (src_dd166ea0fad5).\",\"Led the root‑cause investigation into the February 2024 loss of data from 31 sites, traced to a gateway firmware change, and authored the investigation report with five corrective actions (src_26b90e040e78).\",\"Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes and a daily test page (src_63805d4cd6be).\",\"Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline (src_749d5af48da9).\",\"Commented on two architecture decision records regarding message queue choice for controller events (src_36e90499e18c).\"],\"projectsAndWorkSamples\":[\"An anonymised February 2024 investigation report detailing timeline, cause, corrective actions, owners, dates, and engineering manager approval naming the candidate as investigation lead (src_a76efeb1055b).\"],\"skills\":[\"Go\",\"BACnet\",\"Modbus\",\"Root‑cause investigation\",\"Alarm‑routing\",\"Integration testing\",\"Architecture decision records\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience with BACnet/Modbus polling services, root‑cause investigations, alarm‑routing maintenance, integration testing against simulators, and participation in architecture decision records. They do not establish experience with writing architecture decision records, nor do they confirm that the candidate authored the investigation report or that the engineering manager approved it.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the role.\"},\"role\":{\"roleTitle\":\"Software Engineer, Building Controls Platform\",\"jobDescriptionSource\":\"jd_466cec08b8f05eb9\",\"requirementIds\":[\"req_af09743e45b0\",\"req_a555e57fca18\",\"req_e9bec264323b\",\"req_487daf6a1d15\",\"req_0e4fc771d5d1\"]},\"candidate\":{\"candidateId\":\"cand_eaf07e775ecc9231\",\"sources\":[\"src_dd166ea0fad5\",\"src_26b90e040e78\",\"src_63805d4cd6be\",\"src_749d5af48da9\",\"src_36e90499e18c\",\"src_a76efeb1055b\",\"src_6ef56a419ad0\",\"src_9450733ea340\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_af09743e45b0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_dd166ea0fad5\",\"text\":\"building the Go service that polls building controllers over BACnet and Modbus every minute\",\"evidenceStrength\":\"high\",\"notes\":\"directly describes service collection over BACnet/Modbus\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a555e57fca18\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_26b90e040e78\",\"text\":\"Led the root‑cause investigation into the February 2024 loss of data from 31 sites, traced it to a gateway firmware change, and wrote the investigation report with five corrective actions\",\"evidenceStrength\":\"high\",\"notes\":\"directly describes investigation lead and report writing\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e9bec264323b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_63805d4cd6be\",\"text\":\"Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes without acknowledgement and a daily test page to confirm that each engineer's device still receives alerts\",\"evidenceStrength\":\"high\",\"notes\":\"directly describes alarm‑routing maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_487daf6a1d15\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_749d5af48da9\",\"text\":\"Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline\",\"evidenceStrength\":\"high\",\"notes\":\"directly describes integration tests against simulators\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0e4fc771d5d1\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_36e90499e18c\",\"text\":\"Commented on two architecture decision records about the choice of message queue for controller events, raising the question of message ordering when a gateway reconnects after an outage\",\"evidenceStrength\":\"medium\",\"notes\":\"shows participation but not authorship\"}],\"missingEvidence\":[\"Evidence that the candidate authored architecture decision records\"]}],\"supportedClaims\":[{\"claim\":\"Built a Go service that polls building controllers over BACnet and Modbus every minute\",\"supportingRequirementIds\":[\"req_af09743e45b0\"],\"sourceIds\":[\"src_dd166ea0fad5\"],\"evidenceStrength\":\"high\",\"witness\":\"building the Go service that polls building controllers over BACnet and Modbus every minute\"},{\"claim\":\"Led the root‑cause investigation into the February 2024 loss of data from 31 sites and wrote the investigation report with five corrective actions\",\"supportingRequirementIds\":[\"req_a555e57fca18\"],\"sourceIds\":[\"src_26b90e040e78\"],\"evidenceStrength\":\"high\",\"witness\":\"Led the root‑cause investigation into the February 2024 loss of data from 31 sites, traced it to a gateway firmware change, and wrote the investigation report with five corrective actions\"},{\"claim\":\"Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes and a daily test page\",\"supportingRequirementIds\":[\"req_e9bec264323b\"],\"sourceIds\":[\"src_63805d4cd6be\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes without acknowledgement and a daily test page to confirm that each engineer's device still receives alerts\"},{\"claim\":\"Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline\",\"supportingRequirementIds\":[\"req_487daf6a1d15\"],\"sourceIds\":[\"src_749d5af48da9\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline\"},{\"claim\":\"Commented on two architecture decision records about the choice of message queue for controller events\",\"supportingRequirementIds\":[\"req_0e4fc771d5d1\"],\"sourceIds\":[\"src_36e90499e18c\"],\"evidenceStrength\":\"medium\",\"witness\":\"Commented on two architecture decision records about the choice of message queue for controller events, raising the question of message ordering when a gateway reconnects after an outage\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_0e4fc771d5d1\",\"severity\":\"medium\",\"gap\":\"No evidence that the candidate authored architecture decision records\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_6ef56a419ad0\",\"text\":\"Reference from the engineering manager naming the candidate as investigation lead for the February 2024 data‑loss incident and for two smaller site outages in 2023\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"true\",\"severity\":\"low\",\"recommendedHandling\":\"Verify the reference and confirm the candidate’s role in investigations\"},{\"sourceId\":\"src_9450733ea340\",\"text\":\"Recruiter logistics note: the candidate can do the technical interview on 15 or 16 October and has a two‑month notice period\",\"signalType\":\"logistics\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Confirm availability and notice period\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_0e4fc771d5d1\",\"question\":\"Can you provide an example of an architecture decision record you authored for the platform?\",\"evidenceTarget\":\"Evidence of authorship of an architecture decision record\"}],\"humanReviewChecklist\":[\"Verify that the investigation report was approved by the engineering manager and that the candidate was the investigation lead.\",\"Confirm that the candidate authored any architecture decision records.\",\"Ensure that the candidate’s experience aligns with the required BACnet/Modbus service collection, alarm‑routing maintenance, integration testing, and investigation reporting.\"]},\"auditSummary\":\"The evidence establishes the candidate’s experience with BACnet/Modbus polling services, root‑cause investigations, alarm‑routing maintenance, integration testing against simulators, and participation in architecture decision records. The only gap is lack of evidence that the candidate authored architecture decision records. No protected characteristics are inferred. Human review is required to confirm the missing authorship evidence and to assess overall fit.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and notes; no external verification of claims is available.\"]}",
+ "content_sha256": "44355334d97fce0f51924dcea1ec3d32749de7aac2bab3275ed1145a98191398",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_eaf07e775ecc9231",
+   "targetRoleTitle": "Software Engineer, Building Controls Platform",
+   "professionalSummary": [
+    "Software engineer with experience building Go services that poll building controllers over BACnet and Modbus, leading root‑cause investigations, maintaining alarm‑routing services, writing integration tests against controller simulators, and contributing to architecture decision records."
+   ],
+   "experienceHighlights": [
+    "Built a Go service that polls building controllers over BACnet and Modbus every minute (src_dd166ea0fad5).",
+    "Led the root‑cause investigation into the February 2024 loss of data from 31 sites, traced to a gateway firmware change, and authored the investigation report with five corrective actions (src_26b90e040e78).",
+    "Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes and a daily test page (src_63805d4cd6be).",
+    "Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline (src_749d5af48da9).",
+    "Commented on two architecture decision records regarding message queue choice for controller events (src_36e90499e18c)."
+   ],
+   "projectsAndWorkSamples": [
+    "An anonymised February 2024 investigation report detailing timeline, cause, corrective actions, owners, dates, and engineering manager approval naming the candidate as investigation lead (src_a76efeb1055b)."
+   ],
+   "skills": [
+    "Go",
+    "BACnet",
+    "Modbus",
+    "Root‑cause investigation",
+    "Alarm‑routing",
+    "Integration testing",
+    "Architecture decision records"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience with BACnet/Modbus polling services, root‑cause investigations, alarm‑routing maintenance, integration testing against simulators, and participation in architecture decision records. They do not establish experience with writing architecture decision records, nor do they confirm that the candidate authored the investigation report or that the engineering manager approved it."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Building Controls Platform",
+    "jobDescriptionSource": "jd_466cec08b8f05eb9",
+    "requirementIds": [
+     "req_af09743e45b0",
+     "req_a555e57fca18",
+     "req_e9bec264323b",
+     "req_487daf6a1d15",
+     "req_0e4fc771d5d1"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_eaf07e775ecc9231",
+    "sources": [
+     "src_dd166ea0fad5",
+     "src_26b90e040e78",
+     "src_63805d4cd6be",
+     "src_749d5af48da9",
+     "src_36e90499e18c",
+     "src_a76efeb1055b",
+     "src_6ef56a419ad0",
+     "src_9450733ea340"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_af09743e45b0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_dd166ea0fad5",
+       "text": "building the Go service that polls building controllers over BACnet and Modbus every minute",
+       "evidenceStrength": "high",
+       "notes": "directly describes service collection over BACnet/Modbus"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a555e57fca18",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_26b90e040e78",
+       "text": "Led the root‑cause investigation into the February 2024 loss of data from 31 sites, traced it to a gateway firmware change, and wrote the investigation report with five corrective actions",
+       "evidenceStrength": "high",
+       "notes": "directly describes investigation lead and report writing"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e9bec264323b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_63805d4cd6be",
+       "text": "Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes without acknowledgement and a daily test page to confirm that each engineer's device still receives alerts",
+       "evidenceStrength": "high",
+       "notes": "directly describes alarm‑routing maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_487daf6a1d15",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_749d5af48da9",
+       "text": "Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline",
+       "evidenceStrength": "high",
+       "notes": "directly describes integration tests against simulators"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0e4fc771d5d1",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_36e90499e18c",
+       "text": "Commented on two architecture decision records about the choice of message queue for controller events, raising the question of message ordering when a gateway reconnects after an outage",
+       "evidenceStrength": "medium",
+       "notes": "shows participation but not authorship"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate authored architecture decision records"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built a Go service that polls building controllers over BACnet and Modbus every minute",
+     "supportingRequirementIds": [
+      "req_af09743e45b0"
+     ],
+     "sourceIds": [
+      "src_dd166ea0fad5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "building the Go service that polls building controllers over BACnet and Modbus every minute"
+    },
+    {
+     "claim": "Led the root‑cause investigation into the February 2024 loss of data from 31 sites and wrote the investigation report with five corrective actions",
+     "supportingRequirementIds": [
+      "req_a555e57fca18"
+     ],
+     "sourceIds": [
+      "src_26b90e040e78"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Led the root‑cause investigation into the February 2024 loss of data from 31 sites, traced it to a gateway firmware change, and wrote the investigation report with five corrective actions"
+    },
+    {
+     "claim": "Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes and a daily test page",
+     "supportingRequirementIds": [
+      "req_e9bec264323b"
+     ],
+     "sourceIds": [
+      "src_63805d4cd6be"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the alarm‑routing service that pages the nearest on‑call field engineer, adding an escalation step after 15 minutes without acknowledgement and a daily test page to confirm that each engineer's device still receives alerts"
+    },
+    {
+     "claim": "Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline",
+     "supportingRequirementIds": [
+      "req_487daf6a1d15"
+     ],
+     "sourceIds": [
+      "src_749d5af48da9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline"
+    },
+    {
+     "claim": "Commented on two architecture decision records about the choice of message queue for controller events",
+     "supportingRequirementIds": [
+      "req_0e4fc771d5d1"
+     ],
+     "sourceIds": [
+      "src_36e90499e18c"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Commented on two architecture decision records about the choice of message queue for controller events, raising the question of message ordering when a gateway reconnects after an outage"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_0e4fc771d5d1",
+     "severity": "medium",
+     "gap": "No evidence that the candidate authored architecture decision records"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_6ef56a419ad0",
+     "text": "Reference from the engineering manager naming the candidate as investigation lead for the February 2024 data‑loss incident and for two smaller site outages in 2023",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "low",
+     "recommendedHandling": "Verify the reference and confirm the candidate’s role in investigations"
+    },
+    {
+     "sourceId": "src_9450733ea340",
+     "text": "Recruiter logistics note: the candidate can do the technical interview on 15 or 16 October and has a two‑month notice period",
+     "signalType": "logistics",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Confirm availability and notice period"
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_0e4fc771d5d1",
+     "question": "Can you provide an example of an architecture decision record you authored for the platform?",
+     "evidenceTarget": "Evidence of authorship of an architecture decision record"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the investigation report was approved by the engineering manager and that the candidate was the investigation lead.",
+    "Confirm that the candidate authored any architecture decision records.",
+    "Ensure that the candidate’s experience aligns with the required BACnet/Modbus service collection, alarm‑routing maintenance, integration testing, and investigation reporting."
+   ]
+  },
+  "auditSummary": "The evidence establishes the candidate’s experience with BACnet/Modbus polling services, root‑cause investigations, alarm‑routing maintenance, integration testing against simulators, and participation in architecture decision records. The only gap is lack of evidence that the candidate authored architecture decision records. No protected characteristics are inferred. Human review is required to confirm the missing authorship evidence and to assess overall fit.",
+  "limitations": [
+   "Evidence is limited to the provided resume, work sample, and notes; no external verification of claims is available."
+  ]
+ },
+ "finished_at": "2026-10-10T03:26:04.776036+00:00"
+}

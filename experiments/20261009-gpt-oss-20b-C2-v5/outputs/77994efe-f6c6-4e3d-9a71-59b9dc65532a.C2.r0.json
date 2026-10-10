@@ -1,0 +1,236 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "77994efe-f6c6-4e3d-9a71-59b9dc65532a.C2",
+ "case_id": "77994efe-f6c6-4e3d-9a71-59b9dc65532a",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14512,
+  "promptWords": 1754
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 36.905
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3840,
+ "eval_count": 1589,
+ "prompt_eval_duration_ns": 20451000,
+ "eval_duration_ns": 28730114000,
+ "total_duration_ns": 36903219875,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Let's craft claims.\n\nClaims for CV sections:\n\nprofessionalSummary: maybe one claim: \"Data Scientist with experience building predictive maintenance models for pump failures.\" source src_71f30bfa6152.\n\nexperienceHighlights: list claims mapping to requirements.\n\nWe need requirementEvidenceMap covering all 5 req ids.\n\nLet's map:\n\nreq_2a05d48e4b27: builds failure-prediction models from logs. Evidence src_71f30bfa6152.\n\nreq_c8ee3455f3bc: packages models with versioned artefacts and automated tests. Evidence src_9dd09f009644.\n\nreq_fde80247824f: deployed model into production planning system and monitored. Evidence src_780f82e887d6.\n\nreq_e8021a37304c: works with field teams to agree on alert handling. Evidence src_b0a409050d19.\n\nreq_34b37c5c222c: reports model alert precision monthly. Evidence src_1c3a7c375b89 and src_8561a66a2933 (release note includes chart). But monthly? The source says posted weekly alert-precision figures. That's weekly, not monthly. So partial evidence. We can mark partial_evidence and note missing monthly reporting.\n\nAlso need missingEvidence for that requirement: \"Monthly reporting of alert precision to operations management\" not established.\n\nAlso unsupportedClaims: maybe none.\n\nInterviewSignalRisks: none.\n\nFollowUpQuestions: for req_34b37c5c222c: ask about monthly reporting.\n\nHumanReviewChecklist: maybe \"Verify that monthly reporting exists\".\n\nAuditSummary: summary.\n\nLimitations: maybe \"Limited to provided sources\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_c6138401224d7f0a\",\"targetRoleTitle\":\"Machine Learning Engineer, Predictive Maintenance\",\"professionalSummary\":[\"Data Scientist with experience building predictive maintenance models for pump failures.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the role.\"},\"role\":{\"roleTitle\":\"Machine Learning Engineer, Predictive Maintenance\",\"jobDescriptionSource\":\"jd_d7931b3fd64e7ac1\",\"requirementIds\":[\"req_2a05d48e4b27\",\"req_c8ee3455f3bc\",\"req_fde80247824f\",\"req_e8021a37304c\",\"req_34b37c5c222c\"]},\"candidate\":{\"candidateId\":\"cand_c6138401224d7f0a\",\"sources\":[\"src_71f30bfa6152\",\"src_9dd09f009644\",\"src_780f82e887d6\",\"src_b0a409050d19\",\"src_1c3a7c375b89\",\"src_8561a66a2933\",\"src_6f5166e87230\",\"src_585f53a53e5f\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_2a05d48e4b27\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_71f30bfa6152\",\"text\":\"Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates model building from logs.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c8ee3455f3bc\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9dd09f009644\",\"text\":\"Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows versioned artefacts and automated tests.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fde80247824f\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_780f82e887d6\",\"text\":\"Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs.\",\"evidenceStrength\":\"high\",\"notes\":\"Deployment into production and monitoring.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e8021a37304c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b0a409050d19\",\"text\":\"Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners.\",\"evidenceStrength\":\"high\",\"notes\":\"Collaboration with field teams.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_34b37c5c222c\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_1c3a7c375b89\",\"text\":\"Posted the weekly alert-precision figures in the maintenance planning team's channel.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows alert precision reporting but at weekly cadence.\"},{\"sourceId\":\"src_8561a66a2933\",\"text\":\"Release note for planner release 4.2 includes a chart of weekly alert precision for the 12 weeks after release.\",\"evidenceStrength\":\"medium\",\"notes\":\"Provides alert precision data but not monthly.\"}],\"missingEvidence\":[\"Evidence that alert precision is reported to operations management on a monthly basis.\"]}],\"supportedClaims\":[{\"claim\":\"Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps.\",\"supportingRequirementIds\":[\"req_2a05d48e4b27\"],\"sourceIds\":[\"src_71f30bfa6152\"],\"evidenceStrength\":\"high\",\"witness\":\"Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps.\"},{\"claim\":\"Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry.\",\"supportingRequirementIds\":[\"req_c8ee3455f3bc\"],\"sourceIds\":[\"src_9dd09f009644\"],\"evidenceStrength\":\"high\",\"witness\":\"Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry.\"},{\"claim\":\"Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs.\",\"supportingRequirementIds\":[\"req_fde80247824f\"],\"sourceIds\":[\"src_780f82e887d6\"],\"evidenceStrength\":\"high\",\"witness\":\"Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs.\"},{\"claim\":\"Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners.\",\"supportingRequirementIds\":[\"req_e8021a37304c\"],\"sourceIds\":[\"src_b0a409050d19\"],\"evidenceStrength\":\"high\",\"witness\":\"Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_34b37c5c222c_monthly_reporting\",\"requirementId\":\"req_34b37c5c222c\",\"severity\":\"medium\",\"gap\":\"No evidence that alert precision is reported to operations management on a monthly basis.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_34b37c5c222c_monthly_reporting\",\"requirementId\":\"req_34b37c5c222c\",\"question\":\"Can you confirm whether alert precision metrics are reported to operations management on a monthly basis, and if so, provide an example of such a report.\",\"evidenceTarget\":\"Monthly reporting of alert precision to operations management.\"}],\"humanReviewChecklist\":[\"Verify that monthly reporting of alert precision exists.\",\"Confirm that the deployment was into a production system as defined by the role.\"],\"auditSummary\":\"The candidate has documented experience building, packaging, deploying, and monitoring a predictive maintenance model, and collaborating with field teams. Evidence for monthly alert precision reporting is incomplete, requiring follow-up. No protected characteristics are inferred. All claims are sourced from provided materials.\",\"limitations\":[\"Evidence limited to the provided sources; no external verification beyond the supplied documents.\"]} }",
+ "content_sha256": "446f7c0459dc578af908291686fecd73c0e93df235386f741632ae16863588d7",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_c6138401224d7f0a",
+   "targetRoleTitle": "Machine Learning Engineer, Predictive Maintenance",
+   "professionalSummary": [
+    "Data Scientist with experience building predictive maintenance models for pump failures."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Predictive Maintenance",
+    "jobDescriptionSource": "jd_d7931b3fd64e7ac1",
+    "requirementIds": [
+     "req_2a05d48e4b27",
+     "req_c8ee3455f3bc",
+     "req_fde80247824f",
+     "req_e8021a37304c",
+     "req_34b37c5c222c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_c6138401224d7f0a",
+    "sources": [
+     "src_71f30bfa6152",
+     "src_9dd09f009644",
+     "src_780f82e887d6",
+     "src_b0a409050d19",
+     "src_1c3a7c375b89",
+     "src_8561a66a2933",
+     "src_6f5166e87230",
+     "src_585f53a53e5f"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2a05d48e4b27",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_71f30bfa6152",
+       "text": "Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates model building from logs."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c8ee3455f3bc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9dd09f009644",
+       "text": "Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry.",
+       "evidenceStrength": "high",
+       "notes": "Shows versioned artefacts and automated tests."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fde80247824f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_780f82e887d6",
+       "text": "Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs.",
+       "evidenceStrength": "high",
+       "notes": "Deployment into production and monitoring."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e8021a37304c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b0a409050d19",
+       "text": "Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners.",
+       "evidenceStrength": "high",
+       "notes": "Collaboration with field teams."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_34b37c5c222c",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_1c3a7c375b89",
+       "text": "Posted the weekly alert-precision figures in the maintenance planning team's channel.",
+       "evidenceStrength": "medium",
+       "notes": "Shows alert precision reporting but at weekly cadence."
+      },
+      {
+       "sourceId": "src_8561a66a2933",
+       "text": "Release note for planner release 4.2 includes a chart of weekly alert precision for the 12 weeks after release.",
+       "evidenceStrength": "medium",
+       "notes": "Provides alert precision data but not monthly."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that alert precision is reported to operations management on a monthly basis."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps.",
+     "supportingRequirementIds": [
+      "req_2a05d48e4b27"
+     ],
+     "sourceIds": [
+      "src_71f30bfa6152"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built a gradient-boosted model that predicts pump bearing failures within 30 days from vibration and run-hour logs collected from 2,600 monitored pumps."
+    },
+    {
+     "claim": "Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry.",
+     "supportingRequirementIds": [
+      "req_c8ee3455f3bc"
+     ],
+     "sourceIds": [
+      "src_9dd09f009644"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Packaged the model as a versioned container with a model card and pytest checks on the input schema, built through the team's CI pipeline, and stored each version in the team's model registry."
+    },
+    {
+     "claim": "Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs.",
+     "supportingRequirementIds": [
+      "req_fde80247824f"
+     ],
+     "sourceIds": [
+      "src_780f82e887d6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Deployed the model into the production work-order planner on 19 September 2023 (planner release 4.2), where each alert creates an inspection task for planners; tracked alert precision weekly for the following quarter from the planner's own logs."
+    },
+    {
+     "claim": "Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners.",
+     "supportingRequirementIds": [
+      "req_e8021a37304c"
+     ],
+     "sourceIds": [
+      "src_b0a409050d19"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed an alert-handling procedure with five field supervisors, with a 48-hour inspection target and a feedback code for false alarms, written up as a one-page procedure for the planners."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_34b37c5c222c_monthly_reporting",
+     "requirementId": "req_34b37c5c222c",
+     "severity": "medium",
+     "gap": "No evidence that alert precision is reported to operations management on a monthly basis."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_34b37c5c222c_monthly_reporting",
+     "requirementId": "req_34b37c5c222c",
+     "question": "Can you confirm whether alert precision metrics are reported to operations management on a monthly basis, and if so, provide an example of such a report.",
+     "evidenceTarget": "Monthly reporting of alert precision to operations management."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that monthly reporting of alert precision exists.",
+    "Confirm that the deployment was into a production system as defined by the role."
+   ],
+   "auditSummary": "The candidate has documented experience building, packaging, deploying, and monitoring a predictive maintenance model, and collaborating with field teams. Evidence for monthly alert precision reporting is incomplete, requiring follow-up. No protected characteristics are inferred. All claims are sourced from provided materials.",
+   "limitations": [
+    "Evidence limited to the provided sources; no external verification beyond the supplied documents."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:55:43.020945+00:00"
+}

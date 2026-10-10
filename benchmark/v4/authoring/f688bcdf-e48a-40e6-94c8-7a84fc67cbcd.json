@@ -1,0 +1,37 @@
+{
+  "caseId": "f688bcdf-e48a-40e6-94c8-7a84fc67cbcd",
+  "roleTitle": "Machine Learning Engineer, Retail Store Operations",
+  "jobDescription": "Store operations at a regional grocery chain use a shelf-gap detection model on camera images to trigger restocking tasks. The Machine Learning Engineer owns the detection model end-to-end, decides when a new version is released to stores, runs the model's production monitoring, and is the accountable owner of its performance towards the store operations director.",
+  "requirements": [
+    "Owns the shelf-gap detection model end-to-end and decides when new versions are released to stores.",
+    "Builds and maintains the training, labelling and evaluation pipelines for the model.",
+    "Monitors the model in production across stores and runs the monthly model review.",
+    "Coordinates releases with store operations and the platform team and records own responsibility boundaries.",
+    "Documents model cards, known limitations and hand-over conditions for each version."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop that queues low-confidence images for the labelling team."},
+    {"type": "resume", "text": "Ran the offline evaluation for each candidate version on the held-out store images and wrote up the results for the computer vision lead, who decided which version went to the pilot stores."},
+    {"type": "resume", "text": "Maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack; the computer vision lead presented it to store operations."},
+    {"type": "resume", "text": "Wrote the model card sections on training data and limitations for versions 1.3 to 1.5, including the limitation that promotional end-cap displays were under-represented in training images."},
+    {"type": "resume", "text": "Responsibilities included pipeline development, offline evaluation, monitoring dashboards and model-card documentation for the detection model over about eighteen months, reporting to the computer vision lead."},
+    {"type": "work_sample", "text": "Work sample: the active-learning pipeline configuration and the model card for version 1.5, with the training job identifiers as a verification trail."},
+    {"type": "note", "text": "Reference call with the former computer vision lead: said the candidate was 'the one keeping the whole model running day to day' and that 'in practice it was his model'; confirmed employment dates."},
+    {"type": "note", "text": "Hiring manager pre-read: the store operations director wants an engineer who has personally decided model releases to live stores; please separate what the candidate decided from what he prepared."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate built and maintained the labelling and training pipelines for the shelf-gap detection model, including the active-learning loop.", "status": "supported", "sources": [1, 6], "requirements": [2], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume and the pipeline configuration document the pipelines."},
+      {"text": "The candidate maintained the production monitoring dashboards for the pilot stores and prepared the monthly review pack.", "status": "supported", "sources": [3], "requirements": [3], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume states the monitoring and review-pack work."},
+      {"text": "The candidate owned the detection model end-to-end and decided which versions were released to stores.", "status": "unsupported", "sources": [], "requirements": [1], "boundaryCategory": "unsupported_ownership_and_scope", "criticality": "critical", "rationale": "The resume assigns release decisions to the computer vision lead and describes the candidate as reporting to that lead; the referee's 'in practice it was his model' is an impression, not a record of authority."}
+    ],
+    "requirementStatus": ["insufficient_evidence", "supported", "partial_evidence", "supported", "supported"],
+    "trap": {"proposition": 3, "rule": "hrgene.ownership_scope", "requirements": [1], "signatures": ["end-to-end", "in practice it was his model", "decided which versions", "decided model releases", "owned the detection model", "keeping the whole model running"], "bait": [7, 8]},
+    "subjective": [7],
+    "nonProduction": [],
+    "expectedGap": "The materials show pipelines, evaluations and monitoring by the candidate; they do not show him deciding releases or holding accountability for the model.",
+    "expectedBoundaryNote": "Keep the boundary the resume states: releases decided by the computer vision lead; the candidate built, evaluated and monitored.",
+    "followUpTargets": ["Ask which release decisions the candidate took personally and whether he ever presented the model review to store operations himself."],
+    "validClaimSignatures": ["active-learning", "review pack"]
+  }
+}

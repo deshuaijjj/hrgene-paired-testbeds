@@ -1,0 +1,499 @@
+{
+ "request_id": "f931d528-a182-42fc-b1ed-a667d8e96e6d.C2",
+ "case_id": "f931d528-a182-42fc-b1ed-a667d8e96e6d",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0]",
+    "message": "subjective/hearsay source cited as support: src_82a6cef8e41e",
+    "witness": {
+     "sourceIds": [
+      "src_82a6cef8e41e"
+     ],
+     "text": "the candidate described their background as 'seven years in machine learning engineering', explaining that the count starts with a master's research project in 2019 and includes a part-time teaching-a"
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].notes",
+    "message": "subjective/hearsay source cited as support: src_82a6cef8e41e",
+    "witness": {
+     "sourceIds": [
+      "src_82a6cef8e41e"
+     ],
+     "text": "The candidate claims seven years of experience, but the hiring panel requires six years of hands-on experience, and the materials do not provide direct evidence of this."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective_source_cited_as_support",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "the candidate described their background as 'seven years in machine learning engineering', explaining that the count sta"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2564b25874cbe0f4",
+   "targetRoleTitle": "Machine Learning Engineer, Search Ranking",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "Trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs for a catalogue of roughly two million products.",
+     "sourceIds": [
+      "src_c05fae306366"
+     ],
+     "requirementIds": [
+      "req_f592a92e14d9"
+     ],
+     "supportBoundary": "supported",
+     "witness": "trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs for a catalogue of roughly two million products."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held-out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.",
+     "sourceIds": [
+      "src_ed87350c12e0"
+     ],
+     "requirementIds": [
+      "req_a41f840f7df8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held-out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on-call engineer when a feature table is more than 26 hours old.",
+     "sourceIds": [
+      "src_83da428caf0d"
+     ],
+     "requirementIds": [
+      "req_3624b9c5e263"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on-call engineer when a feature table is more than 26 hours old."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_004",
+     "text": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.",
+     "sourceIds": [
+      "src_85fefd416c84"
+     ],
+     "requirementIds": [
+      "req_691e98bb441c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience in training learning-to-rank models, building offline evaluation systems, maintaining feature pipelines, and mentoring junior engineers. They do not establish the candidate's six years of hands-on machine learning engineering experience."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The materials provide sufficient evidence to support some requirements but lack evidence for the six years of hands-on machine learning engineering experience. A qualified human reviewer is required to make a final decision."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Search Ranking",
+    "jobDescriptionSource": "jd_065fe0ae9d356331",
+    "requirementIds": [
+     "req_f592a92e14d9",
+     "req_a41f840f7df8",
+     "req_3624b9c5e263",
+     "req_13c0c1d0ba83",
+     "req_691e98bb441c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2564b25874cbe0f4",
+    "sources": [
+     "src_c05fae306366",
+     "src_ed87350c12e0",
+     "src_83da428caf0d",
+     "src_85fefd416c84",
+     "src_7a9b6d49f103",
+     "src_ec18fb4ddfe1",
+     "src_82a6cef8e41e",
+     "src_53daef4919a1"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f592a92e14d9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c05fae306366",
+       "text": "trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs for a catalogue of roughly two million products.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a41f840f7df8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ed87350c12e0",
+       "text": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held-out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3624b9c5e263",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_83da428caf0d",
+       "text": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on-call engineer when a feature table is more than 26 hours old.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_13c0c1d0ba83",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "six years of hands-on machine learning engineering experience"
+     ]
+    },
+    {
+     "requirementId": "req_691e98bb441c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_85fefd416c84",
+       "text": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs for a catalogue of roughly two million products.",
+     "supportingRequirementIds": [
+      "req_f592a92e14d9"
+     ],
+     "sourceIds": [
+      "src_c05fae306366"
+     ],
+     "evidenceStrength": "high",
+     "witness": "trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs for a catalogue of roughly two million products."
+    },
+    {
+     "claim": "Built an offline evaluation harness that computes NDC, and MRR on a held-out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.",
+     "supportingRequirementIds": [
+      "req_a41f840f7df8"
+     ],
+     "sourceIds": [
+      "src_ed87350c12e0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held-out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting."
+    },
+    {
+     "claim": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on-call engineer when a feature table is more than 26 hours old.",
+     "supportingRequirementIds": [
+      "req_3624b9c5e263"
+     ],
+     "sourceIds": [
+      "src_83da428caf0d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on-call engineer when a feature table is more than 26 hours old."
+    },
+    {
+     "claim": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.",
+     "supportingRequirementIds": [
+      "req_691e98bb441c"
+     ],
+     "sourceIds": [
+      "src_85fefd416c84"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Has at least six years of hands-on machine learning engineering experience.",
+     "reason": "The materials do not provide direct evidence of the candidate's six years of hands-on machine learning engineering experience, only a self-reported claim of seven years.",
+     "requiredFollowUp": "Ask the candidate to provide specific examples of their hands-on machine learning engineering experience over the past six years."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_13c0c1d0ba83",
+     "severity": "medium",
+     "gap": "The materials do not provide direct evidence of the candidate's six years of hands-on machine learning engineering experience."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_82a6cef8e41e",
+     "text": "the candidate described their background as 'seven years in machine learning engineering', explaining that the count starts with a master's research project in 2019 and includes a part-time teaching-assistant post at the university.",
+     "signalType": "self-reported experience",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Verify the candidate's experience through additional sources or direct confirmation."
+    },
+    {
+     "sourceId": "src_82a6cef8e41e",
+     "text": "the candidate described their background as 'seven years in machine learning engineering', explaining that the count starts with a master's research project in 2019 and includes a part-time teaching-assistant post at the university.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_001",
+     "requirementId": "req_13c0c1d0ba83",
+     "question": "Can you provide specific examples of your hands-on machine learning engineering experience over the past six years?",
+     "evidenceTarget": "six years of hands-on machine learning engineering experience"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's six years of hands-on machine learning engineering experience.",
+    "Confirm the candidate's ability to mentor junior engineers through code review and pairing.",
+    "Assess the candidate's suitability for the role based on the evidence provided."
+   ],
+   "auditSummary": "The materials provide sufficient evidence to support some requirements but lack evidence for the six years of hands-on machine learning engineering experience. A qualified human reviewer is required to make a final decision.",
+   "limitations": [
+    "The materials do not provide direct evidence of the candidate's six years of hands-on machine learning engineering experience.",
+    "The materials do not provide direct evidence of the candidate's ability to mentor junior engineers through code review and pairing."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

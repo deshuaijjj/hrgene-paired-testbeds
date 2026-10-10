@@ -1,0 +1,275 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "82a22ee7-876e-4075-91af-25a90eb4acbb.C1",
+ "case_id": "82a22ee7-876e-4075-91af-25a90eb4acbb",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10976,
+  "promptWords": 1417
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 50.718
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3132,
+ "eval_count": 2041,
+ "prompt_eval_duration_ns": 17971000,
+ "eval_duration_ns": 36552425000,
+ "total_duration_ns": 50715062667,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claims list. Provide evidenceBoundary sentence. Then hiringEvidencePacket with all required fields.\n\nLet's list requirementIds: req_03052f2ac194, req_0e10204b31f8, req_d52fd881ca52, req_22491bd07fe9, req_dffc61ce0e5e.\n\nWe need requirementEvidenceMap entries.\n\nFrom sources:\n\n- src_6d4b24e995de supports req_03052f2ac194 (defines metrics). Also supports req_dffc61ce0e5e? It mentions maintained metric definitions page. That documents definitions. So partial evidence for req_dffc61ce0e5e.\n\n- src_06938a80555f supports req_0e10204b31f8 (investigated anomaly, documented cause and fix). Also supports req_dffc61ce0e5e? It documents cause and fix in analytics incident log. So partial.\n\n- src_00d26cf99256 supports req_d52fd881ca52 (presented findings). Also supports req_03052f2ac194? Not.\n\n- src_ea491a696f42 supports req_22491bd07fe9 (coordinated metric changes, recorded ownership). Also supports req_dffc61ce0e5e? It records ownership.\n\n- src_9052cc626bfa supports overall responsibilities but not specific.\n\n- src_753abc4fe9bf is work sample but not directly.\n\n- src_4c267641784d note supports understanding of anomaly explanation but not requirement.\n\n- src_1cb2c9f01045 confirms presentation and dates.\n\nThus mapping:\n\nreq_03052f2ac194: supported by src_6d4b24e995de. evidenceStrength high.\n\nreq_0e10204b31f8: supported by src_06938a80555f. high.\n\nreq_d52fd881ca52: supported by src_00d26cf99256 and src_1cb2c9f01045. high.\n\nreq_22491bd07fe9: supported by src_ea491a696f42. high.\n\nreq_dffc61ce0e5e: partial_evidence: src_6d4b24e995de (maintained definitions page) and src_06938a80555f (documented cause/fix). missing evidence: documentation of hand-over conditions for each change.\n\nNow unsupportedClaims: maybe claim that candidate has about two years experience? source says responsibilities over about two years. That is supported by src_9052cc626bfa. So not unsupported.\n\nBut maybe claim that metrics are in analytics warehouse dbt models on BigQuery. That is supported.\n\nThus no unsupported claims.\n\nMissingEvidenceGaps: for req_dffc61ce0e5e: need documentation of hand-over conditions for each change.\n\nInterviewSignalRisks: maybe note about interviewer 1 note? It shows candidate explained anomaly. Not risk.\n\nFollowUpQuestions: ask about hand-over conditions documentation.\n\nHumanReviewChecklist: items like \"Verify that metric definitions are documented\", \"Confirm anomaly investigation process\", etc.\n\nAuditSummary: paragraph summarizing evidence.\n\nLimitations: maybe limited to provided sources.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_5e9b7b3ae073d0cf\",\"targetRoleTitle\":\"Data Product Analyst, Low-Code Application Platform\",\"professionalSummary\":[\"Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page. (src_6d4b24e995de)\",\"Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log. (src_06938a80555f)\",\"Presented monthly findings to product management and quarterly findings to the customer success team using a standard deck with metric trend, cause and recommended follow-up for each anomaly. (src_00d26cf99256)\",\"Coordinated metric definition changes with the platform and data engineering teams through the data change process, recording ownership of the definitions and pipelines. (src_ea491a696f42)\"],\"experienceHighlights\":[\"Defined and maintained key usage and reliability metrics in the analytics warehouse. (src_6d4b24e995de)\",\"Investigated and resolved a significant anomaly in app publish rate. (src_06938a80555f)\",\"Delivered structured presentations of findings to product management and customer-facing teams. (src_00d26cf99256)\",\"Managed coordination of metric changes and documented ownership boundaries. (src_ea491a696f42)\"],\"projectsAndWorkSamples\":[\"Metric definitions page export and April anomaly investigation write-up, including timeline, cause, fix, verification query, and warehouse query history. (src_753abc4fe9bf)\"],\"skills\":[\"Metric definition\",\"Anomaly investigation\",\"Stakeholder presentation\",\"Change coordination\",\"Documentation\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s experience in defining metrics, investigating anomalies, presenting findings, and coordinating changes, but do not provide evidence of hand‑over condition documentation for each metric change.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Data Product Analyst, Low-Code Application Platform\",\"jobDescriptionSource\":\"jd_b247403c2f4c231c\",\"requirementIds\":[\"req_03052f2ac194\",\"req_0e10204b31f8\",\"req_d52fd881ca52\",\"req_22491bd07fe9\",\"req_dffc61ce0e5e\"]},\"candidate\":{\"candidateId\":\"cand_5e9b7b3ae073d0cf\",\"sources\":[\"src_6d4b24e995de\",\"src_06938a80555f\",\"src_00d26cf99256\",\"src_ea491a696f42\",\"src_9052cc626bfa\",\"src_753abc4fe9bf\",\"src_4c267641784d\",\"src_1cb2c9f01045\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_03052f2ac194\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6d4b24e995de\",\"text\":\"Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states metric definition and maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0e10204b31f8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_06938a80555f\",\"text\":\"Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly describes anomaly investigation and documentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d52fd881ca52\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_00d26cf99256\",\"text\":\"Presented monthly findings to product management and quarterly findings to the customer success team, using a standard deck with metric trend, cause and recommended follow-up for each anomaly.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows structured presentation to stakeholders.\"},{\"sourceId\":\"src_1cb2c9f01045\",\"text\":\"Reference call with former product manager: confirmed the candidate presented monthly to product management, that the April investigation was the candidate's, and confirmed the employment dates.\",\"evidenceStrength\":\"medium\",\"notes\":\"External confirmation of presentation activity.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_22491bd07fe9\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ea491a696f42\",\"text\":\"Coordinated metric definition changes with the platform and data engineering teams through the data change process, recording my ownership of the definitions and data engineering's ownership of the pipelines.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states coordination and ownership recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_dffc61ce0e5e\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_6d4b24e995de\",\"text\":\"Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows maintenance of definitions page.\"},{\"sourceId\":\"src_06938a80555f\",\"text\":\"Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows documentation of cause and fix.\"}],\"missingEvidence\":[\"Documentation of hand‑over conditions for each metric change\"]}],\"supportedClaims\":[{\"claim\":\"Defined and maintained key usage and reliability metrics in the analytics warehouse.\",\"supportingRequirementIds\":[\"req_03052f2ac194\"],\"sourceIds\":[\"src_6d4b24e995de\"],\"evidenceStrength\":\"high\",\"witness\":\"Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page.\"},{\"claim\":\"Investigated and resolved a significant anomaly in app publish rate.\",\"supportingRequirementIds\":[\"req_0e10204b31f8\"],\"sourceIds\":[\"src_06938a80555f\"],\"evidenceStrength\":\"high\",\"witness\":\"Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log.\"},{\"claim\":\"Delivered structured presentations of findings to product management and customer-facing teams.\",\"supportingRequirementIds\":[\"req_d52fd881ca52\"],\"sourceIds\":[\"src_00d26cf99256\",\"src_1cb2c9f01045\"],\"evidenceStrength\":\"high\",\"witness\":\"Presented monthly findings to product management and quarterly findings to the customer success team, using a standard deck with metric trend, cause and recommended follow-up for each anomaly.\"},{\"claim\":\"Managed coordination of metric changes and documented ownership boundaries.\",\"supportingRequirementIds\":[\"req_22491bd07fe9\"],\"sourceIds\":[\"src_ea491a696f42\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated metric definition changes with the platform and data engineering teams through the data change process, recording my ownership of the definitions and data engineering's ownership of the pipelines.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_001\",\"requirementId\":\"req_dffc61ce0e5e\",\"severity\":\"medium\",\"gap\":\"Documentation of hand‑over conditions for each metric change is not present in the provided sources.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_4c267641784d\",\"text\":\"Candidate gave the timeline in order, named the permission change as the cause, said which team fixed it and how the fix was verified, and checked whether the non-technical interviewer had followed before moving on.\",\"signalType\":\"communication clarity\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify that the candidate can explain findings to non-technical stakeholders in a structured manner.\"}],\"followUpQuestions\":[{\"questionId\":\"q_001\",\"requirementId\":\"req_dffc61ce0e5e\",\"question\":\"Can you provide an example of documentation that outlines hand‑over conditions for a metric change you coordinated?\",\"evidenceTarget\":\"Documentation of hand‑over conditions for each metric change.\"}],\"humanReviewChecklist\":[\"Verify that metric definitions are documented and maintained in the analytics warehouse.\",\"Confirm that anomaly investigations are documented with cause and fix in an incident log.\",\"Ensure that presentations to product management and customer-facing teams are structured and regular.\",\"Check that coordination of metric changes includes recorded ownership boundaries.\",\"Obtain evidence of hand‑over condition documentation for metric changes.\"],\"auditSummary\":\"The candidate’s resume and work sample provide clear evidence of defining metrics, investigating anomalies, presenting findings, and coordinating metric changes, satisfying all but one requirement. The missing evidence relates to documentation of hand‑over conditions for each metric change, which requires follow‑up. No protected characteristics are inferred, and a qualified human review is recommended before any hiring decision.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and interview notes; external verification beyond these sources is not available.\"]}}",
+ "content_sha256": "4e8072c489ffe80c17261c1226457c093f5f4f39a86e8cacdee541ad7a7f77ab",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_5e9b7b3ae073d0cf",
+   "targetRoleTitle": "Data Product Analyst, Low-Code Application Platform",
+   "professionalSummary": [
+    "Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page. (src_6d4b24e995de)",
+    "Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log. (src_06938a80555f)",
+    "Presented monthly findings to product management and quarterly findings to the customer success team using a standard deck with metric trend, cause and recommended follow-up for each anomaly. (src_00d26cf99256)",
+    "Coordinated metric definition changes with the platform and data engineering teams through the data change process, recording ownership of the definitions and pipelines. (src_ea491a696f42)"
+   ],
+   "experienceHighlights": [
+    "Defined and maintained key usage and reliability metrics in the analytics warehouse. (src_6d4b24e995de)",
+    "Investigated and resolved a significant anomaly in app publish rate. (src_06938a80555f)",
+    "Delivered structured presentations of findings to product management and customer-facing teams. (src_00d26cf99256)",
+    "Managed coordination of metric changes and documented ownership boundaries. (src_ea491a696f42)"
+   ],
+   "projectsAndWorkSamples": [
+    "Metric definitions page export and April anomaly investigation write-up, including timeline, cause, fix, verification query, and warehouse query history. (src_753abc4fe9bf)"
+   ],
+   "skills": [
+    "Metric definition",
+    "Anomaly investigation",
+    "Stakeholder presentation",
+    "Change coordination",
+    "Documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience in defining metrics, investigating anomalies, presenting findings, and coordinating changes, but do not provide evidence of hand‑over condition documentation for each metric change."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Data Product Analyst, Low-Code Application Platform",
+    "jobDescriptionSource": "jd_b247403c2f4c231c",
+    "requirementIds": [
+     "req_03052f2ac194",
+     "req_0e10204b31f8",
+     "req_d52fd881ca52",
+     "req_22491bd07fe9",
+     "req_dffc61ce0e5e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_5e9b7b3ae073d0cf",
+    "sources": [
+     "src_6d4b24e995de",
+     "src_06938a80555f",
+     "src_00d26cf99256",
+     "src_ea491a696f42",
+     "src_9052cc626bfa",
+     "src_753abc4fe9bf",
+     "src_4c267641784d",
+     "src_1cb2c9f01045"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_03052f2ac194",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6d4b24e995de",
+       "text": "Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page.",
+       "evidenceStrength": "high",
+       "notes": "Directly states metric definition and maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0e10204b31f8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_06938a80555f",
+       "text": "Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log.",
+       "evidenceStrength": "high",
+       "notes": "Directly describes anomaly investigation and documentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d52fd881ca52",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_00d26cf99256",
+       "text": "Presented monthly findings to product management and quarterly findings to the customer success team, using a standard deck with metric trend, cause and recommended follow-up for each anomaly.",
+       "evidenceStrength": "high",
+       "notes": "Shows structured presentation to stakeholders."
+      },
+      {
+       "sourceId": "src_1cb2c9f01045",
+       "text": "Reference call with former product manager: confirmed the candidate presented monthly to product management, that the April investigation was the candidate's, and confirmed the employment dates.",
+       "evidenceStrength": "medium",
+       "notes": "External confirmation of presentation activity."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_22491bd07fe9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ea491a696f42",
+       "text": "Coordinated metric definition changes with the platform and data engineering teams through the data change process, recording my ownership of the definitions and data engineering's ownership of the pipelines.",
+       "evidenceStrength": "high",
+       "notes": "Directly states coordination and ownership recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dffc61ce0e5e",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_6d4b24e995de",
+       "text": "Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page.",
+       "evidenceStrength": "medium",
+       "notes": "Shows maintenance of definitions page."
+      },
+      {
+       "sourceId": "src_06938a80555f",
+       "text": "Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log.",
+       "evidenceStrength": "medium",
+       "notes": "Shows documentation of cause and fix."
+      }
+     ],
+     "missingEvidence": [
+      "Documentation of hand‑over conditions for each metric change"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Defined and maintained key usage and reliability metrics in the analytics warehouse.",
+     "supportingRequirementIds": [
+      "req_03052f2ac194"
+     ],
+     "sourceIds": [
+      "src_6d4b24e995de"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Defined the platform's weekly active builders, app publish rate and app error-rate metrics in the analytics warehouse (dbt models on BigQuery) and maintained the metric definitions page."
+    },
+    {
+     "claim": "Investigated and resolved a significant anomaly in app publish rate.",
+     "supportingRequirementIds": [
+      "req_0e10204b31f8"
+     ],
+     "sourceIds": [
+      "src_06938a80555f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Investigated the April drop in app publish rate with the platform team, traced it to a permission change in the publishing service and documented the cause and the fix in the analytics incident log."
+    },
+    {
+     "claim": "Delivered structured presentations of findings to product management and customer-facing teams.",
+     "supportingRequirementIds": [
+      "req_d52fd881ca52"
+     ],
+     "sourceIds": [
+      "src_00d26cf99256",
+      "src_1cb2c9f01045"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented monthly findings to product management and quarterly findings to the customer success team, using a standard deck with metric trend, cause and recommended follow-up for each anomaly."
+    },
+    {
+     "claim": "Managed coordination of metric changes and documented ownership boundaries.",
+     "supportingRequirementIds": [
+      "req_22491bd07fe9"
+     ],
+     "sourceIds": [
+      "src_ea491a696f42"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated metric definition changes with the platform and data engineering teams through the data change process, recording my ownership of the definitions and data engineering's ownership of the pipelines."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_dffc61ce0e5e",
+     "severity": "medium",
+     "gap": "Documentation of hand‑over conditions for each metric change is not present in the provided sources."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_4c267641784d",
+     "text": "Candidate gave the timeline in order, named the permission change as the cause, said which team fixed it and how the fix was verified, and checked whether the non-technical interviewer had followed before moving on.",
+     "signalType": "communication clarity",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify that the candidate can explain findings to non-technical stakeholders in a structured manner."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_dffc61ce0e5e",
+     "question": "Can you provide an example of documentation that outlines hand‑over conditions for a metric change you coordinated?",
+     "evidenceTarget": "Documentation of hand‑over conditions for each metric change."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that metric definitions are documented and maintained in the analytics warehouse.",
+    "Confirm that anomaly investigations are documented with cause and fix in an incident log.",
+    "Ensure that presentations to product management and customer-facing teams are structured and regular.",
+    "Check that coordination of metric changes includes recorded ownership boundaries.",
+    "Obtain evidence of hand‑over condition documentation for metric changes."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence of defining metrics, investigating anomalies, presenting findings, and coordinating metric changes, satisfying all but one requirement. The missing evidence relates to documentation of hand‑over conditions for each metric change, which requires follow‑up. No protected characteristics are inferred, and a qualified human review is recommended before any hiring decision.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and interview notes; external verification beyond these sources is not available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:49:48.802131+00:00"
+}

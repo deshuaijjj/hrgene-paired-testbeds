@@ -1,0 +1,276 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "b7205d3c-e524-43ce-a0f5-57fb6c2d69f9.C1",
+ "case_id": "b7205d3c-e524-43ce-a0f5-57fb6c2d69f9",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11069,
+  "promptWords": 1468
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 58.092
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3351,
+ "eval_count": 2301,
+ "prompt_eval_duration_ns": 17996000,
+ "eval_duration_ns": 41476979000,
+ "total_duration_ns": 58086597084,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claims from resume. Ensure no unsupported. Provide evidenceBoundary sentence. Then hiringEvidencePacket mapping requirements.\n\nWe have 5 requirements. We need to map evidence.\n\nreq_1a10170034f7: Owns end-to-end rollout plan. Evidence: src_41f3711ef70d shows coordinated schedule, tracker, re-sequencing. Also src_e8717374e51a says responsibilities included tracker maintenance, meeting coordination, blocker escalation and close-out documentation as member of programme office. But ownership? The resume says \"Coordinated the schedule for wave 3 ... as a member of programme office\". That indicates ownership? It says \"Coordinated the schedule\" but not explicitly \"owns\". But requirement says owns end-to-end rollout plan. We have evidence of coordination but not explicit ownership. So partial_evidence. Missing evidence: explicit statement of ownership/accountability.\n\nreq_3cf2c9c095c8: Maintains store-readiness tracker and field-engineer schedule. Evidence: src_41f3711ef70d shows coordinated schedule and kept readiness tracker current. Also src_e8717374e51a includes tracker maintenance. So supported.\n\nreq_fa388553a310: Runs weekly readiness calls and records decisions. Evidence: src_d00ec6291179 shows prepared agenda and minutes for weekly readiness call and followed up on open items. So supported.\n\nreq_d92dd830b52c: Escalates blockers to programme lead with recommended resolution and documents who decided. Evidence: src_4aac12699805 shows raised blockers to programme lead with suggested option; decisions taken by programme lead. So supported.\n\nreq_61c32254a91e: Produces wave close-out report with lessons learned and hand-over conditions. Evidence: src_9a90768abd77 shows drafted close-out report with lessons learned and hand-over checklist. So supported.\n\nThus only req_1a10170034f7 partial_evidence.\n\nNow produce evidenceBoundary: \"The provided materials establish the candidate’s experience coordinating schedules, maintaining readiness trackers, running readiness calls, escalating blockers, and drafting close-out reports for a wave of 26 stores, but do not explicitly confirm ownership of the end-to-end rollout plan or accountability for delivery.\"\n\nNow optimizedCv claims: professionalSummary: maybe \"Experienced programme office member with hands‑on coordination of point‑of‑sale rollout schedules, readiness tracking, weekly readiness calls, blocker escalation, and close‑out reporting for a wave of 26 stores.\" Cite sources.\n\nexperienceHighlights: list claims with sources.\n\nprojectsAndWorkSamples: mention wave 3 readiness tracker export and close-out report draft.\n\nskills: list skills like schedule coordination, readiness tracking, meeting coordination, blocker escalation, documentation.\n\nNow hiringEvidencePacket.\n\nWe need requirementEvidenceMap array with each requirement id.\n\nFor each, status, evidence array with sourceId, text, evidenceStrength, notes. Provide missingEvidence array.\n\nAlso supportedClaims array: maybe claim about coordinating schedule etc.\n\nUnsupportedClaims: maybe claim of ownership? But we don't have evidence. So we can list claim: \"owns the end-to-end rollout plan for a wave of stores\" as unsupported. Reason: no explicit statement. RequiredFollowUp: ask for evidence of ownership/accountability.\n\nMissingEvidenceGaps: for req_1a10170034f7: gap: explicit statement of ownership/accountability.\n\nInterviewSignalRisks: maybe src_092b99b5ada0 note about being go-to person. That's subjective. So signalType: subjective feedback. Not tied to job-related evidence. severity low. recommendedHandling: ask neutral question about responsibilities.\n\nFollowUpQuestions: for req_1a10170034f7: question about ownership.\n\nHumanReviewChecklist: items like \"Verify ownership/accountability evidence\", \"Confirm no protected characteristic inference\".\n\nAuditSummary: paragraph summarizing.\n\nLimitations: e.g., limited to provided materials, no external verification.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_99d205d5c34ec359\",\"targetRoleTitle\":\"Delivery Project Coordinator, Retail Store Operations\",\"professionalSummary\":[\"Experienced programme office member with hands‑on coordination of point‑of‑sale rollout schedules, readiness tracking, weekly readiness calls, blocker escalation, and close‑out reporting for a wave of 26 stores.\"],\"experienceHighlights\":[\"Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned. (src_41f3711ef70d)\",\"Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls. (src_d00ec6291179)\",\"Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager. (src_4aac12699805)\",\"Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support. (src_9a90768abd77)\",\"Responsibilities included tracker maintenance, meeting coordination, blocker escalation and close‑out documentation as a member of the programme office during the wave 3 rollout. (src_e8717374e51a)\"],\"projectsAndWorkSamples\":[\"Wave 3 readiness tracker export (store, visit date, engineer, readiness status, sign‑off name, open items) and the close‑out report draft with tracked changes from the programme lead. (src_77ab1db345a3)\"],\"skills\":[\"Schedule coordination\",\"Readiness tracking\",\"Meeting coordination\",\"Blocker escalation\",\"Documentation\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience coordinating schedules, maintaining readiness trackers, running readiness calls, escalating blockers, and drafting close‑out reports for a wave of 26 stores, but do not explicitly confirm ownership of the end‑to‑end rollout plan or accountability for delivery.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Delivery Project Coordinator, Retail Store Operations\",\"jobDescriptionSource\":\"jd_7bcc912983bf62ef\",\"requirementIds\":[\"req_1a10170034f7\",\"req_3cf2c9c095c8\",\"req_fa388553a310\",\"req_d92dd830b52c\",\"req_61c32254a91e\"]},\"candidate\":{\"candidateId\":\"cand_99d205d5c34ec359\",\"sources\":[\"src_41f3711ef70d\",\"src_d00ec6291179\",\"src_4aac12699805\",\"src_9a90768abd77\",\"src_e8717374e51a\",\"src_77ab1db345a3\",\"src_092b99b5ada0\",\"src_e0d14cc3fc50\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_1a10170034f7\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_41f3711ef70d\",\"text\":\"Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination but not explicit ownership or accountability.\"},{\"sourceId\":\"src_e8717374e51a\",\"text\":\"Responsibilities included tracker maintenance, meeting coordination, blocker escalation and close‑out documentation as a member of the programme office during the wave 3 rollout.\",\"evidenceStrength\":\"medium\",\"notes\":\"Indicates involvement but not sole ownership.\"}],\"missingEvidence\":[\"Explicit statement that the candidate owned the end‑to‑end rollout plan and was accountable for delivery of the wave.\"]},{\"requirementId\":\"req_3cf2c9c095c8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_41f3711ef70d\",\"text\":\"Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly shows tracker maintenance and schedule management.\"},{\"sourceId\":\"src_e8717374e51a\",\"text\":\"Responsibilities included tracker maintenance, meeting coordination, blocker escalation and close‑out documentation as a member of the programme office during the wave 3 rollout.\",\"evidenceStrength\":\"high\",\"notes\":\"Reinforces tracker maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fa388553a310\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d00ec6291179\",\"text\":\"Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows call preparation, minutes, and follow‑up.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d92dd830b52c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4aac12699805\",\"text\":\"Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows blocker escalation and decision documentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_61c32254a91e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9a90768abd77\",\"text\":\"Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly shows close‑out report creation with lessons learned.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned.\",\"supportingRequirementIds\":[\"req_1a10170034f7\",\"req_3cf2c9c095c8\"],\"sourceIds\":[\"src_41f3711ef70d\"],\"evidenceStrength\":\"medium\",\"witness\":\"Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned.\"},{\"claim\":\"Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls.\",\"supportingRequirementIds\":[\"req_fa388553a310\"],\"sourceIds\":[\"src_d00ec6291179\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls.\"},{\"claim\":\"Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager.\",\"supportingRequirementIds\":[\"req_d92dd830b52c\"],\"sourceIds\":[\"src_4aac12699805\"],\"evidenceStrength\":\"high\",\"witness\":\"Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager.\"},{\"claim\":\"Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support.\",\"supportingRequirementIds\":[\"req_61c32254a91e\"],\"sourceIds\":[\"src_9a90768abd77\"],\"evidenceStrength\":\"high\",\"witness\":\"Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support.\"}],\"unsupportedClaims\":[{\"claim\":\"Owns the end‑to‑end rollout plan for an assigned wave of stores, from scheduling through readiness sign‑off, and is accountable for the wave's delivery.\",\"reason\":\"No source explicitly states ownership or accountability for the entire rollout plan.\",\"requiredFollowUp\":\"Ask for documentation or statements that confirm the candidate’s ownership and accountability for the wave.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_1a10170034f7\",\"severity\":\"medium\",\"gap\":\"Explicit evidence that the candidate owned the end‑to‑end rollout plan and was accountable for delivery of the wave.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_092b99b5ada0\",\"text\":\"Reference call with former line manager: said wave 3 'went well' and that the candidate was 'the go‑to person for the schedule'; described him as reliable and well organised.\",\"signalType\":\"subjective feedback\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Ask a neutral question about the candidate’s specific responsibilities during the wave.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_1a10170034f7\",\"question\":\"Can you provide evidence or a statement that confirms the candidate’s ownership of the end‑to‑end rollout plan and accountability for delivery of the wave?\",\"evidenceTarget\":\"Explicit ownership and accountability documentation.\"}],\"humanReviewChecklist\":[\"Verify that the candidate has explicit evidence of ownership and accountability for the end‑to‑end rollout plan.\",\"Confirm that all claims are supported by the provided sources and that no protected characteristics are inferred.\"],\"auditSummary\":\"The evidence packet summarizes that the candidate has demonstrated coordination of schedules, readiness tracking, readiness calls, blocker escalation, and close‑out reporting for a wave of 26 stores. The only requirement lacking full support is ownership and accountability of the rollout plan, which is identified as a partial evidence gap. No protected characteristics are inferred, and the packet flags a subjective reference note as a signal risk. Qualified human review is required to assess the ownership claim and overall fit.\",\"limitations\":[\"Based solely on the provided candidate materials; no external verification or additional evidence was considered.\"]}}",
+ "content_sha256": "ba9e64b55ba0084ee01dc0e3e027897e88438adfd81937f50696817ec2fe11f4",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_99d205d5c34ec359",
+   "targetRoleTitle": "Delivery Project Coordinator, Retail Store Operations",
+   "professionalSummary": [
+    "Experienced programme office member with hands‑on coordination of point‑of‑sale rollout schedules, readiness tracking, weekly readiness calls, blocker escalation, and close‑out reporting for a wave of 26 stores."
+   ],
+   "experienceHighlights": [
+    "Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned. (src_41f3711ef70d)",
+    "Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls. (src_d00ec6291179)",
+    "Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager. (src_4aac12699805)",
+    "Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support. (src_9a90768abd77)",
+    "Responsibilities included tracker maintenance, meeting coordination, blocker escalation and close‑out documentation as a member of the programme office during the wave 3 rollout. (src_e8717374e51a)"
+   ],
+   "projectsAndWorkSamples": [
+    "Wave 3 readiness tracker export (store, visit date, engineer, readiness status, sign‑off name, open items) and the close‑out report draft with tracked changes from the programme lead. (src_77ab1db345a3)"
+   ],
+   "skills": [
+    "Schedule coordination",
+    "Readiness tracking",
+    "Meeting coordination",
+    "Blocker escalation",
+    "Documentation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience coordinating schedules, maintaining readiness trackers, running readiness calls, escalating blockers, and drafting close‑out reports for a wave of 26 stores, but do not explicitly confirm ownership of the end‑to‑end rollout plan or accountability for delivery."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Delivery Project Coordinator, Retail Store Operations",
+    "jobDescriptionSource": "jd_7bcc912983bf62ef",
+    "requirementIds": [
+     "req_1a10170034f7",
+     "req_3cf2c9c095c8",
+     "req_fa388553a310",
+     "req_d92dd830b52c",
+     "req_61c32254a91e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_99d205d5c34ec359",
+    "sources": [
+     "src_41f3711ef70d",
+     "src_d00ec6291179",
+     "src_4aac12699805",
+     "src_9a90768abd77",
+     "src_e8717374e51a",
+     "src_77ab1db345a3",
+     "src_092b99b5ada0",
+     "src_e0d14cc3fc50"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_1a10170034f7",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_41f3711ef70d",
+       "text": "Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination but not explicit ownership or accountability."
+      },
+      {
+       "sourceId": "src_e8717374e51a",
+       "text": "Responsibilities included tracker maintenance, meeting coordination, blocker escalation and close‑out documentation as a member of the programme office during the wave 3 rollout.",
+       "evidenceStrength": "medium",
+       "notes": "Indicates involvement but not sole ownership."
+      }
+     ],
+     "missingEvidence": [
+      "Explicit statement that the candidate owned the end‑to‑end rollout plan and was accountable for delivery of the wave."
+     ]
+    },
+    {
+     "requirementId": "req_3cf2c9c095c8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_41f3711ef70d",
+       "text": "Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned.",
+       "evidenceStrength": "high",
+       "notes": "Directly shows tracker maintenance and schedule management."
+      },
+      {
+       "sourceId": "src_e8717374e51a",
+       "text": "Responsibilities included tracker maintenance, meeting coordination, blocker escalation and close‑out documentation as a member of the programme office during the wave 3 rollout.",
+       "evidenceStrength": "high",
+       "notes": "Reinforces tracker maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fa388553a310",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d00ec6291179",
+       "text": "Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls.",
+       "evidenceStrength": "high",
+       "notes": "Shows call preparation, minutes, and follow‑up."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d92dd830b52c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4aac12699805",
+       "text": "Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager.",
+       "evidenceStrength": "high",
+       "notes": "Shows blocker escalation and decision documentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_61c32254a91e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9a90768abd77",
+       "text": "Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support.",
+       "evidenceStrength": "high",
+       "notes": "Directly shows close‑out report creation with lessons learned."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned.",
+     "supportingRequirementIds": [
+      "req_1a10170034f7",
+      "req_3cf2c9c095c8"
+     ],
+     "sourceIds": [
+      "src_41f3711ef70d"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Coordinated the schedule for wave 3 of the point‑of‑sale rollout (26 stores) in the programme planning tool, keeping the readiness tracker current and re‑sequencing store visits when field engineers were reassigned."
+    },
+    {
+     "claim": "Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls.",
+     "supportingRequirementIds": [
+      "req_fa388553a310"
+     ],
+     "sourceIds": [
+      "src_d00ec6291179"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the agenda and minutes for the weekly readiness call with regional operations and IT field services, and followed up on the open items list between calls."
+    },
+    {
+     "claim": "Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager.",
+     "supportingRequirementIds": [
+      "req_d92dd830b52c"
+     ],
+     "sourceIds": [
+      "src_4aac12699805"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Raised scheduling and stock blockers to the programme lead with a suggested option; decisions on store priority and any date changes were taken by the programme lead, and readiness sign‑off for each store was given by the regional operations manager."
+    },
+    {
+     "claim": "Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support.",
+     "supportingRequirementIds": [
+      "req_61c32254a91e"
+     ],
+     "sourceIds": [
+      "src_9a90768abd77"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Drafted the wave 3 close‑out report from the tracker and the call minutes, including lessons learned on shelf‑label stock and the hand‑over checklist for store support."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Owns the end‑to‑end rollout plan for an assigned wave of stores, from scheduling through readiness sign‑off, and is accountable for the wave's delivery.",
+     "reason": "No source explicitly states ownership or accountability for the entire rollout plan.",
+     "requiredFollowUp": "Ask for documentation or statements that confirm the candidate’s ownership and accountability for the wave."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_1a10170034f7",
+     "severity": "medium",
+     "gap": "Explicit evidence that the candidate owned the end‑to‑end rollout plan and was accountable for delivery of the wave."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_092b99b5ada0",
+     "text": "Reference call with former line manager: said wave 3 'went well' and that the candidate was 'the go‑to person for the schedule'; described him as reliable and well organised.",
+     "signalType": "subjective feedback",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Ask a neutral question about the candidate’s specific responsibilities during the wave."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_1a10170034f7",
+     "question": "Can you provide evidence or a statement that confirms the candidate’s ownership of the end‑to‑end rollout plan and accountability for delivery of the wave?",
+     "evidenceTarget": "Explicit ownership and accountability documentation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate has explicit evidence of ownership and accountability for the end‑to‑end rollout plan.",
+    "Confirm that all claims are supported by the provided sources and that no protected characteristics are inferred."
+   ],
+   "auditSummary": "The evidence packet summarizes that the candidate has demonstrated coordination of schedules, readiness tracking, readiness calls, blocker escalation, and close‑out reporting for a wave of 26 stores. The only requirement lacking full support is ownership and accountability of the rollout plan, which is identified as a partial evidence gap. No protected characteristics are inferred, and the packet flags a subjective reference note as a signal risk. Qualified human review is required to assess the ownership claim and overall fit.",
+   "limitations": [
+    "Based solely on the provided candidate materials; no external verification or additional evidence was considered."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:16:27.707903+00:00"
+}

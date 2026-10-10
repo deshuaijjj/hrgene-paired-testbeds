@@ -1,0 +1,260 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "97788296-e4ce-4c7f-84fe-13dec8b8d3a6.C1",
+ "case_id": "97788296-e4ce-4c7f-84fe-13dec8b8d3a6",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11165,
+  "promptWords": 1500
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 48.721
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3318,
+ "eval_count": 1818,
+ "prompt_eval_duration_ns": 18180000,
+ "eval_duration_ns": 32598184000,
+ "total_duration_ns": 48717586042,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidence, use verbatim passages. We'll need to extract text from sources. We have source texts in description. We'll use them.\n\nLet's craft claims:\n\nprofessionalSummary: \"Software engineer with three years experience on a mobile payments SDK team, implementing SDK changes against API specifications under the SDK engineering standard.\" source src_2c88c3fe74ae.\n\nexperienceHighlights: list claims: implementing SDK changes (src_2c88c3fe74ae), writing automated tests and reviewing sample code (src_da9fe799306d), supporting merchants via developer forum (src_770393310aa3), participating in review and release process with SDK lead approval (src_c2402c72b4fa), documenting release limitations and hand-over conditions (src_c86afaae6c98).\n\nprojectsAndWorkSamples: mention work sample with pull requests, test results, forum record, release record (src_3fc3c0cdfa62).\n\nskills: SDK development, API integration, automated testing, developer support, release documentation.\n\nevidenceBoundary: \"The provided materials establish the candidate’s experience in SDK engineering, automated testing, merchant support, and release documentation, but do not provide evidence of leading technical direction across two SDK teams or of senior-level decision authority.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle Software Engineer, Payments SDK, jobDescriptionSourceId jd_c50ea3bae7d4e645, requirementIds list.\n\ncandidate: candidateId cand_3e8f03b9039377a2, sources list all source ids.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_da125f9a4bf7: Implements SDK changes against API specs. Supported by src_2c88c3fe74ae. evidenceStrength high. status supported.\n\nreq_fbc9d142ea77: Writes automated tests and reviews sample code. Supported by src_da9fe799306d. status supported.\n\nreq_dd53ce2a7238: Leads SDK technical direction across two SDK teams, with documented technical plan. No evidence. status insufficient_evidence. missingEvidence: \"No evidence of leading technical direction or documented technical plan.\" gapId maybe gap1. Also note that interview note suggests senior level but not evidence. So we record insufficient_evidence.\n\nreq_13abafe3b0d0: Supports merchants' engineers through developer forum, with release approval staying with SDK lead, and records own responsibility boundaries. Supported by src_770393310aa3 and src_c2402c72b4fa. status supported.\n\nreq_df8553889e48: Documents each release's limitations and hand-over conditions. Supported by src_c86afaae6c98. status supported.\n\nsupportedClaims: list claims that are supported: e.g., \"Implemented SDK changes against API specifications\" etc. Provide sourceIds.\n\nunsupportedClaims: none? maybe none.\n\nmissingEvidenceGaps: for req_dd53ce2a7238.\n\ninterviewSignalRisks: source src_5dc338cce6eb: note about senior level and could set direction. signalType: subjective assessment. jobRelatedBoundary false. severity medium. recommendedHandling: verify leadership experience via interview or references.\n\nfollowUpQuestions: for gap: question about leading technical direction across two SDK teams, ask for evidence of technical plan or leadership role.\n\nhumanReviewChecklist: items: verify evidence for each requirement, assess interview signals, confirm lack of leadership evidence.\n\nauditSummary: paragraph summarizing.\n\nlimitations: e.g., limited to provided materials, no external verification.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_3e8f03b9039377a2\",\"targetRoleTitle\":\"Software Engineer, Payments SDK\",\"professionalSummary\":[\"Software engineer with three years experience on a mobile payments SDK team, implementing SDK changes against API specifications under the SDK engineering standard. (src_2c88c3fe74ae)\"],\"experienceHighlights\":[\"Implemented SDK changes for the checkout SDK against the API team's specifications under the SDK engineering standard. (src_2c88c3fe74ae)\",\"Wrote the SDK's automated tests for each change and reviewed the merchant-facing sample code as one of the team's reviewers, with the test results and review records on each pull request. (src_da9fe799306d)\",\"Supported merchants' engineers through the developer forum, with forum records marking which answers were mine and which were referred to the SDK lead. (src_770393310aa3)\",\"Took each change through the review and release process; the release approval was the SDK lead's, recorded on each release. (src_c2402c72b4fa)\",\"Wrote the limitation note and the hand-over conditions of each release in the release record. (src_c86afaae6c98)\"],\"projectsAndWorkSamples\":[\"Work sample: three pull requests with their test results and review records, the developer forum record for one month and one release record with its limitation note, with the repository references as a verification trail. (src_3fc3c0cdfa62)\"],\"skills\":[\"SDK development\",\"API integration\",\"Automated testing\",\"Developer support\",\"Release documentation\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience in SDK engineering, automated testing, merchant support, and release documentation, but do not provide evidence of leading technical direction across two SDK teams or of senior-level decision authority.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Software Engineer, Payments SDK\",\"jobDescriptionSource\":\"jd_c50ea3bae7d4e645\",\"requirementIds\":[\"req_da125f9a4bf7\",\"req_fbc9d142ea77\",\"req_dd53ce2a7238\",\"req_13abafe3b0d0\",\"req_df8553889e48\"]},\"candidate\":{\"candidateId\":\"cand_3e8f03b9039377a2\",\"sources\":[\"src_2c88c3fe74ae\",\"src_da9fe799306d\",\"src_770393310aa3\",\"src_c2402c72b4fa\",\"src_c86afaae6c98\",\"src_3fc3c0cdfa62\",\"src_5dc338cce6eb\",\"src_bea3935012f7\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_da125f9a4bf7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2c88c3fe74ae\",\"text\":\"Software engineer on the mobile SDK team of a payments company for three years, implementing SDK changes for the checkout SDK against the API team's specifications under the SDK engineering standard; each change on a pull request in my name.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of SDK change implementation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fbc9d142ea77\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_da9fe799306d\",\"text\":\"Wrote the SDK's automated tests for each change and reviewed the merchant-facing sample code as one of the team's reviewers, with the test results and review records on each pull request.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of test writing and sample code review.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_dd53ce2a7238\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No evidence of leading technical direction across two SDK teams or of a documented technical plan.\"]},{\"requirementId\":\"req_13abafe3b0d0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_770393310aa3\",\"text\":\"Supported the merchants' engineers through the developer forum, with the forum records marking which answers were mine and which were referred to the SDK lead.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of merchant support.\"},{\"sourceId\":\"src_c2402c72b4fa\",\"text\":\"Took each change through the review and release process; the release approval was the SDK lead's, recorded on each release.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of release approval process.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_df8553889e48\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c86afaae6c98\",\"text\":\"Wrote the limitation note and the hand-over conditions of each release in the release record.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of release documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Implemented SDK changes against API specifications under the SDK engineering standard.\",\"supportingRequirementIds\":[\"req_da125f9a4bf7\"],\"sourceIds\":[\"src_2c88c3fe74ae\"],\"evidenceStrength\":\"high\",\"witness\":\"Software engineer on the mobile SDK team of a payments company for three years, implementing SDK changes for the checkout SDK against the API team's specifications under the SDK engineering standard; each change on a pull request in my name.\"},{\"claim\":\"Wrote automated tests for each SDK change and reviewed merchant-facing sample code.\",\"supportingRequirementIds\":[\"req_fbc9d142ea77\"],\"sourceIds\":[\"src_da9fe799306d\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the SDK's automated tests for each change and reviewed the merchant-facing sample code as one of the team's reviewers, with the test results and review records on each pull request.\"},{\"claim\":\"Supported merchants' engineers through the developer forum and recorded responsibility boundaries.\",\"supportingRequirementIds\":[\"req_13abafe3b0d0\"],\"sourceIds\":[\"src_770393310aa3\",\"src_c2402c72b4fa\"],\"evidenceStrength\":\"high\",\"witness\":\"Supported the merchants' engineers through the developer forum, with the forum records marking which answers were mine and which were referred to the SDK lead.\"},{\"claim\":\"Documented each release's limitations and hand-over conditions.\",\"supportingRequirementIds\":[\"req_df8553889e48\"],\"sourceIds\":[\"src_c86afaae6c98\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the limitation note and the hand-over conditions of each release in the release record.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap1\",\"requirementId\":\"req_dd53ce2a7238\",\"severity\":\"medium\",\"gap\":\"No evidence of leading technical direction across two SDK teams or of a documented technical plan.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_5dc338cce6eb\",\"text\":\"brilliant, a real go-to person type; he clearly operated at a senior level in his last job and I'm sure he could set direction for both SDK teams tomorrow.\",\"signalType\":\"subjective assessment\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify leadership experience through interview or references.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_dd53ce2a7238\",\"question\":\"Can you provide examples of leading technical direction across multiple SDK teams, including any documented technical plans you authored?\",\"evidenceTarget\":\"Evidence of leadership and technical planning.\"}],\"humanReviewChecklist\":[\"Verify that each supported claim is backed by the cited source text.\",\"Confirm that no unsupported claims are presented as facts.\",\"Assess interview signal risks and determine if additional evidence is needed.\",\"Ensure that the missing evidence gap for technical direction is addressed before proceeding.\"],\"auditSummary\":\"The candidate demonstrates clear experience in SDK engineering, automated testing, merchant support, and release documentation, all directly supported by the provided materials. However, there is no evidence of leading technical direction across two SDK teams or of a documented technical plan, which is a critical requirement for the target role. Interview notes suggest senior-level capability, but this is not substantiated by concrete evidence in the materials. Human review is required to evaluate the significance of the evidence gap and to decide whether additional information should be sought.\",\"limitations\":[\"Analysis is limited to the provided candidate materials and does not include external verification or additional context.\"]}}",
+ "content_sha256": "64f28f1213f75ce8a2bc75d56f56d7cd08ded3bd5efe58c753251221ec99ba07",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_3e8f03b9039377a2",
+   "targetRoleTitle": "Software Engineer, Payments SDK",
+   "professionalSummary": [
+    "Software engineer with three years experience on a mobile payments SDK team, implementing SDK changes against API specifications under the SDK engineering standard. (src_2c88c3fe74ae)"
+   ],
+   "experienceHighlights": [
+    "Implemented SDK changes for the checkout SDK against the API team's specifications under the SDK engineering standard. (src_2c88c3fe74ae)",
+    "Wrote the SDK's automated tests for each change and reviewed the merchant-facing sample code as one of the team's reviewers, with the test results and review records on each pull request. (src_da9fe799306d)",
+    "Supported merchants' engineers through the developer forum, with forum records marking which answers were mine and which were referred to the SDK lead. (src_770393310aa3)",
+    "Took each change through the review and release process; the release approval was the SDK lead's, recorded on each release. (src_c2402c72b4fa)",
+    "Wrote the limitation note and the hand-over conditions of each release in the release record. (src_c86afaae6c98)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: three pull requests with their test results and review records, the developer forum record for one month and one release record with its limitation note, with the repository references as a verification trail. (src_3fc3c0cdfa62)"
+   ],
+   "skills": [
+    "SDK development",
+    "API integration",
+    "Automated testing",
+    "Developer support",
+    "Release documentation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in SDK engineering, automated testing, merchant support, and release documentation, but do not provide evidence of leading technical direction across two SDK teams or of senior-level decision authority."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Payments SDK",
+    "jobDescriptionSource": "jd_c50ea3bae7d4e645",
+    "requirementIds": [
+     "req_da125f9a4bf7",
+     "req_fbc9d142ea77",
+     "req_dd53ce2a7238",
+     "req_13abafe3b0d0",
+     "req_df8553889e48"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_3e8f03b9039377a2",
+    "sources": [
+     "src_2c88c3fe74ae",
+     "src_da9fe799306d",
+     "src_770393310aa3",
+     "src_c2402c72b4fa",
+     "src_c86afaae6c98",
+     "src_3fc3c0cdfa62",
+     "src_5dc338cce6eb",
+     "src_bea3935012f7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_da125f9a4bf7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2c88c3fe74ae",
+       "text": "Software engineer on the mobile SDK team of a payments company for three years, implementing SDK changes for the checkout SDK against the API team's specifications under the SDK engineering standard; each change on a pull request in my name.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of SDK change implementation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fbc9d142ea77",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_da9fe799306d",
+       "text": "Wrote the SDK's automated tests for each change and reviewed the merchant-facing sample code as one of the team's reviewers, with the test results and review records on each pull request.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of test writing and sample code review."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dd53ce2a7238",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No evidence of leading technical direction across two SDK teams or of a documented technical plan."
+     ]
+    },
+    {
+     "requirementId": "req_13abafe3b0d0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_770393310aa3",
+       "text": "Supported the merchants' engineers through the developer forum, with the forum records marking which answers were mine and which were referred to the SDK lead.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of merchant support."
+      },
+      {
+       "sourceId": "src_c2402c72b4fa",
+       "text": "Took each change through the review and release process; the release approval was the SDK lead's, recorded on each release.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of release approval process."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_df8553889e48",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c86afaae6c98",
+       "text": "Wrote the limitation note and the hand-over conditions of each release in the release record.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of release documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Implemented SDK changes against API specifications under the SDK engineering standard.",
+     "supportingRequirementIds": [
+      "req_da125f9a4bf7"
+     ],
+     "sourceIds": [
+      "src_2c88c3fe74ae"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Software engineer on the mobile SDK team of a payments company for three years, implementing SDK changes for the checkout SDK against the API team's specifications under the SDK engineering standard; each change on a pull request in my name."
+    },
+    {
+     "claim": "Wrote automated tests for each SDK change and reviewed merchant-facing sample code.",
+     "supportingRequirementIds": [
+      "req_fbc9d142ea77"
+     ],
+     "sourceIds": [
+      "src_da9fe799306d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the SDK's automated tests for each change and reviewed the merchant-facing sample code as one of the team's reviewers, with the test results and review records on each pull request."
+    },
+    {
+     "claim": "Supported merchants' engineers through the developer forum and recorded responsibility boundaries.",
+     "supportingRequirementIds": [
+      "req_13abafe3b0d0"
+     ],
+     "sourceIds": [
+      "src_770393310aa3",
+      "src_c2402c72b4fa"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Supported the merchants' engineers through the developer forum, with the forum records marking which answers were mine and which were referred to the SDK lead."
+    },
+    {
+     "claim": "Documented each release's limitations and hand-over conditions.",
+     "supportingRequirementIds": [
+      "req_df8553889e48"
+     ],
+     "sourceIds": [
+      "src_c86afaae6c98"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the limitation note and the hand-over conditions of each release in the release record."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap1",
+     "requirementId": "req_dd53ce2a7238",
+     "severity": "medium",
+     "gap": "No evidence of leading technical direction across two SDK teams or of a documented technical plan."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_5dc338cce6eb",
+     "text": "brilliant, a real go-to person type; he clearly operated at a senior level in his last job and I'm sure he could set direction for both SDK teams tomorrow.",
+     "signalType": "subjective assessment",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify leadership experience through interview or references."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_dd53ce2a7238",
+     "question": "Can you provide examples of leading technical direction across multiple SDK teams, including any documented technical plans you authored?",
+     "evidenceTarget": "Evidence of leadership and technical planning."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that each supported claim is backed by the cited source text.",
+    "Confirm that no unsupported claims are presented as facts.",
+    "Assess interview signal risks and determine if additional evidence is needed.",
+    "Ensure that the missing evidence gap for technical direction is addressed before proceeding."
+   ],
+   "auditSummary": "The candidate demonstrates clear experience in SDK engineering, automated testing, merchant support, and release documentation, all directly supported by the provided materials. However, there is no evidence of leading technical direction across two SDK teams or of a documented technical plan, which is a critical requirement for the target role. Interview notes suggest senior-level capability, but this is not substantiated by concrete evidence in the materials. Human review is required to evaluate the significance of the evidence gap and to decide whether additional information should be sought.",
+   "limitations": [
+    "Analysis is limited to the provided candidate materials and does not include external verification or additional context."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:02:59.888313+00:00"
+}

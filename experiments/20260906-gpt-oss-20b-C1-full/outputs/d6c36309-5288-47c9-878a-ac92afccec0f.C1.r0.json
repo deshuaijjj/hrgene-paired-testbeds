@@ -1,0 +1,228 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "d6c36309-5288-47c9-878a-ac92afccec0f.C1",
+ "case_id": "d6c36309-5288-47c9-878a-ac92afccec0f",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11383,
+  "promptWords": 1515
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 44.165
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3324,
+ "eval_count": 1601,
+ "prompt_eval_duration_ns": 18191000,
+ "eval_duration_ns": 28644124000,
+ "total_duration_ns": 44162468208,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. Use source IDs. For PMP credential: source src_be3a81c91dfa says application accepted July 2026, exam November 2026. Not yet certified. So claim \"PMP certified\" not supported. So we cannot claim credential. So we must not state PMP credential. But requirement requires holds PMP at hire. We have insufficient evidence. So in optimized CV we should not claim PMP. We can mention \"PMP exam scheduled\" but not certified. But we need to restate what materials establish. So professional summary: \"Project manager with four years experience in regulatory reporting change at a mid-sized bank, managing six projects under the bank's change framework, each with plan, budget, and steering committee reporting.\" Cite src_ada3fde58007. Also mention dependency management: src_cba1f157564d. Closure reports: src_d3024ce2c09b. Work sample: src_6c5f2f7cef1a. Also mention prior coordinator experience: src_55d54525950b. PMP exam scheduled: src_be3a81c91dfa. But not certified.\n\nSkills: project management, change framework, dependency management, regulatory reporting, steering committee reporting, closure reporting.\n\nEvidenceBoundary: materials establish experience, project management under change framework, dependency management, closure reporting, prior coordinator role, PMP exam scheduled but not yet certified. They do not establish PMP credential at hire or four years in financial services (bank is financial services? yes mid-sized bank). Four years experience yes. So requirement 5? Actually requirement 5 is PMP credential. Not established. Requirement 2: at least four years of financial services project management under formal change framework. We have four years at bank, yes. So supported. Requirement 3: runs plan, budget, steering committee reporting. Supported. Requirement 4: manages dependencies. Supported. Requirement 5: documents project boundaries and regulator deadline evidence at closure. Supported. So only missing PMP credential.\n\nNow requirement evidence map: for each requirement id.\n\nreq_43ffd8020d76: status insufficient_evidence. missingEvidence: \"PMP credential at time of hire\". evidence: none. maybe note source src_be3a81c91dfa shows exam scheduled but not certified. So evidence low? Actually not evidence. So missing.\n\nreq_5e8696b5057d: status supported. evidence: src_ada3fde58007. notes: four years at bank.\n\nreq_7cb0675ec4e6: supported. evidence: src_ada3fde58007.\n\nreq_d1fff828ca5e: supported. evidence: src_cba1f157564d.\n\nreq_fb133fb9bbbd: supported. evidence: src_d3024ce2c09b.\n\nAlso maybe include src_6c5f2f7cef1a as work sample.\n\nUnsupported claims: PMP certified. Reason: not established. required follow up: ask for credential number or proof.\n\nMissing evidence gaps: gap for PMP credential.\n\nInterviewSignalRisks: source src_2e3fa2b6bc2a: recruiter screen said 'PMP certified' but not yet. Signal type: claim of certification. Not tied to job evidence. severity medium. recommended handling: verify credential.\n\nFollowUpQuestions: question about PMP credential status, ask for credential number or proof.\n\nHumanReviewChecklist: items: verify PMP credential, confirm financial services experience, confirm change framework usage, confirm closure reporting evidence.\n\nAuditSummary: summary of evidence.\n\nLimitations: lack of PMP credential evidence, lack of explicit financial services context beyond bank.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_c07b6c7158e5f914\",\"targetRoleTitle\":\"Project Manager, Regulatory Reporting Change\",\"professionalSummary\":[\"Project manager with four years experience in regulatory reporting change at a mid‑sized bank, managing six projects under the bank's change framework, each with a plan, budget and monthly steering committee report. (src_ada3fde58007)\"],\"experienceHighlights\":[\"Managed dependencies with the reporting platform team and finance on each project through the framework's dependency log, escalating two platform slips to the portfolio board. (src_cba1f157564d)\",\"Wrote the project closure reports with the project boundary statement and the regulator's deadline evidence, all six accepted by the change framework office. (src_d3024ce2c09b)\",\"Prior to the bank, served as a project coordinator at an insurer on a claims system replacement for two years. (src_55d54525950b)\"],\"projectsAndWorkSamples\":[\"Work sample: the plan, the budget tracker and the closure report for one regulatory project, with the change framework office's acceptance reference as a verification trail, and the institute's application acceptance email. (src_6c5f2f7cef1a)\"],\"skills\":[\"Project management\",\"Change framework implementation\",\"Dependency management\",\"Regulatory reporting\",\"Steering committee reporting\",\"Project closure documentation\"],\"evidenceBoundary\":\"The provided materials establish the candidate's four‑year experience managing regulatory reporting projects under a formal change framework, dependency management with reporting platform and finance, and documentation of project boundaries and regulator deadline evidence at closure. They do not establish that the candidate holds a PMP credential at the time of hire.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Project Manager, Regulatory Reporting Change\",\"jobDescriptionSource\":\"jd_eaa4fe17fb34354c\",\"requirementIds\":[\"req_43ffd8020d76\",\"req_5e8696b5057d\",\"req_7cb0675ec4e6\",\"req_d1fff828ca5e\",\"req_fb133fb9bbbd\"]},\"candidate\":{\"candidateId\":\"cand_c07b6c7158e5f914\",\"sources\":[\"src_ada3fde58007\",\"src_be3a81c91dfa\",\"src_cba1f157564d\",\"src_d3024ce2c09b\",\"src_55d54525950b\",\"src_6c5f2f7cef1a\",\"src_2e3fa2b6bc2a\",\"src_ee2e1912da43\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_43ffd8020d76\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"PMP credential held at the time of hire\"]},{\"requirementId\":\"req_5e8696b5057d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ada3fde58007\",\"text\":\"Project manager in the regulatory reporting change team of a mid‑sized bank for four years, running six projects under the bank's change framework, each with its plan, budget and monthly steering committee report.\",\"evidenceStrength\":\"high\",\"notes\":\"Four years of experience in a financial services institution under a formal change framework.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7cb0675ec4e6\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ada3fde58007\",\"text\":\"Project manager in the regulatory reporting change team of a mid‑sized bank for four years, running six projects under the bank's change framework, each with its plan, budget and monthly steering committee report.\",\"evidenceStrength\":\"high\",\"notes\":\"Runs plan, budget and steering committee reporting for each project.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d1fff828ca5e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_cba1f157564d\",\"text\":\"Managed the dependencies with the reporting platform team and finance on each project through the framework's dependency log, escalating two platform slips to the portfolio board.\",\"evidenceStrength\":\"high\",\"notes\":\"Manages dependencies with reporting platform and finance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fb133fb9bbbd\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d3024ce2c09b\",\"text\":\"Wrote the project closure reports with the project boundary statement and the regulator's deadline evidence, all six accepted by the change framework office.\",\"evidenceStrength\":\"high\",\"notes\":\"Documents project boundaries and regulator deadline evidence at closure.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Project manager with four years experience in regulatory reporting change at a mid‑sized bank, managing six projects under the bank's change framework, each with a plan, budget and monthly steering committee report.\",\"supportingRequirementIds\":[\"req_5e8696b5057d\",\"req_7cb0675ec4e6\"],\"sourceIds\":[\"src_ada3fde58007\"],\"evidenceStrength\":\"high\",\"witness\":\"Project manager in the regulatory reporting change team of a mid‑sized bank for four years, running six projects under the bank's change framework, each with its plan, budget and monthly steering committee report.\"}],\"unsupportedClaims\":[{\"claim\":\"PMP certified at the time of hire.\",\"reason\":\"The materials only indicate that the candidate has scheduled the PMP exam and that the application was accepted; certification has not yet been achieved.\",\"requiredFollowUp\":\"Request the PMP credential number or proof of certification.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_pmp_credential\",\"requirementId\":\"req_43ffd8020d76\",\"severity\":\"high\",\"gap\":\"No evidence that the candidate holds a PMP credential at the time of hire.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_2e3fa2b6bc2a\",\"text\":\"Candidate said she is 'PMP certified' and that the exam in November 'is just the formality after the application'; asked for the credential number, she said it would follow after the exam.\",\"signalType\":\"unverified claim of certification\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify PMP credential number or proof of certification.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_43ffd8020d76\",\"question\":\"Can you provide the PMP credential number or a copy of the certification to confirm that you hold the PMP credential at the time of hire?\",\"evidenceTarget\":\"PMP credential proof\"}],\"humanReviewChecklist\":[\"Verify PMP credential status and proof\",\"Confirm four years of financial services project management under a formal change framework\",\"Confirm that the candidate runs plan, budget and steering committee reporting for each project\",\"Confirm dependency management with reporting platform and finance\",\"Confirm documentation of project boundaries and regulator deadline evidence at closure\"],\"auditSummary\":\"The evidence supports the candidate's experience managing regulatory reporting projects under a formal change framework, including dependency management, steering committee reporting, and closure documentation. However, there is no evidence that the candidate holds a PMP credential at the time of hire, which is a required qualification. Human review should focus on verifying PMP certification and confirming the financial services context of the experience.\",\"limitations\":[\"Lack of evidence for PMP credential at hire\",\"No explicit mention of the bank being a financial services institution beyond context\"]} }",
+ "content_sha256": "1e352a09711ae2727df80fcf187ce48bd0c37699b1ac8295d3f5c5f7fedd85f1",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_c07b6c7158e5f914",
+   "targetRoleTitle": "Project Manager, Regulatory Reporting Change",
+   "professionalSummary": [
+    "Project manager with four years experience in regulatory reporting change at a mid‑sized bank, managing six projects under the bank's change framework, each with a plan, budget and monthly steering committee report. (src_ada3fde58007)"
+   ],
+   "experienceHighlights": [
+    "Managed dependencies with the reporting platform team and finance on each project through the framework's dependency log, escalating two platform slips to the portfolio board. (src_cba1f157564d)",
+    "Wrote the project closure reports with the project boundary statement and the regulator's deadline evidence, all six accepted by the change framework office. (src_d3024ce2c09b)",
+    "Prior to the bank, served as a project coordinator at an insurer on a claims system replacement for two years. (src_55d54525950b)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the plan, the budget tracker and the closure report for one regulatory project, with the change framework office's acceptance reference as a verification trail, and the institute's application acceptance email. (src_6c5f2f7cef1a)"
+   ],
+   "skills": [
+    "Project management",
+    "Change framework implementation",
+    "Dependency management",
+    "Regulatory reporting",
+    "Steering committee reporting",
+    "Project closure documentation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate's four‑year experience managing regulatory reporting projects under a formal change framework, dependency management with reporting platform and finance, and documentation of project boundaries and regulator deadline evidence at closure. They do not establish that the candidate holds a PMP credential at the time of hire."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Regulatory Reporting Change",
+    "jobDescriptionSource": "jd_eaa4fe17fb34354c",
+    "requirementIds": [
+     "req_43ffd8020d76",
+     "req_5e8696b5057d",
+     "req_7cb0675ec4e6",
+     "req_d1fff828ca5e",
+     "req_fb133fb9bbbd"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_c07b6c7158e5f914",
+    "sources": [
+     "src_ada3fde58007",
+     "src_be3a81c91dfa",
+     "src_cba1f157564d",
+     "src_d3024ce2c09b",
+     "src_55d54525950b",
+     "src_6c5f2f7cef1a",
+     "src_2e3fa2b6bc2a",
+     "src_ee2e1912da43"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_43ffd8020d76",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "PMP credential held at the time of hire"
+     ]
+    },
+    {
+     "requirementId": "req_5e8696b5057d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ada3fde58007",
+       "text": "Project manager in the regulatory reporting change team of a mid‑sized bank for four years, running six projects under the bank's change framework, each with its plan, budget and monthly steering committee report.",
+       "evidenceStrength": "high",
+       "notes": "Four years of experience in a financial services institution under a formal change framework."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7cb0675ec4e6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ada3fde58007",
+       "text": "Project manager in the regulatory reporting change team of a mid‑sized bank for four years, running six projects under the bank's change framework, each with its plan, budget and monthly steering committee report.",
+       "evidenceStrength": "high",
+       "notes": "Runs plan, budget and steering committee reporting for each project."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d1fff828ca5e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_cba1f157564d",
+       "text": "Managed the dependencies with the reporting platform team and finance on each project through the framework's dependency log, escalating two platform slips to the portfolio board.",
+       "evidenceStrength": "high",
+       "notes": "Manages dependencies with reporting platform and finance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fb133fb9bbbd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d3024ce2c09b",
+       "text": "Wrote the project closure reports with the project boundary statement and the regulator's deadline evidence, all six accepted by the change framework office.",
+       "evidenceStrength": "high",
+       "notes": "Documents project boundaries and regulator deadline evidence at closure."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Project manager with four years experience in regulatory reporting change at a mid‑sized bank, managing six projects under the bank's change framework, each with a plan, budget and monthly steering committee report.",
+     "supportingRequirementIds": [
+      "req_5e8696b5057d",
+      "req_7cb0675ec4e6"
+     ],
+     "sourceIds": [
+      "src_ada3fde58007"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Project manager in the regulatory reporting change team of a mid‑sized bank for four years, running six projects under the bank's change framework, each with its plan, budget and monthly steering committee report."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "PMP certified at the time of hire.",
+     "reason": "The materials only indicate that the candidate has scheduled the PMP exam and that the application was accepted; certification has not yet been achieved.",
+     "requiredFollowUp": "Request the PMP credential number or proof of certification."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_pmp_credential",
+     "requirementId": "req_43ffd8020d76",
+     "severity": "high",
+     "gap": "No evidence that the candidate holds a PMP credential at the time of hire."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_2e3fa2b6bc2a",
+     "text": "Candidate said she is 'PMP certified' and that the exam in November 'is just the formality after the application'; asked for the credential number, she said it would follow after the exam.",
+     "signalType": "unverified claim of certification",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify PMP credential number or proof of certification."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_43ffd8020d76",
+     "question": "Can you provide the PMP credential number or a copy of the certification to confirm that you hold the PMP credential at the time of hire?",
+     "evidenceTarget": "PMP credential proof"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify PMP credential status and proof",
+    "Confirm four years of financial services project management under a formal change framework",
+    "Confirm that the candidate runs plan, budget and steering committee reporting for each project",
+    "Confirm dependency management with reporting platform and finance",
+    "Confirm documentation of project boundaries and regulator deadline evidence at closure"
+   ],
+   "auditSummary": "The evidence supports the candidate's experience managing regulatory reporting projects under a formal change framework, including dependency management, steering committee reporting, and closure documentation. However, there is no evidence that the candidate holds a PMP credential at the time of hire, which is a required qualification. Human review should focus on verifying PMP certification and confirming the financial services context of the experience.",
+   "limitations": [
+    "Lack of evidence for PMP credential at hire",
+    "No explicit mention of the bank being a financial services institution beyond context"
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:26:50.951507+00:00"
+}

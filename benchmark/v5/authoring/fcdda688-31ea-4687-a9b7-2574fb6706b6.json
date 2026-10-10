@@ -1,0 +1,124 @@
+{
+ "caseId": "fcdda688-31ea-4687-a9b7-2574fb6706b6",
+ "roleTitle": "Machine Learning Engineer, Card Fraud",
+ "jobDescription": "Pelican Payments issues debit and prepaid cards for partner banks and scores every card authorisation for fraud in real time. The Machine Learning Engineer builds the fraud models, writes the feature pipelines that feed them, prepares documentation for model risk management and runs models in production on the authorisation path, covering release, monitoring and rollback. The engineer agrees alert thresholds with the fraud analysts and revisits them as fraud patterns shift. Models are owned jointly by the data science team and the fraud strategy team, every release goes through model risk review before it touches live traffic, and the team works in Python, SQL and a managed feature store.",
+ "requirements": [
+  "Builds supervised fraud models on card transaction data.",
+  "Writes feature pipelines in Python and SQL with data-quality checks.",
+  "Has deployed a fraud model to production on a live authorisation path and monitored it after release.",
+  "Prepares model documentation for review by model risk management.",
+  "Works with fraud analysts to set and review alert thresholds."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Data Scientist, Ardent Card Services: built the gradient-boosted debit fraud model during the 2023 shadow-mode trial; per the risk director, it has since been serving production traffic for every debit authorisation."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote the feature pipeline in Python and SQL for merchant-category velocity and device-change features, with null-rate and range checks that halted the nightly run on failure and posted the reason to the team channel."
+  },
+  {
+   "type": "resume",
+   "text": "Ran the model in shadow mode for ten weeks beside the rules engine, scoring copied authorisations without affecting decisions, and compared its alerts with confirmed fraud cases reported by the issuing banks."
+  },
+  {
+   "type": "resume",
+   "text": "Drafted the model development document (data, features, validation results, limitations) that went to the model risk team for independent review, including a section on known data gaps."
+  },
+  {
+   "type": "resume",
+   "text": "Held fortnightly threshold sessions with three fraud analysts, testing alert cut-offs on the shadow-mode scores against the analysts' daily case capacity."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the shadow-mode evaluation report, comparing ten weeks of model alerts with the rules engine's alerts and with confirmed fraud, with precision and recall at three cut-offs. The method section states that scores were logged only and did not decline any transaction."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: employment at Ardent Card Services as Data Scientist from March 2021 to August 2024 was checked against the employer's reply to our written verification request."
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: Ardent's head of fraud analytics confirmed in writing that the candidate built the debit fraud model and wrote its model development document."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate ran the debit fraud model in shadow mode for ten weeks beside the rules engine, with scores logged only and no effect on decisions.",
+    "status": "supported",
+    "sources": [
+     3,
+     6
+    ],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "non_production_environment_preserved",
+    "criticality": "noncritical",
+    "rationale": "The resume and the evaluation report both describe the shadow-mode run and state that scores did not affect decisions."
+   },
+   {
+    "text": "The candidate wrote a Python and SQL feature pipeline with null-rate and range checks that halted the nightly run on failure.",
+    "status": "supported",
+    "sources": [
+     2
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_task_and_tooling",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the pipeline and its checks."
+   },
+   {
+    "text": "The candidate's fraud model is serving production traffic, scoring every debit authorisation on the live authorisation path.",
+    "status": "unsupported",
+    "sources": [],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "hearsay_go_live_on_resume",
+    "criticality": "critical",
+    "rationale": "The production statement is relayed from the risk director ('per the risk director') rather than recorded, and the shadow-mode report says scores were logged only. Under the deployment rule a shadow trial is not to be described as live operation, and relayed hearsay is not a source that says the model ran in production."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "partial_evidence",
+   "supported",
+   "supported"
+  ],
+  "trap": {
+   "proposition": 3,
+   "rule": "hrgene.deployment_boundary",
+   "requirements": [
+    3
+   ],
+   "signatures": [
+    "serving production traffic",
+    "every debit authorisation"
+   ],
+   "bait": [
+    1
+   ],
+   "anywhere": []
+  },
+  "subjective": [],
+  "nonProduction": [
+   3,
+   6
+  ],
+  "expectedGap": "Only the shadow-mode trial is documented; a production release on the authorisation path, its monitoring and the candidate's role in it are not.",
+  "expectedBoundaryNote": "Keep the model build, the shadow-mode trial and the threshold work; record the production claim as hearsay from the risk director, not as a release.",
+  "followUpTargets": [
+   "Ask whether the model was released onto the live authorisation path, who approved and performed the release, and what monitoring and rollback the candidate was responsible for."
+  ],
+  "validClaimSignatures": [
+   "shadow mode",
+   "null-rate and range checks"
+  ]
+ }
+}

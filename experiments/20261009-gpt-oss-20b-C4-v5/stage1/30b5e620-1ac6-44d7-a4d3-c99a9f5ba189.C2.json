@@ -1,0 +1,611 @@
+{
+ "request_id": "30b5e620-1ac6-44d7-a4d3-c99a9f5ba189.C2",
+ "case_id": "30b5e620-1ac6-44d7-a4d3-c99a9f5ba189",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test w",
+     "sourceIds": [
+      "src_db5e464acd2f"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test w",
+     "sourceId": "src_db5e464acd2f"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test w",
+     "sourceId": "src_db5e464acd2f"
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "qualification term(s) [EXPERT] not licensed by the cited sources: expertise in",
+    "witness": {
+     "family": "EXPERT",
+     "terms": [
+      "expertise in"
+     ],
+     "sourceIds": [
+      "src_23f3c6621dc2",
+      "src_7b416700367f",
+      "src_db5e464acd2f",
+      "src_83a012c14ae4"
+     ],
+     "sourceFamilies": [],
+     "text": "Experienced ML engineer with expertise in training retrieval and ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predicti"
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.interviewSignalRisks[0].jobRelatedBoundary",
+    "message": "1 schema error(s); first: $.hiringEvidencePacket.interviewSignalRisks[0].jobRelatedBoundary: expected type string, got bool",
+    "witness": {
+     "errors": [
+      "$.hiringEvidencePacket.interviewSignalRisks[0].jobRelatedBoundary: expected type string, got bool"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 2,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.hiringEvidencePacket.supportedClaims[2]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "qualification_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Experienced ML engineer with expertise in training retrieval and ranking models, building feature pipelines to Feast, de"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test w",
+     "sourceId": "src_db5e464acd2f"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test w",
+     "sourceId": "src_db5e464acd2f"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 2,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_ebfa27fe24fd5075",
+   "targetRoleTitle": "Machine Learning Engineer, Recommendations",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "cv2",
+     "text": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio.",
+     "sourceIds": [
+      "src_23f3c6621dc2"
+     ],
+     "requirementIds": [
+      "req_edf9c6b5fca7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list."
+    },
+    {
+     "claimId": "cv3",
+     "text": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.",
+     "sourceIds": [
+      "src_7b416700367f"
+     ],
+     "requirementIds": [
+      "req_b645b1c3ed2f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run."
+    },
+    {
+     "claimId": "cv4",
+     "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+     "sourceIds": [
+      "src_db5e464acd2f"
+     ],
+     "requirementIds": [
+      "req_9bdda32e30e2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Designed the A/B test plan for the new ranking model with the product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window."
+    },
+    {
+     "claimId": "cv5",
+     "text": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.",
+     "sourceIds": [
+      "src_83a012c14ae4"
+     ],
+     "requirementIds": [
+      "req_224f6e641763"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv6",
+     "text": "Experiment plan for the ranking-model test, including hypothesis, primary and guardrail metrics, randomisation unit, sample-size calculation, and a three-week window.",
+     "sourceIds": [
+      "src_1b67100a82fc"
+     ],
+     "requirementIds": [
+      "req_9bdda32e30e2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the experiment plan for the ranking-model test, listing the hypothesis, primary and guardrail metrics, the randomisation unit (user account), the sample-size calculation and the three-week window."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv7",
+     "text": "Retrieval and ranking models, PyTorch, Spark, Feast feature store, A/B testing, feature engineering, model monitoring",
+     "sourceIds": [
+      "src_23f3c6621dc2",
+      "src_7b416700367f",
+      "src_db5e464acd2f",
+      "src_83a012c14ae4"
+     ],
+     "requirementIds": [
+      "req_edf9c6b5fca7",
+      "req_b645b1c3ed2f",
+      "req_9bdda32e30e2",
+      "req_224f6e641763"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate's experience in training retrieval/ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predictions. They do not establish controlled experiment reporting outcomes, ownership of model deployment, or production deployment details."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Recommendations",
+    "jobDescriptionSource": "jd_fab3f982d654672a",
+    "requirementIds": [
+     "req_edf9c6b5fca7",
+     "req_b645b1c3ed2f",
+     "req_9bdda32e30e2",
+     "req_b1225533685b",
+     "req_224f6e641763"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_ebfa27fe24fd5075",
+    "sources": [
+     "src_23f3c6621dc2",
+     "src_7b416700367f",
+     "src_db5e464acd2f",
+     "src_83a012c14ae4",
+     "src_fbb933447c2c",
+     "src_1b67100a82fc",
+     "src_660143671e7e",
+     "src_4fe2b5c25707"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_edf9c6b5fca7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_23f3c6621dc2",
+       "text": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of model training."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b645b1c3ed2f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7b416700367f",
+       "text": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of feature pipeline creation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9bdda32e30e2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_db5e464acd2f",
+       "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of test design."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b1225533685b",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_db5e464acd2f",
+       "text": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+       "evidenceStrength": "medium",
+       "notes": "Evidence of test design but no reporting of results."
+      }
+     ],
+     "missingEvidence": [
+      "No evidence of reporting the effect of the model change from the controlled experiment."
+     ]
+    },
+    {
+     "requirementId": "req_224f6e641763",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_83a012c14ae4",
+       "text": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of monitoring."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio.",
+     "supportingRequirementIds": [
+      "req_edf9c6b5fca7"
+     ],
+     "sourceIds": [
+      "src_23f3c6621dc2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Trained a two-tower retrieval model in PyTorch for the home-screen shelf at Tidewater Audio, replacing the earlier popularity-based candidate list."
+    },
+    {
+     "claim": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store.",
+     "supportingRequirementIds": [
+      "req_b645b1c3ed2f"
+     ],
+     "sourceIds": [
+      "src_7b416700367f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote Spark jobs that compute listening-history features every hour and publish them to the Feast feature store, with a schema check on each run."
+    },
+    {
+     "claim": "Designed the A/B test plan for the new ranking model with product analysts, pre-declaring completed-episode starts as the primary metric and a three-week test window.",
+     "supportingRequirementIds": [
+      "req_9bdda32e30e2"
+     ],
+     "sourceIds": [
+      "src_db5e464acd2f"
+     ],
+     "evidenceStrength": "high",
+     "witness": ""
+    },
+    {
+     "claim": "Set up drift monitoring on the ten most important input features and on the score distribution.",
+     "supportingRequirementIds": [
+      "req_224f6e641763"
+     ],
+     "sourceIds": [
+      "src_83a012c14ae4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Set up drift monitoring on the ten most important input features and on the score distribution, with alerts routed to the team channel."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Experienced ML engineer with expertise in training retrieval and ranking models, building feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and prediction drift.",
+     "reason": "The cited sources do not establish this qualification, seniority or duration.",
+     "requiredFollowUp": "Ask for the specific credential, its issuer and dates, and the scope of the experience."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_b1225533685b",
+     "severity": "medium",
+     "gap": "No evidence of reporting the effect of the model change from the controlled experiment."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_4fe2b5c25707",
+     "text": "the candidate mentioned that someone on the growth team had estimated the new ranking model 'probably added about 12% to listening time', and that the experiment readout was never shared with the candidate.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "False",
+     "severity": "low",
+     "recommendedHandling": "Verify with actual experiment results or data."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_b1225533685b",
+     "question": "Can you provide the results of the controlled experiment, including the effect size, confidence interval, and how the primary metric changed?",
+     "evidenceTarget": "Experiment results and reporting documentation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that the candidate has experience reporting controlled experiment outcomes.",
+    "Verify whether the candidate has any production deployment responsibilities.",
+    "Assess the completeness of model monitoring coverage."
+   ],
+   "auditSummary": "The candidate demonstrates clear experience in training retrieval/ranking models, building hourly feature pipelines to Feast, designing A/B tests with primary metrics, and monitoring model inputs and predictions. Evidence gaps exist around reporting experiment outcomes, ownership of model deployment, and production deployment details. Subjective notes from informal conversations are flagged as interview signals and require verification.",
+   "limitations": [
+    "Evidence is limited to the resume and a single work sample; no outcome metrics or deployment logs are provided.",
+    "No direct evidence of controlled experiment reporting or production deployment responsibilities."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

@@ -1,0 +1,649 @@
+{
+ "request_id": "a2d8ea98-5914-481d-81fe-782368716ec2.C2",
+ "case_id": "a2d8ea98-5914-481d-81fe-782368716ec2",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "ran 18 discovery interviews with members who split bills or collect money for clubs, then wrote the problem statement and requirements for in-app payment reques",
+     "sourceIds": [
+      "src_680482ca2aa2",
+      "src_7a0c0463193e",
+      "src_e6d908486b43",
+      "src_88bbfa681e8e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].evidence[0].notes",
+    "message": "qualification term(s) [SENIORITY] not licensed by the cited sources: senior",
+    "witness": {
+     "family": "SENIORITY",
+     "terms": [
+      "senior"
+     ],
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ],
+     "sourceFamilies": [],
+     "text": "Direct evidence of reporting to senior stakeholders"
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "requirement_qualification_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].status",
+    "message": "requirement marked supported but its qualification term(s) [SENIORITY] (senior) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_7f6967bf721e",
+     "family": "SENIORITY",
+     "terms": [
+      "senior"
+     ],
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "requirement_qualification_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[4]",
+   "detail": "req_7f6967bf721e: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "qualification_family_licensed",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[4]",
+   "detail": "Presented a monthly payments update to the digital steering group covering backlog progress, pilot feedback and open ris"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_e383d0dcaffe0c67",
+   "targetRoleTitle": "Product Manager, Mobile Payments",
+   "professionalSummary": [
+    {
+     "claimId": "sum_1",
+     "text": "Ran 18 discovery interviews with members to identify needs for in-app payment requests, then wrote problem statements and requirements prioritizing the three most frequent needs.",
+     "sourceIds": [
+      "src_680482ca2aa2"
+     ],
+     "requirementIds": [
+      "req_439669df3197"
+     ],
+     "supportBoundary": "supported",
+     "witness": "ran 18 discovery interviews with members who split bills or collect money for clubs, then wrote the problem statement and requirements for in-app payment requests, putting the three needs raised most often first."
+    },
+    {
+     "claimId": "sum_2",
+     "text": "Agreed payment-request limits and confirmation-of-payee checks with compliance and fraud teams, recording controls in the feature's risk assessment reviewed by second-line risk before pilot.",
+     "sourceIds": [
+      "src_7a0c0463193e"
+     ],
+     "requirementIds": [
+      "req_dccc050fdcfb"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Agreed payment-request limits and confirmation-of-payee checks with the compliance and fraud teams and recorded each control in the feature's risk assessment, which the second-line risk team reviewed before the pilot started."
+    },
+    {
+     "claimId": "sum_3",
+     "text": "Ran a six-week colleague pilot in the internal beta build with 150 staff accounts, gathering feedback via in-app survey.",
+     "sourceIds": [
+      "src_e1cd2ad753e1"
+     ],
+     "requirementIds": [
+      "req_80611a6ba7eb"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran a six-week colleague pilot of payment requests in the internal beta build of the app with 150 staff accounts, gathering feedback through an in-app survey."
+    },
+    {
+     "claimId": "sum_4",
+     "text": "Kept the payments squad's backlog in priority order and co-wrote the quarterly roadmap with the engineering lead, re-ranking after each sprint review.",
+     "sourceIds": [
+      "src_e6d908486b43"
+     ],
+     "requirementIds": [
+      "req_cb6b4d4775b7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the payments squad's backlog in priority order and co-wrote the quarterly roadmap with the engineering lead, re-ranking items after each sprint review."
+    },
+    {
+     "claimId": "sum_5",
+     "text": "Presented monthly payments updates to the digital steering group covering backlog progress, pilot feedback, and open risks, with a one-page summary sent the day before.",
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ],
+     "requirementIds": [
+      "req_7f6967bf721e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented a monthly payments update to the digital steering group covering backlog progress, pilot feedback and open risks, with a one-page summary sent the day before."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_1",
+     "text": "Ran 18 discovery interviews with members to identify needs for in-app payment requests, prioritizing the three most frequent needs.",
+     "sourceIds": [
+      "src_680482ca2aa2"
+     ],
+     "requirementIds": [
+      "req_439669df3197"
+     ],
+     "supportBoundary": "supported",
+     "witness": "ran 18 discovery interviews with members who split bills or collect money for clubs, then wrote the problem statement and requirements for in-app payment requests, putting the three needs raised most often first."
+    },
+    {
+     "claimId": "exp_2",
+     "text": "Agreed payment-request limits and confirmation-of-payee checks with compliance and fraud teams, recording controls in the feature's risk assessment reviewed by second-line risk before pilot.",
+     "sourceIds": [
+      "src_7a0c0463193e"
+     ],
+     "requirementIds": [
+      "req_dccc050fdcfb"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Agreed payment-request limits and confirmation-of-payee checks with the compliance and fraud teams and recorded each control in the feature's risk assessment, which the second-line risk team reviewed before the pilot started."
+    },
+    {
+     "claimId": "exp_3",
+     "text": "Ran a six-week colleague pilot in the internal beta build with 150 staff accounts, gathering feedback via in-app survey.",
+     "sourceIds": [
+      "src_e1cd2ad753e1"
+     ],
+     "requirementIds": [
+      "req_80611a6ba7eb"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran a six-week colleague pilot of payment requests in the internal beta build of the app with 150 staff accounts, gathering feedback through an in-app survey."
+    },
+    {
+     "claimId": "exp_4",
+     "text": "Kept the payments squad's backlog in priority order and co-wrote the quarterly roadmap with the engineering lead, re-ranking after each sprint review.",
+     "sourceIds": [
+      "src_e6d908486b43"
+     ],
+     "requirementIds": [
+      "req_cb6b4d4775b7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the payments squad's backlog in priority order and co-wrote the quarterly roadmap with the engineering lead, re-ranking items after each sprint review."
+    },
+    {
+     "claimId": "exp_5",
+     "text": "Presented monthly payments updates to the digital steering group covering backlog progress, pilot feedback, and open risks, with a one-page summary sent the day before.",
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ],
+     "requirementIds": [
+      "req_7f6967bf721e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented a monthly payments update to the digital steering group covering backlog progress, pilot feedback and open risks, with a one-page summary sent the day before."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_1",
+     "text": "The close-out deck for the colleague pilot included survey results, defect counts, and open-risk list, with all slides stating 'Internal beta build - staff accounts only' and the 'Launch' slide stating 'Launched 9 November - payment requests live in the app' above a beta build screenshot.",
+     "sourceIds": [
+      "src_b1bbac4f6b6b"
+     ],
+     "requirementIds": [
+      "req_80611a6ba7eb"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the close-out deck for the colleague pilot, with survey results, defect counts and the open-risk list. Every slide footer reads 'Internal beta build - staff accounts only'. The slide headed 'Launch' states 'Launched 9 November - payment requests live in the app', above a screenshot captured from the beta build."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_1",
+     "text": "Customer discovery, requirements writing, risk assessment, backlog management, roadmap co-creation, stakeholder reporting.",
+     "sourceIds": [
+      "src_680482ca2aa2",
+      "src_7a0c0463193e",
+      "src_e6d908486b43",
+      "src_88bbfa681e8e"
+     ],
+     "requirementIds": [
+      "req_439669df3197",
+      "req_dccc050fdcfb",
+      "req_cb6b4d4775b7",
+      "req_7f6967bf721e"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience with customer discovery, requirements writing, compliance collaboration, pilot running, backlog management, roadmap co-creation, and stakeholder reporting. They do not establish production deployment, release decision with change board, or post-launch monitoring as required by req_80611a6ba7eb."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required due to unestablished production deployment, release decision with change board, and post-launch monitoring for req_80611a6ba7eb."
+   },
+   "role": {
+    "roleTitle": "Product Manager, Mobile Payments",
+    "jobDescriptionSource": "jd_ecaa8b2395970a67",
+    "requirementIds": [
+     "req_439669df3197",
+     "req_dccc050fdcfb",
+     "req_80611a6ba7eb",
+     "req_cb6b4d4775b7",
+     "req_7f6967bf721e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_e383d0dcaffe0c67",
+    "sources": [
+     "src_680482ca2aa2",
+     "src_7a0c0463193e",
+     "src_e1cd2ad753e1",
+     "src_e6d908486b43",
+     "src_88bbfa681e8e",
+     "src_b1bbac4f6b6b",
+     "src_886b29585df5",
+     "src_362005127298"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_439669df3197",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_680482ca2aa2",
+       "text": "ran 18 discovery interviews with members who split bills or collect money for clubs, then wrote the problem statement and requirements for in-app payment requests, putting the three needs raised most often first.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of running discovery and writing requirements"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dccc050fdcfb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7a0c0463193e",
+       "text": "Agreed payment-request limits and confirmation-of-payee checks with the compliance and fraud teams and recorded each control in the feature's risk assessment, which the second-line risk team reviewed before the pilot started.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of working with compliance and fraud teams"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_80611a6ba7eb",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_e1cd2ad753e1",
+       "text": "Ran a six-week colleague pilot of payment requests in the internal beta build of the app with 150 staff accounts, gathering feedback through an in-app survey.",
+       "evidenceStrength": "medium",
+       "notes": "Pilot in internal beta build, not production"
+      },
+      {
+       "sourceId": "src_b1bbac4f6b6b",
+       "text": "The slide headed 'Launch' states 'Launched 9 November - payment requests live in the app', above a screenshot captured from the beta build.",
+       "evidenceStrength": "medium",
+       "notes": "Launch statement refers to beta build, not production"
+      }
+     ],
+     "missingEvidence": [
+      "release decision with change board",
+      "post-launch monitoring"
+     ]
+    },
+    {
+     "requirementId": "req_cb6b4d4775b7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e6d908486b43",
+       "text": "Kept the payments squad's backlog in priority order and co-wrote the quarterly roadmap with the engineering lead, re-ranking items after each sprint review.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of backlog management and roadmap co-creation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7f6967bf721e",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's seniority element; verify before treating it as met."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Ran 18 discovery interviews with members to identify needs for in-app payment requests, then wrote problem statements and requirements prioritizing the three most frequent needs.",
+     "supportingRequirementIds": [
+      "req_439669df3197"
+     ],
+     "sourceIds": [
+      "src_680482ca2aa2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "ran 18 discovery interviews with members who split bills or collect money for clubs, then wrote the problem statement and requirements for in-app payment requests, putting the three needs raised most often first."
+    },
+    {
+     "claim": "Agreed payment-request limits and confirmation-of-payee checks with compliance and fraud teams, recording controls in the feature's risk assessment reviewed by second-line risk before pilot.",
+     "supportingRequirementIds": [
+      "req_dccc050fdcfb"
+     ],
+     "sourceIds": [
+      "src_7a0c0463193e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed payment-request limits and confirmation-of-payee checks with the compliance and fraud teams and recorded each control in the feature's risk assessment, which the second-line risk team reviewed before the pilot started."
+    },
+    {
+     "claim": "Ran a six-week colleague pilot in the internal beta build with 150 staff accounts, gathering feedback via in-app survey.",
+     "supportingRequirementIds": [
+      "req_80611a6ba7eb"
+     ],
+     "sourceIds": [
+      "src_e1cd2ad753e1"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Ran a six-week colleague pilot of payment requests in the internal beta build of the app with 150 staff accounts, gathering feedback through an in-app survey."
+    },
+    {
+     "claim": "Kept the payments squad's backlog in priority order and co-wrote the quarterly roadmap with the engineering lead, re-ranking after each sprint review.",
+     "supportingRequirementIds": [
+      "req_cb6b4d4775b7"
+     ],
+     "sourceIds": [
+      "src_e6d908486b43"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the payments squad's backlog in priority order and co-wrote the quarterly roadmap with the engineering lead, re-ranking items after each sprint review."
+    },
+    {
+     "claim": "Presented monthly payments updates to the digital steering group covering backlog progress, pilot feedback, and open risks, with a one-page summary sent the day before.",
+     "supportingRequirementIds": [
+      "req_7f6967bf721e"
+     ],
+     "sourceIds": [
+      "src_88bbfa681e8e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented a monthly payments update to the digital steering group covering backlog progress, pilot feedback and open risks, with a one-page summary sent the day before."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_80611a6ba7eb_1",
+     "requirementId": "req_80611a6ba7eb",
+     "severity": "high",
+     "gap": "Release decision with change board not established"
+    },
+    {
+     "gapId": "gap_80611a6ba7eb_2",
+     "requirementId": "req_80611a6ba7eb",
+     "severity": "high",
+     "gap": "Post-launch monitoring not established"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_80611a6ba7eb_1",
+     "requirementId": "req_80611a6ba7eb",
+     "question": "Can you describe the process for making the release decision with the change board for the payment requests feature?",
+     "evidenceTarget": "Release decision with change board"
+    },
+    {
+     "questionId": "q_80611a6ba7eb_2",
+     "requirementId": "req_80611a6ba7eb",
+     "question": "What post-launch monitoring activities were conducted for the payment requests feature after the pilot?",
+     "evidenceTarget": "Post-launch monitoring"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify production deployment environment",
+    "Confirm release decision with change board",
+    "Confirm post-launch monitoring activities"
+   ],
+   "auditSummary": "The materials establish all requirements except production deployment, release decision with change board, and post-launch monitoring for req_80611a6ba7eb. The pilot was run in an internal beta build, not production, and the 'Launched' slide refers to the beta build. The candidate's role was Associate Product Manager, not Product Manager, but the job description does not specify seniority requirements.",
+   "limitations": [
+    "The materials do not establish production deployment, release decision with change board, or post-launch monitoring for req_80611a6ba7eb."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

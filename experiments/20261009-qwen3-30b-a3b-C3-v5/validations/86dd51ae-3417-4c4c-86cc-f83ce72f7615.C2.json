@@ -1,0 +1,202 @@
+{
+ "request_id": "86dd51ae-3417-4c4c-86cc-f83ce72f7615.C2",
+ "case_id": "86dd51ae-3417-4c4c-86cc-f83ce72f7615",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Built the sleep-timer and offline-download features in SwiftUI for the Tidewell audio app, from design review to release. Reviewed the Crashlytics report after ",
+     "sourceIds": [
+      "src_1691233208a0",
+      "src_db984a366548",
+      "src_7e2770cff742",
+      "src_e09d1fa86beb",
+      "src_66903ae95630"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "number(s) not stated by the cited sources: 1.2",
+    "witness": {
+     "numbers": [
+      "1.2"
+     ],
+     "sourceIds": [
+      "src_1691233208a0",
+      "src_a298ebc1ca9a"
+     ],
+     "text": "Built production features in Swift and SwiftUI for a 1.2M MAU meditation and sleep app"
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "number(s) not stated by the cited sources: 1.2",
+    "witness": {
+     "numbers": [
+      "1.2"
+     ],
+     "sourceIds": [
+      "src_1691233208a0",
+      "src_a298ebc1ca9a"
+     ],
+     "text": "Built production features in Swift and SwiftUI for a 1.2M MAU meditation and sleep app"
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "nonproduction_rewritten_as_production",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "production/live wording not licensed by the cited sources: production",
+    "witness": {
+     "terms": [
+      "production"
+     ],
+     "sourceIds": [
+      "src_1691233208a0",
+      "src_a298ebc1ca9a"
+     ],
+     "nonProductionTermsInSources": [
+      "work sample"
+     ],
+     "text": "Built production features in Swift and SwiftUI for a 1.2M MAU meditation and sleep app"
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "nonproduction_rewritten_as_production",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "production/live wording not licensed by the cited sources: production",
+    "witness": {
+     "terms": [
+      "production"
+     ],
+     "sourceIds": [
+      "src_1691233208a0",
+      "src_a298ebc1ca9a"
+     ],
+     "nonProductionTermsInSources": [
+      "work sample"
+     ],
+     "text": "Built production features in Swift and SwiftUI for a 1.2M MAU meditation and sleep app"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

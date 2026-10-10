@@ -1,0 +1,260 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "9f9ed01c-f389-49c7-ac86-49a1f055bb27.C1",
+ "case_id": "9f9ed01c-f389-49c7-ac86-49a1f055bb27",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11024,
+  "promptWords": 1451
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 45.155
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2987,
+ "eval_count": 1914,
+ "prompt_eval_duration_ns": 17898000,
+ "eval_duration_ns": 34017584000,
+ "total_duration_ns": 45153797750,
+ "thinking": "We need to craft JSON. Need to cite sources. For each requirement map. Let's analyze.\n\nRequirement 1: Owns weekly supply plan and releases purchase schedules under own authority. Candidate: resume says draft plan prepared, senior planner reviewed and released purchase schedules under her authority. So candidate did not own release authority. So requirement not supported. Partial evidence? We have some involvement but not authority. So insufficient_evidence. Missing: evidence of own authority to release purchase schedules.\n\nRequirement 2: Maintains planning parameters. Candidate did maintain parameters. Source src_d2f95340b2ea. So supported.\n\nRequirement 3: Leads weekly supplier planning call and records decisions. Candidate took minutes of call chaired by senior planner. So did not lead. So insufficient_evidence. Missing: evidence of leading call.\n\nRequirement 4: Coordinates plan changes with production and logistics and records own responsibility boundaries. Candidate passed plan changes from production and logistics into draft plan, flagged ones needing senior planner decision, recorded who decided. So partially meets? They coordinated but not own responsibility boundaries? They recorded who decided. So maybe partial_evidence. But requirement says coordinates plan changes with production and logistics and records own responsibility boundaries. They did record who decided, but not necessarily own boundaries. So partial_evidence. Missing: explicit statement of own responsibility boundaries.\n\nRequirement 5: Documents known limitations and hand-over conditions at end of each planning week. No evidence. So insufficient_evidence.\n\nNow produce optimized CV: must restate what materials establish. So we can say: Maintained planning parameters, prepared draft weekly supply plan, took minutes of supplier planning call, coordinated plan changes, etc. Must cite sources.\n\nEvidenceBoundary: what materials establish: parameter maintenance, draft plan prep, call minutes, change coordination. What not: ownership of release authority, leading call, documenting limitations.\n\nNow produce HiringEvidencePacket.\n\nNeed requirementEvidenceMap for each requirement id.\n\nAlso supportedClaims: maybe claim that candidate maintained planning parameters. Provide source.\n\nUnsupportedClaims: claims that candidate owned release authority, led call, documented limitations. Provide reason.\n\nMissingEvidenceGaps: for each insufficient/partial.\n\nInterviewSignalRisks: note about hiring manager pre-read? That is a risk? The note says manager wants authority. That is a signal risk: candidate may not meet requirement. So include.\n\nFollowUpQuestions: for each gap.\n\nHumanReviewChecklist: maybe items like verify authority, confirm call leadership, confirm documentation.\n\nAuditSummary: paragraph.\n\nLimitations: maybe that evidence limited to resume and work sample.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_409f138165d7adf6\",\"targetRoleTitle\":\"Supply Planning Analyst, Supply Chain Collaboration\",\"professionalSummary\":[\"Maintained planning parameters for a small-appliance product family in the planning system, updating lead times and safety stock after each supplier review and logging every change with its reason. (src_d2f95340b2ea)\",\"Prepared draft weekly supply plans and exception lists for the family; the senior planner reviewed the draft and released purchase schedules to suppliers under her authority. (src_e0db801fabdf)\",\"Took minutes of the weekly supplier planning call chaired by the senior planner, tracked actions in the shared log and chased suppliers for confirmations between calls. (src_04e831e63ea5)\",\"Passed plan changes from production and logistics into the draft plan, flagged those requiring senior planner decision and recorded who decided in the change log. (src_f9e68a4d9f89)\"],\"experienceHighlights\":[\"Parameter maintenance and change logging for the small-appliance family over about two years. (src_2f9d8ab80151)\"],\"projectsAndWorkSamples\":[\"One week’s draft supply plan with exception list and change log, including planning system identifiers as verification trail. (src_b41a9cb2d820)\"],\"skills\":[\"Planning parameter maintenance\",\"Draft supply plan preparation\",\"Call minute taking\",\"Change coordination with production and logistics\"],\"evidenceBoundary\":\"The provided resume and work sample establish that the candidate maintained planning parameters, prepared draft weekly supply plans, took minutes of supplier planning calls chaired by a senior planner, and coordinated plan changes with production and logistics. They do not establish that the candidate owned release authority, led the supplier planning call, or documented limitations and hand‑over conditions at the end of each planning week.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Supply Planning Analyst, Supply Chain Collaboration\",\"jobDescriptionSource\":\"jd_03103b03e82c8ddb\",\"requirementIds\":[\"req_62f11eb6b749\",\"req_78af25e23017\",\"req_1d25df8b2a1c\",\"req_deefcf88ddec\",\"req_dc93c7dc789d\"]},\"candidate\":{\"candidateId\":\"cand_409f138165d7adf6\",\"sources\":[\"src_d2f95340b2ea\",\"src_e0db801fabdf\",\"src_04e831e63ea5\",\"src_f9e68a4d9f89\",\"src_2f9d8ab80151\",\"src_b41a9cb2d820\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_62f11eb6b749\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate owned the weekly supply plan and released purchase schedules to suppliers under their own authority.\"]},{\"requirementId\":\"req_78af25e23017\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d2f95340b2ea\",\"text\":\"Maintained planning parameters for the small-appliance product family in the planning system, updating lead times and safety stock after each supplier review and logging every change with its reason.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of parameter maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_1d25df8b2a1c\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate led the weekly supplier planning call and recorded decisions and actions.\"]},{\"requirementId\":\"req_deefcf88ddec\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_f9e68a4d9f89\",\"text\":\"Passed plan changes from production and logistics into the draft plan, flagging the ones that needed the senior planner's decision and recording who decided in the change log.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination and recording of decisions, but not explicit ownership of responsibility boundaries.\"}],\"missingEvidence\":[\"Explicit statement of the candidate’s own responsibility boundaries in coordinating plan changes.\"]},{\"requirementId\":\"req_dc93c7dc789d\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate documented known limitations and hand‑over conditions at the end of each planning week.\"]}],\"supportedClaims\":[{\"claim\":\"The candidate maintained planning parameters for the small-appliance product family in the planning system.\",\"supportingRequirementIds\":[\"req_78af25e23017\"],\"sourceIds\":[\"src_d2f95340b2ea\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained planning parameters for the small-appliance product family in the planning system, updating lead times and safety stock after each supplier review and logging every change with its reason.\"}],\"unsupportedClaims\":[{\"claim\":\"The candidate owned the weekly supply plan and released purchase schedules to suppliers under their own authority.\",\"reason\":\"Resume states that the senior planner reviewed the draft and released purchase schedules under her authority.\",\"requiredFollowUp\":\"Ask for documentation or confirmation that the candidate had release authority.\"},{\"claim\":\"The candidate led the weekly supplier planning call.\",\"reason\":\"Resume indicates the call was chaired by the senior planner and the candidate took minutes.\",\"requiredFollowUp\":\"Ask for evidence of leading the call.\"},{\"claim\":\"The candidate documented known limitations and hand‑over conditions at the end of each planning week.\",\"reason\":\"No evidence provided.\",\"requiredFollowUp\":\"Ask for documentation of end‑of‑week hand‑over notes.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_62f11eb6b749\",\"severity\":\"high\",\"gap\":\"Evidence of ownership of weekly supply plan and release authority.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_1d25df8b2a1c\",\"severity\":\"high\",\"gap\":\"Evidence of leading the weekly supplier planning call.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_deefcf88ddec\",\"severity\":\"medium\",\"gap\":\"Explicit statement of the candidate’s own responsibility boundaries in coordinating plan changes.\"},{\"gapId\":\"gap_4\",\"requirementId\":\"req_dc93c7dc789d\",\"severity\":\"high\",\"gap\":\"Evidence of documenting known limitations and hand‑over conditions at the end of each planning week.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_7491b7c4dda3\",\"text\":\"the planning director insists on an analyst who has held release authority and run the supplier call, not assisted a senior planner; please state clearly what authority the candidate actually held\",\"signalType\":\"manager expectation mismatch\",\"jobRelatedBoundary\":\"yes\",\"severity\":\"high\",\"recommendedHandling\":\"Verify candidate’s actual authority and call leadership during interview.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_62f11eb6b749\",\"question\":\"Can you provide evidence or documentation that you had authority to release purchase schedules to suppliers for the small-appliance product family?\",\"evidenceTarget\":\"Release authority documentation\"},{\"questionId\":\"q_2\",\"requirementId\":\"req_1d25df8b2a1c\",\"question\":\"Did you lead the weekly supplier planning call for the small-appliance family, and if so, can you describe your role and responsibilities during the call?\",\"evidenceTarget\":\"Call leadership evidence\"},{\"questionId\":\"q_3\",\"requirementId\":\"req_deefcf88ddec\",\"question\":\"Can you clarify your responsibility boundaries when coordinating plan changes with production and logistics?\",\"evidenceTarget\":\"Responsibility boundaries statement\"},{\"questionId\":\"q_4\",\"requirementId\":\"req_dc93c7dc789d\",\"question\":\"Do you have documentation of known limitations and hand‑over conditions at the end of each planning week? If so, please share an example.\",\"evidenceTarget\":\"Hand‑over documentation\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s authority to release purchase schedules is documented.\",\"Confirm whether the candidate led the weekly supplier planning call.\",\"Assess the completeness of responsibility boundaries in plan change coordination.\",\"Check for documentation of end‑of‑week hand‑over notes.\"]},\"auditSummary\":\"The evidence indicates that the candidate performed parameter maintenance, draft plan preparation, call minute taking, and coordination of plan changes with production and logistics for a small‑appliance product family. However, there is no evidence that the candidate owned release authority, led the supplier planning call, or documented limitations and hand‑over conditions. These gaps are critical to the role’s requirements and should be clarified through targeted interview questions. The hiring manager’s expectation of release authority and call leadership is a significant interview‑signal risk that requires verification. Qualified human review is required before any employment decision can be made.\",\"limitations\":[\"Evidence is limited to the candidate’s resume, work sample, and recruiter notes; no external verification or third‑party documentation is provided.\"]}",
+ "content_sha256": "f402bf79d10cb5ac670c558394d379123890b17f82a0d0eba8f17fd891a48edb",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_409f138165d7adf6",
+   "targetRoleTitle": "Supply Planning Analyst, Supply Chain Collaboration",
+   "professionalSummary": [
+    "Maintained planning parameters for a small-appliance product family in the planning system, updating lead times and safety stock after each supplier review and logging every change with its reason. (src_d2f95340b2ea)",
+    "Prepared draft weekly supply plans and exception lists for the family; the senior planner reviewed the draft and released purchase schedules to suppliers under her authority. (src_e0db801fabdf)",
+    "Took minutes of the weekly supplier planning call chaired by the senior planner, tracked actions in the shared log and chased suppliers for confirmations between calls. (src_04e831e63ea5)",
+    "Passed plan changes from production and logistics into the draft plan, flagged those requiring senior planner decision and recorded who decided in the change log. (src_f9e68a4d9f89)"
+   ],
+   "experienceHighlights": [
+    "Parameter maintenance and change logging for the small-appliance family over about two years. (src_2f9d8ab80151)"
+   ],
+   "projectsAndWorkSamples": [
+    "One week’s draft supply plan with exception list and change log, including planning system identifiers as verification trail. (src_b41a9cb2d820)"
+   ],
+   "skills": [
+    "Planning parameter maintenance",
+    "Draft supply plan preparation",
+    "Call minute taking",
+    "Change coordination with production and logistics"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish that the candidate maintained planning parameters, prepared draft weekly supply plans, took minutes of supplier planning calls chaired by a senior planner, and coordinated plan changes with production and logistics. They do not establish that the candidate owned release authority, led the supplier planning call, or documented limitations and hand‑over conditions at the end of each planning week."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Supply Planning Analyst, Supply Chain Collaboration",
+    "jobDescriptionSource": "jd_03103b03e82c8ddb",
+    "requirementIds": [
+     "req_62f11eb6b749",
+     "req_78af25e23017",
+     "req_1d25df8b2a1c",
+     "req_deefcf88ddec",
+     "req_dc93c7dc789d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_409f138165d7adf6",
+    "sources": [
+     "src_d2f95340b2ea",
+     "src_e0db801fabdf",
+     "src_04e831e63ea5",
+     "src_f9e68a4d9f89",
+     "src_2f9d8ab80151",
+     "src_b41a9cb2d820"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_62f11eb6b749",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate owned the weekly supply plan and released purchase schedules to suppliers under their own authority."
+     ]
+    },
+    {
+     "requirementId": "req_78af25e23017",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d2f95340b2ea",
+       "text": "Maintained planning parameters for the small-appliance product family in the planning system, updating lead times and safety stock after each supplier review and logging every change with its reason.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of parameter maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1d25df8b2a1c",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate led the weekly supplier planning call and recorded decisions and actions."
+     ]
+    },
+    {
+     "requirementId": "req_deefcf88ddec",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_f9e68a4d9f89",
+       "text": "Passed plan changes from production and logistics into the draft plan, flagging the ones that needed the senior planner's decision and recording who decided in the change log.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination and recording of decisions, but not explicit ownership of responsibility boundaries."
+      }
+     ],
+     "missingEvidence": [
+      "Explicit statement of the candidate’s own responsibility boundaries in coordinating plan changes."
+     ]
+    },
+    {
+     "requirementId": "req_dc93c7dc789d",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate documented known limitations and hand‑over conditions at the end of each planning week."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "The candidate maintained planning parameters for the small-appliance product family in the planning system.",
+     "supportingRequirementIds": [
+      "req_78af25e23017"
+     ],
+     "sourceIds": [
+      "src_d2f95340b2ea"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained planning parameters for the small-appliance product family in the planning system, updating lead times and safety stock after each supplier review and logging every change with its reason."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The candidate owned the weekly supply plan and released purchase schedules to suppliers under their own authority.",
+     "reason": "Resume states that the senior planner reviewed the draft and released purchase schedules under her authority.",
+     "requiredFollowUp": "Ask for documentation or confirmation that the candidate had release authority."
+    },
+    {
+     "claim": "The candidate led the weekly supplier planning call.",
+     "reason": "Resume indicates the call was chaired by the senior planner and the candidate took minutes.",
+     "requiredFollowUp": "Ask for evidence of leading the call."
+    },
+    {
+     "claim": "The candidate documented known limitations and hand‑over conditions at the end of each planning week.",
+     "reason": "No evidence provided.",
+     "requiredFollowUp": "Ask for documentation of end‑of‑week hand‑over notes."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_62f11eb6b749",
+     "severity": "high",
+     "gap": "Evidence of ownership of weekly supply plan and release authority."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_1d25df8b2a1c",
+     "severity": "high",
+     "gap": "Evidence of leading the weekly supplier planning call."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_deefcf88ddec",
+     "severity": "medium",
+     "gap": "Explicit statement of the candidate’s own responsibility boundaries in coordinating plan changes."
+    },
+    {
+     "gapId": "gap_4",
+     "requirementId": "req_dc93c7dc789d",
+     "severity": "high",
+     "gap": "Evidence of documenting known limitations and hand‑over conditions at the end of each planning week."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_7491b7c4dda3",
+     "text": "the planning director insists on an analyst who has held release authority and run the supplier call, not assisted a senior planner; please state clearly what authority the candidate actually held",
+     "signalType": "manager expectation mismatch",
+     "jobRelatedBoundary": "yes",
+     "severity": "high",
+     "recommendedHandling": "Verify candidate’s actual authority and call leadership during interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_62f11eb6b749",
+     "question": "Can you provide evidence or documentation that you had authority to release purchase schedules to suppliers for the small-appliance product family?",
+     "evidenceTarget": "Release authority documentation"
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_1d25df8b2a1c",
+     "question": "Did you lead the weekly supplier planning call for the small-appliance family, and if so, can you describe your role and responsibilities during the call?",
+     "evidenceTarget": "Call leadership evidence"
+    },
+    {
+     "questionId": "q_3",
+     "requirementId": "req_deefcf88ddec",
+     "question": "Can you clarify your responsibility boundaries when coordinating plan changes with production and logistics?",
+     "evidenceTarget": "Responsibility boundaries statement"
+    },
+    {
+     "questionId": "q_4",
+     "requirementId": "req_dc93c7dc789d",
+     "question": "Do you have documentation of known limitations and hand‑over conditions at the end of each planning week? If so, please share an example.",
+     "evidenceTarget": "Hand‑over documentation"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s authority to release purchase schedules is documented.",
+    "Confirm whether the candidate led the weekly supplier planning call.",
+    "Assess the completeness of responsibility boundaries in plan change coordination.",
+    "Check for documentation of end‑of‑week hand‑over notes."
+   ]
+  },
+  "auditSummary": "The evidence indicates that the candidate performed parameter maintenance, draft plan preparation, call minute taking, and coordination of plan changes with production and logistics for a small‑appliance product family. However, there is no evidence that the candidate owned release authority, led the supplier planning call, or documented limitations and hand‑over conditions. These gaps are critical to the role’s requirements and should be clarified through targeted interview questions. The hiring manager’s expectation of release authority and call leadership is a significant interview‑signal risk that requires verification. Qualified human review is required before any employment decision can be made.",
+  "limitations": [
+   "Evidence is limited to the candidate’s resume, work sample, and recruiter notes; no external verification or third‑party documentation is provided."
+  ]
+ },
+ "finished_at": "2026-09-07T13:07:57.381246+00:00"
+}

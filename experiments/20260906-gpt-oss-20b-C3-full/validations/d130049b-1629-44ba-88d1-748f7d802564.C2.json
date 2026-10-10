@@ -1,0 +1,188 @@
+{
+ "request_id": "d130049b-1629-44ba-88d1-748f7d802564.C2",
+ "case_id": "d130049b-1629-44ba-88d1-748f7d802564",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Kafka, data ingestion pipelines, schema versioning, performance optimization, pipeline monitoring dashboards, documentation of lineage and hand-over."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[2]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_52660032ae13"
+     ],
+     "text": "Reduced daily aggregate completion time from 3h 40m to 1h 10m, meeting the published pipeline baseline."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_52660032ae13"
+     ],
+     "text": "Reduced daily aggregate completion time to meet baseline."
+    }
+   },
+   {
+    "rule": "hrgene.qualification_boundary",
+    "code": "qualification_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "qualification term(s) [EXPERT] not licensed by the cited sources: proven track record",
+    "witness": {
+     "family": "EXPERT",
+     "terms": [
+      "proven track record"
+     ],
+     "sourceIds": [
+      "src_1227250174f8",
+      "src_0f9f1aa3df21",
+      "src_52660032ae13"
+     ],
+     "sourceFamilies": [],
+     "text": "Experienced Data Pipeline Engineer with a proven track record of building, maintaining, and optimizing ingestion pipelines and daily aggregate jobs for engineering dashboards."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "4 schema error(s); first: $.optimizedCv.skills[0]: missing required property 'sourceIds'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv.skills[0]: missing required property 'sourceIds'",
+      "$.optimizedCv.skills[0]: missing required property 'requirementIds'",
+      "$.optimizedCv.skills[0]: missing required property 'supportBoundary'",
+      "$.optimizedCv.skills[0]: missing required property 'witness'"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

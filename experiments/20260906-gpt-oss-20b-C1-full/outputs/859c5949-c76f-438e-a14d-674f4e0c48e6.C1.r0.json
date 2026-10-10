@@ -1,0 +1,258 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "859c5949-c76f-438e-a14d-674f4e0c48e6.C1",
+ "case_id": "859c5949-c76f-438e-a14d-674f4e0c48e6",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11304,
+  "promptWords": 1468
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 41.187
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2859,
+ "eval_count": 1861,
+ "prompt_eval_duration_ns": 18126000,
+ "eval_duration_ns": 32989832000,
+ "total_duration_ns": 41183752125,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims citing sources. Use evidenceBoundary. Then hiringEvidencePacket mapping requirements.\n\nWe have 5 requirements. We have evidence for req_b538b43ed26e: sources src_c272fbeb2a23. Also maybe src_b1dac25d4e31. For req_898acba463b8: src_92d9cc14ad53. For req_4b32a17f7e6c: evidence? Only src_05b327425eec gives claim of reduced time but not measured baseline. So insufficient evidence. For req_c352eb8d0f50: src_9b9906e3e117. For req_4a0ceea7d9e3: src_18eeeb457ba3.\n\nMissing evidence for req_4b32a17f7e6c: need measurable reduction against baseline. Follow-up question.\n\nAlso interviewSignalRisks? None.\n\nLet's craft.\n\nAlso need supportedClaims array: maybe claim about API development etc.\n\nUnsupportedClaims: maybe claim about measurable reduction? Actually we have claim but insufficient evidence. So unsupportedClaims: \"Delivered a measurable reduction in nightly ingestion latency\" not established. Reason: only anecdotal. Required follow-up: provide baseline and measurement.\n\nMissingEvidenceGaps: for req_4b32a17f7e6c.\n\nFollowUpQuestions: question about latency measurement.\n\nHumanReviewChecklist: items like \"Verify measurable latency reduction evidence\", \"Confirm test suite ownership\", etc.\n\nAuditSummary: paragraph.\n\nLimitations: maybe \"Limited to provided materials\".\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_d07e397b3fe79d3e\",\"targetRoleTitle\":\"Backend API Engineer, Payment Reconciliation\",\"professionalSummary\":[\"Developed and maintained the matching-result API (Java, Spring Boot) and the settlement-file ingestion service that parses Visa and Mastercard files into the reconciliation database, including retry logic for partially delivered files. (src_c272fbeb2a23)\",\"Owned the unit and contract test suites for both services, adding contract tests for finance-tools consumers and keeping the suites green in the CI pipeline. (src_92d9cc14ad53)\",\"Coordinated releases with the platform team and the finance-tools team in the weekly release review; production deployments were executed by the platform team's release engineer. (src_9b9906e3e117)\",\"Wrote the API change notes for each release, listing changed endpoints, the known limitation that multi-currency settlements returned an unrounded amount and the hand-over checklist for on-call. (src_18eeeb457ba3)\"],\"experienceHighlights\":[\"Responsibilities included API and ingestion-service development, test-suite ownership, release coordination and change documentation for the reconciliation platform over about three years. (src_b1dac25d4e31)\"],\"projectsAndWorkSamples\":[\"Work sample: the contract test suite for the matching-result API and the API change notes for one release, with the CI pipeline run identifiers as a verification trail. (src_be7e6ea7eb19)\"],\"skills\":[\"Java\",\"Spring Boot\",\"API Development\",\"Unit Testing\",\"Contract Testing\",\"CI/CD\",\"Release Coordination\",\"Documentation\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience in developing and maintaining the matching-result API and settlement-file ingestion service, owning test suites, coordinating releases, and documenting API changes. They do not provide measurable evidence of a reduction in nightly ingestion latency against a published performance baseline.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Backend API Engineer, Payment Reconciliation\",\"jobDescriptionSource\":\"jd_e70027d7d3c59cdb\",\"requirementIds\":[\"req_b538b43ed26e\",\"req_898acba463b8\",\"req_4b32a17f7e6c\",\"req_c352eb8d0f50\",\"req_4a0ceea7d9e3\"]},\"candidate\":{\"candidateId\":\"cand_d07e397b3fe79d3e\",\"sources\":[\"src_c272fbeb2a23\",\"src_92d9cc14ad53\",\"src_9b9906e3e117\",\"src_18eeeb457ba3\",\"src_b1dac25d4e31\",\"src_be7e6ea7eb19\",\"src_05b327425eec\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_b538b43ed26e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c272fbeb2a23\",\"text\":\"Developed and maintained the matching-result API (Java, Spring Boot) and the settlement-file ingestion service that parses Visa and Mastercard files into the reconciliation database, including the retry logic for partially delivered files.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of development and maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_898acba463b8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_92d9cc14ad53\",\"text\":\"Owned the unit and contract test suites for both services, adding contract tests for the finance-tools consumers and keeping the suites green in the CI pipeline.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct ownership of test suites\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4b32a17f7e6c\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_05b327425eec\",\"text\":\"candidate said the nightly ingestion 'runs in about half the time it used to' after he changed the file parser; he said the timing came from a colleague's message rather than the platform's performance dashboard, and he did not know the before figure.\",\"evidenceStrength\":\"low\",\"notes\":\"Anecdotal claim without baseline or measurement\"}],\"missingEvidence\":[\"Measurable latency reduction against the published performance baseline, including before and after figures and the measurement method\"]},{\"requirementId\":\"req_c352eb8d0f50\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9b9906e3e117\",\"text\":\"Coordinated releases with the platform team and the finance-tools team in the weekly release review; production deployments were executed by the platform team's release engineer.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct coordination activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4a0ceea7d9e3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_18eeeb457ba3\",\"text\":\"Wrote the API change notes for each release, listing changed endpoints, the known limitation that multi-currency settlements returned an unrounded amount and the hand-over checklist for on-call.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct documentation of API changes\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Developed and maintained the matching-result API and the settlement-file ingestion service.\",\"supportingRequirementIds\":[\"req_b538b43ed26e\"],\"sourceIds\":[\"src_c272fbeb2a23\"],\"evidenceStrength\":\"high\",\"witness\":\"Developed and maintained the matching-result API (Java, Spring Boot) and the settlement-file ingestion service that parses Visa and Mastercard files into the reconciliation database, including the retry logic for partially delivered files.\"},{\"claim\":\"Owned the unit and contract test suites for both services and kept them green in the CI pipeline.\",\"supportingRequirementIds\":[\"req_898acba463b8\"],\"sourceIds\":[\"src_92d9cc14ad53\"],\"evidenceStrength\":\"high\",\"witness\":\"Owned the unit and contract test suites for both services, adding contract tests for the finance-tools consumers and keeping the suites green in the CI pipeline.\"},{\"claim\":\"Coordinated releases with the platform team and the finance-tools team.\",\"supportingRequirementIds\":[\"req_c352eb8d0f50\"],\"sourceIds\":[\"src_9b9906e3e117\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated releases with the platform team and the finance-tools team in the weekly release review; production deployments were executed by the platform team's release engineer.\"},{\"claim\":\"Wrote API change notes for each release, documenting endpoints, limitations, and hand-over checklist.\",\"supportingRequirementIds\":[\"req_4a0ceea7d9e3\"],\"sourceIds\":[\"src_18eeeb457ba3\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the API change notes for each release, listing changed endpoints, the known limitation that multi-currency settlements returned an unrounded amount and the hand-over checklist for on-call.\"}],\"unsupportedClaims\":[{\"claim\":\"Delivered a measurable reduction in nightly ingestion latency reported against the platform's published performance baseline.\",\"reason\":\"Only anecdotal statement without baseline or measurement data.\",\"requiredFollowUp\":\"Provide documented latency measurements before and after the change, including the method and the baseline reference.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_4b32a17f7e6c\",\"severity\":\"medium\",\"gap\":\"Documented latency reduction against the published performance baseline, including before and after figures and measurement methodology.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_4b32a17f7e6c\",\"question\":\"Can you provide the documented latency measurements for the nightly ingestion run before and after the parser change, and explain how they were obtained?\",\"evidenceTarget\":\"Baseline and post-change latency data, measurement method.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s development work matches the described services.\",\"Confirm ownership of test suites and that they remain green in CI.\",\"Assess the availability of measurable latency reduction evidence.\",\"Ensure release coordination and documentation responsibilities are accurately represented.\"],\"auditSummary\":\"The evidence confirms the candidate’s experience in developing and maintaining the matching-result API and settlement-file ingestion service, owning test suites, coordinating releases, and documenting API changes. However, there is no documented evidence of a measurable reduction in nightly ingestion latency against the published performance baseline, which is a key requirement. Human review should focus on obtaining this latency evidence and confirming the test suite and release coordination claims.\",\"limitations\":[\"Analysis limited to the provided candidate materials; no external verification of performance data was performed.\"]} }",
+ "content_sha256": "4e7029452463736780f584cc721344dcc7dc0428a8803e1859f0b1f90e3c2ab7",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d07e397b3fe79d3e",
+   "targetRoleTitle": "Backend API Engineer, Payment Reconciliation",
+   "professionalSummary": [
+    "Developed and maintained the matching-result API (Java, Spring Boot) and the settlement-file ingestion service that parses Visa and Mastercard files into the reconciliation database, including retry logic for partially delivered files. (src_c272fbeb2a23)",
+    "Owned the unit and contract test suites for both services, adding contract tests for finance-tools consumers and keeping the suites green in the CI pipeline. (src_92d9cc14ad53)",
+    "Coordinated releases with the platform team and the finance-tools team in the weekly release review; production deployments were executed by the platform team's release engineer. (src_9b9906e3e117)",
+    "Wrote the API change notes for each release, listing changed endpoints, the known limitation that multi-currency settlements returned an unrounded amount and the hand-over checklist for on-call. (src_18eeeb457ba3)"
+   ],
+   "experienceHighlights": [
+    "Responsibilities included API and ingestion-service development, test-suite ownership, release coordination and change documentation for the reconciliation platform over about three years. (src_b1dac25d4e31)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the contract test suite for the matching-result API and the API change notes for one release, with the CI pipeline run identifiers as a verification trail. (src_be7e6ea7eb19)"
+   ],
+   "skills": [
+    "Java",
+    "Spring Boot",
+    "API Development",
+    "Unit Testing",
+    "Contract Testing",
+    "CI/CD",
+    "Release Coordination",
+    "Documentation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in developing and maintaining the matching-result API and settlement-file ingestion service, owning test suites, coordinating releases, and documenting API changes. They do not provide measurable evidence of a reduction in nightly ingestion latency against a published performance baseline."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Backend API Engineer, Payment Reconciliation",
+    "jobDescriptionSource": "jd_e70027d7d3c59cdb",
+    "requirementIds": [
+     "req_b538b43ed26e",
+     "req_898acba463b8",
+     "req_4b32a17f7e6c",
+     "req_c352eb8d0f50",
+     "req_4a0ceea7d9e3"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d07e397b3fe79d3e",
+    "sources": [
+     "src_c272fbeb2a23",
+     "src_92d9cc14ad53",
+     "src_9b9906e3e117",
+     "src_18eeeb457ba3",
+     "src_b1dac25d4e31",
+     "src_be7e6ea7eb19",
+     "src_05b327425eec"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_b538b43ed26e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c272fbeb2a23",
+       "text": "Developed and maintained the matching-result API (Java, Spring Boot) and the settlement-file ingestion service that parses Visa and Mastercard files into the reconciliation database, including the retry logic for partially delivered files.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of development and maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_898acba463b8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_92d9cc14ad53",
+       "text": "Owned the unit and contract test suites for both services, adding contract tests for the finance-tools consumers and keeping the suites green in the CI pipeline.",
+       "evidenceStrength": "high",
+       "notes": "Direct ownership of test suites"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4b32a17f7e6c",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_05b327425eec",
+       "text": "candidate said the nightly ingestion 'runs in about half the time it used to' after he changed the file parser; he said the timing came from a colleague's message rather than the platform's performance dashboard, and he did not know the before figure.",
+       "evidenceStrength": "low",
+       "notes": "Anecdotal claim without baseline or measurement"
+      }
+     ],
+     "missingEvidence": [
+      "Measurable latency reduction against the published performance baseline, including before and after figures and the measurement method"
+     ]
+    },
+    {
+     "requirementId": "req_c352eb8d0f50",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9b9906e3e117",
+       "text": "Coordinated releases with the platform team and the finance-tools team in the weekly release review; production deployments were executed by the platform team's release engineer.",
+       "evidenceStrength": "high",
+       "notes": "Direct coordination activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4a0ceea7d9e3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_18eeeb457ba3",
+       "text": "Wrote the API change notes for each release, listing changed endpoints, the known limitation that multi-currency settlements returned an unrounded amount and the hand-over checklist for on-call.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation of API changes"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed and maintained the matching-result API and the settlement-file ingestion service.",
+     "supportingRequirementIds": [
+      "req_b538b43ed26e"
+     ],
+     "sourceIds": [
+      "src_c272fbeb2a23"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed and maintained the matching-result API (Java, Spring Boot) and the settlement-file ingestion service that parses Visa and Mastercard files into the reconciliation database, including the retry logic for partially delivered files."
+    },
+    {
+     "claim": "Owned the unit and contract test suites for both services and kept them green in the CI pipeline.",
+     "supportingRequirementIds": [
+      "req_898acba463b8"
+     ],
+     "sourceIds": [
+      "src_92d9cc14ad53"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Owned the unit and contract test suites for both services, adding contract tests for the finance-tools consumers and keeping the suites green in the CI pipeline."
+    },
+    {
+     "claim": "Coordinated releases with the platform team and the finance-tools team.",
+     "supportingRequirementIds": [
+      "req_c352eb8d0f50"
+     ],
+     "sourceIds": [
+      "src_9b9906e3e117"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated releases with the platform team and the finance-tools team in the weekly release review; production deployments were executed by the platform team's release engineer."
+    },
+    {
+     "claim": "Wrote API change notes for each release, documenting endpoints, limitations, and hand-over checklist.",
+     "supportingRequirementIds": [
+      "req_4a0ceea7d9e3"
+     ],
+     "sourceIds": [
+      "src_18eeeb457ba3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the API change notes for each release, listing changed endpoints, the known limitation that multi-currency settlements returned an unrounded amount and the hand-over checklist for on-call."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Delivered a measurable reduction in nightly ingestion latency reported against the platform's published performance baseline.",
+     "reason": "Only anecdotal statement without baseline or measurement data.",
+     "requiredFollowUp": "Provide documented latency measurements before and after the change, including the method and the baseline reference."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_4b32a17f7e6c",
+     "severity": "medium",
+     "gap": "Documented latency reduction against the published performance baseline, including before and after figures and measurement methodology."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_4b32a17f7e6c",
+     "question": "Can you provide the documented latency measurements for the nightly ingestion run before and after the parser change, and explain how they were obtained?",
+     "evidenceTarget": "Baseline and post-change latency data, measurement method."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s development work matches the described services.",
+    "Confirm ownership of test suites and that they remain green in CI.",
+    "Assess the availability of measurable latency reduction evidence.",
+    "Ensure release coordination and documentation responsibilities are accurately represented."
+   ],
+   "auditSummary": "The evidence confirms the candidate’s experience in developing and maintaining the matching-result API and settlement-file ingestion service, owning test suites, coordinating releases, and documenting API changes. However, there is no documented evidence of a measurable reduction in nightly ingestion latency against the published performance baseline, which is a key requirement. Human review should focus on obtaining this latency evidence and confirming the test suite and release coordination claims.",
+   "limitations": [
+    "Analysis limited to the provided candidate materials; no external verification of performance data was performed."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:52:15.393796+00:00"
+}

@@ -1,0 +1,310 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f7347e48-eb6c-48c9-baf6-64a2d2815ed4.C2",
+ "case_id": "f7347e48-eb6c-48c9-baf6-64a2d2815ed4",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15037,
+  "promptWords": 1769
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 53.137
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3928,
+ "eval_count": 2409,
+ "prompt_eval_duration_ns": 19238000,
+ "eval_duration_ns": 44048480000,
+ "total_duration_ns": 53134261166,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Need to cover requirements. Provide evidence. Also need unsupported claims etc. Let's craft.\n\nWe have evidence for req_10e91db06013: source src_6cd17ee6b05d. For req_054323ed3d54: need 8 years compliance experience. We have from 2019-2022 (3 years) plus 2022-2026 (4 years) = 7 years. Also note source src_5eb7ec2080af says well over ten years. That is subjective note. We cannot claim 8 years unless source states. The note says \"has well over ten years in compliance\". That supports >8 years. So we can claim 8+ years. Use that source. For req_2aa0d26b982b: source src_90fe42d2b495 confirms ICA Diploma. For req_ba3126c10379: source src_d579dcd91e87. For req_75b787bb1a0a: source src_49f390675913.\n\nWe need to include evidenceBoundary: what materials establish.\n\nUnsupported claims: maybe \"rewrote suitability monitoring procedure\" is evidence. That's fine. No unsupported.\n\nMissing evidence gaps: maybe need to confirm line management of four analysts? We have three. Requirement says line-managed compliance analysts, including objectives and performance reviews. We have three. Gap: number of analysts? Not specified. So missing evidence: number of analysts managed. Also need to confirm reporting to risk committee each quarter: we have source. Good.\n\nInterviewSignalRisks: subjective note from employee. That's a note. Should be in interviewSignalRisks. Also maybe the note about 10 years is subjective. So include.\n\nFollowUpQuestions: ask about number of analysts managed, confirm 8+ years compliance experience.\n\nHumanReviewChecklist: maybe \"Verify compliance qualification, confirm number of analysts, confirm reporting frequency\".\n\nAuditSummary: summary.\n\nLimitations: maybe limited to provided sources.\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_2a876bf6674a2141\",\n    \"targetRoleTitle\": \"Compliance Operations Manager, Wealth Management\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv_claim_1\",\n        \"text\": \"Senior compliance professional with over ten years of experience in regulated financial services, specialising in onboarding and suitability monitoring.\",\n        \"sourceIds\": [\"src_5eb7ec2080af\"],\n        \"requirementIds\": [\"req_054323ed3d54\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"has well over ten years in compliance, going back to the bank job in Leeds before Elmstead\"\n      },\n      {\n        \"claimId\": \"cv_claim_2\",\n        \"text\": \"Holder of the ICA International Diploma in Governance, Risk and Compliance.\",\n        \"sourceIds\": [\"src_90fe42d2b495\"],\n        \"requirementIds\": [\"req_2aa0d26b982b\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"the candidate's ICA International Diploma in Governance, Risk and Compliance was confirmed through the International Compliance Association's award verification service, with an award date in 2021\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"cv_exp_1\",\n        \"text\": \"Led first‑line monitoring of client onboarding and suitability files at Brockhurst Private Wealth, conducting monthly sample reviews against a documented monitoring plan.\",\n        \"sourceIds\": [\"src_6cd17ee6b05d\"],\n        \"requirementIds\": [\"req_10e91db06013\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"ran the monthly sample review of onboarding and suitability files against the monitoring plan\"\n      },\n      {\n        \"claimId\": \"cv_exp_2\",\n        \"text\": \"Line‑managed three compliance analysts from March 2024, setting annual objectives and delivering mid‑year and year‑end performance reviews.\",\n        \"sourceIds\": [\"src_d579dcd91e87\"],\n        \"requirementIds\": [\"req_ba3126c10379\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Line-managed three compliance analysts from March 2024, setting their annual objectives and writing their mid-year and year-end reviews\"\n      },\n      {\n        \"claimId\": \"cv_exp_3\",\n        \"text\": \"Presented quarterly monitoring findings to the risk committee, summarising overdue remediation actions by business area.\",\n        \"sourceIds\": [\"src_49f390675913\"],\n        \"requirementIds\": [\"req_75b787bb1a0a\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Presented the quarterly monitoring findings to the risk committee, including overdue remediation actions grouped by business area\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"cv_proj_1\",\n        \"text\": \"Authored an anonymised quarterly monitoring report detailing sample size, findings by severity, remediation tracker and cover note presented to the risk committee.\",\n        \"sourceIds\": [\"src_4f917f1b60de\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"an anonymised quarterly monitoring report with the sample size per file type, findings by severity, the remediation tracker and the cover note presented to the risk committee\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"cv_skill_1\",\n        \"text\": \"Compliance monitoring, risk assessment, regulatory reporting, team leadership, process improvement\",\n        \"sourceIds\": [],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume, work sample, and verification notes establish the candidate’s compliance experience, qualification, monitoring responsibilities, line management, and reporting to the risk committee. They do not provide explicit evidence of managing four analysts or the exact duration of each role beyond the dates given.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess evidence gaps and interview signals.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Compliance Operations Manager, Wealth Management\",\n      \"jobDescriptionSource\": \"jd_e31f5d075c19e783\",\n      \"requirementIds\": [\n        \"req_10e91db06013\",\n        \"req_054323ed3d54\",\n        \"req_2aa0d26b982b\",\n        \"req_ba3126c10379\",\n        \"req_75b787bb1a0a\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_2a876bf6674a2141\",\n      \"sources\": [\n        \"src_6cd17ee6b05d\",\n        \"src_d579dcd91e87\",\n        \"src_49f390675913\",\n        \"src_90fe42d2b495\",\n        \"src_5eb7ec2080af\",\n        \"src_4f917f1b60de\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_10e91db06013\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_6cd17ee6b05d\",\n            \"text\": \"ran the monthly sample review of onboarding and suitability files against the monitoring plan\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_054323ed3d54\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_5eb7ec2080af\",\n            \"text\": \"has well over ten years in compliance, going back to the bank job in Leeds before Elmstead\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"subjective note\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_2aa0d26b982b\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_90fe42d2b495\",\n            \"text\": \"the candidate's ICA International Diploma in Governance, Risk and Compliance was confirmed through the International Compliance Association's award verification service, with an award date in 2021\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_ba3126c10379\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_d579dcd91e87\",\n            \"text\": \"Line-managed three compliance analysts from March 2024, setting their annual objectives and writing their mid-year and year-end reviews\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Number of analysts managed (requirement specifies a team, not explicitly three)\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_75b787bb1a0a\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_49f390675913\",\n            \"text\": \"Presented the quarterly monitoring findings to the risk committee, including overdue remediation actions grouped by business area\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Senior compliance professional with over ten years of experience in regulated financial services\",\n        \"supportingRequirementIds\": [\"req_054323ed3d54\"],\n        \"sourceIds\": [\"src_5eb7ec2080af\"],\n        \"evidenceStrength\": \"medium\",\n        \"witness\": \"has well over ten years in compliance, going back to the bank job in Leeds before Elmstead\"\n      },\n      {\n        \"claim\": \"Holder of the ICA International Diploma in Governance, Risk and Compliance\",\n        \"supportingRequirementIds\": [\"req_2aa0d26b982b\"],\n        \"sourceIds\": [\"src_90fe42d2b495\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"the candidate's ICA International Diploma in Governance, Risk and Compliance was confirmed through the International Compliance Association's award verification service, with an award date in 2021\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_ba3126c10379\",\n        \"severity\": \"medium\",\n        \"gap\": \"Number of analysts managed not explicitly stated as four\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_5eb7ec2080af\",\n        \"text\": \"has well over ten years in compliance, going back to the bank job in Leeds before Elmstead\",\n        \"signalType\": \"subjective\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Verify actual tenure and roles through employment records\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_ba3126c10379\",\n        \"question\": \"How many compliance analysts have you line‑managed, and can you confirm the team size during your tenure?\",\n        \"evidenceTarget\": \"Number of analysts managed and confirmation of team size\"\n      },\n      {\n        \"questionId\": \"q_2\",\n        \"requirementId\": \"req_054323ed3d54\",\n        \"question\": \"Can you provide a detailed timeline of your compliance roles to confirm at least eight years of experience?\",\n        \"evidenceTarget\": \"Verified employment dates and roles\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Confirm the candidate’s total compliance experience spans at least eight years.\",\n      \"Verify the ICA International Diploma and its award date.\",\n      \"Clarify the exact number of analysts managed and the duration of line management.\",\n      \"Assess the frequency and content of risk committee reporting.\"\n    ],\n    \"auditSummary\": \"The evidence supports the candidate’s compliance monitoring, qualification, and reporting responsibilities. Gaps remain regarding the exact team size managed and the precise duration of compliance experience. Subjective notes require verification. Human review is needed to resolve these gaps before a hiring decision.\",\n    \"limitations\": [\n      \"Evidence is limited to the provided resume, work sample, and verification notes.\",\n      \"Subjective notes are not independently verified.\",\n      \"No direct evidence of managing four analysts or of continuous eight‑year experience beyond the dates provided.\"\n    ]\n  }\n}",
+ "content_sha256": "194f15b53653cd8b1be522ca8d5505c3689650ebff317b9df4e29e819fddd6fa",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2a876bf6674a2141",
+   "targetRoleTitle": "Compliance Operations Manager, Wealth Management",
+   "professionalSummary": [
+    {
+     "claimId": "cv_claim_1",
+     "text": "Senior compliance professional with over ten years of experience in regulated financial services, specialising in onboarding and suitability monitoring.",
+     "sourceIds": [
+      "src_5eb7ec2080af"
+     ],
+     "requirementIds": [
+      "req_054323ed3d54"
+     ],
+     "supportBoundary": "supported",
+     "witness": "has well over ten years in compliance, going back to the bank job in Leeds before Elmstead"
+    },
+    {
+     "claimId": "cv_claim_2",
+     "text": "Holder of the ICA International Diploma in Governance, Risk and Compliance.",
+     "sourceIds": [
+      "src_90fe42d2b495"
+     ],
+     "requirementIds": [
+      "req_2aa0d26b982b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "the candidate's ICA International Diploma in Governance, Risk and Compliance was confirmed through the International Compliance Association's award verification service, with an award date in 2021"
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cv_exp_1",
+     "text": "Led first‑line monitoring of client onboarding and suitability files at Brockhurst Private Wealth, conducting monthly sample reviews against a documented monitoring plan.",
+     "sourceIds": [
+      "src_6cd17ee6b05d"
+     ],
+     "requirementIds": [
+      "req_10e91db06013"
+     ],
+     "supportBoundary": "supported",
+     "witness": "ran the monthly sample review of onboarding and suitability files against the monitoring plan"
+    },
+    {
+     "claimId": "cv_exp_2",
+     "text": "Line‑managed three compliance analysts from March 2024, setting annual objectives and delivering mid‑year and year‑end performance reviews.",
+     "sourceIds": [
+      "src_d579dcd91e87"
+     ],
+     "requirementIds": [
+      "req_ba3126c10379"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Line-managed three compliance analysts from March 2024, setting their annual objectives and writing their mid-year and year-end reviews"
+    },
+    {
+     "claimId": "cv_exp_3",
+     "text": "Presented quarterly monitoring findings to the risk committee, summarising overdue remediation actions by business area.",
+     "sourceIds": [
+      "src_49f390675913"
+     ],
+     "requirementIds": [
+      "req_75b787bb1a0a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented the quarterly monitoring findings to the risk committee, including overdue remediation actions grouped by business area"
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv_proj_1",
+     "text": "Authored an anonymised quarterly monitoring report detailing sample size, findings by severity, remediation tracker and cover note presented to the risk committee.",
+     "sourceIds": [
+      "src_4f917f1b60de"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "an anonymised quarterly monitoring report with the sample size per file type, findings by severity, the remediation tracker and the cover note presented to the risk committee"
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv_skill_1",
+     "text": "Compliance monitoring, risk assessment, regulatory reporting, team leadership, process improvement",
+     "sourceIds": [],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided resume, work sample, and verification notes establish the candidate’s compliance experience, qualification, monitoring responsibilities, line management, and reporting to the risk committee. They do not provide explicit evidence of managing four analysts or the exact duration of each role beyond the dates given."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess evidence gaps and interview signals."
+   },
+   "role": {
+    "roleTitle": "Compliance Operations Manager, Wealth Management",
+    "jobDescriptionSource": "jd_e31f5d075c19e783",
+    "requirementIds": [
+     "req_10e91db06013",
+     "req_054323ed3d54",
+     "req_2aa0d26b982b",
+     "req_ba3126c10379",
+     "req_75b787bb1a0a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2a876bf6674a2141",
+    "sources": [
+     "src_6cd17ee6b05d",
+     "src_d579dcd91e87",
+     "src_49f390675913",
+     "src_90fe42d2b495",
+     "src_5eb7ec2080af",
+     "src_4f917f1b60de"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_10e91db06013",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6cd17ee6b05d",
+       "text": "ran the monthly sample review of onboarding and suitability files against the monitoring plan",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_054323ed3d54",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5eb7ec2080af",
+       "text": "has well over ten years in compliance, going back to the bank job in Leeds before Elmstead",
+       "evidenceStrength": "medium",
+       "notes": "subjective note"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2aa0d26b982b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_90fe42d2b495",
+       "text": "the candidate's ICA International Diploma in Governance, Risk and Compliance was confirmed through the International Compliance Association's award verification service, with an award date in 2021",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ba3126c10379",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d579dcd91e87",
+       "text": "Line-managed three compliance analysts from March 2024, setting their annual objectives and writing their mid-year and year-end reviews",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": [
+      "Number of analysts managed (requirement specifies a team, not explicitly three)"
+     ]
+    },
+    {
+     "requirementId": "req_75b787bb1a0a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_49f390675913",
+       "text": "Presented the quarterly monitoring findings to the risk committee, including overdue remediation actions grouped by business area",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Senior compliance professional with over ten years of experience in regulated financial services",
+     "supportingRequirementIds": [
+      "req_054323ed3d54"
+     ],
+     "sourceIds": [
+      "src_5eb7ec2080af"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "has well over ten years in compliance, going back to the bank job in Leeds before Elmstead"
+    },
+    {
+     "claim": "Holder of the ICA International Diploma in Governance, Risk and Compliance",
+     "supportingRequirementIds": [
+      "req_2aa0d26b982b"
+     ],
+     "sourceIds": [
+      "src_90fe42d2b495"
+     ],
+     "evidenceStrength": "high",
+     "witness": "the candidate's ICA International Diploma in Governance, Risk and Compliance was confirmed through the International Compliance Association's award verification service, with an award date in 2021"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_ba3126c10379",
+     "severity": "medium",
+     "gap": "Number of analysts managed not explicitly stated as four"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_5eb7ec2080af",
+     "text": "has well over ten years in compliance, going back to the bank job in Leeds before Elmstead",
+     "signalType": "subjective",
+     "jobRelatedBoundary": true,
+     "severity": "low",
+     "recommendedHandling": "Verify actual tenure and roles through employment records"
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_ba3126c10379",
+     "question": "How many compliance analysts have you line‑managed, and can you confirm the team size during your tenure?",
+     "evidenceTarget": "Number of analysts managed and confirmation of team size"
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_054323ed3d54",
+     "question": "Can you provide a detailed timeline of your compliance roles to confirm at least eight years of experience?",
+     "evidenceTarget": "Verified employment dates and roles"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm the candidate’s total compliance experience spans at least eight years.",
+    "Verify the ICA International Diploma and its award date.",
+    "Clarify the exact number of analysts managed and the duration of line management.",
+    "Assess the frequency and content of risk committee reporting."
+   ],
+   "auditSummary": "The evidence supports the candidate’s compliance monitoring, qualification, and reporting responsibilities. Gaps remain regarding the exact team size managed and the precise duration of compliance experience. Subjective notes require verification. Human review is needed to resolve these gaps before a hiring decision.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and verification notes.",
+    "Subjective notes are not independently verified.",
+    "No direct evidence of managing four analysts or of continuous eight‑year experience beyond the dates provided."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:46:32.401306+00:00"
+}

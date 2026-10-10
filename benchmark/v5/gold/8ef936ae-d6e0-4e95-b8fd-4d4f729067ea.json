@@ -1,0 +1,86 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "8ef936ae-d6e0-4e95-b8fd-4d4f729067ea",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_51d90877149a",
+   "canonicalProposition": "The candidate wrote the bot specification and built the reconciliation bot in the RPA development environment, testing it against six weeks of anonymised statement files.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_2738b1670d1e"
+   ],
+   "relevantRequirementIds": [
+    "req_992df032eecb"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume places the build and testing in the RPA development environment."
+  },
+  {
+   "atomicPropositionId": "prop_5351ef178116",
+   "canonicalProposition": "The candidate ran user acceptance testing with four reconciliation clerks in the RPA test environment, covering 23 test cases.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_f218ea3e19f4",
+    "src_277484048b47"
+   ],
+   "relevantRequirementIds": [
+    "req_a7867be2cb4a"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the UAT and the evidence pack lists the test cases, defects and sign-off."
+  },
+  {
+   "atomicPropositionId": "prop_de649bfad7b7",
+   "canonicalProposition": "The candidate moved the reconciliation bot into live operation, where it runs the morning reconciliation without clerk involvement.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_56ca717f522d"
+   ],
+   "boundaryCategory": "self_report_and_hearsay_go_live",
+   "criticality": "critical",
+   "rationale": "The go-live statement is the candidate's hedged remark ('basically went live') and a former colleague's second-hand report; every documented source places the bot in the development and test environments, and the UAT pack is marked as not for operational use. The deployment rule does not allow test work to be described as live operation without a source that says it ran in production."
+  }
+ ],
+ "requirementStatus": {
+  "req_da94ce0e6890": "supported",
+  "req_992df032eecb": "supported",
+  "req_56ca717f522d": "insufficient_evidence",
+  "req_7cbfbb4dd5b3": "supported",
+  "req_a7867be2cb4a": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_2738b1670d1e",
+  "src_f218ea3e19f4",
+  "src_277484048b47"
+ ],
+ "expectedGap": "No documented move of the bot from test into live operation, and no run results, appear in the materials.",
+ "expectedBoundaryNote": "Keep the specification, the development-environment build, the UAT and the control documentation as test-stage work; record the go-live remark as the candidate's hedged self-report with second-hand detail.",
+ "permittedFollowUpTargets": [
+  "Ask whether the bot was approved under the automation control framework for live use, who promoted it, when it first ran on live data and what run results the candidate saw."
+ ],
+ "validClaimSignatures": [
+  "23 test cases",
+  "bot specification"
+ ],
+ "trap": {
+  "propositionId": "prop_de649bfad7b7",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_56ca717f522d"
+  ],
+  "signatures": [
+   "basically went live",
+   "without any clerk involvement",
+   "without clerk involvement"
+  ],
+  "baitSourceIds": [
+   "src_c59684c113c6"
+  ]
+ }
+}

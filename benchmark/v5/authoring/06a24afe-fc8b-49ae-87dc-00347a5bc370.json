@@ -1,0 +1,125 @@
+{
+ "caseId": "06a24afe-fc8b-49ae-87dc-00347a5bc370",
+ "roleTitle": "Platform Engineer, Settlement Systems",
+ "jobDescription": "Corrieston is a retail stockbroker that settles about 60,000 trades a day. The Platform Engineer maintains the Kubernetes clusters and infrastructure code behind the settlement services, builds dashboards and alerts for them, runs resilience tests before release, and deploys and operates services in the regulated production environment, including change approvals and a place on the out-of-hours on-call rota. A recognised Kubernetes certification is required. The platform team has five engineers, supports both in-house services and services run for partner banks, and covers the overnight settlement run on the out-of-hours rota.",
+ "requirements": [
+  "Writes and maintains infrastructure as code (Terraform or similar) for Kubernetes environments.",
+  "Builds dashboards and alerts for service health.",
+  "Has deployed and operated services in a regulated production environment, including change approvals and on-call duty.",
+  "Runs resilience or performance tests before release.",
+  "Holds a recognised Kubernetes certification."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "DevOps Engineer, Aldgate Clearing Technology, August 2022 to September 2024. Wrote the Terraform modules and Helm charts for the settlement-file service's UAT and performance-test clusters, with separate state files per environment."
+  },
+  {
+   "type": "resume",
+   "text": "Built Grafana dashboards and alert rules for the settlement-file service in the pre-production environment, covering queue depth, file-generation latency and failed transfers, and tuned the alert thresholds during the performance tests."
+  },
+  {
+   "type": "resume",
+   "text": "Ran fault-injection tests in the performance-test cluster, killing pods and throttling the database link during simulated end-of-day runs, and wrote up the recovery times."
+  },
+  {
+   "type": "resume",
+   "text": "Handed each release candidate to the client bank's release management team, which held production change approval and carried out the deployments; answered that team's questions during each release window."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote the operational handover document for the settlement-file service, describing its alerts, dependencies and restart steps for the production support team, which signed it off at handover."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the performance-test report for the settlement-file service, with throughput at one, two and three times the expected end-of-day volume in the performance-test cluster and the recovery times from the fault-injection runs."
+  },
+  {
+   "type": "note",
+   "text": "Hiring manager's screening note: the candidate described the settlement-file service as 'live since March' and said the client bank's release manager had told the candidate that it now produces the end-of-day settlement file for every branch."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: the candidate's Certified Kubernetes Administrator certificate was checked on the issuer's certificate verification page and is shown as valid until 2027, with the holder's name matching the candidate's."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate wrote Terraform modules and Helm charts for the settlement-file service's UAT and performance-test clusters.",
+    "status": "supported",
+    "sources": [
+     1
+    ],
+    "requirements": [
+     1
+    ],
+    "boundaryCategory": "non_production_environment_preserved",
+    "criticality": "noncritical",
+    "rationale": "The resume names the clusters the infrastructure code was written for."
+   },
+   {
+    "text": "The candidate deployed the settlement-file service to production and has operated it since March, producing the end-of-day settlement file for every branch.",
+    "status": "unsupported",
+    "sources": [],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "self_report_and_hearsay_go_live",
+    "criticality": "critical",
+    "rationale": "The production statement combines the candidate's own phrase with a remark relayed from the client bank's release manager; the documented sources place the candidate's work in UAT, pre-production and performance-test clusters and state that release management held production approval and carried out deployments. The deployment rule does not allow pre-production work to be described as production operation."
+   },
+   {
+    "text": "The candidate holds a Certified Kubernetes Administrator certificate shown as valid on the issuer's verification page.",
+    "status": "supported",
+    "sources": [
+     8
+    ],
+    "requirements": [
+     5
+    ],
+    "boundaryCategory": "verified_credential_record",
+    "criticality": "noncritical",
+    "rationale": "The HR verification note records a check of the certificate on the issuer's verification page."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "partial_evidence",
+   "supported",
+   "supported"
+  ],
+  "trap": {
+   "proposition": 2,
+   "rule": "hrgene.deployment_boundary",
+   "requirements": [
+    3
+   ],
+   "signatures": [
+    "live since March",
+    "for every branch"
+   ],
+   "bait": [
+    7
+   ],
+   "anywhere": []
+  },
+  "subjective": [],
+  "nonProduction": [
+   1,
+   2,
+   3,
+   6
+  ],
+  "expectedGap": "The documented work is in UAT, pre-production and performance-test clusters, with production approval and deployment held by the client's release management; production operation, change approvals by the candidate and on-call duty are not documented.",
+  "expectedBoundaryNote": "Keep the infrastructure code, dashboards and fault-injection testing in the environments named and keep the verified certificate; record the 'live since March' remark as the candidate's self-report with relayed detail.",
+  "followUpTargets": [
+   "Ask which production responsibilities the candidate held for the settlement-file service, including change approvals, deployment permissions and any on-call duty."
+  ],
+  "validClaimSignatures": [
+   "Certified Kubernetes Administrator",
+   "fault-injection tests"
+  ]
+ }
+}

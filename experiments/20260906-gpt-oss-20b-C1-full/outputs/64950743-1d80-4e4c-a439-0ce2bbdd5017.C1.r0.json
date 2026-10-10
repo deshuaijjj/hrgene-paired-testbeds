@@ -1,0 +1,358 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "64950743-1d80-4e4c-a439-0ce2bbdd5017.C1",
+ "case_id": "64950743-1d80-4e4c-a439-0ce2bbdd5017",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11359,
+  "promptWords": 1478
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 60.449
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3026,
+ "eval_count": 2778,
+ "prompt_eval_duration_ns": 18338000,
+ "eval_duration_ns": 50014599000,
+ "total_duration_ns": 60440872625,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: one or two sentences on what materials establish.\n\nRequirementEvidenceMap: for each requirement id, determine status. Let's analyze:\n\nreq_61c5b8c9de7c: manages cloud accounts, quotas, tagging, keeps inventory current. Sources: src_584cfff96460, src_2af907ca85a2. Supported.\n\nreq_f93263724c32: handles resource incidents under pressure, on-call, communicates status. Sources: src_6afbd1fbf476, src_2af907ca85a2. Supported.\n\nreq_9aa5c335f64e: runs monthly capacity and cost reviews, proposes right-sizing with documented impact. Sources: src_c8a57abdab9f, src_2af907ca85a2. Supported.\n\nreq_3a52b70f7e82: coordinates change windows with ops and records responsibility boundaries. Sources: src_584cfff96460 (mentions change window), src_2af907ca85a2. Supported.\n\nreq_249ef024f2d1: documents runbooks, known limitations, hand-over conditions. Sources: src_c9bec5fbbcf4 (runbook section), src_2af907ca85a2. Supported.\n\nThus all supported. No gaps. But we still need missingEvidenceGaps array maybe empty.\n\nUnsupportedClaims: maybe the interview note about hesitation. That is not evidence of ability. So claim: \"Candidate would struggle with on-call pressure in a bigger environment.\" Not established. So unsupported.\n\nInterviewSignalRisks: note from src_afd38ae07540 about hesitation. Signal type: confidence. Not tied to job evidence. Severity medium? maybe medium. Recommended handling: ask neutral question about on-call experience.\n\nFollowUpQuestions: for each requirement? Since all supported, maybe none. But we can still ask for clarification on metrics? Not needed.\n\nHumanReviewChecklist: items like \"Verify interview notes\", \"Confirm runbook documentation\", etc.\n\nAuditSummary: paragraph summarizing.\n\nLimitations: maybe limited to provided materials.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_d5458fcd9c5d0e15\",\"targetRoleTitle\":\"Cloud Resource Engineer, Customer Service Centre Platform\",\"professionalSummary\":[\"Managed the platform's three AWS accounts, quota requests and tagging policy for telephony and chat services, keeping the resource inventory current in the CMDB after each change window. (src_584cfff96460)\",\"Served on the platform on-call rota for nine months, handled the June chat-service outage as first responder, applied quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored. (src_6afbd1fbf476)\",\"Ran monthly capacity and cost reviews with the platform lead, proposing right-sizing of chat-service instances with documented impact and rollback path. (src_c8a57abdab9f)\",\"Maintained runbooks, documented known limitations and hand-over conditions for each platform change. (src_c9bec5fbbcf4)\"],\"experienceHighlights\":[\"Managed cloud accounts, quotas and tagging for the contact-centre platform, ensuring inventory accuracy. (src_584cfff96460)\",\"Handled resource incidents under pressure, including on-call rota duties, and communicated status to operations during outages. (src_6afbd1fbf476)\",\"Coordinated change windows with contact-centre operations and recorded responsibility boundaries. (src_584cfff96460)\",\"Documented runbooks, known limitations and hand-over conditions for platform changes. (src_c9bec5fbbcf4)\"],\"projectsAndWorkSamples\":[\"June outage post-incident review detailing timeline, root cause, actions and approvals. (src_c9bec5fbbcf4)\",\"Chat-service runbook section on quota exhaustion with ticketing system audit history. (src_c9bec5fbbcf4)\"],\"skills\":[\"AWS account administration\",\"Quota management\",\"Tagging policy implementation\",\"Incident response\",\"Capacity and cost review\",\"Runbook maintenance\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s experience in managing AWS accounts, handling incidents, conducting capacity reviews, coordinating change windows, and maintaining runbooks. No claims beyond these are supported by the materials.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Cloud Resource Engineer, Customer Service Centre Platform\",\"jobDescriptionSource\":\"jd_e9541138877e8591\",\"requirementIds\":[\"req_61c5b8c9de7c\",\"req_f93263724c32\",\"req_9aa5c335f64e\",\"req_3a52b70f7e82\",\"req_249ef024f2d1\"]},\"candidate\":{\"candidateId\":\"cand_d5458fcd9c5d0e15\",\"sources\":[\"src_584cfff96460\",\"src_6afbd1fbf476\",\"src_c0008aac36e6\",\"src_c8a57abdab9f\",\"src_2af907ca85a2\",\"src_c9bec5fbbcf4\",\"src_afd38ae07540\",\"src_4fa5c204b1df\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_61c5b8c9de7c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_584cfff96460\",\"text\":\"Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of account and inventory management.\"},{\"sourceId\":\"src_2af907ca85a2\",\"text\":\"Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Reinforces ongoing account administration.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f93263724c32\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6afbd1fbf476\",\"text\":\"Served on the platform on-call rota for nine months and handled the June chat-service outage as first responder: paged at 07:40, identified the exhausted NAT gateway allocation, applied the quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored at 08:55.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit incident handling under pressure.\"},{\"sourceId\":\"src_2af907ca85a2\",\"text\":\"Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Supports ongoing on-call duties.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9aa5c335f64e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c8a57abdab9f\",\"text\":\"Ran the monthly capacity and cost review with the platform lead, proposing right-sizing of the chat-service instances with the expected monthly saving and the rollback path documented in the change record.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of capacity review and right-sizing.\"},{\"sourceId\":\"src_2af907ca85a2\",\"text\":\"Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Reinforces capacity review responsibility.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3a52b70f7e82\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_584cfff96460\",\"text\":\"Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.\",\"evidenceStrength\":\"high\",\"notes\":\"Implied coordination of change windows.\"},{\"sourceId\":\"src_2af907ca85a2\",\"text\":\"Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Supports coordination with operations.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_249ef024f2d1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c9bec5fbbcf4\",\"text\":\"Work sample: the June outage post-incident review (timeline, root cause, actions, approvals) and the chat-service runbook section on quota exhaustion, with the ticketing system's audit history as a verification trail.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates runbook documentation.\"},{\"sourceId\":\"src_2af907ca85a2\",\"text\":\"Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.\",\"evidenceStrength\":\"medium\",\"notes\":\"Reinforces runbook maintenance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_61c5b8c9de7c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_584cfff96460\",\"text\":\"Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of account and inventory management.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_f93263724c32\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_6afbd1fbf476\",\"text\":\"Served on the platform on-call rota for nine months and handled the June chat-service outage as first responder: paged at 07:40, identified the exhausted NAT gateway allocation, applied the quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored at 08:55.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of incident handling under pressure.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9aa5c335f64e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c8a57abdab9f\",\"text\":\"Ran the monthly capacity and cost review with the platform lead, proposing right-sizing of the chat-service instances with the expected monthly saving and the rollback path documented in the change record.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of capacity review.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3a52b70f7e82\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_584cfff96460\",\"text\":\"Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.\",\"evidenceStrength\":\"high\",\"notes\":\"Implied coordination of change windows.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_249ef024f2d1\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c9bec5fbbcf4\",\"text\":\"Work sample: the June outage post-incident review (timeline, root cause, actions, approvals) and the chat-service runbook section on quota exhaustion, with the ticketing system's audit history as a verification trail.\",\"evidenceStrength\":\"high\",\"notes\":\"Runbook documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Candidate managed AWS accounts, quotas, and tagging for the contact-centre platform and kept inventory current.\",\"supportingRequirementIds\":[\"req_61c5b8c9de7c\"],\"sourceIds\":[\"src_584cfff96460\"],\"evidenceStrength\":\"high\",\"witness\":\"Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.\"},{\"claim\":\"Candidate handled resource incidents under pressure and communicated status to operations during outages.\",\"supportingRequirementIds\":[\"req_f93263724c32\"],\"sourceIds\":[\"src_6afbd1fbf476\"],\"evidenceStrength\":\"high\",\"witness\":\"Served on the platform on-call rota for nine months and handled the June chat-service outage as first responder: paged at 07:40, identified the exhausted NAT gateway allocation, applied the quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored at 08:55.\"},{\"claim\":\"Candidate ran monthly capacity and cost reviews and proposed right-sizing changes with documented impact.\",\"supportingRequirementIds\":[\"req_9aa5c335f64e\"],\"sourceIds\":[\"src_c8a57abdab9f\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the monthly capacity and cost review with the platform lead, proposing right-sizing of the chat-service instances with the expected monthly saving and the rollback path documented in the change record.\"},{\"claim\":\"Candidate coordinated change windows with contact-centre operations and recorded responsibility boundaries.\",\"supportingRequirementIds\":[\"req_3a52b70f7e82\"],\"sourceIds\":[\"src_584cfff96460\"],\"evidenceStrength\":\"high\",\"witness\":\"Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.\"},{\"claim\":\"Candidate documented runbooks, known limitations and hand-over conditions for each platform change.\",\"supportingRequirementIds\":[\"req_249ef024f2d1\"],\"sourceIds\":[\"src_c9bec5fbbcf4\"],\"evidenceStrength\":\"high\",\"witness\":\"Work sample: the June outage post-incident review (timeline, root cause, actions, approvals) and the chat-service runbook section on quota exhaustion, with the ticketing system's audit history as a verification trail.\"}],\"unsupportedClaims\":[{\"claim\":\"Candidate would struggle with on-call pressure in a bigger environment.\",\"reason\":\"Interview note expresses hesitation but does not provide evidence of performance under pressure.\",\"requiredFollowUp\":\"Ask a neutral question about the candidate’s experience handling high-volume incidents and coping strategies.\"}],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_afd38ae07540\",\"text\":\"came across as hesitant and not very confident when we asked about the outage; spoke quietly and paused a lot.\",\"signalType\":\"confidence\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Ask a neutral question about how the candidate manages stress during on-call incidents.\"}],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify interview note context and candidate’s self-reported coping strategies\",\"Confirm that runbook documentation meets platform standards\",\"Ensure capacity review documentation includes documented impact metrics\"],\"auditSummary\":\"All job requirements are directly supported by the candidate’s resume and work sample. No evidence gaps exist for the listed requirements. An interview note indicates potential confidence issues under pressure, which is not tied to observable evidence and requires neutral follow-up. Qualified human review is required before any employment decision.\",\"limitations\":[\"Evidence limited to provided resume, work sample, and interview notes; no external verification of metrics or outcomes.\"]}}",
+ "content_sha256": "764449d46ba52af4458e5435b4a66893f0fdf2d45d7fcea9a4d005cda42e3eec",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d5458fcd9c5d0e15",
+   "targetRoleTitle": "Cloud Resource Engineer, Customer Service Centre Platform",
+   "professionalSummary": [
+    "Managed the platform's three AWS accounts, quota requests and tagging policy for telephony and chat services, keeping the resource inventory current in the CMDB after each change window. (src_584cfff96460)",
+    "Served on the platform on-call rota for nine months, handled the June chat-service outage as first responder, applied quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored. (src_6afbd1fbf476)",
+    "Ran monthly capacity and cost reviews with the platform lead, proposing right-sizing of chat-service instances with documented impact and rollback path. (src_c8a57abdab9f)",
+    "Maintained runbooks, documented known limitations and hand-over conditions for each platform change. (src_c9bec5fbbcf4)"
+   ],
+   "experienceHighlights": [
+    "Managed cloud accounts, quotas and tagging for the contact-centre platform, ensuring inventory accuracy. (src_584cfff96460)",
+    "Handled resource incidents under pressure, including on-call rota duties, and communicated status to operations during outages. (src_6afbd1fbf476)",
+    "Coordinated change windows with contact-centre operations and recorded responsibility boundaries. (src_584cfff96460)",
+    "Documented runbooks, known limitations and hand-over conditions for platform changes. (src_c9bec5fbbcf4)"
+   ],
+   "projectsAndWorkSamples": [
+    "June outage post-incident review detailing timeline, root cause, actions and approvals. (src_c9bec5fbbcf4)",
+    "Chat-service runbook section on quota exhaustion with ticketing system audit history. (src_c9bec5fbbcf4)"
+   ],
+   "skills": [
+    "AWS account administration",
+    "Quota management",
+    "Tagging policy implementation",
+    "Incident response",
+    "Capacity and cost review",
+    "Runbook maintenance"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience in managing AWS accounts, handling incidents, conducting capacity reviews, coordinating change windows, and maintaining runbooks. No claims beyond these are supported by the materials."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Cloud Resource Engineer, Customer Service Centre Platform",
+    "jobDescriptionSource": "jd_e9541138877e8591",
+    "requirementIds": [
+     "req_61c5b8c9de7c",
+     "req_f93263724c32",
+     "req_9aa5c335f64e",
+     "req_3a52b70f7e82",
+     "req_249ef024f2d1"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d5458fcd9c5d0e15",
+    "sources": [
+     "src_584cfff96460",
+     "src_6afbd1fbf476",
+     "src_c0008aac36e6",
+     "src_c8a57abdab9f",
+     "src_2af907ca85a2",
+     "src_c9bec5fbbcf4",
+     "src_afd38ae07540",
+     "src_4fa5c204b1df"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_61c5b8c9de7c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_584cfff96460",
+       "text": "Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of account and inventory management."
+      },
+      {
+       "sourceId": "src_2af907ca85a2",
+       "text": "Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.",
+       "evidenceStrength": "medium",
+       "notes": "Reinforces ongoing account administration."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f93263724c32",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6afbd1fbf476",
+       "text": "Served on the platform on-call rota for nine months and handled the June chat-service outage as first responder: paged at 07:40, identified the exhausted NAT gateway allocation, applied the quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored at 08:55.",
+       "evidenceStrength": "high",
+       "notes": "Explicit incident handling under pressure."
+      },
+      {
+       "sourceId": "src_2af907ca85a2",
+       "text": "Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.",
+       "evidenceStrength": "medium",
+       "notes": "Supports ongoing on-call duties."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9aa5c335f64e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c8a57abdab9f",
+       "text": "Ran the monthly capacity and cost review with the platform lead, proposing right-sizing of the chat-service instances with the expected monthly saving and the rollback path documented in the change record.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of capacity review and right-sizing."
+      },
+      {
+       "sourceId": "src_2af907ca85a2",
+       "text": "Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.",
+       "evidenceStrength": "medium",
+       "notes": "Reinforces capacity review responsibility."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3a52b70f7e82",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_584cfff96460",
+       "text": "Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.",
+       "evidenceStrength": "high",
+       "notes": "Implied coordination of change windows."
+      },
+      {
+       "sourceId": "src_2af907ca85a2",
+       "text": "Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.",
+       "evidenceStrength": "medium",
+       "notes": "Supports coordination with operations."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_249ef024f2d1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c9bec5fbbcf4",
+       "text": "Work sample: the June outage post-incident review (timeline, root cause, actions, approvals) and the chat-service runbook section on quota exhaustion, with the ticketing system's audit history as a verification trail.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates runbook documentation."
+      },
+      {
+       "sourceId": "src_2af907ca85a2",
+       "text": "Responsibilities included account administration, on-call incident response, capacity reviews and runbook maintenance for the contact-centre platform over two years.",
+       "evidenceStrength": "medium",
+       "notes": "Reinforces runbook maintenance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_61c5b8c9de7c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_584cfff96460",
+       "text": "Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of account and inventory management."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f93263724c32",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6afbd1fbf476",
+       "text": "Served on the platform on-call rota for nine months and handled the June chat-service outage as first responder: paged at 07:40, identified the exhausted NAT gateway allocation, applied the quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored at 08:55.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of incident handling under pressure."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9aa5c335f64e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c8a57abdab9f",
+       "text": "Ran the monthly capacity and cost review with the platform lead, proposing right-sizing of the chat-service instances with the expected monthly saving and the rollback path documented in the change record.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of capacity review."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3a52b70f7e82",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_584cfff96460",
+       "text": "Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window.",
+       "evidenceStrength": "high",
+       "notes": "Implied coordination of change windows."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_249ef024f2d1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c9bec5fbbcf4",
+       "text": "Work sample: the June outage post-incident review (timeline, root cause, actions, approvals) and the chat-service runbook section on quota exhaustion, with the ticketing system's audit history as a verification trail.",
+       "evidenceStrength": "high",
+       "notes": "Runbook documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Candidate managed AWS accounts, quotas, and tagging for the contact-centre platform and kept inventory current.",
+     "supportingRequirementIds": [
+      "req_61c5b8c9de7c"
+     ],
+     "sourceIds": [
+      "src_584cfff96460"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window."
+    },
+    {
+     "claim": "Candidate handled resource incidents under pressure and communicated status to operations during outages.",
+     "supportingRequirementIds": [
+      "req_f93263724c32"
+     ],
+     "sourceIds": [
+      "src_6afbd1fbf476"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Served on the platform on-call rota for nine months and handled the June chat-service outage as first responder: paged at 07:40, identified the exhausted NAT gateway allocation, applied the quota increase and posted status updates to contact-centre operations every fifteen minutes until service was restored at 08:55."
+    },
+    {
+     "claim": "Candidate ran monthly capacity and cost reviews and proposed right-sizing changes with documented impact.",
+     "supportingRequirementIds": [
+      "req_9aa5c335f64e"
+     ],
+     "sourceIds": [
+      "src_c8a57abdab9f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the monthly capacity and cost review with the platform lead, proposing right-sizing of the chat-service instances with the expected monthly saving and the rollback path documented in the change record."
+    },
+    {
+     "claim": "Candidate coordinated change windows with contact-centre operations and recorded responsibility boundaries.",
+     "supportingRequirementIds": [
+      "req_3a52b70f7e82"
+     ],
+     "sourceIds": [
+      "src_584cfff96460"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed the platform's three AWS accounts, quota requests and the tagging policy for the telephony and chat services, keeping the resource inventory current in the CMDB after each change window."
+    },
+    {
+     "claim": "Candidate documented runbooks, known limitations and hand-over conditions for each platform change.",
+     "supportingRequirementIds": [
+      "req_249ef024f2d1"
+     ],
+     "sourceIds": [
+      "src_c9bec5fbbcf4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Work sample: the June outage post-incident review (timeline, root cause, actions, approvals) and the chat-service runbook section on quota exhaustion, with the ticketing system's audit history as a verification trail."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate would struggle with on-call pressure in a bigger environment.",
+     "reason": "Interview note expresses hesitation but does not provide evidence of performance under pressure.",
+     "requiredFollowUp": "Ask a neutral question about the candidate’s experience handling high-volume incidents and coping strategies."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_afd38ae07540",
+     "text": "came across as hesitant and not very confident when we asked about the outage; spoke quietly and paused a lot.",
+     "signalType": "confidence",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Ask a neutral question about how the candidate manages stress during on-call incidents."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify interview note context and candidate’s self-reported coping strategies",
+    "Confirm that runbook documentation meets platform standards",
+    "Ensure capacity review documentation includes documented impact metrics"
+   ],
+   "auditSummary": "All job requirements are directly supported by the candidate’s resume and work sample. No evidence gaps exist for the listed requirements. An interview note indicates potential confidence issues under pressure, which is not tied to observable evidence and requires neutral follow-up. Qualified human review is required before any employment decision.",
+   "limitations": [
+    "Evidence limited to provided resume, work sample, and interview notes; no external verification of metrics or outcomes."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:38:21.644589+00:00"
+}

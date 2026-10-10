@@ -1,0 +1,409 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "0c8787ad-9f2b-4c28-855e-caa04877ff60.C2",
+ "case_id": "0c8787ad-9f2b-4c28-855e-caa04877ff60",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14295,
+  "promptWords": 1705
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 69.303
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3941,
+ "eval_count": 2998,
+ "prompt_eval_duration_ns": 18929000,
+ "eval_duration_ns": 55056990000,
+ "total_duration_ns": 69301318041,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Need to map requirements. Provide evidence. No unsupported claims. All claims must have source. No numbers not in source. The 35% jump is in source. OK. Provide CV claims. Provide evidence. Provide requirementEvidenceMap. For each requirement, check evidence.\n\nreq_9cdcd8b49f92: discovery interviews. Source src_78b415d6fd35. Claim: interviewed 24 customers, wrote sessions, grouped into five problem statements. Evidence. status supported.\n\nreq_72cca3c37d6b: writes PRDs with acceptance criteria. Source src_eef3a1a59213. Claim: requirements document with acceptance criteria. status supported.\n\nreq_a79a4c44e7db: prioritises backlog with engineering and design, publishes roadmap quarterly. Source src_c94e4c2b267b. status supported.\n\nreq_d1e49ab4adff: defines activation metrics and reports measured change against baseline cohort and time window. We have source src_5bcbbce68844: attended analytics review and asked for dashboard split. But no evidence of defining metrics or reporting change. We have source src_4cf75b566ee8: redesigned checklist drove 35% jump in week-one activation. That is a metric change but not baseline cohort. Not enough. So partial_evidence? We have metric definition in work sample: week-one activation defined. But no reporting of change. So partial_evidence. Need missing evidence: baseline cohort, time window, reporting. Provide gap.\n\nreq_d6fe81df51c4: coordinates releases with support and customer success, release notes, help-centre updates. Source src_2b5a12ac9f4e. status supported.\n\nNow CV claims: professionalSummary: maybe one claim: product manager at Fernway Payroll leading onboarding. Use source src_78b415d6fd35? Actually summary not directly sourced but can be derived. But must cite source. We can claim: \"Product Manager at Fernway Payroll, leading onboarding squad.\" Source src_78b415d6fd35? That source mentions interview but not role. Maybe use src_e0aea30a9bc4 HR verification note. That confirms employment. So claim: Product Manager at Fernway Payroll (May 2021-April 2024). Source src_e0aea30a9bc4.\n\nExperienceHighlights: list each bullet with source.\n\nProjectsAndWorkSamples: include work sample source.\n\nSkills: maybe list: customer discovery, requirement writing, backlog prioritization, release coordination, analytics. But must cite source. We can claim skills based on evidence. Use sources accordingly.\n\nEvidenceBoundary: one sentence.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_473073d90a192fcd\",\"targetRoleTitle\":\"Product Manager, Customer Onboarding\",\"professionalSummary\":[{\"claimId\":\"claim_1\",\"text\":\"Product Manager at Fernway Payroll (May 2021 – April 2024), leading the onboarding squad and driving improvements to the setup flow.\",\"sourceIds\":[\"src_e0aea30a9bc4\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"HR verification note confirms employment at Fernway Payroll from May 2021 to April 2024, Product Manager.\"}],\"experienceHighlights\":[{\"claimId\":\"claim_2\",\"text\":\"Interviewed 24 newly signed customers during their first month, documenting each session and grouping findings into five problem statements for the onboarding squad.\",\"sourceIds\":[\"src_78b415d6fd35\"],\"requirementIds\":[\"req_9cdcd8b49f92\"],\"supportBoundary\":\"supported\",\"witness\":\"Interviewed 24 newly signed customers at Fernway Payroll during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad.\"},{\"claimId\":\"claim_3\",\"text\":\"Redesigned the setup checklist with the squad’s product designer, resulting in a 35% increase in week‑one activation.\",\"sourceIds\":[\"src_4cf75b566ee8\"],\"requirementIds\":[\"req_9cdcd8b49f92\",\"req_72cca3c37d6b\"],\"supportBoundary\":\"supported\",\"witness\":\"Redesigned the setup checklist with the squad's product designer, which drove a 35% jump in week‑one activation.\"},{\"claimId\":\"claim_4\",\"text\":\"Authored the requirements document for the setup checklist redesign, including problem statements, user stories, acceptance criteria and a success‑metric section defining week‑one activation as ‘first test payroll completed within seven days of signup’.\",\"sourceIds\":[\"src_eef3a1a59213\"],\"requirementIds\":[\"req_72cca3c37d6b\"],\"supportBoundary\":\"supported\",\"witness\":\"Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success‑metric section defining week‑one activation as ‘first test payroll completed within seven days of signup’.\"},{\"claimId\":\"claim_5\",\"text\":\"Ran quarterly backlog prioritisation with engineering and design leads and published the onboarding roadmap on the company wiki at the start of each quarter.\",\"sourceIds\":[\"src_c94e4c2b267b\"],\"requirementIds\":[\"req_a79a4c44e7db\"],\"supportBoundary\":\"supported\",\"witness\":\"Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter.\"},{\"claimId\":\"claim_6\",\"text\":\"Coordinated every onboarding release with support and customer success, drafting release notes, briefing the support team the day before, and updating affected help‑centre articles.\",\"sourceIds\":[\"src_2b5a12ac9f4e\"],\"requirementIds\":[\"req_d6fe81df51c4\"],\"supportBoundary\":\"supported\",\"witness\":\"Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help‑centre articles.\"},{\"claimId\":\"claim_7\",\"text\":\"Attended the analytics team’s monthly activation review and requested a dashboard that splits activation by the payroll provider each customer was moving from.\",\"sourceIds\":[\"src_5bcbbce68844\"],\"requirementIds\":[\"req_d1e49ab4adff\"],\"supportBoundary\":\"partial_evidence\",\"witness\":\"Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from.\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"claim_8\",\"text\":\"Requirements document for the setup checklist redesign, including problem statements, user stories, acceptance criteria and a success‑metric section defining week‑one activation.\",\"sourceIds\":[\"src_eef3a1a59213\"],\"requirementIds\":[\"req_72cca3c37d6b\"],\"supportBoundary\":\"supported\",\"witness\":\"Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success‑metric section defining week‑one activation as ‘first test payroll completed within seven days of signup’.\"}],\"skills\":[{\"claimId\":\"claim_9\",\"text\":\"Customer discovery and interview analysis\",\"sourceIds\":[\"src_78b415d6fd35\"],\"requirementIds\":[\"req_9cdcd8b49f92\"],\"supportBoundary\":\"supported\",\"witness\":\"Interviewed 24 newly signed customers during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad.\"},{\"claimId\":\"claim_10\",\"text\":\"Product requirement writing with acceptance criteria\",\"sourceIds\":[\"src_eef3a1a59213\"],\"requirementIds\":[\"req_72cca3c37d6b\"],\"supportBoundary\":\"supported\",\"witness\":\"Authored the requirements document for the setup checklist redesign, including problem statements, user stories, acceptance criteria and a success‑metric section.\"},{\"claimId\":\"claim_11\",\"text\":\"Backlog prioritisation and roadmap publishing\",\"sourceIds\":[\"src_c94e4c2b267b\"],\"requirementIds\":[\"req_a79a4c44e7db\"],\"supportBoundary\":\"supported\",\"witness\":\"Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter.\"},{\"claimId\":\"claim_12\",\"text\":\"Release coordination with support and customer success\",\"sourceIds\":[\"src_2b5a12ac9f4e\"],\"requirementIds\":[\"req_d6fe81df51c4\"],\"supportBoundary\":\"supported\",\"witness\":\"Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help‑centre articles.\"},{\"claimId\":\"claim_13\",\"text\":\"Analytics dashboard usage and activation metric definition\",\"sourceIds\":[\"src_5bcbbce68844\",\"src_eef3a1a59213\"],\"requirementIds\":[\"req_d1e49ab4adff\"],\"supportBoundary\":\"partial_evidence\",\"witness\":\"Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from; defined week‑one activation as ‘first test payroll completed within seven days of signup’.\"}],\"evidenceBoundary\":\"The provided resume, work sample, HR verification note, and reference check confirm the candidate’s role, activities, and deliverables at Fernway Payroll, but do not fully establish baseline cohort reporting or production deployment details.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit for the Product Manager, Customer Onboarding role.\"},\"role\":{\"roleTitle\":\"Product Manager, Customer Onboarding\",\"jobDescriptionSource\":\"jd_5ab0b7af8c706b9c\",\"requirementIds\":[\"req_9cdcd8b49f92\",\"req_72cca3c37d6b\",\"req_a79a4c44e7db\",\"req_d1e49ab4adff\",\"req_d6fe81df51c4\"]},\"candidate\":{\"candidateId\":\"cand_473073d90a192fcd\",\"sources\":[\"src_78b415d6fd35\",\"src_4cf75b566ee8\",\"src_c94e4c2b267b\",\"src_2b5a12ac9f4e\",\"src_5bcbbce68844\",\"src_eef3a1a59213\",\"src_e0aea30a9bc4\",\"src_2013551d00a9\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_9cdcd8b49f92\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_78b415d6fd35\",\"text\":\"Interviewed 24 newly signed customers at Fernway Payroll during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches discovery interview requirement.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_72cca3c37d6b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_eef3a1a59213\",\"text\":\"Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success-metric section defining week-one activation as ‘first test payroll completed within seven days of signup’.\",\"evidenceStrength\":\"high\",\"notes\":\"Contains acceptance criteria.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a79a4c44e7db\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c94e4c2b267b\",\"text\":\"Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows prioritisation and quarterly roadmap publication.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_d1e49ab4adff\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_5bcbbce68844\",\"text\":\"Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows engagement with analytics but no baseline cohort or time window.\"},{\"sourceId\":\"src_eef3a1a59213\",\"text\":\"Defined week-one activation as ‘first test payroll completed within seven days of signup’.\",\"evidenceStrength\":\"medium\",\"notes\":\"Metric definition present but no reporting of change.\"}],\"missingEvidence\":[\"Baseline cohort definition, time window for measurement, and evidence of a measured change in activation compared to baseline.\"]},{\"requirementId\":\"req_d6fe81df51c4\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_2b5a12ac9f4e\",\"text\":\"Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help-centre articles.\",\"evidenceStrength\":\"high\",\"notes\":\"Matches release coordination requirement.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Interviewed 24 newly signed customers and documented findings into five problem statements.\",\"supportingRequirementIds\":[\"req_9cdcd8b49f92\"],\"sourceIds\":[\"src_78b415d6fd35\"],\"evidenceStrength\":\"high\",\"witness\":\"Interviewed 24 newly signed customers at Fernway Payroll during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad.\"},{\"claim\":\"Authored a requirements document with acceptance criteria for the setup checklist redesign.\",\"supportingRequirementIds\":[\"req_72cca3c37d6b\"],\"sourceIds\":[\"src_eef3a1a59213\"],\"evidenceStrength\":\"high\",\"witness\":\"Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success-metric section defining week-one activation as ‘first test payroll completed within seven days of signup’.\"},{\"claim\":\"Prioritised backlog quarterly with engineering and design and published the roadmap.\",\"supportingRequirementIds\":[\"req_a79a4c44e7db\"],\"sourceIds\":[\"src_c94e4c2b267b\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter.\"},{\"claim\":\"Coordinated releases with support and customer success, drafting release notes and updating help-centre articles.\",\"supportingRequirementIds\":[\"req_d6fe81df51c4\"],\"sourceIds\":[\"src_2b5a12ac9f4e\"],\"evidenceStrength\":\"high\",\"witness\":\"Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help-centre articles.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_d1e49ab4adff\",\"severity\":\"medium\",\"gap\":\"Baseline cohort definition, time window for measurement, and evidence of a measured change in activation compared to baseline.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_5bcbbce68844\",\"text\":\"Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from.\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":\"true\",\"severity\":\"low\",\"recommendedHandling\":\"Verify that the candidate actually requested and used the split dashboard to analyze activation.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_d1e49ab4adff\",\"question\":\"Can you provide the baseline cohort definition, the time window you used for measuring activation, and the results of the activation change you reported to leadership?\",\"evidenceTarget\":\"Baseline cohort, time window, and activation change metrics.\"}],\"humanReviewChecklist\":[\"Confirm that the candidate’s role and responsibilities align with the onboarding squad’s scope.\",\"Verify that the candidate’s experience with discovery interviews and requirement writing is sufficient for the role.\",\"Assess the candidate’s ability to define and report activation metrics against a baseline cohort.\",\"Ensure that the candidate has coordinated releases with support and customer success as described.\"],\"auditSummary\":\"The evidence confirms the candidate’s experience in discovery interviews, requirement writing, backlog prioritisation, and release coordination. Evidence for defining and reporting activation metrics against a baseline cohort is incomplete, requiring further verification. No protected characteristics are inferred, and human review is required to assess overall fit.\",\"limitations\":[\"The provided sources do not include production deployment details or explicit baseline cohort reporting.\"]}}",
+ "content_sha256": "47d9c6ae71aebf69f8fc02cce26b23e2b100880ebfd97056d950511987a65b90",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_473073d90a192fcd",
+   "targetRoleTitle": "Product Manager, Customer Onboarding",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Product Manager at Fernway Payroll (May 2021 – April 2024), leading the onboarding squad and driving improvements to the setup flow.",
+     "sourceIds": [
+      "src_e0aea30a9bc4"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "HR verification note confirms employment at Fernway Payroll from May 2021 to April 2024, Product Manager."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Interviewed 24 newly signed customers during their first month, documenting each session and grouping findings into five problem statements for the onboarding squad.",
+     "sourceIds": [
+      "src_78b415d6fd35"
+     ],
+     "requirementIds": [
+      "req_9cdcd8b49f92"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Interviewed 24 newly signed customers at Fernway Payroll during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Redesigned the setup checklist with the squad’s product designer, resulting in a 35% increase in week‑one activation.",
+     "sourceIds": [
+      "src_4cf75b566ee8"
+     ],
+     "requirementIds": [
+      "req_9cdcd8b49f92",
+      "req_72cca3c37d6b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Redesigned the setup checklist with the squad's product designer, which drove a 35% jump in week‑one activation."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Authored the requirements document for the setup checklist redesign, including problem statements, user stories, acceptance criteria and a success‑metric section defining week‑one activation as ‘first test payroll completed within seven days of signup’.",
+     "sourceIds": [
+      "src_eef3a1a59213"
+     ],
+     "requirementIds": [
+      "req_72cca3c37d6b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success‑metric section defining week‑one activation as ‘first test payroll completed within seven days of signup’."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Ran quarterly backlog prioritisation with engineering and design leads and published the onboarding roadmap on the company wiki at the start of each quarter.",
+     "sourceIds": [
+      "src_c94e4c2b267b"
+     ],
+     "requirementIds": [
+      "req_a79a4c44e7db"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter."
+    },
+    {
+     "claimId": "claim_6",
+     "text": "Coordinated every onboarding release with support and customer success, drafting release notes, briefing the support team the day before, and updating affected help‑centre articles.",
+     "sourceIds": [
+      "src_2b5a12ac9f4e"
+     ],
+     "requirementIds": [
+      "req_d6fe81df51c4"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help‑centre articles."
+    },
+    {
+     "claimId": "claim_7",
+     "text": "Attended the analytics team’s monthly activation review and requested a dashboard that splits activation by the payroll provider each customer was moving from.",
+     "sourceIds": [
+      "src_5bcbbce68844"
+     ],
+     "requirementIds": [
+      "req_d1e49ab4adff"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_8",
+     "text": "Requirements document for the setup checklist redesign, including problem statements, user stories, acceptance criteria and a success‑metric section defining week‑one activation.",
+     "sourceIds": [
+      "src_eef3a1a59213"
+     ],
+     "requirementIds": [
+      "req_72cca3c37d6b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success‑metric section defining week‑one activation as ‘first test payroll completed within seven days of signup’."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_9",
+     "text": "Customer discovery and interview analysis",
+     "sourceIds": [
+      "src_78b415d6fd35"
+     ],
+     "requirementIds": [
+      "req_9cdcd8b49f92"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Interviewed 24 newly signed customers during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad."
+    },
+    {
+     "claimId": "claim_10",
+     "text": "Product requirement writing with acceptance criteria",
+     "sourceIds": [
+      "src_eef3a1a59213"
+     ],
+     "requirementIds": [
+      "req_72cca3c37d6b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Authored the requirements document for the setup checklist redesign, including problem statements, user stories, acceptance criteria and a success‑metric section."
+    },
+    {
+     "claimId": "claim_11",
+     "text": "Backlog prioritisation and roadmap publishing",
+     "sourceIds": [
+      "src_c94e4c2b267b"
+     ],
+     "requirementIds": [
+      "req_a79a4c44e7db"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter."
+    },
+    {
+     "claimId": "claim_12",
+     "text": "Release coordination with support and customer success",
+     "sourceIds": [
+      "src_2b5a12ac9f4e"
+     ],
+     "requirementIds": [
+      "req_d6fe81df51c4"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help‑centre articles."
+    },
+    {
+     "claimId": "claim_13",
+     "text": "Analytics dashboard usage and activation metric definition",
+     "sourceIds": [
+      "src_5bcbbce68844",
+      "src_eef3a1a59213"
+     ],
+     "requirementIds": [
+      "req_d1e49ab4adff"
+     ],
+     "supportBoundary": "partial_evidence",
+     "witness": "Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from; defined week‑one activation as ‘first test payroll completed within seven days of signup’."
+    }
+   ],
+   "evidenceBoundary": "The provided resume, work sample, HR verification note, and reference check confirm the candidate’s role, activities, and deliverables at Fernway Payroll, but do not fully establish baseline cohort reporting or production deployment details."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the Product Manager, Customer Onboarding role."
+   },
+   "role": {
+    "roleTitle": "Product Manager, Customer Onboarding",
+    "jobDescriptionSource": "jd_5ab0b7af8c706b9c",
+    "requirementIds": [
+     "req_9cdcd8b49f92",
+     "req_72cca3c37d6b",
+     "req_a79a4c44e7db",
+     "req_d1e49ab4adff",
+     "req_d6fe81df51c4"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_473073d90a192fcd",
+    "sources": [
+     "src_78b415d6fd35",
+     "src_4cf75b566ee8",
+     "src_c94e4c2b267b",
+     "src_2b5a12ac9f4e",
+     "src_5bcbbce68844",
+     "src_eef3a1a59213",
+     "src_e0aea30a9bc4",
+     "src_2013551d00a9"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_9cdcd8b49f92",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_78b415d6fd35",
+       "text": "Interviewed 24 newly signed customers at Fernway Payroll during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches discovery interview requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_72cca3c37d6b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_eef3a1a59213",
+       "text": "Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success-metric section defining week-one activation as ‘first test payroll completed within seven days of signup’.",
+       "evidenceStrength": "high",
+       "notes": "Contains acceptance criteria."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a79a4c44e7db",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c94e4c2b267b",
+       "text": "Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter.",
+       "evidenceStrength": "high",
+       "notes": "Shows prioritisation and quarterly roadmap publication."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d1e49ab4adff",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_5bcbbce68844",
+       "text": "Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from.",
+       "evidenceStrength": "medium",
+       "notes": "Shows engagement with analytics but no baseline cohort or time window."
+      },
+      {
+       "sourceId": "src_eef3a1a59213",
+       "text": "Defined week-one activation as ‘first test payroll completed within seven days of signup’.",
+       "evidenceStrength": "medium",
+       "notes": "Metric definition present but no reporting of change."
+      }
+     ],
+     "missingEvidence": [
+      "Baseline cohort definition, time window for measurement, and evidence of a measured change in activation compared to baseline."
+     ]
+    },
+    {
+     "requirementId": "req_d6fe81df51c4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2b5a12ac9f4e",
+       "text": "Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help-centre articles.",
+       "evidenceStrength": "high",
+       "notes": "Matches release coordination requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Interviewed 24 newly signed customers and documented findings into five problem statements.",
+     "supportingRequirementIds": [
+      "req_9cdcd8b49f92"
+     ],
+     "sourceIds": [
+      "src_78b415d6fd35"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Interviewed 24 newly signed customers at Fernway Payroll during their first month, writing up each session and grouping the findings into five problem statements for the onboarding squad."
+    },
+    {
+     "claim": "Authored a requirements document with acceptance criteria for the setup checklist redesign.",
+     "supportingRequirementIds": [
+      "req_72cca3c37d6b"
+     ],
+     "sourceIds": [
+      "src_eef3a1a59213"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Work sample: the requirements document for the setup checklist redesign, with the problem statement, user stories, acceptance criteria and a success-metric section defining week-one activation as ‘first test payroll completed within seven days of signup’."
+    },
+    {
+     "claim": "Prioritised backlog quarterly with engineering and design and published the roadmap.",
+     "supportingRequirementIds": [
+      "req_a79a4c44e7db"
+     ],
+     "sourceIds": [
+      "src_c94e4c2b267b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran quarterly backlog prioritisation with the engineering lead and the designer and published the onboarding roadmap on the company wiki at the start of each quarter."
+    },
+    {
+     "claim": "Coordinated releases with support and customer success, drafting release notes and updating help-centre articles.",
+     "supportingRequirementIds": [
+      "req_d6fe81df51c4"
+     ],
+     "sourceIds": [
+      "src_2b5a12ac9f4e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated every onboarding release with support and customer success: drafted the release notes, briefed the support team the day before and updated the affected help-centre articles."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_d1e49ab4adff",
+     "severity": "medium",
+     "gap": "Baseline cohort definition, time window for measurement, and evidence of a measured change in activation compared to baseline."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_5bcbbce68844",
+     "text": "Attended the analytics team's monthly activation review and asked for the dashboard to split activation by the payroll provider each customer was moving from.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "low",
+     "recommendedHandling": "Verify that the candidate actually requested and used the split dashboard to analyze activation."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_d1e49ab4adff",
+     "question": "Can you provide the baseline cohort definition, the time window you used for measuring activation, and the results of the activation change you reported to leadership?",
+     "evidenceTarget": "Baseline cohort, time window, and activation change metrics."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that the candidate’s role and responsibilities align with the onboarding squad’s scope.",
+    "Verify that the candidate’s experience with discovery interviews and requirement writing is sufficient for the role.",
+    "Assess the candidate’s ability to define and report activation metrics against a baseline cohort.",
+    "Ensure that the candidate has coordinated releases with support and customer success as described."
+   ],
+   "auditSummary": "The evidence confirms the candidate’s experience in discovery interviews, requirement writing, backlog prioritisation, and release coordination. Evidence for defining and reporting activation metrics against a baseline cohort is incomplete, requiring further verification. No protected characteristics are inferred, and human review is required to assess overall fit.",
+   "limitations": [
+    "The provided sources do not include production deployment details or explicit baseline cohort reporting."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:17:40.612794+00:00"
+}

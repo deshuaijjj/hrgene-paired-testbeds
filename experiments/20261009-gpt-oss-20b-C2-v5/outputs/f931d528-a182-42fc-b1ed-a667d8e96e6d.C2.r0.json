@@ -1,0 +1,312 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f931d528-a182-42fc-b1ed-a667d8e96e6d.C2",
+ "case_id": "f931d528-a182-42fc-b1ed-a667d8e96e6d",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15152,
+  "promptWords": 1830
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 70.432
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 5019,
+ "eval_count": 2323,
+ "prompt_eval_duration_ns": 19296000,
+ "eval_duration_ns": 43405410000,
+ "total_duration_ns": 70429590958,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Need to include claims. Need to map requirements. Need to handle evidence gaps. Need to note that experience dates: 2024-2026, 2022-2024. That's only 4 years total. Requirement 6 years. So insufficient evidence. Also mentor requirement: reviewed PRs and pairing hour. That is evidence. Need to map. Also need to note that no evidence of 6 years. So requirement 13c0c1d0ba83 insufficient_evidence. Also need to note that no evidence of training models on click logs? Yes source src_c05fae306366 says trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs. That satisfies req_f592a92e14d9. Also evaluation harness source src_ed87350c12e0 satisfies req_a41f840f7df8. Feature pipeline source src_83da428caf0d satisfies req_3624b9c5e263. Mentoring source src_85fefd416c84 satisfies req_691e98bb441c. So all except 13c0c1d0ba83.\n\nNeed to include evidenceBoundary: what materials establish: training, evaluation, pipeline, mentoring. What not: 6 years experience.\n\nNow produce optimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe claim about experience. Use claims with source. Need to include claims with sourceIds. Provide witness verbatim. Use short passage.\n\nLet's craft claims:\n\n1. Trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs for a catalogue of roughly two million products. source src_c05fae306366. witness: \"trained LambdaMART and gradient-boosted ranking models on anonymised click and add-to-basket logs for a catalogue of roughly two million products.\"\n\n2. Built an offline evaluation harness that computes NDCG@10 and MRR on a held-out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting. source src_ed87350c12e0. witness: \"Built an offline evaluation harness that computes NDCG@10 and MRR on a held-out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.\"\n\n3. Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on-call engineer when a feature table is more than 26 hours old. source src_83da428caf0d. witness: \"Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on-call engineer when a feature table is more than 26 hours old.\"\n\n4. Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations. source src_85fefd416c84. witness: \"Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.\"\n\nAlso mention experience dates: April 2024 to September 2026, July 2022 to March 2024. source src_53daef4919a1. witness: \"employment dates for Tessaly Commerce Search (April 2024 to September 2026) and Pellow Analytics (July 2022 to March 2024) were checked against the payroll confirmations supplied by both employers and match the resume.\"\n\nNow CV sections: professionalSummary: maybe one claim about overall experience. experienceHighlights: list claims 1-4. projectsAndWorkSamples: include work sample source src_ec18fb4ddfe1. skills: maybe list \"LambdaMART, gradient-boosted trees, Spark, Airflow, NDCG, MRR, feature engineering, mentoring\".\n\nNow hiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess eligibility based on evidence gaps.\"\n\nrole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\n- req_f592a92e14d9: status supported, evidence source src_c05fae306366, evidenceStrength high, notes \"direct training on click logs\".\n\n- req_a41f840f7df8: supported, evidence src_ed87350c12e0, high.\n\n- req_3624b9c5e263: supported, evidence src_83da428caf0d, high.\n\n- req_13c0c1d0ba83: insufficient_evidence, missingEvidence \"no evidence of six years of hands-on machine learning engineering experience\". Also note that source src_82a6cef8e41e says 'seven years in machine learning engineering' but includes master's research and part-time teaching assistant. That may be considered but not fully verified. So we can mark partial_evidence? The rule says if not established, mark insufficient_evidence. So we mark insufficient_evidence and missingEvidence \"no verified continuous six-year experience\".\n\n- req_691e98bb441c: supported, evidence src_85fefd416c84, high.\n\nsupportedClaims: list claims with requirementIds.\n\nunsupportedClaims: maybe claim about \"seven years in machine learning engineering\" is unsupported because not verified. So include claim: \"seven years in machine learning engineering\" reason: not verified continuous experience. requiredFollowUp: provide payroll confirmation for all years.\n\nmissingEvidenceGaps: for req_13c0c1d0ba83 severity high, gap: continuous six-year hands-on experience.\n\ninterviewSignalRisks: maybe note subjective note from recruiter phone-screen? src_82a6cef8e41e is a note. But it's not subjective? It's a note. But we can treat as interview signal risk: source src_82a6cef8e41e, text \"candidate described their background as 'seven years in machine learning engineering', explaining that the count starts with a master's research project in 2019 and includes a part-time teaching-assistant post at the university.\" signalType \"subjective claim\", jobRelatedBoundary false? It's about experience. It's job related. severity medium. recommendedHandling \"Verify continuous employment dates and roles.\"\n\nfollowUpQuestions: for requirement 13c0c1d0ba83: question about continuous employment, ask for payroll records for each year.\n\nhumanReviewChecklist: items: \"Verify continuous six-year experience\", \"Confirm mentoring activities\", \"Confirm feature pipeline maintenance\".\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"Limited to provided sources; no external verification of experience beyond payroll confirmations.\"\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_2564b25874cbe0f4\",\"targetRoleTitle\":\"Machine Learning Engineer, Search Ranking\",\"professionalSummary\":[\"Machine Learning Engineer with hands‑on experience training LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.  Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries and presented results to the product lead.  Maintained the ranking feature pipeline in Spark and Airflow, adding freshness checks that alert on‑call engineers when a feature table is older than 26 hours.  Mentored junior engineers through code review and weekly pairing sessions.  Employment dates verified against payroll confirmations for Tessaly Commerce Search (Apr 2024‑Sep 2026) and Pellow Analytics (Jul 2022‑Mar 2024).\"],\"experienceHighlights\":[{\"claimId\":\"claim_1\",\"text\":\"Trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.\",\"sourceIds\":[\"src_c05fae306366\"],\"requirementIds\":[\"req_f592a92e14d9\"],\"supportBoundary\":\"supported\",\"witness\":\"trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.\"},{\"claimId\":\"claim_2\",\"text\":\"Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.\",\"sourceIds\":[\"src_ed87350c12e0\"],\"requirementIds\":[\"req_a41f840f7df8\"],\"supportBoundary\":\"supported\",\"witness\":\"Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.\"},{\"claimId\":\"claim_3\",\"text\":\"Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.\",\"sourceIds\":[\"src_83da428caf0d\"],\"requirementIds\":[\"req_3624b9c5e263\"],\"supportBoundary\":\"supported\",\"witness\":\"Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.\"},{\"claimId\":\"claim_4\",\"text\":\"Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.\",\"sourceIds\":[\"src_85fefd416c84\"],\"requirementIds\":[\"req_691e98bb441c\"],\"supportBoundary\":\"supported\",\"witness\":\"Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"claim_5\",\"text\":\"An anonymised offline evaluation report comparing two ranking models on one week of queries, with NDCG@10 and MRR per query segment, the definition of the held‑out set and the summary sent to the product lead.\",\"sourceIds\":[\"src_ec18fb4ddfe1\"],\"requirementIds\":[],\"supportBoundary\":\"supported\",\"witness\":\"Work sample: an anonymised offline evaluation report comparing two ranking models on one week of queries, with NDCG@10 and MRR per query segment, the definition of the held‑out set and the summary sent to the product lead.\"}],\"skills\":[\"LambdaMART\",\"Gradient‑Boosted Trees\",\"Spark\",\"Airflow\",\"NDCG\",\"MRR\",\"Feature Engineering\",\"Mentoring\"],\"evidenceBoundary\":\"The provided resume and work sample establish that the candidate has trained learning‑to‑rank models on click logs, built an offline evaluation harness, maintained a feature pipeline with freshness checks, and mentored junior engineers.  The materials do not establish continuous six years of hands‑on machine learning engineering experience.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess eligibility based on evidence gaps.\"},\"role\":{\"roleTitle\":\"Machine Learning Engineer, Search Ranking\",\"jobDescriptionSource\":\"jd_065fe0ae9d356331\",\"requirementIds\":[\"req_f592a92e14d9\",\"req_a41f840f7df8\",\"req_3624b9c5e263\",\"req_13c0c1d0ba83\",\"req_691e98bb441c\"]},\"candidate\":{\"candidateId\":\"cand_2564b25874cbe0f4\",\"sources\":[\"src_c05fae306366\",\"src_ed87350c12e0\",\"src_83da428caf0d\",\"src_85fefd416c84\",\"src_ec18fb4ddfe1\",\"src_53daef4919a1\",\"src_82a6cef8e41e\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_f592a92e14d9\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c05fae306366\",\"text\":\"trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.\",\"evidenceStrength\":\"high\",\"notes\":\"direct training on click logs\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a41f840f7df8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ed87350c12e0\",\"text\":\"Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.\",\"evidenceStrength\":\"high\",\"notes\":\"offline evaluation harness\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3624b9c5e263\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_83da428caf0d\",\"text\":\"Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.\",\"evidenceStrength\":\"high\",\"notes\":\"feature pipeline maintenance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_13c0c1d0ba83\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"No verified continuous six‑year hands‑on machine learning engineering experience\"]},{\"requirementId\":\"req_691e98bb441c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_85fefd416c84\",\"text\":\"Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.\",\"evidenceStrength\":\"high\",\"notes\":\"mentoring activities\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.\",\"supportingRequirementIds\":[\"req_f592a92e14d9\"],\"sourceIds\":[\"src_c05fae306366\"],\"evidenceStrength\":\"high\",\"witness\":\"trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.\"},{\"claim\":\"Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.\",\"supportingRequirementIds\":[\"req_a41f840f7df8\"],\"sourceIds\":[\"src_ed87350c12e0\"],\"evidenceStrength\":\"high\",\"witness\":\"Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.\"},{\"claim\":\"Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.\",\"supportingRequirementIds\":[\"req_3624b9c5e263\"],\"sourceIds\":[\"src_83da428caf0d\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.\"},{\"claim\":\"Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.\",\"supportingRequirementIds\":[\"req_691e98bb441c\"],\"sourceIds\":[\"src_85fefd416c84\"],\"evidenceStrength\":\"high\",\"witness\":\"Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.\"}],\"unsupportedClaims\":[{\"claim\":\"Seven years in machine learning engineering\",\"reason\":\"Not verified as continuous hands‑on experience; includes a master's research project and part‑time teaching assistant role.\",\"requiredFollowUp\":\"Provide payroll or employment records for each year of continuous machine learning engineering work.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_13c0c1d0ba83\",\"severity\":\"high\",\"gap\":\"Continuous six‑year hands‑on machine learning engineering experience not verified.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_82a6cef8e41e\",\"text\":\"Candidate described their background as 'seven years in machine learning engineering', explaining that the count starts with a master's research project in 2019 and includes a part‑time teaching‑assistant post at the university.\",\"signalType\":\"subjective claim\",\"jobRelatedBoundary\":true,\"severity\":\"medium\",\"recommendedHandling\":\"Verify continuous employment dates and roles through payroll confirmations.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_13c0c1d0ba83\",\"question\":\"Can you provide payroll or employment records that demonstrate continuous machine learning engineering work for each of the past six years?\",\"evidenceTarget\":\"Continuous employment evidence\"}],\"humanReviewChecklist\":[\"Verify continuous six‑year experience through payroll records.\",\"Confirm mentoring activities and code review participation.\",\"Confirm feature pipeline maintenance and freshness checks.\"],\"auditSummary\":\"The evidence confirms that the candidate meets all technical requirements for training, evaluating, and maintaining a learning‑to‑rank system, and for mentoring junior engineers.  However, the candidate’s claim of six years of hands‑on machine learning engineering experience is not substantiated by the provided sources, creating a significant evidence gap that requires verification before a hiring decision can be made.\",\"limitations\":[\"Evidence limited to the provided resume, work sample, and verification notes; no external audit of experience beyond payroll confirmations.\"]}}",
+ "content_sha256": "60001196163629cbbe2476e8b1cfa3b78df43fb6d81b6832f623d60d76326d29",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2564b25874cbe0f4",
+   "targetRoleTitle": "Machine Learning Engineer, Search Ranking",
+   "professionalSummary": [
+    "Machine Learning Engineer with hands‑on experience training LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.  Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries and presented results to the product lead.  Maintained the ranking feature pipeline in Spark and Airflow, adding freshness checks that alert on‑call engineers when a feature table is older than 26 hours.  Mentored junior engineers through code review and weekly pairing sessions.  Employment dates verified against payroll confirmations for Tessaly Commerce Search (Apr 2024‑Sep 2026) and Pellow Analytics (Jul 2022‑Mar 2024)."
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_1",
+     "text": "Trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.",
+     "sourceIds": [
+      "src_c05fae306366"
+     ],
+     "requirementIds": [
+      "req_f592a92e14d9"
+     ],
+     "supportBoundary": "supported",
+     "witness": "trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products."
+    },
+    {
+     "claimId": "claim_2",
+     "text": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.",
+     "sourceIds": [
+      "src_ed87350c12e0"
+     ],
+     "requirementIds": [
+      "req_a41f840f7df8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.",
+     "sourceIds": [
+      "src_83da428caf0d"
+     ],
+     "requirementIds": [
+      "req_3624b9c5e263"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.",
+     "sourceIds": [
+      "src_85fefd416c84"
+     ],
+     "requirementIds": [
+      "req_691e98bb441c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_5",
+     "text": "An anonymised offline evaluation report comparing two ranking models on one week of queries, with NDCG@10 and MRR per query segment, the definition of the held‑out set and the summary sent to the product lead.",
+     "sourceIds": [
+      "src_ec18fb4ddfe1"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: an anonymised offline evaluation report comparing two ranking models on one week of queries, with NDCG@10 and MRR per query segment, the definition of the held‑out set and the summary sent to the product lead."
+    }
+   ],
+   "skills": [
+    "LambdaMART",
+    "Gradient‑Boosted Trees",
+    "Spark",
+    "Airflow",
+    "NDCG",
+    "MRR",
+    "Feature Engineering",
+    "Mentoring"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish that the candidate has trained learning‑to‑rank models on click logs, built an offline evaluation harness, maintained a feature pipeline with freshness checks, and mentored junior engineers.  The materials do not establish continuous six years of hands‑on machine learning engineering experience."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess eligibility based on evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Search Ranking",
+    "jobDescriptionSource": "jd_065fe0ae9d356331",
+    "requirementIds": [
+     "req_f592a92e14d9",
+     "req_a41f840f7df8",
+     "req_3624b9c5e263",
+     "req_13c0c1d0ba83",
+     "req_691e98bb441c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2564b25874cbe0f4",
+    "sources": [
+     "src_c05fae306366",
+     "src_ed87350c12e0",
+     "src_83da428caf0d",
+     "src_85fefd416c84",
+     "src_ec18fb4ddfe1",
+     "src_53daef4919a1",
+     "src_82a6cef8e41e"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f592a92e14d9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c05fae306366",
+       "text": "trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.",
+       "evidenceStrength": "high",
+       "notes": "direct training on click logs"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a41f840f7df8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ed87350c12e0",
+       "text": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.",
+       "evidenceStrength": "high",
+       "notes": "offline evaluation harness"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3624b9c5e263",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_83da428caf0d",
+       "text": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.",
+       "evidenceStrength": "high",
+       "notes": "feature pipeline maintenance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_13c0c1d0ba83",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No verified continuous six‑year hands‑on machine learning engineering experience"
+     ]
+    },
+    {
+     "requirementId": "req_691e98bb441c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_85fefd416c84",
+       "text": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.",
+       "evidenceStrength": "high",
+       "notes": "mentoring activities"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products.",
+     "supportingRequirementIds": [
+      "req_f592a92e14d9"
+     ],
+     "sourceIds": [
+      "src_c05fae306366"
+     ],
+     "evidenceStrength": "high",
+     "witness": "trained LambdaMART and gradient‑boosted ranking models on anonymised click and add‑to‑basket logs for a catalogue of roughly two million products."
+    },
+    {
+     "claim": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting.",
+     "supportingRequirementIds": [
+      "req_a41f840f7df8"
+     ],
+     "sourceIds": [
+      "src_ed87350c12e0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built an offline evaluation harness that computes NDCG@10 and MRR on a held‑out week of queries, and presented the comparison for each challenger model to the search product lead before the release meeting."
+    },
+    {
+     "claim": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old.",
+     "supportingRequirementIds": [
+      "req_3624b9c5e263"
+     ],
+     "sourceIds": [
+      "src_83da428caf0d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the ranking feature pipeline in Spark and Airflow and added freshness checks that page the on‑call engineer when a feature table is more than 26 hours old."
+    },
+    {
+     "claim": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations.",
+     "supportingRequirementIds": [
+      "req_691e98bb441c"
+     ],
+     "sourceIds": [
+      "src_85fefd416c84"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reviewed pull requests from two graduate engineers and ran a weekly pairing hour on writing tests for feature transformations."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Seven years in machine learning engineering",
+     "reason": "Not verified as continuous hands‑on experience; includes a master's research project and part‑time teaching assistant role.",
+     "requiredFollowUp": "Provide payroll or employment records for each year of continuous machine learning engineering work."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_13c0c1d0ba83",
+     "severity": "high",
+     "gap": "Continuous six‑year hands‑on machine learning engineering experience not verified."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_82a6cef8e41e",
+     "text": "Candidate described their background as 'seven years in machine learning engineering', explaining that the count starts with a master's research project in 2019 and includes a part‑time teaching‑assistant post at the university.",
+     "signalType": "subjective claim",
+     "jobRelatedBoundary": true,
+     "severity": "medium",
+     "recommendedHandling": "Verify continuous employment dates and roles through payroll confirmations."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_13c0c1d0ba83",
+     "question": "Can you provide payroll or employment records that demonstrate continuous machine learning engineering work for each of the past six years?",
+     "evidenceTarget": "Continuous employment evidence"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify continuous six‑year experience through payroll records.",
+    "Confirm mentoring activities and code review participation.",
+    "Confirm feature pipeline maintenance and freshness checks."
+   ],
+   "auditSummary": "The evidence confirms that the candidate meets all technical requirements for training, evaluating, and maintaining a learning‑to‑rank system, and for mentoring junior engineers.  However, the candidate’s claim of six years of hands‑on machine learning engineering experience is not substantiated by the provided sources, creating a significant evidence gap that requires verification before a hiring decision can be made.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and verification notes; no external audit of experience beyond payroll confirmations."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:48:25.605197+00:00"
+}

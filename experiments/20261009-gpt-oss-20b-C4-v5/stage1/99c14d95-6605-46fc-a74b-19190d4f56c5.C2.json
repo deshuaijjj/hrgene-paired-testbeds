@@ -1,0 +1,574 @@
+{
+ "request_id": "99c14d95-6605-46fc-a74b-19190d4f56c5.C2",
+ "case_id": "99c14d95-6605-46fc-a74b-19190d4f56c5",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Experienced retail refit project manager with a proven record of delivering 14 store refits in 2023‑2024, managing scope, contractors, phasing and handover for "
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[1]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Demonstrated ability to keep stores trading safely during works through detailed phasing plans, hoarding and out‑of‑hours delivery coordination."
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[2]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Certified PRINCE2 Practitioner with a recognised project‑management qualification."
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[3]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Strong stakeholder engagement with store operations, contractors and programme leadership."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].status",
+    "message": "requirement marked supported but its ownership term(s) [MANAGE] (manages) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_0145687d3e10",
+     "family": "MANAGE",
+     "terms": [
+      "manages"
+     ],
+     "sourceIds": [
+      "src_6abde69818a9"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_term_on_supported_side",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].notes",
+    "message": "subjective wording presented as supported: presence",
+    "witness": {
+     "terms": [
+      "presence"
+     ],
+     "text": "Confirms on‑site presence two nights a week."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "8 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str",
+      "$.optimizedCv.professionalSummary[1]: expected type object, got str",
+      "$.optimizedCv.professionalSummary[2]: expected type object, got str",
+      "$.optimizedCv.professionalSummary[3]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 4,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[1]",
+   "detail": "req_0145687d3e10: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Experienced retail refit project manager with a proven record of delivering 14 store refits in 2023‑2024, managing scope"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[1]",
+   "detail": "Demonstrated ability to keep stores trading safely during works through detailed phasing plans, hoarding and out‑of‑hour"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[2]",
+   "detail": "Certified PRINCE2 Practitioner with a recognised project‑management qualification."
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[3]",
+   "detail": "Strong stakeholder engagement with store operations, contractors and programme leadership."
+  },
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective_term_on_supported_side",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "The programme director at Marlow & Finch Homewares confirmed in writing that the candidate was on site at stores across "
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "downgrade",
+   "action": "downgrade_requirement_status",
+   "path": "",
+   "detail": "req_4aef855400ea"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_0fd0c951b433f2f2",
+   "targetRoleTitle": "Project Manager, Store Refit Programme",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit for the role based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Store Refit Programme",
+    "jobDescriptionSource": "jd_842a2f713d875c51",
+    "requirementIds": [
+     "req_b33b80cbcaf2",
+     "req_0145687d3e10",
+     "req_c266ff4e8878",
+     "req_4aef855400ea",
+     "req_a5605a08f28e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_0fd0c951b433f2f2",
+    "sources": [
+     "src_9b394d932088",
+     "src_6abde69818a9",
+     "src_b673ce188301",
+     "src_98951d432120",
+     "src_8d8d3283a871",
+     "src_51f01bb88b26",
+     "src_60ded927965e",
+     "src_8f6b72ced663"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_b33b80cbcaf2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9b394d932088",
+       "text": "Managed 14 store refits in 2023 and 2024 for Marlow & Finch Homewares, from the scope agreed with store operations to the handover walk with each store manager.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of portfolio management from scope to handover."
+      },
+      {
+       "sourceId": "src_6abde69818a9",
+       "text": "Ran tenders for fit-out contractors, set up the contracts and held weekly site meetings on programme, cost and variations, closing each project's final account.",
+       "evidenceStrength": "medium",
+       "notes": "Supports contractor management and handover closure."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0145687d3e10",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_6abde69818a9",
+       "text": "Ran tenders for fit-out contractors, set up the contracts and held weekly site meetings on programme, cost and variations, closing each project's final account.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates appointment and management of contractors."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's manage element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_c266ff4e8878",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b673ce188301",
+       "text": "Phased the works so that every store stayed open, agreeing hoarding lines, out-of-hours deliveries and fire routes with the store manager and the contractor's site lead.",
+       "evidenceStrength": "high",
+       "notes": "Shows safe trading during works through phasing and site rules."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4aef855400ea",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Cited evidence was removed by the validator; the requirement is not established by the remaining sources."
+     ]
+    },
+    {
+     "requirementId": "req_a5605a08f28e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8f6b72ced663",
+       "text": "Recruiter verification: the PRINCE2 Practitioner certificate was checked on the awarding body's successful-candidate register and is listed against the candidate's name with a 2022 award date.",
+       "evidenceStrength": "high",
+       "notes": "Provides recognised project‑management qualification."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Managed 14 store refits in 2023 and 2024 for Marlow & Finch Homewares, from the scope agreed with store operations to the handover walk with each store manager.",
+     "supportingRequirementIds": [
+      "req_b33b80cbcaf2"
+     ],
+     "sourceIds": [
+      "src_9b394d932088"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed 14 store refits in 2023 and 2024 for Marlow & Finch Homewares, from the scope agreed with store operations to the handover walk with each store manager."
+    },
+    {
+     "claim": "Ran tenders for fit-out contractors, set up the contracts and held weekly site meetings on programme, cost and variations, closing each project's final account.",
+     "supportingRequirementIds": [
+      "req_0145687d3e10"
+     ],
+     "sourceIds": [
+      "src_6abde69818a9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran tenders for fit-out contractors, set up the contracts and held weekly site meetings on programme, cost and variations, closing each project's final account."
+    },
+    {
+     "claim": "Phased the works so that every store stayed open, agreeing hoarding lines, out-of-hours deliveries and fire routes with the store manager and the contractor's site lead.",
+     "supportingRequirementIds": [
+      "req_c266ff4e8878"
+     ],
+     "sourceIds": [
+      "src_b673ce188301"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Phased the works so that every store stayed open, agreeing hoarding lines, out-of-hours deliveries and fire routes with the store manager and the contractor's site lead."
+    },
+    {
+     "claim": "The programme director at Marlow & Finch Homewares confirmed in writing that the candidate was on site at stores across England and Wales for two to three nights most weeks during 2023 and 2024, matching the company's travel and expenses records.",
+     "supportingRequirementIds": [
+      "req_4aef855400ea"
+     ],
+     "sourceIds": [
+      "src_60ded927965e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The programme director at Marlow & Finch Homewares confirmed in writing that the candidate was on site at stores across England and Wales for two to three nights most weeks during 2023 and 2024, matching the company's travel and expenses records."
+    },
+    {
+     "claim": "Recruiter verification: the PRINCE2 Practitioner certificate was checked on the awarding body's successful-candidate register and is listed against the candidate's name with a 2022 award date.",
+     "supportingRequirementIds": [
+      "req_a5605a08f28e"
+     ],
+     "sourceIds": [
+      "src_8f6b72ced663"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Recruiter verification: the PRINCE2 Practitioner certificate was checked on the awarding body's successful-candidate register and is listed against the candidate's name with a 2022 award date."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Experienced retail refit project manager with a proven record of delivering 14 store refits in 2023‑2024, managing scope, contractors, phasing and handover for Marlow & Finch Homewares.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Demonstrated ability to keep stores trading safely during works through detailed phasing plans, hoarding and out‑of‑hours delivery coordination.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Certified PRINCE2 Practitioner with a recognised project‑management qualification.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Strong stakeholder engagement with store operations, contractors and programme leadership.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_60ded927965e",
+     "text": "The programme director at Marlow & Finch Homewares confirmed in writing that the candidate was on site at stores across England and Wales for two to three nights most weeks during 2023 and 2024, matching the company's travel and expenses records.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s phasing plan aligns with the programme’s safety standards.",
+    "Confirm that the PRINCE2 Practitioner certification is current and applicable to the role."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume, work sample, reference check and certification verification. No quantitative or causal claims lacking source are present. The evidence establishes portfolio management, contractor appointment, safe trading during works, on‑site presence, and recognised qualification. No gaps or unsupported claims identified.",
+   "limitations": [
+    "Evidence is limited to the provided sources; external validation of project outcomes or cost performance is not available."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

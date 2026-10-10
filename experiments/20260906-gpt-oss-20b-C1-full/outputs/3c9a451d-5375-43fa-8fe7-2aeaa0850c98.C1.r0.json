@@ -1,0 +1,239 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3c9a451d-5375-43fa-8fe7-2aeaa0850c98.C1",
+ "case_id": "3c9a451d-5375-43fa-8fe7-2aeaa0850c98",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10788,
+  "promptWords": 1457
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 34.811
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2664,
+ "eval_count": 1672,
+ "prompt_eval_duration_ns": 17846000,
+ "eval_duration_ns": 29366396000,
+ "total_duration_ns": 34808003792,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claims list. Provide evidenceBoundary sentence. Then hiringEvidencePacket with all fields.\n\nWe must list requirementEvidenceMap for each requirement id. Use status supported if evidence exists. All requirements have evidence from resume sources. So supported. Provide evidence entries with sourceId and text verbatim from source. We need to copy text from sources. We have source texts in description. Use them.\n\nAlso supportedClaims list: maybe same as claims. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high? maybe medium. Provide witness verbatim.\n\nUnsupportedClaims none.\n\nMissingEvidenceGaps none.\n\nInterviewSignalRisks none.\n\nFollowUpQuestions none.\n\nHumanReviewChecklist: maybe \"Review evidence for compliance with job requirements\".\n\nAuditSummary paragraph.\n\nLimitations: maybe \"Limited to provided materials\".\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_2bd272bbd6b4be5e\",\"targetRoleTitle\":\"Software Engineer, Factory Execution System\",\"professionalSummary\":[\"Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard. (src_06b05a276e99)\"],\"experienceHighlights\":[\"Taught the supervisors each change on the line during a running shift under the line training standard; sixty-one line sessions across the two plants, every one with a supervisor‑signed training record. (src_87647442d9b4)\",\"Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer. (src_de91daa1df97)\",\"The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine. (src_1076da3e8f67)\",\"A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record. (src_44502490b4c6)\"],\"projectsAndWorkSamples\":[\"Work sample: two change records with pilot records, the lead's go‑ahead and the notes, and three supervisor‑signed training records, with the change system references as a verification trail. (src_11ee3e941152)\"],\"skills\":[\"Plant software standard compliance\",\"Line training delivery\",\"Pilot line testing\",\"Release approval coordination\",\"Documentation of change impact\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s experience and activities that directly align with the job requirements; they do not provide quantitative performance metrics or evidence of work beyond the described scope.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Software Engineer, Factory Execution System\",\"jobDescriptionSource\":\"jd_bbb9dfdf4ed8916a\",\"requirementIds\":[\"req_c22c82b0b0e7\",\"req_c9ce1dfb45db\",\"req_9950155784b8\",\"req_7e55b74921d3\",\"req_93c56f2beb2e\"]},\"candidate\":{\"candidateId\":\"cand_2bd272bbd6b4be5e\",\"sources\":[\"src_06b05a276e99\",\"src_87647442d9b4\",\"src_de91daa1df97\",\"src_1076da3e8f67\",\"src_44502490b4c6\",\"src_11ee3e941152\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_c22c82b0b0e7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_06b05a276e99\",\"text\":\"Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of building changes per specification.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_c9ce1dfb45db\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_87647442d9b4\",\"text\":\"Taught the supervisors each change on the line during a running shift under the line training standard; sixty‑one line sessions across the two plants, every one with a supervisor‑signed training record.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of teaching during running shift.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_9950155784b8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_de91daa1df97\",\"text\":\"Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of pilot line testing.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7e55b74921d3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1076da3e8f67\",\"text\":\"The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of lead approval.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_93c56f2beb2e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_44502490b4c6\",\"text\":\"A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.\",\"supportingRequirementIds\":[\"req_c22c82b0b0e7\"],\"sourceIds\":[\"src_06b05a276e99\"],\"evidenceStrength\":\"high\",\"witness\":\"Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.\"},{\"claim\":\"Taught the supervisors each change on the line during a running shift under the line training standard; sixty‑one line sessions across the two plants, every one with a supervisor‑signed training record.\",\"supportingRequirementIds\":[\"req_c9ce1dfb45db\"],\"sourceIds\":[\"src_87647442d9b4\"],\"evidenceStrength\":\"high\",\"witness\":\"Taught the supervisors each change on the line during a running shift under the line training standard; sixty‑one line sessions across the two plants, every one with a supervisor‑signed training record.\"},{\"claim\":\"Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.\",\"supportingRequirementIds\":[\"req_9950155784b8\"],\"sourceIds\":[\"src_de91daa1df97\"],\"evidenceStrength\":\"high\",\"witness\":\"Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.\"},{\"claim\":\"The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine.\",\"supportingRequirementIds\":[\"req_7e55b74921d3\"],\"sourceIds\":[\"src_1076da3e8f67\"],\"evidenceStrength\":\"high\",\"witness\":\"The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine.\"},{\"claim\":\"A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.\",\"supportingRequirementIds\":[\"req_93c56f2beb2e\"],\"sourceIds\":[\"src_44502490b4c6\"],\"evidenceStrength\":\"high\",\"witness\":\"A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s documented activities align with the specific plant software standard and line training standard referenced in the job description.\"],\"auditSummary\":\"All five job requirements are directly supported by statements in the candidate’s resume and work sample. No quantitative performance metrics or evidence beyond the described scope are provided. The evidence is consistent and unambiguous, but further verification of the plant software standard and line training standard compliance may be prudent before proceeding.\",\"limitations\":[\"Evidence limited to the provided resume, work sample, and interview notes; no external validation of performance or outcomes.\"]}}",
+ "content_sha256": "4426699004800a90a3a1cdb7b0d14db37e7220dd8fae92ae80fdf65a715d0246",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2bd272bbd6b4be5e",
+   "targetRoleTitle": "Software Engineer, Factory Execution System",
+   "professionalSummary": [
+    "Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard. (src_06b05a276e99)"
+   ],
+   "experienceHighlights": [
+    "Taught the supervisors each change on the line during a running shift under the line training standard; sixty-one line sessions across the two plants, every one with a supervisor‑signed training record. (src_87647442d9b4)",
+    "Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer. (src_de91daa1df97)",
+    "The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine. (src_1076da3e8f67)",
+    "A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record. (src_44502490b4c6)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: two change records with pilot records, the lead's go‑ahead and the notes, and three supervisor‑signed training records, with the change system references as a verification trail. (src_11ee3e941152)"
+   ],
+   "skills": [
+    "Plant software standard compliance",
+    "Line training delivery",
+    "Pilot line testing",
+    "Release approval coordination",
+    "Documentation of change impact"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s experience and activities that directly align with the job requirements; they do not provide quantitative performance metrics or evidence of work beyond the described scope."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Factory Execution System",
+    "jobDescriptionSource": "jd_bbb9dfdf4ed8916a",
+    "requirementIds": [
+     "req_c22c82b0b0e7",
+     "req_c9ce1dfb45db",
+     "req_9950155784b8",
+     "req_7e55b74921d3",
+     "req_93c56f2beb2e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2bd272bbd6b4be5e",
+    "sources": [
+     "src_06b05a276e99",
+     "src_87647442d9b4",
+     "src_de91daa1df97",
+     "src_1076da3e8f67",
+     "src_44502490b4c6",
+     "src_11ee3e941152"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_c22c82b0b0e7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_06b05a276e99",
+       "text": "Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of building changes per specification."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c9ce1dfb45db",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_87647442d9b4",
+       "text": "Taught the supervisors each change on the line during a running shift under the line training standard; sixty‑one line sessions across the two plants, every one with a supervisor‑signed training record.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of teaching during running shift."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9950155784b8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_de91daa1df97",
+       "text": "Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of pilot line testing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7e55b74921d3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1076da3e8f67",
+       "text": "The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of lead approval."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_93c56f2beb2e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_44502490b4c6",
+       "text": "A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard.",
+     "supportingRequirementIds": [
+      "req_c22c82b0b0e7"
+     ],
+     "sourceIds": [
+      "src_06b05a276e99"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Execution system engineer at an electronics manufacturer for four years across two assembly plants, building the changes the process engineers specified under the plant software standard."
+    },
+    {
+     "claim": "Taught the supervisors each change on the line during a running shift under the line training standard; sixty‑one line sessions across the two plants, every one with a supervisor‑signed training record.",
+     "supportingRequirementIds": [
+      "req_c9ce1dfb45db"
+     ],
+     "sourceIds": [
+      "src_87647442d9b4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Taught the supervisors each change on the line during a running shift under the line training standard; sixty‑one line sessions across the two plants, every one with a supervisor‑signed training record."
+    },
+    {
+     "claim": "Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer.",
+     "supportingRequirementIds": [
+      "req_9950155784b8"
+     ],
+     "sourceIds": [
+      "src_de91daa1df97"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Every change ran on the pilot line first, with the pilot record filed against the change and countersigned by the process engineer."
+    },
+    {
+     "claim": "The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine.",
+     "supportingRequirementIds": [
+      "req_7e55b74921d3"
+     ],
+     "sourceIds": [
+      "src_1076da3e8f67"
+     ],
+     "evidenceStrength": "high",
+     "witness": "The execution system lead gave the go‑ahead for every release, recorded on the change alongside the checks that were mine."
+    },
+    {
+     "claim": "A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record.",
+     "supportingRequirementIds": [
+      "req_93c56f2beb2e"
+     ],
+     "sourceIds": [
+      "src_44502490b4c6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "A note of what the change leaves alone and what the next engineer needs to know sits at the end of every change record."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented activities align with the specific plant software standard and line training standard referenced in the job description."
+   ],
+   "auditSummary": "All five job requirements are directly supported by statements in the candidate’s resume and work sample. No quantitative performance metrics or evidence beyond the described scope are provided. The evidence is consistent and unambiguous, but further verification of the plant software standard and line training standard compliance may be prudent before proceeding.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and interview notes; no external validation of performance or outcomes."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:23:10.869487+00:00"
+}

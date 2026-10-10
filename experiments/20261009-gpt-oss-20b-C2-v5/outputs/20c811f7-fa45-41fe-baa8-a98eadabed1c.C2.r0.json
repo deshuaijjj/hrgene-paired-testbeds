@@ -1,0 +1,266 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "20c811f7-fa45-41fe-baa8-a98eadabed1c.C2",
+ "case_id": "20c811f7-fa45-41fe-baa8-a98eadabed1c",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14125,
+  "promptWords": 1677
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 39.77
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3758,
+ "eval_count": 1740,
+ "prompt_eval_duration_ns": 18377000,
+ "eval_duration_ns": 31263342000,
+ "total_duration_ns": 39768284709,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft claims.\n\nClaims: professional summary: built daily item-level forecasts, CStat, accuracy measures, explain changes, code in Git.\n\nExperience highlights: Data Scientist role, built forecasts, accuracy measures, CStat, explain changes.\n\nProjects: accuracy report sample.\n\nSkills: gradient-boosted models, weighted MAPE, bias, Git, communication.\n\nEvidence boundary: materials establish that candidate has built forecasts, has CStat, measures accuracy, explains changes, code in Git. Not establish production deployment? It's daily forecasts for 140 shops, likely production. But requirement 5d1577897edb: keeps code tested, documented, version control. Source says code kept in team's Git repository. No mention of testing or documentation. So partial evidence.\n\nRequirement mapping:\n\nreq_f8920c5dff13: supported by src_a93da198bdac.\n\nreq_a2a88ec7339b: supported by src_682da51e45d8 and src_65a43a77e231.\n\nreq_a98b084acf6e: supported by src_c10c5c34eeaa.\n\nreq_3f97cff4190a: supported by src_545e73a66f0c.\n\nreq_5d1577897edb: partial evidence: source says code kept in Git repo but no mention of testing/documentation. So status partial_evidence, missing evidence: testing practices, documentation.\n\nUnsupported claims: none.\n\nMissing evidence gaps: for requirement 5d1577897edb: need evidence of testing, documentation, version control details.\n\nInterviewSignalRisks: none subjective.\n\nFollowUpQuestions: for requirement 5d1577897edb: ask about testing, documentation, version control.\n\nHumanReviewChecklist: list items.\n\nAuditSummary: summary.\n\nLimitations: mention that evidence limited to provided sources.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_b85d91b7aef25082\",\"targetRoleTitle\":\"Demand Forecasting Data Scientist\",\"professionalSummary\":[\"Data Scientist with Chartered Statistician (CStat) accreditation, experienced in building daily item‑level sales forecasts for 140 coffee shops using gradient‑boosted models and external covariates such as weather and local events.\",\"Skilled in measuring forecast accuracy with weighted MAPE and bias, reporting results to supply planners, and explaining forecast changes to operations managers in plain language.\",\"Maintains forecasting code in a Git repository, ensuring version control and documentation of methods.\"],\"experienceHighlights\":[\"Built daily item‑level forecasts for 140 coffee shops, feeding bakery production plans (src_a93da198bdac).\",\"Agreed weighted MAPE and bias as accuracy metrics with the supply planning team, reporting them every Monday (src_c10c5c34eeaa).\",\"Held Chartered Statistician (CStat) status, awarded July 2023 (src_682da51e45d8).\",\"Conducted monthly sessions with area managers to explain large forecast changes without statistical jargon (src_545e73a66f0c).\"],\"projectsAndWorkSamples\":[\"Anonymised Monday accuracy report showing weighted MAPE and bias by item family, forecast‑versus‑actual chart for pastries, and notes on promotional weeks (src_80ddaf2c0b18).\"],\"skills\":[\"Gradient‑boosted models\",\"Weighted MAPE and bias calculation\",\"Git version control\",\"Statistical communication\",\"Forecast accuracy measurement\"],\"evidenceBoundary\":\"The provided materials establish that the candidate has built daily item‑level forecasts, holds CStat accreditation, measures forecast accuracy with agreed metrics, explains forecast changes to managers, and keeps code in a Git repository. They do not provide explicit evidence of testing practices, documentation of code, or production deployment details.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess remaining evidence gaps and interview signals.\"},\"role\":{\"roleTitle\":\"Demand Forecasting Data Scientist\",\"jobDescriptionSource\":\"jd_f3a5ab9b178be1eb\",\"requirementIds\":[\"req_f8920c5dff13\",\"req_a2a88ec7339b\",\"req_a98b084acf6e\",\"req_3f97cff4190a\",\"req_5d1577897edb\"]},\"candidate\":{\"candidateId\":\"cand_b85d91b7aef25082\",\"sources\":[\"src_a93da198bdac\",\"src_c10c5c34eeaa\",\"src_682da51e45d8\",\"src_545e73a66f0c\",\"src_83c95f21a56d\",\"src_80ddaf2c0b18\",\"src_65a43a77e231\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_f8920c5dff13\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a93da198bdac\",\"text\":\"built daily item-level forecasts for 140 coffee shops with gradient-boosted models on sales history, weather and local events, feeding the bakery production plan\",\"evidenceStrength\":\"high\",\"notes\":\"directly matches requirement\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a2a88ec7339b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_682da51e45d8\",\"text\":\"Chartered Statistician (CStat), Royal Statistical Society, awarded July 2023\",\"evidenceStrength\":\"high\",\"notes\":\"accreditation achieved\"},{\"sourceId\":\"src_65a43a77e231\",\"text\":\"candidate's CStat status was checked on the Royal Statistical Society's public register of chartered members and is listed as current\",\"evidenceStrength\":\"medium\",\"notes\":\"verification\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a98b084acf6e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c10c5c34eeaa\",\"text\":\"Agreed weighted MAPE and bias by item family as the accuracy measures with the supply planning team and reported them every Monday\",\"evidenceStrength\":\"high\",\"notes\":\"accuracy measurement with supply team\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3f97cff4190a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_545e73a66f0c\",\"text\":\"Ran a monthly session with area managers explaining large forecast changes, such as the effect of school holidays and new menu items, without statistical jargon\",\"evidenceStrength\":\"high\",\"notes\":\"plain language explanation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5d1577897edb\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_a93da198bdac\",\"text\":\"the forecasting code was kept in the team's Git repository\",\"evidenceStrength\":\"medium\",\"notes\":\"version control evidence\"}],\"missingEvidence\":[\"Evidence of automated testing procedures, documentation of code, and confirmation that code is maintained under version control with proper documentation practices.\"]}],\"supportedClaims\":[{\"claim\":\"Built daily item‑level forecasts for 140 coffee shops using gradient‑boosted models\",\"supportingRequirementIds\":[\"req_f8920c5dff13\"],\"sourceIds\":[\"src_a93da198bdac\"],\"evidenceStrength\":\"high\",\"witness\":\"built daily item-level forecasts for 140 coffee shops with gradient-boosted models on sales history, weather and local events, feeding the bakery production plan\"},{\"claim\":\"Hold Chartered Statistician (CStat) accreditation\",\"supportingRequirementIds\":[\"req_a2a88ec7339b\"],\"sourceIds\":[\"src_682da51e45d8\"],\"evidenceStrength\":\"high\",\"witness\":\"Chartered Statistician (CStat), Royal Statistical Society, awarded July 2023\"},{\"claim\":\"Measure forecast accuracy with weighted MAPE and bias, reporting to supply planners\",\"supportingRequirementIds\":[\"req_a98b084acf6e\"],\"sourceIds\":[\"src_c10c5c34eeaa\"],\"evidenceStrength\":\"high\",\"witness\":\"Agreed weighted MAPE and bias by item family as the accuracy measures with the supply planning team and reported them every Monday\"},{\"claim\":\"Explain forecast changes to operations managers in plain language\",\"supportingRequirementIds\":[\"req_3f97cff4190a\"],\"sourceIds\":[\"src_545e73a66f0c\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran a monthly session with area managers explaining large forecast changes, such as the effect of school holidays and new menu items, without statistical jargon\"},{\"claim\":\"Keep forecasting code in a Git repository\",\"supportingRequirementIds\":[\"req_5d1577897edb\"],\"sourceIds\":[\"src_a93da198bdac\"],\"evidenceStrength\":\"medium\",\"witness\":\"the forecasting code was kept in the team's Git repository\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_5d1577897edb_testing\",\"requirementId\":\"req_5d1577897edb\",\"severity\":\"medium\",\"gap\":\"Evidence of automated testing procedures and documentation of code is missing.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_5d1577897edb_testing\",\"requirementId\":\"req_5d1577897edb\",\"question\":\"Can you describe the testing practices you use to ensure the forecasting code remains reliable, and how you document these practices in your version control system?\",\"evidenceTarget\":\"Testing procedures, documentation, version control details\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s forecasting code is indeed maintained in a Git repository with proper documentation and automated tests.\",\"Confirm that the accuracy metrics reported match the agreed weighted MAPE and bias definitions.\",\"Assess the candidate’s ability to explain forecast changes in plain language during the interview.\"],\"auditSummary\":\"The evidence supports most requirements, with partial evidence for maintaining code quality. Human review should focus on confirming testing and documentation practices, and evaluating communication skills.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and recruiter notes; no external verification of production deployment or testing practices is available.\"]} }",
+ "content_sha256": "5e8ca027c531c7f22d66c8ceb31169df73b85c4915a36a570ed420e3a0154082",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_b85d91b7aef25082",
+   "targetRoleTitle": "Demand Forecasting Data Scientist",
+   "professionalSummary": [
+    "Data Scientist with Chartered Statistician (CStat) accreditation, experienced in building daily item‑level sales forecasts for 140 coffee shops using gradient‑boosted models and external covariates such as weather and local events.",
+    "Skilled in measuring forecast accuracy with weighted MAPE and bias, reporting results to supply planners, and explaining forecast changes to operations managers in plain language.",
+    "Maintains forecasting code in a Git repository, ensuring version control and documentation of methods."
+   ],
+   "experienceHighlights": [
+    "Built daily item‑level forecasts for 140 coffee shops, feeding bakery production plans (src_a93da198bdac).",
+    "Agreed weighted MAPE and bias as accuracy metrics with the supply planning team, reporting them every Monday (src_c10c5c34eeaa).",
+    "Held Chartered Statistician (CStat) status, awarded July 2023 (src_682da51e45d8).",
+    "Conducted monthly sessions with area managers to explain large forecast changes without statistical jargon (src_545e73a66f0c)."
+   ],
+   "projectsAndWorkSamples": [
+    "Anonymised Monday accuracy report showing weighted MAPE and bias by item family, forecast‑versus‑actual chart for pastries, and notes on promotional weeks (src_80ddaf2c0b18)."
+   ],
+   "skills": [
+    "Gradient‑boosted models",
+    "Weighted MAPE and bias calculation",
+    "Git version control",
+    "Statistical communication",
+    "Forecast accuracy measurement"
+   ],
+   "evidenceBoundary": "The provided materials establish that the candidate has built daily item‑level forecasts, holds CStat accreditation, measures forecast accuracy with agreed metrics, explains forecast changes to managers, and keeps code in a Git repository. They do not provide explicit evidence of testing practices, documentation of code, or production deployment details."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess remaining evidence gaps and interview signals."
+   },
+   "role": {
+    "roleTitle": "Demand Forecasting Data Scientist",
+    "jobDescriptionSource": "jd_f3a5ab9b178be1eb",
+    "requirementIds": [
+     "req_f8920c5dff13",
+     "req_a2a88ec7339b",
+     "req_a98b084acf6e",
+     "req_3f97cff4190a",
+     "req_5d1577897edb"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_b85d91b7aef25082",
+    "sources": [
+     "src_a93da198bdac",
+     "src_c10c5c34eeaa",
+     "src_682da51e45d8",
+     "src_545e73a66f0c",
+     "src_83c95f21a56d",
+     "src_80ddaf2c0b18",
+     "src_65a43a77e231"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f8920c5dff13",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a93da198bdac",
+       "text": "built daily item-level forecasts for 140 coffee shops with gradient-boosted models on sales history, weather and local events, feeding the bakery production plan",
+       "evidenceStrength": "high",
+       "notes": "directly matches requirement"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a2a88ec7339b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_682da51e45d8",
+       "text": "Chartered Statistician (CStat), Royal Statistical Society, awarded July 2023",
+       "evidenceStrength": "high",
+       "notes": "accreditation achieved"
+      },
+      {
+       "sourceId": "src_65a43a77e231",
+       "text": "candidate's CStat status was checked on the Royal Statistical Society's public register of chartered members and is listed as current",
+       "evidenceStrength": "medium",
+       "notes": "verification"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a98b084acf6e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c10c5c34eeaa",
+       "text": "Agreed weighted MAPE and bias by item family as the accuracy measures with the supply planning team and reported them every Monday",
+       "evidenceStrength": "high",
+       "notes": "accuracy measurement with supply team"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3f97cff4190a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_545e73a66f0c",
+       "text": "Ran a monthly session with area managers explaining large forecast changes, such as the effect of school holidays and new menu items, without statistical jargon",
+       "evidenceStrength": "high",
+       "notes": "plain language explanation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5d1577897edb",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_a93da198bdac",
+       "text": "the forecasting code was kept in the team's Git repository",
+       "evidenceStrength": "medium",
+       "notes": "version control evidence"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence of automated testing procedures, documentation of code, and confirmation that code is maintained under version control with proper documentation practices."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built daily item‑level forecasts for 140 coffee shops using gradient‑boosted models",
+     "supportingRequirementIds": [
+      "req_f8920c5dff13"
+     ],
+     "sourceIds": [
+      "src_a93da198bdac"
+     ],
+     "evidenceStrength": "high",
+     "witness": "built daily item-level forecasts for 140 coffee shops with gradient-boosted models on sales history, weather and local events, feeding the bakery production plan"
+    },
+    {
+     "claim": "Hold Chartered Statistician (CStat) accreditation",
+     "supportingRequirementIds": [
+      "req_a2a88ec7339b"
+     ],
+     "sourceIds": [
+      "src_682da51e45d8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Chartered Statistician (CStat), Royal Statistical Society, awarded July 2023"
+    },
+    {
+     "claim": "Measure forecast accuracy with weighted MAPE and bias, reporting to supply planners",
+     "supportingRequirementIds": [
+      "req_a98b084acf6e"
+     ],
+     "sourceIds": [
+      "src_c10c5c34eeaa"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed weighted MAPE and bias by item family as the accuracy measures with the supply planning team and reported them every Monday"
+    },
+    {
+     "claim": "Explain forecast changes to operations managers in plain language",
+     "supportingRequirementIds": [
+      "req_3f97cff4190a"
+     ],
+     "sourceIds": [
+      "src_545e73a66f0c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran a monthly session with area managers explaining large forecast changes, such as the effect of school holidays and new menu items, without statistical jargon"
+    },
+    {
+     "claim": "Keep forecasting code in a Git repository",
+     "supportingRequirementIds": [
+      "req_5d1577897edb"
+     ],
+     "sourceIds": [
+      "src_a93da198bdac"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "the forecasting code was kept in the team's Git repository"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_5d1577897edb_testing",
+     "requirementId": "req_5d1577897edb",
+     "severity": "medium",
+     "gap": "Evidence of automated testing procedures and documentation of code is missing."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_5d1577897edb_testing",
+     "requirementId": "req_5d1577897edb",
+     "question": "Can you describe the testing practices you use to ensure the forecasting code remains reliable, and how you document these practices in your version control system?",
+     "evidenceTarget": "Testing procedures, documentation, version control details"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s forecasting code is indeed maintained in a Git repository with proper documentation and automated tests.",
+    "Confirm that the accuracy metrics reported match the agreed weighted MAPE and bias definitions.",
+    "Assess the candidate’s ability to explain forecast changes in plain language during the interview."
+   ],
+   "auditSummary": "The evidence supports most requirements, with partial evidence for maintaining code quality. Human review should focus on confirming testing and documentation practices, and evaluating communication skills.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and recruiter notes; no external verification of production deployment or testing practices is available."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:29:03.504520+00:00"
+}

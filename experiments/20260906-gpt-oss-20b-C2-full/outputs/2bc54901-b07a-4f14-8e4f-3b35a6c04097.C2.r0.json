@@ -1,0 +1,302 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2bc54901-b07a-4f14-8e4f-3b35a6c04097.C2",
+ "case_id": "2bc54901-b07a-4f14-8e4f-3b35a6c04097",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15259,
+  "promptWords": 1824
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 57.201
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3960,
+ "eval_count": 2518,
+ "prompt_eval_duration_ns": 20224000,
+ "eval_duration_ns": 46238916000,
+ "total_duration_ns": 57197939958,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from resume. Ensure each claim has sourceId. Provide evidence. No unsupported claims. All requirements covered. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Fleet analytics analyst with three years experience analyzing telematics and tipping data for eleven depots under team procedure.\" source src_5afb500be4d5. experienceHighlights: list claims: analyzing data, proposing 34 changes, preparing monthly report, presenting changes, documenting limitations. Each with source. projectsAndWorkSamples: mention work sample. skills: maybe \"telematics analysis, data modeling, report preparation, stakeholder communication\". Provide evidence.\n\nEvidenceBoundary: one sentence: materials establish candidate's experience and evidence for each requirement; do not establish any additional qualifications beyond those stated.\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence entries.\n\nsupportedClaims: list claims with supportingRequirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note src_2c13b379d7a6 is a note, subjective. It's a note about a role-play. Should be interviewSignalRisks. Provide sourceId, text, signalType \"role-play observation\", jobRelatedBoundary true, severity low, recommendedHandling \"Verify with additional evidence\".\n\nfollowUpQuestions: maybe none.\n\nhumanReviewChecklist: items: \"Verify that all claims are supported by cited sources\", \"Confirm that approvals stayed with operations director\", \"Assess stakeholder communication effectiveness\".\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"No evidence of experience with production deployment or ownership beyond approvals\".\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_09e801fba53511fb\",\n    \"targetRoleTitle\": \"Fleet Analytics Analyst, Waste Collection Services\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv1\",\n        \"text\": \"Fleet analytics analyst with three years experience analyzing round telematics and tipping data for eleven depots under the team's analysis procedure.\",\n        \"sourceIds\": [\"src_5afb500be4d5\"],\n        \"witness\": \"Fleet analytics analyst at a waste collection company for three years, analysing the round telematics and tipping data for the company's eleven depots under the team's analysis procedure.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"cv2\",\n        \"text\": \"Proposed thirty-four round changes with expected mileage and time effects, with approvals recorded by the operations director and post‑change telematics confirming the expected effect within tolerance on twenty‑nine of them.\",\n        \"sourceIds\": [\"src_df81740be74a\"],\n        \"witness\": \"Proposed thirty-four round changes with their expected mileage and time effects; the approvals were the operations director's, recorded on each proposal, and the post-change telematics confirmed the expected effect within the tolerance on twenty-nine of them.\"\n      },\n      {\n        \"claimId\": \"cv3\",\n        \"text\": \"Prepared the monthly contract performance report for the contract managers using the established report template.\",\n        \"sourceIds\": [\"src_d204f089437e\"],\n        \"witness\": \"Prepared the monthly contract performance report for the contract managers under the report template, filed in the contracts folder.\"\n      },\n      {\n        \"claimId\": \"cv4\",\n        \"text\": \"Presented each round change to the relevant depot manager, documenting objections and resolutions in the depot review record.\",\n        \"sourceIds\": [\"src_492f4f4183df\"],\n        \"witness\": \"Presented each round change to the depot manager concerned in the depot review, with the depot review record listing the manager's objections and how each was resolved or carried to the director.\"\n      },\n      {\n        \"claimId\": \"cv5\",\n        \"text\": \"Wrote the limitation section and hand‑over conditions for each round change proposal.\",\n        \"sourceIds\": [\"src_1cf227edff03\"],\n        \"witness\": \"Wrote the limitation section and the hand-over conditions of each round change proposal for the depot.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"cv6\",\n        \"text\": \"Work sample includes two round change proposals with approval records and post‑change telematics, one monthly contract performance report, and two depot review records.\",\n        \"sourceIds\": [\"src_cd5cab5002a0\"],\n        \"witness\": \"Work sample: two round change proposals with their approval records and post-change telematics, one monthly contract performance report and two depot review records, with the analytics platform references as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"cv7\",\n        \"text\": \"Telematics data analysis, tipping data modeling, report preparation, stakeholder communication, change documentation.\",\n        \"sourceIds\": [\"src_5afb500be4d5\",\"src_df81740be74a\",\"src_d204f089437e\",\"src_492f4f4183df\",\"src_1cf227edff03\"],\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided materials establish the candidate’s experience and evidence for each job requirement; they do not establish any additional qualifications beyond those stated.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Fleet Analytics Analyst, Waste Collection Services\",\n      \"jobDescriptionSource\": \"jd_fa61bd463953155d\",\n      \"requirementIds\": [\n        \"req_d13b8a603d9f\",\n        \"req_ad100c38dc22\",\n        \"req_6feb444bb59f\",\n        \"req_aeca1c0cb4e5\",\n        \"req_a0f8d1f0d4e1\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_09e801fba53511fb\",\n      \"sources\": [\n        \"src_5afb500be4d5\",\n        \"src_df81740be74a\",\n        \"src_d204f089437e\",\n        \"src_492f4f4183df\",\n        \"src_1cf227edff03\",\n        \"src_cd5cab5002a0\",\n        \"src_2c13b379d7a6\",\n        \"src_de64d2c35002\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_d13b8a603d9f\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_5afb500be4d5\",\n            \"text\": \"Fleet analytics analyst at a waste collection company for three years, analysing the round telematics and tipping data for the company's eleven depots under the team's analysis procedure.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_ad100c38dc22\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_df81740be74a\",\n            \"text\": \"Proposed thirty-four round changes with their expected mileage and time effects; the approvals were the operations director's, recorded on each proposal, and the post-change telematics confirmed the expected effect within the tolerance on twenty-nine of them.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_6feb444bb59f\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_d204f089437e\",\n            \"text\": \"Prepared the monthly contract performance report for the contract managers under the report template, filed in the contracts folder.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_aeca1c0cb4e5\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_492f4f4183df\",\n            \"text\": \"Presented each round change to the depot manager concerned in the depot review, with the depot review record listing the manager's objections and how each was resolved or carried to the director.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_a0f8d1f0d4e1\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_1cf227edff03\",\n            \"text\": \"Wrote the limitation section and the hand-over conditions of each round change proposal for the depot.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Fleet analytics analyst with three years experience analyzing round telematics and tipping data for eleven depots under the team's analysis procedure.\",\n        \"supportingRequirementIds\": [\"req_d13b8a603d9f\"],\n        \"sourceIds\": [\"src_5afb500be4d5\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Fleet analytics analyst at a waste collection company for three years, analysing the round telematics and tipping data for the company's eleven depots under the team's analysis procedure.\"\n      },\n      {\n        \"claim\": \"Proposed thirty-four round changes with expected mileage and time effects, with approvals recorded by the operations director and post‑change telematics confirming the expected effect within tolerance on twenty‑nine of them.\",\n        \"supportingRequirementIds\": [\"req_ad100c38dc22\"],\n        \"sourceIds\": [\"src_df81740be74a\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Proposed thirty-four round changes with their expected mileage and time effects; the approvals were the operations director's, recorded on each proposal, and the post-change telematics confirmed the expected effect within the tolerance on twenty-nine of them.\"\n      },\n      {\n        \"claim\": \"Prepared the monthly contract performance report for the contract managers using the established report template.\",\n        \"supportingRequirementIds\": [\"req_6feb444bb59f\"],\n        \"sourceIds\": [\"src_d204f089437e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Prepared the monthly contract performance report for the contract managers under the report template, filed in the contracts folder.\"\n      },\n      {\n        \"claim\": \"Presented each round change to the relevant depot manager, documenting objections and resolutions in the depot review record.\",\n        \"supportingRequirementIds\": [\"req_aeca1c0cb4e5\"],\n        \"sourceIds\": [\"src_492f4f4183df\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Presented each round change to the depot manager concerned in the depot review, with the depot review record listing the manager's objections and how each was resolved or carried to the director.\"\n      },\n      {\n        \"claim\": \"Wrote the limitation section and hand‑over conditions for each round change proposal.\",\n        \"supportingRequirementIds\": [\"req_a0f8d1f0d4e1\"],\n        \"sourceIds\": [\"src_1cf227edff03\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the limitation section and the hand-over conditions of each round change proposal for the depot.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_2c13b379d7a6\",\n        \"text\": \"In the depot manager role‑play, when the panel member objected that the proposed round ignored a school‑run road closure, the candidate pulled up the closure window on the map, moved the affected stops to after the window, restated the revised time saving, and noted the objection and the revision on the proposal sheet.\",\n        \"signalType\": \"role-play observation\",\n        \"jobRelatedBoundary\": true,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Verify with additional evidence such as written records of the objection and resolution.\"\n      }\n    ],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Confirm that all claims are supported by the cited sources.\",\n      \"Verify that approvals stayed with the operations director as stated.\",\n      \"Assess the candidate’s ability to present changes to depot managers and document objections.\"\n    ],\n    \"auditSummary\": \"The evidence establishes that the candidate meets all listed requirements for the Fleet Analytics Analyst role, with documented experience in data analysis, change proposal, reporting, stakeholder presentation, and documentation. No additional qualifications or gaps are identified.\",\n    \"limitations\": [\n      \"No evidence of experience with production deployment or end‑to‑end ownership beyond approvals.\"\n    ]\n  }\n}",
+ "content_sha256": "3469aaaed44b34580363fa9be18e419aad4f3d80745f32b87f09b348051b4ca9",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_09e801fba53511fb",
+   "targetRoleTitle": "Fleet Analytics Analyst, Waste Collection Services",
+   "professionalSummary": [
+    {
+     "claimId": "cv1",
+     "text": "Fleet analytics analyst with three years experience analyzing round telematics and tipping data for eleven depots under the team's analysis procedure.",
+     "sourceIds": [
+      "src_5afb500be4d5"
+     ],
+     "witness": "Fleet analytics analyst at a waste collection company for three years, analysing the round telematics and tipping data for the company's eleven depots under the team's analysis procedure."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cv2",
+     "text": "Proposed thirty-four round changes with expected mileage and time effects, with approvals recorded by the operations director and post‑change telematics confirming the expected effect within tolerance on twenty‑nine of them.",
+     "sourceIds": [
+      "src_df81740be74a"
+     ],
+     "witness": "Proposed thirty-four round changes with their expected mileage and time effects; the approvals were the operations director's, recorded on each proposal, and the post-change telematics confirmed the expected effect within the tolerance on twenty-nine of them."
+    },
+    {
+     "claimId": "cv3",
+     "text": "Prepared the monthly contract performance report for the contract managers using the established report template.",
+     "sourceIds": [
+      "src_d204f089437e"
+     ],
+     "witness": "Prepared the monthly contract performance report for the contract managers under the report template, filed in the contracts folder."
+    },
+    {
+     "claimId": "cv4",
+     "text": "Presented each round change to the relevant depot manager, documenting objections and resolutions in the depot review record.",
+     "sourceIds": [
+      "src_492f4f4183df"
+     ],
+     "witness": "Presented each round change to the depot manager concerned in the depot review, with the depot review record listing the manager's objections and how each was resolved or carried to the director."
+    },
+    {
+     "claimId": "cv5",
+     "text": "Wrote the limitation section and hand‑over conditions for each round change proposal.",
+     "sourceIds": [
+      "src_1cf227edff03"
+     ],
+     "witness": "Wrote the limitation section and the hand-over conditions of each round change proposal for the depot."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv6",
+     "text": "Work sample includes two round change proposals with approval records and post‑change telematics, one monthly contract performance report, and two depot review records.",
+     "sourceIds": [
+      "src_cd5cab5002a0"
+     ],
+     "witness": "Work sample: two round change proposals with their approval records and post-change telematics, one monthly contract performance report and two depot review records, with the analytics platform references as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv7",
+     "text": "Telematics data analysis, tipping data modeling, report preparation, stakeholder communication, change documentation.",
+     "sourceIds": [
+      "src_5afb500be4d5",
+      "src_df81740be74a",
+      "src_d204f089437e",
+      "src_492f4f4183df",
+      "src_1cf227edff03"
+     ],
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience and evidence for each job requirement; they do not establish any additional qualifications beyond those stated."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Fleet Analytics Analyst, Waste Collection Services",
+    "jobDescriptionSource": "jd_fa61bd463953155d",
+    "requirementIds": [
+     "req_d13b8a603d9f",
+     "req_ad100c38dc22",
+     "req_6feb444bb59f",
+     "req_aeca1c0cb4e5",
+     "req_a0f8d1f0d4e1"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_09e801fba53511fb",
+    "sources": [
+     "src_5afb500be4d5",
+     "src_df81740be74a",
+     "src_d204f089437e",
+     "src_492f4f4183df",
+     "src_1cf227edff03",
+     "src_cd5cab5002a0",
+     "src_2c13b379d7a6",
+     "src_de64d2c35002"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d13b8a603d9f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5afb500be4d5",
+       "text": "Fleet analytics analyst at a waste collection company for three years, analysing the round telematics and tipping data for the company's eleven depots under the team's analysis procedure.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ad100c38dc22",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_df81740be74a",
+       "text": "Proposed thirty-four round changes with their expected mileage and time effects; the approvals were the operations director's, recorded on each proposal, and the post-change telematics confirmed the expected effect within the tolerance on twenty-nine of them.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6feb444bb59f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d204f089437e",
+       "text": "Prepared the monthly contract performance report for the contract managers under the report template, filed in the contracts folder.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_aeca1c0cb4e5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_492f4f4183df",
+       "text": "Presented each round change to the depot manager concerned in the depot review, with the depot review record listing the manager's objections and how each was resolved or carried to the director.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a0f8d1f0d4e1",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1cf227edff03",
+       "text": "Wrote the limitation section and the hand-over conditions of each round change proposal for the depot.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Fleet analytics analyst with three years experience analyzing round telematics and tipping data for eleven depots under the team's analysis procedure.",
+     "supportingRequirementIds": [
+      "req_d13b8a603d9f"
+     ],
+     "sourceIds": [
+      "src_5afb500be4d5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Fleet analytics analyst at a waste collection company for three years, analysing the round telematics and tipping data for the company's eleven depots under the team's analysis procedure."
+    },
+    {
+     "claim": "Proposed thirty-four round changes with expected mileage and time effects, with approvals recorded by the operations director and post‑change telematics confirming the expected effect within tolerance on twenty‑nine of them.",
+     "supportingRequirementIds": [
+      "req_ad100c38dc22"
+     ],
+     "sourceIds": [
+      "src_df81740be74a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Proposed thirty-four round changes with their expected mileage and time effects; the approvals were the operations director's, recorded on each proposal, and the post-change telematics confirmed the expected effect within the tolerance on twenty-nine of them."
+    },
+    {
+     "claim": "Prepared the monthly contract performance report for the contract managers using the established report template.",
+     "supportingRequirementIds": [
+      "req_6feb444bb59f"
+     ],
+     "sourceIds": [
+      "src_d204f089437e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the monthly contract performance report for the contract managers under the report template, filed in the contracts folder."
+    },
+    {
+     "claim": "Presented each round change to the relevant depot manager, documenting objections and resolutions in the depot review record.",
+     "supportingRequirementIds": [
+      "req_aeca1c0cb4e5"
+     ],
+     "sourceIds": [
+      "src_492f4f4183df"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented each round change to the depot manager concerned in the depot review, with the depot review record listing the manager's objections and how each was resolved or carried to the director."
+    },
+    {
+     "claim": "Wrote the limitation section and hand‑over conditions for each round change proposal.",
+     "supportingRequirementIds": [
+      "req_a0f8d1f0d4e1"
+     ],
+     "sourceIds": [
+      "src_1cf227edff03"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the limitation section and the hand-over conditions of each round change proposal for the depot."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_2c13b379d7a6",
+     "text": "In the depot manager role‑play, when the panel member objected that the proposed round ignored a school‑run road closure, the candidate pulled up the closure window on the map, moved the affected stops to after the window, restated the revised time saving, and noted the objection and the revision on the proposal sheet.",
+     "signalType": "role-play observation",
+     "jobRelatedBoundary": true,
+     "severity": "low",
+     "recommendedHandling": "Verify with additional evidence such as written records of the objection and resolution."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Confirm that all claims are supported by the cited sources.",
+    "Verify that approvals stayed with the operations director as stated.",
+    "Assess the candidate’s ability to present changes to depot managers and document objections."
+   ],
+   "auditSummary": "The evidence establishes that the candidate meets all listed requirements for the Fleet Analytics Analyst role, with documented experience in data analysis, change proposal, reporting, stakeholder presentation, and documentation. No additional qualifications or gaps are identified.",
+   "limitations": [
+    "No evidence of experience with production deployment or end‑to‑end ownership beyond approvals."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:56:36.460559+00:00"
+}

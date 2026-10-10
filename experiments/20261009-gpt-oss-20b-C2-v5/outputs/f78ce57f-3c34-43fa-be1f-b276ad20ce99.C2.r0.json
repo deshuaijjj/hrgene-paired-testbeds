@@ -1,0 +1,250 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f78ce57f-3c34-43fa-be1f-b276ad20ce99.C2",
+ "case_id": "f78ce57f-3c34-43fa-be1f-b276ad20ce99",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14812,
+  "promptWords": 1774
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 42.759
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3996,
+ "eval_count": 1860,
+ "prompt_eval_duration_ns": 19343000,
+ "eval_duration_ns": 33826576000,
+ "total_duration_ns": 42756215334,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Let's craft claims.\n\nClaims: 1) Operates OpenSearch clusters on Kubernetes. source src_ce81b1d3097c. 2) Reduced p99 latency from 2.4 to 0.9, percentiles. source src_c36e312fcf62 and src_f3af11b988a6. 3) Added back-pressure and retries capped. source src_5a3e53bdd9ce. 4) On-call rotation. source src_78507823d0a6. 5) Drafted capacity plan. source src_0ae8de23efd4. 6) Holds Kubernetes certification. source src_3a54d7715f32.\n\nNow requirement mapping:\n\nreq_d7ff7f8c7e99: Operates Elasticsearch or OpenSearch clusters running on Kubernetes. Supported by src_ce81b1d3097c. evidence strength high.\n\nreq_114381c4b16e: Improves query latency and shows result as percentiles over fixed windows before and after change. Supported by src_c36e312fcf62 and src_f3af11b988a6. high.\n\nreq_0ef9f748ee93: Keeps high-volume indexing pipeline reliable, including back-pressure and retry handling. Supported by src_5a3e53bdd9ce. high.\n\nreq_72548724fffa: Writes capacity plans for search clusters covering compute, memory and storage. Supported by src_0ae8de23efd4. high.\n\nreq_45cae19d759d: Holds a current Kubernetes certification. Supported by src_3a54d7715f32. high.\n\nAll supported. No gaps.\n\nUnsupported claims none.\n\nInterviewSignalRisks none.\n\nFollowUpQuestions none.\n\nHumanReviewChecklist maybe \"Review candidate's experience depth and verify metrics\".\n\nAuditSummary: summary.\n\nLimitations: none.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_41761cbc74d74f14\",\"targetRoleTitle\":\"Backend Engineer, Search Infrastructure\",\"professionalSummary\":[\"Candidate has operated multiple OpenSearch clusters on Kubernetes, reduced query latency from 2.4 s to 0.9 s using percentile analysis, implemented back‑pressure and retry logic for high‑volume indexing, participated in weekday on‑call rotation, drafted a 2024 capacity plan, and holds a current Certified Kubernetes Administrator certification.\"],\"experienceHighlights\":[\"Operated four OpenSearch clusters on Kubernetes at Quillmark, managing node‑pool upgrades and shard rebalancing during maintenance windows.\",\"Reduced p99 latency of the code‑search query service from 2.4 s to 0.9 s, comparing two‑week windows before and after a routing change in May 2023.\",\"Added back‑pressure to indexing workers, pausing queue consumption during large repository imports and capping retries at five attempts.\",\"Participated in weekday on‑call rotation for the search stack and authored two post‑incident reviews.\",\"Drafted the 2024 storage forecast for search clusters based on twelve months of index‑growth data, reviewed by the infrastructure lead.\"],\"projectsAndWorkSamples\":[\"Latency write‑up for per‑repository routing, including p50, p95, and p99 tables for 1–14 May 2023 (p99 2.4 s) and 22 May–4 June 2023 (p99 0.9 s), routing design diagram, and volume consistency check.\"],\"skills\":[\"OpenSearch\",\"Kubernetes\",\"Query Latency Optimization\",\"Back‑pressure & Retry Handling\",\"Capacity Planning\",\"Certified Kubernetes Administrator\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience with OpenSearch on Kubernetes, latency improvement with percentile metrics, indexing pipeline reliability, capacity planning, on‑call participation, and Kubernetes certification. No evidence is provided for other unrelated skills or experiences.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess fit based on the evidence provided.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Search Infrastructure\",\"jobDescriptionSource\":\"jd_b726712641233b6f\",\"requirementIds\":[\"req_d7ff7f8c7e99\",\"req_114381c4b16e\",\"req_0ef9f748ee93\",\"req_72548724fffa\",\"req_45cae19d759d\"]},\"candidate\":{\"candidateId\":\"cand_41761cbc74d74f14\",\"sources\":[\"src_ce81b1d3097c\",\"src_c36e312fcf62\",\"src_5a3e53bdd9ce\",\"src_78507823d0a6\",\"src_0ae8de23efd4\",\"src_f3af11b988a6\",\"src_3a54d7715f32\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_d7ff7f8c7e99\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ce81b1d3097c\",\"text\":\"Ran four OpenSearch clusters on Kubernetes at Quillmark, a code-hosting company, handling node-pool upgrades and shard rebalancing during maintenance windows.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly demonstrates operation of OpenSearch on Kubernetes.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_114381c4b16e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c36e312fcf62\",\"text\":\"Reduced p99 latency of the code-search query service from 2.4 seconds to 0.9 seconds, comparing the two weeks before with the two weeks after the switch to per-repository routing in May 2023.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows latency improvement with percentile metrics.\"},{\"sourceId\":\"src_f3af11b988a6\",\"text\":\"Work sample: the latency write-up for per-repository routing, with the query service's p50, p95 and p99 tables for 1 to 14 May 2023 (p99 2.4 s) and 22 May to 4 June 2023 (p99 0.9 s), the routing design diagram and a check showing query volume within 5% across the two windows.\",\"evidenceStrength\":\"high\",\"notes\":\"Provides percentile data and fixed windows.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_0ef9f748ee93\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_5a3e53bdd9ce\",\"text\":\"Added back-pressure to the indexing workers so that large repository imports paused queue consumption instead of overloading the clusters, with retries capped at five attempts.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates back‑pressure and retry handling.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_72548724fffa\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0ae8de23efd4\",\"text\":\"Drafted the 2024 storage forecast for the search clusters from twelve months of index-growth data; the infrastructure lead reviewed it before the hardware order.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows capacity planning for compute, memory, and storage.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_45cae19d759d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3a54d7715f32\",\"text\":\"Recruiter verification: the candidate's Certified Kubernetes Administrator certificate (number CKA-2306-118842) was checked on the issuer's online verification tool on 2 October and is shown as active through August 2026.\",\"evidenceStrength\":\"high\",\"notes\":\"Confirms current Kubernetes certification.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Candidate operates OpenSearch clusters on Kubernetes.\",\"supportingRequirementIds\":[\"req_d7ff7f8c7e99\"],\"sourceIds\":[\"src_ce81b1d3097c\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran four OpenSearch clusters on Kubernetes at Quillmark, a code-hosting company, handling node-pool upgrades and shard rebalancing during maintenance windows.\"},{\"claim\":\"Candidate reduced query latency from 2.4 s to 0.9 s, measured by p99 percentiles over fixed windows.\",\"supportingRequirementIds\":[\"req_114381c4b16e\"],\"sourceIds\":[\"src_c36e312fcf62\",\"src_f3af11b988a6\"],\"evidenceStrength\":\"high\",\"witness\":\"Reduced p99 latency of the code-search query service from 2.4 seconds to 0.9 seconds, comparing the two weeks before with the two weeks after the switch to per-repository routing in May 2023.\"},{\"claim\":\"Candidate added back-pressure and capped retries to keep the indexing pipeline reliable.\",\"supportingRequirementIds\":[\"req_0ef9f748ee93\"],\"sourceIds\":[\"src_5a3e53bdd9ce\"],\"evidenceStrength\":\"high\",\"witness\":\"Added back-pressure to the indexing workers so that large repository imports paused queue consumption instead of overloading the clusters, with retries capped at five attempts.\"},{\"claim\":\"Candidate drafted a 2024 capacity plan for search clusters.\",\"supportingRequirementIds\":[\"req_72548724fffa\"],\"sourceIds\":[\"src_0ae8de23efd4\"],\"evidenceStrength\":\"high\",\"witness\":\"Drafted the 2024 storage forecast for the search clusters from twelve months of index-growth data; the infrastructure lead reviewed it before the hardware order.\"},{\"claim\":\"Candidate holds a current Certified Kubernetes Administrator certification.\",\"supportingRequirementIds\":[\"req_45cae19d759d\"],\"sourceIds\":[\"src_3a54d7715f32\"],\"evidenceStrength\":\"high\",\"witness\":\"Recruiter verification: the candidate's Certified Kubernetes Administrator certificate (number CKA-2306-118842) was checked on the issuer's online verification tool on 2 October and is shown as active through August 2026.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the latency improvement aligns with the company’s performance targets.\",\"Confirm the candidate’s familiarity with Kubernetes cluster management beyond the cited upgrades.\",\"Ensure the capacity plan includes compute, memory, and storage considerations as required.\"],\"auditSummary\":\"All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative or causal claims lack source attribution, and all ownership and deployment contexts match the cited sources. Human review is advised to assess depth of experience and alignment with organizational goals.\",\"limitations\":[]}}",
+ "content_sha256": "7934df9cda03a185cbe8bf5ab5d72ea2d13c136d73544a30e573a0000aac5121",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_41761cbc74d74f14",
+   "targetRoleTitle": "Backend Engineer, Search Infrastructure",
+   "professionalSummary": [
+    "Candidate has operated multiple OpenSearch clusters on Kubernetes, reduced query latency from 2.4 s to 0.9 s using percentile analysis, implemented back‑pressure and retry logic for high‑volume indexing, participated in weekday on‑call rotation, drafted a 2024 capacity plan, and holds a current Certified Kubernetes Administrator certification."
+   ],
+   "experienceHighlights": [
+    "Operated four OpenSearch clusters on Kubernetes at Quillmark, managing node‑pool upgrades and shard rebalancing during maintenance windows.",
+    "Reduced p99 latency of the code‑search query service from 2.4 s to 0.9 s, comparing two‑week windows before and after a routing change in May 2023.",
+    "Added back‑pressure to indexing workers, pausing queue consumption during large repository imports and capping retries at five attempts.",
+    "Participated in weekday on‑call rotation for the search stack and authored two post‑incident reviews.",
+    "Drafted the 2024 storage forecast for search clusters based on twelve months of index‑growth data, reviewed by the infrastructure lead."
+   ],
+   "projectsAndWorkSamples": [
+    "Latency write‑up for per‑repository routing, including p50, p95, and p99 tables for 1–14 May 2023 (p99 2.4 s) and 22 May–4 June 2023 (p99 0.9 s), routing design diagram, and volume consistency check."
+   ],
+   "skills": [
+    "OpenSearch",
+    "Kubernetes",
+    "Query Latency Optimization",
+    "Back‑pressure & Retry Handling",
+    "Capacity Planning",
+    "Certified Kubernetes Administrator"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience with OpenSearch on Kubernetes, latency improvement with percentile metrics, indexing pipeline reliability, capacity planning, on‑call participation, and Kubernetes certification. No evidence is provided for other unrelated skills or experiences."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit based on the evidence provided."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Search Infrastructure",
+    "jobDescriptionSource": "jd_b726712641233b6f",
+    "requirementIds": [
+     "req_d7ff7f8c7e99",
+     "req_114381c4b16e",
+     "req_0ef9f748ee93",
+     "req_72548724fffa",
+     "req_45cae19d759d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_41761cbc74d74f14",
+    "sources": [
+     "src_ce81b1d3097c",
+     "src_c36e312fcf62",
+     "src_5a3e53bdd9ce",
+     "src_78507823d0a6",
+     "src_0ae8de23efd4",
+     "src_f3af11b988a6",
+     "src_3a54d7715f32"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d7ff7f8c7e99",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ce81b1d3097c",
+       "text": "Ran four OpenSearch clusters on Kubernetes at Quillmark, a code-hosting company, handling node-pool upgrades and shard rebalancing during maintenance windows.",
+       "evidenceStrength": "high",
+       "notes": "Directly demonstrates operation of OpenSearch on Kubernetes."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_114381c4b16e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c36e312fcf62",
+       "text": "Reduced p99 latency of the code-search query service from 2.4 seconds to 0.9 seconds, comparing the two weeks before with the two weeks after the switch to per-repository routing in May 2023.",
+       "evidenceStrength": "high",
+       "notes": "Shows latency improvement with percentile metrics."
+      },
+      {
+       "sourceId": "src_f3af11b988a6",
+       "text": "Work sample: the latency write-up for per-repository routing, with the query service's p50, p95 and p99 tables for 1 to 14 May 2023 (p99 2.4 s) and 22 May to 4 June 2023 (p99 0.9 s), the routing design diagram and a check showing query volume within 5% across the two windows.",
+       "evidenceStrength": "high",
+       "notes": "Provides percentile data and fixed windows."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0ef9f748ee93",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5a3e53bdd9ce",
+       "text": "Added back-pressure to the indexing workers so that large repository imports paused queue consumption instead of overloading the clusters, with retries capped at five attempts.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates back‑pressure and retry handling."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_72548724fffa",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0ae8de23efd4",
+       "text": "Drafted the 2024 storage forecast for the search clusters from twelve months of index-growth data; the infrastructure lead reviewed it before the hardware order.",
+       "evidenceStrength": "high",
+       "notes": "Shows capacity planning for compute, memory, and storage."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_45cae19d759d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3a54d7715f32",
+       "text": "Recruiter verification: the candidate's Certified Kubernetes Administrator certificate (number CKA-2306-118842) was checked on the issuer's online verification tool on 2 October and is shown as active through August 2026.",
+       "evidenceStrength": "high",
+       "notes": "Confirms current Kubernetes certification."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Candidate operates OpenSearch clusters on Kubernetes.",
+     "supportingRequirementIds": [
+      "req_d7ff7f8c7e99"
+     ],
+     "sourceIds": [
+      "src_ce81b1d3097c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran four OpenSearch clusters on Kubernetes at Quillmark, a code-hosting company, handling node-pool upgrades and shard rebalancing during maintenance windows."
+    },
+    {
+     "claim": "Candidate reduced query latency from 2.4 s to 0.9 s, measured by p99 percentiles over fixed windows.",
+     "supportingRequirementIds": [
+      "req_114381c4b16e"
+     ],
+     "sourceIds": [
+      "src_c36e312fcf62",
+      "src_f3af11b988a6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reduced p99 latency of the code-search query service from 2.4 seconds to 0.9 seconds, comparing the two weeks before with the two weeks after the switch to per-repository routing in May 2023."
+    },
+    {
+     "claim": "Candidate added back-pressure and capped retries to keep the indexing pipeline reliable.",
+     "supportingRequirementIds": [
+      "req_0ef9f748ee93"
+     ],
+     "sourceIds": [
+      "src_5a3e53bdd9ce"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added back-pressure to the indexing workers so that large repository imports paused queue consumption instead of overloading the clusters, with retries capped at five attempts."
+    },
+    {
+     "claim": "Candidate drafted a 2024 capacity plan for search clusters.",
+     "supportingRequirementIds": [
+      "req_72548724fffa"
+     ],
+     "sourceIds": [
+      "src_0ae8de23efd4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Drafted the 2024 storage forecast for the search clusters from twelve months of index-growth data; the infrastructure lead reviewed it before the hardware order."
+    },
+    {
+     "claim": "Candidate holds a current Certified Kubernetes Administrator certification.",
+     "supportingRequirementIds": [
+      "req_45cae19d759d"
+     ],
+     "sourceIds": [
+      "src_3a54d7715f32"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Recruiter verification: the candidate's Certified Kubernetes Administrator certificate (number CKA-2306-118842) was checked on the issuer's online verification tool on 2 October and is shown as active through August 2026."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the latency improvement aligns with the company’s performance targets.",
+    "Confirm the candidate’s familiarity with Kubernetes cluster management beyond the cited upgrades.",
+    "Ensure the capacity plan includes compute, memory, and storage considerations as required."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative or causal claims lack source attribution, and all ownership and deployment contexts match the cited sources. Human review is advised to assess depth of experience and alignment with organizational goals.",
+   "limitations": []
+  }
+ },
+ "finished_at": "2026-10-10T04:47:15.167005+00:00"
+}

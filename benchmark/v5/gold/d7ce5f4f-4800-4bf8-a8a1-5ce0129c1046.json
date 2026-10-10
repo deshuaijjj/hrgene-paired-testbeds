@@ -1,0 +1,85 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "d7ce5f4f-4800-4bf8-a8a1-5ce0129c1046",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_35e9b01753f9",
+   "canonicalProposition": "The candidate managed the production launch of passkey sign-in, which went GA to every customer, including release approvals and post-launch incident handling.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_059f1c475723"
+   ],
+   "boundaryCategory": "hearsay_launch_on_resume",
+   "criticality": "critical",
+   "rationale": "The general-availability statement is attributed to the head of product, and the documented work is a beta in the preview environment whose plan lists general availability as open questions. The deployment rule forbids describing a beta in a preview environment as a production launch, and the relayed remark does not say what the candidate managed."
+  },
+  {
+   "atomicPropositionId": "prop_5eb00e3d9324",
+   "canonicalProposition": "The candidate ran the passkey sign-in beta with design partners, gathering feedback through fortnightly calls and a tagged feedback board.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_44de6871a6a9",
+    "src_a4ab3b9ddc65",
+    "src_39d0426997cd"
+   ],
+   "relevantRequirementIds": [
+    "req_bb5d4dbf6ac8"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the feedback work, the beta plan documents the preview-environment programme and the reference check confirms the candidate ran the beta."
+  },
+  {
+   "atomicPropositionId": "prop_b59ffa86a97f",
+   "canonicalProposition": "The candidate coordinated the security architecture review and an external penetration test of the passkey flows, closing 11 findings before the beta opened.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_983744c8aa2c"
+   ],
+   "relevantRequirementIds": [
+    "req_09e9fc209de6"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the review track and the findings closed."
+  }
+ ],
+ "requirementStatus": {
+  "req_3d1557775703": "supported",
+  "req_09e9fc209de6": "supported",
+  "req_059f1c475723": "partial_evidence",
+  "req_bb5d4dbf6ac8": "supported",
+  "req_ec0ce805c2fc": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_44de6871a6a9",
+  "src_a4ab3b9ddc65"
+ ],
+ "expectedGap": "Only the beta in the preview environment is documented; a production launch with release approvals, launch-day coordination and incident handling is not.",
+ "expectedBoundaryNote": "Keep the beta, the security review track and the risk register work; record the general-availability remark as the head of product's words, not as a launch the candidate managed.",
+ "permittedFollowUpTargets": [
+  "Ask whether passkey sign-in reached general availability while the candidate was at Quayline, and which release approvals, launch-day tasks and post-launch incidents the candidate handled."
+ ],
+ "validClaimSignatures": [
+  "11 findings",
+  "risk register"
+ ],
+ "trap": {
+  "propositionId": "prop_35e9b01753f9",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_059f1c475723"
+  ],
+  "signatures": [
+   "went GA",
+   "GA to every customer"
+  ],
+  "baitSourceIds": [
+   "src_05db3062b500"
+  ]
+ }
+}

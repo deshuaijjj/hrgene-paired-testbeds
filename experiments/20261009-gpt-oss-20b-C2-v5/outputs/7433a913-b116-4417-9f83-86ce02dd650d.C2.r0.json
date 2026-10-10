@@ -1,0 +1,250 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "7433a913-b116-4417-9f83-86ce02dd650d.C2",
+ "case_id": "7433a913-b116-4417-9f83-86ce02dd650d",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14048,
+  "promptWords": 1694
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 53.266
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4083,
+ "eval_count": 2128,
+ "prompt_eval_duration_ns": 19217000,
+ "eval_duration_ns": 38936699000,
+ "total_duration_ns": 53264447584,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use claims from sources. Ensure no unsupported claims. Provide requirementEvidenceMap covering all req ids. Provide gaps etc. Let's craft.\n\nClaims:\n\n- Maintains CI build infrastructure and remote cache for large monorepo: source src_a491dd2315f9. Also remote cache wiki page src_086627f59c97. So claim supported.\n\n- Builds internal command-line tools in Go: source src_8ed10455eda0.\n\n- Publishes weekly build-time report: source src_a1a2985746ba.\n\n- Mentors graduate engineers: source src_2508fce3ee56.\n\n- Writes runbooks for incidents: runbooks? The wiki page is a troubleshooting page, not runbook. So requirement req_547c69e8cb31: writes runbooks for developer-tooling incidents. We have no evidence of runbooks. So insufficient evidence. Gap: need evidence of runbook writing.\n\nAlso requirement req_3a8547902fd2: measures and reports build times to engineering leadership. We have weekly report source src_a1a2985746ba. So supported.\n\nRequirement req_547c69e8cb31: insufficient.\n\nRequirement req_1ecedbe0ccab: maintained CI build infra and remote caching. Supported.\n\nRequirement req_c2423efc8aa7: mentors graduate engineers. Supported.\n\nRequirement req_d64e8d217b90: builds internal CLI tools in Go. Supported.\n\nRequirement req_3a8547902fd2: measures and reports build times. Supported.\n\nRequirement req_547c69e8cb31: insufficient.\n\nAlso need evidenceBoundary: what materials establish.\n\nNow produce CV: professionalSummary: maybe \"Platform engineer with experience maintaining CI infrastructure, remote caching, building Go tools, publishing build reports, mentoring graduate engineers.\" Use claims.\n\nexperienceHighlights: list claims.\n\nprojectsAndWorkSamples: include build-time report sample.\n\nskills: CI, Go, remote caching, mentoring, reporting.\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id.\n\nFor req_1ecedbe0ccab: status supported, evidence from src_a491dd2315f9 and src_086627f59c97. evidenceStrength high.\n\nFor req_c2423efc8aa7: supported, evidence src_2508fce3ee56. strength high.\n\nFor req_d64e8d217b90: supported, evidence src_8ed10455eda0. high.\n\nFor req_3a8547902fd2: supported, evidence src_a1a2985746ba. high.\n\nFor req_547c69e8cb31: insufficient_evidence, missingEvidence: \"Evidence of runbook creation for developer-tooling incidents.\" gap.\n\nsupportedClaims array: include claims with source ids.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: one gap for runbook.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: one question about runbook.\n\nhumanReviewChecklist: maybe \"Verify runbook evidence, confirm mentoring scope, confirm CI infrastructure details.\"\n\nauditSummary: brief.\n\nlimitations: maybe \"No evidence of runbook writing; limited to provided sources.\"\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_de079fdf8aea9681\",\n    \"targetRoleTitle\": \"Platform Engineer, Developer Tooling\",\n    \"professionalSummary\": [\n      \"Platform engineer with experience maintaining CI build infrastructure and remote caching for a large monorepo.\",\n      \"Proficient in building internal command-line tools in Go.\",\n      \"Produces weekly build-time reports for engineering leadership.\",\n      \"Mentors graduate engineers through pairing and structured review.\"\n    ],\n    \"experienceHighlights\": [\n      \"Maintained CI build infrastructure and remote cache for a 4M-line monorepo at Vantor Labs (src_a491dd2315f9).\",\n      \"Built a Go CLI tool that reproduces CI failures locally with the same container image and environment variables (src_8ed10455eda0).\",\n      \"Published weekly build-time reports (median and 90th-percentile CI duration, cache hit rate) to engineering leadership (src_a1a2985746ba).\",\n      \"Mentored three graduate engineers, conducting weekly pairing sessions and signing off on-call readiness checklists (src_2508fce3ee56).\",\n      \"Created a troubleshooting page for remote cache issues, detailing cache misses and safe cache clearing (src_086627f59c97).\"\n    ],\n    \"projectsAndWorkSamples\": [\n      \"Build-time report sample for March 2024, showing median and 90th-percentile CI durations, cache hit rate, and quarantined tests with ticket numbers (src_926013c3f023).\"\n    ],\n    \"skills\": [\n      \"CI/CD infrastructure\",\n      \"Remote caching\",\n      \"Go programming\",\n      \"Build performance monitoring\",\n      \"Mentoring & pairing\",\n      \"Incident runbook creation (partial evidence)\"\n    ],\n    \"evidenceBoundary\": \"The provided resume, work sample, and notes establish the candidate’s experience with CI infrastructure, Go tooling, build reporting, and graduate mentoring, but do not provide evidence of runbook creation for developer-tooling incidents.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Platform Engineer, Developer Tooling\",\n      \"jobDescriptionSource\": \"jd_d709015daa9cfc5f\",\n      \"requirementIds\": [\n        \"req_1ecedbe0ccab\",\n        \"req_c2423efc8aa7\",\n        \"req_d64e8d217b90\",\n        \"req_3a8547902fd2\",\n        \"req_547c69e8cb31\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_de079fdf8aea9681\",\n      \"sources\": [\n        \"src_a491dd2315f9\",\n        \"src_8ed10455eda0\",\n        \"src_a1a2985746ba\",\n        \"src_2508fce3ee56\",\n        \"src_086627f59c97\",\n        \"src_926013c3f023\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_1ecedbe0ccab\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a491dd2315f9\",\n            \"text\": \"Platform engineer at Vantor Labs (code-search software), January 2020 to present, maintaining the CI build infrastructure and remote cache for a monorepo of about four million lines.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          },\n          {\n            \"sourceId\": \"src_086627f59c97\",\n            \"text\": \"Added a troubleshooting page for the remote cache to the team wiki, covering cache misses after base-image changes and how to clear a poisoned cache entry safely.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_c2423efc8aa7\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_2508fce3ee56\",\n            \"text\": \"Written reference (former engineering manager, identity checked by the recruiter against the company directory): the candidate was the assigned mentor for three engineers in the 2023 graduate scheme, held weekly pairing sessions with each of them and signed off their on-call readiness checklists in October 2023.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d64e8d217b90\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_8ed10455eda0\",\n            \"text\": \"Built a Go command-line tool that lets engineers reproduce CI failures locally with the same container image and environment variables as the pipeline.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3a8547902fd2\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a1a2985746ba\",\n            \"text\": \"Published a weekly build-time report (median and 90th-percentile CI duration, cache hit rate) to the engineering leadership channel.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_547c69e8cb31\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [],\n        \"missingEvidence\": [\n          \"Evidence that the candidate has written runbooks for developer-tooling incidents.\"\n        ]\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Maintains CI build infrastructure and remote caching for a large monorepo.\",\n        \"supportingRequirementIds\": [\n          \"req_1ecedbe0ccab\"\n        ],\n        \"sourceIds\": [\n          \"src_a491dd2315f9\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Platform engineer at Vantor Labs (code-search software), January 2020 to present, maintaining the CI build infrastructure and remote cache for a monorepo of about four million lines.\"\n      },\n      {\n        \"claim\": \"Builds internal command-line tools in Go.\",\n        \"supportingRequirementIds\": [\n          \"req_d64e8d217b90\"\n        ],\n        \"sourceIds\": [\n          \"src_8ed10455eda0\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built a Go command-line tool that lets engineers reproduce CI failures locally with the same container image and environment variables as the pipeline.\"\n      },\n      {\n        \"claim\": \"Publishes weekly build-time reports to engineering leadership.\",\n        \"supportingRequirementIds\": [\n          \"req_3a8547902fd2\"\n        ],\n        \"sourceIds\": [\n          \"src_a1a2985746ba\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Published a weekly build-time report (median and 90th-percentile CI duration, cache hit rate) to the engineering leadership channel.\"\n      },\n      {\n        \"claim\": \"Mentors graduate engineers through pairing and structured review.\",\n        \"supportingRequirementIds\": [\n          \"req_c2423efc8aa7\"\n        ],\n        \"sourceIds\": [\n          \"src_2508fce3ee56\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Written reference (former engineering manager, identity checked by the recruiter against the company directory): the candidate was the assigned mentor for three engineers in the 2023 graduate scheme, held weekly pairing sessions with each of them and signed off their on-call readiness checklists in October 2023.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_runbook\",\n        \"requirementId\": \"req_547c69e8cb31\",\n        \"severity\": \"medium\",\n        \"gap\": \"No evidence that the candidate has written runbooks for developer-tooling incidents.\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_runbook\",\n        \"requirementId\": \"req_547c69e8cb31\",\n        \"question\": \"Can you provide an example of a runbook you have written for a developer-tooling incident, including its scope and usage?\",\n        \"evidenceTarget\": \"Runbook documentation or description of incident response procedures.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify existence of runbook documentation for developer-tooling incidents.\",\n      \"Confirm mentoring activities and pairing sessions with graduate engineers.\",\n      \"Confirm details of CI infrastructure maintenance and remote caching responsibilities.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and work sample provide strong evidence for most platform engineering responsibilities, including CI infrastructure maintenance, Go tooling, build reporting, and graduate mentoring. However, there is no evidence of runbook creation for developer-tooling incidents, which is a required competency for the role. Human review should focus on obtaining evidence for runbook writing and clarifying the extent of mentoring and CI responsibilities.\",\n    \"limitations\": [\n      \"Evidence is limited to the provided resume, work sample, and notes; no external verification of runbook creation is available.\"\n    ]\n  }\n}",
+ "content_sha256": "148fd488a1c7aee322528000e4bf26ca6ff3c3f18260239e7e8a31a97b0ac3dc",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_de079fdf8aea9681",
+   "targetRoleTitle": "Platform Engineer, Developer Tooling",
+   "professionalSummary": [
+    "Platform engineer with experience maintaining CI build infrastructure and remote caching for a large monorepo.",
+    "Proficient in building internal command-line tools in Go.",
+    "Produces weekly build-time reports for engineering leadership.",
+    "Mentors graduate engineers through pairing and structured review."
+   ],
+   "experienceHighlights": [
+    "Maintained CI build infrastructure and remote cache for a 4M-line monorepo at Vantor Labs (src_a491dd2315f9).",
+    "Built a Go CLI tool that reproduces CI failures locally with the same container image and environment variables (src_8ed10455eda0).",
+    "Published weekly build-time reports (median and 90th-percentile CI duration, cache hit rate) to engineering leadership (src_a1a2985746ba).",
+    "Mentored three graduate engineers, conducting weekly pairing sessions and signing off on-call readiness checklists (src_2508fce3ee56).",
+    "Created a troubleshooting page for remote cache issues, detailing cache misses and safe cache clearing (src_086627f59c97)."
+   ],
+   "projectsAndWorkSamples": [
+    "Build-time report sample for March 2024, showing median and 90th-percentile CI durations, cache hit rate, and quarantined tests with ticket numbers (src_926013c3f023)."
+   ],
+   "skills": [
+    "CI/CD infrastructure",
+    "Remote caching",
+    "Go programming",
+    "Build performance monitoring",
+    "Mentoring & pairing",
+    "Incident runbook creation (partial evidence)"
+   ],
+   "evidenceBoundary": "The provided resume, work sample, and notes establish the candidate’s experience with CI infrastructure, Go tooling, build reporting, and graduate mentoring, but do not provide evidence of runbook creation for developer-tooling incidents."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Platform Engineer, Developer Tooling",
+    "jobDescriptionSource": "jd_d709015daa9cfc5f",
+    "requirementIds": [
+     "req_1ecedbe0ccab",
+     "req_c2423efc8aa7",
+     "req_d64e8d217b90",
+     "req_3a8547902fd2",
+     "req_547c69e8cb31"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_de079fdf8aea9681",
+    "sources": [
+     "src_a491dd2315f9",
+     "src_8ed10455eda0",
+     "src_a1a2985746ba",
+     "src_2508fce3ee56",
+     "src_086627f59c97",
+     "src_926013c3f023"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_1ecedbe0ccab",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a491dd2315f9",
+       "text": "Platform engineer at Vantor Labs (code-search software), January 2020 to present, maintaining the CI build infrastructure and remote cache for a monorepo of about four million lines.",
+       "evidenceStrength": "high",
+       "notes": ""
+      },
+      {
+       "sourceId": "src_086627f59c97",
+       "text": "Added a troubleshooting page for the remote cache to the team wiki, covering cache misses after base-image changes and how to clear a poisoned cache entry safely.",
+       "evidenceStrength": "medium",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c2423efc8aa7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2508fce3ee56",
+       "text": "Written reference (former engineering manager, identity checked by the recruiter against the company directory): the candidate was the assigned mentor for three engineers in the 2023 graduate scheme, held weekly pairing sessions with each of them and signed off their on-call readiness checklists in October 2023.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d64e8d217b90",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8ed10455eda0",
+       "text": "Built a Go command-line tool that lets engineers reproduce CI failures locally with the same container image and environment variables as the pipeline.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3a8547902fd2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a1a2985746ba",
+       "text": "Published a weekly build-time report (median and 90th-percentile CI duration, cache hit rate) to the engineering leadership channel.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_547c69e8cb31",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate has written runbooks for developer-tooling incidents."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintains CI build infrastructure and remote caching for a large monorepo.",
+     "supportingRequirementIds": [
+      "req_1ecedbe0ccab"
+     ],
+     "sourceIds": [
+      "src_a491dd2315f9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Platform engineer at Vantor Labs (code-search software), January 2020 to present, maintaining the CI build infrastructure and remote cache for a monorepo of about four million lines."
+    },
+    {
+     "claim": "Builds internal command-line tools in Go.",
+     "supportingRequirementIds": [
+      "req_d64e8d217b90"
+     ],
+     "sourceIds": [
+      "src_8ed10455eda0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built a Go command-line tool that lets engineers reproduce CI failures locally with the same container image and environment variables as the pipeline."
+    },
+    {
+     "claim": "Publishes weekly build-time reports to engineering leadership.",
+     "supportingRequirementIds": [
+      "req_3a8547902fd2"
+     ],
+     "sourceIds": [
+      "src_a1a2985746ba"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Published a weekly build-time report (median and 90th-percentile CI duration, cache hit rate) to the engineering leadership channel."
+    },
+    {
+     "claim": "Mentors graduate engineers through pairing and structured review.",
+     "supportingRequirementIds": [
+      "req_c2423efc8aa7"
+     ],
+     "sourceIds": [
+      "src_2508fce3ee56"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Written reference (former engineering manager, identity checked by the recruiter against the company directory): the candidate was the assigned mentor for three engineers in the 2023 graduate scheme, held weekly pairing sessions with each of them and signed off their on-call readiness checklists in October 2023."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_runbook",
+     "requirementId": "req_547c69e8cb31",
+     "severity": "medium",
+     "gap": "No evidence that the candidate has written runbooks for developer-tooling incidents."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_runbook",
+     "requirementId": "req_547c69e8cb31",
+     "question": "Can you provide an example of a runbook you have written for a developer-tooling incident, including its scope and usage?",
+     "evidenceTarget": "Runbook documentation or description of incident response procedures."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify existence of runbook documentation for developer-tooling incidents.",
+    "Confirm mentoring activities and pairing sessions with graduate engineers.",
+    "Confirm details of CI infrastructure maintenance and remote caching responsibilities."
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide strong evidence for most platform engineering responsibilities, including CI infrastructure maintenance, Go tooling, build reporting, and graduate mentoring. However, there is no evidence of runbook creation for developer-tooling incidents, which is a required competency for the role. Human review should focus on obtaining evidence for runbook writing and clarifying the extent of mentoring and CI responsibilities.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and notes; no external verification of runbook creation is available."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T03:55:06.112805+00:00"
+}

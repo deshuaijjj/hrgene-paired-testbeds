@@ -1,0 +1,87 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "ac25cb4a-5a8b-4d6d-806f-bb35fc0d8951",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_217b760f68d2",
+   "canonicalProposition": "The candidate developed and maintained the work-order API and the parts-availability service, adding idempotency keys to prevent duplicate work orders on retried syncs.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_abf2293d99c6",
+    "src_97afd7c82f91"
+   ],
+   "relevantRequirementIds": [
+    "req_712f37369198"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes both services and the idempotency change directly."
+  },
+  {
+   "atomicPropositionId": "prop_d9c9a067a4b1",
+   "canonicalProposition": "The candidate owned the integration test suite for both services and added replay tests built from anonymised sync logs.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_d0cfe379b9aa",
+    "src_ee51234ba903"
+   ],
+   "relevantRequirementIds": [
+    "req_b112017acf4f"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume and the replay test suite document the test ownership."
+  },
+  {
+   "atomicPropositionId": "prop_319215cb24ce",
+   "canonicalProposition": "The candidate's idempotency change reduced work-order sync failures from a few hundred a week to a handful.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_a43cb3667b39"
+   ],
+   "boundaryCategory": "unsupported_quantification_and_causality",
+   "criticality": "critical",
+   "rationale": "The figures are a referee's guess based on support-ticket volume rather than the platform's sync-failure metric; no measurement is in the materials."
+  }
+ ],
+ "requirementStatus": {
+  "req_712f37369198": "supported",
+  "req_b112017acf4f": "supported",
+  "req_a43cb3667b39": "insufficient_evidence",
+  "req_391f7d1a9b96": "supported",
+  "req_2ff722e2a5a8": "partial_evidence"
+ },
+ "subjectiveSourceIds": [
+  "src_38ec5aa9aba7"
+ ],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No sync-failure metric export in the materials measures failures before and after the idempotency change; the referee's figures are a guess from ticket volume.",
+ "expectedBoundaryNote": "Keep the referee's estimate as unmeasured; the materials document the idempotency change and the tests, not a measured reduction in sync failures.",
+ "permittedFollowUpTargets": [
+  "Ask for the platform's weekly sync-failure metric before and after the idempotency change was deployed, with the deployment date."
+ ],
+ "validClaimSignatures": [
+  "idempotency",
+  "replay test"
+ ],
+ "trap": {
+  "propositionId": "prop_319215cb24ce",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_a43cb3667b39"
+  ],
+  "signatures": [
+   "a few hundred a week",
+   "to a handful",
+   "few hundred",
+   "go away"
+  ],
+  "baitSourceIds": [
+   "src_38ec5aa9aba7",
+   "src_8f660602da80"
+  ]
+ }
+}

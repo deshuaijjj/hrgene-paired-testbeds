@@ -1,0 +1,535 @@
+{
+ "request_id": "03392df6-47d7-4868-a8e4-981847fecbc1.C2",
+ "case_id": "03392df6-47d7-4868-a8e4-981847fecbc1",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: led",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "led"
+     ],
+     "sourceIds": [
+      "src_4d067fe8e23f",
+      "src_6f303e20e6f4"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Led the 2023 configure-price-quote implementation, writing test scripts for discount approvals and migrating the product catalogue."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[3]",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: led",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "led"
+     ],
+     "sourceIds": [
+      "src_4d067fe8e23f",
+      "src_6f303e20e6f4"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Led the 2023 configure-price-quote implementation, writing test scripts for discount approvals and migrating the product catalogue."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1]",
+    "message": "2 schema error(s); first: $.hiringEvidencePacket.supportedClaims[1]: missing required property 'witness'",
+    "witness": {
+     "errors": [
+      "$.hiringEvidencePacket.supportedClaims[1]: missing required property 'witness'",
+      "$.hiringEvidencePacket.supportedClaims[1]: additional property 'w, witness' not allowed"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": "Led the 2023 configure-price-quote implementation, writing test scripts for discount approvals and migrating the product"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[3]",
+   "detail": "Led the 2023 configure-price-quote implementation, writing test scripts for discount approvals and migrating the product"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_85c1a42bc26516b3",
+   "targetRoleTitle": "Revenue Operations Manager",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Administers Salesforce for a sales team of about sixty.",
+     "sourceIds": [
+      "src_b75c1a8829ef"
+     ],
+     "requirementIds": [
+      "req_c171a3925c64"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Sales operations analyst at Vantor Cloud from July 2021 to June 2024, administering Salesforce for a sales team of about sixty."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Maintained page layouts, validation rules and pipeline reports in Salesforce, recording each change in the sales-operations change sheet.",
+     "sourceIds": [
+      "src_53cfc5d795bd"
+     ],
+     "requirementIds": [
+      "req_c171a3925c64"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained page layouts, validation rules and pipeline reports in Salesforce, recording each change in the sales-operations change sheet."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Built the weekly pipeline and forecast-call report for the vice president of sales, with commit and best-case figures by region and the changes since the previous week.",
+     "sourceIds": [
+      "src_92eca0ce7ef2"
+     ],
+     "requirementIds": [
+      "req_fbf12afd6039"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the weekly pipeline and forecast-call report for the vice president of sales, with commit and best-case figures by region and the changes since the previous week."
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The materials establish the candidate's experience with Salesforce administration, reporting, and CRM implementation. They do not establish the candidate's ownership of the vendor decisions or the full scope of the implementation."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's qualifications are supported by the evidence, but further human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Revenue Operations Manager",
+    "jobDescriptionSource": "jd_2484f789ead90787",
+    "requirementIds": [
+     "req_c171a3925c64",
+     "req_fbf12afd6039",
+     "req_19661e05f352",
+     "req_4f5047fadf45",
+     "req_fa8e78fe7e42"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_85c1a42bc26516b3",
+    "sources": [
+     "src_b75c1a8829ef",
+     "src_53cfc5d795bd",
+     "src_92eca0ce7ef2",
+     "src_4d067fe8e23f",
+     "src_bbcaba282814",
+     "src_81cc93ed149b",
+     "src_6f303e20e6f4",
+     "src_b0dbbc3550ef",
+     "src_81cc93ed149b"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_c171a3925c64",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b75c1a8829ef",
+       "text": "Sales operations analyst at Vantor Cloud from July 2021 to June 2024, administering Salesforce for a sales team of about sixty.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fbf12afd6039",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_92eca0ce7ef2",
+       "text": "Built the weekly pipeline and forecast-call report for the vice president of sales, with commit and best-case figures by region and the changes since the previous week.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_19661e05f352",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_4d067fe8e23f",
+       "text": "One of four sales-operations staff on the 2023 configure-price-quote implementation: wrote the test scripts for discount approvals and migrated the product catalogue; the revenue operations director ran the project with an implementation partner.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate was part of the implementation but does not explicitly state ownership of the vendor decisions."
+      }
+     ],
+     "missingEvidence": [
+      "ownership of vendor decisions"
+     ]
+    },
+    {
+     "requirementId": "req_4f5047fadf45",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bbcaba282814",
+       "text": "Ran the monthly CRM onboarding session for new account executives and reconciled territory assignments with the commissions analyst in finance.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fa8e78fe7e42",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bbcaba282814",
+       "text": "Ran the monthly CRM onboarding session for new account executives and reconciled territory assignments with the commissions analyst in finance.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Administers Salesforce for a sales team of about sixty.",
+     "supportingRequirementIds": [
+      "req_c171a3925c64"
+     ],
+     "sourceIds": [
+      "src_b75c1a8829ef"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Sales operations analyst at Vantor Cloud from July 2021 to June 2024, administering Salesforce for a sales team of about sixty."
+    },
+    {
+     "claim": "Maintained page layouts, validation rules and pipeline reports in Salesforce, recording each change in the sales-operations change sheet.",
+     "supportingRequirementIds": [
+      "req_c171a3925c64"
+     ],
+     "sourceIds": [
+      "src_53cfc5d795bd"
+     ],
+     "evidenceStrength": "high",
+     "witness": ""
+    },
+    {
+     "claim": "Built the weekly pipeline and forecast-call report for the vice president of sales, with commit and best-case figures by region and the changes since the previous week.",
+     "supportingRequirementIds": [
+      "req_fbf12afd6039"
+     ],
+     "sourceIds": [
+      "src_92eca0ce7ef2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the weekly pipeline and forecast-call report for the vice president of sales, with commit and best-case figures by region and the changes since the previous week."
+    },
+    {
+     "claim": "Ran the monthly CRM onboarding session for new account executives and reconciled territory assignments with the commissions analyst in finance.",
+     "supportingRequirementIds": [
+      "req_4f5047fadf45",
+      "req_fa8e78fe7e42"
+     ],
+     "sourceIds": [
+      "src_bbcaba282814"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the monthly CRM onboarding session for new account executives and reconciled territory assignments with the commissions analyst in finance."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Owning the scope and vendor decisions for the CRM or quoting-system implementation.",
+     "reason": "The materials do not establish that the candidate owned the scope or vendor decisions for the implementation.",
+     "requiredFollowUp": "Ask the candidate to clarify their role in the implementation and whether they had ownership of the scope and vendor decisions."
+    },
+    {
+     "claim": "Led the 2023 configure-price-quote implementation, writing test scripts for discount approvals and migrating the product catalogue.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_19661e05f352",
+     "severity": "medium",
+     "gap": "Ownership of vendor decisions is not established."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_81cc93ed149b",
+     "text": "Work sample: a one-page 'project highlights' sheet the candidate put together for interviews about the quoting-tool implementation. It holds two testimonials: the implementation partner's consultant wrote that the candidate 'ran the CPQ programme like it was their own company', and a regional sales manager called the candidate 'the real owner of the CPQ rollout'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Verify the candidate's role in the implementation and whether they had ownership of the scope and vendor decisions."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_1",
+     "requirementId": "req_19661e05f352",
+     "question": "Can you clarify your role in the 2023 configure-price-quote implementation and whether you had ownership of the scope and vendor decisions?",
+     "evidenceTarget": "Ownership of the scope and vendor decisions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's ownership of the scope and vendor decisions for the CRM or quoting-system implementation.",
+    "Assess the candidate's fit for the role based on the evidence and gaps."
+   ],
+   "auditSummary": "The candidate's qualifications are supported by the evidence, but further human review is required to assess fit for the role. The materials do not establish ownership of the scope and vendor decisions for the CRM or quoting-system implementation.",
+   "limitations": [
+    "The materials do not establish ownership of the scope and vendor decisions for the CRM or quoting-system implementation.",
+    "The candidate's role in the implementation is not explicitly stated as owning the scope and vendor decisions."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

@@ -1,0 +1,37 @@
+{
+ "caseId": "43806eb6-5236-4d84-a94e-2717d23f04c0",
+ "roleTitle": "Embedded Software Engineer, E-bike Drive Systems",
+ "jobDescription": "We design and assemble electric cargo bikes and the drive systems inside them. The embedded team writes the firmware for the motor controller and the battery-management system, runs a hardware-in-the-loop test rig and delivers firmware updates to bikes through the companion app. The engineer will write C firmware for STM32 microcontrollers, extend the CAN bus diagnostics, add cases to the rig's regression suite and keep the update pipeline working. Any claim about range or efficiency must cite a test-protocol report that states the baseline firmware, the load and the route.",
+ "requirements": [
+  "Writes C firmware for STM32 or similar microcontrollers in motor control or battery management.",
+  "Extends CAN bus diagnostics and fault codes for service tools.",
+  "Adds test cases to a hardware-in-the-loop rig and keeps its regression suite fast enough for continuous integration.",
+  "Shows measured effects of firmware changes on range or energy use from a test-protocol report with a baseline firmware.",
+  "Maintains a signed over-the-air firmware update pipeline."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Wrote field-oriented control firmware in C for the STM32G4 motor controller at Velomark Cycles, including current-loop tuning and stall protection."},
+  {"type": "resume", "text": "Added 31 CAN diagnostic trouble codes for the battery pack and motor controller and documented them for the service-tool team."},
+  {"type": "resume", "text": "Cut the hardware-in-the-loop regression suite from 95 minutes to 38 minutes between March and May 2023 by running independent test groups in parallel on two rig channels, as recorded in the CI pipeline logs."},
+  {"type": "resume", "text": "Maintained the over-the-air update pipeline that signs firmware images and stages them for the companion app, and added a rollback check for failed installs."},
+  {"type": "resume", "text": "Reworked the state-of-charge estimation in the battery-management firmware, which led to a 22% increase in riding range."},
+  {"type": "work_sample", "text": "Work sample: an excerpt of the CI pipeline history for the hardware-in-the-loop suite, showing run durations for March 2023 (median 95 minutes) and May 2023 (median 38 minutes) and the pipeline change that split the suite across two rig channels."},
+  {"type": "note", "text": "HR verification note: the candidate's employment at Velomark Cycles (September 2020 to June 2024) and the title Embedded Software Engineer were checked against the employment contract and final payslip the candidate provided."},
+  {"type": "note", "text": "Reference check summary: Velomark's former firmware lead confirmed in writing that the candidate wrote the motor-control firmware and the CAN diagnostic trouble codes listed on the resume."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate cut the hardware-in-the-loop regression suite from 95 to 38 minutes between March and May 2023 by running test groups in parallel, as recorded in the CI pipeline logs.", "status": "supported", "sources": [3, 6], "requirements": [3], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The resume states the figures and months, and the work sample shows the CI run durations for both months and the pipeline change."},
+   {"text": "The candidate wrote field-oriented control firmware in C for the STM32G4 motor controller and added CAN diagnostic trouble codes for the battery pack and motor controller.", "status": "supported", "sources": [1, 2, 8], "requirements": [1, 2], "boundaryCategory": "verified_activity_record", "criticality": "noncritical", "rationale": "The resume describes the firmware and the codes, and the reference check confirms both in writing."},
+   {"text": "The candidate's battery-management firmware rework increased riding range by 22%.", "status": "unsupported", "sources": [], "requirements": [4], "boundaryCategory": "causal_quantified_outcome_without_baseline", "criticality": "critical", "rationale": "The 22% figure and the causal 'led to' are the candidate's own statement, with no baseline firmware, load, route or test-protocol report; under the quantification rule a figure without a defined baseline is not evidence."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "insufficient_evidence", "supported"],
+  "trap": {"proposition": 3, "rule": "hrgene.unsupported_quantification", "requirements": [4], "signatures": ["22%", "22% increase in riding range"], "bait": [5], "anywhere": []},
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "No test-protocol report, baseline firmware, load or route supports the stated range increase.",
+  "expectedBoundaryNote": "Keep the regression-suite result with its months and CI logs, and the documented firmware, diagnostics and update-pipeline work; record the range increase as an unsupported claim with a follow-up about the test protocol.",
+  "followUpTargets": ["Ask which firmware version the range was compared against, under what load and route, and whether a test-protocol report records the comparison."],
+  "validClaimSignatures": ["95 minutes", "diagnostic trouble codes"]
+ }
+}

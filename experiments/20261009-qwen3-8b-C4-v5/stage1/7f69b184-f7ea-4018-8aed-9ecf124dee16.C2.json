@@ -1,0 +1,523 @@
+{
+ "request_id": "7f69b184-f7ea-4018-8aed-9ecf124dee16.C2",
+ "case_id": "7f69b184-f7ea-4018-8aed-9ecf124dee16",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approving",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approving"
+     ],
+     "sourceIds": [
+      "src_dad2d150afce"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Is the accountable owner of a fraud-detection model, approving threshold changes."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approving",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approving"
+     ],
+     "sourceIds": [
+      "src_dad2d150afce"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Is the accountable owner of a fraud-detection model, approving threshold changes."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its ownership term(s) [APPROVE] (approving) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_8bd1c34ea88c",
+     "family": "APPROVE",
+     "terms": [
+      "approving"
+     ],
+     "sourceIds": [
+      "src_dad2d150afce"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[0]",
+   "detail": "req_8bd1c34ea88c: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Is the accountable owner of a fraud-detection model, approving threshold changes."
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Is the accountable owner of a fraud-detection model, approving threshold changes."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_79cb7e6cdf3c8a54",
+   "targetRoleTitle": "Fraud Analytics Lead",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Builds fraud features from transaction and authorisation data.",
+     "sourceIds": [
+      "src_ed8771934f13"
+     ],
+     "requirementIds": [
+      "req_4f21e887b8af"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built velocity and device-consistency features from authorisation data, tested each on a holdout month and documented each one in the feature catalogue."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Works with fraud operations on rule and alert tuning.",
+     "sourceIds": [
+      "src_ed8b0d793e5c"
+     ],
+     "requirementIds": [
+      "req_aca8fdb227bc"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Approved two changes to the decline threshold in 2023 after weekly reviews with the fraud operations manager; both are recorded in the model change log."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Presents model performance to the model risk committee.",
+     "sourceIds": [
+      "src_17127e9b707f"
+     ],
+     "requirementIds": [
+      "req_0dd96eec1c66"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented the half-yearly performance review of the card-not-present model (detection rate, false-positive rate and alert volumes) to the model risk committee, with the threshold history and the changes planned for the next half-year."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's accountability for a fraud-detection model, feature building, threshold approval, and performance reporting. They do not establish direct experience with real-time scoring service development."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's qualifications are supported by the provided evidence, but further human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Fraud Analytics Lead",
+    "jobDescriptionSource": "jd_e50cf3be7522dab9",
+    "requirementIds": [
+     "req_8bd1c34ea88c",
+     "req_4f21e887b8af",
+     "req_aca8fdb227bc",
+     "req_0dd96eec1c66",
+     "req_67a96a31f22a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_79cb7e6cdf3c8a54",
+    "sources": [
+     "src_9b1dd4b14c41",
+     "src_ed8771934f13",
+     "src_ed8b0d793e5c",
+     "src_17127e9b707f",
+     "src_36e9df7bab1b",
+     "src_a14b9bf00770",
+     "src_dad2d150afce",
+     "src_a45bb601ab7c"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_8bd1c34ea88c",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_dad2d150afce",
+       "text": "Recruiter verification: the former employer's model risk team confirmed in writing that the model inventory lists the candidate as accountable model owner for the card-not-present fraud model from 2022 to 2024.",
+       "evidenceStrength": "high",
+       "notes": "Direct confirmation of accountability and threshold approval."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's approve element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_4f21e887b8af",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ed8771934f13",
+       "text": "Built velocity and device-consistency features from authorisation data, tested each on a holdout month and documented each one in the feature catalogue.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of feature building from authorisation data."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_aca8fdb227bc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ed8b0d793e5c",
+       "text": "Approved two changes to the decline threshold in 2023 after weekly reviews with the fraud operations manager; both are recorded in the model change log.",
+       "evidenceStrength": "high",
+       "notes": "Evidence of collaboration with fraud operations on alert tuning."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0dd96eec1c66",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_17127e9b707f",
+       "text": "Presented the half-yearly performance review of the card-not-present model (detection rate, false-positive rate and alert volumes) to the model risk committee, with the threshold history and the changes planned for the next half-year.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of performance reporting to the model risk committee."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_67a96a31f22a",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_36e9df7bab1b",
+       "text": "Reviewed the scoring service's latency reports with the platform team, which built and ran the real-time scoring service, and raised two tickets when response times drifted above the agreed limit.",
+       "evidenceStrength": "medium",
+       "notes": "Indirect evidence of involvement with a real-time scoring service."
+      }
+     ],
+     "missingEvidence": [
+      "Direct evidence of building or operating a real-time model-scoring service."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Builds fraud features from transaction and authorisation data.",
+     "supportingRequirementIds": [
+      "req_4f21e887b8af"
+     ],
+     "sourceIds": [
+      "src_ed8771934f13"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built velocity and device-consistency features from authorisation data, tested each on a holdout month and documented each one in the feature catalogue."
+    },
+    {
+     "claim": "Works with fraud operations on rule and alert tuning.",
+     "supportingRequirementIds": [
+      "req_aca8fdb227bc"
+     ],
+     "sourceIds": [
+      "src_ed8b0d793e5c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Approved two changes to the decline threshold in 2023 after weekly reviews with the fraud operations manager; both are recorded in the model change log."
+    },
+    {
+     "claim": "Presents model performance to the model risk committee.",
+     "supportingRequirementIds": [
+      "req_0dd96eec1c66"
+     ],
+     "sourceIds": [
+      "src_17127e9b707f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented the half-yearly performance review of the card-not-present model (detection rate, false-positive rate and alert volumes) to the model risk committee, with the threshold history and the changes planned for the next half-year."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Is the accountable owner of a fraud-detection model, approving threshold changes.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_67a96a31f22a",
+     "severity": "medium",
+     "gap": "Direct evidence of building or operating a real-time model-scoring service is missing."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_a45bb601ab7c",
+     "text": "Candidate has a one-month notice period, is available for interviews on Wednesdays and would like to meet the fraud operations manager.",
+     "signalType": "availability",
+     "jobRelatedBoundary": "true",
+     "severity": "low",
+     "recommendedHandling": "Verify the candidate's availability and willingness to meet the fraud operations manager."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_1",
+     "requirementId": "req_67a96a31f22a",
+     "question": "Can you describe your role in building or operating the real-time model-scoring service?",
+     "evidenceTarget": "Direct evidence of building or operating a real-time model-scoring service."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's accountability for the fraud-detection model and threshold approval.",
+    "Assess the candidate's experience with real-time model-scoring service development.",
+    "Evaluate the candidate's collaboration with fraud operations on alert tuning.",
+    "Confirm the candidate's availability and willingness to meet the fraud operations manager."
+   ],
+   "auditSummary": "The candidate's qualifications are supported by the provided evidence, but further human review is required to assess fit for the role. The evidence establishes accountability for a fraud-detection model, feature building, threshold approval, and performance reporting. However, direct evidence of real-time model-scoring service development is missing.",
+   "limitations": [
+    "The evidence does not establish direct experience with real-time model-scoring service development.",
+    "The candidate's availability and willingness to meet the fraud operations manager are inferred from a note and require verification."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

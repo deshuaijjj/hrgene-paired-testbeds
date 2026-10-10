@@ -1,0 +1,243 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "c5545629-5eba-42bd-a4d7-3ba034e16189.C2",
+ "case_id": "c5545629-5eba-42bd-a4d7-3ba034e16189",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14010,
+  "promptWords": 1689
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 49.848
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4313,
+ "eval_count": 1726,
+ "prompt_eval_duration_ns": 18985000,
+ "eval_duration_ns": 31569914000,
+ "total_duration_ns": 49846325917,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Need to map requirements. Provide evidence. Also include interviewSignalRisks for subjective notes. The note src_66417a16f067 is subjective. So put in interviewSignalRisks. Also maybe note about ownership. The requirement req_fc677069f47a: has owned a ranking model in production, deciding launches from A/B test results. The resume says \"Trained and compared two learning-to-rank candidates ... handed the results to the search lead, who chose the model to test.\" Also \"Wrote the analysis section of the A/B test report ... launch decision recorded by search lead and product manager.\" That indicates ownership? The note says candidate 'basically owned search ranking' and decided what shipped. That is subjective. So we have partial evidence. We can mark requirement as partial_evidence, with evidence from resume sources. Also missing evidence: decision authority? We can ask follow-up. Provide missingEvidence. Provide followUpQuestions.\n\nAlso requirement req_2ee3e97e530c: trains and compares LTR models in Python. Evidence: src_d1b650e4784a. Good.\n\nreq_74d474a4c215: builds offline evaluation pipelines with defined ranking metrics. Evidence: src_4c9b0322a390.\n\nreq_067e883549c8: works with backend engineers to package and serve models. Evidence: src_a0ea0a5e12b1.\n\nreq_4a6c00d4d02b: writes analyses for experiment reports. Evidence: src_0ce685d33ef8.\n\nAll supported.\n\nNow produce optimizedCv: language en, candidateId cand_6fcb2b78b4f68f83, targetRoleTitle Machine Learning Engineer, Search Ranking. professionalSummary: maybe one claim: \"Machine learning engineer with experience building ranking models for customer-support article search, including training, evaluation, deployment, and A/B testing.\" Provide claim with source. Use src_baecb68d3468. experienceHighlights: list claims: training LTR models, building evaluation pipeline, owning ranking model, packaging with backend, writing analysis. Provide each claim with source. projectsAndWorkSamples: offline evaluation notebook. skills: Python, LambdaMART, cross-encoder, NDCG, recall, feature flags, load testing, A/B testing, experiment reporting.\n\nEvidenceBoundary: \"The provided resume and work sample establish the candidate’s experience in training and evaluating ranking models, building evaluation pipelines, collaborating with backend engineers, and writing experiment analyses. They do not establish the candidate’s formal ownership or decision authority over production launches.\"\n\nNow hiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess ownership and launch decision authority.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_5a8da32d5a8ae5a2, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id.\n\nFor req_2ee3e97e530c: status supported, evidence from src_d1b650e4784a. evidenceStrength high. missingEvidence none.\n\nSimilarly for others.\n\nFor req_fc677069f47a: status partial_evidence. evidence from src_d1b650e4784a and src_0ce685d33ef8. missingEvidence: explicit evidence of decision authority or launch approval. Provide missingEvidence array.\n\nsupportedClaims: list claims with supportingRequirementIds and sourceIds.\n\nunsupportedClaims: maybe none.\n\nmissingEvidenceGaps: for req_fc677069f47a: gapId maybe gap_1, requirementId, severity high, gap: lack of explicit evidence of ownership and launch decision authority.\n\ninterviewSignalRisks: sourceId src_66417a16f067, text: \"candidate 'basically owned search ranking' and was 'the one who decided what shipped'.\" signalType subjective, jobRelatedBoundary true, severity low, recommendedHandling: verify with product manager or search lead.\n\nfollowUpQuestions: for requirement req_fc677069f47a: question about decision authority, evidence target: confirmation of launch decision responsibility.\n\nhumanReviewChecklist: items: verify ownership evidence, confirm launch decision authority, assess production deployment details.\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe mention that evidence limited to provided sources, subjective note not fully reliable.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_6fcb2b78b4f68f83\",\"targetRoleTitle\":\"Machine Learning Engineer, Search Ranking\",\"professionalSummary\":[\"Machine learning engineer with experience building ranking models for customer‑support article search, including training, evaluation, deployment, and A/B testing.\"],\"experienceHighlights\":[\"Trained and compared LambdaMART and a small cross‑encoder learning‑to‑rank models in Python (src_d1b650e4784a).\",\"Built an offline evaluation pipeline computing NDCG@10 and recall on a monthly refreshed judged query set (src_4c9b0322a390).\",\"Collaborated with backend engineers to package the chosen model behind a feature‑flag framework and authored a load‑test plan (src_a0ea0a5e12b1).\",\"Authored the analysis section of the A/B test report covering click‑through on the first result and searches that ended without a ticket (src_0ce685d33ef8).\"],\"projectsAndWorkSamples\":[\"Offline evaluation notebook 'Ranking refresh 2023' detailing the judged query set, metric definitions, and candidate comparison table (src_724211a9ec48).\"],\"skills\":[\"Python\",\"LambdaMART\",\"cross‑encoder\",\"NDCG\",\"recall\",\"feature‑flag framework\",\"load testing\",\"A/B testing\",\"experiment reporting\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience in training and evaluating ranking models, building evaluation pipelines, collaborating with backend engineers, and writing experiment analyses. They do not establish the candidate’s formal ownership or decision authority over production launches.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess ownership and launch decision authority.\"},\"role\":{\"roleTitle\":\"Machine Learning Engineer, Search Ranking\",\"jobDescriptionSource\":\"jd_5a8da32d5a8ae5a2\",\"requirementIds\":[\"req_2ee3e97e530c\",\"req_74d474a4c215\",\"req_fc677069f47a\",\"req_067e883549c8\",\"req_4a6c00d4d02b\"]},\"candidate\":{\"candidateId\":\"cand_6fcb2b78b4f68f83\",\"sources\":[\"src_baecb68d3468\",\"src_4c9b0322a390\",\"src_d1b650e4784a\",\"src_a0ea0a5e12b1\",\"src_0ce685d33ef8\",\"src_724211a9ec48\",\"src_7f977be58cf7\",\"src_66417a16f067\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_2ee3e97e530c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d1b650e4784a\",\"text\":\"Trained and compared two learning-to-rank candidates (LambdaMART and a small cross-encoder) for the 2023 ranking refresh and handed the results to the search lead, who chose the model to test.\",\"evidenceStrength\":\"high\",\"notes\":\"Python-based training and comparison\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_74d474a4c215\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4c9b0322a390\",\"text\":\"Built the offline evaluation pipeline for article search, computing NDCG at 10 and recall on a judged query set refreshed every month by the support-content team.\",\"evidenceStrength\":\"high\",\"notes\":\"Defined ranking metrics\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fc677069f47a\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_d1b650e4784a\",\"text\":\"Trained and compared two learning-to-rank candidates (LambdaMART and a small cross-encoder) for the 2023 ranking refresh and handed the results to the search lead, who chose the model to test.\",\"evidenceStrength\":\"medium\",\"notes\":\"Model selection process\"},{\"sourceId\":\"src_0ce685d33ef8\",\"text\":\"Wrote the analysis section of the A/B test report for the ranking refresh, covering click-through on the first result and searches that ended without a ticket; the launch decision was recorded by the search lead and the product manager.\",\"evidenceStrength\":\"medium\",\"notes\":\"Launch decision recorded\"}],\"missingEvidence\":[\"Explicit evidence that the candidate personally owned the ranking model in production and decided on launches based on A/B test results.\"]},{\"requirementId\":\"req_067e883549c8\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a0ea0a5e12b1\",\"text\":\"Paired with backend engineers to package the chosen model behind the search service's feature-flag framework and wrote the load-test plan for it.\",\"evidenceStrength\":\"high\",\"notes\":\"Collaboration with backend and packaging\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_4a6c00d4d02b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_0ce685d33ef8\",\"text\":\"Wrote the analysis section of the A/B test report for the ranking refresh, covering click-through on the first result and searches that ended without a ticket; the launch decision was recorded by the search lead and the product manager.\",\"evidenceStrength\":\"high\",\"notes\":\"Experiment analysis\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Machine learning engineer with experience building ranking models for customer‑support article search, including training, evaluation, deployment, and A/B testing.\",\"supportingRequirementIds\":[\"req_2ee3e97e530c\",\"req_74d474a4c215\",\"req_fc677069f47a\",\"req_067e883549c8\",\"req_4a6c00d4d02b\"],\"sourceIds\":[\"src_baecb68d3468\",\"src_4c9b0322a390\",\"src_d1b650e4784a\",\"src_a0ea0a5e12b1\",\"src_0ce685d33ef8\"],\"evidenceStrength\":\"high\",\"witness\":\"Machine learning engineer on the search team at Copperleaf from June 2021 to August 2024, working on article search for customer-support agents.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_fc677069f47a\",\"severity\":\"high\",\"gap\":\"Lack of explicit evidence that the candidate personally owned the ranking model in production and decided on launches based on A/B test results.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_66417a16f067\",\"text\":\"candidate 'basically owned search ranking' and was 'the one who decided what shipped'\",\"signalType\":\"subjective\",\"jobRelatedBoundary\":true,\"severity\":\"low\",\"recommendedHandling\":\"Verify with product manager or search lead for confirmation of ownership and launch decision authority.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_fc677069f47a\",\"question\":\"Can you provide documentation or confirmation that you personally owned the ranking model in production and made launch decisions based on A/B test results?\",\"evidenceTarget\":\"Explicit ownership and launch decision authority evidence.\"}],\"humanReviewChecklist\":[\"Verify ownership and launch decision authority evidence for req_fc677069f47a.\",\"Confirm that the offline evaluation pipeline was used in production.\",\"Assess the extent of collaboration with backend engineers for model packaging.\",\"Ensure that the A/B test analysis was authored by the candidate and not a team summary.\"],\"auditSummary\":\"The evidence from the resume and work sample supports most technical requirements for the Machine Learning Engineer, Search Ranking role. However, the candidate’s ownership of the ranking model in production and decision authority over launches is only partially supported by subjective notes and lacks explicit documentation. Human review is required to confirm these critical aspects before making a hiring decision.\",\"limitations\":[\"Evidence is limited to the provided resume, work sample, and informal notes; no external verification of ownership or launch decisions is available.\"]}}",
+ "content_sha256": "908f2cdc69856cecf31196b34487da1d61e7c132cc03e3fb4553ea1f11767c67",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_6fcb2b78b4f68f83",
+   "targetRoleTitle": "Machine Learning Engineer, Search Ranking",
+   "professionalSummary": [
+    "Machine learning engineer with experience building ranking models for customer‑support article search, including training, evaluation, deployment, and A/B testing."
+   ],
+   "experienceHighlights": [
+    "Trained and compared LambdaMART and a small cross‑encoder learning‑to‑rank models in Python (src_d1b650e4784a).",
+    "Built an offline evaluation pipeline computing NDCG@10 and recall on a monthly refreshed judged query set (src_4c9b0322a390).",
+    "Collaborated with backend engineers to package the chosen model behind a feature‑flag framework and authored a load‑test plan (src_a0ea0a5e12b1).",
+    "Authored the analysis section of the A/B test report covering click‑through on the first result and searches that ended without a ticket (src_0ce685d33ef8)."
+   ],
+   "projectsAndWorkSamples": [
+    "Offline evaluation notebook 'Ranking refresh 2023' detailing the judged query set, metric definitions, and candidate comparison table (src_724211a9ec48)."
+   ],
+   "skills": [
+    "Python",
+    "LambdaMART",
+    "cross‑encoder",
+    "NDCG",
+    "recall",
+    "feature‑flag framework",
+    "load testing",
+    "A/B testing",
+    "experiment reporting"
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in training and evaluating ranking models, building evaluation pipelines, collaborating with backend engineers, and writing experiment analyses. They do not establish the candidate’s formal ownership or decision authority over production launches."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess ownership and launch decision authority."
+   },
+   "role": {
+    "roleTitle": "Machine Learning Engineer, Search Ranking",
+    "jobDescriptionSource": "jd_5a8da32d5a8ae5a2",
+    "requirementIds": [
+     "req_2ee3e97e530c",
+     "req_74d474a4c215",
+     "req_fc677069f47a",
+     "req_067e883549c8",
+     "req_4a6c00d4d02b"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_6fcb2b78b4f68f83",
+    "sources": [
+     "src_baecb68d3468",
+     "src_4c9b0322a390",
+     "src_d1b650e4784a",
+     "src_a0ea0a5e12b1",
+     "src_0ce685d33ef8",
+     "src_724211a9ec48",
+     "src_7f977be58cf7",
+     "src_66417a16f067"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2ee3e97e530c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d1b650e4784a",
+       "text": "Trained and compared two learning-to-rank candidates (LambdaMART and a small cross-encoder) for the 2023 ranking refresh and handed the results to the search lead, who chose the model to test.",
+       "evidenceStrength": "high",
+       "notes": "Python-based training and comparison"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_74d474a4c215",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4c9b0322a390",
+       "text": "Built the offline evaluation pipeline for article search, computing NDCG at 10 and recall on a judged query set refreshed every month by the support-content team.",
+       "evidenceStrength": "high",
+       "notes": "Defined ranking metrics"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fc677069f47a",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_d1b650e4784a",
+       "text": "Trained and compared two learning-to-rank candidates (LambdaMART and a small cross-encoder) for the 2023 ranking refresh and handed the results to the search lead, who chose the model to test.",
+       "evidenceStrength": "medium",
+       "notes": "Model selection process"
+      },
+      {
+       "sourceId": "src_0ce685d33ef8",
+       "text": "Wrote the analysis section of the A/B test report for the ranking refresh, covering click-through on the first result and searches that ended without a ticket; the launch decision was recorded by the search lead and the product manager.",
+       "evidenceStrength": "medium",
+       "notes": "Launch decision recorded"
+      }
+     ],
+     "missingEvidence": [
+      "Explicit evidence that the candidate personally owned the ranking model in production and decided on launches based on A/B test results."
+     ]
+    },
+    {
+     "requirementId": "req_067e883549c8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a0ea0a5e12b1",
+       "text": "Paired with backend engineers to package the chosen model behind the search service's feature-flag framework and wrote the load-test plan for it.",
+       "evidenceStrength": "high",
+       "notes": "Collaboration with backend and packaging"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4a6c00d4d02b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0ce685d33ef8",
+       "text": "Wrote the analysis section of the A/B test report for the ranking refresh, covering click-through on the first result and searches that ended without a ticket; the launch decision was recorded by the search lead and the product manager.",
+       "evidenceStrength": "high",
+       "notes": "Experiment analysis"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Machine learning engineer with experience building ranking models for customer‑support article search, including training, evaluation, deployment, and A/B testing.",
+     "supportingRequirementIds": [
+      "req_2ee3e97e530c",
+      "req_74d474a4c215",
+      "req_fc677069f47a",
+      "req_067e883549c8",
+      "req_4a6c00d4d02b"
+     ],
+     "sourceIds": [
+      "src_baecb68d3468",
+      "src_4c9b0322a390",
+      "src_d1b650e4784a",
+      "src_a0ea0a5e12b1",
+      "src_0ce685d33ef8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Machine learning engineer on the search team at Copperleaf from June 2021 to August 2024, working on article search for customer-support agents."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_fc677069f47a",
+     "severity": "high",
+     "gap": "Lack of explicit evidence that the candidate personally owned the ranking model in production and decided on launches based on A/B test results."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_66417a16f067",
+     "text": "candidate 'basically owned search ranking' and was 'the one who decided what shipped'",
+     "signalType": "subjective",
+     "jobRelatedBoundary": true,
+     "severity": "low",
+     "recommendedHandling": "Verify with product manager or search lead for confirmation of ownership and launch decision authority."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_fc677069f47a",
+     "question": "Can you provide documentation or confirmation that you personally owned the ranking model in production and made launch decisions based on A/B test results?",
+     "evidenceTarget": "Explicit ownership and launch decision authority evidence."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify ownership and launch decision authority evidence for req_fc677069f47a.",
+    "Confirm that the offline evaluation pipeline was used in production.",
+    "Assess the extent of collaboration with backend engineers for model packaging.",
+    "Ensure that the A/B test analysis was authored by the candidate and not a team summary."
+   ],
+   "auditSummary": "The evidence from the resume and work sample supports most technical requirements for the Machine Learning Engineer, Search Ranking role. However, the candidate’s ownership of the ranking model in production and decision authority over launches is only partially supported by subjective notes and lacks explicit documentation. Human review is required to confirm these critical aspects before making a hiring decision.",
+   "limitations": [
+    "Evidence is limited to the provided resume, work sample, and informal notes; no external verification of ownership or launch decisions is available."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:25:19.611470+00:00"
+}

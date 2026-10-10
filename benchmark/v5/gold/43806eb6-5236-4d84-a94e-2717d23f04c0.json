@@ -1,0 +1,84 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "43806eb6-5236-4d84-a94e-2717d23f04c0",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_e4ec32844bab",
+   "canonicalProposition": "The candidate cut the hardware-in-the-loop regression suite from 95 to 38 minutes between March and May 2023 by running test groups in parallel, as recorded in the CI pipeline logs.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_d6dc00e8d69d",
+    "src_37814e06d9a6"
+   ],
+   "relevantRequirementIds": [
+    "req_273bd23458e4"
+   ],
+   "boundaryCategory": "quantified_result_with_defined_baseline",
+   "criticality": "noncritical",
+   "rationale": "The resume states the figures and months, and the work sample shows the CI run durations for both months and the pipeline change."
+  },
+  {
+   "atomicPropositionId": "prop_ba75c6a6f58a",
+   "canonicalProposition": "The candidate wrote field-oriented control firmware in C for the STM32G4 motor controller and added CAN diagnostic trouble codes for the battery pack and motor controller.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_6a687d01215d",
+    "src_b8191bd1b2b1",
+    "src_013f5a8057cf"
+   ],
+   "relevantRequirementIds": [
+    "req_a9b4e581869b",
+    "req_7b21027582b0"
+   ],
+   "boundaryCategory": "verified_activity_record",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the firmware and the codes, and the reference check confirms both in writing."
+  },
+  {
+   "atomicPropositionId": "prop_6b9e2093bcf6",
+   "canonicalProposition": "The candidate's battery-management firmware rework increased riding range by 22%.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_4ceac2769e13"
+   ],
+   "boundaryCategory": "causal_quantified_outcome_without_baseline",
+   "criticality": "critical",
+   "rationale": "The 22% figure and the causal 'led to' are the candidate's own statement, with no baseline firmware, load, route or test-protocol report; under the quantification rule a figure without a defined baseline is not evidence."
+  }
+ ],
+ "requirementStatus": {
+  "req_a9b4e581869b": "supported",
+  "req_7b21027582b0": "supported",
+  "req_273bd23458e4": "supported",
+  "req_4ceac2769e13": "insufficient_evidence",
+  "req_60c03af5a429": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No test-protocol report, baseline firmware, load or route supports the stated range increase.",
+ "expectedBoundaryNote": "Keep the regression-suite result with its months and CI logs, and the documented firmware, diagnostics and update-pipeline work; record the range increase as an unsupported claim with a follow-up about the test protocol.",
+ "permittedFollowUpTargets": [
+  "Ask which firmware version the range was compared against, under what load and route, and whether a test-protocol report records the comparison."
+ ],
+ "validClaimSignatures": [
+  "95 minutes",
+  "diagnostic trouble codes"
+ ],
+ "trap": {
+  "propositionId": "prop_6b9e2093bcf6",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_4ceac2769e13"
+  ],
+  "signatures": [
+   "22%",
+   "22% increase in riding range"
+  ],
+  "baitSourceIds": [
+   "src_71d49d914824"
+  ]
+ }
+}

@@ -1,0 +1,354 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "90a178d2-b0d1-437d-b3ba-e8d734c0c2ca.C2",
+ "case_id": "90a178d2-b0d1-437d-b3ba-e8d734c0c2ca",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14095,
+  "promptWords": 1669
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 59.415
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4050,
+ "eval_count": 2480,
+ "prompt_eval_duration_ns": 19137000,
+ "eval_duration_ns": 45485032000,
+ "total_duration_ns": 59408289125,
+ "thinking": "We need to produce JSON with schema. Need to extract claims from resume. Ensure citations. Also need requirementEvidenceMap covering all req ids. Use evidence from sources. Also interviewSignalRisks for subjective notes. Provide gaps for any requirement not fully supported. Let's map:\n\nreq_e994a096dfb0: builds and maintains payment-processing services in Kotlin or Java with automated tests. Evidence: src_a4b1429c0106 shows backend engineer at Northgate, faster-payments gateway written in Kotlin; maintained integration test suite. So supported.\n\nreq_12cac7bf8f75: designs idempotent APIs for payment initiation and reconciliation. Evidence: src_b9f88c17cccc (idempotency-key scheme) and src_87219351c0f7 (reconciliation job). So supported.\n\nreq_17ec99705c81: participates in on-call rotation and acts as incident commander during payment outages. Evidence: src_3c81952a2765 reference check says on-call rotation June 2022 to April 2024 and authored post-incident reviews. But does it say incident commander? Not explicitly. So partial evidence. Need gap: evidence of acting as incident commander. Follow-up question.\n\nreq_c0c5eb929c4a: works with fraud and compliance teams on transaction-monitoring changes. Evidence: src_90aa184f7a67 shows implemented rule changes requested by fraud team, after compliance sign-off. So supported.\n\nreq_a6713bb8f52a: writes post-incident reviews with clear corrective actions. Evidence: src_bcb55898844a shows wrote post-incident reviews with timeline, contributing factors, corrective actions tracked. So supported.\n\nNow CV claims: professionalSummary: maybe one claim: \"Backend engineer at Northgate Building Society, March 2021 to present, working on faster-payments gateway written in Kotlin; maintained integration test suite.\" Claim id? We can create claim objects. But in optimizedCv, we need arrays of CLAIM objects. Each claim must have sourceIds, requirementIds, witness. Use provided sources.\n\nWe need to include claimId. We can generate simple ids like \"claim1\". Provide witness verbatim passage from source.\n\nAlso evidenceBoundary: one or two sentences on what materials establish and not.\n\nNow hiringEvidencePacket: decisionBoundary flags all false, humanReviewRequired true, statement.\n\nrole: roleTitle, jobDescriptionSourceId, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement id, status, evidence array, missingEvidence.\n\nsupportedClaims: list of claims that are supported. Provide claim text, supportingRequirementIds, sourceIds, evidenceStrength high maybe, witness.\n\nunsupportedClaims: none? maybe none.\n\nmissingEvidenceGaps: for req_17ec99705c81: gap: evidence of acting as incident commander.\n\ninterviewSignalRisks: include src_bc70f787610b note: subjective. signalType maybe \"subjective impression\". recommendedHandling: ask for concrete incident commander evidence.\n\nfollowUpQuestions: for req_17ec99705c81: question about incident commander role.\n\nhumanReviewChecklist: maybe items like \"Review evidence for on-call incident commander role\", \"Verify compliance with fraud team collaboration\".\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"Limited to provided sources; no external verification\".\n\nNow produce JSON. Ensure no extra fields. Use language en.\n\nLet's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_4796e17ffef8d57e\",\"targetRoleTitle\":\"Backend Engineer, Payments Platform\",\"professionalSummary\":[{\"claimId\":\"claim1\",\"text\":\"Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.\",\"sourceIds\":[\"src_a4b1429c0106\"],\"requirementIds\":[\"req_e994a096dfb0\"],\"supportBoundary\":\"supported\",\"witness\":\"Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.\"}],\"experienceHighlights\":[{\"claimId\":\"claim2\",\"text\":\"Designed the idempotency-key scheme for the payment initiation API to ensure client retries return the original result instead of creating duplicate transfers.\",\"sourceIds\":[\"src_b9f88c17cccc\"],\"requirementIds\":[\"req_12cac7bf8f75\"],\"supportBoundary\":\"supported\",\"witness\":\"Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer.\"},{\"claimId\":\"claim3\",\"text\":\"Added a reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.\",\"sourceIds\":[\"src_87219351c0f7\"],\"requirementIds\":[\"req_12cac7bf8f75\"],\"supportBoundary\":\"supported\",\"witness\":\"Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.\"},{\"claimId\":\"claim4\",\"text\":\"Implemented transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.\",\"sourceIds\":[\"src_90aa184f7a67\"],\"requirementIds\":[\"req_c0c5eb929c4a\"],\"supportBoundary\":\"supported\",\"witness\":\"Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.\"},{\"claimId\":\"claim5\",\"text\":\"Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.\",\"sourceIds\":[\"src_bcb55898844a\"],\"requirementIds\":[\"req_a6713bb8f52a\"],\"supportBoundary\":\"supported\",\"witness\":\"Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"claim6\",\"text\":\"Design document for the payment initiation API's idempotency handling, detailing key format, 24‑hour retention period, sequence diagram for retried requests and test cases.\",\"sourceIds\":[\"src_907a21a6ac68\"],\"requirementIds\":[\"req_12cac7bf8f75\"],\"supportBoundary\":\"supported\",\"witness\":\"Work sample: a design document for the payment initiation API's idempotency handling, giving the key format, the 24-hour retention period, a sequence diagram for retried requests and the test cases.\"}],\"skills\":[{\"claimId\":\"claim7\",\"text\":\"Kotlin, Java, automated testing, API design, idempotency, transaction monitoring, incident response, post‑incident review writing.\",\"sourceIds\":[\"src_a4b1429c0106\",\"src_b9f88c17cccc\",\"src_87219351c0f7\",\"src_90aa184f7a67\",\"src_bcb55898844a\"],\"requirementIds\":[\"req_e994a096dfb0\",\"req_12cac7bf8f75\",\"req_c0c5eb929c4a\",\"req_a6713bb8f52a\"],\"supportBoundary\":\"supported\",\"witness\":\"Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.\"}],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience building Kotlin payment services, designing idempotent APIs, collaborating with fraud and compliance teams, and writing post‑incident reviews. They do not explicitly confirm the candidate’s role as incident commander during outages.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review is required to assess the candidate’s fit for the role.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Payments Platform\",\"jobDescriptionSource\":\"jd_428b7ccc45a8f93b\",\"requirementIds\":[\"req_e994a096dfb0\",\"req_12cac7bf8f75\",\"req_17ec99705c81\",\"req_c0c5eb929c4a\",\"req_a6713bb8f52a\"]},\"candidate\":{\"candidateId\":\"cand_4796e17ffef8d57e\",\"sources\":[\"src_a4b1429c0106\",\"src_b9f88c17cccc\",\"src_87219351c0f7\",\"src_90aa184f7a67\",\"src_bcb55898844a\",\"src_907a21a6ac68\",\"src_bc70f787610b\",\"src_3c81952a2765\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_e994a096dfb0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a4b1429c0106\",\"text\":\"Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states Kotlin service and automated tests\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_12cac7bf8f75\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b9f88c17cccc\",\"text\":\"Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows idempotent API design\"},{\"sourceId\":\"src_87219351c0f7\",\"text\":\"Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows reconciliation API design\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_17ec99705c81\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_3c81952a2765\",\"text\":\"the candidate was on the gateway on-call rotation from June 2022 to April 2024 and authored the post-incident reviews for the incidents assigned to them.\",\"evidenceStrength\":\"medium\",\"notes\":\"Confirms on-call rotation but not incident commander role\"}],\"missingEvidence\":[\"Evidence that the candidate acted as incident commander during payment outages\"]},{\"requirementId\":\"req_c0c5eb929c4a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_90aa184f7a67\",\"text\":\"Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows collaboration with fraud and compliance\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a6713bb8f52a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_bcb55898844a\",\"text\":\"Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows post-incident review writing\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.\",\"supportingRequirementIds\":[\"req_e994a096dfb0\"],\"sourceIds\":[\"src_a4b1429c0106\"],\"evidenceStrength\":\"high\",\"witness\":\"Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.\"},{\"claim\":\"Designed the idempotency-key scheme for the payment initiation API to ensure client retries return the original result instead of creating duplicate transfers.\",\"supportingRequirementIds\":[\"req_12cac7bf8f75\"],\"sourceIds\":[\"src_b9f88c17cccc\"],\"evidenceStrength\":\"high\",\"witness\":\"Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer.\"},{\"claim\":\"Added a reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.\",\"supportingRequirementIds\":[\"req_12cac7bf8f75\"],\"sourceIds\":[\"src_87219351c0f7\"],\"evidenceStrength\":\"high\",\"witness\":\"Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.\"},{\"claim\":\"Implemented transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.\",\"supportingRequirementIds\":[\"req_c0c5eb929c4a\"],\"sourceIds\":[\"src_90aa184f7a67\"],\"evidenceStrength\":\"high\",\"witness\":\"Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.\"},{\"claim\":\"Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.\",\"supportingRequirementIds\":[\"req_a6713bb8f52a\"],\"sourceIds\":[\"src_bcb55898844a\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap1\",\"requirementId\":\"req_17ec99705c81\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate acted as incident commander during payment outages\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_bc70f787610b\",\"text\":\"Interviewer impression from the system-design round: seemed hesitant when pushed on trade-offs and lacks presence; I doubt they would hold their ground on an incident bridge.\",\"signalType\":\"subjective impression\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Ask for concrete evidence of incident commander experience and observe incident handling behavior\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_17ec99705c81\",\"question\":\"Can you describe a specific payment outage where you served as incident commander, including the actions you took and the outcome?\",\"evidenceTarget\":\"Evidence of incident commander role\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s on-call rotation included incident commander responsibilities\",\"Confirm that the candidate’s post‑incident reviews contain corrective actions\",\"Assess the candidate’s collaboration with fraud and compliance teams\"],\"auditSummary\":\"The evidence indicates the candidate meets most technical and collaborative requirements for the Backend Engineer, Payments Platform role, but lacks explicit confirmation of incident commander duties during outages. Human review should focus on clarifying this gap and evaluating the subjective interview impression.\",\"limitations\":[\"Analysis limited to the provided resume, work sample, and notes; no external verification of claims.\"]}}",
+ "content_sha256": "80b03b287c6d6c2b0bd7e666a1eb3ca0f596179888deed19a4eb7da635c88f82",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4796e17ffef8d57e",
+   "targetRoleTitle": "Backend Engineer, Payments Platform",
+   "professionalSummary": [
+    {
+     "claimId": "claim1",
+     "text": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.",
+     "sourceIds": [
+      "src_a4b1429c0106"
+     ],
+     "requirementIds": [
+      "req_e994a096dfb0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim2",
+     "text": "Designed the idempotency-key scheme for the payment initiation API to ensure client retries return the original result instead of creating duplicate transfers.",
+     "sourceIds": [
+      "src_b9f88c17cccc"
+     ],
+     "requirementIds": [
+      "req_12cac7bf8f75"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer."
+    },
+    {
+     "claimId": "claim3",
+     "text": "Added a reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.",
+     "sourceIds": [
+      "src_87219351c0f7"
+     ],
+     "requirementIds": [
+      "req_12cac7bf8f75"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue."
+    },
+    {
+     "claimId": "claim4",
+     "text": "Implemented transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.",
+     "sourceIds": [
+      "src_90aa184f7a67"
+     ],
+     "requirementIds": [
+      "req_c0c5eb929c4a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off."
+    },
+    {
+     "claimId": "claim5",
+     "text": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.",
+     "sourceIds": [
+      "src_bcb55898844a"
+     ],
+     "requirementIds": [
+      "req_a6713bb8f52a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim6",
+     "text": "Design document for the payment initiation API's idempotency handling, detailing key format, 24‑hour retention period, sequence diagram for retried requests and test cases.",
+     "sourceIds": [
+      "src_907a21a6ac68"
+     ],
+     "requirementIds": [
+      "req_12cac7bf8f75"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: a design document for the payment initiation API's idempotency handling, giving the key format, the 24-hour retention period, a sequence diagram for retried requests and the test cases."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim7",
+     "text": "Kotlin, Java, automated testing, API design, idempotency, transaction monitoring, incident response, post‑incident review writing.",
+     "sourceIds": [
+      "src_a4b1429c0106",
+      "src_b9f88c17cccc",
+      "src_87219351c0f7",
+      "src_90aa184f7a67",
+      "src_bcb55898844a"
+     ],
+     "requirementIds": [
+      "req_e994a096dfb0",
+      "req_12cac7bf8f75",
+      "req_c0c5eb929c4a",
+      "req_a6713bb8f52a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience building Kotlin payment services, designing idempotent APIs, collaborating with fraud and compliance teams, and writing post‑incident reviews. They do not explicitly confirm the candidate’s role as incident commander during outages."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate’s fit for the role."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Payments Platform",
+    "jobDescriptionSource": "jd_428b7ccc45a8f93b",
+    "requirementIds": [
+     "req_e994a096dfb0",
+     "req_12cac7bf8f75",
+     "req_17ec99705c81",
+     "req_c0c5eb929c4a",
+     "req_a6713bb8f52a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4796e17ffef8d57e",
+    "sources": [
+     "src_a4b1429c0106",
+     "src_b9f88c17cccc",
+     "src_87219351c0f7",
+     "src_90aa184f7a67",
+     "src_bcb55898844a",
+     "src_907a21a6ac68",
+     "src_bc70f787610b",
+     "src_3c81952a2765"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_e994a096dfb0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a4b1429c0106",
+       "text": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.",
+       "evidenceStrength": "high",
+       "notes": "Directly states Kotlin service and automated tests"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_12cac7bf8f75",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b9f88c17cccc",
+       "text": "Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer.",
+       "evidenceStrength": "high",
+       "notes": "Shows idempotent API design"
+      },
+      {
+       "sourceId": "src_87219351c0f7",
+       "text": "Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.",
+       "evidenceStrength": "high",
+       "notes": "Shows reconciliation API design"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_17ec99705c81",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_3c81952a2765",
+       "text": "the candidate was on the gateway on-call rotation from June 2022 to April 2024 and authored the post-incident reviews for the incidents assigned to them.",
+       "evidenceStrength": "medium",
+       "notes": "Confirms on-call rotation but not incident commander role"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate acted as incident commander during payment outages"
+     ]
+    },
+    {
+     "requirementId": "req_c0c5eb929c4a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_90aa184f7a67",
+       "text": "Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.",
+       "evidenceStrength": "high",
+       "notes": "Shows collaboration with fraud and compliance"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a6713bb8f52a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bcb55898844a",
+       "text": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.",
+       "evidenceStrength": "high",
+       "notes": "Shows post-incident review writing"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline.",
+     "supportingRequirementIds": [
+      "req_e994a096dfb0"
+     ],
+     "sourceIds": [
+      "src_a4b1429c0106"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Backend engineer at Northgate Building Society, March 2021 to present, working on the faster-payments gateway written in Kotlin; maintained the service's integration test suite in the CI pipeline."
+    },
+    {
+     "claim": "Designed the idempotency-key scheme for the payment initiation API to ensure client retries return the original result instead of creating duplicate transfers.",
+     "supportingRequirementIds": [
+      "req_12cac7bf8f75"
+     ],
+     "sourceIds": [
+      "src_b9f88c17cccc"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed the idempotency-key scheme for the payment initiation API so that client retries return the original result instead of creating a duplicate transfer."
+    },
+    {
+     "claim": "Added a reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue.",
+     "supportingRequirementIds": [
+      "req_12cac7bf8f75"
+     ],
+     "sourceIds": [
+      "src_87219351c0f7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added the reconciliation job that matches outbound payments against the scheme settlement file each morning and raises breaks to the operations queue."
+    },
+    {
+     "claim": "Implemented transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off.",
+     "supportingRequirementIds": [
+      "req_c0c5eb929c4a"
+     ],
+     "sourceIds": [
+      "src_90aa184f7a67"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Implemented the transaction-monitoring rule changes requested by the fraud team, including a velocity rule for new payees, after compliance sign-off."
+    },
+    {
+     "claim": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker.",
+     "supportingRequirementIds": [
+      "req_a6713bb8f52a"
+     ],
+     "sourceIds": [
+      "src_bcb55898844a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote post-incident reviews for gateway timeouts, each with a timeline, contributing factors and corrective actions tracked in the issue tracker."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap1",
+     "requirementId": "req_17ec99705c81",
+     "severity": "medium",
+     "gap": "Evidence that the candidate acted as incident commander during payment outages"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_bc70f787610b",
+     "text": "Interviewer impression from the system-design round: seemed hesitant when pushed on trade-offs and lacks presence; I doubt they would hold their ground on an incident bridge.",
+     "signalType": "subjective impression",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Ask for concrete evidence of incident commander experience and observe incident handling behavior"
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_17ec99705c81",
+     "question": "Can you describe a specific payment outage where you served as incident commander, including the actions you took and the outcome?",
+     "evidenceTarget": "Evidence of incident commander role"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s on-call rotation included incident commander responsibilities",
+    "Confirm that the candidate’s post‑incident reviews contain corrective actions",
+    "Assess the candidate’s collaboration with fraud and compliance teams"
+   ],
+   "auditSummary": "The evidence indicates the candidate meets most technical and collaborative requirements for the Backend Engineer, Payments Platform role, but lacks explicit confirmation of incident commander duties during outages. Human review should focus on clarifying this gap and evaluating the subjective interview impression.",
+   "limitations": [
+    "Analysis limited to the provided resume, work sample, and notes; no external verification of claims."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:06:18.163267+00:00"
+}

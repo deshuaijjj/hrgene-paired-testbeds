@@ -1,0 +1,276 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "84ed1dbc-9c70-4faf-9c4c-f093f5216fce.C1",
+ "case_id": "84ed1dbc-9c70-4faf-9c4c-f093f5216fce",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11326,
+  "promptWords": 1476
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 47.182
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3028,
+ "eval_count": 2029,
+ "prompt_eval_duration_ns": 17954000,
+ "eval_duration_ns": 36201660000,
+ "total_duration_ns": 47177851625,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use claims from resume. Provide evidenceBoundary. Then hiringEvidencePacket mapping requirements.\n\nWe have 5 requirements. We need to map each.\n\nFrom sources:\n\nreq_0c91ef5009f1: Owns vendor portfolio, negotiating renewals, signing off contract values within limits. Evidence: src_da4ffd07ece2 shows prepared renewal briefs used in negotiations; contract values signed off by head of procurement and CFO. Also src_dba455063f2b note says candidate effectively ran portfolio and could have negotiated renewals herself. So supported? We have evidence of signing off by head of procurement and CFO, but not that candidate signed off. So partial evidence: candidate prepared briefs, but signing off was by head of procurement. So requirement partially supported.\n\nreq_aa744fcbe0db: Maintains vendor contract register and renewal calendar. Evidence: src_23477572fbe8. Supported.\n\nreq_910aed0b7afa: Runs quarterly vendor reviews with service owners and records outcomes. Evidence: src_f480b50f2421. Supported.\n\nreq_ad2a343e9eaa: Coordinates vendor changes with finance and security and records own responsibility boundaries. Evidence: src_f480b50f2421 mentions circulating scorecards and recording actions; vendor exits decided by head of procurement. Not explicit about finance/security coordination. src_f2efb2b01e73 updates risk register from security assessments. So partial evidence: some coordination but not explicit. So partial.\n\nreq_3d1f1ae7a095: Documents known limitations and hand-over conditions for vendor risk register each quarter. Evidence: src_f2efb2b01e73. Supported.\n\nMissing evidence gaps: for req_0c91ef5009f1: need evidence that candidate signed off contract values within limits. For req_ad2a343e9eaa: need evidence of coordination with finance and security and recording boundaries.\n\nInterviewSignalRisks: maybe note from src_3fa213d42a2f about expectations. Not a risk. No subjective feedback. So none.\n\nFollowUpQuestions: ask for evidence of signing off contract values and coordination.\n\nHumanReviewChecklist: items like \"Verify candidate's direct signing authority\", \"Confirm coordination with finance/security\".\n\nAuditSummary: summary.\n\nLimitations: mention that evidence limited to resume and notes.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_b6d99918f4190519\",\"targetRoleTitle\":\"Procurement Operations Specialist, Customer Ticketing System\",\"professionalSummary\":[\"Maintained the vendor contract register and renewal calendar for hosting, telephony and translation vendors for the support product.\",\"Prepared renewal briefs used in negotiations, with contract values signed off by the head of procurement and, when above her limit, by the CFO.\",\"Organised quarterly vendor reviews with service owners, circulating scorecards and recording actions.\",\"Updated the vendor risk register each quarter from security assessments and incident notes, documenting open risks and hand‑over items.\"],\"experienceHighlights\":[\"Maintained vendor contract register and renewal calendar, sending renewal alerts ninety days ahead and reconciling with finance purchase orders (src_23477572fbe8).\",\"Prepared renewal briefs (usage, spend, service credits, benchmark prices) for procurement negotiations; contract values signed off by head of procurement and CFO (src_da4ffd07ece2).\",\"Organised quarterly vendor reviews with service owners, circulating scorecards and recording actions; vendor exits decided by head of procurement (src_f480b50f2421).\",\"Updated vendor risk register each quarter from security assessments and incident notes, writing quarter‑end notes on open risks and hand‑over items (src_f2efb2b01e73).\"],\"projectsAndWorkSamples\":[\"Work sample: renewal brief for telephony vendor and vendor risk register extract for one quarter, with procurement system record identifiers as verification trail (src_617e19e0e9f4).\"],\"skills\":[\"Vendor contract register maintenance\",\"Renewal brief preparation\",\"Quarterly vendor review coordination\",\"Vendor risk register updates\"],\"evidenceBoundary\":\"The provided resume and notes establish the candidate’s activities in vendor register maintenance, renewal brief preparation, review organisation, and risk register updates, but do not confirm that the candidate personally signed off contract values or coordinated vendor changes with finance and security.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Procurement Operations Specialist, Customer Ticketing System\",\"jobDescriptionSource\":\"jd_0de57fadd8f9e290\",\"requirementIds\":[\"req_0c91ef5009f1\",\"req_aa744fcbe0db\",\"req_910aed0b7afa\",\"req_ad2a343e9eaa\",\"req_3d1f1ae7a095\"]},\"candidate\":{\"candidateId\":\"cand_b6d99918f4190519\",\"sources\":[\"src_23477572fbe8\",\"src_da4ffd07ece2\",\"src_f480b50f2421\",\"src_f2efb2b01e73\",\"src_617e19e0e9f4\",\"src_dba455063f2b\",\"src_3fa213d42a2f\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_0c91ef5009f1\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_da4ffd07ece2\",\"text\":\"Prepared the renewal briefs (usage, spend, service credits, benchmark prices) that the head of procurement used in renewal negotiations; contract values were signed off by the head of procurement and, above her limit, by the CFO.\",\"evidenceStrength\":\"medium\",\"notes\":\"Candidate prepared briefs but did not sign off contract values.\"},{\"sourceId\":\"src_dba455063f2b\",\"text\":\"Reference call with the former head of procurement: said the candidate 'effectively ran our vendor portfolio' and that she 'could have negotiated those renewals herself'; confirmed employment dates.\",\"evidenceStrength\":\"medium\",\"notes\":\"Supports ownership but not signing authority.\"}],\"missingEvidence\":[\"Evidence that the candidate personally signed off contract values within delegated limits.\"]},{\"requirementId\":\"req_aa744fcbe0db\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_23477572fbe8\",\"text\":\"Maintained the vendor contract register and the renewal calendar for the support product's hosting, telephony and translation vendors, sending renewal alerts ninety days ahead and keeping the register reconciled with finance's purchase orders.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly supports register maintenance and renewal calendar.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_910aed0b7afa\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f480b50f2421\",\"text\":\"Organised the quarterly vendor reviews with the service owners, circulating the scorecards and recording the actions; vendor exits were decided by the head of procurement.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly supports review organisation and outcome recording.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_ad2a343e9eaa\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_f480b50f2421\",\"text\":\"Organised the quarterly vendor reviews with the service owners, circulating the scorecards and recording the actions; vendor exits were decided by the head of procurement.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows coordination with service owners but not explicit finance/security.\"},{\"sourceId\":\"src_f2efb2b01e73\",\"text\":\"Updated the vendor risk register each quarter from the security team's assessments and the service owners' incident notes, and wrote the quarter-end note on open risks and hand-over items.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows interaction with security but no explicit finance coordination.\"}],\"missingEvidence\":[\"Evidence that the candidate coordinated vendor changes with finance and security and recorded responsibility boundaries.\"]},{\"requirementId\":\"req_3d1f1ae7a095\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f2efb2b01e73\",\"text\":\"Updated the vendor risk register each quarter from the security team's assessments and the service owners' incident notes, and wrote the quarter-end note on open risks and hand-over items.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly supports documentation of limitations and hand-over conditions.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Maintained vendor contract register and renewal calendar for hosting, telephony and translation vendors.\",\"supportingRequirementIds\":[\"req_aa744fcbe0db\"],\"sourceIds\":[\"src_23477572fbe8\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the vendor contract register and the renewal calendar for the support product's hosting, telephony and translation vendors, sending renewal alerts ninety days ahead and keeping the register reconciled with finance's purchase orders.\"},{\"claim\":\"Prepared renewal briefs used in procurement negotiations.\",\"supportingRequirementIds\":[\"req_0c91ef5009f1\"],\"sourceIds\":[\"src_da4ffd07ece2\"],\"evidenceStrength\":\"medium\",\"witness\":\"Prepared the renewal briefs (usage, spend, service credits, benchmark prices) that the head of procurement used in renewal negotiations; contract values were signed off by the head of procurement and, above her limit, by the CFO.\"},{\"claim\":\"Organised quarterly vendor reviews with service owners and recorded actions.\",\"supportingRequirementIds\":[\"req_910aed0b7afa\"],\"sourceIds\":[\"src_f480b50f2421\"],\"evidenceStrength\":\"high\",\"witness\":\"Organised the quarterly vendor reviews with the service owners, circulating the scorecards and recording the actions; vendor exits were decided by the head of procurement.\"},{\"claim\":\"Updated vendor risk register each quarter from security assessments and incident notes.\",\"supportingRequirementIds\":[\"req_3d1f1ae7a095\"],\"sourceIds\":[\"src_f2efb2b01e73\"],\"evidenceStrength\":\"high\",\"witness\":\"Updated the vendor risk register each quarter from the security team's assessments and the service owners' incident notes, and wrote the quarter-end note on open risks and hand-over items.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_0c91ef5009f1\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate personally signed off contract values within delegated limits.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_ad2a343e9eaa\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate coordinated vendor changes with finance and security and recorded responsibility boundaries.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_0c91ef5009f1\",\"question\":\"Can you provide documentation or a statement confirming that you personally signed off contract values within the delegated limits during renewal negotiations?\",\"evidenceTarget\":\"Direct evidence of signing authority.\"},{\"questionId\":\"q_2\",\"requirementId\":\"req_ad2a343e9eaa\",\"question\":\"Can you describe how you coordinated vendor changes with finance and security, and provide any records that show the boundaries of your responsibility?\",\"evidenceTarget\":\"Evidence of coordination and responsibility boundaries.\"}],\"humanReviewChecklist\":[\"Verify candidate’s direct signing authority for contract values.\",\"Confirm coordination with finance and security and responsibility boundaries.\",\"Assess completeness of vendor risk register documentation.\"],\"auditSummary\":\"The candidate’s resume and notes demonstrate experience in vendor register maintenance, renewal brief preparation, review organisation, and risk register updates. However, there is no direct evidence that the candidate signed off contract values or coordinated vendor changes with finance and security. Human review should focus on obtaining these missing pieces before making a hiring decision.\",\"limitations\":[\"Evidence limited to the provided resume, work sample, and internal notes; no external verification of signing authority or coordination activities.\"]} }",
+ "content_sha256": "7c9c89b8c6182491011c1aaff027387511d1f0a8b7d3643ded9438bb6176d7a6",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_b6d99918f4190519",
+   "targetRoleTitle": "Procurement Operations Specialist, Customer Ticketing System",
+   "professionalSummary": [
+    "Maintained the vendor contract register and renewal calendar for hosting, telephony and translation vendors for the support product.",
+    "Prepared renewal briefs used in negotiations, with contract values signed off by the head of procurement and, when above her limit, by the CFO.",
+    "Organised quarterly vendor reviews with service owners, circulating scorecards and recording actions.",
+    "Updated the vendor risk register each quarter from security assessments and incident notes, documenting open risks and hand‑over items."
+   ],
+   "experienceHighlights": [
+    "Maintained vendor contract register and renewal calendar, sending renewal alerts ninety days ahead and reconciling with finance purchase orders (src_23477572fbe8).",
+    "Prepared renewal briefs (usage, spend, service credits, benchmark prices) for procurement negotiations; contract values signed off by head of procurement and CFO (src_da4ffd07ece2).",
+    "Organised quarterly vendor reviews with service owners, circulating scorecards and recording actions; vendor exits decided by head of procurement (src_f480b50f2421).",
+    "Updated vendor risk register each quarter from security assessments and incident notes, writing quarter‑end notes on open risks and hand‑over items (src_f2efb2b01e73)."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: renewal brief for telephony vendor and vendor risk register extract for one quarter, with procurement system record identifiers as verification trail (src_617e19e0e9f4)."
+   ],
+   "skills": [
+    "Vendor contract register maintenance",
+    "Renewal brief preparation",
+    "Quarterly vendor review coordination",
+    "Vendor risk register updates"
+   ],
+   "evidenceBoundary": "The provided resume and notes establish the candidate’s activities in vendor register maintenance, renewal brief preparation, review organisation, and risk register updates, but do not confirm that the candidate personally signed off contract values or coordinated vendor changes with finance and security."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Procurement Operations Specialist, Customer Ticketing System",
+    "jobDescriptionSource": "jd_0de57fadd8f9e290",
+    "requirementIds": [
+     "req_0c91ef5009f1",
+     "req_aa744fcbe0db",
+     "req_910aed0b7afa",
+     "req_ad2a343e9eaa",
+     "req_3d1f1ae7a095"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_b6d99918f4190519",
+    "sources": [
+     "src_23477572fbe8",
+     "src_da4ffd07ece2",
+     "src_f480b50f2421",
+     "src_f2efb2b01e73",
+     "src_617e19e0e9f4",
+     "src_dba455063f2b",
+     "src_3fa213d42a2f"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0c91ef5009f1",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_da4ffd07ece2",
+       "text": "Prepared the renewal briefs (usage, spend, service credits, benchmark prices) that the head of procurement used in renewal negotiations; contract values were signed off by the head of procurement and, above her limit, by the CFO.",
+       "evidenceStrength": "medium",
+       "notes": "Candidate prepared briefs but did not sign off contract values."
+      },
+      {
+       "sourceId": "src_dba455063f2b",
+       "text": "Reference call with the former head of procurement: said the candidate 'effectively ran our vendor portfolio' and that she 'could have negotiated those renewals herself'; confirmed employment dates.",
+       "evidenceStrength": "medium",
+       "notes": "Supports ownership but not signing authority."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate personally signed off contract values within delegated limits."
+     ]
+    },
+    {
+     "requirementId": "req_aa744fcbe0db",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_23477572fbe8",
+       "text": "Maintained the vendor contract register and the renewal calendar for the support product's hosting, telephony and translation vendors, sending renewal alerts ninety days ahead and keeping the register reconciled with finance's purchase orders.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports register maintenance and renewal calendar."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_910aed0b7afa",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f480b50f2421",
+       "text": "Organised the quarterly vendor reviews with the service owners, circulating the scorecards and recording the actions; vendor exits were decided by the head of procurement.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports review organisation and outcome recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ad2a343e9eaa",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_f480b50f2421",
+       "text": "Organised the quarterly vendor reviews with the service owners, circulating the scorecards and recording the actions; vendor exits were decided by the head of procurement.",
+       "evidenceStrength": "medium",
+       "notes": "Shows coordination with service owners but not explicit finance/security."
+      },
+      {
+       "sourceId": "src_f2efb2b01e73",
+       "text": "Updated the vendor risk register each quarter from the security team's assessments and the service owners' incident notes, and wrote the quarter-end note on open risks and hand-over items.",
+       "evidenceStrength": "medium",
+       "notes": "Shows interaction with security but no explicit finance coordination."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate coordinated vendor changes with finance and security and recorded responsibility boundaries."
+     ]
+    },
+    {
+     "requirementId": "req_3d1f1ae7a095",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f2efb2b01e73",
+       "text": "Updated the vendor risk register each quarter from the security team's assessments and the service owners' incident notes, and wrote the quarter-end note on open risks and hand-over items.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports documentation of limitations and hand-over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained vendor contract register and renewal calendar for hosting, telephony and translation vendors.",
+     "supportingRequirementIds": [
+      "req_aa744fcbe0db"
+     ],
+     "sourceIds": [
+      "src_23477572fbe8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the vendor contract register and the renewal calendar for the support product's hosting, telephony and translation vendors, sending renewal alerts ninety days ahead and keeping the register reconciled with finance's purchase orders."
+    },
+    {
+     "claim": "Prepared renewal briefs used in procurement negotiations.",
+     "supportingRequirementIds": [
+      "req_0c91ef5009f1"
+     ],
+     "sourceIds": [
+      "src_da4ffd07ece2"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Prepared the renewal briefs (usage, spend, service credits, benchmark prices) that the head of procurement used in renewal negotiations; contract values were signed off by the head of procurement and, above her limit, by the CFO."
+    },
+    {
+     "claim": "Organised quarterly vendor reviews with service owners and recorded actions.",
+     "supportingRequirementIds": [
+      "req_910aed0b7afa"
+     ],
+     "sourceIds": [
+      "src_f480b50f2421"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Organised the quarterly vendor reviews with the service owners, circulating the scorecards and recording the actions; vendor exits were decided by the head of procurement."
+    },
+    {
+     "claim": "Updated vendor risk register each quarter from security assessments and incident notes.",
+     "supportingRequirementIds": [
+      "req_3d1f1ae7a095"
+     ],
+     "sourceIds": [
+      "src_f2efb2b01e73"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Updated the vendor risk register each quarter from the security team's assessments and the service owners' incident notes, and wrote the quarter-end note on open risks and hand-over items."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_0c91ef5009f1",
+     "severity": "medium",
+     "gap": "Evidence that the candidate personally signed off contract values within delegated limits."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_ad2a343e9eaa",
+     "severity": "medium",
+     "gap": "Evidence that the candidate coordinated vendor changes with finance and security and recorded responsibility boundaries."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_0c91ef5009f1",
+     "question": "Can you provide documentation or a statement confirming that you personally signed off contract values within the delegated limits during renewal negotiations?",
+     "evidenceTarget": "Direct evidence of signing authority."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_ad2a343e9eaa",
+     "question": "Can you describe how you coordinated vendor changes with finance and security, and provide any records that show the boundaries of your responsibility?",
+     "evidenceTarget": "Evidence of coordination and responsibility boundaries."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify candidate’s direct signing authority for contract values.",
+    "Confirm coordination with finance and security and responsibility boundaries.",
+    "Assess completeness of vendor risk register documentation."
+   ],
+   "auditSummary": "The candidate’s resume and notes demonstrate experience in vendor register maintenance, renewal brief preparation, review organisation, and risk register updates. However, there is no direct evidence that the candidate signed off contract values or coordinated vendor changes with finance and security. Human review should focus on obtaining these missing pieces before making a hiring decision.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and internal notes; no external verification of signing authority or coordination activities."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:50:35.988415+00:00"
+}

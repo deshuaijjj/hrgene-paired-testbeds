@@ -1,0 +1,240 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f2ac2702-baef-4e40-8540-4da29e8f8bea.C2",
+ "case_id": "f2ac2702-baef-4e40-8540-4da29e8f8bea",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14919,
+  "promptWords": 1777
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 46.322
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4241,
+ "eval_count": 1763,
+ "prompt_eval_duration_ns": 19435000,
+ "eval_duration_ns": 32204294000,
+ "total_duration_ns": 46320103459,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No unsupported claims. The CV claims: service delivery manager 2019-2024, managing 9 analysts, duty manager each shift. Source src_03b9ace711c7. Contract owner: src_b83f1a80ca52. Major incident: src_3cdf821f903b. Monthly reviews: src_f8b3fac0e481. ITIL 4 Foundation: src_e875d890a357. Also note HR verification confirms foundation and employment dates: src_9b708de5ed03. No claim of ITIL 4 Managing Professional yet; only studying. So requirement req_2f01d77389be not satisfied. So partial_evidence or insufficient_evidence. We need to mark insufficient_evidence and gap. Provide follow-up question. Also requirement req_dec958e8e1e7: owned support outsourcing contract and renewal. Source src_b83f1a80ca52 supports ownership and renewal. Good. req_640f33390f7b: manages service-desk team and SLA performance. Source src_03b9ace711c7. req_e65908e300ed: leads major-incident process and customer communications. Source src_3cdf821f903b. req_7d141a664815: presents monthly service reviews. Source src_f8b3fac0e481. All supported.\n\nNow produce optimized CV with claims. Use evidenceBoundary: materials establish that candidate held role, managed team, owned contract, led incident, presented reviews, has foundation, studying for MP. Not establish MP designation.\n\nNow hiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit.\" role: roleTitle, jobDescriptionSourceId, requirementIds list. candidate: candidateId, sources list all used. requirementEvidenceMap: each requirement with status and evidence entries. For req_2f01d77389be: status insufficient_evidence, missingEvidence: \"ITIL 4 Managing Professional designation not established.\" Provide follow-up question. For others: supported with evidence entries.\n\nsupportedClaims: list claims with supportingRequirementIds and sourceIds. For each claim: e.g., \"Service delivery manager at Stratus Harbour Hosting from 2019 to 2024, managing a service desk of nine analysts on two shifts against the customer SLAs, with a duty manager on each shift reporting to the candidate.\" support req_640f33390f7b. source src_03b9ace711c7. evidenceStrength high. witness: verbatim passage.\n\nSimilarly for contract ownership, major incident, monthly reviews, ITIL foundation.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: one gap for req_2f01d77389be.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: one for req_2f01d77389be: \"Does the candidate hold the ITIL 4 Managing Professional designation? If so, provide evidence such as certification record or exam completion.\" evidenceTarget: designation proof.\n\nhumanReviewChecklist: maybe \"Verify that the candidate's experience aligns with role responsibilities.\" etc.\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"No evidence of ITIL 4 Managing Professional designation; future certification pending.\"\n\nEnsure JSON structure.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_4fa77832e07ed097\",\"targetRoleTitle\":\"Service Delivery Manager, Managed Hosting\",\"professionalSummary\":[\"Service delivery manager at Stratus Harbour Hosting (2019‑2024) with responsibility for a nine‑analyst service desk operating across two shifts, achieving customer SLA targets.\",\"Owner of the out‑of‑hours support outsourcing agreement, negotiated and signed the 2023 renewal within delegated authority.\",\"Lead of the major‑incident bridge for priority‑one incidents, providing 30‑minute status updates and chairing post‑incident reviews within five working days.\",\"Presenter of monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records.\",\"Holder of the ITIL 4 Foundation certificate (2021) and currently studying for the Managing Professional modules, with the first exam scheduled for February.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit.\"},\"role\":{\"roleTitle\":\"Service Delivery Manager, Managed Hosting\",\"jobDescriptionSource\":\"jd_6ec87d3e4b06ac16\",\"requirementIds\":[\"req_640f33390f7b\",\"req_dec958e8e1e7\",\"req_e65908e300ed\",\"req_7d141a664815\",\"req_2f01d77389be\"]},\"candidate\":{\"candidateId\":\"cand_4fa77832e07ed097\",\"sources\":[\"src_03b9ace711c7\",\"src_b83f1a80ca52\",\"src_3cdf821f903b\",\"src_f8b3fac0e481\",\"src_e875d890a357\",\"src_f043c1a8cc20\",\"src_9b708de5ed03\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_640f33390f7b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_03b9ace711c7\",\"text\":\"Service delivery manager at Stratus Harbour Hosting from 2019 to 2024, managing a service desk of nine analysts on two shifts against the customer SLAs, with a duty manager on each shift reporting to the candidate.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly states team size, shift structure, SLA focus.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_dec958e8e1e7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b83f1a80ca52\",\"text\":\"Named in the contract schedule as contract owner for the out-of-hours support outsourcing agreement; negotiated and signed the 2023 renewal within the delegated authority set by the chief operating officer.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit ownership and renewal activity.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_e65908e300ed\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_3cdf821f903b\",\"text\":\"Ran the major-incident bridge for priority-one incidents and sent customer status updates every 30 minutes until resolution, then chaired the post-incident review within five working days.\",\"evidenceStrength\":\"high\",\"notes\":\"Describes incident leadership and communication.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_7d141a664815\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f8b3fac0e481\",\"text\":\"Presented monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records, and agreed actions with each customer's IT lead.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows monthly review presentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_2f01d77389be\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"ITIL 4 Managing Professional designation not established in the provided materials.\"]}],\"supportedClaims\":[{\"claim\":\"Service delivery manager at Stratus Harbour Hosting from 2019 to 2024, managing a service desk of nine analysts on two shifts against the customer SLAs, with a duty manager on each shift reporting to the candidate.\",\"supportingRequirementIds\":[\"req_640f33390f7b\"],\"sourceIds\":[\"src_03b9ace711c7\"],\"evidenceStrength\":\"high\",\"witness\":\"Service delivery manager at Stratus Harbour Hosting from 2019 to 2024, managing a service desk of nine analysts on two shifts against the customer SLAs, with a duty manager on each shift reporting to the candidate.\"},{\"claim\":\"Named in the contract schedule as contract owner for the out-of-hours support outsourcing agreement; negotiated and signed the 2023 renewal within the delegated authority set by the chief operating officer.\",\"supportingRequirementIds\":[\"req_dec958e8e1e7\"],\"sourceIds\":[\"src_b83f1a80ca52\"],\"evidenceStrength\":\"high\",\"witness\":\"Named in the contract schedule as contract owner for the out-of-hours support outsourcing agreement; negotiated and signed the 2023 renewal within the delegated authority set by the chief operating officer.\"},{\"claim\":\"Ran the major-incident bridge for priority-one incidents and sent customer status updates every 30 minutes until resolution, then chaired the post-incident review within five working days.\",\"supportingRequirementIds\":[\"req_e65908e300ed\"],\"sourceIds\":[\"src_3cdf821f903b\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the major-incident bridge for priority-one incidents and sent customer status updates every 30 minutes until resolution, then chaired the post-incident review within five working days.\"},{\"claim\":\"Presented monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records, and agreed actions with each customer's IT lead.\",\"supportingRequirementIds\":[\"req_7d141a664815\"],\"sourceIds\":[\"src_f8b3fac0e481\"],\"evidenceStrength\":\"high\",\"witness\":\"Presented monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records, and agreed actions with each customer's IT lead.\"},{\"claim\":\"Completed the ITIL 4 Foundation certificate in 2021 and is studying for the Managing Professional modules, with the first module exam booked for February.\",\"supportingRequirementIds\":[\"req_2f01d77389be\"],\"sourceIds\":[\"src_e875d890a357\"],\"evidenceStrength\":\"medium\",\"witness\":\"Completed the ITIL 4 Foundation certificate in 2021 and is studying for the Managing Professional modules, with the first module exam booked for February.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_2f01d77389be\",\"severity\":\"medium\",\"gap\":\"ITIL 4 Managing Professional designation not proven; candidate is only studying for the modules.\"}],\"interviewSignalRisks\":[],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_2f01d77389be\",\"question\":\"Does the candidate hold the ITIL 4 Managing Professional designation? If so, please provide evidence such as a certification record or exam completion confirmation.\",\"evidenceTarget\":\"Proof of ITIL 4 Managing Professional designation.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s experience aligns with the service‑delivery responsibilities outlined in the job description.\",\"Confirm that the candidate’s team management and SLA performance claims are supported by the provided evidence.\",\"Assess the candidate’s readiness to assume ownership of the outsourcing contract and major‑incident process.\",\"Determine whether the candidate’s current study of the ITIL 4 Managing Professional modules satisfies the designation requirement or if additional evidence is needed.\"],\"auditSummary\":\"The evidence establishes that the candidate has held the role of Service Delivery Manager at Stratus Harbour Hosting, managed a nine‑analyst service desk, owned the out‑of‑hours support outsourcing contract and its renewal, led the major‑incident process with regular customer communication, and presented monthly service reviews to key customers. The candidate holds an ITIL 4 Foundation certificate and is studying for the Managing Professional modules, but no evidence of the Managing Professional designation is provided. Human review is required to confirm whether the candidate meets the ITIL 4 Managing Professional requirement and to evaluate overall fit.\",\"limitations\":[\"No evidence of ITIL 4 Managing Professional designation; the candidate is only studying for the modules.\"]}}",
+ "content_sha256": "b2fc54a9c2f1ef5d0d24b72e0cd828dd1e20d094f76c2915fa0e49e033108c02",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_4fa77832e07ed097",
+   "targetRoleTitle": "Service Delivery Manager, Managed Hosting",
+   "professionalSummary": [
+    "Service delivery manager at Stratus Harbour Hosting (2019‑2024) with responsibility for a nine‑analyst service desk operating across two shifts, achieving customer SLA targets.",
+    "Owner of the out‑of‑hours support outsourcing agreement, negotiated and signed the 2023 renewal within delegated authority.",
+    "Lead of the major‑incident bridge for priority‑one incidents, providing 30‑minute status updates and chairing post‑incident reviews within five working days.",
+    "Presenter of monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records.",
+    "Holder of the ITIL 4 Foundation certificate (2021) and currently studying for the Managing Professional modules, with the first exam scheduled for February."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit."
+   },
+   "role": {
+    "roleTitle": "Service Delivery Manager, Managed Hosting",
+    "jobDescriptionSource": "jd_6ec87d3e4b06ac16",
+    "requirementIds": [
+     "req_640f33390f7b",
+     "req_dec958e8e1e7",
+     "req_e65908e300ed",
+     "req_7d141a664815",
+     "req_2f01d77389be"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_4fa77832e07ed097",
+    "sources": [
+     "src_03b9ace711c7",
+     "src_b83f1a80ca52",
+     "src_3cdf821f903b",
+     "src_f8b3fac0e481",
+     "src_e875d890a357",
+     "src_f043c1a8cc20",
+     "src_9b708de5ed03"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_640f33390f7b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_03b9ace711c7",
+       "text": "Service delivery manager at Stratus Harbour Hosting from 2019 to 2024, managing a service desk of nine analysts on two shifts against the customer SLAs, with a duty manager on each shift reporting to the candidate.",
+       "evidenceStrength": "high",
+       "notes": "Directly states team size, shift structure, SLA focus."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_dec958e8e1e7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b83f1a80ca52",
+       "text": "Named in the contract schedule as contract owner for the out-of-hours support outsourcing agreement; negotiated and signed the 2023 renewal within the delegated authority set by the chief operating officer.",
+       "evidenceStrength": "high",
+       "notes": "Explicit ownership and renewal activity."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e65908e300ed",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3cdf821f903b",
+       "text": "Ran the major-incident bridge for priority-one incidents and sent customer status updates every 30 minutes until resolution, then chaired the post-incident review within five working days.",
+       "evidenceStrength": "high",
+       "notes": "Describes incident leadership and communication."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_7d141a664815",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f8b3fac0e481",
+       "text": "Presented monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records, and agreed actions with each customer's IT lead.",
+       "evidenceStrength": "high",
+       "notes": "Shows monthly review presentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2f01d77389be",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "ITIL 4 Managing Professional designation not established in the provided materials."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Service delivery manager at Stratus Harbour Hosting from 2019 to 2024, managing a service desk of nine analysts on two shifts against the customer SLAs, with a duty manager on each shift reporting to the candidate.",
+     "supportingRequirementIds": [
+      "req_640f33390f7b"
+     ],
+     "sourceIds": [
+      "src_03b9ace711c7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Service delivery manager at Stratus Harbour Hosting from 2019 to 2024, managing a service desk of nine analysts on two shifts against the customer SLAs, with a duty manager on each shift reporting to the candidate."
+    },
+    {
+     "claim": "Named in the contract schedule as contract owner for the out-of-hours support outsourcing agreement; negotiated and signed the 2023 renewal within the delegated authority set by the chief operating officer.",
+     "supportingRequirementIds": [
+      "req_dec958e8e1e7"
+     ],
+     "sourceIds": [
+      "src_b83f1a80ca52"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Named in the contract schedule as contract owner for the out-of-hours support outsourcing agreement; negotiated and signed the 2023 renewal within the delegated authority set by the chief operating officer."
+    },
+    {
+     "claim": "Ran the major-incident bridge for priority-one incidents and sent customer status updates every 30 minutes until resolution, then chaired the post-incident review within five working days.",
+     "supportingRequirementIds": [
+      "req_e65908e300ed"
+     ],
+     "sourceIds": [
+      "src_3cdf821f903b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the major-incident bridge for priority-one incidents and sent customer status updates every 30 minutes until resolution, then chaired the post-incident review within five working days."
+    },
+    {
+     "claim": "Presented monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records, and agreed actions with each customer's IT lead.",
+     "supportingRequirementIds": [
+      "req_7d141a664815"
+     ],
+     "sourceIds": [
+      "src_f8b3fac0e481"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented monthly service reviews to the eight largest customers, covering SLA attainment, incident trends and open problem records, and agreed actions with each customer's IT lead."
+    },
+    {
+     "claim": "Completed the ITIL 4 Foundation certificate in 2021 and is studying for the Managing Professional modules, with the first module exam booked for February.",
+     "supportingRequirementIds": [
+      "req_2f01d77389be"
+     ],
+     "sourceIds": [
+      "src_e875d890a357"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Completed the ITIL 4 Foundation certificate in 2021 and is studying for the Managing Professional modules, with the first module exam booked for February."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_2f01d77389be",
+     "severity": "medium",
+     "gap": "ITIL 4 Managing Professional designation not proven; candidate is only studying for the modules."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_2f01d77389be",
+     "question": "Does the candidate hold the ITIL 4 Managing Professional designation? If so, please provide evidence such as a certification record or exam completion confirmation.",
+     "evidenceTarget": "Proof of ITIL 4 Managing Professional designation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s experience aligns with the service‑delivery responsibilities outlined in the job description.",
+    "Confirm that the candidate’s team management and SLA performance claims are supported by the provided evidence.",
+    "Assess the candidate’s readiness to assume ownership of the outsourcing contract and major‑incident process.",
+    "Determine whether the candidate’s current study of the ITIL 4 Managing Professional modules satisfies the designation requirement or if additional evidence is needed."
+   ],
+   "auditSummary": "The evidence establishes that the candidate has held the role of Service Delivery Manager at Stratus Harbour Hosting, managed a nine‑analyst service desk, owned the out‑of‑hours support outsourcing contract and its renewal, led the major‑incident process with regular customer communication, and presented monthly service reviews to key customers. The candidate holds an ITIL 4 Foundation certificate and is studying for the Managing Professional modules, but no evidence of the Managing Professional designation is provided. Human review is required to confirm whether the candidate meets the ITIL 4 Managing Professional requirement and to evaluate overall fit.",
+   "limitations": [
+    "No evidence of ITIL 4 Managing Professional designation; the candidate is only studying for the modules."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:43:55.688713+00:00"
+}

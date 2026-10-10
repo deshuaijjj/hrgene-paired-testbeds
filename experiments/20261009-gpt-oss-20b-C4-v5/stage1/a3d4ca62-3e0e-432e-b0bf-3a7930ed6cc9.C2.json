@@ -1,0 +1,578 @@
+{
+ "request_id": "a3d4ca62-3e0e-432e-b0bf-3a7930ed6cc9.C2",
+ "case_id": "a3d4ca62-3e0e-432e-b0bf-3a7930ed6cc9",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: overseeing",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "overseeing"
+     ],
+     "sourceIds": [
+      "src_810a08a8a2f7",
+      "src_786ceda7563e"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "LEAD"
+     ],
+     "text": "Served as tech lead for the claims API team at Pemberton Mutual from 2022 to 2024, overseeing technical decisions and release sign‑off for the team’s services."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: overseeing",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "overseeing"
+     ],
+     "sourceIds": [
+      "src_810a08a8a2f7",
+      "src_786ceda7563e"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "LEAD"
+     ],
+     "text": "Served as tech lead for the claims API team at Pemberton Mutual from 2022 to 2024, overseeing technical decisions and release sign‑off for the team’s services."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Served as tech lead for the claims API team at Pemberton Mutual from 2022 to 2024, overseeing technical decisions and re"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Served as tech lead for the claims API team at Pemberton Mutual from 2022 to 2024, overseeing technical decisions and re"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_bae0ad2584f4ceeb",
+   "targetRoleTitle": "Tech Lead, Claims Platform",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Designed the first‑notice‑of‑loss API and its versioning scheme, documenting each decision in an architecture decision record that the team accepted.",
+     "sourceIds": [
+      "src_2d82c6369f8f"
+     ],
+     "requirementIds": [
+      "req_87ccc287c995"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Designed the first-notice-of-loss API and its versioning scheme, recording each choice in an architecture decision record that the candidate wrote and the team accepted."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Acted as incident commander for two severity‑one outages in 2023 and authored post‑incident reviews, assigning owners and deadlines for corrective actions.",
+     "sourceIds": [
+      "src_7521d893eaa7"
+     ],
+     "requirementIds": [
+      "req_42420ff0b8f8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Acted as incident commander for two severity‑one outages in 2023 and wrote both post‑incident reviews, naming an owner and a deadline for each corrective action."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Collaborated with the application‑security team to remediate 41 dependency vulnerabilities flagged by the scanner, distributing fixes over three sprints and tracking each fix in the remediation tracker.",
+     "sourceIds": [
+      "src_612eb16d3da9"
+     ],
+     "requirementIds": [
+      "req_28e8095402c3"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Worked with the application-security team to clear 41 dependency vulnerabilities flagged by the scanner, spreading the fixes over three sprints and recording each fix in the remediation tracker."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Sat on interview panels for four engineering hires, evaluating system‑design exercises and providing written feedback to the engineering manager.",
+     "sourceIds": [
+      "src_753bc21efbdf"
+     ],
+     "requirementIds": [
+      "req_98a1fdf65f1b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Sat on interview panels for four engineering hires, assessing the system‑design exercise and writing the panel's feedback for the engineering manager."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_6",
+     "text": "Architecture decision record for the first‑notice‑of‑loss API versioning scheme, detailing options considered, the chosen solution, author, and acceptance date.",
+     "sourceIds": [
+      "src_b307fcf6e6e8"
+     ],
+     "requirementIds": [
+      "req_87ccc287c995"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the architecture decision record for the first‑notice‑of‑loss API versioning scheme, showing the options considered, the decision taken, the candidate as author and the date the team accepted it."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_7",
+     "text": "REST API design and versioning",
+     "sourceIds": [
+      "src_2d82c6369f8f"
+     ],
+     "requirementIds": [
+      "req_87ccc287c995"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "claim_8",
+     "text": "Incident response leadership and post‑incident analysis",
+     "sourceIds": [
+      "src_7521d893eaa7"
+     ],
+     "requirementIds": [
+      "req_42420ff0b8f8"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "claim_9",
+     "text": "Application security remediation coordination",
+     "sourceIds": [
+      "src_612eb16d3da9"
+     ],
+     "requirementIds": [
+      "req_28e8095402c3"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "claim_10",
+     "text": "Engineering hiring panel participation",
+     "sourceIds": [
+      "src_753bc21efbdf"
+     ],
+     "requirementIds": [
+      "req_98a1fdf65f1b"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided materials establish that the candidate has served as a tech lead, designed and versioned REST APIs, led incident response and post‑incident reviews, worked with application security to remediate vulnerabilities, and participated in engineering hiring panels. They do not provide evidence that the candidate set a hiring plan or that the team’s services were deployed to production."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the Tech Lead, Claims Platform role."
+   },
+   "role": {
+    "roleTitle": "Tech Lead, Claims Platform",
+    "jobDescriptionSource": "jd_4f9eb19a2b2e0661",
+    "requirementIds": [
+     "req_95bccc1392c9",
+     "req_87ccc287c995",
+     "req_42420ff0b8f8",
+     "req_28e8095402c3",
+     "req_98a1fdf65f1b"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_bae0ad2584f4ceeb",
+    "sources": [
+     "src_810a08a8a2f7",
+     "src_2d82c6369f8f",
+     "src_7521d893eaa7",
+     "src_612eb16d3da9",
+     "src_753bc21efbdf",
+     "src_b307fcf6e6e8",
+     "src_786ceda7563e"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_95bccc1392c9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_810a08a8a2f7",
+       "text": "Software engineer from 2019, then tech lead from 2022 to 2024, on the claims API team at Pemberton Mutual, a team of six engineers.",
+       "evidenceStrength": "medium",
+       "notes": "Describes tech lead role and team size."
+      },
+      {
+       "sourceId": "src_786ceda7563e",
+       "text": "The former head of engineering confirmed in writing that the candidate was tech lead for the claims API team from March 2022 to May 2024 and held merge approval and release sign‑off for its services during that period.",
+       "evidenceStrength": "high",
+       "notes": "Direct confirmation of release sign‑off."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_87ccc287c995",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2d82c6369f8f",
+       "text": "Designed the first‑notice‑of‑loss API and its versioning scheme, recording each choice in an architecture decision record that the candidate wrote and the team accepted.",
+       "evidenceStrength": "high",
+       "notes": "Explicit design and versioning activity."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_42420ff0b8f8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7521d893eaa7",
+       "text": "Acted as incident commander for two severity‑one outages in 2023 and wrote both post‑incident reviews, naming an owner and a deadline for each corrective action.",
+       "evidenceStrength": "high",
+       "notes": "Shows incident leadership and review writing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_28e8095402c3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_612eb16d3da9",
+       "text": "Worked with the application‑security team to clear 41 dependency vulnerabilities flagged by the scanner, spreading the fixes over three sprints and recording each fix in the remediation tracker.",
+       "evidenceStrength": "high",
+       "notes": "Direct collaboration with application security."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_98a1fdf65f1b",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_753bc21efbdf",
+       "text": "Sat on interview panels for four engineering hires, assessing the system‑design exercise and writing the panel's feedback for the engineering manager.",
+       "evidenceStrength": "medium",
+       "notes": "Shows hiring panel participation."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate set a hiring plan for the engineering team."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed and versioned the first‑notice‑of‑loss API, documenting decisions in an architecture decision record.",
+     "supportingRequirementIds": [
+      "req_87ccc287c995"
+     ],
+     "sourceIds": [
+      "src_2d82c6369f8f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Designed the first‑notice‑of‑loss API and its versioning scheme, recording each choice in an architecture decision record that the candidate wrote and the team accepted."
+    },
+    {
+     "claim": "Acted as incident commander for two severity‑one outages in 2023 and authored post‑incident reviews with owners and deadlines.",
+     "supportingRequirementIds": [
+      "req_42420ff0b8f8"
+     ],
+     "sourceIds": [
+      "src_7521d893eaa7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Acted as incident commander for two severity‑one outages in 2023 and wrote both post‑incident reviews, naming an owner and a deadline for each corrective action."
+    },
+    {
+     "claim": "Collaborated with application security to remediate 41 dependency vulnerabilities over three sprints, tracking fixes in a remediation tracker.",
+     "supportingRequirementIds": [
+      "req_28e8095402c3"
+     ],
+     "sourceIds": [
+      "src_612eb16d3da9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Worked with the application‑security team to clear 41 dependency vulnerabilities flagged by the scanner, spreading the fixes over three sprints and recording each fix in the remediation tracker."
+    },
+    {
+     "claim": "Sat on interview panels for four engineering hires, evaluating system‑design exercises and providing feedback to the engineering manager.",
+     "supportingRequirementIds": [
+      "req_98a1fdf65f1b"
+     ],
+     "sourceIds": [
+      "src_753bc21efbdf"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Sat on interview panels for four engineering hires, assessing the system‑design exercise and writing the panel's feedback for the engineering manager."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Served as tech lead for the claims API team at Pemberton Mutual from 2022 to 2024, overseeing technical decisions and release sign‑off for the team’s services.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_98a1fdf65f1b",
+     "severity": "medium",
+     "gap": "No evidence that the candidate set a hiring plan for the engineering team."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_98a1fdf65f1b",
+     "question": "Can you provide documentation or a description of the hiring plan you set for the engineering team during your tenure as tech lead?",
+     "evidenceTarget": "Evidence of a documented hiring plan or a summary of hiring strategy and timelines."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s tech lead role included release sign‑off responsibilities.",
+    "Confirm the candidate’s involvement in setting a hiring plan for the engineering team.",
+    "Assess the candidate’s experience with production‑grade API design and incident response."
+   ],
+   "auditSummary": "The evidence supports the candidate’s experience as a tech lead, API designer, incident commander, security collaborator, and hiring panel participant. The only gap is the lack of evidence that the candidate set a hiring plan, which requires follow‑up. No protected characteristics are inferred, and human review is required to determine overall fit.",
+   "limitations": [
+    "The materials do not confirm production deployment of the team’s services.",
+    "No evidence of end‑to‑end ownership or release sign‑off beyond merge approval is provided."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

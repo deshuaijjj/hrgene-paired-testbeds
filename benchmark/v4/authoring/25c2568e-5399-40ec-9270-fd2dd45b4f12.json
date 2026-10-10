@@ -1,0 +1,36 @@
+{
+  "caseId": "25c2568e-5399-40ec-9270-fd2dd45b4f12",
+  "roleTitle": "Model Evaluation Engineer, Supply Chain Collaboration",
+  "jobDescription": "The supply chain collaboration service lets manufacturers and their suppliers share forecasts and confirm orders. Its demand-forecast models are evaluated before each release by the Model Evaluation Engineer, who maintains the backtest harness and the holdout sets, publishes the evaluation report, and is expected to improve forecast accuracy on the pilot customers, reported against the service's documented baseline.",
+  "requirements": [
+    "Maintains the backtest harness and the holdout sets for the demand-forecast models.",
+    "Runs the pre-release backtest for each model version and publishes the evaluation report.",
+    "Improves forecast accuracy on the pilot customers, reported against the documented baseline.",
+    "Coordinates release decisions with the forecasting team and customer operations and records own responsibility boundaries.",
+    "Documents backtest assumptions, known limitations and hand-over conditions for each model version."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Maintained the backtest harness that replays twelve months of supplier order history per pilot customer and the holdout sets frozen per quarter, both under version control with the forecasting team."},
+    {"type": "resume", "text": "Ran the pre-release backtest for the three model versions released in the year and published the evaluation report with per-customer error tables."},
+    {"type": "resume", "text": "Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between version 1.4 and version 2.0, on the frozen Q3 holdout set and against the documented version 1.4 baseline of 24.5 percent."},
+    {"type": "resume", "text": "Coordinated release decisions in the forecasting release meeting; the forecasting lead took the release decision and customer operations confirmed the rollout to each pilot customer."},
+    {"type": "resume", "text": "Wrote the backtest notes for each version, listing the holdout composition, the known limitation that promotional periods were excluded from the holdout, and the hand-over items for the next backtest."},
+    {"type": "work_sample", "text": "Work sample: the per-version evaluation report (weighted error per pilot customer, baseline line, version markers) and the backtest notes for version 2.0, with the harness run identifiers as a verification trail."},
+    {"type": "note", "text": "Reference call with former forecasting lead: confirmed the error figures come from the frozen Q3 holdout backtest, the four pilot customers, and the employment dates."},
+    {"type": "note", "text": "Recruiter logistics note: candidate has a one-month notice period and can join a technical session on the harness beforehand."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate maintained the backtest harness and the quarterly frozen holdout sets under version control with the forecasting team.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the harness and holdouts directly."},
+      {"text": "The candidate ran pre-release backtests for three model versions and published evaluation reports with per-customer error tables.", "status": "supported", "sources": [2], "requirements": [2], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume states the backtest work."},
+      {"text": "Weighted forecast error on the four pilot customers fell from 24.5 percent to 17.8 percent between versions 1.4 and 2.0 on the frozen Q3 holdout, against a baseline of 24.5 percent.", "status": "supported", "sources": [3, 6, 7], "requirements": [3], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The resume states the figures, holdout, versions and baseline; the work sample and reference confirm them."}
+    ],
+    "requirementStatus": ["supported", "supported", "supported", "supported", "partial_evidence"],
+    "subjective": [],
+    "nonProduction": [],
+    "expectedGap": "Hand-over conditions for each model version are only partly documented in the backtest notes.",
+    "expectedBoundaryNote": "Keep the accuracy result as stated for the four pilot customers and the Q3 holdout; do not extend it to all customers or to live forecasts.",
+    "followUpTargets": ["Ask how hand-over items were recorded between backtests."],
+    "validClaimSignatures": ["24.5 percent to 17.8 percent", "holdout"]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "caseId": "d130049b-1629-44ba-88d1-748f7d802564",
+  "roleTitle": "Data Pipeline Engineer, Developer Tools Platform",
+  "jobDescription": "The developer tools platform records build, test and deployment events for every internal repository. The Data Pipeline Engineer maintains the event ingestion pipelines and the daily aggregates that feed the engineering dashboards, and is expected to cut the daily aggregate's completion time, reported against the platform's published pipeline baseline.",
+  "requirements": [
+    "Maintains the build-event ingestion pipelines and their schemas.",
+    "Maintains the daily aggregate jobs that feed the engineering dashboards.",
+    "Cuts the daily aggregate's completion time, reported against the published pipeline baseline.",
+    "Coordinates schema and job changes with the dashboard and platform teams and records own responsibility boundaries.",
+    "Documents lineage, known limitations and hand-over conditions for each pipeline release."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Maintained the build-event ingestion pipelines (Kafka consumers writing to the events warehouse) and their schemas, adding schema versioning so that older event formats kept loading after producer changes."},
+    {"type": "resume", "text": "Maintained the daily aggregate jobs that roll build, test and deployment events into the per-repository tables behind the engineering dashboards."},
+    {"type": "resume", "text": "The daily aggregate's completion time dropped from 3 hours 40 minutes to 1 hour 10 minutes after the incremental rewrite was released, measured over the following thirty days in the pipeline monitoring dashboard against the published baseline of 3 hours 40 minutes."},
+    {"type": "resume", "text": "Coordinated schema and job changes with the dashboard team and the platform team in the weekly data sync; the platform lead approved warehouse changes and the dashboard team confirmed the table contracts."},
+    {"type": "resume", "text": "Wrote the lineage note for the aggregate jobs, listing source topics, the incremental logic, the known limitation that late events beyond 48 hours were not re-aggregated, and the hand-over items for on-call."},
+    {"type": "work_sample", "text": "Work sample: the pipeline monitoring dashboard export (daily completion time for sixty days, baseline line, release marker) and the lineage note for the aggregate jobs, with the job run identifiers as a verification trail."},
+    {"type": "note", "text": "Reference call with former platform lead: confirmed the completion-time figures come from the pipeline monitoring dashboard, that the incremental rewrite was the candidate's work, and the employment dates."},
+    {"type": "note", "text": "Recruiter logistics note: candidate is available for a technical interview within two weeks; no relocation involved."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate maintained the build-event ingestion pipelines and their schemas, adding schema versioning for older event formats.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the pipelines and the versioning directly."},
+      {"text": "The candidate maintained the daily aggregate jobs that feed the engineering dashboards.", "status": "supported", "sources": [2], "requirements": [2], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume states the aggregate maintenance."},
+      {"text": "The daily aggregate's completion time dropped from 3 hours 40 minutes to 1 hour 10 minutes after the incremental rewrite, measured over thirty days against the published baseline.", "status": "supported", "sources": [3, 6, 7], "requirements": [3], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The resume states the times, the period, the baseline and the dashboard; the work sample and reference confirm them."}
+    ],
+    "requirementStatus": ["supported", "supported", "supported", "supported", "partial_evidence"],
+    "nonProduction": [],
+    "subjective": [],
+    "expectedGap": "Hand-over conditions for each pipeline release are only partly documented in the lineage note.",
+    "expectedBoundaryNote": "Keep the completion-time result as stated for the thirty-day window; do not extend it to other pipelines.",
+    "followUpTargets": ["Ask how hand-over items were recorded for each pipeline release."],
+    "validClaimSignatures": ["3 hours 40 minutes", "incremental rewrite"]
+  }
+}

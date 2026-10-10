@@ -1,0 +1,275 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "da74fb50-ca87-46ef-9f30-a7ec592aecfc.C1",
+ "case_id": "da74fb50-ca87-46ef-9f30-a7ec592aecfc",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11449,
+  "promptWords": 1482
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 51.673
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3225,
+ "eval_count": 2074,
+ "prompt_eval_duration_ns": 17915000,
+ "eval_duration_ns": 37168376000,
+ "total_duration_ns": 51670035417,
+ "thinking": "We need to produce JSON. Need to map requirements. Let's analyze each requirement:\n\nreq_ab9c2ecbcc45: Has brought customer fleets live on the service and run the cut-over from the customer's previous system.\n\nEvidence: src_9f3277c1436e says candidate said he had 'brought six logistics fleets live on the service' and 'ran the cut-overs'. But that's a note from recruiter screen, not direct evidence. src_adc9e58198ea says ran pre-implementation pilot programme, not live. src_0f9e46c054d0 says cut-over and hypercare run by delivery team, candidate did not take part. So evidence for this requirement is insufficient. So status insufficient_evidence. Missing evidence: actual participation in cut-over and live operation. Follow-up question: \"Can you describe your role during the cut-over and live operation for any customer fleet?\"\n\nreq_e30a8b6e30d2: Owns the hypercare period after go-live and handles incidents raised by the customer's dispatchers.\n\nEvidence: src_0f9e46c054d0 says hypercare run by delivery team's implementation leads; candidate did not take part. So insufficient evidence. Missing: evidence of ownership. Follow-up question: \"Did you own or manage the hypercare period for any customer fleet?\"\n\nreq_c7ed009cbfd1: Coordinates the customer's device installation schedule with the field engineering partner.\n\nEvidence: src_ac6172db7a4d says coordinated installation of pilot devices with field engineering partner, keeping schedule for pilot vehicles only. That matches requirement but only for pilot vehicles. Requirement says coordinates device installation schedule with field engineering partner (likely full fleet). So partial evidence: evidence for pilot vehicles. Missing: evidence for full fleet. Follow-up: \"Did you coordinate device installation schedule for full fleet deployments?\"\n\nreq_863bc09d8778: Runs customer pilots with a documented configuration and a pilot report.\n\nEvidence: src_adc9e58198ea says ran pre-implementation pilot programme, configuring demonstration tenant for six customers and running two-week pilot. src_924bb4a4bf14 says wrote pilot report and implementation plan. So supported. Evidence strength high? It's direct. So status supported.\n\nreq_6d2bfc05ae33: Produces the implementation plan and documents the pilot's limitations and hand-over conditions.\n\nEvidence: src_924bb4a4bf14 says wrote pilot report and implementation plan, listing limitations and hand-over conditions. So supported.\n\nNow produce optimized CV: need to restate claims with citations. Must not add unsupported claims. So we can include claims that are supported: ran pilots, coordinated pilot device installation, wrote pilot report and implementation plan. Not claim about live operation or hypercare. So professionalSummary: maybe \"Experienced in running pre-implementation pilots for fleet telematics, coordinating device installation with field engineering partners, and producing detailed pilot reports and implementation plans.\" Cite sources.\n\nExperienceHighlights: list pilot programme, coordination, report writing.\n\nProjectsAndWorkSamples: pilot report and implementation plan sample.\n\nSkills: pilot management, device installation coordination, documentation.\n\nEvidenceBoundary: materials establish candidate's experience with pre-implementation pilots, device installation coordination for pilot vehicles, and documentation of pilot reports and implementation plans; they do not establish experience with live fleet cut-overs, hypercare ownership, or full fleet device installation coordination.\n\nNow HiringEvidencePacket: include all fields.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_5b31ad9841e68697\",\"targetRoleTitle\":\"Implementation Project Manager, Fleet Telematics Service\",\"professionalSummary\":[\"Experienced in running pre‑implementation pilots for fleet telematics, coordinating device installation with field engineering partners, and producing detailed pilot reports and implementation plans. (src_adc9e58198ea, src_ac6172db7a4d, src_924bb4a4bf14)\"],\"experienceHighlights\":[\"Ran the pre‑implementation pilot programme for six prospective logistics customers, configuring the demonstration tenant and conducting two‑week pilots. (src_adc9e58198ea)\",\"Coordinated the installation of pilot devices on each customer’s pilot vehicles with the field engineering partner, maintaining the installation schedule for pilot vehicles only. (src_ac6172db7a4d)\",\"Authored pilot reports and implementation plans for each customer, documenting demonstration tenant limitations, open configuration questions, and hand‑over conditions. (src_924bb4a4bf14)\"],\"projectsAndWorkSamples\":[\"Pilot report and implementation plan for one regional carrier, including demonstration tenant configuration identifiers and pilot vehicle list. (src_f7cf02d44f76)\"],\"skills\":[\"Pilot Program Management\",\"Device Installation Coordination\",\"Documentation & Reporting\"],\"evidenceBoundary\":\"The provided materials demonstrate the candidate’s involvement in pre‑implementation pilots, coordination of pilot device installation with a field engineering partner, and creation of pilot reports and implementation plans. They do not provide evidence that the candidate has brought customer fleets live on the service, run cut‑overs, owned hypercare periods, or coordinated full‑fleet device installation schedules.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Implementation Project Manager, Fleet Telematics Service\",\"jobDescriptionSource\":\"jd_2433baa51064a931\",\"requirementIds\":[\"req_ab9c2ecbcc45\",\"req_e30a8b6e30d2\",\"req_c7ed009cbfd1\",\"req_863bc09d8778\",\"req_6d2bfc05ae33\"]},\"candidate\":{\"candidateId\":\"cand_5b31ad9841e68697\",\"sources\":[\"src_adc9e58198ea\",\"src_ac6172db7a4d\",\"src_0f9e46c054d0\",\"src_924bb4a4bf14\",\"src_f8e3c04383a9\",\"src_f7cf02d44f76\",\"src_9f3277c1436e\",\"src_e9eac84fb0f7\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_ab9c2ecbcc45\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate personally brought customer fleets live on the service and ran the cut‑over from the customer’s previous system.\"]},{\"requirementId\":\"req_e30a8b6e30d2\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate owned the hypercare period after go‑live and handled incidents raised by the customer’s dispatchers.\"]},{\"requirementId\":\"req_c7ed009cbfd1\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_ac6172db7a4d\",\"text\":\"Coordinated the installation of pilot devices on each customer's pilot vehicles with the field engineering partner, keeping the installation schedule for the pilot vehicles only.\",\"evidenceStrength\":\"medium\",\"notes\":\"Evidence for pilot vehicle installation only.\"}],\"missingEvidence\":[\"Evidence that the candidate coordinated device installation schedule for the full customer fleet.\"]},{\"requirementId\":\"req_863bc09d8778\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_adc9e58198ea\",\"text\":\"Ran the pre‑implementation pilot programme for the fleet telematics service, configuring the demonstration tenant for six prospective logistics customers and running a two‑week pilot with each customer's pilot vehicles.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of running pilots.\"},{\"sourceId\":\"src_924bb4a4bf14\",\"text\":\"Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand‑over conditions.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of pilot report documentation.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6d2bfc05ae33\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_924bb4a4bf14\",\"text\":\"Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand‑over conditions.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of implementation plan and documentation of limitations and hand‑over conditions.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Ran pre‑implementation pilots for six prospective logistics customers, configuring the demonstration tenant and conducting two‑week pilots.\",\"supportingRequirementIds\":[\"req_863bc09d8778\"],\"sourceIds\":[\"src_adc9e58198ea\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran the pre‑implementation pilot programme for the fleet telematics service, configuring the demonstration tenant for six prospective logistics customers and running a two‑week pilot with each customer's pilot vehicles.\"},{\"claim\":\"Coordinated pilot device installation with the field engineering partner for pilot vehicles.\",\"supportingRequirementIds\":[\"req_c7ed009cbfd1\"],\"sourceIds\":[\"src_ac6172db7a4d\"],\"evidenceStrength\":\"medium\",\"witness\":\"Coordinated the installation of pilot devices on each customer's pilot vehicles with the field engineering partner, keeping the installation schedule for the pilot vehicles only.\"},{\"claim\":\"Authored pilot reports and implementation plans detailing limitations and hand‑over conditions.\",\"supportingRequirementIds\":[\"req_863bc09d8778\",\"req_6d2bfc05ae33\"],\"sourceIds\":[\"src_924bb4a4bf14\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand‑over conditions.\"}],\"unsupportedClaims\":[{\"claim\":\"Brought customer fleets live on the service and ran the cut‑over from the customer's previous system.\",\"reason\":\"No source documents the candidate’s participation in live cut‑over activities.\",\"requiredFollowUp\":\"Provide evidence of the candidate’s role during the cut‑over and live operation for any customer fleet.\"},{\"claim\":\"Owned the hypercare period after go‑live and handled incidents raised by the customer's dispatchers.\",\"reason\":\"No source documents the candidate’s ownership of hypercare.\",\"requiredFollowUp\":\"Provide evidence of the candidate’s ownership or management of the hypercare period for any customer fleet.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_ab9c2ecbcc45\",\"severity\":\"high\",\"gap\":\"Evidence of the candidate personally bringing customer fleets live and running cut‑overs.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_e30a8b6e30d2\",\"severity\":\"high\",\"gap\":\"Evidence of the candidate owning the hypercare period and handling incidents.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_c7ed009cbfd1\",\"severity\":\"medium\",\"gap\":\"Evidence of coordinating device installation schedule for the full customer fleet.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_9f3277c1436e\",\"text\":\"Candidate said he had 'brought six logistics fleets live on the service' and 'ran the cut‑overs'; asked about hypercare, he said the delivery team 'did the night shifts' and that his pilots 'were the real implementation'.\",\"signalType\":\"subjective claim\",\"jobRelatedBoundary\":\"not tied to observable evidence\",\"severity\":\"medium\",\"recommendedHandling\":\"Ask a neutral follow‑up question to clarify the candidate’s actual role during cut‑over and hypercare.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_ab9c2ecbcc45\",\"question\":\"Can you describe your role during the cut‑over and live operation for any customer fleet?\",\"evidenceTarget\":\"Evidence of participation in live cut‑over and fleet live operation.\"},{\"questionId\":\"q2\",\"requirementId\":\"req_e30a8b6e30d2\",\"question\":\"Did you own or manage the hypercare period for any customer fleet?\",\"evidenceTarget\":\"Evidence of ownership or management of hypercare.\"},{\"questionId\":\"q3\",\"requirementId\":\"req_c7ed009cbfd1\",\"question\":\"Did you coordinate device installation schedule for full fleet deployments?\",\"evidenceTarget\":\"Evidence of coordination for full fleet device installation.\"}],\"humanReviewChecklist\":[\"Verify that the candidate’s documented pilot experience aligns with the role’s requirement for running pilots.\",\"Confirm that the candidate’s lack of evidence for live cut‑over and hypercare does not disqualify them for the role.\",\"Ensure that interview follow‑up questions are asked neutrally to gather missing evidence.\"],\"auditSummary\":\"The evidence packet shows that the candidate has documented experience with pre‑implementation pilots, pilot device installation coordination, and pilot reporting. However, there is insufficient evidence that the candidate has performed live fleet cut‑overs, owned hypercare periods, or coordinated full‑fleet device installation schedules. These gaps are identified and neutral follow‑up questions are proposed to resolve them. Qualified human review is required before any employment decision.\",\"limitations\":[\"The analysis is limited to the provided sources and does not include any external information.\"]}}",
+ "content_sha256": "c3572e48a40b31ffad2af2310604027bfa627d56b43b6d67b54db79d49bb0c69",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_5b31ad9841e68697",
+   "targetRoleTitle": "Implementation Project Manager, Fleet Telematics Service",
+   "professionalSummary": [
+    "Experienced in running pre‑implementation pilots for fleet telematics, coordinating device installation with field engineering partners, and producing detailed pilot reports and implementation plans. (src_adc9e58198ea, src_ac6172db7a4d, src_924bb4a4bf14)"
+   ],
+   "experienceHighlights": [
+    "Ran the pre‑implementation pilot programme for six prospective logistics customers, configuring the demonstration tenant and conducting two‑week pilots. (src_adc9e58198ea)",
+    "Coordinated the installation of pilot devices on each customer’s pilot vehicles with the field engineering partner, maintaining the installation schedule for pilot vehicles only. (src_ac6172db7a4d)",
+    "Authored pilot reports and implementation plans for each customer, documenting demonstration tenant limitations, open configuration questions, and hand‑over conditions. (src_924bb4a4bf14)"
+   ],
+   "projectsAndWorkSamples": [
+    "Pilot report and implementation plan for one regional carrier, including demonstration tenant configuration identifiers and pilot vehicle list. (src_f7cf02d44f76)"
+   ],
+   "skills": [
+    "Pilot Program Management",
+    "Device Installation Coordination",
+    "Documentation & Reporting"
+   ],
+   "evidenceBoundary": "The provided materials demonstrate the candidate’s involvement in pre‑implementation pilots, coordination of pilot device installation with a field engineering partner, and creation of pilot reports and implementation plans. They do not provide evidence that the candidate has brought customer fleets live on the service, run cut‑overs, owned hypercare periods, or coordinated full‑fleet device installation schedules."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Implementation Project Manager, Fleet Telematics Service",
+    "jobDescriptionSource": "jd_2433baa51064a931",
+    "requirementIds": [
+     "req_ab9c2ecbcc45",
+     "req_e30a8b6e30d2",
+     "req_c7ed009cbfd1",
+     "req_863bc09d8778",
+     "req_6d2bfc05ae33"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_5b31ad9841e68697",
+    "sources": [
+     "src_adc9e58198ea",
+     "src_ac6172db7a4d",
+     "src_0f9e46c054d0",
+     "src_924bb4a4bf14",
+     "src_f8e3c04383a9",
+     "src_f7cf02d44f76",
+     "src_9f3277c1436e",
+     "src_e9eac84fb0f7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_ab9c2ecbcc45",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate personally brought customer fleets live on the service and ran the cut‑over from the customer’s previous system."
+     ]
+    },
+    {
+     "requirementId": "req_e30a8b6e30d2",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate owned the hypercare period after go‑live and handled incidents raised by the customer’s dispatchers."
+     ]
+    },
+    {
+     "requirementId": "req_c7ed009cbfd1",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_ac6172db7a4d",
+       "text": "Coordinated the installation of pilot devices on each customer's pilot vehicles with the field engineering partner, keeping the installation schedule for the pilot vehicles only.",
+       "evidenceStrength": "medium",
+       "notes": "Evidence for pilot vehicle installation only."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate coordinated device installation schedule for the full customer fleet."
+     ]
+    },
+    {
+     "requirementId": "req_863bc09d8778",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_adc9e58198ea",
+       "text": "Ran the pre‑implementation pilot programme for the fleet telematics service, configuring the demonstration tenant for six prospective logistics customers and running a two‑week pilot with each customer's pilot vehicles.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of running pilots."
+      },
+      {
+       "sourceId": "src_924bb4a4bf14",
+       "text": "Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand‑over conditions.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of pilot report documentation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6d2bfc05ae33",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_924bb4a4bf14",
+       "text": "Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand‑over conditions.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of implementation plan and documentation of limitations and hand‑over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Ran pre‑implementation pilots for six prospective logistics customers, configuring the demonstration tenant and conducting two‑week pilots.",
+     "supportingRequirementIds": [
+      "req_863bc09d8778"
+     ],
+     "sourceIds": [
+      "src_adc9e58198ea"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the pre‑implementation pilot programme for the fleet telematics service, configuring the demonstration tenant for six prospective logistics customers and running a two‑week pilot with each customer's pilot vehicles."
+    },
+    {
+     "claim": "Coordinated pilot device installation with the field engineering partner for pilot vehicles.",
+     "supportingRequirementIds": [
+      "req_c7ed009cbfd1"
+     ],
+     "sourceIds": [
+      "src_ac6172db7a4d"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Coordinated the installation of pilot devices on each customer's pilot vehicles with the field engineering partner, keeping the installation schedule for the pilot vehicles only."
+    },
+    {
+     "claim": "Authored pilot reports and implementation plans detailing limitations and hand‑over conditions.",
+     "supportingRequirementIds": [
+      "req_863bc09d8778",
+      "req_6d2bfc05ae33"
+     ],
+     "sourceIds": [
+      "src_924bb4a4bf14"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the pilot report and the implementation plan handed to the delivery team for each customer, listing the demonstration tenant's limitations, open configuration questions and the hand‑over conditions."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Brought customer fleets live on the service and ran the cut‑over from the customer's previous system.",
+     "reason": "No source documents the candidate’s participation in live cut‑over activities.",
+     "requiredFollowUp": "Provide evidence of the candidate’s role during the cut‑over and live operation for any customer fleet."
+    },
+    {
+     "claim": "Owned the hypercare period after go‑live and handled incidents raised by the customer's dispatchers.",
+     "reason": "No source documents the candidate’s ownership of hypercare.",
+     "requiredFollowUp": "Provide evidence of the candidate’s ownership or management of the hypercare period for any customer fleet."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_ab9c2ecbcc45",
+     "severity": "high",
+     "gap": "Evidence of the candidate personally bringing customer fleets live and running cut‑overs."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_e30a8b6e30d2",
+     "severity": "high",
+     "gap": "Evidence of the candidate owning the hypercare period and handling incidents."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_c7ed009cbfd1",
+     "severity": "medium",
+     "gap": "Evidence of coordinating device installation schedule for the full customer fleet."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_9f3277c1436e",
+     "text": "Candidate said he had 'brought six logistics fleets live on the service' and 'ran the cut‑overs'; asked about hypercare, he said the delivery team 'did the night shifts' and that his pilots 'were the real implementation'.",
+     "signalType": "subjective claim",
+     "jobRelatedBoundary": "not tied to observable evidence",
+     "severity": "medium",
+     "recommendedHandling": "Ask a neutral follow‑up question to clarify the candidate’s actual role during cut‑over and hypercare."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_ab9c2ecbcc45",
+     "question": "Can you describe your role during the cut‑over and live operation for any customer fleet?",
+     "evidenceTarget": "Evidence of participation in live cut‑over and fleet live operation."
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_e30a8b6e30d2",
+     "question": "Did you own or manage the hypercare period for any customer fleet?",
+     "evidenceTarget": "Evidence of ownership or management of hypercare."
+    },
+    {
+     "questionId": "q3",
+     "requirementId": "req_c7ed009cbfd1",
+     "question": "Did you coordinate device installation schedule for full fleet deployments?",
+     "evidenceTarget": "Evidence of coordination for full fleet device installation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented pilot experience aligns with the role’s requirement for running pilots.",
+    "Confirm that the candidate’s lack of evidence for live cut‑over and hypercare does not disqualify them for the role.",
+    "Ensure that interview follow‑up questions are asked neutrally to gather missing evidence."
+   ],
+   "auditSummary": "The evidence packet shows that the candidate has documented experience with pre‑implementation pilots, pilot device installation coordination, and pilot reporting. However, there is insufficient evidence that the candidate has performed live fleet cut‑overs, owned hypercare periods, or coordinated full‑fleet device installation schedules. These gaps are identified and neutral follow‑up questions are proposed to resolve them. Qualified human review is required before any employment decision.",
+   "limitations": [
+    "The analysis is limited to the provided sources and does not include any external information."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:28:49.394979+00:00"
+}

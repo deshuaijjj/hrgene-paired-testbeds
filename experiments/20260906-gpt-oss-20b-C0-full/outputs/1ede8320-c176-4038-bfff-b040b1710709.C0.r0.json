@@ -1,0 +1,270 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "1ede8320-c176-4038-bfff-b040b1710709.C0",
+ "case_id": "1ede8320-c176-4038-bfff-b040b1710709",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7936,
+  "promptWords": 1002
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 32.973
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 1895,
+ "eval_count": 1801,
+ "prompt_eval_duration_ns": 17902000,
+ "eval_duration_ns": 31061723000,
+ "total_duration_ns": 32971337041,
+ "thinking": "We need to produce JSON with structure. Need to map requirements. Use evidence. Let's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_505e2997067b55a2\",\"targetRoleTitle\":\"Backend Engineer, Push Notification Service\",\"professionalSummary\":[\"Backend engineer with two years of experience on a push notification service, focusing on provider adapters, retry scheduling, staging load testing, and runbook documentation.\"],\"experienceHighlights\":[\"Developed provider adapters and retry scheduler in development environment with integration tests against provider sandboxes.\",\"Ran synthetic load tests up to 15k messages/sec on staging cluster, capturing latency percentiles and queue depth.\",\"Authored runbook drafts for retry scheduler and hand‑over notes for each release candidate, detailing staging vs production differences and open items for SRE.\",\"Contributed to two years of service operations, including adapter development, retry scheduling, load testing, and documentation.\",\"\"],\"projectsAndWorkSamples\":[\"Load‑test report for release candidate twelve (staging cluster run identifiers).\",\"Runbook draft for retry scheduler.\"],\"skills\":[\"Provider adapter development\",\"Retry scheduler design\",\"Staging load testing\",\"Runbook documentation\",\"Collaboration with SRE\"],\"evidenceBoundary\":\"The provided resume and work samples confirm the candidate’s involvement in development, staging load testing, and documentation, but do not establish that the candidate deployed changes to production or handled on‑call incidents.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"The evidence is insufficient to confirm all role requirements; human review is required.\"},\"role\":{\"roleTitle\":\"Backend Engineer, Push Notification Service\",\"jobDescriptionSource\":\"jd_58f40269d08ad323\",\"requirementIds\":[\"req_461dbb854e2d\",\"req_0b9ee3386bec\",\"req_7b9d592c95e9\",\"req_cd4afdaa0fdf\",\"req_cecd25933020\"]},\"candidate\":{\"candidateId\":\"cand_505e2997067b55a2\",\"sources\":[\"src_c72d21fbfa7a\",\"src_a6e136f94f49\",\"src_9183eaf3d66d\",\"src_fe7fa6d39b6f\",\"src_6fa959020ee4\",\"src_0262cb931348\",\"src_6c2e696fa5aa\",\"src_9e22e43697b5\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_461dbb854e2d\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate deployed service changes to production through the deployment pipeline.\"]},{\"requirementId\":\"req_0b9ee3386bec\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_6c2e696fa5aa\",\"text\":\"candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'.\",\"evidenceStrength\":\"low\",\"notes\":\"Mentions being paged but no confirmation of handling incidents in production.\"}],\"missingEvidence\":[\"Clear record of the candidate handling a production incident such as a delivery backlog or provider outage.\"]},{\"requirementId\":\"req_7b9d592c95e9\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_fe7fa6d39b6f\",\"text\":\"Wrote the runbook drafts for the retry scheduler and the hand-over notes for each release candidate, listing the staging cluster's differences from the customer-facing cluster and the open items for SRE.\",\"evidenceStrength\":\"medium\",\"notes\":\"Shows documentation of boundaries but no live monitoring evidence.\"}],\"missingEvidence\":[\"Evidence that the candidate actively watches live delivery latency in production.\"]},{\"requirementId\":\"req_cd4afdaa0fdf\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_c72d21fbfa7a\",\"text\":\"Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes.\",\"evidenceStrength\":\"high\",\"notes\":\"Directly matches requirement.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_cecd25933020\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a6e136f94f49\",\"text\":\"Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate.\",\"evidenceStrength\":\"high\",\"notes\":\"Matches requirement.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Developed provider adapters and retry scheduler for the push notification service.\",\"supportingRequirementIds\":[\"req_cd4afdaa0fdf\"],\"sourceIds\":[\"src_c72d21fbfa7a\"],\"evidenceStrength\":\"high\",\"witness\":\"Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes.\"},{\"claim\":\"Ran load tests against the staging cluster up to 15k messages per second.\",\"supportingRequirementIds\":[\"req_cecd25933020\"],\"sourceIds\":[\"src_a6e136f94f49\"],\"evidenceStrength\":\"high\",\"witness\":\"Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate.\"}],\"unsupportedClaims\":[{\"claim\":\"Deployed the retry scheduler to production.\",\"reason\":\"Resume states the candidate had no deployment rights; no evidence of production deployment.\",\"requiredFollowUp\":\"Provide deployment logs or a release note indicating the candidate’s deployment to production.\"},{\"claim\":\"Handled production incidents such as delivery backlogs or provider outages.\",\"reason\":\"Only a mention of being paged; no evidence of incident resolution.\",\"requiredFollowUp\":\"Provide incident reports or SRE confirmation of the candidate’s involvement in incident handling.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_461dbb854e2d\",\"severity\":\"high\",\"gap\":\"No evidence that the candidate deployed changes to production through the deployment pipeline.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_0b9ee3386bec\",\"severity\":\"medium\",\"gap\":\"No evidence that the candidate handled a production incident.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_7b9d592c95e9\",\"severity\":\"medium\",\"gap\":\"No evidence of live monitoring of delivery latency in production.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_6c2e696fa5aa\",\"text\":\"candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'.\",\"signalType\":\"potential overstatement\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify incident handling through SRE logs or incident records.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_461dbb854e2d\",\"question\":\"Can you provide a deployment log or release note that shows your changes were promoted to production via the deployment pipeline?\",\"evidenceTarget\":\"Proof of production deployment.\"},{\"questionId\":\"q2\",\"requirementId\":\"req_0b9ee3386bec\",\"question\":\"Describe a specific production incident you handled on-call, including the issue, your actions, and the outcome.\",\"evidenceTarget\":\"Incident handling evidence.\"},{\"questionId\":\"q3\",\"requirementId\":\"req_7b9d592c95e9\",\"question\":\"How do you monitor live delivery latency in production, and what metrics do you track?\",\"evidenceTarget\":\"Live monitoring practices.\"}],\"humanReviewChecklist\":[\"Confirm that the candidate’s work samples match the described load‑test report and runbook drafts.\",\"Verify that the candidate has no deployment rights as stated in the resume.\",\"Assess the candidate’s ability to handle production incidents based on interview responses.\",\"Ensure that the candidate’s documentation covers staging vs production differences as required.\"],\"auditSummary\":\"The candidate demonstrates strong development and staging testing capabilities but lacks verifiable evidence of production deployment and incident handling. Human review should focus on clarifying these gaps through targeted interview questions and documentation review.\",\"limitations\":[\"Evidence is limited to the provided resume and work samples; external verification (e.g., production logs, SRE confirmation) is not available.\"]}}",
+ "content_sha256": "522a7b7796140735d5d51c1cd68065d8a17fce9febc02743a01268ca6afc91db",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_505e2997067b55a2",
+   "targetRoleTitle": "Backend Engineer, Push Notification Service",
+   "professionalSummary": [
+    "Backend engineer with two years of experience on a push notification service, focusing on provider adapters, retry scheduling, staging load testing, and runbook documentation."
+   ],
+   "experienceHighlights": [
+    "Developed provider adapters and retry scheduler in development environment with integration tests against provider sandboxes.",
+    "Ran synthetic load tests up to 15k messages/sec on staging cluster, capturing latency percentiles and queue depth.",
+    "Authored runbook drafts for retry scheduler and hand‑over notes for each release candidate, detailing staging vs production differences and open items for SRE.",
+    "Contributed to two years of service operations, including adapter development, retry scheduling, load testing, and documentation.",
+    ""
+   ],
+   "projectsAndWorkSamples": [
+    "Load‑test report for release candidate twelve (staging cluster run identifiers).",
+    "Runbook draft for retry scheduler."
+   ],
+   "skills": [
+    "Provider adapter development",
+    "Retry scheduler design",
+    "Staging load testing",
+    "Runbook documentation",
+    "Collaboration with SRE"
+   ],
+   "evidenceBoundary": "The provided resume and work samples confirm the candidate’s involvement in development, staging load testing, and documentation, but do not establish that the candidate deployed changes to production or handled on‑call incidents."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The evidence is insufficient to confirm all role requirements; human review is required."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Push Notification Service",
+    "jobDescriptionSource": "jd_58f40269d08ad323",
+    "requirementIds": [
+     "req_461dbb854e2d",
+     "req_0b9ee3386bec",
+     "req_7b9d592c95e9",
+     "req_cd4afdaa0fdf",
+     "req_cecd25933020"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_505e2997067b55a2",
+    "sources": [
+     "src_c72d21fbfa7a",
+     "src_a6e136f94f49",
+     "src_9183eaf3d66d",
+     "src_fe7fa6d39b6f",
+     "src_6fa959020ee4",
+     "src_0262cb931348",
+     "src_6c2e696fa5aa",
+     "src_9e22e43697b5"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_461dbb854e2d",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate deployed service changes to production through the deployment pipeline."
+     ]
+    },
+    {
+     "requirementId": "req_0b9ee3386bec",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_6c2e696fa5aa",
+       "text": "candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'.",
+       "evidenceStrength": "low",
+       "notes": "Mentions being paged but no confirmation of handling incidents in production."
+      }
+     ],
+     "missingEvidence": [
+      "Clear record of the candidate handling a production incident such as a delivery backlog or provider outage."
+     ]
+    },
+    {
+     "requirementId": "req_7b9d592c95e9",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_fe7fa6d39b6f",
+       "text": "Wrote the runbook drafts for the retry scheduler and the hand-over notes for each release candidate, listing the staging cluster's differences from the customer-facing cluster and the open items for SRE.",
+       "evidenceStrength": "medium",
+       "notes": "Shows documentation of boundaries but no live monitoring evidence."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate actively watches live delivery latency in production."
+     ]
+    },
+    {
+     "requirementId": "req_cd4afdaa0fdf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_c72d21fbfa7a",
+       "text": "Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_cecd25933020",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a6e136f94f49",
+       "text": "Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate.",
+       "evidenceStrength": "high",
+       "notes": "Matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed provider adapters and retry scheduler for the push notification service.",
+     "supportingRequirementIds": [
+      "req_cd4afdaa0fdf"
+     ],
+     "sourceIds": [
+      "src_c72d21fbfa7a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed the provider adapters and the retry scheduler for the push notification service in the development environment, with the integration tests running against the providers' sandboxes."
+    },
+    {
+     "claim": "Ran load tests against the staging cluster up to 15k messages per second.",
+     "supportingRequirementIds": [
+      "req_cecd25933020"
+     ],
+     "sourceIds": [
+      "src_a6e136f94f49"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second, recording the latency percentiles and the queue depth in the load-test report for each release candidate."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Deployed the retry scheduler to production.",
+     "reason": "Resume states the candidate had no deployment rights; no evidence of production deployment.",
+     "requiredFollowUp": "Provide deployment logs or a release note indicating the candidate’s deployment to production."
+    },
+    {
+     "claim": "Handled production incidents such as delivery backlogs or provider outages.",
+     "reason": "Only a mention of being paged; no evidence of incident resolution.",
+     "requiredFollowUp": "Provide incident reports or SRE confirmation of the candidate’s involvement in incident handling."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_461dbb854e2d",
+     "severity": "high",
+     "gap": "No evidence that the candidate deployed changes to production through the deployment pipeline."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_0b9ee3386bec",
+     "severity": "medium",
+     "gap": "No evidence that the candidate handled a production incident."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_7b9d592c95e9",
+     "severity": "medium",
+     "gap": "No evidence of live monitoring of delivery latency in production."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_6c2e696fa5aa",
+     "text": "candidate said she had 'been paged for delivery backlogs'; asked for an example, she described a staging load test that filled the queue and said SRE 'took the real ones'.",
+     "signalType": "potential overstatement",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify incident handling through SRE logs or incident records."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_461dbb854e2d",
+     "question": "Can you provide a deployment log or release note that shows your changes were promoted to production via the deployment pipeline?",
+     "evidenceTarget": "Proof of production deployment."
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_0b9ee3386bec",
+     "question": "Describe a specific production incident you handled on-call, including the issue, your actions, and the outcome.",
+     "evidenceTarget": "Incident handling evidence."
+    },
+    {
+     "questionId": "q3",
+     "requirementId": "req_7b9d592c95e9",
+     "question": "How do you monitor live delivery latency in production, and what metrics do you track?",
+     "evidenceTarget": "Live monitoring practices."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that the candidate’s work samples match the described load‑test report and runbook drafts.",
+    "Verify that the candidate has no deployment rights as stated in the resume.",
+    "Assess the candidate’s ability to handle production incidents based on interview responses.",
+    "Ensure that the candidate’s documentation covers staging vs production differences as required."
+   ],
+   "auditSummary": "The candidate demonstrates strong development and staging testing capabilities but lacks verifiable evidence of production deployment and incident handling. Human review should focus on clarifying these gaps through targeted interview questions and documentation review.",
+   "limitations": [
+    "Evidence is limited to the provided resume and work samples; external verification (e.g., production logs, SRE confirmation) is not available."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T10:48:13.545884+00:00"
+}

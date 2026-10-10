@@ -1,0 +1,327 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f16727b1-3968-42d1-b9c6-6dbc995b40e9.C2",
+ "case_id": "f16727b1-3968-42d1-b9c6-6dbc995b40e9",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14345,
+  "promptWords": 1699
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 56.875
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3823,
+ "eval_count": 2432,
+ "prompt_eval_duration_ns": 18691000,
+ "eval_duration_ns": 44971350000,
+ "total_duration_ns": 56872494375,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence entries with verbatim passages. Need to copy candidateId and jobDescriptionSourceId. Provide optimizedCv with claims. Use evidenceBoundary sentence. For each requirement, map evidence. All requirements present in resume. Provide missingEvidence empty. Provide supportedClaims array. No unsupportedClaims. No gaps. No interviewSignalRisks. FollowUpQuestions empty. HumanReviewChecklist maybe [\"Review evidence for each requirement\", \"Confirm no protected characteristics inferred\"]. AuditSummary paragraph. Limitations maybe [\"Based on provided sources only\"].\n\nLet's craft claims: professionalSummary: maybe one claim: \"Experienced Trade Finance Operations Specialist with four years of experience examining documentary credits and managing related processes.\" Source src_afcdbbf251e0.\n\nexperienceHighlights: list claims each requirement. Use sources.\n\nprojectsAndWorkSamples: mention work sample source.\n\nskills: list skills like \"Document examination\", \"Discrepancy notice preparation\", etc. Use sources.\n\nEvidenceBoundary: \"The provided resume and work sample establish the candidate’s experience in examining documentary credits, preparing discrepancy notices, recording decisions, coordinating queries, and documenting open items, but do not provide independent verification beyond the cited sources.\"\n\nNow requirementEvidenceMap: each requirement id with status supported, evidence array with sourceId and text verbatim. Need to quote passage. Use source text. For example src_afcdbbf251e0: \"Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year.\" That's verbatim.\n\nSimilarly others.\n\nMissingEvidence empty.\n\nsupportedClaims array: maybe one claim: \"Candidate has examined approximately six hundred presentations per year.\" source src_afcdbbf251e0. Provide witness.\n\nNo unsupportedClaims.\n\nMissingEvidenceGaps empty.\n\nInterviewSignalRisks empty.\n\nFollowUpQuestions empty.\n\nHumanReviewChecklist: [\"Verify that the candidate’s experience aligns with the bank’s examination standard\", \"Confirm that the four-eyes rule was followed in all releases\"].\n\nAuditSummary: \"The evidence indicates that the candidate meets all listed requirements based on the provided resume and work sample. No gaps or unsupported claims were identified.\"\n\nLimitations: [\"Evidence limited to the provided resume, work sample, and notes; no external verification.\"]\n\nReturn JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_68741937df9cb73b\",\n    \"targetRoleTitle\": \"Trade Finance Operations Specialist, Documentary Credits\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Experienced Trade Finance Operations Specialist with four years of experience examining documentary credits and managing related processes.\",\n        \"sourceIds\": [\"src_afcdbbf251e0\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Examined approximately six hundred documentary credit presentations per year against the bank's examination standard.\",\n        \"sourceIds\": [\"src_afcdbbf251e0\"],\n        \"requirementIds\": [\"req_aae0ff5971cb\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Prepared discrepancy notices and payment instructions for each presentation, ensuring the release remained with the checker under the four‑eyes rule.\",\n        \"sourceIds\": [\"src_a03891df68a3\"],\n        \"requirementIds\": [\"req_8a04fd3e6e39\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Prepared the discrepancy notices and the payment instructions for each presentation for the checker's release; the release was the checker's under the four-eyes rule, recorded against my preparation in the trade system.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Recorded the checker's decisions in the trade system and kept the client status report current for relationship managers daily.\",\n        \"sourceIds\": [\"src_3a932b309995\"],\n        \"requirementIds\": [\"req_d48ed3688f76\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Recorded the checkers' decisions in the trade system and kept the client status report current for the relationship managers each day.\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Coordinated document queries with correspondent banks' trade desks, logging closed queries and those referred to the checker.\",\n        \"sourceIds\": [\"src_5ae372e4d177\"],\n        \"requirementIds\": [\"req_c39c02de2e79\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Coordinated document queries with the correspondent banks' trade desks through the query log, recording which queries I closed and which were referred to the checker.\"\n      },\n      {\n        \"claimId\": \"claim_6\",\n        \"text\": \"Wrote open items notes and hand‑over conditions for each transaction at day end for the next examiner.\",\n        \"sourceIds\": [\"src_3cf316f5b424\"],\n        \"requirementIds\": [\"req_e455249e31dd\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the open items note and the hand-over conditions for each transaction at day end for the next examiner.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"claim_7\",\n        \"text\": \"Provided a work sample containing an anonymised presentation file (examination worksheet, discrepancy notice, payment instruction with the checker's release record) and a client status report with trade system audit history.\",\n        \"sourceIds\": [\"src_10b970527977\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: one anonymised presentation file (examination worksheet, discrepancy notice, payment instruction with the checker's release record) and one client status report, with the trade system's audit history as a verification trail.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"claim_8\",\n        \"text\": \"Document examination against credit terms\",\n        \"sourceIds\": [\"src_afcdbbf251e0\"],\n        \"requirementIds\": [\"req_aae0ff5971cb\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_9\",\n        \"text\": \"Discrepancy notice and payment instruction preparation\",\n        \"sourceIds\": [\"src_a03891df68a3\"],\n        \"requirementIds\": [\"req_8a04fd3e6e39\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_10\",\n        \"text\": \"Trade system data entry and client status reporting\",\n        \"sourceIds\": [\"src_3a932b309995\"],\n        \"requirementIds\": [\"req_d48ed3688f76\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_11\",\n        \"text\": \"Correspondent bank query coordination\",\n        \"sourceIds\": [\"src_5ae372e4d177\"],\n        \"requirementIds\": [\"req_c39c02de2e79\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_12\",\n        \"text\": \"Open items documentation and hand‑over note creation\",\n        \"sourceIds\": [\"src_3cf316f5b424\"],\n        \"requirementIds\": [\"req_e455249e31dd\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s experience in examining documentary credits, preparing discrepancy notices, recording decisions, coordinating queries, and documenting open items, but do not provide independent verification beyond the cited sources.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess the candidate’s fit for the Trade Finance Operations Specialist role.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Trade Finance Operations Specialist, Documentary Credits\",\n      \"jobDescriptionSource\": \"jd_ae52c305e3712bb3\",\n      \"requirementIds\": [\n        \"req_aae0ff5971cb\",\n        \"req_8a04fd3e6e39\",\n        \"req_d48ed3688f76\",\n        \"req_c39c02de2e79\",\n        \"req_e455249e31dd\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_68741937df9cb73b\",\n      \"sources\": [\n        \"src_afcdbbf251e0\",\n        \"src_a03891df68a3\",\n        \"src_3a932b309995\",\n        \"src_5ae372e4d177\",\n        \"src_3cf316f5b424\",\n        \"src_10b970527977\",\n        \"src_5f9ae0bc66fc\",\n        \"src_189161371aab\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_aae0ff5971cb\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_afcdbbf251e0\",\n            \"text\": \"Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_8a04fd3e6e39\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a03891df68a3\",\n            \"text\": \"Prepared the discrepancy notices and the payment instructions for each presentation for the checker's release; the release was the checker's under the four-eyes rule, recorded against my preparation in the trade system.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d48ed3688f76\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_3a932b309995\",\n            \"text\": \"Recorded the checkers' decisions in the trade system and kept the client status report current for the relationship managers each day.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_c39c02de2e79\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_5ae372e4d177\",\n            \"text\": \"Coordinated document queries with the correspondent banks' trade desks through the query log, recording which queries I closed and which were referred to the checker.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_e455249e31dd\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_3cf316f5b424\",\n            \"text\": \"Wrote the open items note and the hand-over conditions for each transaction at day end for the next examiner.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Candidate has examined approximately six hundred presentations per year.\",\n        \"supportingRequirementIds\": [\"req_aae0ff5971cb\"],\n        \"sourceIds\": [\"src_afcdbbf251e0\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s experience aligns with the bank’s examination standard.\",\n      \"Confirm that the four‑eyes rule was followed in all releases.\"\n    ],\n    \"auditSummary\": \"The evidence indicates that the candidate meets all listed requirements based on the provided resume and work sample. No gaps or unsupported claims were identified.\",\n    \"limitations\": [\n      \"Evidence limited to the provided resume, work sample, and notes; no external verification.\"\n    ]\n  }\n}",
+ "content_sha256": "5ce69a60ec260518a434566642460ebb44201df18ec2692dd1d8a68de16bfd6a",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_68741937df9cb73b",
+   "targetRoleTitle": "Trade Finance Operations Specialist, Documentary Credits",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Experienced Trade Finance Operations Specialist with four years of experience examining documentary credits and managing related processes.",
+     "sourceIds": [
+      "src_afcdbbf251e0"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Examined approximately six hundred documentary credit presentations per year against the bank's examination standard.",
+     "sourceIds": [
+      "src_afcdbbf251e0"
+     ],
+     "requirementIds": [
+      "req_aae0ff5971cb"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Prepared discrepancy notices and payment instructions for each presentation, ensuring the release remained with the checker under the four‑eyes rule.",
+     "sourceIds": [
+      "src_a03891df68a3"
+     ],
+     "requirementIds": [
+      "req_8a04fd3e6e39"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared the discrepancy notices and the payment instructions for each presentation for the checker's release; the release was the checker's under the four-eyes rule, recorded against my preparation in the trade system."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Recorded the checker's decisions in the trade system and kept the client status report current for relationship managers daily.",
+     "sourceIds": [
+      "src_3a932b309995"
+     ],
+     "requirementIds": [
+      "req_d48ed3688f76"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Recorded the checkers' decisions in the trade system and kept the client status report current for the relationship managers each day."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Coordinated document queries with correspondent banks' trade desks, logging closed queries and those referred to the checker.",
+     "sourceIds": [
+      "src_5ae372e4d177"
+     ],
+     "requirementIds": [
+      "req_c39c02de2e79"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated document queries with the correspondent banks' trade desks through the query log, recording which queries I closed and which were referred to the checker."
+    },
+    {
+     "claimId": "claim_6",
+     "text": "Wrote open items notes and hand‑over conditions for each transaction at day end for the next examiner.",
+     "sourceIds": [
+      "src_3cf316f5b424"
+     ],
+     "requirementIds": [
+      "req_e455249e31dd"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the open items note and the hand-over conditions for each transaction at day end for the next examiner."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_7",
+     "text": "Provided a work sample containing an anonymised presentation file (examination worksheet, discrepancy notice, payment instruction with the checker's release record) and a client status report with trade system audit history.",
+     "sourceIds": [
+      "src_10b970527977"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: one anonymised presentation file (examination worksheet, discrepancy notice, payment instruction with the checker's release record) and one client status report, with the trade system's audit history as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_8",
+     "text": "Document examination against credit terms",
+     "sourceIds": [
+      "src_afcdbbf251e0"
+     ],
+     "requirementIds": [
+      "req_aae0ff5971cb"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "claim_9",
+     "text": "Discrepancy notice and payment instruction preparation",
+     "sourceIds": [
+      "src_a03891df68a3"
+     ],
+     "requirementIds": [
+      "req_8a04fd3e6e39"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "claim_10",
+     "text": "Trade system data entry and client status reporting",
+     "sourceIds": [
+      "src_3a932b309995"
+     ],
+     "requirementIds": [
+      "req_d48ed3688f76"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "claim_11",
+     "text": "Correspondent bank query coordination",
+     "sourceIds": [
+      "src_5ae372e4d177"
+     ],
+     "requirementIds": [
+      "req_c39c02de2e79"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    },
+    {
+     "claimId": "claim_12",
+     "text": "Open items documentation and hand‑over note creation",
+     "sourceIds": [
+      "src_3cf316f5b424"
+     ],
+     "requirementIds": [
+      "req_e455249e31dd"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience in examining documentary credits, preparing discrepancy notices, recording decisions, coordinating queries, and documenting open items, but do not provide independent verification beyond the cited sources."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate’s fit for the Trade Finance Operations Specialist role."
+   },
+   "role": {
+    "roleTitle": "Trade Finance Operations Specialist, Documentary Credits",
+    "jobDescriptionSource": "jd_ae52c305e3712bb3",
+    "requirementIds": [
+     "req_aae0ff5971cb",
+     "req_8a04fd3e6e39",
+     "req_d48ed3688f76",
+     "req_c39c02de2e79",
+     "req_e455249e31dd"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_68741937df9cb73b",
+    "sources": [
+     "src_afcdbbf251e0",
+     "src_a03891df68a3",
+     "src_3a932b309995",
+     "src_5ae372e4d177",
+     "src_3cf316f5b424",
+     "src_10b970527977",
+     "src_5f9ae0bc66fc",
+     "src_189161371aab"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_aae0ff5971cb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_afcdbbf251e0",
+       "text": "Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8a04fd3e6e39",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a03891df68a3",
+       "text": "Prepared the discrepancy notices and the payment instructions for each presentation for the checker's release; the release was the checker's under the four-eyes rule, recorded against my preparation in the trade system.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d48ed3688f76",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3a932b309995",
+       "text": "Recorded the checkers' decisions in the trade system and kept the client status report current for the relationship managers each day.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c39c02de2e79",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5ae372e4d177",
+       "text": "Coordinated document queries with the correspondent banks' trade desks through the query log, recording which queries I closed and which were referred to the checker.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e455249e31dd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3cf316f5b424",
+       "text": "Wrote the open items note and the hand-over conditions for each transaction at day end for the next examiner.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Candidate has examined approximately six hundred presentations per year.",
+     "supportingRequirementIds": [
+      "req_aae0ff5971cb"
+     ],
+     "sourceIds": [
+      "src_afcdbbf251e0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Trade finance operations specialist at a commercial bank for four years, examining presented documents against documentary credit terms under the bank's examination standard for about six hundred presentations a year."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s experience aligns with the bank’s examination standard.",
+    "Confirm that the four‑eyes rule was followed in all releases."
+   ],
+   "auditSummary": "The evidence indicates that the candidate meets all listed requirements based on the provided resume and work sample. No gaps or unsupported claims were identified.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and notes; no external verification."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T15:13:40.096265+00:00"
+}

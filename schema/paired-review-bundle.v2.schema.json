@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jam.local/schemas/paired-review-bundle-model-output.v2.schema.json",
+  "title": "PairedReviewBundle model-authored output v2 (self-contained; usable for constrained decoding)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "optimizedCv", "hiringEvidencePacket"],
+  "properties": {
+    "schemaVersion": {"type": "string", "enum": ["jam.hrgene_paired_review_bundle.model_output.v2"]},
+    "optimizedCv": {"$ref": "#/$defs/optimizedCv"},
+    "hiringEvidencePacket": {"$ref": "#/$defs/hiringEvidencePacket"}
+  },
+  "$defs": {
+    "str": {"type": "string"},
+    "strArray": {"type": "array", "items": {"type": "string"}},
+    "strength": {"type": "string", "enum": ["low", "medium", "high"]},
+    "supportStatus": {"type": "string", "enum": ["supported", "partial_evidence", "insufficient_evidence"]},
+    "boundedClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claimId", "text", "sourceIds", "requirementIds", "supportBoundary", "witness"],
+      "properties": {
+        "claimId": {"type": "string"},
+        "text": {"type": "string"},
+        "sourceIds": {"type": "array", "items": {"type": "string"}},
+        "requirementIds": {"type": "array", "items": {"type": "string"}},
+        "supportBoundary": {"type": "string", "enum": ["supported", "partial_evidence"]},
+        "witness": {"type": "string", "description": "verbatim passage copied from one cited source; empty string if none"}
+      }
+    },
+    "claimArray": {"type": "array", "items": {"$ref": "#/$defs/boundedClaim"}},
+    "optimizedCv": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "candidateId", "targetRoleTitle", "professionalSummary", "experienceHighlights", "projectsAndWorkSamples", "skills", "evidenceBoundary"],
+      "properties": {
+        "language": {"type": "string", "enum": ["en", "zh-CN"]},
+        "candidateId": {"type": "string"},
+        "targetRoleTitle": {"type": "string"},
+        "professionalSummary": {"$ref": "#/$defs/claimArray"},
+        "experienceHighlights": {"$ref": "#/$defs/claimArray"},
+        "projectsAndWorkSamples": {"$ref": "#/$defs/claimArray"},
+        "skills": {"$ref": "#/$defs/claimArray"},
+        "evidenceBoundary": {"type": "string"}
+      }
+    },
+    "hiringEvidencePacket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decisionBoundary", "role", "candidate", "requirementEvidenceMap", "supportedClaims", "unsupportedClaims", "missingEvidenceGaps", "interviewSignalRisks", "followUpQuestions", "humanReviewChecklist", "auditSummary", "limitations"],
+      "properties": {
+        "decisionBoundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["employmentDecisionMade", "candidateRanked", "protectedCharacteristicsInferred", "humanReviewRequired", "statement"],
+          "properties": {
+            "employmentDecisionMade": {"type": "boolean"},
+            "candidateRanked": {"type": "boolean"},
+            "protectedCharacteristicsInferred": {"type": "boolean"},
+            "humanReviewRequired": {"type": "boolean"},
+            "statement": {"type": "string"}
+          }
+        },
+        "role": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["roleTitle", "jobDescriptionSource", "requirementIds"],
+          "properties": {
+            "roleTitle": {"type": "string"},
+            "jobDescriptionSource": {"type": "string"},
+            "requirementIds": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "candidate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["candidateId", "sources"],
+          "properties": {
+            "candidateId": {"type": "string"},
+            "sources": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "requirementEvidenceMap": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["requirementId", "status", "evidence", "missingEvidence"],
+            "properties": {
+              "requirementId": {"type": "string"},
+              "status": {"$ref": "#/$defs/supportStatus"},
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["sourceId", "text", "evidenceStrength", "notes"],
+                  "properties": {
+                    "sourceId": {"type": "string"},
+                    "text": {"type": "string", "description": "verbatim passage from the source"},
+                    "evidenceStrength": {"$ref": "#/$defs/strength"},
+                    "notes": {"type": "string"}
+                  }
+                }
+              },
+              "missingEvidence": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "supportedClaims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim", "supportingRequirementIds", "sourceIds", "evidenceStrength", "witness"],
+            "properties": {
+              "claim": {"type": "string"},
+              "supportingRequirementIds": {"type": "array", "items": {"type": "string"}},
+              "sourceIds": {"type": "array", "items": {"type": "string"}},
+              "evidenceStrength": {"$ref": "#/$defs/strength"},
+              "witness": {"type": "string"}
+            }
+          }
+        },
+        "unsupportedClaims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim", "reason", "requiredFollowUp"],
+            "properties": {
+              "claim": {"type": "string"},
+              "reason": {"type": "string"},
+              "requiredFollowUp": {"type": "string"}
+            }
+          }
+        },
+        "missingEvidenceGaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["gapId", "requirementId", "severity", "gap"],
+            "properties": {
+              "gapId": {"type": "string"},
+              "requirementId": {"type": "string"},
+              "severity": {"$ref": "#/$defs/strength"},
+              "gap": {"type": "string"}
+            }
+          }
+        },
+        "interviewSignalRisks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["sourceId", "text", "signalType", "jobRelatedBoundary", "severity", "recommendedHandling"],
+            "properties": {
+              "sourceId": {"type": "string"},
+              "text": {"type": "string"},
+              "signalType": {"type": "string"},
+              "jobRelatedBoundary": {"type": "string"},
+              "severity": {"$ref": "#/$defs/strength"},
+              "recommendedHandling": {"type": "string"}
+            }
+          }
+        },
+        "followUpQuestions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["questionId", "requirementId", "question", "evidenceTarget"],
+            "properties": {
+              "questionId": {"type": "string"},
+              "requirementId": {"type": "string"},
+              "question": {"type": "string"},
+              "evidenceTarget": {"type": "string"}
+            }
+          }
+        },
+        "humanReviewChecklist": {"type": "array", "items": {"type": "string"}},
+        "auditSummary": {"type": "string"},
+        "limitations": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

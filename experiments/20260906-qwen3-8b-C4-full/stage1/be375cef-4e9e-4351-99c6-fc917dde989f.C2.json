@@ -1,0 +1,529 @@
+{
+ "request_id": "be375cef-4e9e-4351-99c6-fc917dde989f.C2",
+ "case_id": "be375cef-4e9e-4351-99c6-fc917dde989f",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality score, used by onboarding and support.",
+     "sourceIds": [
+      "src_15a29a3ead05",
+      "src_14fcfd05c0da"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [END_TO_END] not licensed by the cited sources: end to end, end-to-end",
+    "witness": {
+     "family": "END_TO_END",
+     "terms": [
+      "end to end",
+      "end-to-end"
+     ],
+     "sourceIds": [
+      "src_4b6e7713b450",
+      "src_14fcfd05c0da"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "OWN"
+     ],
+     "text": "Owns merchant feed quality end-to-end and decides which feed validations block merchant onboarding."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [END_TO_END] not licensed by the cited sources: end to end, end-to-end",
+    "witness": {
+     "family": "END_TO_END",
+     "terms": [
+      "end to end",
+      "end-to-end"
+     ],
+     "sourceIds": [
+      "src_4b6e7713b450",
+      "src_14fcfd05c0da"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "OWN"
+     ],
+     "text": "Owns merchant feed quality end-to-end and decides which feed validations block merchant onboarding."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.hiringEvidencePacket.supportedClaims[1]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Owns merchant feed quality end-to-end and decides which feed validations block merchant onboarding."
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Owns merchant feed quality end-to-end and decides which feed validations block merchant onboarding."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_e29c23763d417735",
+   "targetRoleTitle": "Data Quality Engineer, E-commerce Fulfilment Software",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Builds and maintains the feed validation service and the quality scorecards per merchant.",
+     "sourceIds": [
+      "src_15a29a3ead05",
+      "src_14fcfd05c0da"
+     ],
+     "requirementIds": [
+      "req_45e1d97a9df4"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Leads the monthly merchant data quality forum with onboarding and support and records decisions.",
+     "sourceIds": [
+      "src_820957b5ec04",
+      "src_14fcfd05c0da"
+     ],
+     "requirementIds": [
+      "req_d18b7c5ea019"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Coordinates validation changes with the onboarding and platform teams and records own responsibility boundaries.",
+     "sourceIds": [
+      "src_03456d3077a7",
+      "src_14fcfd05c0da"
+     ],
+     "requirementIds": [
+      "req_acc1d3f0cf5d"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's ownership of merchant feed quality, validation service development, and forum leadership. They do not establish the candidate's direct accountability to the VP of data or the specific validation definitions and hand-over conditions for each release."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The materials establish the candidate's ownership of merchant feed quality, validation service development, and forum leadership. They do not establish the candidate's direct accountability to the VP of data or the specific validation definitions and hand-over conditions for each release."
+   },
+   "role": {
+    "roleTitle": "Data Quality Engineer, E-commerce Fulfilment Software",
+    "jobDescriptionSource": "jd_53c851eabebfb375",
+    "requirementIds": [
+     "req_fb04608dd00e",
+     "req_45e1d97a9df4",
+     "req_d18b7c5ea019",
+     "req_acc1d3f0cf5d",
+     "req_3a9e8618bb6d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_e29c23763d417735",
+    "sources": [
+     "src_4b6e7713b450",
+     "src_15a29a3ead05",
+     "src_820957b5ec04",
+     "src_03456d3077a7",
+     "src_14fcfd05c0da",
+     "src_2aef2560e372",
+     "src_acf9aa808776",
+     "src_2c842f2a0596"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_fb04608dd00e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4b6e7713b450",
+       "text": "Owned merchant feed quality for the fulfilment platform for three years as the named owner in the data ownership register, deciding which feed validations were blocking for onboarding and signing off each validation release myself.",
+       "evidenceStrength": "high",
+       "notes": "Direct ownership and validation decisions are clearly stated."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_45e1d97a9df4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_15a29a3ead05",
+       "text": "Built and maintained the feed validation service (Kotlin, deployed with the ingestion stack) and the per-merchant quality scorecards used by onboarding and support.",
+       "evidenceStrength": "high",
+       "notes": "Direct development and maintenance of the service and scorecards are stated."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d18b7c5ea019",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_820957b5ec04",
+       "text": "Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes.",
+       "evidenceStrength": "high",
+       "notes": "Leadership in the forum and decision recording are clearly stated."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_acc1d3f0cf5d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_03456d3077a7",
+       "text": "Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations.",
+       "evidenceStrength": "high",
+       "notes": "Coordination and responsibility boundaries are clearly stated."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3a9e8618bb6d",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_14fcfd05c0da",
+       "text": "Responsibilities included feed quality ownership, blocking-validation decisions, validation-service development, scorecards and the quality forum over about three years.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate's responsibilities are mentioned, but the specific validation definitions and hand-over conditions for each release are not stated."
+      }
+     ],
+     "missingEvidence": [
+      "Validation definitions",
+      "Hand-over conditions for each release"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Builds and maintains the feed validation service and the quality scorecards per merchant.",
+     "supportingRequirementIds": [
+      "req_45e1d97a9df4"
+     ],
+     "sourceIds": [
+      "src_15a29a3ead05",
+      "src_14fcfd05c0da"
+     ],
+     "evidenceStrength": "high",
+     "witness": ""
+    },
+    {
+     "claim": "Leads the monthly merchant data quality forum with onboarding and support and records decisions.",
+     "supportingRequirementIds": [
+      "req_d18b7c5ea019"
+     ],
+     "sourceIds": [
+      "src_820957b5ec04",
+      "src_14fcfd05c0da"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Led the monthly merchant data quality forum with the onboarding and support leads, deciding the quality thresholds for new merchant tiers and recording the decisions in the forum notes."
+    },
+    {
+     "claim": "Coordinates validation changes with the onboarding and platform teams and records own responsibility boundaries.",
+     "supportingRequirementIds": [
+      "req_acc1d3f0cf5d"
+     ],
+     "sourceIds": [
+      "src_03456d3077a7",
+      "src_14fcfd05c0da"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated validation changes with the onboarding and platform teams through the platform change process, recording that the platform team owned the ingestion stack and onboarding owned merchant communication while I owned the validations."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Owns merchant feed quality end-to-end and decides which feed validations block merchant onboarding.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_3a9e8618bb6d",
+     "severity": "medium",
+     "gap": "Validation definitions and hand-over conditions for each release are not stated."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_acf9aa808776",
+     "text": "Reference call with the former VP of data: confirmed the candidate owned merchant feed quality, decided blocking validations and led the quality forum; confirmed employment dates.",
+     "signalType": "ownership",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Verify the candidate's direct accountability to the VP of data and the specific validation definitions and hand-over conditions for each release."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_1",
+     "requirementId": "req_3a9e8618bb6d",
+     "question": "Can you provide the specific validation definitions and hand-over conditions for each release?",
+     "evidenceTarget": "Validation definitions and hand-over conditions for each release."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's direct accountability to the VP of data.",
+    "Confirm the specific validation definitions and hand-over conditions for each release."
+   ],
+   "auditSummary": "The materials establish the candidate's ownership of merchant feed quality, validation service development, and forum leadership. They do not establish the candidate's direct accountability to the VP of data or the specific validation definitions and hand-over conditions for each release.",
+   "limitations": [
+    "The materials do not establish the candidate's direct accountability to the VP of data.",
+    "The materials do not establish the specific validation definitions and hand-over conditions for each release."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

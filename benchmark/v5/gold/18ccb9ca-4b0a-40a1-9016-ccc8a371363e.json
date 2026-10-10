@@ -1,0 +1,84 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "18ccb9ca-4b0a-40a1-9016-ccc8a371363e",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_b3371f5f01ad",
+   "canonicalProposition": "The candidate designed an eight-week side-by-side trial in 12 stores in which planners kept ordering from the existing system.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_a58e54ae7746",
+    "src_df62c22917a4"
+   ],
+   "relevantRequirementIds": [
+    "req_920b8d45126a"
+   ],
+   "boundaryCategory": "non_production_environment_preserved",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the trial design and the reference check confirms it in writing."
+  },
+  {
+   "atomicPropositionId": "prop_3f9446e0486e",
+   "canonicalProposition": "The candidate built a LightGBM forecast for 900 fresh-produce lines at store-day level from two years of till data.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_cd1045c48097"
+   ],
+   "relevantRequirementIds": [
+    "req_c7be24822a00"
+   ],
+   "boundaryCategory": "documented_task_and_tooling",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the model directly."
+  },
+  {
+   "atomicPropositionId": "prop_5707b142460b",
+   "canonicalProposition": "The candidate put the fresh-produce forecast into production in the replenishment system for all 180 stores from week 32 and monitored its accuracy.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_f45bf05b5e1e"
+   ],
+   "boundaryCategory": "planned_rollout_presented_as_production",
+   "criticality": "critical",
+   "rationale": "The rollout line in the readout is a plan subject to board approval, and the trial sources say orders came from the existing system throughout; no source says the model drove replenishment in production. The deployment rule forbids describing a trial as production use."
+  }
+ ],
+ "requirementStatus": {
+  "req_c7be24822a00": "supported",
+  "req_3053d9527f5a": "supported",
+  "req_f45bf05b5e1e": "partial_evidence",
+  "req_920b8d45126a": "supported",
+  "req_9de5b88af25a": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_a58e54ae7746",
+  "src_26e6e91ffbdb"
+ ],
+ "expectedGap": "Only the side-by-side trial is documented; production use in a replenishment system and post-release accuracy monitoring are not.",
+ "expectedBoundaryNote": "Keep the forecast model and the 12-store side-by-side trial as documented; keep the rollout line as a plan subject to board approval.",
+ "permittedFollowUpTargets": [
+  "Ask whether the supply-chain board approved the rollout, whether the model ever placed replenishment orders in production, and who monitored its accuracy afterwards."
+ ],
+ "validClaimSignatures": [
+  "side-by-side trial",
+  "900 fresh-produce lines"
+ ],
+ "trap": {
+  "propositionId": "prop_5707b142460b",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_f45bf05b5e1e"
+  ],
+  "signatures": [
+   "all 180 stores",
+   "from week 32"
+  ],
+  "baitSourceIds": [
+   "src_26e6e91ffbdb"
+  ]
+ }
+}

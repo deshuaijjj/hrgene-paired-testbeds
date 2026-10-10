@@ -1,0 +1,255 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "f1684943-d5de-4b82-a0a7-50f029282e89.C1",
+ "case_id": "f1684943-d5de-4b82-a0a7-50f029282e89",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 10685,
+  "promptWords": 1412
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 40.852
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2779,
+ "eval_count": 1850,
+ "prompt_eval_duration_ns": 18777000,
+ "eval_duration_ns": 32686008000,
+ "total_duration_ns": 40850003208,
+ "thinking": "We need to produce JSON with schema. Need to extract claims from resume. Ensure citations. Let's craft optimizedCv with claims referencing sources. Use same language en. Provide evidenceBoundary sentence. Then hiringEvidencePacket with requirementEvidenceMap covering all requirementIds. Use status based on sources.\n\nWe have sources for each requirement. Let's map:\n\nreq_d2473c4424e7: keeps per-customer forecast. Source src_4f2757e89e1b supports. status supported.\n\nreq_fef98f502f8d: turns forecast into index and storage plans. Source src_5c55eb13bcbe supports. status supported.\n\nreq_6998dd555522: reduces capacity-related incidents. Source src_e78f067534d5 supports. status supported.\n\nreq_251fe9ac4ad0: takes capacity changes through platform and customer teams and records approvals. Source src_d4be3a354233 supports. status supported.\n\nreq_b0cecdae92ee: keeps assumptions note per cycle. Source src_900032998827 supports. status supported.\n\nAll supported. No gaps.\n\nUnsupported claims? None.\n\nMissingEvidenceGaps empty.\n\nInterviewSignalRisks: maybe recruiter logistics note? Not job-related. Could include but not necessary. But we can include risk: source src_758e62cbbfa8 about start date preference. Not job-related. So signalType: \"logistics\". Not tied to job evidence. severity low. recommendedHandling: verify availability.\n\nFollowUpQuestions: none needed.\n\nHumanReviewChecklist: maybe \"Verify incident count source\" etc. But we can include items.\n\nAuditSummary: summary.\n\nLimitations: maybe limited to provided sources.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_b06ad61ac13380b3\",\"targetRoleTitle\":\"Capacity Planning Analyst, Enterprise Knowledge Base\",\"professionalSummary\":[\"Keeps a per-customer load model that predicts search queries and sync volume from user counts and document growth; recalibrated monthly against the platform metrics warehouse. (src_4f2757e89e1b)\",\"Turns each quarter's forecast into an index-shard and storage plan presented to the quarterly planning meeting with the platform team. (src_5c55eb13bcbe)\",\"Reduces capacity-related incidents by applying shard rebalancing plans, decreasing incidents from 7 to 2 in the second half of the year. (src_e78f067534d5)\",\"Facilitates capacity changes through quarterly planning meetings with platform and customer teams, recording approvals from the platform lead and communication handled by customer teams. (src_d4be3a354233)\",\"Maintains an assumptions note per planning cycle covering model inputs, exclusions such as bulk document imports, and hand‑over items for the next cycle. (src_900032998827)\"],\"experienceHighlights\":[\"Per-customer load model kept and recalibrated monthly. (src_4f2757e89e1b)\",\"Forecast turned into index and storage plans. (src_5c55eb13bcbe)\",\"Incident reduction achieved through shard rebalancing. (src_e78f067534d5)\",\"Capacity change approvals recorded. (src_d4be3a354233)\",\"Assumptions notes maintained each cycle. (src_900032998827)\"],\"projectsAndWorkSamples\":[\"Work sample: a year of the incident register filtered to capacity-related incidents with baseline and rebalancing plan marked, plus one cycle's assumptions note. (src_5b8c694db91a)\"],\"skills\":[\"Forecasting\",\"Index and storage planning\",\"Incident analysis\",\"Stakeholder coordination\",\"Documentation\"],\"evidenceBoundary\":\"The provided resume and work sample sources establish the candidate’s activities and outcomes related to capacity planning, forecasting, incident reduction, approval recording, and assumptions documentation, but do not provide independent verification beyond the cited internal references.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Capacity Planning Analyst, Enterprise Knowledge Base\",\"jobDescriptionSource\":\"jd_0365b9ee87d24e40\",\"requirementIds\":[\"req_d2473c4424e7\",\"req_fef98f502f8d\",\"req_6998dd555522\",\"req_251fe9ac4ad0\",\"req_b0cecdae92ee\"]},\"candidate\":{\"candidateId\":\"cand_b06ad61ac13380b3\",\"sources\":[\"src_4f2757e89e1b\",\"src_5c55eb13bcbe\",\"src_e78f067534d5\",\"src_d4be3a354233\",\"src_900032998827\",\"src_5b8c694db91a\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_d2473c4424e7\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4f2757e89e1b\",\"text\":\"Kept the per-customer load model that predicts search queries and sync volume from user counts and document growth; every month I recalibrated it against the platform metrics warehouse.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_fef98f502f8d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_5c55eb13bcbe\",\"text\":\"Turned each quarter's forecast into an index-shard and storage plan that the platform team and I took to the quarterly planning meeting.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of activity\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6998dd555522\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e78f067534d5\",\"text\":\"Capacity-related incidents fell from 7 in the first half of the year to 2 in the second half after the shard rebalancing plan was applied, as counted in the platform incident register against its published baseline of 7 incidents per half-year.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct incident count comparison\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_251fe9ac4ad0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d4be3a354233\",\"text\":\"Took capacity changes through the quarterly planning meeting with the platform and customer teams; the platform lead approved shard changes and the customer teams handled communication with their accounts.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of approval process\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b0cecdae92ee\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_900032998827\",\"text\":\"Kept an assumptions note per cycle covering the model inputs, the fact that bulk document imports sat outside the forecast, and what the next cycle inherited.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Keeps a per-customer load model that predicts search queries and sync volume from user counts and document growth; recalibrated monthly against the platform metrics warehouse.\",\"supportingRequirementIds\":[\"req_d2473c4424e7\"],\"sourceIds\":[\"src_4f2757e89e1b\"],\"evidenceStrength\":\"high\",\"witness\":\"Kept the per-customer load model that predicts search queries and sync volume from user counts and document growth; every month I recalibrated it against the platform metrics warehouse.\"},{\"claim\":\"Turns each quarter's forecast into an index-shard and storage plan presented to the quarterly planning meeting with the platform team.\",\"supportingRequirementIds\":[\"req_fef98f502f8d\"],\"sourceIds\":[\"src_5c55eb13bcbe\"],\"evidenceStrength\":\"high\",\"witness\":\"Turned each quarter's forecast into an index-shard and storage plan that the platform team and I took to the quarterly planning meeting.\"},{\"claim\":\"Reduces capacity-related incidents by applying shard rebalancing plans, decreasing incidents from 7 to 2 in the second half of the year.\",\"supportingRequirementIds\":[\"req_6998dd555522\"],\"sourceIds\":[\"src_e78f067534d5\"],\"evidenceStrength\":\"high\",\"witness\":\"Capacity-related incidents fell from 7 in the first half of the year to 2 in the second half after the shard rebalancing plan was applied, as counted in the platform incident register against its published baseline of 7 incidents per half-year.\"},{\"claim\":\"Facilitates capacity changes through quarterly planning meetings with platform and customer teams, recording approvals from the platform lead and communication handled by customer teams.\",\"supportingRequirementIds\":[\"req_251fe9ac4ad0\"],\"sourceIds\":[\"src_d4be3a354233\"],\"evidenceStrength\":\"high\",\"witness\":\"Took capacity changes through the quarterly planning meeting with the platform and customer teams; the platform lead approved shard changes and the customer teams handled communication with their accounts.\"},{\"claim\":\"Maintains an assumptions note per planning cycle covering model inputs, exclusions such as bulk document imports, and hand‑over items for the next cycle.\",\"supportingRequirementIds\":[\"req_b0cecdae92ee\"],\"sourceIds\":[\"src_900032998827\"],\"evidenceStrength\":\"high\",\"witness\":\"Kept an assumptions note per cycle covering the model inputs, the fact that bulk document imports sat outside the forecast, and what the next cycle inherited.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[{\"sourceId\":\"src_758e62cbbfa8\",\"text\":\"Recruiter logistics note: prefers to start next quarter; can join a planning workshop on site before then.\",\"signalType\":\"logistics\",\"jobRelatedBoundary\":\"false\",\"severity\":\"low\",\"recommendedHandling\":\"Verify candidate availability and onboarding timeline.\"}],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that incident counts are sourced from the platform incident register.\",\"Confirm that the shard rebalancing plan was indeed the candidate’s proposal.\",\"Ensure that the assumptions note includes all required limitations and hand‑over items.\"],\"auditSummary\":\"All job requirements are directly supported by the candidate’s resume and work sample sources. No evidence gaps or insufficient evidence were identified. The only interview signal relates to logistics and does not impact job-related competency assessment.\",\"limitations\":[\"Evidence is limited to internal references provided by the candidate; independent verification is not included.\"]}}",
+ "content_sha256": "24c583f906c75db19ee88e152a9a1210857d5442e6628b9ddaf5ca0d7604463f",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_b06ad61ac13380b3",
+   "targetRoleTitle": "Capacity Planning Analyst, Enterprise Knowledge Base",
+   "professionalSummary": [
+    "Keeps a per-customer load model that predicts search queries and sync volume from user counts and document growth; recalibrated monthly against the platform metrics warehouse. (src_4f2757e89e1b)",
+    "Turns each quarter's forecast into an index-shard and storage plan presented to the quarterly planning meeting with the platform team. (src_5c55eb13bcbe)",
+    "Reduces capacity-related incidents by applying shard rebalancing plans, decreasing incidents from 7 to 2 in the second half of the year. (src_e78f067534d5)",
+    "Facilitates capacity changes through quarterly planning meetings with platform and customer teams, recording approvals from the platform lead and communication handled by customer teams. (src_d4be3a354233)",
+    "Maintains an assumptions note per planning cycle covering model inputs, exclusions such as bulk document imports, and hand‑over items for the next cycle. (src_900032998827)"
+   ],
+   "experienceHighlights": [
+    "Per-customer load model kept and recalibrated monthly. (src_4f2757e89e1b)",
+    "Forecast turned into index and storage plans. (src_5c55eb13bcbe)",
+    "Incident reduction achieved through shard rebalancing. (src_e78f067534d5)",
+    "Capacity change approvals recorded. (src_d4be3a354233)",
+    "Assumptions notes maintained each cycle. (src_900032998827)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: a year of the incident register filtered to capacity-related incidents with baseline and rebalancing plan marked, plus one cycle's assumptions note. (src_5b8c694db91a)"
+   ],
+   "skills": [
+    "Forecasting",
+    "Index and storage planning",
+    "Incident analysis",
+    "Stakeholder coordination",
+    "Documentation"
+   ],
+   "evidenceBoundary": "The provided resume and work sample sources establish the candidate’s activities and outcomes related to capacity planning, forecasting, incident reduction, approval recording, and assumptions documentation, but do not provide independent verification beyond the cited internal references."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Capacity Planning Analyst, Enterprise Knowledge Base",
+    "jobDescriptionSource": "jd_0365b9ee87d24e40",
+    "requirementIds": [
+     "req_d2473c4424e7",
+     "req_fef98f502f8d",
+     "req_6998dd555522",
+     "req_251fe9ac4ad0",
+     "req_b0cecdae92ee"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_b06ad61ac13380b3",
+    "sources": [
+     "src_4f2757e89e1b",
+     "src_5c55eb13bcbe",
+     "src_e78f067534d5",
+     "src_d4be3a354233",
+     "src_900032998827",
+     "src_5b8c694db91a"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d2473c4424e7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4f2757e89e1b",
+       "text": "Kept the per-customer load model that predicts search queries and sync volume from user counts and document growth; every month I recalibrated it against the platform metrics warehouse.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fef98f502f8d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5c55eb13bcbe",
+       "text": "Turned each quarter's forecast into an index-shard and storage plan that the platform team and I took to the quarterly planning meeting.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of activity"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6998dd555522",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e78f067534d5",
+       "text": "Capacity-related incidents fell from 7 in the first half of the year to 2 in the second half after the shard rebalancing plan was applied, as counted in the platform incident register against its published baseline of 7 incidents per half-year.",
+       "evidenceStrength": "high",
+       "notes": "Direct incident count comparison"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_251fe9ac4ad0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d4be3a354233",
+       "text": "Took capacity changes through the quarterly planning meeting with the platform and customer teams; the platform lead approved shard changes and the customer teams handled communication with their accounts.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of approval process"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b0cecdae92ee",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_900032998827",
+       "text": "Kept an assumptions note per cycle covering the model inputs, the fact that bulk document imports sat outside the forecast, and what the next cycle inherited.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Keeps a per-customer load model that predicts search queries and sync volume from user counts and document growth; recalibrated monthly against the platform metrics warehouse.",
+     "supportingRequirementIds": [
+      "req_d2473c4424e7"
+     ],
+     "sourceIds": [
+      "src_4f2757e89e1b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the per-customer load model that predicts search queries and sync volume from user counts and document growth; every month I recalibrated it against the platform metrics warehouse."
+    },
+    {
+     "claim": "Turns each quarter's forecast into an index-shard and storage plan presented to the quarterly planning meeting with the platform team.",
+     "supportingRequirementIds": [
+      "req_fef98f502f8d"
+     ],
+     "sourceIds": [
+      "src_5c55eb13bcbe"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Turned each quarter's forecast into an index-shard and storage plan that the platform team and I took to the quarterly planning meeting."
+    },
+    {
+     "claim": "Reduces capacity-related incidents by applying shard rebalancing plans, decreasing incidents from 7 to 2 in the second half of the year.",
+     "supportingRequirementIds": [
+      "req_6998dd555522"
+     ],
+     "sourceIds": [
+      "src_e78f067534d5"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Capacity-related incidents fell from 7 in the first half of the year to 2 in the second half after the shard rebalancing plan was applied, as counted in the platform incident register against its published baseline of 7 incidents per half-year."
+    },
+    {
+     "claim": "Facilitates capacity changes through quarterly planning meetings with platform and customer teams, recording approvals from the platform lead and communication handled by customer teams.",
+     "supportingRequirementIds": [
+      "req_251fe9ac4ad0"
+     ],
+     "sourceIds": [
+      "src_d4be3a354233"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took capacity changes through the quarterly planning meeting with the platform and customer teams; the platform lead approved shard changes and the customer teams handled communication with their accounts."
+    },
+    {
+     "claim": "Maintains an assumptions note per planning cycle covering model inputs, exclusions such as bulk document imports, and hand‑over items for the next cycle.",
+     "supportingRequirementIds": [
+      "req_b0cecdae92ee"
+     ],
+     "sourceIds": [
+      "src_900032998827"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept an assumptions note per cycle covering the model inputs, the fact that bulk document imports sat outside the forecast, and what the next cycle inherited."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_758e62cbbfa8",
+     "text": "Recruiter logistics note: prefers to start next quarter; can join a planning workshop on site before then.",
+     "signalType": "logistics",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify candidate availability and onboarding timeline."
+    }
+   ],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that incident counts are sourced from the platform incident register.",
+    "Confirm that the shard rebalancing plan was indeed the candidate’s proposal.",
+    "Ensure that the assumptions note includes all required limitations and hand‑over items."
+   ],
+   "auditSummary": "All job requirements are directly supported by the candidate’s resume and work sample sources. No evidence gaps or insufficient evidence were identified. The only interview signal relates to logistics and does not impact job-related competency assessment.",
+   "limitations": [
+    "Evidence is limited to internal references provided by the candidate; independent verification is not included."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:33:27.140860+00:00"
+}

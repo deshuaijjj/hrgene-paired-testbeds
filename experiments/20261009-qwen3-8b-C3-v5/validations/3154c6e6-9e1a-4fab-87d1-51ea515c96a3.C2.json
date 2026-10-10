@@ -1,0 +1,206 @@
+{
+ "request_id": "3154c6e6-9e1a-4fab-87d1-51ea515c96a3.C2",
+ "case_id": "3154c6e6-9e1a-4fab-87d1-51ea515c96a3",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "evidence_text_not_verbatim",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[1].evidence[0].text",
+    "message": "requirement evidence text is not a verbatim passage of its source",
+    "witness": {
+     "text": "Wrote 14 illustrated work instructions for receiving, put, and replenishment on the handheld scanners, each with photographs of the scanner screens and the exce",
+     "sourceId": "src_68db04388694"
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+    "message": "causal/comparative wording not present in the cited sources: cut",
+    "witness": {
+     "terms": [
+      "cut"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "causal/comparative wording not present in the cited sources: cut",
+    "witness": {
+     "terms": [
+      "cut"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.projectsAndWorkSamples[0]",
+    "message": "production/live wording not licensed by the cited sources: live operation",
+    "witness": {
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "production/live wording not licensed by the cited sources: live operation",
+    "witness": {
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Has taken a warehouse system change into live operation on a working shift and supported users after cut-over."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (live operation) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_695582c237b7",
+     "family": "PRODUCTION",
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_e6bdbc2fb2db"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 1,
+    "value": "UNRESOLVED"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

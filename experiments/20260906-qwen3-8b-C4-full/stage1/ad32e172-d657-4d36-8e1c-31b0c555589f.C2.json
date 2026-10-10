@@ -1,0 +1,594 @@
+{
+ "request_id": "ad32e172-d657-4d36-8e1c-31b0c555589f.C2",
+ "case_id": "ad32e172-d657-4d36-8e1c-31b0c555589f",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing statu",
+     "sourceIds": [
+      "src_ae4021c45db8",
+      "src_5209e114cd9f"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [OWN] not licensed by the cited sources: owns",
+    "witness": {
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441",
+      "src_5313fbf2c277"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "END_TO_END"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [OWN] not licensed by the cited sources: owns",
+    "witness": {
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441",
+      "src_5313fbf2c277"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "END_TO_END"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its ownership term(s) [OWN] (owns) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_09d65247a8e6",
+     "family": "OWN",
+     "terms": [
+      "owns"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "subjective/hearsay source cited as support: src_5313fbf2c277",
+    "witness": {
+     "sourceIds": [
+      "src_5313fbf2c277"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "subjective/hearsay source cited as support: src_5313fbf2c277",
+    "witness": {
+     "sourceIds": [
+      "src_5313fbf2c277"
+     ],
+     "text": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.hiringEvidencePacket.supportedClaims[1]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[0]",
+   "detail": "req_09d65247a8e6: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off."
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_71b08559a72df023",
+   "targetRoleTitle": "Delivery Project Coordinator, Customer Ticketing System",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Maintains the implementation plan, the action log and the consultants' schedule in the project tool.",
+     "sourceIds": [
+      "src_ae4021c45db8",
+      "src_5209e114cd9f"
+     ],
+     "requirementIds": [
+      "req_414ad3df703e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing status page current each week."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "Runs the weekly customer status call and records decisions and actions.",
+     "sourceIds": [
+      "src_8073721bbcf0",
+      "src_5209e114cd9f"
+     ],
+     "requirementIds": [
+      "req_30acab642b10"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_004",
+     "text": "Escalates risks to the delivery manager with a recommended option and records own responsibility boundaries.",
+     "sourceIds": [
+      "src_e82a50c8b441"
+     ],
+     "requirementIds": [
+      "req_69421b18933f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager."
+    }
+   ],
+   "evidenceBoundary": "The materials establish that the candidate owns implementation projects end-to-end, maintains the project plan and action log, runs weekly status calls, escalates risks, and produces close-out reports. They do not establish that the candidate personally signed off on go-live or managed consultant assignments independently."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience and work samples align with the role's requirements, but some aspects require further clarification."
+   },
+   "role": {
+    "roleTitle": "Delivery Project Coordinator, Customer Ticketing System",
+    "jobDescriptionSource": "jd_8e28c983a05e6c61",
+    "requirementIds": [
+     "req_09d65247a8e6",
+     "req_414ad3df703e",
+     "req_30acab642b10",
+     "req_69421b18933f",
+     "req_59ab057a4e86"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_71b08559a72df023",
+    "sources": [
+     "src_ae4021c45db8",
+     "src_8073721bbcf0",
+     "src_e82a50c8b441",
+     "src_1052e793b055",
+     "src_5209e114cd9f",
+     "src_f666d83b1a0a",
+     "src_5313fbf2c277",
+     "src_d80973926e59"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_09d65247a8e6",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_e82a50c8b441",
+       "text": "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager.",
+       "evidenceStrength": "high",
+       "notes": "The candidate escalated risks and signed off on go-live with the delivery manager."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's own element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_414ad3df703e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ae4021c45db8",
+       "text": "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing status page current each week.",
+       "evidenceStrength": "high",
+       "notes": "The candidate maintained the project plan, action log, and consultant schedule."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_30acab642b10",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8073721bbcf0",
+       "text": "Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager.",
+       "evidenceStrength": "high",
+       "notes": "The candidate prepared and hosted the weekly customer status call."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_69421b18933f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e82a50c8b441",
+       "text": "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager.",
+       "evidenceStrength": "high",
+       "notes": "The candidate escalated risks and recorded responsibility boundaries."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_59ab057a4e86",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1052e793b055",
+       "text": "Drafted the close-out report for each implementation from the action log and the call minutes, listing open limitations and the hand-over items for customer support.",
+       "evidenceStrength": "high",
+       "notes": "The candidate produced the project close-out report with limitations and hand-over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintains the implementation plan, the action log and the consultants' schedule in the project tool.",
+     "supportingRequirementIds": [
+      "req_414ad3df703e"
+     ],
+     "sourceIds": [
+      "src_ae4021c45db8",
+      "src_5209e114cd9f"
+     ],
+     "evidenceStrength": "high",
+     "witness": ""
+    },
+    {
+     "claim": "Runs the weekly customer status call and records decisions and actions.",
+     "supportingRequirementIds": [
+      "req_30acab642b10"
+     ],
+     "sourceIds": [
+      "src_8073721bbcf0",
+      "src_5209e114cd9f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager."
+    },
+    {
+     "claim": "Escalates risks to the delivery manager with a recommended option and records own responsibility boundaries.",
+     "supportingRequirementIds": [
+      "req_69421b18933f"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager."
+    },
+    {
+     "claim": "Produces the project close-out report with limitations and hand-over conditions for customer support.",
+     "supportingRequirementIds": [
+      "req_59ab057a4e86"
+     ],
+     "sourceIds": [
+      "src_1052e793b055"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Drafted the close-out report for each implementation from the action log and the call minutes, listing open limitations and the hand-over items for customer support."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Held the customer go-live sign-off independently.",
+     "reason": "The materials do not establish that the candidate personally signed off on go-live; it was signed off by the customer's project sponsor with the delivery manager.",
+     "requiredFollowUp": "Ask the candidate to clarify whether they personally signed off on go-live or if the sponsor and delivery manager did."
+    },
+    {
+     "claim": "Owns assigned implementation projects end-to-end and holds the customer go-live sign-off.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_09d65247a8e6",
+     "severity": "medium",
+     "gap": "The materials do not establish that the candidate personally signed off on go-live; it was signed off by the customer's project sponsor with the delivery manager."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_5313fbf2c277",
+     "text": "Candidate said she 'ran the implementations end-to-end' and that the delivery manager 'was mostly there for the commercials'.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to clarify whether they personally signed off on go-live or if the sponsor and delivery manager did."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_09d65247a8e6",
+     "question": "Did you personally sign off on the customer go-live, or was it signed off by the customer's project sponsor with the delivery manager?",
+     "evidenceTarget": "Clarify whether the candidate personally signed off on go-live."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify whether the candidate personally signed off on go-live.",
+    "Confirm whether the candidate managed consultant assignments independently.",
+    "Assess the candidate's ability to escalate risks and record responsibility boundaries."
+   ],
+   "auditSummary": "The materials establish that the candidate owns implementation projects end-to-end, maintains the project plan and action log, runs weekly status calls, escalates risks, and produces close-out reports. They do not establish that the candidate personally signed off on go-live or managed consultant assignments independently.",
+   "limitations": [
+    "The materials do not establish that the candidate personally signed off on go-live.",
+    "The materials do not establish that the candidate managed consultant assignments independently."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

@@ -1,0 +1,334 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "feb08d53-3c06-4188-a1c5-c0479a9ec125.C2",
+ "case_id": "feb08d53-3c06-4188-a1c5-c0479a9ec125",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14513,
+  "promptWords": 1758
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 66.397
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3856,
+ "eval_count": 2959,
+ "prompt_eval_duration_ns": 18837000,
+ "eval_duration_ns": 55127777000,
+ "total_duration_ns": 66393656917,
+ "thinking": "We need to produce JSON with schema. Use provided sources. All claims must cite source. No unsupported claims. All requirements must be mapped. All evidence from resume sources. No subjective. All numbers are from source. Provide evidenceBoundary. Let's craft.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Experienced Backend Engineer with proven deployment, on-call, queue monitoring, test window testing, and documentation for trade settlement service.\" Need source. Use src_9688e6247801 for deployment, src_a708492aca95 for on-call, src_f5ac8b17030e for queue, src_e8796e7fe9bb for test, src_ba46bf749dd9 for documentation. Provide witness.\n\nexperienceHighlights: list claims each with source. projectsAndWorkSamples: maybe mention work sample source. skills: list skills like Deployment, Incident Management, Queue Monitoring, Test Window, Documentation.\n\nevidenceBoundary: one sentence: \"The resume and work sample sources establish the candidate’s deployment, on-call, queue monitoring, test window testing, and documentation activities for the trade settlement service; they do not provide independent verification beyond the cited records.\"\n\nHiringEvidencePacket: decisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement \"Human review required to assess fit based on evidence and gaps.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds used.\n\nrequirementEvidenceMap: for each requirement id, status supported, evidence array with sourceId and text, evidenceStrength high maybe. missingEvidence empty.\n\nsupportedClaims: list claims with supportingRequirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe items: \"Verify independent confirmation of deployment records\", \"Confirm on-call incident handling details\", etc. But we can keep minimal.\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: maybe \"No external audit of logs provided\".\n\nLet's craft.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_ac5b606f7f5fa2c9\",\n    \"targetRoleTitle\": \"Backend Engineer, Trade Settlement Service\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"claim_1\",\n        \"text\": \"Experienced Backend Engineer with proven deployment, on‑call, queue monitoring, test‑window testing, and documentation for the trade settlement service.\",\n        \"sourceIds\": [\n          \"src_9688e6247801\",\n          \"src_a708492aca95\",\n          \"src_f5ac8b17030e\",\n          \"src_e8796e7fe9bb\",\n          \"src_ba46bf749dd9\"\n        ],\n        \"witness\": \"Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"claim_2\",\n        \"text\": \"Deployed 61 changes to the trade settlement service in production through the deployment pipeline.\",\n        \"sourceIds\": [\n          \"src_9688e6247801\"\n        ],\n        \"witness\": \"Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline.\"\n      },\n      {\n        \"claimId\": \"claim_3\",\n        \"text\": \"Held a place on the settlement on‑call rota and handled production incidents, including clearing a matching backlog 11 minutes before the depository cut‑off.\",\n        \"sourceIds\": [\n          \"src_a708492aca95\"\n        ],\n        \"witness\": \"Held a place on the settlement on‑call rota for the whole period and handled the production incidents that fell on my shifts, including the matching backlog of March 2024 that was cleared eleven minutes before the depository cut‑off; the incident records are in the settlement incident log.\"\n      },\n      {\n        \"claimId\": \"claim_4\",\n        \"text\": \"Watched the live settlement queue on cut‑off days and recorded intervention ownership in the cut‑off log.\",\n        \"sourceIds\": [\n          \"src_f5ac8b17030e\"\n        ],\n        \"witness\": \"Watched the live settlement queue on cut‑off days from the operations bridge, recording in the cut‑off log which interventions were mine and which belonged to the operations desk.\"\n      },\n      {\n        \"claimId\": \"claim_5\",\n        \"text\": \"Developed and tested each matching change against the depository's test window before deployment, with results attached to the change ticket.\",\n        \"sourceIds\": [\n          \"src_e8796e7fe9bb\"\n        ],\n        \"witness\": \"Developed and tested each matching change against the depository's test window before deployment, with the test window results attached to the change ticket.\"\n      },\n      {\n        \"claimId\": \"claim_6\",\n        \"text\": \"Documented the service's known limitations and hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.\",\n        \"sourceIds\": [\n          \"src_ba46bf749dd9\"\n        ],\n        \"witness\": \"Documented the service's known limitations and the hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"claim_7\",\n        \"text\": \"Work sample includes change tickets, deployment records, incident log for March 2024 backlog, and cut‑off log for the same month.\",\n        \"sourceIds\": [\n          \"src_86e1e2ee5af1\"\n        ],\n        \"witness\": \"Work sample: the change tickets and deployment records for the last quarter, the settlement incident log record for the March 2024 backlog and the cut‑off log for the same month.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"claim_8\",\n        \"text\": \"Deployment Pipeline Management\",\n        \"sourceIds\": [\n          \"src_9688e6247801\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_9\",\n        \"text\": \"Incident Management & On‑Call Operations\",\n        \"sourceIds\": [\n          \"src_a708492aca95\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_10\",\n        \"text\": \"Live Queue Monitoring\",\n        \"sourceIds\": [\n          \"src_f5ac8b17030e\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_11\",\n        \"text\": \"Test Window Integration\",\n        \"sourceIds\": [\n          \"src_e8796e7fe9bb\"\n        ],\n        \"witness\": \"\"\n      },\n      {\n        \"claimId\": \"claim_12\",\n        \"text\": \"Technical Documentation\",\n        \"sourceIds\": [\n          \"src_ba46bf749dd9\"\n        ],\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The resume and work sample sources establish the candidate’s deployment, on‑call, queue monitoring, test‑window testing, and documentation activities for the trade settlement service; they do not provide independent verification beyond the cited records.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence and gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Backend Engineer, Trade Settlement Service\",\n      \"jobDescriptionSource\": \"jd_41906ccb80eedb02\",\n      \"requirementIds\": [\n        \"req_0462231e77f2\",\n        \"req_73621ed2cb84\",\n        \"req_d1bda012a3bd\",\n        \"req_e6f58fbd8fbc\",\n        \"req_c026a5999208\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_ac5b606f7f5fa2c9\",\n      \"sources\": [\n        \"src_9688e6247801\",\n        \"src_a708492aca95\",\n        \"src_f5ac8b17030e\",\n        \"src_e8796e7fe9bb\",\n        \"src_ba46bf749dd9\",\n        \"src_86e1e2ee5af1\",\n        \"src_48f305ad59e1\",\n        \"src_8f73703aac86\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_0462231e77f2\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9688e6247801\",\n            \"text\": \"Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_73621ed2cb84\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a708492aca95\",\n            \"text\": \"Held a place on the settlement on‑call rota for the whole period and handled the production incidents that fell on my shifts, including the matching backlog of March 2024 that was cleared eleven minutes before the depository cut‑off; the incident records are in the settlement incident log.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d1bda012a3bd\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_f5ac8b17030e\",\n            \"text\": \"Watched the live settlement queue on cut‑off days from the operations bridge, recording in the cut‑off log which interventions were mine and which belonged to the operations desk.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_e6f58fbd8fbc\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_e8796e7fe9bb\",\n            \"text\": \"Developed and tested each matching change against the depository's test window before deployment, with the test window results attached to the change ticket.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_c026a5999208\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_ba46bf749dd9\",\n            \"text\": \"Documented the service's known limitations and the hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Deployed 61 changes to the trade settlement service in production through the deployment pipeline.\",\n        \"supportingRequirementIds\": [\n          \"req_0462231e77f2\"\n        ],\n        \"sourceIds\": [\n          \"src_9688e6247801\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline.\"\n      },\n      {\n        \"claim\": \"Held a place on the settlement on‑call rota and handled production incidents, including clearing a matching backlog 11 minutes before the depository cut‑off.\",\n        \"supportingRequirementIds\": [\n          \"req_73621ed2cb84\"\n        ],\n        \"sourceIds\": [\n          \"src_a708492aca95\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Held a place on the settlement on‑call rota for the whole period and handled the production incidents that fell on my shifts, including the matching backlog of March 2024 that was cleared eleven minutes before the depository cut‑off; the incident records are in the settlement incident log.\"\n      },\n      {\n        \"claim\": \"Watched the live settlement queue on cut‑off days and recorded intervention ownership in the cut‑off log.\",\n        \"supportingRequirementIds\": [\n          \"req_d1bda012a3bd\"\n        ],\n        \"sourceIds\": [\n          \"src_f5ac8b17030e\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Watched the live settlement queue on cut‑off days from the operations bridge, recording in the cut‑off log which interventions were mine and which belonged to the operations desk.\"\n      },\n      {\n        \"claim\": \"Developed and tested each matching change against the depository's test window before deployment, with results attached to the change ticket.\",\n        \"supportingRequirementIds\": [\n          \"req_e6f58fbd8fbc\"\n        ],\n        \"sourceIds\": [\n          \"src_e8796e7fe9bb\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Developed and tested each matching change against the depository's test window before deployment, with the test window results attached to the change ticket.\"\n      },\n      {\n        \"claim\": \"Documented the service's known limitations and hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.\",\n        \"supportingRequirementIds\": [\n          \"req_c026a5999208\"\n        ],\n        \"sourceIds\": [\n          \"src_ba46bf749dd9\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Documented the service's known limitations and the hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Verify that the deployment records in the pipeline correspond to the 61 changes cited.\",\n      \"Confirm that the incident log entries for March 2024 match the described backlog resolution.\",\n      \"Ensure that the cut‑off log accurately reflects ownership of interventions.\",\n      \"Validate that test window results were indeed attached to each change ticket.\",\n      \"Check that documentation in the runbook aligns with the closure notes.\"\n    ],\n    \"auditSummary\": \"All five job requirements are supported by explicit statements in the candidate’s resume and work sample, with high‑strength evidence from the cited sources. No gaps or unsupported claims are identified. Human review is required to confirm the authenticity of the records and to assess overall fit.\",\n    \"limitations\": [\n      \"The evidence is limited to the candidate’s own documentation; independent audit or third‑party verification is not provided.\"\n    ]\n  }\n}",
+ "content_sha256": "0915e496638b0b2e98e70e9ba141b4924e7110dff471f35ce8a5a809e229a5bc",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_ac5b606f7f5fa2c9",
+   "targetRoleTitle": "Backend Engineer, Trade Settlement Service",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Experienced Backend Engineer with proven deployment, on‑call, queue monitoring, test‑window testing, and documentation for the trade settlement service.",
+     "sourceIds": [
+      "src_9688e6247801",
+      "src_a708492aca95",
+      "src_f5ac8b17030e",
+      "src_e8796e7fe9bb",
+      "src_ba46bf749dd9"
+     ],
+     "witness": "Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Deployed 61 changes to the trade settlement service in production through the deployment pipeline.",
+     "sourceIds": [
+      "src_9688e6247801"
+     ],
+     "witness": "Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Held a place on the settlement on‑call rota and handled production incidents, including clearing a matching backlog 11 minutes before the depository cut‑off.",
+     "sourceIds": [
+      "src_a708492aca95"
+     ],
+     "witness": "Held a place on the settlement on‑call rota for the whole period and handled the production incidents that fell on my shifts, including the matching backlog of March 2024 that was cleared eleven minutes before the depository cut‑off; the incident records are in the settlement incident log."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Watched the live settlement queue on cut‑off days and recorded intervention ownership in the cut‑off log.",
+     "sourceIds": [
+      "src_f5ac8b17030e"
+     ],
+     "witness": "Watched the live settlement queue on cut‑off days from the operations bridge, recording in the cut‑off log which interventions were mine and which belonged to the operations desk."
+    },
+    {
+     "claimId": "claim_5",
+     "text": "Developed and tested each matching change against the depository's test window before deployment, with results attached to the change ticket.",
+     "sourceIds": [
+      "src_e8796e7fe9bb"
+     ],
+     "witness": "Developed and tested each matching change against the depository's test window before deployment, with the test window results attached to the change ticket."
+    },
+    {
+     "claimId": "claim_6",
+     "text": "Documented the service's known limitations and hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.",
+     "sourceIds": [
+      "src_ba46bf749dd9"
+     ],
+     "witness": "Documented the service's known limitations and the hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_7",
+     "text": "Work sample includes change tickets, deployment records, incident log for March 2024 backlog, and cut‑off log for the same month.",
+     "sourceIds": [
+      "src_86e1e2ee5af1"
+     ],
+     "witness": "Work sample: the change tickets and deployment records for the last quarter, the settlement incident log record for the March 2024 backlog and the cut‑off log for the same month."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_8",
+     "text": "Deployment Pipeline Management",
+     "sourceIds": [
+      "src_9688e6247801"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "claim_9",
+     "text": "Incident Management & On‑Call Operations",
+     "sourceIds": [
+      "src_a708492aca95"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "claim_10",
+     "text": "Live Queue Monitoring",
+     "sourceIds": [
+      "src_f5ac8b17030e"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "claim_11",
+     "text": "Test Window Integration",
+     "sourceIds": [
+      "src_e8796e7fe9bb"
+     ],
+     "witness": ""
+    },
+    {
+     "claimId": "claim_12",
+     "text": "Technical Documentation",
+     "sourceIds": [
+      "src_ba46bf749dd9"
+     ],
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The resume and work sample sources establish the candidate’s deployment, on‑call, queue monitoring, test‑window testing, and documentation activities for the trade settlement service; they do not provide independent verification beyond the cited records."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Backend Engineer, Trade Settlement Service",
+    "jobDescriptionSource": "jd_41906ccb80eedb02",
+    "requirementIds": [
+     "req_0462231e77f2",
+     "req_73621ed2cb84",
+     "req_d1bda012a3bd",
+     "req_e6f58fbd8fbc",
+     "req_c026a5999208"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_ac5b606f7f5fa2c9",
+    "sources": [
+     "src_9688e6247801",
+     "src_a708492aca95",
+     "src_f5ac8b17030e",
+     "src_e8796e7fe9bb",
+     "src_ba46bf749dd9",
+     "src_86e1e2ee5af1",
+     "src_48f305ad59e1",
+     "src_8f73703aac86"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_0462231e77f2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9688e6247801",
+       "text": "Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_73621ed2cb84",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a708492aca95",
+       "text": "Held a place on the settlement on‑call rota for the whole period and handled the production incidents that fell on my shifts, including the matching backlog of March 2024 that was cleared eleven minutes before the depository cut‑off; the incident records are in the settlement incident log.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d1bda012a3bd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f5ac8b17030e",
+       "text": "Watched the live settlement queue on cut‑off days from the operations bridge, recording in the cut‑off log which interventions were mine and which belonged to the operations desk.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_e6f58fbd8fbc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e8796e7fe9bb",
+       "text": "Developed and tested each matching change against the depository's test window before deployment, with the test window results attached to the change ticket.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c026a5999208",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ba46bf749dd9",
+       "text": "Documented the service's known limitations and the hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Deployed 61 changes to the trade settlement service in production through the deployment pipeline.",
+     "supportingRequirementIds": [
+      "req_0462231e77f2"
+     ],
+     "sourceIds": [
+      "src_9688e6247801"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Deployed sixty‑one changes to the trade settlement service in production through the deployment pipeline between 2022 and 2025, each under a change ticket in my name and a deployment record in the pipeline."
+    },
+    {
+     "claim": "Held a place on the settlement on‑call rota and handled production incidents, including clearing a matching backlog 11 minutes before the depository cut‑off.",
+     "supportingRequirementIds": [
+      "req_73621ed2cb84"
+     ],
+     "sourceIds": [
+      "src_a708492aca95"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Held a place on the settlement on‑call rota for the whole period and handled the production incidents that fell on my shifts, including the matching backlog of March 2024 that was cleared eleven minutes before the depository cut‑off; the incident records are in the settlement incident log."
+    },
+    {
+     "claim": "Watched the live settlement queue on cut‑off days and recorded intervention ownership in the cut‑off log.",
+     "supportingRequirementIds": [
+      "req_d1bda012a3bd"
+     ],
+     "sourceIds": [
+      "src_f5ac8b17030e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Watched the live settlement queue on cut‑off days from the operations bridge, recording in the cut‑off log which interventions were mine and which belonged to the operations desk."
+    },
+    {
+     "claim": "Developed and tested each matching change against the depository's test window before deployment, with results attached to the change ticket.",
+     "supportingRequirementIds": [
+      "req_e6f58fbd8fbc"
+     ],
+     "sourceIds": [
+      "src_e8796e7fe9bb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed and tested each matching change against the depository's test window before deployment, with the test window results attached to the change ticket."
+    },
+    {
+     "claim": "Documented the service's known limitations and hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook.",
+     "supportingRequirementIds": [
+      "req_c026a5999208"
+     ],
+     "sourceIds": [
+      "src_ba46bf749dd9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Documented the service's known limitations and the hand‑over conditions for each change in the change ticket's closure note and in the settlement runbook."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the deployment records in the pipeline correspond to the 61 changes cited.",
+    "Confirm that the incident log entries for March 2024 match the described backlog resolution.",
+    "Ensure that the cut‑off log accurately reflects ownership of interventions.",
+    "Validate that test window results were indeed attached to each change ticket.",
+    "Check that documentation in the runbook aligns with the closure notes."
+   ],
+   "auditSummary": "All five job requirements are supported by explicit statements in the candidate’s resume and work sample, with high‑strength evidence from the cited sources. No gaps or unsupported claims are identified. Human review is required to confirm the authenticity of the records and to assess overall fit.",
+   "limitations": [
+    "The evidence is limited to the candidate’s own documentation; independent audit or third‑party verification is not provided."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T15:22:30.035674+00:00"
+}

@@ -1,0 +1,109 @@
+{
+ "caseId": "1b5f1524-67e2-4249-b2a0-66c2477a9525",
+ "roleTitle": "Software Engineer, Building Controls Platform",
+ "jobDescription": "A facilities engineering firm monitors heating, ventilation and cooling plant across 400 client buildings from a central operations room. Its software engineers build the services that collect controller data over BACnet and Modbus, lead investigations when sites stop reporting, maintain alarm routing for field engineers, test against controller simulators and record design choices in architecture decision records. Site outages are investigated with a written report that names the investigation lead and the corrective actions, and the engineering manager approves each report before it is shared with clients.",
+ "requirements": [
+  "Builds services that collect sensor data from building controllers over BACnet or Modbus.",
+  "Leads root-cause investigations of site outages and writes the investigation report.",
+  "Maintains the alarm-routing service for engineers on call.",
+  "Writes integration tests against controller simulators.",
+  "Authors architecture decision records for the platform."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Software engineer at Halden Building Services (HVAC maintenance for commercial buildings), October 2019 to present, building the Go service that polls building controllers over BACnet and Modbus every minute."
+  },
+  {
+   "type": "resume",
+   "text": "Led the root-cause investigation into the February 2024 loss of data from 31 sites, traced it to a gateway firmware change, and wrote the investigation report with five corrective actions."
+  },
+  {
+   "type": "resume",
+   "text": "Maintained the alarm-routing service that pages the nearest on-call field engineer, adding an escalation step after 15 minutes without acknowledgement and a daily test page to confirm that each engineer's device still receives alerts."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote integration tests that run the polling service against BACnet controller simulators in the CI pipeline."
+  },
+  {
+   "type": "resume",
+   "text": "Commented on two architecture decision records about the choice of message queue for controller events, raising the question of message ordering when a gateway reconnects after an outage."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the anonymised February 2024 investigation report, with the timeline, the gateway firmware change identified as the cause, five corrective actions with owners and dates, and the engineering manager's approval naming the candidate as investigation lead."
+  },
+  {
+   "type": "note",
+   "text": "Reference from the engineering manager, received in writing on 30 September: names the candidate as investigation lead for the February 2024 data-loss incident and for two smaller site outages in 2023."
+  },
+  {
+   "type": "note",
+   "text": "Recruiter logistics note: the candidate can do the technical interview on 15 or 16 October and has a two-month notice period."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate led the root-cause investigation into the February 2024 loss of data from 31 sites and wrote the investigation report with five corrective actions.",
+    "status": "supported",
+    "sources": [
+     2,
+     6,
+     7
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "observed_behaviour_with_documented_example",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the investigation, the work sample is the approved report naming the candidate as lead, and the reference confirms it."
+   },
+   {
+    "text": "The candidate built the Go service that polls building controllers over BACnet and Modbus.",
+    "status": "supported",
+    "sources": [
+     1
+    ],
+    "requirements": [
+     1
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume entry describes the service directly."
+   },
+   {
+    "text": "The candidate wrote integration tests that run the polling service against BACnet controller simulators in CI.",
+    "status": "supported",
+    "sources": [
+     4
+    ],
+    "requirements": [
+     4
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume entry describes the tests directly."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "partial_evidence"
+  ],
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "The candidate commented on two architecture decision records, but no record authored by the candidate is documented.",
+  "expectedBoundaryNote": "Keep the investigation-lead record and the approved report as supported evidence; do not extend it beyond the incidents the reference names.",
+  "followUpTargets": [
+   "Ask whether the candidate has written an architecture decision record, and which decision it captured."
+  ],
+  "validClaimSignatures": [
+   "investigation report",
+   "alarm-routing service"
+  ]
+ }
+}

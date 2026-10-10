@@ -1,0 +1,265 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "3d6257c0-c6a8-4a60-b150-e9585d7342a9.C1",
+ "case_id": "3d6257c0-c6a8-4a60-b150-e9585d7342a9",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 12066,
+  "promptWords": 1609
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 49.369
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3400,
+ "eval_count": 1916,
+ "prompt_eval_duration_ns": 18222000,
+ "eval_duration_ns": 34529256000,
+ "total_duration_ns": 49366485125,
+ "thinking": "We need to craft JSON. Need to cite sources. Let's map requirements.\n\nreq_2787aeec6807: project manager of record. Candidate is workstream manager, not PM of record. So insufficient evidence. missing: evidence of signing charter.\n\nreq_d1d1984b88a8: holds project budget under delegated limits. Candidate had no delegated limit. So insufficient evidence.\n\nreq_b307dfbda29c: runs plant shutdown windows with plant managers and directs assigned project engineers. Candidate supported shutdown windows as workstream manager, not directed engineers. So insufficient evidence.\n\nreq_789cf650af26: plans and tracks retrofit workstreams under stage-gate method. Candidate did plan and track two workstreams. Supported. evidence from src_e626f15de5e2 and src_f3b3b3cac65a. So supported.\n\nreq_5289e46e3e6b: documents project boundaries, risks and hand-over conditions at each stage gate. Candidate wrote boundary notes, risk registers, hand-over notes. Supported. evidence src_1cb5ff25703c.\n\nNow produce optimized CV: only supported claims. So include professional summary: maybe mention experience as workstream manager. But must cite sources. Avoid unsupported claims. So we can state: \"Workstream manager on bottling plant automation retrofit programme, responsible for instrumentation and control-panel workstreams.\" cite src_f3b3b3cac65a. \"Planned and tracked two workstreams under stage-gate method, producing plans, progress reports, and stage-gate inputs.\" cite src_e626f15de5e2. \"Supported plant shutdown windows at four plants as workstream manager, with shutdown plan and decisions held by PM of record and plant manager.\" cite src_1091af96b9c8. \"Authored workstream boundary notes, risk registers, and hand-over notes for each stage gate.\" cite src_1cb5ff25703c. \"Budget responsibility limited to workstream cost tracking against allocation set by PM of record; no delegated spending limit held.\" cite src_05bc94bc6f8b. Avoid claiming PM of record.\n\nProjects and work samples: mention instrumentation workstream plan and progress reports, risk register, hand-over note for gate three. cite src_d6292c560fad.\n\nSkills: project management, stage-gate, plant shutdown support, risk management, documentation.\n\nEvidenceBoundary: materials establish candidate as workstream manager with responsibilities in planning, tracking, shutdown support, documentation, but do not establish that candidate was project manager of record, held delegated budget, or directed engineers.\n\nNow hiring evidence packet.\n\nWe need requirementEvidenceMap for each requirement id.\n\nAlso supportedClaims array: maybe include claim about planning and tracking workstreams, documenting boundaries, etc.\n\nUnsupportedClaims: claims that candidate was PM of record, held budget, directed engineers.\n\nMissingEvidenceGaps: for each insufficient requirement, specify missing evidence.\n\nInterviewSignalRisks: maybe note recruiter screen claim \"senior PM in all but name\" but not tied to evidence. source src_f43dd7c1779d. signal type: unverified claim. severity medium. recommended handling: ask for documentation of charters signed.\n\nFollowUpQuestions: for each missing evidence, ask neutral question.\n\nHumanReviewChecklist: items like verify PM of record status, budget delegation, engineer direction.\n\nAuditSummary: paragraph summarizing.\n\nLimitations: e.g., limited to provided materials, no external verification.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_106ebe4376cdd290\",\"targetRoleTitle\":\"Senior Project Manager, Plant Automation Retrofits\",\"professionalSummary\":[\"Workstream manager on a bottling plant automation retrofit programme for five years, responsible for instrumentation and control‑panel workstreams.\",\"Planned and tracked two workstreams under the programme’s stage‑gate method, producing workstream plans, progress reports and stage‑gate inputs.\",\"Supported plant shutdown windows at four plants as workstream manager, with shutdown plans and decisions held by the project manager of record and the plant manager.\",\"Authored workstream boundary notes, risk registers and hand‑over notes for each stage gate.\",\"Budget responsibility limited to workstream cost tracking against the allocation set by the project manager of record; no delegated spending limit was held.\"],\"experienceHighlights\":[\"Project engineer and workstream manager on a beverage group’s bottling plant automation retrofit programme.\",\"Planned and tracked two workstreams under the programme’s stage‑gate method.\",\"Supported plant shutdown windows at four plants as workstream manager.\",\"Authored workstream boundary notes, risk registers and hand‑over notes for each stage gate.\",\"Managed workstream cost tracking within the allocation set by the project manager of record.\"],\"projectsAndWorkSamples\":[\"Instrumentation workstream plan and progress reports for one retrofit project.\",\"Workstream risk register and hand‑over note for gate three, with programme office document references as verification trail; gate submissions carry the project manager of record’s signature.\"],\"skills\":[\"Project management\",\"Stage‑gate methodology\",\"Plant shutdown coordination\",\"Risk management\",\"Documentation\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience as a workstream manager with responsibilities in planning, tracking, shutdown support, documentation, and cost tracking, but do not establish that the candidate was the project manager of record, held delegated budget authority, or directed project engineers.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Senior Project Manager, Plant Automation Retrofits\",\"jobDescriptionSource\":\"jd_78fd9a8604a53de6\",\"requirementIds\":[\"req_2787aeec6807\",\"req_d1d1984b88a8\",\"req_b307dfbda29c\",\"req_789cf650af26\",\"req_5289e46e3e6b\"]},\"candidate\":{\"candidateId\":\"cand_106ebe4376cdd290\",\"sources\":[\"src_f3b3b3cac65a\",\"src_e626f15de5e2\",\"src_1091af96b9c8\",\"src_1cb5ff25703c\",\"src_05bc94bc6f8b\",\"src_d6292c560fad\",\"src_f43dd7c1779d\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_2787aeec6807\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate signed the project charter and stage‑gate submissions as project manager of record\"]},{\"requirementId\":\"req_d1d1984b88a8\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate held the project budget under the programme’s delegated limits\"]},{\"requirementId\":\"req_b307dfbda29c\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that the candidate ran plant shutdown windows with plant managers and directed the assigned project engineers\"]},{\"requirementId\":\"req_789cf650af26\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_e626f15de5e2\",\"text\":\"Planned and tracked the two workstreams under the programme's stage-gate method, producing the workstream plans, the progress reports and the stage-gate inputs that the project manager of record assembled into the gate submissions.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of planning and tracking workstreams\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_5289e46e3e6b\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1cb5ff25703c\",\"text\":\"Wrote the workstream boundary notes, the workstream risk registers and the hand-over notes for each stage gate, all filed under the project manager of record's gate submissions.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of documentation of boundaries, risks and hand-over\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Planned and tracked two workstreams under the programme's stage-gate method.\",\"supportingRequirementIds\":[\"req_789cf650af26\"],\"sourceIds\":[\"src_e626f15de5e2\"],\"evidenceStrength\":\"high\",\"witness\":\"Planned and tracked the two workstreams under the programme's stage-gate method, producing the workstream plans, the progress reports and the stage-gate inputs that the project manager of record assembled into the gate submissions.\"},{\"claim\":\"Authored workstream boundary notes, risk registers and hand-over notes for each stage gate.\",\"supportingRequirementIds\":[\"req_5289e46e3e6b\"],\"sourceIds\":[\"src_1cb5ff25703c\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the workstream boundary notes, the workstream risk registers and the hand-over notes for each stage gate, all filed under the project manager of record's gate submissions.\"}],\"unsupportedClaims\":[{\"claim\":\"Candidate was the project manager of record on all retrofit projects.\",\"reason\":\"No source indicates the candidate signed charters or gate submissions.\",\"requiredFollowUp\":\"Request documentation of charters or gate submissions signed by the candidate.\"},{\"claim\":\"Candidate held the project budget under the programme's delegated limits.\",\"reason\":\"Candidate’s budget responsibility was limited to cost tracking against an allocation set by the project manager of record; no delegated spending limit was held.\",\"requiredFollowUp\":\"Ask for evidence of delegated budget authority.\"},{\"claim\":\"Candidate ran plant shutdown windows with plant managers and directed the assigned project engineers.\",\"reason\":\"Candidate supported shutdown windows as workstream manager; no evidence of directing engineers.\",\"requiredFollowUp\":\"Request evidence of directing project engineers during shutdowns.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_2787aeec6807\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate signed the project charter and stage-gate submissions as project manager of record.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_d1d1984b88a8\",\"severity\":\"high\",\"gap\":\"Evidence that the candidate held the project budget under the programme’s delegated limits.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_b307dfbda29c\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate ran plant shutdown windows with plant managers and directed the assigned project engineers.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_f43dd7c1779d\",\"text\":\"Candidate said he has been 'the senior PM in all but name' on the retrofits and that the projects 'were run by me day to day'; asked which charters or gate submissions he had signed, he said the project manager of record signed them 'because of the org chart'.\",\"signalType\":\"unverified claim\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify with documentation of charters or gate submissions signed by the candidate.\"}],\"followUpQuestions\":[{\"questionId\":\"q_1\",\"requirementId\":\"req_2787aeec6807\",\"question\":\"Can you provide copies of the project charters or stage-gate submissions that you signed as project manager of record on the retrofit projects?\",\"evidenceTarget\":\"Documentation of charters or gate submissions signed by the candidate.\"},{\"questionId\":\"q_2\",\"requirementId\":\"req_d1d1984b88a8\",\"question\":\"Do you have any documentation or statements indicating that you held the project budget under the programme’s delegated limits?\",\"evidenceTarget\":\"Evidence of delegated budget authority.\"},{\"questionId\":\"q_3\",\"requirementId\":\"req_b307dfbda29c\",\"question\":\"Can you describe your role in directing project engineers during plant shutdown windows, and provide any supporting documentation?\",\"evidenceTarget\":\"Evidence of directing project engineers during shutdowns.\"}],\"humanReviewChecklist\":[\"Verify whether the candidate was the project manager of record on any retrofit projects.\",\"Confirm if the candidate held delegated budget authority within the programme.\",\"Confirm the candidate’s role in directing project engineers during shutdown windows.\",\"Assess the relevance of the candidate’s workstream management experience to the senior project manager role.\"],\"auditSummary\":\"The evidence indicates that the candidate served as a workstream manager with responsibilities in planning, tracking, shutdown support, and documentation, but does not establish that the candidate was the project manager of record, held delegated budget authority, or directed project engineers. Human review is required to determine whether the candidate meets the senior project manager requirements.\",\"limitations\":[\"Analysis is limited to the provided candidate materials and does not include external verification.\"]}}",
+ "content_sha256": "10d1ced6c0156ff05ba9019f3fbd9995582c00c6ac522633171fd568b3f07e0f",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_106ebe4376cdd290",
+   "targetRoleTitle": "Senior Project Manager, Plant Automation Retrofits",
+   "professionalSummary": [
+    "Workstream manager on a bottling plant automation retrofit programme for five years, responsible for instrumentation and control‑panel workstreams.",
+    "Planned and tracked two workstreams under the programme’s stage‑gate method, producing workstream plans, progress reports and stage‑gate inputs.",
+    "Supported plant shutdown windows at four plants as workstream manager, with shutdown plans and decisions held by the project manager of record and the plant manager.",
+    "Authored workstream boundary notes, risk registers and hand‑over notes for each stage gate.",
+    "Budget responsibility limited to workstream cost tracking against the allocation set by the project manager of record; no delegated spending limit was held."
+   ],
+   "experienceHighlights": [
+    "Project engineer and workstream manager on a beverage group’s bottling plant automation retrofit programme.",
+    "Planned and tracked two workstreams under the programme’s stage‑gate method.",
+    "Supported plant shutdown windows at four plants as workstream manager.",
+    "Authored workstream boundary notes, risk registers and hand‑over notes for each stage gate.",
+    "Managed workstream cost tracking within the allocation set by the project manager of record."
+   ],
+   "projectsAndWorkSamples": [
+    "Instrumentation workstream plan and progress reports for one retrofit project.",
+    "Workstream risk register and hand‑over note for gate three, with programme office document references as verification trail; gate submissions carry the project manager of record’s signature."
+   ],
+   "skills": [
+    "Project management",
+    "Stage‑gate methodology",
+    "Plant shutdown coordination",
+    "Risk management",
+    "Documentation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience as a workstream manager with responsibilities in planning, tracking, shutdown support, documentation, and cost tracking, but do not establish that the candidate was the project manager of record, held delegated budget authority, or directed project engineers."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Senior Project Manager, Plant Automation Retrofits",
+    "jobDescriptionSource": "jd_78fd9a8604a53de6",
+    "requirementIds": [
+     "req_2787aeec6807",
+     "req_d1d1984b88a8",
+     "req_b307dfbda29c",
+     "req_789cf650af26",
+     "req_5289e46e3e6b"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_106ebe4376cdd290",
+    "sources": [
+     "src_f3b3b3cac65a",
+     "src_e626f15de5e2",
+     "src_1091af96b9c8",
+     "src_1cb5ff25703c",
+     "src_05bc94bc6f8b",
+     "src_d6292c560fad",
+     "src_f43dd7c1779d"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_2787aeec6807",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate signed the project charter and stage‑gate submissions as project manager of record"
+     ]
+    },
+    {
+     "requirementId": "req_d1d1984b88a8",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate held the project budget under the programme’s delegated limits"
+     ]
+    },
+    {
+     "requirementId": "req_b307dfbda29c",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that the candidate ran plant shutdown windows with plant managers and directed the assigned project engineers"
+     ]
+    },
+    {
+     "requirementId": "req_789cf650af26",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e626f15de5e2",
+       "text": "Planned and tracked the two workstreams under the programme's stage-gate method, producing the workstream plans, the progress reports and the stage-gate inputs that the project manager of record assembled into the gate submissions.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of planning and tracking workstreams"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5289e46e3e6b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1cb5ff25703c",
+       "text": "Wrote the workstream boundary notes, the workstream risk registers and the hand-over notes for each stage gate, all filed under the project manager of record's gate submissions.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of documentation of boundaries, risks and hand-over"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Planned and tracked two workstreams under the programme's stage-gate method.",
+     "supportingRequirementIds": [
+      "req_789cf650af26"
+     ],
+     "sourceIds": [
+      "src_e626f15de5e2"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Planned and tracked the two workstreams under the programme's stage-gate method, producing the workstream plans, the progress reports and the stage-gate inputs that the project manager of record assembled into the gate submissions."
+    },
+    {
+     "claim": "Authored workstream boundary notes, risk registers and hand-over notes for each stage gate.",
+     "supportingRequirementIds": [
+      "req_5289e46e3e6b"
+     ],
+     "sourceIds": [
+      "src_1cb5ff25703c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the workstream boundary notes, the workstream risk registers and the hand-over notes for each stage gate, all filed under the project manager of record's gate submissions."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate was the project manager of record on all retrofit projects.",
+     "reason": "No source indicates the candidate signed charters or gate submissions.",
+     "requiredFollowUp": "Request documentation of charters or gate submissions signed by the candidate."
+    },
+    {
+     "claim": "Candidate held the project budget under the programme's delegated limits.",
+     "reason": "Candidate’s budget responsibility was limited to cost tracking against an allocation set by the project manager of record; no delegated spending limit was held.",
+     "requiredFollowUp": "Ask for evidence of delegated budget authority."
+    },
+    {
+     "claim": "Candidate ran plant shutdown windows with plant managers and directed the assigned project engineers.",
+     "reason": "Candidate supported shutdown windows as workstream manager; no evidence of directing engineers.",
+     "requiredFollowUp": "Request evidence of directing project engineers during shutdowns."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_2787aeec6807",
+     "severity": "high",
+     "gap": "Evidence that the candidate signed the project charter and stage-gate submissions as project manager of record."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_d1d1984b88a8",
+     "severity": "high",
+     "gap": "Evidence that the candidate held the project budget under the programme’s delegated limits."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_b307dfbda29c",
+     "severity": "medium",
+     "gap": "Evidence that the candidate ran plant shutdown windows with plant managers and directed the assigned project engineers."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_f43dd7c1779d",
+     "text": "Candidate said he has been 'the senior PM in all but name' on the retrofits and that the projects 'were run by me day to day'; asked which charters or gate submissions he had signed, he said the project manager of record signed them 'because of the org chart'.",
+     "signalType": "unverified claim",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify with documentation of charters or gate submissions signed by the candidate."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_2787aeec6807",
+     "question": "Can you provide copies of the project charters or stage-gate submissions that you signed as project manager of record on the retrofit projects?",
+     "evidenceTarget": "Documentation of charters or gate submissions signed by the candidate."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_d1d1984b88a8",
+     "question": "Do you have any documentation or statements indicating that you held the project budget under the programme’s delegated limits?",
+     "evidenceTarget": "Evidence of delegated budget authority."
+    },
+    {
+     "questionId": "q_3",
+     "requirementId": "req_b307dfbda29c",
+     "question": "Can you describe your role in directing project engineers during plant shutdown windows, and provide any supporting documentation?",
+     "evidenceTarget": "Evidence of directing project engineers during shutdowns."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify whether the candidate was the project manager of record on any retrofit projects.",
+    "Confirm if the candidate held delegated budget authority within the programme.",
+    "Confirm the candidate’s role in directing project engineers during shutdown windows.",
+    "Assess the relevance of the candidate’s workstream management experience to the senior project manager role."
+   ],
+   "auditSummary": "The evidence indicates that the candidate served as a workstream manager with responsibilities in planning, tracking, shutdown support, and documentation, but does not establish that the candidate was the project manager of record, held delegated budget authority, or directed project engineers. Human review is required to determine whether the candidate meets the senior project manager requirements.",
+   "limitations": [
+    "Analysis is limited to the provided candidate materials and does not include external verification."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:24:00.243134+00:00"
+}

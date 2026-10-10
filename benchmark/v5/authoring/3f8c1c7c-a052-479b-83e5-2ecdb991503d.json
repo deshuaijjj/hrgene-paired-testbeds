@@ -1,0 +1,111 @@
+{
+ "caseId": "3f8c1c7c-a052-479b-83e5-2ecdb991503d",
+ "roleTitle": "Backend Engineer, Claims Platform",
+ "jobDescription": "Thistledown Insurance handles home and motor claims for about 900,000 policyholders. The Backend Engineer builds the Java services behind first notice of loss and claim status, keeps contract tests with the policy administration system green, releases services to production through change approval and, after onboarding, holds production deploy rights and joins the claims-platform on-call rota. Engineers handle policyholder data under the company's data-protection standards. The claims platform team has nine engineers in two squads, and claim volumes peak after storms, so the services must scale with them.",
+ "requirements": [
+  "Builds REST services in Java with automated tests.",
+  "Maintains contract tests with upstream and downstream systems.",
+  "Has released services to a production environment through change approval and held responsibility for them in live operation.",
+  "Has served on a production on-call rota.",
+  "Handles personal data in line with data-protection requirements, including retention and access controls."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Software Engineer, Lanark Mutual Assurance, February 2021 to March 2024: built the claims-intake API in Java (Spring Boot) that accepts first notice of loss from the web form and the call-centre tool, with unit and integration tests in the build."
+  },
+  {
+   "type": "resume",
+   "text": "Maintained consumer-driven contract tests between the claims-intake API and the policy administration system, run on every build of either side and failing the build on any breaking change."
+  },
+  {
+   "type": "resume",
+   "text": "Released claims-intake API version 3 to production on 18 July 2023 under change CHG-77140 following approval at the weekly change board, deploying in the Tuesday evening release slot."
+  },
+  {
+   "type": "resume",
+   "text": "Masked bank details and policyholder phone numbers in the API's logs after a data-protection review, and added a unit test that fails if unmasked values appear."
+  },
+  {
+   "type": "resume",
+   "text": "Built a load-test harness that replays anonymised claim submissions against the staging environment, run before each release, with the results kept alongside the change record."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: change record CHG-77140, with the change-board approval, the deployment steps executed, the post-deployment smoke-test results and the rollback plan, listing the candidate as implementer and the change manager as approver."
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: Lanark Mutual's engineering lead confirmed in writing that the candidate held production deploy rights and was a primary on-call engineer for the claims-intake API from August 2023 to March 2024, covering about one week in five."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: the employment dates February 2021 to March 2024 and the job title Software Engineer were checked against Lanark Mutual's written reference."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate released claims-intake API version 3 to production on 18 July 2023 under change CHG-77140 after change-board approval, as the named implementer.",
+    "status": "supported",
+    "sources": [
+     3,
+     6
+    ],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "documented_production_release",
+    "criticality": "noncritical",
+    "rationale": "The resume states the release and the change record lists the approval, deployment steps, smoke tests and the candidate as implementer."
+   },
+   {
+    "text": "The candidate held production deploy rights and was a primary on-call engineer for the claims-intake API from August 2023 to March 2024.",
+    "status": "supported",
+    "sources": [
+     7
+    ],
+    "requirements": [
+     3,
+     4
+    ],
+    "boundaryCategory": "verified_operational_duty",
+    "criticality": "noncritical",
+    "rationale": "The reference check records the engineering lead's written confirmation."
+   },
+   {
+    "text": "The candidate maintained consumer-driven contract tests between the claims-intake API and the policy administration system.",
+    "status": "supported",
+    "sources": [
+     2
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_task_and_tooling",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the contract tests."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "partial_evidence"
+  ],
+  "subjective": [],
+  "nonProduction": [
+   5
+  ],
+  "expectedGap": "Log masking after a data-protection review is documented; retention and access-control practice is not.",
+  "expectedBoundaryNote": "Keep the production release with its change record, the verified deploy rights and on-call period, and the contract tests; keep the load-test harness as staging work.",
+  "followUpTargets": [
+   "Ask how the candidate handled retention and access controls for policyholder data beyond the log masking."
+  ],
+  "validClaimSignatures": [
+   "primary on-call engineer",
+   "CHG-77140"
+  ]
+ }
+}

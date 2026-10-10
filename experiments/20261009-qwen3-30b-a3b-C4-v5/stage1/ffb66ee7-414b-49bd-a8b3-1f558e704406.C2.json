@@ -1,0 +1,570 @@
+{
+ "request_id": "ffb66ee7-414b-49bd-a8b3-1f558e704406.C2",
+ "case_id": "ffb66ee7-414b-49bd-a8b3-1f558e704406",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner. Presented the contactless-limit change an",
+     "sourceIds": [
+      "src_87ab0a02faec",
+      "src_03df8fc15d8e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "witness_in_source",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0].witness",
+    "message": "witness quote is not a verbatim passage of the cited sources",
+    "witness": {
+     "witness": "maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner. Worked with the fraud risk and compliance",
+     "sourceIds": [
+      "src_87ab0a02faec",
+      "src_2ffc78c312e9",
+      "src_03df8fc15d8e",
+      "src_4a6aabf35964"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: led",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "led"
+     ],
+     "sourceIds": [
+      "src_87ab0a02faec",
+      "src_03df8fc15d8e"
+     ],
+     "sourceFamilies": [
+      "APPROVE",
+      "OWN"
+     ],
+     "text": "Led card product management at Thornbury Building Society, maintaining a twelve-month roadmap with quarterly business case refreshes and presenting proposals to the product committee."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "witness_in_source",
+   "action": "clear_witness",
+   "path": "$.optimizedCv.skills[0]",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Led card product management at Thornbury Building Society, maintaining a twelve-month roadmap with quarterly business ca"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d0623d05c97ee9c2",
+   "targetRoleTitle": "Group Product Manager, Retail Payments",
+   "professionalSummary": [],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_01",
+     "text": "Owned the debit card backlog and maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner.",
+     "sourceIds": [
+      "src_87ab0a02faec"
+     ],
+     "requirementIds": [
+      "req_f5693f378417"
+     ],
+     "supportBoundary": "supported",
+     "witness": "owned the debit card backlog and maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner."
+    },
+    {
+     "claimId": "exp_02",
+     "text": "Worked with fraud risk and compliance teams to implement card scheme changes to dispute time limits, writing user stories and acceptance criteria.",
+     "sourceIds": [
+      "src_2ffc78c312e9"
+     ],
+     "requirementIds": [
+      "req_5c036b80daa3"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Worked with the fraud risk and compliance teams to implement the card scheme's changes to dispute time limits, writing the user stories and acceptance criteria for the disputes journey."
+    },
+    {
+     "claimId": "exp_03",
+     "text": "Presented contactless-limit change and virtual-card proposal to the society's product committee, which approved both for delivery.",
+     "sourceIds": [
+      "src_03df8fc15d8e"
+     ],
+     "requirementIds": [
+      "req_8254dcb1c12d"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Presented the contactless-limit change and the virtual-card proposal to the society's product committee, which approved both for delivery."
+    },
+    {
+     "claimId": "exp_04",
+     "text": "Set up card activation and declined-payment dashboards with the data team and reviewed them at fortnightly product reviews.",
+     "sourceIds": [
+      "src_4a6aabf35964"
+     ],
+     "requirementIds": [
+      "req_52a82384515a"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Set up the card activation and declined-payment dashboards with the data team and reviewed them at the fortnightly product review."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Authored the 2025 card payments strategy paper, including roadmap summary, investment request, and committee approval note, with cover page naming 'Head of Product (acting), Card Payments'.",
+     "sourceIds": [
+      "src_769adf2e7a12"
+     ],
+     "requirementIds": [
+      "req_f5693f378417",
+      "req_8254dcb1c12d"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the 2025 card payments strategy paper, whose cover page names its author as 'Head of Product (acting), Card Payments', with the roadmap summary, the investment request and the committee's approval note."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "Product roadmap development, card scheme rule implementation, committee presentation, and product metric tracking.",
+     "sourceIds": [
+      "src_87ab0a02faec",
+      "src_2ffc78c312e9",
+      "src_03df8fc15d8e",
+      "src_4a6aabf35964"
+     ],
+     "requirementIds": [
+      "req_f5693f378417",
+      "req_5c036b80daa3",
+      "req_8254dcb1c12d",
+      "req_52a82384515a"
+     ],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience in maintaining a card roadmap, working with risk/compliance on scheme changes, presenting to a committee, and tracking metrics, but do not establish line management of product managers or a group product manager role."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required due to unestablished line management and group product manager role requirements."
+   },
+   "role": {
+    "roleTitle": "Group Product Manager, Retail Payments",
+    "jobDescriptionSource": "jd_d42982fbd133e5bd",
+    "requirementIds": [
+     "req_f5693f378417",
+     "req_5c036b80daa3",
+     "req_8254dcb1c12d",
+     "req_5ee017f0aa3b",
+     "req_52a82384515a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d0623d05c97ee9c2",
+    "sources": [
+     "src_87ab0a02faec",
+     "src_2ffc78c312e9",
+     "src_03df8fc15d8e",
+     "src_4a6aabf35964",
+     "src_fcdbd29698a3",
+     "src_769adf2e7a12",
+     "src_ac915a0ea71f",
+     "src_9fdaa9a03500"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f5693f378417",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_87ab0a02faec",
+       "text": "maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner.",
+       "evidenceStrength": "high",
+       "notes": "Roadmap and business case refreshes established."
+      },
+      {
+       "sourceId": "src_769adf2e7a12",
+       "text": "the 2025 card payments strategy paper, whose cover page names its author as 'Head of Product (acting), Card Payments', with the roadmap summary, the investment request and the committee's approval note.",
+       "evidenceStrength": "high",
+       "notes": "Roadmap summary included."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5c036b80daa3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2ffc78c312e9",
+       "text": "Worked with the fraud risk and compliance teams to implement the card scheme's changes to dispute time limits, writing the user stories and acceptance criteria for the disputes journey.",
+       "evidenceStrength": "high",
+       "notes": "Scheme rule changes implemented."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8254dcb1c12d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_03df8fc15d8e",
+       "text": "Presented the contactless-limit change and the virtual-card proposal to the society's product committee, which approved both for delivery.",
+       "evidenceStrength": "high",
+       "notes": "Committee presentation established."
+      },
+      {
+       "sourceId": "src_769adf2e7a12",
+       "text": "the 2025 card payments strategy paper, whose cover page names its author as 'Head of Product (acting), Card Payments', with the roadmap summary, the investment request and the committee's approval note.",
+       "evidenceStrength": "high",
+       "notes": "Committee approval noted."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5ee017f0aa3b",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Line management of product managers",
+      "Group product manager or head-of-product role"
+     ]
+    },
+    {
+     "requirementId": "req_52a82384515a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4a6aabf35964",
+       "text": "Set up the card activation and declined-payment dashboards with the data team and reviewed them at the fortnightly product review.",
+       "evidenceStrength": "high",
+       "notes": "Metrics defined and tracked."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained a twelve-month card roadmap with quarterly business case refreshes.",
+     "supportingRequirementIds": [
+      "req_f5693f378417"
+     ],
+     "sourceIds": [
+      "src_87ab0a02faec"
+     ],
+     "evidenceStrength": "high",
+     "witness": "maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner."
+    },
+    {
+     "claim": "Worked with fraud risk and compliance teams to implement card scheme rule changes.",
+     "supportingRequirementIds": [
+      "req_5c036b80daa3"
+     ],
+     "sourceIds": [
+      "src_2ffc78c312e9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Worked with the fraud risk and compliance teams to implement the card scheme's changes to dispute time limits, writing the user stories and acceptance criteria for the disputes journey."
+    },
+    {
+     "claim": "Presented proposals to the product committee for approval.",
+     "supportingRequirementIds": [
+      "req_8254dcb1c12d"
+     ],
+     "sourceIds": [
+      "src_03df8fc15d8e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented the contactless-limit change and the virtual-card proposal to the society's product committee, which approved both for delivery."
+    },
+    {
+     "claim": "Defined and tracked card activation and declined-payment metrics.",
+     "supportingRequirementIds": [
+      "req_52a82384515a"
+     ],
+     "sourceIds": [
+      "src_4a6aabf35964"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Set up the card activation and declined-payment dashboards with the data team and reviewed them at the fortnightly product review."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Held a group product manager or head-of-product role with line management of product managers.",
+     "reason": "The materials state 'Head of Product (acting)' on a work sample cover page but do not establish line management of product managers or a group product manager role.",
+     "requiredFollowUp": "Ask for confirmation of line management responsibilities and whether the role was a group product manager or head-of-product role."
+    },
+    {
+     "claim": "Led card product management at Thornbury Building Society, maintaining a twelve-month roadmap with quarterly business case refreshes and presenting proposals to the product committee.",
+     "reason": "The cited sources do not establish this level of ownership or authority.",
+     "requiredFollowUp": "Ask which decisions, resources and approvals the candidate personally controlled."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_5ee017f0aa3b_01",
+     "requirementId": "req_5ee017f0aa3b",
+     "severity": "high",
+     "gap": "Line management of product managers"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_5ee017f0aa3b_01",
+     "requirementId": "req_5ee017f0aa3b",
+     "question": "Can you confirm whether your role as 'Head of Product (acting)' included line management of product managers and whether it was a group product manager or head-of-product role?",
+     "evidenceTarget": "Line management of product managers and group product manager role confirmation."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify line management responsibilities for the 'Head of Product (acting)' role.",
+    "Confirm if the role was a group product manager or head-of-product role."
+   ],
+   "auditSummary": "The materials establish all requirements except for line management of product managers and the group product manager role. The work sample cover page mentions 'Head of Product (acting)', but this does not confirm line management or the role title as required. The HR verification and reference check confirm employment dates and titles but not the scope of responsibilities.",
+   "limitations": [
+    "The materials do not establish line management of product managers or a group product manager role.",
+    "The 'Head of Product (acting)' title on the work sample does not confirm the required role title or responsibilities without further evidence."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

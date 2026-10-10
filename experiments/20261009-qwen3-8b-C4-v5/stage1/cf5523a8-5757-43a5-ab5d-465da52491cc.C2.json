@@ -1,0 +1,630 @@
+{
+ "request_id": "cf5523a8-5757-43a5-ab5d-465da52491cc.C2",
+ "case_id": "cf5523a8-5757-43a5-ab5d-465da52491cc",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "subjective,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its ownership term(s) [MANAGE] (manages) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_607749aef2e1",
+     "family": "MANAGE",
+     "terms": [
+      "manages"
+     ],
+     "sourceIds": [
+      "src_814091f4c3bf"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_term_on_supported_side",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "subjective wording presented as supported: committed",
+    "witness": {
+     "terms": [
+      "committed"
+     ],
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.skills[0]",
+    "message": "subjective/hearsay source cited as support: src_ecfd429841e6",
+    "witness": {
+     "sourceIds": [
+      "src_ecfd429841e6"
+     ],
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_term_on_supported_side",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[3]",
+    "message": "subjective wording presented as supported: committed",
+    "witness": {
+     "terms": [
+      "committed"
+     ],
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[3]",
+    "message": "subjective/hearsay source cited as support: src_ecfd429841e6",
+    "witness": {
+     "sourceIds": [
+      "src_ecfd429841e6"
+     ],
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_term_on_supported_side",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0]",
+    "message": "subjective wording presented as supported: committed",
+    "witness": {
+     "terms": [
+      "committed"
+     ],
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0]",
+    "message": "subjective/hearsay source cited as support: src_ecfd429841e6",
+    "witness": {
+     "sourceIds": [
+      "src_ecfd429841e6"
+     ],
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].notes",
+    "message": "subjective/hearsay source cited as support: src_ecfd429841e6",
+    "witness": {
+     "sourceIds": [
+      "src_ecfd429841e6"
+     ],
+     "text": "Directly supports the requirement."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_sources_routed",
+    "severity": "noncritical",
+    "status": "UNRESOLVED",
+    "path": "$.hiringEvidencePacket.interviewSignalRisks",
+    "message": "subjective/hearsay source src_ecfd429841e6 is not routed to interviewSignalRisks / gaps / follow-up",
+    "witness": {
+     "sourceId": "src_ecfd429841e6"
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 7,
+    "unresolved": 1,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "req_607749aef2e1: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective",
+   "action": "move_claim_to_interview_signal_risk",
+   "path": "$.optimizedCv.skills",
+   "detail": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the mont"
+  },
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective",
+   "action": "move_claim_to_interview_signal_risk",
+   "path": "$.hiringEvidencePacket.supportedClaims",
+   "detail": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the mont"
+  },
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective_source_cited_as_support",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the mont"
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "downgrade",
+   "action": "downgrade_requirement_status",
+   "path": "",
+   "detail": "req_0429857966fc"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "subjective,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_6a8deed36b5fd809",
+   "targetRoleTitle": "Engineering Project Manager, Packaging Lines",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "Planned the replacement of a vertical form-fill-seal machine and its checkweigher on line 4 at Hollins Snacks, fitting the installation into a nine-day planned shutdown in August 2023.",
+     "sourceIds": [
+      "src_fc6783234a3d"
+     ],
+     "requirementIds": [
+      "req_8f2de786c6e7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Planned the replacement of a vertical form-fill-seal machine and its checkweigher on line 4 at Hollins Snacks, fitting the installation into a nine-day planned shutdown in August 2023."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Coordinated the equipment supplier and two installation contractors, reviewing their method statements and issuing permits to work together with the plant's safety advisor.",
+     "sourceIds": [
+      "src_a212d77d53f8"
+     ],
+     "requirementIds": [
+      "req_49bf71d4efd0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated the equipment supplier and two installation contractors, reviewing their method statements and issuing permits to work together with the plant's safety advisor."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "Ran commissioning with the supplier's engineer, completed the factory and site acceptance test protocols, and handed the line back to the production manager with a signed handover certificate.",
+     "sourceIds": [
+      "src_814091f4c3bf"
+     ],
+     "requirementIds": [
+      "req_607749aef2e1"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran commissioning with the supplier's engineer, completed the factory and site acceptance test protocols, and handed the line back to the production manager with a signed handover certificate."
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The materials establish the candidate's experience in planning capital upgrades, coordinating suppliers and contractors, managing commissioning and handover, and tracking capital requests. They do not establish the candidate's ability to report realized benefits against the baseline or the presence of a recognized project management qualification."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience and qualifications are partially supported by the provided materials, but further evidence is needed to fully assess their suitability for the role."
+   },
+   "role": {
+    "roleTitle": "Engineering Project Manager, Packaging Lines",
+    "jobDescriptionSource": "jd_5b6fff9507c64734",
+    "requirementIds": [
+     "req_8f2de786c6e7",
+     "req_49bf71d4efd0",
+     "req_607749aef2e1",
+     "req_0429857966fc",
+     "req_d0fdc3b77c7f"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_6a8deed36b5fd809",
+    "sources": [
+     "src_fc6783234a3d",
+     "src_a212d77d53f8",
+     "src_814091f4c3bf",
+     "src_ecfd429841e6",
+     "src_c4be85d5b481",
+     "src_483a38583b55",
+     "src_7f13f378dbea",
+     "src_80611e18e147"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_8f2de786c6e7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_fc6783234a3d",
+       "text": "Planned the replacement of a vertical form-fill-seal machine and its checkweigher on line 4 at Hollins Snacks, fitting the installation into a nine-day planned shutdown in August 2023.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_49bf71d4efd0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a212d77d53f8",
+       "text": "Coordinated the equipment supplier and two installation contractors, reviewing their method statements and issuing permits to work together with the plant's safety advisor.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_607749aef2e1",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_814091f4c3bf",
+       "text": "Ran commissioning with the supplier's engineer, completed the factory and site acceptance test protocols, and handed the line back to the production manager with a signed handover certificate.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's manage element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_0429857966fc",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Cited evidence was removed by the validator; the requirement is not established by the remaining sources."
+     ]
+    },
+    {
+     "requirementId": "req_d0fdc3b77c7f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7f13f378dbea",
+       "text": "HR verification note: the candidate's APM Project Management Qualification was confirmed through the Association for Project Management's qualification verification service, with a pass date of October 2021.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Planned the replacement of a vertical form-fill-seal machine and its checkweigher on line 4 at Hollins Snacks, fitting the installation into a nine-day planned shutdown in August 2023.",
+     "supportingRequirementIds": [
+      "req_8f2de786c6e7"
+     ],
+     "sourceIds": [
+      "src_fc6783234a3d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Planned the replacement of a vertical form-fill-seal machine and its checkweigher on line 4 at Hollins Snacks, fitting the installation into a nine-day planned shutdown in August 2023."
+    },
+    {
+     "claim": "Coordinated the equipment supplier and two installation contractors, reviewing their method statements and issuing permits to work together with the plant's safety advisor.",
+     "supportingRequirementIds": [
+      "req_49bf71d4efd0"
+     ],
+     "sourceIds": [
+      "src_a212d77d53f8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated the equipment supplier and two installation contractors, reviewing their method statements and issuing permits to work together with the plant's safety advisor."
+    },
+    {
+     "claim": "Ran commissioning with the supplier's engineer, completed the factory and site acceptance test protocols, and handed the line back to the production manager with a signed handover certificate.",
+     "supportingRequirementIds": [
+      "req_607749aef2e1"
+     ],
+     "sourceIds": [
+      "src_814091f4c3bf"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran commissioning with the supplier's engineer, completed the factory and site acceptance test protocols, and handed the line back to the production manager with a signed handover certificate."
+    },
+    {
+     "claim": "HR verification note: the candidate's APM Project Management Qualification was confirmed through the Association for Project Management's qualification verification service, with a pass date of October 2021.",
+     "supportingRequirementIds": [
+      "req_d0fdc3b77c7f"
+     ],
+     "sourceIds": [
+      "src_7f13f378dbea"
+     ],
+     "evidenceStrength": "high",
+     "witness": "HR verification note: the candidate's APM Project Management Qualification was confirmed through the Association for Project Management's qualification verification service, with a pass date of October 2021."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Reported realized benefits (throughput, downtime or payback) against the baseline of the capital request.",
+     "reason": "The materials do not establish that the candidate reported realized benefits against the baseline of the capital request.",
+     "requiredFollowUp": "Ask the candidate to provide evidence of how they reported realized benefits against the baseline of the capital request."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_0429857966fc",
+     "severity": "medium",
+     "gap": "The materials do not establish that the candidate reported realized benefits (throughput, downtime or payback) against the baseline of the capital request."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_80611e18e147",
+     "text": "Recruiter screening note: the candidate passed on a comment from the plant manager that the line 4 upgrade 'paid for itself in under a year' through extra packs per shift; the candidate had not seen the plant's production figures.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to provide evidence of how they reported realized benefits against the baseline of the capital request."
+    },
+    {
+     "sourceId": "src_ecfd429841e6",
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    },
+    {
+     "sourceId": "src_ecfd429841e6",
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    },
+    {
+     "sourceId": "src_ecfd429841e6",
+     "text": "Kept the project budget tracker and reported committed and actual spend against the approved capital request at the monthly capex review.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_001",
+     "requirementId": "req_0429857966fc",
+     "question": "Can you provide evidence of how you reported realized benefits (throughput, downtime or payback) against the baseline of the capital request?",
+     "evidenceTarget": "Realized benefits against the baseline of the capital request."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's ability to report realized benefits (throughput, downtime or payback) against the baseline of the capital request.",
+    "Confirm the candidate's ability to report realized benefits (throughput, downtime or payback) against the baseline of the capital request."
+   ],
+   "auditSummary": "The materials establish the candidate's experience in planning capital upgrades, coordinating suppliers and contractors, managing commissioning and handover, and tracking capital requests. They do not establish the candidate's ability to report realized benefits against the baseline or the presence of a recognized project management qualification.",
+   "limitations": [
+    "The materials do not establish the candidate's ability to report realized benefits against the baseline of the capital request.",
+    "The materials do not establish the presence of a recognized project management qualification."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

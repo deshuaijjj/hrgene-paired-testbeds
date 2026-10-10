@@ -1,0 +1,533 @@
+{
+ "request_id": "b4fc09ab-cf6b-4f73-84d7-faba0176cf4b.C2",
+ "case_id": "b4fc09ab-cf6b-4f73-84d7-faba0176cf4b",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].evidence[1]",
+    "message": "subjective/hearsay source cited as support: src_89aac9f7b07e",
+    "witness": {
+     "sourceIds": [
+      "src_89aac9f7b07e"
+     ],
+     "text": "Recruiter screen: candidate said the checks 'are live across the network now' and that she 'saw them through to go-live'; asked who executed the release, she named the portal product team."
+    }
+   },
+   {
+    "rule": "hrgene.subjective_claim_boundary",
+    "code": "subjective_source_cited_as_support",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].evidence[1].notes",
+    "message": "subjective/hearsay source cited as support: src_89aac9f7b07e",
+    "witness": {
+     "sourceIds": [
+      "src_89aac9f7b07e"
+     ],
+     "text": "The candidate claims the checks are live, but the release was executed by the portal product team."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "HUMAN_REVIEW"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.subjective_claim_boundary",
+   "code": "subjective_source_cited_as_support",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[0]",
+   "detail": "Recruiter screen: candidate said the checks 'are live across the network now' and that she 'saw them through to go-live'"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "hearsay,note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_c1b8c35ad8946d7f",
+   "targetRoleTitle": "Compliance Operations Specialist, After-Sales Service Network",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "Wrote the recall-handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check.",
+     "sourceIds": [
+      "src_f649f41b2649"
+     ],
+     "requirementIds": [
+      "req_ed329616c930"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the recall-handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log.",
+     "sourceIds": [
+      "src_be709220ff53"
+     ],
+     "requirementIds": [
+      "req_0f3c29ec40f0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign-off.",
+     "sourceIds": [
+      "src_f4fcfb3416aa"
+     ],
+     "requirementIds": [
+      "req_5323c35578df"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign-off."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_004",
+     "text": "Wrote the release note for the recall-handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand-over items for the portal team.",
+     "sourceIds": [
+      "src_00862003e73c"
+     ],
+     "requirementIds": [
+      "req_f53451e97de0"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the release note for the recall-handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand-over items for the portal team."
+    }
+   ],
+   "evidenceBoundary": "The materials establish that the candidate wrote the recall-handling procedure and compliance check definitions, tested them in the sandbox, ran monthly compliance reviews, coordinated rule changes, and documented limitations and hand-over conditions. They do not establish that the candidate deployed the procedures to the live partner network or operated the live compliance checks."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate has written and tested compliance procedures, coordinated rule changes, and documented limitations and hand-over conditions. However, the materials do not establish that the candidate deployed the procedures to the live partner network or operated the live compliance checks."
+   },
+   "role": {
+    "roleTitle": "Compliance Operations Specialist, After-Sales Service Network",
+    "jobDescriptionSource": "jd_cfc4b4f02730498e",
+    "requirementIds": [
+     "req_90b986cad0ca",
+     "req_ed329616c930",
+     "req_0f3c29ec40f0",
+     "req_5323c35578df",
+     "req_f53451e97de0"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_c1b8c35ad8946d7f",
+    "sources": [
+     "src_f649f41b2649",
+     "src_be709220ff53",
+     "src_f4fcfb3416aa",
+     "src_00862003e73c",
+     "src_129566a1bcbe",
+     "src_ce9dd804e2f9",
+     "src_fb2090a2b344",
+     "src_89aac9f7b07e"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_90b986cad0ca",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_f4fcfb3416aa",
+       "text": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign-off.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate coordinated rule changes, but the release to the live network was executed by the portal product team."
+      }
+     ],
+     "missingEvidence": [
+      "Deployment to the live partner network",
+      "Operation of live compliance checks"
+     ]
+    },
+    {
+     "requirementId": "req_ed329616c930",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f649f41b2649",
+       "text": "Wrote the recall-handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check.",
+       "evidenceStrength": "high",
+       "notes": "The candidate wrote and tested the procedures."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0f3c29ec40f0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_be709220ff53",
+       "text": "Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log.",
+       "evidenceStrength": "high",
+       "notes": "The candidate ran the monthly compliance review."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5323c35578df",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f4fcfb3416aa",
+       "text": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign-off.",
+       "evidenceStrength": "high",
+       "notes": "The candidate coordinated rule changes."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f53451e97de0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_00862003e73c",
+       "text": "Wrote the release note for the recall-handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand-over items for the portal team.",
+       "evidenceStrength": "high",
+       "notes": "The candidate documented limitations and hand-over conditions."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Wrote the recall-handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check.",
+     "supportingRequirementIds": [
+      "req_ed329616c930"
+     ],
+     "sourceIds": [
+      "src_f649f41b2649"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the recall-handling procedure and the compliance check definitions for the partner portal and tested them with three volunteer partners in the portal's sandbox tenant over two quarters, recording the outcomes per check."
+    },
+    {
+     "claim": "Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log.",
+     "supportingRequirementIds": [
+      "req_0f3c29ec40f0"
+     ],
+     "sourceIds": [
+      "src_be709220ff53"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the monthly compliance review with legal and partner management, presenting the sandbox test results and the open questions, and recorded the outcomes in the review log."
+    },
+    {
+     "claim": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign-off.",
+     "supportingRequirementIds": [
+      "req_5323c35578df"
+     ],
+     "sourceIds": [
+      "src_f4fcfb3416aa"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated rule changes with legal and partner management through the procedure change log; the release of checks to the live partner network was scheduled and executed by the portal product team after legal sign-off."
+    },
+    {
+     "claim": "Wrote the release note for the recall-handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand-over items for the portal team.",
+     "supportingRequirementIds": [
+      "req_f53451e97de0"
+     ],
+     "sourceIds": [
+      "src_00862003e73c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the release note for the recall-handling procedure, listing the known limitation that the sandbox tenant did not include the partners' own service systems, and the hand-over items for the portal team."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Deployed the recall-handling procedure to the live partner network and operates the live compliance checks in the partner portal.",
+     "reason": "The materials do not establish that the candidate deployed the procedures to the live partner network or operates the live compliance checks.",
+     "requiredFollowUp": "Ask the candidate to confirm who executed the release to the live network and whether they operate the live compliance checks."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_90b986cad0ca",
+     "severity": "medium",
+     "gap": "Deployment to the live partner network"
+    },
+    {
+     "gapId": "gap_002",
+     "requirementId": "req_90b986cad0ca",
+     "severity": "medium",
+     "gap": "Operation of live compliance checks"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_fb2090a2b344",
+     "text": "Hiring manager pre-read: the candidate's LinkedIn summary says she 'rolled out recall compliance checks to the live partner network'; the head of partner compliance wants someone who has done exactly that, so the packet must be clear about who released what to the live network.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to confirm who executed the release to the live network."
+    },
+    {
+     "sourceId": "src_89aac9f7b07e",
+     "text": "Recruiter screen: candidate said the checks 'are live across the network now' and that she 'saw them through to go-live'; asked who executed the release, she named the portal product team.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to confirm who executed the release to the live network."
+    },
+    {
+     "sourceId": "src_89aac9f7b07e",
+     "text": "Recruiter screen: candidate said the checks 'are live across the network now' and that she 'saw them through to go-live'; asked who executed the release, she named the portal product team.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": "Not tied to an observable, job-related event in the materials.",
+     "severity": "medium",
+     "recommendedHandling": "Verify in a structured interview with a concrete example before any use."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_90b986cad0ca",
+     "question": "Who executed the release of the recall-handling procedure to the live partner network?",
+     "evidenceTarget": "Deployment to the live partner network"
+    },
+    {
+     "questionId": "q_002",
+     "requirementId": "req_90b986cad0ca",
+     "question": "Does the candidate operate the live compliance checks in the partner portal?",
+     "evidenceTarget": "Operation of live compliance checks"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate deployed the recall-handling procedure to the live partner network.",
+    "Verify that the candidate operates the live compliance checks in the partner portal.",
+    "Verify that the candidate maintains the recall-handling procedure and the compliance check definitions.",
+    "Verify that the candidate runs the monthly compliance review with legal and partner management and records outcomes.",
+    "Verify that the candidate coordinates rule changes with legal and partner management and records own responsibility boundaries.",
+    "Verify that the candidate documents known limitations and hand-over conditions for each procedure release."
+   ],
+   "auditSummary": "The materials establish that the candidate wrote and tested compliance procedures, ran monthly compliance reviews, coordinated rule changes, and documented limitations and hand-over conditions. However, the materials do not establish that the candidate deployed the procedures to the live partner network or operated the live compliance checks. The hiring evidence packet includes supported claims, unsupported claims, missing evidence gaps, interview signal risks, and follow-up questions for qualified human review.",
+   "limitations": [
+    "The materials do not establish that the candidate deployed the procedures to the live partner network or operated the live compliance checks.",
+    "The materials do not establish that the candidate maintains the recall-handling procedure and the compliance check definitions.",
+    "The materials do not establish that the candidate runs the monthly compliance review with legal and partner management and records outcomes.",
+    "The materials do not establish that the candidate coordinates rule changes with legal and partner management and records own responsibility boundaries.",
+    "The materials do not establish that the candidate documents known limitations and hand-over conditions for each procedure release."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

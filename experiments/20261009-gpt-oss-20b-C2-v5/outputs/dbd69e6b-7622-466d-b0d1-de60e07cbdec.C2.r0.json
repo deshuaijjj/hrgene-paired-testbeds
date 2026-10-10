@@ -1,0 +1,227 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "dbd69e6b-7622-466d-b0d1-de60e07cbdec.C2",
+ "case_id": "dbd69e6b-7622-466d-b0d1-de60e07cbdec",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14945,
+  "promptWords": 1800
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 30.514
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3661,
+ "eval_count": 1563,
+ "prompt_eval_duration_ns": 18542000,
+ "eval_duration_ns": 28112314000,
+ "total_duration_ns": 30512032584,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Use provided sources. Ensure all requirements mapped. Provide evidence. No subjective. Let's craft.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_fbb8094e189ee98c\",\"targetRoleTitle\":\"Data Scientist, Product Experimentation\",\"professionalSummary\":[\"Data Scientist with extensive experience designing, executing, and reporting A/B tests on signup and trial journeys, ensuring rigorous randomisation, power calculations, and metric governance.\"]},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Human review required to assess fit based on evidence and gaps.\"},\"role\":{\"roleTitle\":\"Data Scientist, Product Experimentation\",\"jobDescriptionSource\":\"jd_7285316449b112c0\",\"requirementIds\":[\"req_f85484f74ac3\",\"req_83eda11f48c2\",\"req_b683feb592b2\",\"req_39580aa866c9\",\"req_55f0aeca4ccf\"]},\"candidate\":{\"candidateId\":\"cand_fbb8094e189ee98c\",\"sources\":[\"src_36c937afbe58\",\"src_600ccf977a33\",\"src_36eaf5289445\",\"src_4fe7edffccf4\",\"src_3b40806e81b6\",\"src_67be69604351\",\"src_f2d62a1fc557\",\"src_926b213a73d7\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_f85484f74ac3\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_36c937afbe58\",\"text\":\"Planned 23 A/B tests on the signup and trial journeys at Ledgerline, writing each plan with a primary metric, a power calculation and a fixed test window before launch.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of planning with required elements.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_83eda11f48c2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_600ccf977a33\",\"text\":\"Wrote the readout for the trial-reminder email test: trial-to-paid conversion was 6.2% in control and 7.0% in treatment over 4 to 31 March 2024, a difference of 0.8 points with a 95% interval of 0.3 to 1.3 points.\",\"evidenceStrength\":\"high\",\"notes\":\"Includes effect size and confidence interval.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_b683feb592b2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_36eaf5289445\",\"text\":\"Added an automated sample-ratio check to the readout notebook template that blocks publication when the observed split departs from the plan by more than the agreed threshold.\",\"evidenceStrength\":\"high\",\"notes\":\"Shows randomisation quality check.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_39580aa866c9\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_4fe7edffccf4\",\"text\":\"Moved the trial and conversion metric definitions into the dbt semantic layer so that every squad computed conversion the same way.\",\"evidenceStrength\":\"high\",\"notes\":\"Demonstrates metric governance.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_55f0aeca4ccf\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f2d62a1fc557\",\"text\":\"Recruiter verification: the workshop paper 'Variance reduction for subscription trials with pre-period covariates' was located in the published proceedings of the 2023 Workshop on Causal Inference in Industry, which list the candidate as second author.\",\"evidenceStrength\":\"high\",\"notes\":\"Published methods work.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Planned 23 A/B tests on the signup and trial journeys at Ledgerline, writing each plan with a primary metric, a power calculation and a fixed test window before launch.\",\"supportingRequirementIds\":[\"req_f85484f74ac3\"],\"sourceIds\":[\"src_36c937afbe58\"],\"evidenceStrength\":\"high\",\"witness\":\"Planned 23 A/B tests on the signup and trial journeys at Ledgerline, writing each plan with a primary metric, a power calculation and a fixed test window before launch.\"},{\"claim\":\"Wrote the readout for the trial-reminder email test: trial-to-paid conversion was 6.2% in control and 7.0% in treatment over 4 to 31 March 2024, a difference of 0.8 points with a 95% interval of 0.3 to 1.3 points.\",\"supportingRequirementIds\":[\"req_83eda11f48c2\"],\"sourceIds\":[\"src_600ccf977a33\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the readout for the trial-reminder email test: trial-to-paid conversion was 6.2% in control and 7.0% in treatment over 4 to 31 March 2024, a difference of 0.8 points with a 95% interval of 0.3 to 1.3 points.\"},{\"claim\":\"Added an automated sample-ratio check to the readout notebook template that blocks publication when the observed split departs from the plan by more than the agreed threshold.\",\"supportingRequirementIds\":[\"req_b683feb592b2\"],\"sourceIds\":[\"src_36eaf5289445\"],\"evidenceStrength\":\"high\",\"witness\":\"Added an automated sample-ratio check to the readout notebook template that blocks publication when the observed split departs from the plan by more than the agreed threshold.\"},{\"claim\":\"Moved the trial and conversion metric definitions into the dbt semantic layer so that every squad computed conversion the same way.\",\"supportingRequirementIds\":[\"req_39580aa866c9\"],\"sourceIds\":[\"src_4fe7edffccf4\"],\"evidenceStrength\":\"high\",\"witness\":\"Moved the trial and conversion metric definitions into the dbt semantic layer so that every squad computed conversion the same way.\"},{\"claim\":\"Published methods work: workshop paper 'Variance reduction for subscription trials with pre-period covariates' listed as second author in 2023 Workshop on Causal Inference in Industry proceedings.\",\"supportingRequirementIds\":[\"req_55f0aeca4ccf\"],\"sourceIds\":[\"src_f2d62a1fc557\"],\"evidenceStrength\":\"high\",\"witness\":\"Recruiter verification: the workshop paper 'Variance reduction for subscription trials with pre-period covariates' was located in the published proceedings of the 2023 Workshop on Causal Inference in Industry, which list the candidate as second author.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that the candidate’s role at Ledgerline was Data Scientist during the test period.\",\"Confirm that the sample-ratio check threshold matches the company’s policy.\",\"Ensure the published paper’s methodology aligns with the company’s experimentation framework.\"],\"auditSummary\":\"All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative claims lack source attribution. No ownership or deployment boundaries are overstated. The candidate meets the qualification criteria as presented.\",\"limitations\":[\"Evidence limited to provided sources; external verification of metric definitions and publication details not included.\"]} }",
+ "content_sha256": "358cb2347505070f3fa52c235ebb2805847eabd838aab37a6086c5de98617360",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_fbb8094e189ee98c",
+   "targetRoleTitle": "Data Scientist, Product Experimentation",
+   "professionalSummary": [
+    "Data Scientist with extensive experience designing, executing, and reporting A/B tests on signup and trial journeys, ensuring rigorous randomisation, power calculations, and metric governance."
+   ]
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Data Scientist, Product Experimentation",
+    "jobDescriptionSource": "jd_7285316449b112c0",
+    "requirementIds": [
+     "req_f85484f74ac3",
+     "req_83eda11f48c2",
+     "req_b683feb592b2",
+     "req_39580aa866c9",
+     "req_55f0aeca4ccf"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_fbb8094e189ee98c",
+    "sources": [
+     "src_36c937afbe58",
+     "src_600ccf977a33",
+     "src_36eaf5289445",
+     "src_4fe7edffccf4",
+     "src_3b40806e81b6",
+     "src_67be69604351",
+     "src_f2d62a1fc557",
+     "src_926b213a73d7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f85484f74ac3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_36c937afbe58",
+       "text": "Planned 23 A/B tests on the signup and trial journeys at Ledgerline, writing each plan with a primary metric, a power calculation and a fixed test window before launch.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of planning with required elements."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_83eda11f48c2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_600ccf977a33",
+       "text": "Wrote the readout for the trial-reminder email test: trial-to-paid conversion was 6.2% in control and 7.0% in treatment over 4 to 31 March 2024, a difference of 0.8 points with a 95% interval of 0.3 to 1.3 points.",
+       "evidenceStrength": "high",
+       "notes": "Includes effect size and confidence interval."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b683feb592b2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_36eaf5289445",
+       "text": "Added an automated sample-ratio check to the readout notebook template that blocks publication when the observed split departs from the plan by more than the agreed threshold.",
+       "evidenceStrength": "high",
+       "notes": "Shows randomisation quality check."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_39580aa866c9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4fe7edffccf4",
+       "text": "Moved the trial and conversion metric definitions into the dbt semantic layer so that every squad computed conversion the same way.",
+       "evidenceStrength": "high",
+       "notes": "Demonstrates metric governance."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_55f0aeca4ccf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f2d62a1fc557",
+       "text": "Recruiter verification: the workshop paper 'Variance reduction for subscription trials with pre-period covariates' was located in the published proceedings of the 2023 Workshop on Causal Inference in Industry, which list the candidate as second author.",
+       "evidenceStrength": "high",
+       "notes": "Published methods work."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Planned 23 A/B tests on the signup and trial journeys at Ledgerline, writing each plan with a primary metric, a power calculation and a fixed test window before launch.",
+     "supportingRequirementIds": [
+      "req_f85484f74ac3"
+     ],
+     "sourceIds": [
+      "src_36c937afbe58"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Planned 23 A/B tests on the signup and trial journeys at Ledgerline, writing each plan with a primary metric, a power calculation and a fixed test window before launch."
+    },
+    {
+     "claim": "Wrote the readout for the trial-reminder email test: trial-to-paid conversion was 6.2% in control and 7.0% in treatment over 4 to 31 March 2024, a difference of 0.8 points with a 95% interval of 0.3 to 1.3 points.",
+     "supportingRequirementIds": [
+      "req_83eda11f48c2"
+     ],
+     "sourceIds": [
+      "src_600ccf977a33"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the readout for the trial-reminder email test: trial-to-paid conversion was 6.2% in control and 7.0% in treatment over 4 to 31 March 2024, a difference of 0.8 points with a 95% interval of 0.3 to 1.3 points."
+    },
+    {
+     "claim": "Added an automated sample-ratio check to the readout notebook template that blocks publication when the observed split departs from the plan by more than the agreed threshold.",
+     "supportingRequirementIds": [
+      "req_b683feb592b2"
+     ],
+     "sourceIds": [
+      "src_36eaf5289445"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added an automated sample-ratio check to the readout notebook template that blocks publication when the observed split departs from the plan by more than the agreed threshold."
+    },
+    {
+     "claim": "Moved the trial and conversion metric definitions into the dbt semantic layer so that every squad computed conversion the same way.",
+     "supportingRequirementIds": [
+      "req_39580aa866c9"
+     ],
+     "sourceIds": [
+      "src_4fe7edffccf4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Moved the trial and conversion metric definitions into the dbt semantic layer so that every squad computed conversion the same way."
+    },
+    {
+     "claim": "Published methods work: workshop paper 'Variance reduction for subscription trials with pre-period covariates' listed as second author in 2023 Workshop on Causal Inference in Industry proceedings.",
+     "supportingRequirementIds": [
+      "req_55f0aeca4ccf"
+     ],
+     "sourceIds": [
+      "src_f2d62a1fc557"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Recruiter verification: the workshop paper 'Variance reduction for subscription trials with pre-period covariates' was located in the published proceedings of the 2023 Workshop on Causal Inference in Industry, which list the candidate as second author."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s role at Ledgerline was Data Scientist during the test period.",
+    "Confirm that the sample-ratio check threshold matches the company’s policy.",
+    "Ensure the published paper’s methodology aligns with the company’s experimentation framework."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative claims lack source attribution. No ownership or deployment boundaries are overstated. The candidate meets the qualification criteria as presented.",
+   "limitations": [
+    "Evidence limited to provided sources; external verification of metric definitions and publication details not included."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:35:26.228841+00:00"
+}

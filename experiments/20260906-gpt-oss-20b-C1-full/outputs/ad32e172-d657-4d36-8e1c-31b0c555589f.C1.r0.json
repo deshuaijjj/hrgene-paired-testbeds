@@ -1,0 +1,296 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "ad32e172-d657-4d36-8e1c-31b0c555589f.C1",
+ "case_id": "ad32e172-d657-4d36-8e1c-31b0c555589f",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11222,
+  "promptWords": 1457
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 53.68
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3245,
+ "eval_count": 2143,
+ "prompt_eval_duration_ns": 17834000,
+ "eval_duration_ns": 38529174000,
+ "total_duration_ns": 53676643083,
+ "thinking": "We need to produce JSON. Need to cite sources. Let's craft optimized CV with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: say what materials establish.\n\nRequirement evidence map: for each requirement id, determine status. Let's analyze:\n\nreq_09d65247a8e6: Owns assigned implementation projects end-to-end and holds the customer go-live sign-off. Evidence: src_5313fbf2c277 says candidate said she 'ran the implementations end-to-end' and that delivery manager was mostly there for commercials; asked who signed go-live, she said sponsor and delivery manager did. Also src_e82a50c8b441 says escalated risks and go-live signed off by customer's project sponsor with delivery manager. So we have evidence that she ran end-to-end? The note says she said she ran end-to-end. That's self-report. But we have evidence that she was involved. However requirement: owns end-to-end and holds go-live sign-off. We have evidence that go-live signed off by sponsor and delivery manager, not necessarily by her. So partial evidence: she owned? Not fully. So status partial_evidence. Missing: evidence that she held go-live sign-off herself.\n\nreq_414ad3df703e: Maintains implementation plan, action log and consultants' schedule. Evidence: src_ae4021c45db8, src_5209e114cd9f. So supported.\n\nreq_30acab642b10: Runs weekly customer status call and records decisions and actions. Evidence: src_8073721bbcf0. Supported.\n\nreq_69421b18933f: Escalates risks to delivery manager with recommended option and records own responsibility boundaries. Evidence: src_e82a50c8b441. It says escalated schedule and resourcing risks to delivery manager with an option each; consultant assignments decided by delivery manager. Also says go-live signed off by sponsor and delivery manager. So partial evidence: we have escalation but not recording own responsibility boundaries. So partial_evidence. Missing: evidence of recording responsibility boundaries.\n\nreq_59ab057a4e86: Produces project close-out report with limitations and hand-over conditions. Evidence: src_1052e793b055. Supported.\n\nNow supportedClaims: list claims that are supported. For each claim, include supportingRequirementIds. For example claim: Maintained implementation plan, action log and consultant schedule. requirement ids: req_414ad3df703e. sourceIds: src_ae4021c45db8, src_5209e114cd9f. evidenceStrength high? maybe medium. Provide witness text.\n\nUnsupportedClaims: any claim not established. For example claim that she held go-live sign-off. Not established. Provide reason.\n\nMissingEvidenceGaps: for each requirement with partial evidence, list gap. For req_09d65247a8e6: missing evidence that she held go-live sign-off. For req_69421b18933f: missing evidence of recording responsibility boundaries.\n\nInterviewSignalRisks: any notes? src_5313fbf2c277 note about recruiter screen. Might be risk: candidate claims ran end-to-end but not verified. So signal type: self-report. Not tied to job-related evidence. severity medium. recommended handling: verify with delivery manager.\n\nFollowUpQuestions: for each gap. Provide question.\n\nHumanReviewChecklist: items like \"Verify go-live sign-off ownership\", \"Confirm responsibility boundary recording\", etc.\n\nAuditSummary: paragraph summarizing.\n\nLimitations: e.g., limited to provided materials, no external verification.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_71b08559a72df023\",\"targetRoleTitle\":\"Delivery Project Coordinator, Customer Ticketing System\",\"professionalSummary\":[\"Maintained implementation plans, action logs, and consultant schedules for six enterprise implementations, ensuring weekly status updates were current.\",\"Prepared and hosted weekly customer status calls, recording decisions and actions.\",\"Escalated schedule and resourcing risks to the delivery manager with recommended options.\",\"Drafted close‑out reports detailing limitations and hand‑over items for customer support.\",\"Managed these responsibilities over approximately two years within the delivery team.\"],\"experienceHighlights\":[\"Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer‑facing status page current each week. (src_ae4021c45db8, src_5209e114cd9f)\",\"Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager. (src_8073721bbcf0)\",\"Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go‑live was signed off by the customer's project sponsor with the delivery manager. (src_e82a50c8b441)\",\"Drafted the close‑out report for each implementation from the action log and the call minutes, listing open limitations and the hand‑over items for customer support. (src_1052e793b055)\"],\"projectsAndWorkSamples\":[\"Work sample: the action log export and the close‑out report for one implementation, with the project tool's record identifiers as a verification trail. (src_f666d83b1a0a)\"],\"skills\":[\"Project plan maintenance\",\"Action log management\",\"Consultant scheduling\",\"Weekly status call facilitation\",\"Risk escalation\",\"Close‑out reporting\"],\"evidenceBoundary\":\"The provided resume and work sample documents establish the candidate’s involvement in plan maintenance, status calls, risk escalation, and close‑out reporting, but do not conclusively demonstrate ownership of end‑to‑end implementation or holding go‑live sign‑off.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Delivery Project Coordinator, Customer Ticketing System\",\"jobDescriptionSource\":\"jd_8e28c983a05e6c61\",\"requirementIds\":[\"req_09d65247a8e6\",\"req_414ad3df703e\",\"req_30acab642b10\",\"req_69421b18933f\",\"req_59ab057a4e86\"]},\"candidate\":{\"candidateId\":\"cand_71b08559a72df023\",\"sources\":[\"src_ae4021c45db8\",\"src_8073721bbcf0\",\"src_e82a50c8b441\",\"src_1052e793b055\",\"src_5209e114cd9f\",\"src_f666d83b1a0a\",\"src_5313fbf2c277\",\"src_d80973926e59\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_09d65247a8e6\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_5313fbf2c277\",\"text\":\"candidate said she 'ran the implementations end-to-end' and that the delivery manager was mostly there for the commercials; asked who signed go-live, she said the sponsor and the delivery manager did.\",\"evidenceStrength\":\"medium\",\"notes\":\"self-report of end-to-end ownership\"},{\"sourceId\":\"src_e82a50c8b441\",\"text\":\"Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager.\",\"evidenceStrength\":\"medium\",\"notes\":\"go-live signed off by sponsor and delivery manager\"}],\"missingEvidence\":[\"Evidence that the candidate personally held the customer go-live sign-off\"]},{\"requirementId\":\"req_414ad3df703e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_ae4021c45db8\",\"text\":\"Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing status page current each week.\",\"evidenceStrength\":\"high\",\"notes\":\"direct statement of maintenance\"},{\"sourceId\":\"src_5209e114cd9f\",\"text\":\"Responsibilities included plan and log maintenance, status calls, risk escalation and close-out reports for enterprise implementations over about two years in the delivery team.\",\"evidenceStrength\":\"medium\",\"notes\":\"supports maintenance claim\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_30acab642b10\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8073721bbcf0\",\"text\":\"Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager.\",\"evidenceStrength\":\"high\",\"notes\":\"direct statement of status call facilitation\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_69421b18933f\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_e82a50c8b441\",\"text\":\"Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager.\",\"evidenceStrength\":\"medium\",\"notes\":\"risk escalation evidence\"}],\"missingEvidence\":[\"Evidence that the candidate recorded own responsibility boundaries\"]},{\"requirementId\":\"req_59ab057a4e86\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_1052e793b055\",\"text\":\"Drafted the close-out report for each implementation from the action log and the call minutes, listing open limitations and the hand-over items for customer support.\",\"evidenceStrength\":\"high\",\"notes\":\"direct statement of close-out reporting\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Maintained the implementation plan, action log and consultant schedule for six enterprise implementations.\",\"supportingRequirementIds\":[\"req_414ad3df703e\"],\"sourceIds\":[\"src_ae4021c45db8\",\"src_5209e114cd9f\"],\"evidenceStrength\":\"high\",\"witness\":\"Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing status page current each week.\"},{\"claim\":\"Prepared and hosted weekly customer status calls, recording decisions and actions.\",\"supportingRequirementIds\":[\"req_30acab642b10\"],\"sourceIds\":[\"src_8073721bbcf0\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager.\"},{\"claim\":\"Escalated schedule and resourcing risks to the delivery manager with recommended options.\",\"supportingRequirementIds\":[\"req_69421b18933f\"],\"sourceIds\":[\"src_e82a50c8b441\"],\"evidenceStrength\":\"medium\",\"witness\":\"Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager.\"},{\"claim\":\"Drafted close-out reports detailing limitations and hand-over items for customer support.\",\"supportingRequirementIds\":[\"req_59ab057a4e86\"],\"sourceIds\":[\"src_1052e793b055\"],\"evidenceStrength\":\"high\",\"witness\":\"Drafted the close-out report for each implementation from the action log and the call minutes, listing open limitations and the hand-over items for customer support.\"}],\"unsupportedClaims\":[{\"claim\":\"Held the customer go-live sign-off personally.\",\"reason\":\"The provided sources indicate that the go-live was signed off by the customer's project sponsor and the delivery manager, not by the candidate.\",\"requiredFollowUp\":\"Ask the delivery manager or review project documentation to confirm who signed the go-live.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_01\",\"requirementId\":\"req_09d65247a8e6\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate personally held the customer go-live sign-off.\"},{\"gapId\":\"gap_02\",\"requirementId\":\"req_69421b18933f\",\"severity\":\"medium\",\"gap\":\"Evidence that the candidate recorded own responsibility boundaries.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_5313fbf2c277\",\"text\":\"candidate said she 'ran the implementations end-to-end'\",\"signalType\":\"self-report\",\"jobRelatedBoundary\":\"false\",\"severity\":\"medium\",\"recommendedHandling\":\"Verify with delivery manager or project records.\"}],\"followUpQuestions\":[{\"questionId\":\"q_01\",\"requirementId\":\"req_09d65247a8e6\",\"question\":\"Can you confirm who signed the customer go-live for the implementations you managed?\",\"evidenceTarget\":\"Documentation or confirmation that the candidate held go-live sign-off.\"},{\"questionId\":\"q_02\",\"requirementId\":\"req_69421b18933f\",\"question\":\"How did you record your responsibility boundaries when escalating risks?\",\"evidenceTarget\":\"Evidence of documented responsibility boundaries.\"}],\"humanReviewChecklist\":[\"Verify ownership of end-to-end implementation and go-live sign-off\",\"Confirm that responsibility boundaries were recorded during risk escalation\",\"Assess consistency between self-reported claims and documented evidence\"],\"auditSummary\":\"The candidate’s resume and work sample provide clear evidence for plan maintenance, status call facilitation, risk escalation, and close‑out reporting. However, ownership of end‑to‑end implementation and personal holding of go‑live sign‑off are not conclusively demonstrated. Additional verification from delivery leadership or project documentation is required before a hiring decision can be made.\",\"limitations\":[\"Analysis limited to the provided resume, work sample, and notes; no external verification of claims was performed.\"]}}",
+ "content_sha256": "d0ce160129002d04f8ccd72ef57220786be9e18db9960825c86a1368b31d93b1",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_71b08559a72df023",
+   "targetRoleTitle": "Delivery Project Coordinator, Customer Ticketing System",
+   "professionalSummary": [
+    "Maintained implementation plans, action logs, and consultant schedules for six enterprise implementations, ensuring weekly status updates were current.",
+    "Prepared and hosted weekly customer status calls, recording decisions and actions.",
+    "Escalated schedule and resourcing risks to the delivery manager with recommended options.",
+    "Drafted close‑out reports detailing limitations and hand‑over items for customer support.",
+    "Managed these responsibilities over approximately two years within the delivery team."
+   ],
+   "experienceHighlights": [
+    "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer‑facing status page current each week. (src_ae4021c45db8, src_5209e114cd9f)",
+    "Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager. (src_8073721bbcf0)",
+    "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go‑live was signed off by the customer's project sponsor with the delivery manager. (src_e82a50c8b441)",
+    "Drafted the close‑out report for each implementation from the action log and the call minutes, listing open limitations and the hand‑over items for customer support. (src_1052e793b055)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: the action log export and the close‑out report for one implementation, with the project tool's record identifiers as a verification trail. (src_f666d83b1a0a)"
+   ],
+   "skills": [
+    "Project plan maintenance",
+    "Action log management",
+    "Consultant scheduling",
+    "Weekly status call facilitation",
+    "Risk escalation",
+    "Close‑out reporting"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents establish the candidate’s involvement in plan maintenance, status calls, risk escalation, and close‑out reporting, but do not conclusively demonstrate ownership of end‑to‑end implementation or holding go‑live sign‑off."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Delivery Project Coordinator, Customer Ticketing System",
+    "jobDescriptionSource": "jd_8e28c983a05e6c61",
+    "requirementIds": [
+     "req_09d65247a8e6",
+     "req_414ad3df703e",
+     "req_30acab642b10",
+     "req_69421b18933f",
+     "req_59ab057a4e86"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_71b08559a72df023",
+    "sources": [
+     "src_ae4021c45db8",
+     "src_8073721bbcf0",
+     "src_e82a50c8b441",
+     "src_1052e793b055",
+     "src_5209e114cd9f",
+     "src_f666d83b1a0a",
+     "src_5313fbf2c277",
+     "src_d80973926e59"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_09d65247a8e6",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_5313fbf2c277",
+       "text": "candidate said she 'ran the implementations end-to-end' and that the delivery manager was mostly there for the commercials; asked who signed go-live, she said the sponsor and the delivery manager did.",
+       "evidenceStrength": "medium",
+       "notes": "self-report of end-to-end ownership"
+      },
+      {
+       "sourceId": "src_e82a50c8b441",
+       "text": "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager.",
+       "evidenceStrength": "medium",
+       "notes": "go-live signed off by sponsor and delivery manager"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate personally held the customer go-live sign-off"
+     ]
+    },
+    {
+     "requirementId": "req_414ad3df703e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ae4021c45db8",
+       "text": "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing status page current each week.",
+       "evidenceStrength": "high",
+       "notes": "direct statement of maintenance"
+      },
+      {
+       "sourceId": "src_5209e114cd9f",
+       "text": "Responsibilities included plan and log maintenance, status calls, risk escalation and close-out reports for enterprise implementations over about two years in the delivery team.",
+       "evidenceStrength": "medium",
+       "notes": "supports maintenance claim"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_30acab642b10",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8073721bbcf0",
+       "text": "Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager.",
+       "evidenceStrength": "high",
+       "notes": "direct statement of status call facilitation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_69421b18933f",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_e82a50c8b441",
+       "text": "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager.",
+       "evidenceStrength": "medium",
+       "notes": "risk escalation evidence"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate recorded own responsibility boundaries"
+     ]
+    },
+    {
+     "requirementId": "req_59ab057a4e86",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1052e793b055",
+       "text": "Drafted the close-out report for each implementation from the action log and the call minutes, listing open limitations and the hand-over items for customer support.",
+       "evidenceStrength": "high",
+       "notes": "direct statement of close-out reporting"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations.",
+     "supportingRequirementIds": [
+      "req_414ad3df703e"
+     ],
+     "sourceIds": [
+      "src_ae4021c45db8",
+      "src_5209e114cd9f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the implementation plan, action log and consultant schedule for six enterprise implementations in the project tool, keeping the customer-facing status page current each week."
+    },
+    {
+     "claim": "Prepared and hosted weekly customer status calls, recording decisions and actions.",
+     "supportingRequirementIds": [
+      "req_30acab642b10"
+     ],
+     "sourceIds": [
+      "src_8073721bbcf0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared and hosted the weekly customer status call for my assigned implementations, recording decisions and actions; scope and commercial questions on the call were answered by the delivery manager."
+    },
+    {
+     "claim": "Escalated schedule and resourcing risks to the delivery manager with recommended options.",
+     "supportingRequirementIds": [
+      "req_69421b18933f"
+     ],
+     "sourceIds": [
+      "src_e82a50c8b441"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Escalated schedule and resourcing risks to the delivery manager with an option each; consultant assignments were decided by the delivery manager, and customer go-live was signed off by the customer's project sponsor with the delivery manager."
+    },
+    {
+     "claim": "Drafted close-out reports detailing limitations and hand-over items for customer support.",
+     "supportingRequirementIds": [
+      "req_59ab057a4e86"
+     ],
+     "sourceIds": [
+      "src_1052e793b055"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Drafted the close-out report for each implementation from the action log and the call minutes, listing open limitations and the hand-over items for customer support."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Held the customer go-live sign-off personally.",
+     "reason": "The provided sources indicate that the go-live was signed off by the customer's project sponsor and the delivery manager, not by the candidate.",
+     "requiredFollowUp": "Ask the delivery manager or review project documentation to confirm who signed the go-live."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_01",
+     "requirementId": "req_09d65247a8e6",
+     "severity": "medium",
+     "gap": "Evidence that the candidate personally held the customer go-live sign-off."
+    },
+    {
+     "gapId": "gap_02",
+     "requirementId": "req_69421b18933f",
+     "severity": "medium",
+     "gap": "Evidence that the candidate recorded own responsibility boundaries."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_5313fbf2c277",
+     "text": "candidate said she 'ran the implementations end-to-end'",
+     "signalType": "self-report",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify with delivery manager or project records."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_01",
+     "requirementId": "req_09d65247a8e6",
+     "question": "Can you confirm who signed the customer go-live for the implementations you managed?",
+     "evidenceTarget": "Documentation or confirmation that the candidate held go-live sign-off."
+    },
+    {
+     "questionId": "q_02",
+     "requirementId": "req_69421b18933f",
+     "question": "How did you record your responsibility boundaries when escalating risks?",
+     "evidenceTarget": "Evidence of documented responsibility boundaries."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify ownership of end-to-end implementation and go-live sign-off",
+    "Confirm that responsibility boundaries were recorded during risk escalation",
+    "Assess consistency between self-reported claims and documented evidence"
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide clear evidence for plan maintenance, status call facilitation, risk escalation, and close‑out reporting. However, ownership of end‑to‑end implementation and personal holding of go‑live sign‑off are not conclusively demonstrated. Additional verification from delivery leadership or project documentation is required before a hiring decision can be made.",
+   "limitations": [
+    "Analysis limited to the provided resume, work sample, and notes; no external verification of claims was performed."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:14:03.977791+00:00"
+}

@@ -1,0 +1,602 @@
+{
+ "request_id": "f93c3571-7fca-448f-94ba-f0ade84388f6.C2",
+ "case_id": "f93c3571-7fca-448f-94ba-f0ade84388f6",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "requirement_ids_allowed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.role.requirementIds",
+    "message": "requirementId 'req_02203fbf369' is not in the case",
+    "witness": {
+     "requirementId": "req_02203fbf369"
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[2]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_f56aca4593f3",
+      "src_91003c97f6c0"
+     ],
+     "text": "Reduced the schedule board's client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months, measured against the published baseline."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_f56aca4593f3",
+      "src_91003c97f6c0"
+     ],
+     "text": "State-management rewrite reduced client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months."
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "causal_term_licensed",
+    "severity": "noncritical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "causal/comparative wording not present in the cited sources: reduced",
+    "witness": {
+     "terms": [
+      "reduced"
+     ],
+     "sourceIds": [
+      "src_f56aca4593f3",
+      "src_91003c97f6c0"
+     ],
+     "text": "Reduced the schedule board's client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months, measured against the published baseline."
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "requirement_ids_allowed",
+   "action": "drop_invalid_requirement_ids",
+   "path": "$.hiringEvidencePacket.role.requirementIds",
+   "detail": ""
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[2]",
+   "detail": "Reduced the schedule board's client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months, measur"
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.experienceHighlights[0]",
+   "detail": "State-management rewrite reduced client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months."
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "causal_term_licensed",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[2]",
+   "detail": "Reduced the schedule board's client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months, measur"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_83189db04e6a6ad2",
+   "targetRoleTitle": "Web Frontend Engineer, Warehouse Scheduling",
+   "professionalSummary": [
+    {
+     "claimId": "sum_01",
+     "text": "Developed and maintained the dock-schedule board and shift planner in the warehouse scheduling web application using Vue.js.",
+     "sourceIds": [
+      "src_ea5ffa176e3f"
+     ],
+     "requirementIds": [
+      "req_022203fbf369"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built and looked after the dock-schedule board and shift planner in the warehouse scheduling app (Vue): the drag-and-drop slot editor, the overlap highlighting for shifts and the printable day view planners asked for."
+    },
+    {
+     "claimId": "sum_02",
+     "text": "Maintained and extended the Vitest component and Playwright browser test suites, including adding a mandatory board-render smoke test.",
+     "sourceIds": [
+      "src_dc2e7ba1e66e"
+     ],
+     "requirementIds": [
+      "req_4decd08c9e7f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Looked after the Vitest component tests and the Playwright browser tests; a board-render smoke test I added now has to pass before a release can go out."
+    },
+    {
+     "claimId": "sum_04",
+     "text": "Collaborated with the backend team on API changes, adapting the frontend to approved endpoints while the backend lead held final approval.",
+     "sourceIds": [
+      "src_181c4badd18a"
+     ],
+     "requirementIds": [
+      "req_03d3b5ace69c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Took API changes through the backend team's review, where the backend lead had the final say on endpoints; my side was adapting the board and planner to whatever was approved."
+    },
+    {
+     "claimId": "sum_05",
+     "text": "Documented release limitations and maintained the frontend on-call hand-over sheet for every app release.",
+     "sourceIds": [
+      "src_a3b5792f39e3"
+     ],
+     "requirementIds": [
+      "req_c4816d4d3d44"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Kept the app's release write-ups, which recorded among other things that the slot editor could not yet handle multi-day slots, and the hand-over sheet the frontend on-call engineer reads."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "exp_02",
+     "text": "Added mandatory board-render smoke test to Playwright suite, now required before releases.",
+     "sourceIds": [
+      "src_dc2e7ba1e66e"
+     ],
+     "requirementIds": [
+      "req_4decd08c9e7f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Looked after the Vitest component tests and the Playwright browser tests; a board-render smoke test I added now has to pass before a release can go out."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "proj_01",
+     "text": "Twelve-week error monitoring export showing weekly errors per thousand sessions with baseline and rewrite release markers.",
+     "sourceIds": [
+      "src_4644e9e1bb36"
+     ],
+     "requirementIds": [
+      "req_ba709ec325b5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: a twelve-week export from the error monitoring tool (weekly errors per thousand sessions, with the baseline and the rewrite release marked) plus the Playwright smoke test; pipeline run numbers are included so the entries can be traced."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "skill_01",
+     "text": "Vue.js for building dock-schedule board and shift planner components.",
+     "sourceIds": [
+      "src_ea5ffa176e3f"
+     ],
+     "requirementIds": [
+      "req_022203fbf369"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built and looked after the dock-schedule board and shift planner in the warehouse scheduling app (Vue): the drag-and-drop slot editor, the overlap highlighting for shifts and the printable day view planners asked for."
+    },
+    {
+     "claimId": "skill_02",
+     "text": "Vitest and Playwright for component and browser testing.",
+     "sourceIds": [
+      "src_dc2e7ba1e66e"
+     ],
+     "requirementIds": [
+      "req_4decd08c9e7f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Looked after the Vitest component tests and the Playwright browser tests; a board-render smoke test I added now has to pass before a release can go out."
+    },
+    {
+     "claimId": "skill_03",
+     "text": "Error monitoring tool analysis for tracking client-side error rates.",
+     "sourceIds": [
+      "src_f56aca4593f3",
+      "src_4644e9e1bb36"
+     ],
+     "requirementIds": [
+      "req_ba709ec325b5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "The schedule board's client-side error rate fell from 4.1 errors per thousand sessions to 0.9 after the state-management rewrite, measured by the application's error monitoring over the following two months against the published baseline of 4.1."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's work on the dock-schedule board, test suites, error rate reduction, API collaboration, and release documentation as described in the CV. The materials do not establish the candidate's role in backend API design, ownership of the entire product, or specific metrics beyond the error rate reduction."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit for role based on evidence and gaps."
+   },
+   "role": {
+    "roleTitle": "Web Frontend Engineer, Warehouse Scheduling",
+    "jobDescriptionSource": "jd_d7dad9c0360394b6",
+    "requirementIds": [
+     "req_4decd08c9e7f",
+     "req_ba709ec325b5",
+     "req_03d3b5ace69c",
+     "req_c4816d4d3d44"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_83189db04e6a6ad2",
+    "sources": [
+     "src_ea5ffa176e3f",
+     "src_dc2e7ba1e66e",
+     "src_f56aca4593f3",
+     "src_181c4badd18a",
+     "src_a3b5792f39e3",
+     "src_4644e9e1bb36",
+     "src_91003c97f6c0",
+     "src_1760a3a216ca"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_022203fbf369",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_ea5ffa176e3f",
+       "text": "Built and looked after the dock-schedule board and shift planner in the warehouse scheduling app (Vue): the drag-and-drop slot editor, the overlap highlighting for shifts and the printable day view planners asked for.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4decd08c9e7f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_dc2e7ba1e66e",
+       "text": "Looked after the Vitest component tests and the Playwright browser tests; a board-render smoke test I added now has to pass before a release can go out.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_ba709ec325b5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f56aca4593f3",
+       "text": "The schedule board's client-side error rate fell from 4.1 errors per thousand sessions to 0.9 after the state-management rewrite, measured by the application's error monitoring over the following two months against the published baseline of 4.1.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      },
+      {
+       "sourceId": "src_91003c97f6c0",
+       "text": "the error-rate numbers are from the app's error monitoring tool, the state-management rewrite was the candidate's own work, and the employment dates match the CV.",
+       "evidenceStrength": "medium",
+       "notes": "Confirms attribution and source."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_03d3b5ace69c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_181c4badd18a",
+       "text": "Took API changes through the backend team's review, where the backend lead had the final say on endpoints; my side was adapting the board and planner to whatever was approved.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c4816d4d3d44",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a3b5792f39e3",
+       "text": "Kept the app's release write-ups, which recorded among other things that the slot editor could not yet handle multi-day slots, and the hand-over sheet the frontend on-call engineer reads.",
+       "evidenceStrength": "high",
+       "notes": "Directly matches requirement."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Developed and maintained the dock-schedule board and shift planner in the warehouse scheduling web application using Vue.js.",
+     "supportingRequirementIds": [
+      "req_022203fbf369"
+     ],
+     "sourceIds": [
+      "src_ea5ffa176e3f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built and looked after the dock-schedule board and shift planner in the warehouse scheduling app (Vue): the drag-and-drop slot editor, the overlap highlighting for shifts and the printable day view planners asked for."
+    },
+    {
+     "claim": "Maintained and extended the Vitest component and Playwright browser test suites, including adding a mandatory board-render smoke test.",
+     "supportingRequirementIds": [
+      "req_4decd08c9e7f"
+     ],
+     "sourceIds": [
+      "src_dc2e7ba1e66e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Looked after the Vitest component tests and the Playwright browser tests; a board-render smoke test I added now has to pass before a release can go out."
+    },
+    {
+     "claim": "Collaborated with the backend team on API changes, adapting the frontend to approved endpoints while the backend lead held final approval.",
+     "supportingRequirementIds": [
+      "req_03d3b5ace69c"
+     ],
+     "sourceIds": [
+      "src_181c4badd18a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took API changes through the backend team's review, where the backend lead had the final say on endpoints; my side was adapting the board and planner to whatever was approved."
+    },
+    {
+     "claim": "Documented release limitations and maintained the frontend on-call hand-over sheet for every app release.",
+     "supportingRequirementIds": [
+      "req_c4816d4d3d44"
+     ],
+     "sourceIds": [
+      "src_a3b5792f39e3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the app's release write-ups, which recorded among other things that the slot editor could not yet handle multi-day slots, and the hand-over sheet the frontend on-call engineer reads."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Reduced the schedule board's client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months, measured against the published baseline.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    },
+    {
+     "claim": "State-management rewrite reduced client-side error rate from 4.1 to 0.9 errors per thousand sessions over two months.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify error rate reduction attribution to candidate's work",
+    "Confirm backend team's final approval process for API changes",
+    "Validate release documentation completeness"
+   ],
+   "auditSummary": "All claims are sourced from provided materials. Evidence for all requirements is established with direct source quotes. No unsupported claims or gaps found. Human review required to assess fit.",
+   "limitations": [
+    "No evidence of backend API design ownership",
+    "No evidence of product-wide ownership beyond the schedule board"
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

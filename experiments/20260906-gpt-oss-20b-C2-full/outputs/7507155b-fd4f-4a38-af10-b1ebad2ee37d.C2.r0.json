@@ -1,0 +1,296 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "7507155b-fd4f-4a38-af10-b1ebad2ee37d.C2",
+ "case_id": "7507155b-fd4f-4a38-af10-b1ebad2ee37d",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14401,
+  "promptWords": 1768
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 53.327
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3876,
+ "eval_count": 2280,
+ "prompt_eval_duration_ns": 18862000,
+ "eval_duration_ns": 41653357000,
+ "total_duration_ns": 53324096041,
+ "thinking": "We need to produce JSON with schema. Need to include claims with sourceIds, witness passages. Use provided sources. We must not add unsupported claims. All claims must have source. We can create claims from resume statements. Use source ids. Witness: short verbatim passage. We need to copy candidateId and jobDescriptionSourceId. Provide requirementEvidenceMap covering all requirementIds. For each requirement, determine status: supported? We have evidence. All requirements seem supported by resume. Provide evidence entries. No gaps. So missingEvidence empty. supportedClaims array: maybe each claim from resume. But we need to map to requirementIds. We can create claims for each requirement. Provide sourceIds. evidenceStrength high. witness: quote from source. Use src_9b14eaea9d3a etc.\n\nAlso need unsupportedClaims empty. missingEvidenceGaps empty. interviewSignalRisks maybe none. followUpQuestions none. humanReviewChecklist maybe [\"Review evidence for completeness\"]. auditSummary paragraph. limitations maybe [\"Based on provided sources only\"].\n\nLet's craft.\n\nWe need optimizedCv: language en, candidateId, targetRoleTitle, professionalSummary array of CLAIM objects? Wait spec: professionalSummary: [CLAIM...] but CLAIM defined earlier. So each claim object. Provide claimId, text, sourceIds, requirementIds, supportBoundary, witness. Use same structure. Provide few claims: deliver report, pre-release walkthrough, regression suite, release approval, note. Provide claimIds.\n\nLet's craft.\n\nAlso evidenceBoundary: one or two sentences on what materials establish. e.g., \"The provided resume and work sample confirm the candidate has delivered report and feed tickets, performed pre-release walkthroughs, maintained regression suite, obtained lead approval, and documented non-touch notes.\"\n\nNow requirementEvidenceMap: each requirement id with status supported, evidence array with sourceId and text. Provide witness text from resume. missingEvidence empty.\n\nsupportedClaims: list of claim objects.\n\nunsupportedClaims empty.\n\nmissingEvidenceGaps empty.\n\ninterviewSignalRisks empty.\n\nfollowUpQuestions empty.\n\nhumanReviewChecklist: [\"Verify that all tickets referenced in work sample are accessible and contain the required records.\"]\n\nauditSummary: paragraph summarizing evidence.\n\nlimitations: [\"Evidence limited to provided resume, work sample, and interview notes.\"]\n\nReturn JSON.\n\nLet's craft.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_28302ca1b42dc6f6\",\n    \"targetRoleTitle\": \"Software Engineer, Treasury Reporting Services\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"clm_1\",\n        \"text\": \"Delivered 46 report and feed tickets against treasury analysts' specifications under the engineering standard.\",\n        \"sourceIds\": [\"src_9b14eaea9d3a\"],\n        \"requirementIds\": [\"req_a71bd37288d2\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\\\"forty-six report and feed tickets delivered against the analysts' specifications under the engineering standard\\\"\"\n      },\n      {\n        \"claimId\": \"clm_2\",\n        \"text\": \"Conducted pre‑release walkthroughs with analysts, providing signed acceptance for each ticket.\",\n        \"sourceIds\": [\"src_8a83034a22b0\"],\n        \"requirementIds\": [\"req_939d66b01151\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\\\"Before every release I sat with the analysts and walked them through what would move on their reports\\\"\"\n      },\n      {\n        \"claimId\": \"clm_3\",\n        \"text\": \"Maintained the regression suite for intraday liquidity and funding reports, with suite results recorded on every ticket.\",\n        \"sourceIds\": [\"src_66740b9c7445\"],\n        \"requirementIds\": [\"req_c8d698197ccd\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\\\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results\\\"\"\n      },\n      {\n        \"claimId\": \"clm_4\",\n        \"text\": \"Obtained release approval from the reporting services lead and documented which checks were owned by the candidate and by the lead.\",\n        \"sourceIds\": [\"src_06fac136213d\"],\n        \"requirementIds\": [\"req_3f52cfd9073f\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\\\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's\\\"\"\n      },\n      {\n        \"claimId\": \"clm_5\",\n        \"text\": \"Added a note on every ticket stating what the change does not touch and the hand‑over conditions for the next engineer.\",\n        \"sourceIds\": [\"src_eadbef94cac1\"],\n        \"requirementIds\": [\"req_d4271d57f991\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\\\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know\\\"\"\n      }\n    ],\n    \"experienceHighlights\": [],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"clm_6\",\n        \"text\": \"Provided a work sample of three tickets with walkthrough records, signed acceptances, suite results, and lead approval.\",\n        \"sourceIds\": [\"src_d1b487c96652\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\\\"Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval\\\"\"\n      }\n    ],\n    \"skills\": [],\n    \"evidenceBoundary\": \"The resume and work sample confirm that the candidate has delivered report and feed tickets, performed pre‑release walkthroughs, maintained the regression suite, obtained lead approval, and documented non‑touch notes.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess the completeness of the evidence.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Software Engineer, Treasury Reporting Services\",\n      \"jobDescriptionSource\": \"jd_3c63c864328b808c\",\n      \"requirementIds\": [\n        \"req_a71bd37288d2\",\n        \"req_939d66b01151\",\n        \"req_c8d698197ccd\",\n        \"req_3f52cfd9073f\",\n        \"req_d4271d57f991\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_28302ca1b42dc6f6\",\n      \"sources\": [\n        \"src_9b14eaea9d3a\",\n        \"src_8a83034a22b0\",\n        \"src_66740b9c7445\",\n        \"src_06fac136213d\",\n        \"src_eadbef94cac1\",\n        \"src_d1b487c96652\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_a71bd37288d2\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9b14eaea9d3a\",\n            \"text\": \"\\\"forty-six report and feed tickets delivered against the analysts' specifications under the engineering standard\\\"\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_939d66b01151\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_8a83034a22b0\",\n            \"text\": \"\\\"Before every release I sat with the analysts and walked them through what would move on their reports\\\"\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_c8d698197ccd\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_66740b9c7445\",\n            \"text\": \"\\\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results\\\"\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_3f52cfd9073f\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_06fac136213d\",\n            \"text\": \"\\\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's\\\"\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d4271d57f991\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_eadbef94cac1\",\n            \"text\": \"\\\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know\\\"\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Delivered 46 report and feed tickets against treasury analysts' specifications under the engineering standard.\",\n        \"supportingRequirementIds\": [\"req_a71bd37288d2\"],\n        \"sourceIds\": [\"src_9b14eaea9d3a\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"\\\"forty-six report and feed tickets delivered against the analysts' specifications under the engineering standard\\\"\"\n      },\n      {\n        \"claim\": \"Conducted pre‑release walkthroughs with analysts, providing signed acceptance for each ticket.\",\n        \"supportingRequirementIds\": [\"req_939d66b01151\"],\n        \"sourceIds\": [\"src_8a83034a22b0\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"\\\"Before every release I sat with the analysts and walked them through what would move on their reports\\\"\"\n      },\n      {\n        \"claim\": \"Maintained the regression suite for intraday liquidity and funding reports, with suite results recorded on every ticket.\",\n        \"supportingRequirementIds\": [\"req_c8d698197ccd\"],\n        \"sourceIds\": [\"src_66740b9c7445\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"\\\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results\\\"\"\n      },\n      {\n        \"claim\": \"Obtained release approval from the reporting services lead and documented which checks were owned by the candidate and by the lead.\",\n        \"supportingRequirementIds\": [\"req_3f52cfd9073f\"],\n        \"sourceIds\": [\"src_06fac136213d\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"\\\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's\\\"\"\n      },\n      {\n        \"claim\": \"Added a note on every ticket stating what the change does not touch and the hand‑over conditions for the next engineer.\",\n        \"supportingRequirementIds\": [\"req_d4271d57f991\"],\n        \"sourceIds\": [\"src_eadbef94cac1\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"\\\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know\\\"\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [],\n    \"humanReviewChecklist\": [\n      \"Verify that all tickets referenced in the work sample are accessible and contain the required records.\"\n    ],\n    \"auditSummary\": \"All five job requirements are supported by statements in the candidate's resume and work sample, each backed by a cited source and a verbatim witness. No quantitative claims or ownership ambiguities are present. The evidence is complete for the provided materials, but a human reviewer should confirm access to the referenced tickets and the authenticity of the recorded walkthroughs and approvals.\",\n    \"limitations\": [\n      \"Evidence limited to the provided resume, work sample, and interview notes.\"\n    ]\n  }\n}",
+ "content_sha256": "044bc58dce30679f6544f17985c0f3cda41f92534970cac043376ed87a96bf6c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_28302ca1b42dc6f6",
+   "targetRoleTitle": "Software Engineer, Treasury Reporting Services",
+   "professionalSummary": [
+    {
+     "claimId": "clm_1",
+     "text": "Delivered 46 report and feed tickets against treasury analysts' specifications under the engineering standard.",
+     "sourceIds": [
+      "src_9b14eaea9d3a"
+     ],
+     "requirementIds": [
+      "req_a71bd37288d2"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"forty-six report and feed tickets delivered against the analysts' specifications under the engineering standard\""
+    },
+    {
+     "claimId": "clm_2",
+     "text": "Conducted pre‑release walkthroughs with analysts, providing signed acceptance for each ticket.",
+     "sourceIds": [
+      "src_8a83034a22b0"
+     ],
+     "requirementIds": [
+      "req_939d66b01151"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"Before every release I sat with the analysts and walked them through what would move on their reports\""
+    },
+    {
+     "claimId": "clm_3",
+     "text": "Maintained the regression suite for intraday liquidity and funding reports, with suite results recorded on every ticket.",
+     "sourceIds": [
+      "src_66740b9c7445"
+     ],
+     "requirementIds": [
+      "req_c8d698197ccd"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results\""
+    },
+    {
+     "claimId": "clm_4",
+     "text": "Obtained release approval from the reporting services lead and documented which checks were owned by the candidate and by the lead.",
+     "sourceIds": [
+      "src_06fac136213d"
+     ],
+     "requirementIds": [
+      "req_3f52cfd9073f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's\""
+    },
+    {
+     "claimId": "clm_5",
+     "text": "Added a note on every ticket stating what the change does not touch and the hand‑over conditions for the next engineer.",
+     "sourceIds": [
+      "src_eadbef94cac1"
+     ],
+     "requirementIds": [
+      "req_d4271d57f991"
+     ],
+     "supportBoundary": "supported",
+     "witness": "\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know\""
+    }
+   ],
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "clm_6",
+     "text": "Provided a work sample of three tickets with walkthrough records, signed acceptances, suite results, and lead approval.",
+     "sourceIds": [
+      "src_d1b487c96652"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "\"Work sample: three tickets with walkthrough records, signed acceptances, suite results and the lead's approval\""
+    }
+   ],
+   "skills": [],
+   "evidenceBoundary": "The resume and work sample confirm that the candidate has delivered report and feed tickets, performed pre‑release walkthroughs, maintained the regression suite, obtained lead approval, and documented non‑touch notes."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the completeness of the evidence."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Treasury Reporting Services",
+    "jobDescriptionSource": "jd_3c63c864328b808c",
+    "requirementIds": [
+     "req_a71bd37288d2",
+     "req_939d66b01151",
+     "req_c8d698197ccd",
+     "req_3f52cfd9073f",
+     "req_d4271d57f991"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_28302ca1b42dc6f6",
+    "sources": [
+     "src_9b14eaea9d3a",
+     "src_8a83034a22b0",
+     "src_66740b9c7445",
+     "src_06fac136213d",
+     "src_eadbef94cac1",
+     "src_d1b487c96652"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a71bd37288d2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9b14eaea9d3a",
+       "text": "\"forty-six report and feed tickets delivered against the analysts' specifications under the engineering standard\"",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_939d66b01151",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8a83034a22b0",
+       "text": "\"Before every release I sat with the analysts and walked them through what would move on their reports\"",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c8d698197ccd",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_66740b9c7445",
+       "text": "\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results\"",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3f52cfd9073f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_06fac136213d",
+       "text": "\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's\"",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d4271d57f991",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_eadbef94cac1",
+       "text": "\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know\"",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Delivered 46 report and feed tickets against treasury analysts' specifications under the engineering standard.",
+     "supportingRequirementIds": [
+      "req_a71bd37288d2"
+     ],
+     "sourceIds": [
+      "src_9b14eaea9d3a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"forty-six report and feed tickets delivered against the analysts' specifications under the engineering standard\""
+    },
+    {
+     "claim": "Conducted pre‑release walkthroughs with analysts, providing signed acceptance for each ticket.",
+     "supportingRequirementIds": [
+      "req_939d66b01151"
+     ],
+     "sourceIds": [
+      "src_8a83034a22b0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"Before every release I sat with the analysts and walked them through what would move on their reports\""
+    },
+    {
+     "claim": "Maintained the regression suite for intraday liquidity and funding reports, with suite results recorded on every ticket.",
+     "supportingRequirementIds": [
+      "req_c8d698197ccd"
+     ],
+     "sourceIds": [
+      "src_66740b9c7445"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"The regression suite for the intraday liquidity and funding reports was mine to maintain; every ticket carries the suite results\""
+    },
+    {
+     "claim": "Obtained release approval from the reporting services lead and documented which checks were owned by the candidate and by the lead.",
+     "supportingRequirementIds": [
+      "req_3f52cfd9073f"
+     ],
+     "sourceIds": [
+      "src_06fac136213d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"Releases went out on the reporting services lead's approval, recorded on the ticket next to a list of the checks that were mine and the checks that were the lead's\""
+    },
+    {
+     "claim": "Added a note on every ticket stating what the change does not touch and the hand‑over conditions for the next engineer.",
+     "supportingRequirementIds": [
+      "req_d4271d57f991"
+     ],
+     "sourceIds": [
+      "src_eadbef94cac1"
+     ],
+     "evidenceStrength": "high",
+     "witness": "\"Every ticket ends with a note stating what the change does not touch and what the next engineer needs to know\""
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that all tickets referenced in the work sample are accessible and contain the required records."
+   ],
+   "auditSummary": "All five job requirements are supported by statements in the candidate's resume and work sample, each backed by a cited source and a verbatim witness. No quantitative claims or ownership ambiguities are present. The evidence is complete for the provided materials, but a human reviewer should confirm access to the referenced tickets and the authenticity of the recorded walkthroughs and approvals.",
+   "limitations": [
+    "Evidence limited to the provided resume, work sample, and interview notes."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T14:24:20.279837+00:00"
+}

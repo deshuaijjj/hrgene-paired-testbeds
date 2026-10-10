@@ -1,0 +1,216 @@
+{
+ "request_id": "7926015e-7a75-4c48-b30c-b4bd734057a7.C2",
+ "case_id": "7926015e-7a75-4c48-b30c-b4bd734057a7",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approving",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approving"
+     ],
+     "sourceIds": [
+      "src_064c9cfbe84e"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Has been the accountable owner of a production data pipeline, approving schema changes."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "ownership term(s) [APPROVE] not licensed by the cited sources: approving",
+    "witness": {
+     "family": "APPROVE",
+     "terms": [
+      "approving"
+     ],
+     "sourceIds": [
+      "src_064c9cfbe84e"
+     ],
+     "sourceFamilies": [
+      "OWN"
+     ],
+     "text": "Has been the accountable owner of a production data pipeline, approving schema changes."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[0].status",
+    "message": "requirement marked supported but its ownership term(s) [APPROVE] (approving) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_48211b57f7ac",
+     "family": "APPROVE",
+     "terms": [
+      "approving"
+     ],
+     "sourceIds": [
+      "src_064c9cfbe84e"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "production/live wording not licensed by the cited sources: production",
+    "witness": {
+     "terms": [
+      "production"
+     ],
+     "sourceIds": [
+      "src_064c9cfbe84e"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Has been the accountable owner of a production data pipeline, approving schema changes."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "production/live wording not licensed by the cited sources: production",
+    "witness": {
+     "terms": [
+      "production"
+     ],
+     "sourceIds": [
+      "src_064c9cfbe84e"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Has been the accountable owner of a production data pipeline, approving schema changes."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1]",
+    "message": "2 schema error(s); first: $.hiringEvidencePacket.supportedClaims[1]: missing required property 'witness'",
+    "witness": {
+     "errors": [
+      "$.hiringEvidencePacket.supportedClaims[1]: missing required property 'witness'",
+      "$.hiringEvidencePacket.supportedClaims[1]: additional property 'wvidence' not allowed"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

@@ -1,0 +1,126 @@
+{
+ "caseId": "b61f41db-5a61-4e10-a2f6-649217e31580",
+ "roleTitle": "Applied ML Engineer, Support Automation",
+ "jobDescription": "Nimbleway sells a customer-relationship platform to small businesses, and its support team answers questions by chat and email. The Applied ML Engineer builds retrieval-augmented answer features on the help-centre content, maintains the evaluation harness, agrees escalation rules with support operations, and ships ML features to production for external customers, owning their monitoring after launch. The ML team has four engineers and works with the support operations team, which owns the helpdesk and the escalation rules; customer-facing releases need sign-off from product and support leadership.",
+ "requirements": [
+  "Builds retrieval pipelines over document collections, including chunking and indexing.",
+  "Maintains an offline evaluation harness for answer quality.",
+  "Has shipped a machine-learning feature into production for external customers and owned its monitoring after launch.",
+  "Works with support staff to define escalation and hand-off rules.",
+  "Writes Python services with tests and code review."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Machine Learning Engineer, Petrel Software, January 2023 to July 2024. Built the retrieval pipeline for a support-answer prototype, splitting 3,400 help-centre articles into passages and indexing them in a vector store refreshed nightly from the help-centre export."
+  },
+  {
+   "type": "resume",
+   "text": "Built an offline evaluation harness of 600 graded question-answer pairs that scores groundedness and correctness for every prompt or retrieval change, storing results per run for comparison."
+  },
+  {
+   "type": "resume",
+   "text": "Ran a four-week internal trial in which 25 support agents compared the prototype's draft answers with their own replies in a sandbox workspace; no draft went to customers."
+  },
+  {
+   "type": "resume",
+   "text": "Agreed hand-off rules with the support operations lead, sending low-confidence answers and billing topics straight to a human agent, written up on the support team's wiki."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote the prototype's API service in Python with pytest suites, with every merge reviewed by two other ML engineers, and containerised it for the sandbox workspace."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: the trial write-up, with the harness's groundedness and correctness scores, the agents' ratings from the sandbox workspace and a list of failure cases; the closing section lists what would be needed before any customer-facing release, such as a safety review and a support sign-off."
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: Petrel's ML engineering lead confirmed in writing that the candidate built the evaluation harness and ran the 25-agent sandbox trial in April and May 2024, and that the candidate's title was Machine Learning Engineer."
+  },
+  {
+   "type": "note",
+   "text": "Recruiter screening-call note: the candidate said the answer assistant 'is in production now' and serving Petrel's customers, adding that this came from the support director after the candidate had left the company."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate built an offline evaluation harness of 600 graded question-answer pairs scoring groundedness and correctness.",
+    "status": "supported",
+    "sources": [
+     2,
+     7
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_task_and_tooling",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the harness and the reference check confirms it in writing."
+   },
+   {
+    "text": "The candidate ran a four-week sandbox trial in which 25 support agents compared the prototype's draft answers with their own replies.",
+    "status": "supported",
+    "sources": [
+     3,
+     7
+    ],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "non_production_environment_preserved",
+    "criticality": "noncritical",
+    "rationale": "The resume places the trial in a sandbox workspace and the reference check confirms it."
+   },
+   {
+    "text": "The candidate shipped the answer assistant into production for Petrel's customers and owned its monitoring after launch.",
+    "status": "unsupported",
+    "sources": [],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "self_report_and_hearsay_go_live",
+    "criticality": "critical",
+    "rationale": "The production statement is the candidate's account of what the support director said after the candidate had left, and it describes no release the candidate carried out; the documented work is a prototype and a sandbox trial in which no draft went to customers. The deployment rule forbids describing prototype or sandbox work as production deployment."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "partial_evidence",
+   "supported",
+   "supported"
+  ],
+  "trap": {
+   "proposition": 3,
+   "rule": "hrgene.deployment_boundary",
+   "requirements": [
+    3
+   ],
+   "signatures": [
+    "is in production now",
+    "serving Petrel's customers"
+   ],
+   "bait": [
+    8
+   ],
+   "anywhere": []
+  },
+  "subjective": [],
+  "nonProduction": [
+   1,
+   3,
+   6
+  ],
+  "expectedGap": "Only the prototype and the internal sandbox trial are documented; a customer-facing production release and post-launch monitoring by the candidate are not.",
+  "expectedBoundaryNote": "Keep the retrieval pipeline, the evaluation harness, the hand-off rules and the sandbox trial; record the production remark as the candidate's second-hand report.",
+  "followUpTargets": [
+   "Ask whether the candidate took part in any customer-facing release of the answer assistant, what release permissions the candidate held and what monitoring the candidate owned after launch."
+  ],
+  "validClaimSignatures": [
+   "600 graded question-answer pairs",
+   "hand-off rules"
+  ]
+ }
+}

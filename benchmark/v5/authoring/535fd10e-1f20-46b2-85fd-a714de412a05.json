@@ -1,0 +1,37 @@
+{
+ "caseId": "535fd10e-1f20-46b2-85fd-a714de412a05",
+ "roleTitle": "Data Scientist, Restaurant Demand Forecasting",
+ "jobDescription": "A quick-service restaurant group with company-owned sites in three regions orders fresh ingredients every day from a central commissary. The analytics team forecasts item-level demand for each restaurant so that the commissary can plan production and the drivers load the right trays. The Data Scientist maintains the forecasting models and their feature pipelines, runs the weekly forecast review with the supply planners and documents each model for the data governance group. Any statement about lower waste or fewer stock-outs has to rest on the waste-log comparison that the finance team signs off.",
+ "requirements": [
+  "Builds and maintains item-level demand forecasting models in Python.",
+  "Maintains feature pipelines in SQL or dbt with tests for freshness and completeness.",
+  "Runs a recurring forecast accuracy review with planning or supply teams.",
+  "Shows a reduction in food waste or stock-outs from a signed-off comparison against a baseline period.",
+  "Documents models (inputs, limitations, retraining schedule) for a governance review."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Built a LightGBM model at Brightwater Kitchens that forecasts next-day demand for 140 menu items in each of 62 restaurants, using holiday, weather and local-event features."},
+  {"type": "resume", "text": "Maintained the dbt project feeding the model and added freshness and not-null tests on the point-of-sale and delivery-app tables."},
+  {"type": "resume", "text": "Ran the Thursday forecast review with the commissary planners, going through items whose forecast error exceeded the agreed tolerance and logging every manual override."},
+  {"type": "resume", "text": "Wrote the model card (inputs, known weaknesses around new menu launches, monthly retraining schedule) and presented it to the data governance group in November 2023."},
+  {"type": "resume", "text": "Tracked weighted mean absolute percentage error on a rolling eight-week holdout and published it on the planners' dashboard each Monday."},
+  {"type": "work_sample", "text": "Work sample: a two-page summary memo about the forecasting model written for the regional directors. It lists the features, charts forecast against actual sales for one restaurant over one week, and closes with the line 'Since launch the model has cut food waste by roughly a fifth across the estate'. The memo contains no waste-log figures for any period."},
+  {"type": "note", "text": "HR verification note: dates of employment at Brightwater Kitchens (September 2021 to the present) and the job title Data Scientist were confirmed by the employer's HR system through the background-check provider."},
+  {"type": "note", "text": "Reference check summary: Brightwater's commissary planning manager confirmed in writing that the candidate has run the weekly forecast review with the planners since January 2022."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "The candidate built a LightGBM model forecasting next-day demand for 140 menu items in each of 62 restaurants.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the model, its scope and features directly."},
+   {"text": "The candidate has run the weekly forecast review with the commissary planners since January 2022, logging manual overrides.", "status": "supported", "sources": [3, 8], "requirements": [3], "boundaryCategory": "verified_activity_record", "criticality": "noncritical", "rationale": "The resume describes the review and the reference check confirms it and its start date in writing."},
+   {"text": "The candidate's forecasting model cut food waste by roughly a fifth across the restaurants.", "status": "unsupported", "sources": [], "requirements": [4], "boundaryCategory": "quantified_outcome_without_baseline", "criticality": "critical", "rationale": "The figure and the causal attribution come from the candidate's own memo, which gives no waste-log figures, baseline period or finance sign-off; under the quantification rule a figure without a defined baseline is not evidence."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "insufficient_evidence", "supported"],
+  "trap": {"proposition": 3, "rule": "hrgene.unsupported_quantification", "requirements": [4], "signatures": ["roughly a fifth", "cut food waste"], "bait": [6], "anywhere": []},
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "No waste-log comparison, baseline period or finance sign-off supports the stated fall in food waste.",
+  "expectedBoundaryNote": "Report the model, the feature pipeline, the forecast review and the model card as documented; record the memo's waste figure and its attribution to the model as an unsupported claim with a follow-up.",
+  "followUpTargets": ["Ask for the waste-log figures behind the memo, the baseline period, the comparison window and whether finance signed off the comparison."],
+  "validClaimSignatures": ["LightGBM", "forecast review"]
+ }
+}

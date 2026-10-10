@@ -1,0 +1,86 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "c5545629-5eba-42bd-a4d7-3ba034e16189",
+ "family": "ownership_role_scope_inflation",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_e6510e73f428",
+   "canonicalProposition": "The candidate built the offline evaluation pipeline for article search, computing NDCG at 10 and recall on a monthly refreshed judged query set.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_4c9b0322a390",
+    "src_724211a9ec48"
+   ],
+   "relevantRequirementIds": [
+    "req_74d474a4c215"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume states the pipeline and the notebook shows the metric definitions."
+  },
+  {
+   "atomicPropositionId": "prop_e65db9ccc162",
+   "canonicalProposition": "The candidate trained and compared two learning-to-rank candidates for the 2023 refresh and passed the results to the search lead, who chose the model to test and recorded the launch decision with the product manager.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_d1b650e4784a",
+    "src_0ce685d33ef8",
+    "src_724211a9ec48"
+   ],
+   "relevantRequirementIds": [
+    "req_2ee3e97e530c",
+    "req_fc677069f47a"
+   ],
+   "boundaryCategory": "documented_participation_boundary",
+   "criticality": "noncritical",
+   "rationale": "The resume places model choice and the launch decision with the search lead and the product manager."
+  },
+  {
+   "atomicPropositionId": "prop_0b2d6497a65e",
+   "canonicalProposition": "The candidate owned the article-search ranking model and decided which ranking changes launched.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_fc677069f47a"
+   ],
+   "boundaryCategory": "unsupported_ownership_and_scope",
+   "criticality": "critical",
+   "rationale": "The claim rests on a product designer's informal impression, which is not a record of decisions; the resume states that the search lead chose the model and recorded the launch decision with the product manager."
+  }
+ ],
+ "requirementStatus": {
+  "req_2ee3e97e530c": "supported",
+  "req_74d474a4c215": "supported",
+  "req_fc677069f47a": "partial_evidence",
+  "req_067e883549c8": "supported",
+  "req_4a6c00d4d02b": "supported"
+ },
+ "subjectiveSourceIds": [
+  "src_66417a16f067"
+ ],
+ "nonProductionSourceIds": [],
+ "expectedGap": "The sources document modelling, evaluation and analysis work; owning the model and deciding launches are not documented.",
+ "expectedBoundaryNote": "Keep the evaluation pipeline, model comparison, packaging and A/B analysis as stated; the designer's remark is an impression and does not show launch authority.",
+ "permittedFollowUpTargets": [
+  "Ask which launch or model-selection decisions the candidate made personally and which the search lead made."
+ ],
+ "validClaimSignatures": [
+  "offline evaluation pipeline",
+  "learning-to-rank"
+ ],
+ "trap": {
+  "propositionId": "prop_0b2d6497a65e",
+  "rule": "hrgene.ownership_scope",
+  "requirementIds": [
+   "req_fc677069f47a"
+  ],
+  "signatures": [
+   "basically owned search ranking",
+   "decided what shipped"
+  ],
+  "baitSourceIds": [
+   "src_66417a16f067"
+  ]
+ }
+}

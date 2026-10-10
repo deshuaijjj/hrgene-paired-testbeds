@@ -1,0 +1,271 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "953d7067-d85a-4bfe-9823-725508e1ed4a.C1",
+ "case_id": "953d7067-d85a-4bfe-9823-725508e1ed4a",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11515,
+  "promptWords": 1529
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 45.58
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3208,
+ "eval_count": 1817,
+ "prompt_eval_duration_ns": 18459000,
+ "eval_duration_ns": 32445807000,
+ "total_duration_ns": 45577026667,
+ "thinking": "We need to produce JSON with optimizedCv and hiringEvidencePacket. Need to cite sources. Let's craft claims.\n\nOptimized CV: language en, candidateId cand_134ad6041b7dbb42, targetRoleTitle Lead Engineer, Payments Authorisation Service.\n\nprofessionalSummary: maybe one claim: \"Lead Engineer and technical lead of a card authorisation service at a retail bank since 2022, signing design reviews for changes to the authorisation path.\" source src_9a3dd02bc0b8.\n\nexperienceHighlights: claims about technical lead, incident reviews, roadmap owner, mentoring. Each with source.\n\nprojectsAndWorkSamples: mention work sample with signed design reviews, incident review report, certification record. source src_603e723c585e.\n\nskills: maybe \"Technical leadership, design review signing, incident review process, secure development certification, mentoring\". Each claim with source.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample establish the candidate’s role, responsibilities, certifications, and evidence of design and incident reviews, but do not provide independent verification of the bank’s secure development certification or external audit of the incident review process.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Qualified human review is required before any employment decision.\"\n\nrole: roleTitle same, jobDescriptionSourceId jd_f328f5a9c107c94e, requirementIds list.\n\ncandidate: candidateId, sources list all src_... and notes.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_75a7e641c07a: technical lead of real-time payments or comparable transaction service, signing design reviews. Evidence: src_9a3dd02bc0b8. Strength high. missingEvidence none.\n\nreq_14f149237113: at least six years of software engineering. Evidence: src_9a3dd02bc0b8 says eight years. Strength high.\n\nreq_52b923d2ea0d: holds bank's secure development certification. Evidence: src_f1b2308acd1c. Strength high.\n\nreq_971ce91bc019: leads incident reviews for service outages under documented process. Evidence: src_255fccad9c13. Strength high.\n\nreq_3b2e16fc3d6d: mentors team's engineers and documents boundaries of each design review. Evidence: src_d04887558af6. Strength high.\n\nAll supported.\n\nsupportedClaims: list each claim with supportingRequirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: none.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe items: \"Verify independent audit of incident review reports\", \"Confirm certification validity\", \"Confirm technical lead role scope\". But since evidence is strong, maybe minimal.\n\nauditSummary: paragraph summarizing.\n\nlimitations: maybe \"No external verification of certification or incident review process beyond candidate's own documentation.\"\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_134ad6041b7dbb42\",\"targetRoleTitle\":\"Lead Engineer, Payments Authorisation Service\",\"professionalSummary\":[{\"claimId\":\"claim_1\",\"text\":\"Lead Engineer and technical lead of a card authorisation service at a retail bank since 2022, signing design reviews for changes to the authorisation path.\",\"sourceIds\":[\"src_9a3dd02bc0b8\"],\"supportBoundary\":\"supported\",\"witness\":\"Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;\"}],\"experienceHighlights\":[{\"claimId\":\"claim_2\",\"text\":\"Owner of the service's technical roadmap since 2022, reviewed with the head of payments engineering each quarter.\",\"sourceIds\":[\"src_d2b1d4919374\"],\"supportBoundary\":\"supported\",\"witness\":\"Owner of the service's technical roadmap since 2022, reviewed with the head of payments engineering each quarter.\"},{\"claimId\":\"claim_3\",\"text\":\"Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register.\",\"sourceIds\":[\"src_255fccad9c13\"],\"supportBoundary\":\"supported\",\"witness\":\"Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register.\"},{\"claimId\":\"claim_4\",\"text\":\"Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover.\",\"sourceIds\":[\"src_d04887558af6\"],\"supportBoundary\":\"supported\",\"witness\":\"Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover.\"}],\"projectsAndWorkSamples\":[{\"claimId\":\"claim_5\",\"text\":\"Work sample includes two signed design reviews with boundary notes, one incident review report and the certification record extract, with the incident register and design repository references as a verification trail.\",\"sourceIds\":[\"src_603e723c585e\"],\"supportBoundary\":\"supported\",\"witness\":\"Work sample: two signed design reviews with their boundary notes, one incident review report and the certification record extract, with the incident register and design repository references as a verification trail.\"}],\"skills\":[{\"claimId\":\"claim_6\",\"text\":\"Technical leadership in real-time payments services.\",\"sourceIds\":[\"src_9a3dd02bc0b8\"],\"supportBoundary\":\"supported\",\"witness\":\"Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;\"},{\"claimId\":\"claim_7\",\"text\":\"Design review signing and boundary documentation.\",\"sourceIds\":[\"src_9a3dd02bc0b8\",\"src_d04887558af6\"],\"supportBoundary\":\"supported\",\"witness\":\"Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path; Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover.\"},{\"claimId\":\"claim_8\",\"text\":\"Incident review leadership under documented process.\",\"sourceIds\":[\"src_255fccad9c13\"],\"supportBoundary\":\"supported\",\"witness\":\"Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register.\"},{\"claimId\":\"claim_9\",\"text\":\"Secure development certification for payments domain.\",\"sourceIds\":[\"src_f1b2308acd1c\"],\"supportBoundary\":\"supported\",\"witness\":\"Secure development certification for the payments domain held since 2021 under the bank's secure development programme, renewed 2024; certificate available in the bank's learning record.\"}],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s role, responsibilities, certifications, and evidence of design and incident reviews, but do not provide independent verification of the bank’s secure development certification or external audit of the incident review process.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Lead Engineer, Payments Authorisation Service\",\"jobDescriptionSource\":\"jd_f328f5a9c107c94e\",\"requirementIds\":[\"req_75a7e641c07a\",\"req_14f149237113\",\"req_52b923d2ea0d\",\"req_971ce91bc019\",\"req_3b2e16fc3d6d\"]},\"candidate\":{\"candidateId\":\"cand_134ad6041b7dbb42\",\"sources\":[\"src_9a3dd02bc0b8\",\"src_f1b2308acd1c\",\"src_255fccad9c13\",\"src_d2b1d4919374\",\"src_d04887558af6\",\"src_603e723c585e\",\"src_af97eb250f23\",\"src_d95d81e08bd4\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_75a7e641c07a\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9a3dd02bc0b8\",\"text\":\"Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of technical lead and design review signing.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_14f149237113\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_9a3dd02bc0b8\",\"text\":\"eight years of software engineering in all.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit duration of software engineering experience.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_52b923d2ea0d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_f1b2308acd1c\",\"text\":\"Secure development certification for the payments domain held since 2021 under the bank's secure development programme, renewed 2024; certificate available in the bank's learning record.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit certification statement.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_971ce91bc019\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_255fccad9c13\",\"text\":\"Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit incident review leadership.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_3b2e16fc3d6d\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d04887558af6\",\"text\":\"Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover.\",\"evidenceStrength\":\"high\",\"notes\":\"Explicit mentoring and boundary documentation.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Lead Engineer and technical lead of a card authorisation service at a retail bank since 2022, signing design reviews for changes to the authorisation path.\",\"supportingRequirementIds\":[\"req_75a7e641c07a\"],\"sourceIds\":[\"src_9a3dd02bc0b8\"],\"evidenceStrength\":\"high\",\"witness\":\"Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify independent audit of incident review reports\",\"Confirm validity of secure development certification\",\"Confirm scope of technical lead responsibilities\"],\"auditSummary\":\"The candidate’s resume and work sample provide direct evidence that satisfies all listed requirements for the Lead Engineer, Payments Authorisation Service role. All claims are supported by explicit statements in the provided sources, with high evidence strength. No gaps or unsupported claims are identified. Human review is recommended to confirm external verification of certification and incident review documentation.\",\"limitations\":[\"No external verification of certification or incident review process beyond candidate’s own documentation.\"]}}",
+ "content_sha256": "b4b1028428c268f8b51a25dbfe418bcb7270afcaffdc45f0601a2e3a80d62cd2",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_134ad6041b7dbb42",
+   "targetRoleTitle": "Lead Engineer, Payments Authorisation Service",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Lead Engineer and technical lead of a card authorisation service at a retail bank since 2022, signing design reviews for changes to the authorisation path.",
+     "sourceIds": [
+      "src_9a3dd02bc0b8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;"
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Owner of the service's technical roadmap since 2022, reviewed with the head of payments engineering each quarter.",
+     "sourceIds": [
+      "src_d2b1d4919374"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Owner of the service's technical roadmap since 2022, reviewed with the head of payments engineering each quarter."
+    },
+    {
+     "claimId": "claim_3",
+     "text": "Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register.",
+     "sourceIds": [
+      "src_255fccad9c13"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register."
+    },
+    {
+     "claimId": "claim_4",
+     "text": "Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover.",
+     "sourceIds": [
+      "src_d04887558af6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_5",
+     "text": "Work sample includes two signed design reviews with boundary notes, one incident review report and the certification record extract, with the incident register and design repository references as a verification trail.",
+     "sourceIds": [
+      "src_603e723c585e"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Work sample: two signed design reviews with their boundary notes, one incident review report and the certification record extract, with the incident register and design repository references as a verification trail."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_6",
+     "text": "Technical leadership in real-time payments services.",
+     "sourceIds": [
+      "src_9a3dd02bc0b8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;"
+    },
+    {
+     "claimId": "claim_7",
+     "text": "Design review signing and boundary documentation.",
+     "sourceIds": [
+      "src_9a3dd02bc0b8",
+      "src_d04887558af6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path; Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover."
+    },
+    {
+     "claimId": "claim_8",
+     "text": "Incident review leadership under documented process.",
+     "sourceIds": [
+      "src_255fccad9c13"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register."
+    },
+    {
+     "claimId": "claim_9",
+     "text": "Secure development certification for payments domain.",
+     "sourceIds": [
+      "src_f1b2308acd1c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Secure development certification for the payments domain held since 2021 under the bank's secure development programme, renewed 2024; certificate available in the bank's learning record."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s role, responsibilities, certifications, and evidence of design and incident reviews, but do not provide independent verification of the bank’s secure development certification or external audit of the incident review process."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Lead Engineer, Payments Authorisation Service",
+    "jobDescriptionSource": "jd_f328f5a9c107c94e",
+    "requirementIds": [
+     "req_75a7e641c07a",
+     "req_14f149237113",
+     "req_52b923d2ea0d",
+     "req_971ce91bc019",
+     "req_3b2e16fc3d6d"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_134ad6041b7dbb42",
+    "sources": [
+     "src_9a3dd02bc0b8",
+     "src_f1b2308acd1c",
+     "src_255fccad9c13",
+     "src_d2b1d4919374",
+     "src_d04887558af6",
+     "src_603e723c585e",
+     "src_af97eb250f23",
+     "src_d95d81e08bd4"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_75a7e641c07a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9a3dd02bc0b8",
+       "text": "Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of technical lead and design review signing."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_14f149237113",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9a3dd02bc0b8",
+       "text": "eight years of software engineering in all.",
+       "evidenceStrength": "high",
+       "notes": "Explicit duration of software engineering experience."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_52b923d2ea0d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f1b2308acd1c",
+       "text": "Secure development certification for the payments domain held since 2021 under the bank's secure development programme, renewed 2024; certificate available in the bank's learning record.",
+       "evidenceStrength": "high",
+       "notes": "Explicit certification statement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_971ce91bc019",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_255fccad9c13",
+       "text": "Led the incident reviews for the four authorisation outages of the last three years under the payments incident review process, with the review reports in the incident register.",
+       "evidenceStrength": "high",
+       "notes": "Explicit incident review leadership."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3b2e16fc3d6d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d04887558af6",
+       "text": "Mentored the team's six engineers under the engineering mentoring scheme and wrote the boundary note of each signed design review, stating what the review did not cover.",
+       "evidenceStrength": "high",
+       "notes": "Explicit mentoring and boundary documentation."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Lead Engineer and technical lead of a card authorisation service at a retail bank since 2022, signing design reviews for changes to the authorisation path.",
+     "supportingRequirementIds": [
+      "req_75a7e641c07a"
+     ],
+     "sourceIds": [
+      "src_9a3dd02bc0b8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Lead Engineer and technical lead of the card authorisation service at a retail bank since 2022, signing the design reviews for changes to the authorisation path;"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify independent audit of incident review reports",
+    "Confirm validity of secure development certification",
+    "Confirm scope of technical lead responsibilities"
+   ],
+   "auditSummary": "The candidate’s resume and work sample provide direct evidence that satisfies all listed requirements for the Lead Engineer, Payments Authorisation Service role. All claims are supported by explicit statements in the provided sources, with high evidence strength. No gaps or unsupported claims are identified. Human review is recommended to confirm external verification of certification and incident review documentation.",
+   "limitations": [
+    "No external verification of certification or incident review process beyond candidate’s own documentation."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T13:02:11.163034+00:00"
+}

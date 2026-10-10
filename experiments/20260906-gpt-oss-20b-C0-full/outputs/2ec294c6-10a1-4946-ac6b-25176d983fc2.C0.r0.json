@@ -1,0 +1,79 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "2ec294c6-10a1-4946-ac6b-25176d983fc2.C0",
+ "case_id": "2ec294c6-10a1-4946-ac6b-25176d983fc2",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7692,
+  "promptWords": 971
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 19.544
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2474,
+ "eval_count": 417,
+ "prompt_eval_duration_ns": 17615000,
+ "eval_duration_ns": 7199436000,
+ "total_duration_ns": 19541945583,
+ "thinking": "We need to produce JSON with structure. Use provided sources. Let's craft claims. We'll map requirements.\n\nRequirement ids list: req_9eafeb875f45, req_51b7f027aafb, req_98026d249bb8, req_a96cec912103, req_184a117959df.\n\nEvidence: resume sources support all except maybe phone conversation difficulty? src_acddda7d255e says calls scored within call standard. That supports req_51b7f027aafb. But interview note expresses doubt. So partial evidence? We'll mark supported but note risk.\n\nLet's craft optimized CV: language en, candidateId, targetRoleTitle. professionalSummary: claim about experience. Use claims referencing sources.\n\nexperienceHighlights: each requirement claim.\n\nprojectsAndWorkSamples: work sample source.\n\nskills: investigation, customer communication, documentation, redress negotiation, compliance.\n\nevidenceBoundary: materials establish candidate has 3 years experience, handled 400 complaints, met standards, but interview note raises uncertainty about handling upset customers.\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Candidate meets most requirements but interview signals uncertainty about handling abusive callers; further assessment needed.\"\n\nrole: roleTitle, jobDescriptionSource, requirementIds list.\n\ncandidate: candidateId, sources list all used.\n\nrequirementEvidenceMap: for each requirement.\n\n- req_9eafeb875f45: evidence src_8eefde317482, src_2536c0415a38. evidenceStrength high. missingEvidence none.\n\n- req_51b7f027aafb: evidence src_acddda7d255e. evidenceStrength high. missingEvidence none. But interview note indicates risk; we can add interview note as missing evidence? We'll add missingEvidence: \"No evidence of handling abusive callers; interview note expresses doubt.\"\n\n- req_98026d249bb8: evidence src_bbbb46f80771, src_2536c0415a38. evidenceStrength high.\n\n- req_a96cec912103: evidence src_990b656fcf1d, src_2536c0415a38. evidenceStrength high.\n\n- req_184a117959df: evidence src_303a8332b481, src_2536c0415a38. evidenceStrength high.\n\nsupportedClaims: list claims with source ids.\n\nunsupportedClaims: maybe claim about presence for tough calls? Not established. We'll include.\n\nmissingEvidenceGaps: maybe gap for abusive callers.\n\ninterviewSignalRisks: source src_a2b08f8735e, text from note, signalType \"customer handling\", jobRelatedBoundary true, severity high, recommendedHandling \"Conduct role-play with abusive caller scenario\".\n\nfollowUpQuestions: question about handling abusive callers.\n\nhumanReviewChecklist: items: verify interview note, review call monitoring scorecards, assess role-play performance, confirm redress limits.\n\nauditSummary: paragraph summarizing.\n\nlimitations: e.g., limited to provided sources, no external verification.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_080dfdd2a63d5a90\",\"targetRoleTitle\":\"Complaints Handler, Retail Banking Complaints\",\"professionalSummary\":[\"Three‑year experience as a Complaints Handler in a retail bank, managing approximately 400 complaints annually and consistently meeting regulator time limits.\",\"Demonstrated ability to investigate complaints against account records following the team’s procedure, document findings, and produce final response letters in line with the team’s letter standard.\",\"Proven track record of agreeing redress within delegated limits, referring higher‑value cases to leadership, and maintaining clear hand‑over documentation.\",\"Consistently scored within the call standard on quarterly quality monitoring, indicating strong customer communication skills.\"]},\"experienceHighlights\":[\"Investigated ~400 complaints per year against account records using the team’s investigation procedure (src_8eefde317482).\",\"Handled all customer phone conversations, including escalated calls, and maintained call‑standard scores every quarter (src_acddda7d255e).\",\"Authored final response letters, achieving 96% regulator time‑limit compliance (src_bbbb46f80771).\",\"Agreed redress within delegated limits and referred higher‑value cases to the team leader, recording referrals (src_990b656fcf1d).\",\"Documented open items and hand‑over conditions for each case (src_303a8332b481).\"],\"projectsAndWorkSamples\":[\"Work sample: two anonymised case files with investigation notes, call logs, quality scorecards, final response letters, redress records, and system references (src_2536c0415a38).\"],\"skills\":[\"Complaint investigation\",\"Customer communication\",\"Call handling\",\"Regulatory compliance\",\"Redress negotiation\",\"Documentation\",\"Quality monitoring\"],\"evidenceBoundary\":\"The provided resume and work sample establish the candidate’s experience, procedural compliance, and documentation skills, but interview notes raise uncertainty about handling abusive callers.\"}",
+ "content_sha256": "3a1ef56d0b26ff29a8d8bbdcf98d62e2ae7a47e6d214fb5a4108f0a53c486b42",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_080dfdd2a63d5a90",
+   "targetRoleTitle": "Complaints Handler, Retail Banking Complaints",
+   "professionalSummary": [
+    "Three‑year experience as a Complaints Handler in a retail bank, managing approximately 400 complaints annually and consistently meeting regulator time limits.",
+    "Demonstrated ability to investigate complaints against account records following the team’s procedure, document findings, and produce final response letters in line with the team’s letter standard.",
+    "Proven track record of agreeing redress within delegated limits, referring higher‑value cases to leadership, and maintaining clear hand‑over documentation.",
+    "Consistently scored within the call standard on quarterly quality monitoring, indicating strong customer communication skills."
+   ]
+  },
+  "experienceHighlights": [
+   "Investigated ~400 complaints per year against account records using the team’s investigation procedure (src_8eefde317482).",
+   "Handled all customer phone conversations, including escalated calls, and maintained call‑standard scores every quarter (src_acddda7d255e).",
+   "Authored final response letters, achieving 96% regulator time‑limit compliance (src_bbbb46f80771).",
+   "Agreed redress within delegated limits and referred higher‑value cases to the team leader, recording referrals (src_990b656fcf1d).",
+   "Documented open items and hand‑over conditions for each case (src_303a8332b481)."
+  ],
+  "projectsAndWorkSamples": [
+   "Work sample: two anonymised case files with investigation notes, call logs, quality scorecards, final response letters, redress records, and system references (src_2536c0415a38)."
+  ],
+  "skills": [
+   "Complaint investigation",
+   "Customer communication",
+   "Call handling",
+   "Regulatory compliance",
+   "Redress negotiation",
+   "Documentation",
+   "Quality monitoring"
+  ],
+  "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience, procedural compliance, and documentation skills, but interview notes raise uncertainty about handling abusive callers."
+ },
+ "finished_at": "2026-09-07T10:53:37.139747+00:00"
+}

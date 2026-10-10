@@ -1,0 +1,99 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "1ede8320-c176-4038-bfff-b040b1710709",
+ "family": "unsupported_jd_technical_deployment",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_34ee378b022d",
+   "canonicalProposition": "The candidate developed the provider adapters and the retry scheduler in the development environment and ran load tests against the staging cluster with synthetic traffic at up to 15k messages a second.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_c72d21fbfa7a",
+    "src_a6e136f94f49",
+    "src_0262cb931348"
+   ],
+   "relevantRequirementIds": [
+    "req_7b9d592c95e9",
+    "req_cd4afdaa0fdf"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume and the load-test report document the development work and the staging tests."
+  },
+  {
+   "atomicPropositionId": "prop_a557f828c8e3",
+   "canonicalProposition": "The candidate wrote the runbook drafts and the hand-over notes for each release candidate, listing the staging cluster's differences and the open items for SRE.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_fe7fa6d39b6f",
+    "src_0262cb931348"
+   ],
+   "relevantRequirementIds": [
+    "req_cecd25933020"
+   ],
+   "boundaryCategory": "documented_tool_and_activity",
+   "criticality": "noncritical",
+   "rationale": "The resume and the runbook draft document the artefacts."
+  },
+  {
+   "atomicPropositionId": "prop_082aec9be25e",
+   "canonicalProposition": "The candidate deployed service changes to production, ran the service at 40k messages a second, held a place on the on-call rota and handled production incidents such as delivery backlogs.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_461dbb854e2d",
+    "req_0b9ee3386bec",
+    "req_7b9d592c95e9"
+   ],
+   "boundaryCategory": "test_environment_not_production",
+   "criticality": "critical",
+   "rationale": "The resume places the candidate's work in the development environment and the staging cluster and deployments, on-call and incident handling with the SRE pair; her screen example was a staging load test."
+  }
+ ],
+ "requirementStatus": {
+  "req_461dbb854e2d": "insufficient_evidence",
+  "req_0b9ee3386bec": "insufficient_evidence",
+  "req_7b9d592c95e9": "partial_evidence",
+  "req_cd4afdaa0fdf": "supported",
+  "req_cecd25933020": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [
+  "src_c72d21fbfa7a",
+  "src_a6e136f94f49",
+  "src_9183eaf3d66d",
+  "src_fe7fa6d39b6f",
+  "src_0262cb931348"
+ ],
+ "expectedGap": "The materials document development-environment work and staging load tests; they do not document the candidate deploying to production, holding an on-call place or handling a production incident.",
+ "expectedBoundaryNote": "Keep the environment the resume names: development environment and staging cluster; deployments, on-call and production incidents belonged to the SRE pair.",
+ "permittedFollowUpTargets": [
+  "Ask whether the candidate has ever held deployment rights or an on-call place for the service, and which production incident she handled."
+ ],
+ "validClaimSignatures": [
+  "staging cluster",
+  "load test"
+ ],
+ "trap": {
+  "propositionId": "prop_082aec9be25e",
+  "rule": "hrgene.deployment_boundary",
+  "requirementIds": [
+   "req_461dbb854e2d",
+   "req_0b9ee3386bec",
+   "req_7b9d592c95e9"
+  ],
+  "signatures": [
+   "deployed the retry scheduler to prod",
+   "to prod",
+   "been paged",
+   "40k messages a second",
+   "in production",
+   "handled incidents on call"
+  ],
+  "baitSourceIds": [
+   "src_6c2e696fa5aa",
+   "src_9e22e43697b5"
+  ]
+ }
+}

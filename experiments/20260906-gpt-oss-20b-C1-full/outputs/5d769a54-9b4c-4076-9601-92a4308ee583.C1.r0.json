@@ -1,0 +1,169 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "5d769a54-9b4c-4076-9601-92a4308ee583.C1",
+ "case_id": "5d769a54-9b4c-4076-9601-92a4308ee583",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11317,
+  "promptWords": 1480
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 39.77
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3516,
+ "eval_count": 1140,
+ "prompt_eval_duration_ns": 18507000,
+ "eval_duration_ns": 20552406000,
+ "total_duration_ns": 39766957917,
+ "thinking": "We need to produce JSON with optimizedCv and hiringEvidencePacket. Need to cite sources. Let's craft claims.\n\nOptimized CV: professionalSummary: maybe \"Experienced in managing UAT and handover for merchant onboarding portal rebuild, with oversight of acceptance calendar, defect triage, and documentation of residual defects.\" Cite src_d6fe2b3dd6b0, src_673275af4d63, src_21ae765807a1.\n\nexperienceHighlights: list claims: managed UAT program across three release candidates, ran acceptance calendar and sign-off tracker (src_d6fe2b3dd6b0). Coordinated defect triage (src_673275af4d63). Wrote acceptance report and hand-over pack listing residual defects (src_21ae765807a1). Two years on portal rebuild program (src_ddd94c5d5c7e).\n\nprojectsAndWorkSamples: acceptance sign-off tracker and hand-over pack for release candidate three (src_4298743d40dc).\n\nskills: UAT management, defect triage coordination, documentation, handover packs.\n\nevidenceBoundary: materials establish UAT management, defect triage, documentation of residual defects, but do not establish that candidate ran go-live weekends, owned release calendar, post-release monitoring, or handled release incidents.\n\nNow requirementEvidenceMap:\n\nreq_7af3302b184f: Has taken portal releases through to live use by merchants and run the go-live weekends. Evidence: src_27bf9aa63db6 says candidate said she 'took three portal releases live for merchants' and 'ran go-live weekends'. But that's a note from recruiter screen, not direct evidence. It's a claim by candidate. We can treat as partial_evidence? It's a statement but not verified. So status partial_evidence. evidence: source src_27bf9aa63db6, text: \"candidate said she 'took three portal releases live for merchants' and 'ran go-live weekends'\". missingEvidence: \"Independent verification that candidate ran go-live weekends and took releases live\".\n\nreq_9c457b62d9b5: Owns the release calendar for the merchant-facing portal and the go-live checklist. Evidence: src_236b3e7412b9 says release calendar run by change management office and operations; candidate role ended at acceptance hand-over. So not owned. So insufficient_evidence. missingEvidence: \"Evidence that candidate owned release calendar and go-live checklist\".\n\nreq_ac8b271734c4: Runs post-release monitoring with operations and handles release incidents affecting merchants. Evidence: src_236b3e7412b9 says post-release monitoring run by change management office and operations; candidate role ended at acceptance hand-over. So insufficient_evidence. missingEvidence: \"Evidence that candidate ran post-release monitoring and handled incidents\".\n\nreq_3cd1bfb77a4c: Manages user acceptance testing across release candidates, including the acceptance calendar, sign-off tracking and defect triage with engineering. Evidence: src_d6fe2b3dd6b0 and src_673275af4d63 support. So supported. evidence: those sources. missingEvidence none.\n\nreq_04ca622e6881: Documents residual defects and hand-over conditions for each release candidate. Evidence: src_21ae765807a1 supports. So supported.\n\nsupportedClaims: list claims that are supported: e.g., \"Managed UAT program across three release candidates\" etc. Provide source ids.\n\nunsupportedClaims: maybe \"took three portal releases live for merchants\" is unsupported? But we have partial evidence. So maybe not unsupported. But we can list claim that candidate \"owned release calendar\" is unsupported. But we already have insufficient evidence. So maybe no unsupported claims.\n\nmissingEvidenceGaps: for each insufficient requirement: create gap entries.\n\ninterviewSignalRisks: note src_7353255bb2e5: hiring manager pre-read: head wants someone who has actually held go-live checklist and post-release monitoring. This is a risk that candidate may not have. So signal: source src_7353255bb2e5, text: \"head of merchant products wants someone who has actually held the go-live checklist and the post-release monitoring\". signalType: \"candidate claim uncertainty\". jobRelatedBoundary: false? It's about requirement. severity high. recommendedHandling: verify via interview.\n\nfollowUpQuestions: for each gap: question about verification of go-live weekends, ownership of release calendar, post-release monitoring.\n\nhumanReviewChecklist: items: verify candidate's role in go-live, ownership of release calendar, post-release monitoring, incident handling.\n\nauditSummary: summary of evidence.\n\nlimitations: e.g., limited to provided sources, no independent verification.\n\nNow produce JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_32960c38e98197ef\",\"targetRoleTitle\":\"Product Delivery Manager, Merchant Onboarding Portal\",\"professionalSummary\":[\"Experienced in managing user acceptance testing for the merchant onboarding portal rebuild, overseeing acceptance calendars, defect triage, and documentation of residual defects.\",\"Coordinated defect triage between business testers and engineering across three release candidates.\",\"Produced acceptance reports and hand‑over packs detailing residual defects and hand‑over conditions.\"],\"experienceHighlights\":[\"Managed the UAT programme for the merchant onboarding portal rebuild in the UAT environment across three release candidates, running the acceptance calendar and the acceptance sign‑off tracker for the business testers. (src_d6fe2b3dd6b0)\",\"Coordinated defect triage between the business testers and engineering for each release candidate, keeping the triage log and the retest schedule in the UAT environment. (src_673275af4d63)\",\"Wrote the acceptance report and the hand‑over pack for each release candidate, listing residual defects, the test data limitations of the UAT environment and the conditions handed to the change office. (src_21ae765807a1)\",\"Two years on the portal rebuild programme covered acceptance testing management, the acceptance calendar, defect triage, acceptance reports and hand‑over packs. (src_ddd94c5d5c7e)\"],\"projectsAndWorkSamples\":[\"Acceptance sign‑off tracker and hand‑over pack for release candidate three, with the UAT environment's build numbers as a verification trail. (src_4298743d40dc)\"],\"skills\":[\"User Acceptance Testing Management\",\"Defect Triage Coordination\",\"Documentation of Residual Defects\",\"Hand‑over Pack Preparation\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s involvement in UAT management, defect triage coordination, and documentation of residual defects for the merchant onboarding portal rebuild, but do not establish that the candidate owned the release calendar, ran go‑live weekends, performed post‑release monitoring, or handled release incidents.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Product Delivery Manager, Merchant Onboarding Portal\",\"jobDescriptionSource\":\"jd_d2c304e5ba189c4c\",\"requirementIds\":[\"req_7af3302b184f\",\"req_9c457b62d9b5\",\"req_ac8b271734c4\",\"req_3cd1bfb77a4c\",\"req_04ca622e6881\"]},\"candidate\":{\"candidateId\":\"cand_32960c38e98197ef\",\"sources\":[\"src_d6fe2b3dd6b0\",\"src_673275af4d63\",\"src_236b3e7412b9\",\"src_21ae765807a1\",\"src_ddd94c5d5c7e\",\"src_4298743d40dc\",\"src_27bf9aa63db6\",\"src_7353255bb2e5\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_7af3302b184f\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_27bf9aa63db6\",\"text\":\"candidate said she 'took three portal releases live for merchants' and 'ran go‑live weekends'\",\"evidenceStrength\":\"low\",\"notes\":\"statement from recruiter screen\"}],\"missingEvidence\":[\"Independent verification that the candidate ran go‑live weekends and took releases live for merchants\"]},{\"requirementId\":\"req_9c457b62d9b5\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_236b3e7412b9\",\"text\":\"The go‑live itself, the release calendar for the merchant‑facing portal and the post‑release monitoring were run by the bank's change management office and the operations team; my role ended at acceptance hand‑over.\",\"evidenceStrength\":\"low\",\"notes\":\"candidate did not own release calendar\"}],\"missingEvidence\":[\"Evidence that the candidate owned the release calendar and the go‑live checklist\"]},{\"requirementId\":\"req_ac8b271734c4\",\"status\":\"insufficient_evidence\",\"evidence\":[{\"sourceId\":\"src_236b3e7412b9\",\"text\":\"The go‑live itself, the release calendar for the merchant‑facing portal and the post‑release monitoring were run by the bank's change management office and the operations team; my role ended at acceptance hand‑over.\",\"evidenceStrength\":\"low\",\"notes\":\"candidate did not run post‑release monitoring\"}],\"missingEvidence\":[\"Evidence that the candidate ran post‑release monitoring and handled release incidents affecting merchants\"]},{\"requirementId\":\"req_3cd1bfb77a4c\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_d6fe2b3dd6b0\",\"text\":\"Managed the user acceptance testing programme for the merchant onboarding portal rebuild in the UAT environment across three release candidates, running the acceptance calendar and the acceptance sign‑off tracker for the business testers.\",\"evidenceStrength\":\"high\",\"notes\":\"direct statement of UAT management\"},\"{\"\n\n]},\"supportedClaims':[{\"\n\n]},\"unsupportedClaims':[{\":\n\n\"}],\"\n\n}",
+ "content_sha256": "7f5cafba8b292a2f47d7580ead520fc310ebba06d4325724aae56a9645cd1b74",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_32960c38e98197ef",
+   "targetRoleTitle": "Product Delivery Manager, Merchant Onboarding Portal",
+   "professionalSummary": [
+    "Experienced in managing user acceptance testing for the merchant onboarding portal rebuild, overseeing acceptance calendars, defect triage, and documentation of residual defects.",
+    "Coordinated defect triage between business testers and engineering across three release candidates.",
+    "Produced acceptance reports and hand‑over packs detailing residual defects and hand‑over conditions."
+   ],
+   "experienceHighlights": [
+    "Managed the UAT programme for the merchant onboarding portal rebuild in the UAT environment across three release candidates, running the acceptance calendar and the acceptance sign‑off tracker for the business testers. (src_d6fe2b3dd6b0)",
+    "Coordinated defect triage between the business testers and engineering for each release candidate, keeping the triage log and the retest schedule in the UAT environment. (src_673275af4d63)",
+    "Wrote the acceptance report and the hand‑over pack for each release candidate, listing residual defects, the test data limitations of the UAT environment and the conditions handed to the change office. (src_21ae765807a1)",
+    "Two years on the portal rebuild programme covered acceptance testing management, the acceptance calendar, defect triage, acceptance reports and hand‑over packs. (src_ddd94c5d5c7e)"
+   ],
+   "projectsAndWorkSamples": [
+    "Acceptance sign‑off tracker and hand‑over pack for release candidate three, with the UAT environment's build numbers as a verification trail. (src_4298743d40dc)"
+   ],
+   "skills": [
+    "User Acceptance Testing Management",
+    "Defect Triage Coordination",
+    "Documentation of Residual Defects",
+    "Hand‑over Pack Preparation"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s involvement in UAT management, defect triage coordination, and documentation of residual defects for the merchant onboarding portal rebuild, but do not establish that the candidate owned the release calendar, ran go‑live weekends, performed post‑release monitoring, or handled release incidents."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Product Delivery Manager, Merchant Onboarding Portal",
+    "jobDescriptionSource": "jd_d2c304e5ba189c4c",
+    "requirementIds": [
+     "req_7af3302b184f",
+     "req_9c457b62d9b5",
+     "req_ac8b271734c4",
+     "req_3cd1bfb77a4c",
+     "req_04ca622e6881"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_32960c38e98197ef",
+    "sources": [
+     "src_d6fe2b3dd6b0",
+     "src_673275af4d63",
+     "src_236b3e7412b9",
+     "src_21ae765807a1",
+     "src_ddd94c5d5c7e",
+     "src_4298743d40dc",
+     "src_27bf9aa63db6",
+     "src_7353255bb2e5"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_7af3302b184f",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_27bf9aa63db6",
+       "text": "candidate said she 'took three portal releases live for merchants' and 'ran go‑live weekends'",
+       "evidenceStrength": "low",
+       "notes": "statement from recruiter screen"
+      }
+     ],
+     "missingEvidence": [
+      "Independent verification that the candidate ran go‑live weekends and took releases live for merchants"
+     ]
+    },
+    {
+     "requirementId": "req_9c457b62d9b5",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_236b3e7412b9",
+       "text": "The go‑live itself, the release calendar for the merchant‑facing portal and the post‑release monitoring were run by the bank's change management office and the operations team; my role ended at acceptance hand‑over.",
+       "evidenceStrength": "low",
+       "notes": "candidate did not own release calendar"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate owned the release calendar and the go‑live checklist"
+     ]
+    },
+    {
+     "requirementId": "req_ac8b271734c4",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_236b3e7412b9",
+       "text": "The go‑live itself, the release calendar for the merchant‑facing portal and the post‑release monitoring were run by the bank's change management office and the operations team; my role ended at acceptance hand‑over.",
+       "evidenceStrength": "low",
+       "notes": "candidate did not run post‑release monitoring"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate ran post‑release monitoring and handled release incidents affecting merchants"
+     ]
+    },
+    {
+     "requirementId": "req_3cd1bfb77a4c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_d6fe2b3dd6b0",
+       "text": "Managed the user acceptance testing programme for the merchant onboarding portal rebuild in the UAT environment across three release candidates, running the acceptance calendar and the acceptance sign‑off tracker for the business testers.",
+       "evidenceStrength": "high",
+       "notes": "direct statement of UAT management"
+      },
+      "{"
+     ]
+    },
+    "supportedClaims':[{"
+   ]
+  },
+  "unsupportedClaims':[{": "}],"
+ },
+ "finished_at": "2026-09-07T12:35:25.737981+00:00"
+}

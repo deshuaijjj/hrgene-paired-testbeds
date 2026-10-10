@@ -1,0 +1,109 @@
+{
+ "caseId": "aa8c8cf5-51f5-404b-941c-5fc66ea042ad",
+ "roleTitle": "Backend Engineer, Fleet Telematics",
+ "jobDescription": "A cold-chain logistics firm runs 900 refrigerated trailers that report temperature and position every two minutes. The Backend Engineer builds the ingestion and alerting services for this telemetry, keeps the alert rules accurate with the operations control room, serves on the on-call rota for the telemetry platform and writes runbooks for the support team. Interview panels receive a factual evidence summary for each applicant and reach their own decisions. The platform team has five engineers and reports to the head of engineering. Services are written in Go, run on Kubernetes and publish metrics to Prometheus. The control room relies on the alerts around the clock, so every alerting change is reviewed with the duty supervisor before release.",
+ "requirements": [
+  "Builds high-volume ingestion services for device telemetry in Go or Java.",
+  "Maintains temperature-excursion alert rules with the operations control room.",
+  "Serves on the on-call rota for the telemetry platform and writes incident reviews.",
+  "Documents services in runbooks for the support team.",
+  "Reduces storage costs for time-series data."
+ ],
+ "evidence": [
+  {
+   "type": "resume",
+   "text": "Built a Go ingestion service at Frostline Haulage that receives about 650 trailer messages per second over MQTT and writes them to a time-series database, validating the message schema on arrival."
+  },
+  {
+   "type": "resume",
+   "text": "Maintained the temperature-excursion alert rules with the control-room supervisors, adjusting thresholds per product class after each monthly review of false alarms."
+  },
+  {
+   "type": "resume",
+   "text": "Served on the weekly on-call rota for the telemetry platform, one week in six, and wrote the incident reviews for the incidents handled on shift."
+  },
+  {
+   "type": "resume",
+   "text": "Wrote and kept current the runbooks for the ingestion and alerting services, including restart steps and the checks the support desk runs before escalating."
+  },
+  {
+   "type": "resume",
+   "text": "Moved telemetry older than 90 days to compressed object storage."
+  },
+  {
+   "type": "work_sample",
+   "text": "Work sample: an incident review for a 47-minute alerting outage in March 2024, written by the candidate as the on-call engineer, with the timeline, the root cause (an expired broker certificate), the fix and three follow-up actions with owners."
+  },
+  {
+   "type": "note",
+   "text": "Reference check summary: the candidate's former platform lead at Frostline Haulage confirmed in writing that the candidate served on the platform on-call rota from 2022 to 2024 and wrote the incident reviews for those shifts."
+  },
+  {
+   "type": "note",
+   "text": "HR verification note: the BSc in Computer Science from the University of Strathclyde (2019) was confirmed through the university's online degree check."
+  }
+ ],
+ "gold": {
+  "propositions": [
+   {
+    "text": "The candidate served on the telemetry platform's on-call rota from 2022 to 2024 and wrote incident reviews, including one for a 47-minute alerting outage in March 2024.",
+    "status": "supported",
+    "sources": [
+     3,
+     6,
+     7
+    ],
+    "requirements": [
+     3
+    ],
+    "boundaryCategory": "documented_activity_with_record",
+    "criticality": "noncritical",
+    "rationale": "The resume states the rota, the work sample is an incident review written as on-call engineer, and the reference check confirms the rota period."
+   },
+   {
+    "text": "The candidate built a Go ingestion service handling about 650 trailer messages per second over MQTT.",
+    "status": "supported",
+    "sources": [
+     1
+    ],
+    "requirements": [
+     1
+    ],
+    "boundaryCategory": "documented_task_and_artifact",
+    "criticality": "noncritical",
+    "rationale": "The resume states the service, the language, the protocol and the load."
+   },
+   {
+    "text": "The candidate maintained temperature-excursion alert thresholds with the control-room supervisors after monthly false-alarm reviews.",
+    "status": "supported",
+    "sources": [
+     2
+    ],
+    "requirements": [
+     2
+    ],
+    "boundaryCategory": "documented_tool_and_activity",
+    "criticality": "noncritical",
+    "rationale": "The resume describes the rule maintenance and its review cycle."
+   }
+  ],
+  "requirementStatus": [
+   "supported",
+   "supported",
+   "supported",
+   "supported",
+   "partial_evidence"
+  ],
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "Older telemetry was moved to compressed object storage; the effect on storage cost is not reported.",
+  "expectedBoundaryNote": "Keep the on-call work with the incident review and the reference confirmation, and the ingestion and alerting work as described; the packet lists evidence and gaps only.",
+  "followUpTargets": [
+   "Ask what storage cost the telemetry had before and after the move to compressed object storage, and over which period."
+  ],
+  "validClaimSignatures": [
+   "on-call rota",
+   "MQTT"
+  ]
+ }
+}

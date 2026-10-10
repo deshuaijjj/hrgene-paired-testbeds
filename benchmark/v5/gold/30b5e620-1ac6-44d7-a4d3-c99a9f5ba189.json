@@ -1,0 +1,82 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "30b5e620-1ac6-44d7-a4d3-c99a9f5ba189",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_072d25ae5fd4",
+   "canonicalProposition": "The candidate trained a two-tower retrieval model in PyTorch for the home-screen shelf.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_23f3c6621dc2",
+    "src_660143671e7e"
+   ],
+   "relevantRequirementIds": [
+    "req_edf9c6b5fca7"
+   ],
+   "boundaryCategory": "verified_activity_record",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the model and the reference check confirms the candidate trained it."
+  },
+  {
+   "atomicPropositionId": "prop_f43794aa0e6f",
+   "canonicalProposition": "The candidate designed the A/B test plan for the ranking model with a pre-declared primary metric (completed-episode starts) and a three-week window.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_db5e464acd2f",
+    "src_1b67100a82fc"
+   ],
+   "relevantRequirementIds": [
+    "req_9bdda32e30e2"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume states the plan and the work sample is the plan document."
+  },
+  {
+   "atomicPropositionId": "prop_fc7a63e65c27",
+   "canonicalProposition": "The candidate's ranking model increased listening time by about 12%.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_b1225533685b"
+   ],
+   "boundaryCategory": "hearsay_quantified_outcome",
+   "criticality": "critical",
+   "rationale": "The figure is a second-hand estimate attributed to an unnamed growth-team member, the candidate never saw the readout, and the plan's results section is empty; under the quantification rule a hearsay figure without a defined baseline is not evidence, and listening time is not the pre-declared metric."
+  }
+ ],
+ "requirementStatus": {
+  "req_edf9c6b5fca7": "supported",
+  "req_b645b1c3ed2f": "supported",
+  "req_9bdda32e30e2": "supported",
+  "req_b1225533685b": "insufficient_evidence",
+  "req_224f6e641763": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No experiment readout, control-group comparison or test window supports the estimated listening-time effect.",
+ "expectedBoundaryNote": "Report the retrieval model, the feature pipeline, the experiment plan and the drift monitoring as documented; record the second-hand listening-time estimate as an unsupported claim with a follow-up about the experiment result.",
+ "permittedFollowUpTargets": [
+  "Ask whether the ranking-model experiment produced a readout, what the primary-metric result was against control, and over which window."
+ ],
+ "validClaimSignatures": [
+  "two-tower retrieval model",
+  "Feast feature store"
+ ],
+ "trap": {
+  "propositionId": "prop_fc7a63e65c27",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_b1225533685b"
+  ],
+  "signatures": [
+   "about 12%",
+   "12% to listening time"
+  ],
+  "baitSourceIds": [
+   "src_4fe2b5c25707"
+  ]
+ }
+}

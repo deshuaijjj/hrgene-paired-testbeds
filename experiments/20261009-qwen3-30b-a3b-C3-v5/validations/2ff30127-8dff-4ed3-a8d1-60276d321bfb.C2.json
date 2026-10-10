@@ -1,0 +1,202 @@
+{
+ "request_id": "2ff30127-8dff-4ed3-a8d1-60276d321bfb.C2",
+ "case_id": "2ff30127-8dff-4ed3-a8d1-60276d321bfb",
+ "parsed": true,
+ "validation": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[0]",
+    "message": "ownership term(s) [MANAGE] not licensed by the cited sources: managed",
+    "witness": {
+     "family": "MANAGE",
+     "terms": [
+      "managed"
+     ],
+     "sourceIds": [
+      "src_d50e1109ab8f"
+     ],
+     "sourceFamilies": [],
+     "text": "Managed scheduling for 85 engineers across two regions, meeting four-hour and next-day deadlines using the field-service management system's scheduling board."
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.experienceHighlights[2]",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: led",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "led"
+     ],
+     "sourceIds": [
+      "src_45d73006f8e6"
+     ],
+     "sourceFamilies": [
+      "APPROVE"
+     ],
+     "text": "Led the transition from paper job sheets to the mobile job-dispatch app, executing the operations manager-approved cut-over plan with a one-week paper fallback."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[2]",
+    "message": "production/live wording not licensed by the cited sources: live operation",
+    "witness": {
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_45d73006f8e6",
+      "src_99bac68d52f4"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Introduced the mobile job-dispatch app into live operation with a documented cut-over plan, working to the operations manager's approved plan, with paper job sheets as a fallback for one week."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[2]",
+    "message": "production/live wording not licensed by the cited sources: live operation",
+    "witness": {
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_45d73006f8e6"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Introduced the mobile job-dispatch app into live operation with a documented cut-over plan, working to the operations manager's approved plan, with paper job sheets as a fallback for one week."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (live operation) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_d4e1b2b0e766",
+     "family": "PRODUCTION",
+     "terms": [
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_45d73006f8e6",
+      "src_99bac68d52f4"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 3,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "aggregate": "BLOCK"
+}

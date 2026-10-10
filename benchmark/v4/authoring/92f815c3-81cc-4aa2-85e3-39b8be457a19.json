@@ -1,0 +1,36 @@
+{
+  "caseId": "92f815c3-81cc-4aa2-85e3-39b8be457a19",
+  "roleTitle": "Recommendation Systems Engineer, Customer Identity Verification",
+  "jobDescription": "The customer identity verification service decides which verification steps to present to new banking customers, and a recommendation model selects the next best check from the customer's risk signals. The Recommendation Systems Engineer trains and deploys the model to production, operates it with the platform team, and evaluates its effect on completion and fraud-catch rates with the analytics team. Hands-on production deployment and operation of a model is required.",
+  "requirements": [
+    "Trains and evaluates the next-best-check recommendation model on the verification service's risk signals.",
+    "Deploys the model to production through the model release pipeline and operates it with the platform team.",
+    "Monitors production model performance and drift and records incidents and rollbacks.",
+    "Coordinates releases with the platform and compliance teams and records own responsibility boundaries.",
+    "Documents model cards, known limitations and hand-over conditions for each model version."
+  ],
+  "evidence": [
+    {"type": "resume", "text": "Trained the next-best-check model (gradient-boosted ranking over device, document and behavioural signals) and evaluated it offline against the previous rule set on three months of held-out verification sessions."},
+    {"type": "resume", "text": "Deployed model versions 2.3 and 2.4 to production through the model release pipeline, executing the canary rollout myself under the platform team's release calendar and holding the production deployment role for the verification service."},
+    {"type": "resume", "text": "Operated the model in production for eleven months: monitored completion rate, fraud-catch rate and feature drift on the production dashboard, and rolled back version 2.4 once after a drift alert, recording the incident in the model incident log."},
+    {"type": "resume", "text": "Coordinated each release with the platform and compliance teams in the release review; compliance signed the model change record and the platform lead approved the rollout window."},
+    {"type": "resume", "text": "Responsibilities included model training, production deployment, production monitoring and release coordination for the verification service's recommendation model."},
+    {"type": "work_sample", "text": "Work sample: the model card for version 2.4 (training data window, evaluation metrics, known limitations) and the production incident log entry for the version 2.4 rollback, with the release pipeline run identifiers as a verification trail."},
+    {"type": "note", "text": "Reference call with former platform lead: confirmed the candidate held the production deployment role for the verification service, executed the canary rollouts and handled the version 2.4 rollback; employment dates confirmed."},
+    {"type": "note", "text": "Recruiter logistics note: candidate prefers a start date after the end of the quarter; no relocation needed."}
+  ],
+  "gold": {
+    "propositions": [
+      {"text": "The candidate trained the next-best-check recommendation model and evaluated it offline against the previous rule set.", "status": "supported", "sources": [1], "requirements": [1], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the training and evaluation directly."},
+      {"text": "The candidate coordinated releases with the platform and compliance teams, with compliance signing the change record and the platform lead approving the rollout window.", "status": "supported", "sources": [4], "requirements": [4], "boundaryCategory": "documented_tool_and_activity", "criticality": "noncritical", "rationale": "The resume states the coordination and the approval boundaries."},
+      {"text": "The candidate deployed model versions 2.3 and 2.4 to production and operated the model in production, including a rollback of version 2.4.", "status": "supported", "sources": [2, 3, 6, 7], "requirements": [2, 3], "boundaryCategory": "documented_production_deployment", "criticality": "noncritical", "rationale": "The resume, the incident log entry and the reference call state the production deployment role, the canary rollouts and the rollback."}
+    ],
+    "requirementStatus": ["supported", "supported", "supported", "supported", "partial_evidence"],
+    "subjective": [],
+    "nonProduction": [],
+    "expectedGap": "Hand-over conditions for each model version are only partly documented; the model card covers limitations but not hand-over.",
+    "expectedBoundaryNote": "Keep the production deployment and operation as documented for versions 2.3 and 2.4; do not extend it to other services or to model versions the materials do not name.",
+    "followUpTargets": ["Ask how hand-over conditions were documented for each model version."],
+    "validClaimSignatures": ["canary rollout", "version 2.4"]
+  }
+}

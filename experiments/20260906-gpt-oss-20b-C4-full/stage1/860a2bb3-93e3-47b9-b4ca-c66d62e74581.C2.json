@@ -1,0 +1,482 @@
+{
+ "request_id": "860a2bb3-93e3-47b9-b4ca-c66d62e74581.C2",
+ "case_id": "860a2bb3-93e3-47b9-b4ca-c66d62e74581",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Software engineer with four years of experience on a warehouse control system team, implementing and testing control system changes in accordance with operation"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[1]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Demonstrated ability to manage the full change lifecycle, from development through emulation rig testing, software review, release approval, to post‑deployment "
+    }
+   },
+   {
+    "rule": "hrgene.unsupported_quantification",
+    "code": "numbers_in_cited_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[0]",
+    "message": "number(s) not stated by the cited sources: 44",
+    "witness": {
+     "numbers": [
+      "44"
+     ],
+     "sourceIds": [
+      "src_2da7aa15bb57"
+     ],
+     "text": "Implemented 44 control system changes over four years in accordance with operations specifications and the team’s software standard."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "6 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str",
+      "$.optimizedCv.professionalSummary[1]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Software engineer with four years of experience on a warehouse control system team, implementing and testing control sys"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[1]",
+   "detail": "Demonstrated ability to manage the full change lifecycle, from development through emulation rig testing, software revie"
+  },
+  {
+   "rule": "hrgene.unsupported_quantification",
+   "code": "numbers_in_cited_sources",
+   "action": "route_claim_to_unsupported",
+   "path": "$.hiringEvidencePacket.supportedClaims[0]",
+   "detail": "Implemented 44 control system changes over four years in accordance with operations specifications and the team’s softwa"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_8bbc741e45a4e682",
+   "targetRoleTitle": "Software Engineer, Warehouse Control System",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Warehouse Control System",
+    "jobDescriptionSource": "jd_da8e36fbecd7bf20",
+    "requirementIds": [
+     "req_64db6c546d7a",
+     "req_81a2644e09ae",
+     "req_f93ce642e369",
+     "req_a99bbc517f4e",
+     "req_b37893f30d92"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_8bbc741e45a4e682",
+    "sources": [
+     "src_2da7aa15bb57",
+     "src_aacc015b1c1d",
+     "src_a2aa4c80cf3e",
+     "src_2692afff2f34",
+     "src_6ddbcfd44de8",
+     "src_0f6e65e2d5ea",
+     "src_64515ea2c485",
+     "src_fb21bd71b7d7"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_64db6c546d7a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2da7aa15bb57",
+       "text": "Software engineer on the warehouse control system team of a retail distribution company for four years, implementing control system changes against the operations specialists' specifications under the team's software standard; forty-four changes in the period, each on a change record in my name.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of implementation against specifications."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_81a2644e09ae",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_aacc015b1c1d",
+       "text": "Tested each change on the emulation rig with the test record attached to the change record and checked by a second engineer.",
+       "evidenceStrength": "high",
+       "notes": "Explicit mention of emulation rig testing and documented test record."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f93ce642e369",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a2aa4c80cf3e",
+       "text": "Took each change through the software review process; the release approval was the control system lead's, recorded on the change record.",
+       "evidenceStrength": "high",
+       "notes": "Clear reference to software review process and lead approval."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a99bbc517f4e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2692afff2f34",
+       "text": "Supported the three distribution centres' support desks with diagnostics through the support queue, recording which incidents I diagnosed and which were passed to the automation vendor.",
+       "evidenceStrength": "high",
+       "notes": "Direct support activity and incident recording."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b37893f30d92",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6ddbcfd44de8",
+       "text": "Wrote the limitation note and the hand-over conditions of each change in the change record's closure section.",
+       "evidenceStrength": "high",
+       "notes": "Explicit documentation of limitations and hand‑over."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Tested each change on the emulation rig with a documented test record and a second engineer’s check.",
+     "supportingRequirementIds": [
+      "req_81a2644e09ae"
+     ],
+     "sourceIds": [
+      "src_aacc015b1c1d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Tested each change on the emulation rig with the test record attached to the change record and checked by a second engineer."
+    },
+    {
+     "claim": "Took each change through the software review process with release approval by the control system lead.",
+     "supportingRequirementIds": [
+      "req_f93ce642e369"
+     ],
+     "sourceIds": [
+      "src_a2aa4c80cf3e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Took each change through the software review process; the release approval was the control system lead's, recorded on the change record."
+    },
+    {
+     "claim": "Supported three distribution centres’ support desks with diagnostics, recording incidents diagnosed and those passed to the automation vendor.",
+     "supportingRequirementIds": [
+      "req_a99bbc517f4e"
+     ],
+     "sourceIds": [
+      "src_2692afff2f34"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Supported the three distribution centres' support desks with diagnostics through the support queue, recording which incidents I diagnosed and which were passed to the automation vendor."
+    },
+    {
+     "claim": "Documented limitation notes and hand‑over conditions for each change in the change record’s closure section.",
+     "supportingRequirementIds": [
+      "req_b37893f30d92"
+     ],
+     "sourceIds": [
+      "src_6ddbcfd44de8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the limitation note and the hand-over conditions of each change in the change record's closure section."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Software engineer with four years of experience on a warehouse control system team, implementing and testing control system changes in accordance with operations specifications and the team’s software standard.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Demonstrated ability to manage the full change lifecycle, from development through emulation rig testing, software review, release approval, to post‑deployment support and documentation.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Implemented 44 control system changes over four years in accordance with operations specifications and the team’s software standard.",
+     "reason": "The cited sources do not state this figure or outcome.",
+     "requiredFollowUp": "Ask for the metric definition, baseline, observation window and any concurrent changes."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s documented change records match the stated number of 44 changes.",
+    "Confirm that the emulation rig testing procedures align with the company’s standard.",
+    "Ensure that the release approval process was followed as described.",
+    "Validate the support queue logs for accuracy of incident recording.",
+    "Check that limitation and hand‑over documentation meets the required format."
+   ],
+   "auditSummary": "All requirements are supported by direct statements from the candidate’s resume and work sample sources. No quantitative or causal claims lack evidence. No ownership or deployment boundaries are overstated. Human review is required to confirm procedural details and assess overall fit.",
+   "limitations": [
+    "None identified beyond the need for human verification of procedural adherence."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

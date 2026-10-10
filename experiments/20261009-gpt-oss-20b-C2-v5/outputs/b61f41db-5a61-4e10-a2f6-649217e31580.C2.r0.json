@@ -1,0 +1,337 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "b61f41db-5a61-4e10-a2f6-649217e31580.C2",
+ "case_id": "b61f41db-5a61-4e10-a2f6-649217e31580",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15317,
+  "promptWords": 1835
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 58.229
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3897,
+ "eval_count": 2804,
+ "prompt_eval_duration_ns": 19025000,
+ "eval_duration_ns": 51438954000,
+ "total_duration_ns": 58227270500,
+ "thinking": "Need to map requirements. Use sources. Provide CV claims with source ids. Ensure no unsupported claims. Note that production shipping claim? source_b7df51d52ae0 says answer assistant 'is in production now' but unclear. Might be unsupported. So requirement 2f918d... shipping to production: evidence insufficient. Mark partial_evidence. Provide gap. Also need follow-up question. Provide interviewSignalRisks for subjective note? note source_b7df51d52ae0 is subjective. So put in interviewSignalRisks. Also requirement 1c8d30b8e417: writes Python services with tests and code review. source_0bc9601d8801 supports. Good.\n\nRequirement 1407a1c2be15: retrieval pipeline. source_023a88533ad3 supports.\n\nRequirement a2ede7a7c47f: evaluation harness. source_00af6a2d1842 supports.\n\nRequirement f2866c09b747: hand-off rules. source_9e718241d3e4 supports.\n\nRequirement 2f918d11cd34: shipping to production and monitoring. We have source_b7df51d52ae0 says in production but no monitoring evidence. So partial_evidence. Gap: evidence of shipping and monitoring. Follow-up question.\n\nAlso need evidenceBoundary sentence.\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_432bbab675bc2222\",\n    \"targetRoleTitle\": \"Applied ML Engineer, Support Automation\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cv_1\",\n        \"text\": \"Machine Learning Engineer at Petrel Software (Jan 2023 – Jul 2024) building retrieval-augmented answer systems for support.\",\n        \"sourceIds\": [\"src_023a88533ad3\"],\n        \"requirementIds\": [\"req_1407a1c2be15\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Built the retrieval pipeline for a support-answer prototype, splitting 3,400 help‑centre articles into passages and indexing them in a vector store refreshed nightly from the help‑centre export.\"\n      },\n      {\n        \"claimId\": \"cv_2\",\n        \"text\": \"Developed an offline evaluation harness for answer quality assessment.\",\n        \"sourceIds\": [\"src_00af6a2d1842\"],\n        \"requirementIds\": [\"req_a2ede7a7c47f\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Built an offline evaluation harness of 600 graded question‑answer pairs that scores groundedness and correctness for every prompt or retrieval change, storing results per run for comparison.\"\n      },\n      {\n        \"claimId\": \"cv_3\",\n        \"text\": \"Authored a Python API service with comprehensive tests and peer review.\",\n        \"sourceIds\": [\"src_0bc9601d8801\"],\n        \"requirementIds\": [\"req_1c8d30b8e417\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote the prototype's API service in Python with pytest suites, with every merge reviewed by two other ML engineers, and containerised it for the sandbox workspace.\"\n      },\n      {\n        \"claimId\": \"cv_4\",\n        \"text\": \"Collaborated with support operations to define hand‑off and escalation rules.\",\n        \"sourceIds\": [\"src_9e718241d3e4\"],\n        \"requirementIds\": [\"req_f2866c09b747\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Agreed hand‑off rules with the support operations lead, sending low‑confidence answers and billing topics straight to a human agent, written up on the support team's wiki.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"cv_5\",\n        \"text\": \"Conducted a four‑week internal trial with 25 support agents, evaluating prototype draft answers in a sandbox environment.\",\n        \"sourceIds\": [\"src_259d95755e0e\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Ran a four‑week internal trial in which 25 support agents compared the prototype's draft answers with their own replies in a sandbox workspace; no draft went to customers.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"cv_6\",\n        \"text\": \"Provided a detailed trial write‑up, including evaluation scores, agent ratings, and a list of failure cases, outlining prerequisites for a customer‑facing release.\",\n        \"sourceIds\": [\"src_42777df36dc8\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: the trial write‑up, with the harness's groundedness and correctness scores, the agents' ratings from the sandbox workspace and a list of failure cases; the closing section lists what would be needed before any customer‑facing release, such as a safety review and a support sign‑off.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"cv_7\",\n        \"text\": \"Retrieval pipeline construction, document chunking, vector indexing, offline evaluation harness development, Python API development, unit testing, code review, collaboration with support operations.\",\n        \"sourceIds\": [\"src_023a88533ad3\",\"src_00af6a2d1842\",\"src_0bc9601d8801\",\"src_9e718241d3e4\"],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s experience with retrieval pipelines, evaluation harnesses, Python services, and collaboration with support staff. They do not conclusively demonstrate shipping a feature to production or owning post‑launch monitoring.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess gaps and verify production shipping and monitoring claims.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Applied ML Engineer, Support Automation\",\n      \"jobDescriptionSource\": \"jd_9fbebebfab92a24f\",\n      \"requirementIds\": [\n        \"req_1407a1c2be15\",\n        \"req_a2ede7a7c47f\",\n        \"req_2f918d11cd34\",\n        \"req_f2866c09b747\",\n        \"req_1c8d30b8e417\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_432bbab675bc2222\",\n      \"sources\": [\n        \"src_023a88533ad3\",\n        \"src_00af6a2d1842\",\n        \"src_259d95755e0e\",\n        \"src_9e718241d3e4\",\n        \"src_0bc9601d8801\",\n        \"src_42777df36dc8\",\n        \"src_3db57bcf5075\",\n        \"src_b7df51d52ae0\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_1407a1c2be15\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_023a88533ad3\",\n            \"text\": \"Built the retrieval pipeline for a support-answer prototype, splitting 3,400 help‑centre articles into passages and indexing them in a vector store refreshed nightly from the help‑centre export.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_a2ede7a7c47f\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_00af6a2d1842\",\n            \"text\": \"Built an offline evaluation harness of 600 graded question‑answer pairs that scores groundedness and correctness for every prompt or retrieval change, storing results per run for comparison.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_2f918d11cd34\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_b7df51d52ae0\",\n            \"text\": \"The candidate said the answer assistant 'is in production now' and serving Petrel's customers.\",\n            \"evidenceStrength\": \"low\",\n            \"notes\": \"No explicit monitoring or post‑launch ownership documented.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Documentation or logs confirming feature deployment to production.\",\n          \"Evidence of monitoring setup and ownership after launch.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_f2866c09b747\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_9e718241d3e4\",\n            \"text\": \"Agreed hand‑off rules with the support operations lead, sending low‑confidence answers and billing topics straight to a human agent, written up on the support team's wiki.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_1c8d30b8e417\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_0bc9601d8801\",\n            \"text\": \"Wrote the prototype's API service in Python with pytest suites, with every merge reviewed by two other ML engineers, and containerised it for the sandbox workspace.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Built retrieval pipeline for support-answer prototype.\",\n        \"supportingRequirementIds\": [\"req_1407a1c2be15\"],\n        \"sourceIds\": [\"src_023a88533ad3\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built the retrieval pipeline for a support-answer prototype, splitting 3,400 help‑centre articles into passages and indexing them in a vector store refreshed nightly from the help‑centre export.\"\n      },\n      {\n        \"claim\": \"Developed offline evaluation harness.\",\n        \"supportingRequirementIds\": [\"req_a2ede7a7c47f\"],\n        \"sourceIds\": [\"src_00af6a2d1842\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built an offline evaluation harness of 600 graded question‑answer pairs that scores groundedness and correctness for every prompt or retrieval change, storing results per run for comparison.\"\n      },\n      {\n        \"claim\": \"Authored Python API with tests and code review.\",\n        \"supportingRequirementIds\": [\"req_1c8d30b8e417\"],\n        \"sourceIds\": [\"src_0bc9601d8801\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the prototype's API service in Python with pytest suites, with every merge reviewed by two other ML engineers, and containerised it for the sandbox workspace.\"\n      },\n      {\n        \"claim\": \"Collaborated with support operations on hand‑off rules.\",\n        \"supportingRequirementIds\": [\"req_f2866c09b747\"],\n        \"sourceIds\": [\"src_9e718241d3e4\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Agreed hand‑off rules with the support operations lead, sending low‑confidence answers and billing topics straight to a human agent, written up on the support team's wiki.\"\n      }\n    ],\n    \"unsupportedClaims\": [\n      {\n        \"claim\": \"The answer assistant is in production and serving Petrel's customers.\",\n        \"reason\": \"Source indicates a statement by the candidate but lacks independent confirmation of production deployment or monitoring.\",\n        \"requiredFollowUp\": \"Provide deployment logs, release notes, or monitoring dashboards that confirm the feature is live and monitored.\"\n      }\n    ],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_2f918d11cd34\",\n        \"severity\": \"medium\",\n        \"gap\": \"Evidence of shipping the feature to production and owning post‑launch monitoring.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_b7df51d52ae0\",\n        \"text\": \"The candidate said the answer assistant 'is in production now' and serving Petrel's customers.\",\n        \"signalType\": \"subjective\",\n        \"jobRelatedBoundary\": \"yes\",\n        \"severity\": \"medium\",\n        \"recommendedHandling\": \"Verify with independent documentation or a third‑party confirmation of production status.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_2f918d11cd34\",\n        \"question\": \"Can you provide deployment logs, release notes, or monitoring dashboards that confirm the feature was shipped to production and is being monitored post‑launch?\",\n        \"evidenceTarget\": \"Documentation of production deployment and monitoring ownership.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Confirm production deployment evidence for req_2f918d11cd34.\",\n      \"Verify monitoring ownership post‑launch.\",\n      \"Assess the validity of the candidate’s claim about production status.\",\n      \"Ensure all claims are supported by cited sources.\"\n    ],\n    \"auditSummary\": \"The candidate demonstrates strong experience in retrieval pipeline construction, evaluation harness development, Python service engineering, and collaboration with support staff. However, evidence for shipping a feature to production and owning its monitoring is incomplete, requiring further verification.\",\n    \"limitations\": [\n      \"Limited independent confirmation of production deployment.\",\n      \"No explicit monitoring documentation provided.\"\n    ]\n  }\n}",
+ "content_sha256": "91d8d00e77b97656d02baca630f2f954dc145142fc7f148e830c90cc73b912cf",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_432bbab675bc2222",
+   "targetRoleTitle": "Applied ML Engineer, Support Automation",
+   "professionalSummary": [
+    {
+     "claimId": "cv_1",
+     "text": "Machine Learning Engineer at Petrel Software (Jan 2023 – Jul 2024) building retrieval-augmented answer systems for support.",
+     "sourceIds": [
+      "src_023a88533ad3"
+     ],
+     "requirementIds": [
+      "req_1407a1c2be15"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the retrieval pipeline for a support-answer prototype, splitting 3,400 help‑centre articles into passages and indexing them in a vector store refreshed nightly from the help‑centre export."
+    },
+    {
+     "claimId": "cv_2",
+     "text": "Developed an offline evaluation harness for answer quality assessment.",
+     "sourceIds": [
+      "src_00af6a2d1842"
+     ],
+     "requirementIds": [
+      "req_a2ede7a7c47f"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built an offline evaluation harness of 600 graded question‑answer pairs that scores groundedness and correctness for every prompt or retrieval change, storing results per run for comparison."
+    },
+    {
+     "claimId": "cv_3",
+     "text": "Authored a Python API service with comprehensive tests and peer review.",
+     "sourceIds": [
+      "src_0bc9601d8801"
+     ],
+     "requirementIds": [
+      "req_1c8d30b8e417"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the prototype's API service in Python with pytest suites, with every merge reviewed by two other ML engineers, and containerised it for the sandbox workspace."
+    },
+    {
+     "claimId": "cv_4",
+     "text": "Collaborated with support operations to define hand‑off and escalation rules.",
+     "sourceIds": [
+      "src_9e718241d3e4"
+     ],
+     "requirementIds": [
+      "req_f2866c09b747"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Agreed hand‑off rules with the support operations lead, sending low‑confidence answers and billing topics straight to a human agent, written up on the support team's wiki."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "cv_5",
+     "text": "Conducted a four‑week internal trial with 25 support agents, evaluating prototype draft answers in a sandbox environment.",
+     "sourceIds": [
+      "src_259d95755e0e"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Ran a four‑week internal trial in which 25 support agents compared the prototype's draft answers with their own replies in a sandbox workspace; no draft went to customers."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "cv_6",
+     "text": "Provided a detailed trial write‑up, including evaluation scores, agent ratings, and a list of failure cases, outlining prerequisites for a customer‑facing release.",
+     "sourceIds": [
+      "src_42777df36dc8"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: the trial write‑up, with the harness's groundedness and correctness scores, the agents' ratings from the sandbox workspace and a list of failure cases; the closing section lists what would be needed before any customer‑facing release, such as a safety review and a support sign‑off."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "cv_7",
+     "text": "Retrieval pipeline construction, document chunking, vector indexing, offline evaluation harness development, Python API development, unit testing, code review, collaboration with support operations.",
+     "sourceIds": [
+      "src_023a88533ad3",
+      "src_00af6a2d1842",
+      "src_0bc9601d8801",
+      "src_9e718241d3e4"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": ""
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience with retrieval pipelines, evaluation harnesses, Python services, and collaboration with support staff. They do not conclusively demonstrate shipping a feature to production or owning post‑launch monitoring."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess gaps and verify production shipping and monitoring claims."
+   },
+   "role": {
+    "roleTitle": "Applied ML Engineer, Support Automation",
+    "jobDescriptionSource": "jd_9fbebebfab92a24f",
+    "requirementIds": [
+     "req_1407a1c2be15",
+     "req_a2ede7a7c47f",
+     "req_2f918d11cd34",
+     "req_f2866c09b747",
+     "req_1c8d30b8e417"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_432bbab675bc2222",
+    "sources": [
+     "src_023a88533ad3",
+     "src_00af6a2d1842",
+     "src_259d95755e0e",
+     "src_9e718241d3e4",
+     "src_0bc9601d8801",
+     "src_42777df36dc8",
+     "src_3db57bcf5075",
+     "src_b7df51d52ae0"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_1407a1c2be15",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_023a88533ad3",
+       "text": "Built the retrieval pipeline for a support-answer prototype, splitting 3,400 help‑centre articles into passages and indexing them in a vector store refreshed nightly from the help‑centre export.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a2ede7a7c47f",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_00af6a2d1842",
+       "text": "Built an offline evaluation harness of 600 graded question‑answer pairs that scores groundedness and correctness for every prompt or retrieval change, storing results per run for comparison.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_2f918d11cd34",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_b7df51d52ae0",
+       "text": "The candidate said the answer assistant 'is in production now' and serving Petrel's customers.",
+       "evidenceStrength": "low",
+       "notes": "No explicit monitoring or post‑launch ownership documented."
+      }
+     ],
+     "missingEvidence": [
+      "Documentation or logs confirming feature deployment to production.",
+      "Evidence of monitoring setup and ownership after launch."
+     ]
+    },
+    {
+     "requirementId": "req_f2866c09b747",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_9e718241d3e4",
+       "text": "Agreed hand‑off rules with the support operations lead, sending low‑confidence answers and billing topics straight to a human agent, written up on the support team's wiki.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_1c8d30b8e417",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0bc9601d8801",
+       "text": "Wrote the prototype's API service in Python with pytest suites, with every merge reviewed by two other ML engineers, and containerised it for the sandbox workspace.",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built retrieval pipeline for support-answer prototype.",
+     "supportingRequirementIds": [
+      "req_1407a1c2be15"
+     ],
+     "sourceIds": [
+      "src_023a88533ad3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the retrieval pipeline for a support-answer prototype, splitting 3,400 help‑centre articles into passages and indexing them in a vector store refreshed nightly from the help‑centre export."
+    },
+    {
+     "claim": "Developed offline evaluation harness.",
+     "supportingRequirementIds": [
+      "req_a2ede7a7c47f"
+     ],
+     "sourceIds": [
+      "src_00af6a2d1842"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built an offline evaluation harness of 600 graded question‑answer pairs that scores groundedness and correctness for every prompt or retrieval change, storing results per run for comparison."
+    },
+    {
+     "claim": "Authored Python API with tests and code review.",
+     "supportingRequirementIds": [
+      "req_1c8d30b8e417"
+     ],
+     "sourceIds": [
+      "src_0bc9601d8801"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the prototype's API service in Python with pytest suites, with every merge reviewed by two other ML engineers, and containerised it for the sandbox workspace."
+    },
+    {
+     "claim": "Collaborated with support operations on hand‑off rules.",
+     "supportingRequirementIds": [
+      "req_f2866c09b747"
+     ],
+     "sourceIds": [
+      "src_9e718241d3e4"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Agreed hand‑off rules with the support operations lead, sending low‑confidence answers and billing topics straight to a human agent, written up on the support team's wiki."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The answer assistant is in production and serving Petrel's customers.",
+     "reason": "Source indicates a statement by the candidate but lacks independent confirmation of production deployment or monitoring.",
+     "requiredFollowUp": "Provide deployment logs, release notes, or monitoring dashboards that confirm the feature is live and monitored."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_2f918d11cd34",
+     "severity": "medium",
+     "gap": "Evidence of shipping the feature to production and owning post‑launch monitoring."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_b7df51d52ae0",
+     "text": "The candidate said the answer assistant 'is in production now' and serving Petrel's customers.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "yes",
+     "severity": "medium",
+     "recommendedHandling": "Verify with independent documentation or a third‑party confirmation of production status."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_2f918d11cd34",
+     "question": "Can you provide deployment logs, release notes, or monitoring dashboards that confirm the feature was shipped to production and is being monitored post‑launch?",
+     "evidenceTarget": "Documentation of production deployment and monitoring ownership."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm production deployment evidence for req_2f918d11cd34.",
+    "Verify monitoring ownership post‑launch.",
+    "Assess the validity of the candidate’s claim about production status.",
+    "Ensure all claims are supported by cited sources."
+   ],
+   "auditSummary": "The candidate demonstrates strong experience in retrieval pipeline construction, evaluation harness development, Python service engineering, and collaboration with support staff. However, evidence for shipping a feature to production and owning its monitoring is incomplete, requiring further verification.",
+   "limitations": [
+    "Limited independent confirmation of production deployment.",
+    "No explicit monitoring documentation provided."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:20:28.144572+00:00"
+}

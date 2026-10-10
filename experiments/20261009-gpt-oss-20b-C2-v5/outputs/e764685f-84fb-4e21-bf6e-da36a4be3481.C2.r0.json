@@ -1,0 +1,319 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "e764685f-84fb-4e21-bf6e-da36a4be3481.C2",
+ "case_id": "e764685f-84fb-4e21-bf6e-da36a4be3481",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 13345,
+  "promptWords": 1573
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 66.695
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3961,
+ "eval_count": 2675,
+ "prompt_eval_duration_ns": 19609000,
+ "eval_duration_ns": 49112439000,
+ "total_duration_ns": 66692776875,
+ "thinking": "We need to produce JSON with schema. Must cite sources. Use provided sources. Ensure no subjective claims in CV. The pairing feedback is subjective; should go to interviewSignalRisks, not CV. CV should only include objective claims. So omit that. Provide optimized CV with claims referencing sources. Provide evidence packet mapping requirements. All requirements must be covered. Provide gaps if any. Let's check each requirement:\n\nreq_069fe199a000: Builds and maintains React components in the company design system with TypeScript. Source src_88bbb518ed46 supports. Also src_eadc56596b4e mentions adding tests for components. So supported.\n\nreq_448f61c972cc: Audits interfaces against WCAG 2.2 AA and fixes accessibility defects. Source src_bb231457551d and src_2971daff7ac0 support. So supported.\n\nreq_4dee8a3298fd: Mentors junior engineers through structured code review and pairing. We have source src_bf809823bc05 (review pull requests) but not explicit pairing. The work sample is subjective. No objective evidence of mentoring. So insufficient evidence. Need gap.\n\nreq_65084da3dd5c: Writes visual regression and unit tests for components. Source src_eadc56596b4e supports. So supported.\n\nreq_08ff212aadf5: Writes component documentation on the design-system site. Source src_f2d1a2a3255a supports. So supported.\n\nThus requirementEvidenceMap: 5 entries. For req_4dee8a3298fd status insufficient_evidence, missingEvidence: \"No documented evidence of structured code review or pairing with junior engineers.\" Provide followUpQuestion.\n\nAlso interviewSignalRisks: source src_4743bcd942f2 contains subjective feedback. So add.\n\nAlso unsupportedClaims: none? We have no unsupported claims in CV. But we might have claim about \"reviewed pull requests as one of four code owners\" which is supported by src_bf809823bc05. So fine.\n\nMissingEvidenceGaps: for req_4dee8a3298fd.\n\nFollowUpQuestions: ask for evidence of mentoring.\n\nHumanReviewChecklist: maybe \"Verify that the candidate has performed structured code review and pairing with junior engineers.\" etc.\n\nAuditSummary: brief.\n\nLimitations: maybe \"Limited to provided sources; no evidence of production deployment environment.\" But not needed.\n\nNow produce JSON. Ensure language en. Use candidateId and jobDescriptionSourceId verbatim. Provide optimizedCv with claims referencing sources. Provide evidenceBoundary sentence: \"The provided materials establish the candidate's experience in building React/TS components, auditing WCAG 2.2 AA, writing tests and documentation, but do not establish mentoring experience.\" Good.\n\nLet's craft claims: each claim with claimId. We need claimId unique. Use c1, c2, etc.\n\nClaims:\n\nc1: Builds and maintains React components in the company's design system using TypeScript. source src_88bbb518ed46.\n\nc2: Audited checkout and account-settings flows against WCAG 2.2 AA and fixed 37 defects. source src_bb231457551d.\n\nc3: Added visual regression tests for 60 design-system components and unit tests for keyboard interaction on every interactive component. source src_eadc56596b4e.\n\nc4: Wrote usage guidance, do-and-don't examples and prop tables for the design-system documentation site, and added a keyboard-interaction section to each interactive component's page. source src_f2d1a2a3255a.\n\nc5: Reviewed pull requests from other frontend engineers on the design-system repository as one of four code owners. source src_bf809823bc05.\n\nThese are all supported.\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_8a314f54f7e66a20\",\n    \"targetRoleTitle\": \"Frontend Engineer, Design System\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"c1\",\n        \"text\": \"Builds and maintains React components in the company's design system using TypeScript.\",\n        \"sourceIds\": [\"src_88bbb518ed46\"],\n        \"requirementIds\": [\"req_069fe199a000\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Frontend engineer at Quillstack (project-management software), May 2021 to present, building React and TypeScript components for the company's design system, including the date picker, data table and toast notifications.\"\n      },\n      {\n        \"claimId\": \"c2\",\n        \"text\": \"Audits checkout and account-settings flows against WCAG 2.2 AA and fixes accessibility defects.\",\n        \"sourceIds\": [\"src_bb231457551d\"],\n        \"requirementIds\": [\"req_448f61c972cc\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Audited the checkout and account-settings flows against WCAG 2.2 AA and fixed 37 defects, including focus order, colour contrast and form error announcements.\"\n      },\n      {\n        \"claimId\": \"c3\",\n        \"text\": \"Adds visual regression tests for design-system components and unit tests for keyboard interaction on every interactive component.\",\n        \"sourceIds\": [\"src_eadc56596b4e\"],\n        \"requirementIds\": [\"req_65084da3dd5c\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Added visual regression tests for 60 design-system components and unit tests for keyboard interaction on every interactive component.\"\n      },\n      {\n        \"claimId\": \"c4\",\n        \"text\": \"Writes usage guidance, do-and-don't examples, prop tables, and keyboard-interaction sections for the design-system documentation site.\",\n        \"sourceIds\": [\"src_f2d1a2a3255a\"],\n        \"requirementIds\": [\"req_08ff212aadf5\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Wrote usage guidance, do-and-don't examples and prop tables for the design-system documentation site, and added a keyboard-interaction section to each interactive component's page.\"\n      },\n      {\n        \"claimId\": \"c5\",\n        \"text\": \"Reviews pull requests from other frontend engineers on the design-system repository as one of four code owners.\",\n        \"sourceIds\": [\"src_bf809823bc05\"],\n        \"requirementIds\": [\"req_4dee8a3298fd\"],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Reviewed pull requests from other frontend engineers on the design-system repository as one of four code owners.\"\n      }\n    ],\n    \"experienceHighlights\": [],\n    \"projectsAndWorkSamples\": [],\n    \"skills\": [],\n    \"evidenceBoundary\": \"The provided materials establish the candidate’s experience in building React/TypeScript components, auditing WCAG 2.2 AA, writing visual regression and unit tests, and documenting components, but do not provide evidence of structured mentoring or pairing with junior engineers.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to assess the candidate’s fit for the Frontend Engineer, Design System role.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Frontend Engineer, Design System\",\n      \"jobDescriptionSource\": \"jd_c1c9b2366b049130\",\n      \"requirementIds\": [\n        \"req_069fe199a000\",\n        \"req_448f61c972cc\",\n        \"req_4dee8a3298fd\",\n        \"req_65084da3dd5c\",\n        \"req_08ff212aadf5\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_8a314f54f7e66a20\",\n      \"sources\": [\n        \"src_88bbb518ed46\",\n        \"src_bb231457551d\",\n        \"src_eadc56596b4e\",\n        \"src_f2d1a2a3255a\",\n        \"src_bf809823bc05\",\n        \"src_4743bcd942f2\",\n        \"src_2971daff7ac0\",\n        \"src_0828d4a182c8\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_069fe199a000\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_88bbb518ed46\",\n            \"text\": \"Frontend engineer at Quillstack (project-management software), May 2021 to present, building React and TypeScript components for the company's design system, including the date picker, data table and toast notifications.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct statement of component development.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_448f61c972cc\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_bb231457551d\",\n            \"text\": \"Audited the checkout and account-settings flows against WCAG 2.2 AA and fixed 37 defects, including focus order, colour contrast and form error announcements.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Explicit audit and defect count.\"\n          },\n          {\n            \"sourceId\": \"src_2971daff7ac0\",\n            \"text\": \"Reference check summary: the former engineering manager confirmed in writing that the candidate carried out the WCAG 2.2 AA audit of the checkout and account-settings flows in 2023 and fixed the defects it found.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"External confirmation.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_4dee8a3298fd\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_bf809823bc05\",\n            \"text\": \"Reviewed pull requests from other frontend engineers on the design-system repository as one of four code owners.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Code review activity, but no explicit pairing or mentoring.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"No documented evidence of structured code review or pairing with junior engineers.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_65084da3dd5c\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_eadc56596b4e\",\n            \"text\": \"Added visual regression tests for 60 design-system components and unit tests for keyboard interaction on every interactive component.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Quantitative test coverage.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_08ff212aadf5\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_f2d1a2a3255a\",\n            \"text\": \"Wrote usage guidance, do-and-don't examples and prop tables for the design-system documentation site, and added a keyboard-interaction section to each interactive component's page.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Direct documentation activity.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Builds and maintains React components in the company's design system using TypeScript.\",\n        \"supportingRequirementIds\": [\"req_069fe199a000\"],\n        \"sourceIds\": [\"src_88bbb518ed46\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Frontend engineer at Quillstack (project-management software), May 2021 to present, building React and TypeScript components for the company's design system, including the date picker, data table and toast notifications.\"\n      },\n      {\n        \"claim\": \"Audits checkout and account-settings flows against WCAG 2.2 AA and fixes accessibility defects.\",\n        \"supportingRequirementIds\": [\"req_448f61c972cc\"],\n        \"sourceIds\": [\"src_bb231457551d\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Audited the checkout and account-settings flows against WCAG 2.2 AA and fixed 37 defects, including focus order, colour contrast and form error announcements.\"\n      },\n      {\n        \"claim\": \"Adds visual regression tests for design-system components and unit tests for keyboard interaction on every interactive component.\",\n        \"supportingRequirementIds\": [\"req_65084da3dd5c\"],\n        \"sourceIds\": [\"src_eadc56596b4e\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Added visual regression tests for 60 design-system components and unit tests for keyboard interaction on every interactive component.\"\n      },\n      {\n        \"claim\": \"Writes usage guidance, do-and-don't examples, prop tables, and keyboard-interaction sections for the design-system documentation site.\",\n        \"supportingRequirementIds\": [\"req_08ff212aadf5\"],\n        \"sourceIds\": [\"src_f2d1a2a3255a\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote usage guidance, do-and-don't examples and prop tables for the design-system documentation site, and added a keyboard-interaction section to each interactive component's page.\"\n      },\n      {\n        \"claim\": \"Reviews pull requests from other frontend engineers on the design-system repository as one of four code owners.\",\n        \"supportingRequirementIds\": [\"req_4dee8a3298fd\"],\n        \"sourceIds\": [\"src_bf809823bc05\"],\n        \"evidenceStrength\": \"medium\",\n        \"witness\": \"Reviewed pull requests from other frontend engineers on the design-system repository as one of four code owners.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_001\",\n        \"requirementId\": \"req_4dee8a3298fd\",\n        \"severity\": \"medium\",\n        \"gap\": \"No documented evidence of structured code review or pairing with junior engineers.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_4743bcd942f2\",\n        \"text\": \"A natural mentor with infectious energy; our juniors would love learning from them. Warm, patient manner, and clearly someone who enjoys explaining things to people newer to the craft.\",\n        \"signalType\": \"subjective_feedback\",\n        \"jobRelatedBoundary\": false,\n        \"severity\": \"low\",\n        \"recommendedHandling\": \"Verify through structured pairing logs or mentor feedback from actual junior engineers.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_001\",\n        \"requirementId\": \"req_4dee8a3298fd\",\n        \"question\": \"Can you provide evidence of structured code review or pairing sessions with junior engineers, such as pairing logs, mentor feedback, or documentation of review outcomes?\",\n        \"evidenceTarget\": \"Documentation of mentoring activities or logs of pairing sessions.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Confirm that the candidate has performed structured code review or pairing with junior engineers.\",\n      \"Assess the quality and depth of the candidate’s component development, accessibility audit, testing, and documentation work.\",\n      \"Verify that the candidate’s experience aligns with the design-system team’s production deployment practices.\"\n    ],\n    \"auditSummary\": \"The candidate demonstrates strong experience in React/TypeScript component development, WCAG 2.2 AA auditing, visual regression and unit testing, and component documentation. Evidence for mentoring junior engineers is lacking; further verification is required.\",\n    \"limitations\": [\n      \"Evidence is limited to the provided sources; no information on production deployment environments or real-world mentoring logs is available.\"\n    ]\n  }\n}",
+ "content_sha256": "0c0d6e2d88d1b4ba29014d189e03c7bb8caf97bd7e77f061ba27a85868556f70",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_8a314f54f7e66a20",
+   "targetRoleTitle": "Frontend Engineer, Design System",
+   "professionalSummary": [
+    {
+     "claimId": "c1",
+     "text": "Builds and maintains React components in the company's design system using TypeScript.",
+     "sourceIds": [
+      "src_88bbb518ed46"
+     ],
+     "requirementIds": [
+      "req_069fe199a000"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Frontend engineer at Quillstack (project-management software), May 2021 to present, building React and TypeScript components for the company's design system, including the date picker, data table and toast notifications."
+    },
+    {
+     "claimId": "c2",
+     "text": "Audits checkout and account-settings flows against WCAG 2.2 AA and fixes accessibility defects.",
+     "sourceIds": [
+      "src_bb231457551d"
+     ],
+     "requirementIds": [
+      "req_448f61c972cc"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Audited the checkout and account-settings flows against WCAG 2.2 AA and fixed 37 defects, including focus order, colour contrast and form error announcements."
+    },
+    {
+     "claimId": "c3",
+     "text": "Adds visual regression tests for design-system components and unit tests for keyboard interaction on every interactive component.",
+     "sourceIds": [
+      "src_eadc56596b4e"
+     ],
+     "requirementIds": [
+      "req_65084da3dd5c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Added visual regression tests for 60 design-system components and unit tests for keyboard interaction on every interactive component."
+    },
+    {
+     "claimId": "c4",
+     "text": "Writes usage guidance, do-and-don't examples, prop tables, and keyboard-interaction sections for the design-system documentation site.",
+     "sourceIds": [
+      "src_f2d1a2a3255a"
+     ],
+     "requirementIds": [
+      "req_08ff212aadf5"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote usage guidance, do-and-don't examples and prop tables for the design-system documentation site, and added a keyboard-interaction section to each interactive component's page."
+    },
+    {
+     "claimId": "c5",
+     "text": "Reviews pull requests from other frontend engineers on the design-system repository as one of four code owners.",
+     "sourceIds": [
+      "src_bf809823bc05"
+     ],
+     "requirementIds": [
+      "req_4dee8a3298fd"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Reviewed pull requests from other frontend engineers on the design-system repository as one of four code owners."
+    }
+   ],
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": [],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience in building React/TypeScript components, auditing WCAG 2.2 AA, writing visual regression and unit tests, and documenting components, but do not provide evidence of structured mentoring or pairing with junior engineers."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess the candidate’s fit for the Frontend Engineer, Design System role."
+   },
+   "role": {
+    "roleTitle": "Frontend Engineer, Design System",
+    "jobDescriptionSource": "jd_c1c9b2366b049130",
+    "requirementIds": [
+     "req_069fe199a000",
+     "req_448f61c972cc",
+     "req_4dee8a3298fd",
+     "req_65084da3dd5c",
+     "req_08ff212aadf5"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_8a314f54f7e66a20",
+    "sources": [
+     "src_88bbb518ed46",
+     "src_bb231457551d",
+     "src_eadc56596b4e",
+     "src_f2d1a2a3255a",
+     "src_bf809823bc05",
+     "src_4743bcd942f2",
+     "src_2971daff7ac0",
+     "src_0828d4a182c8"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_069fe199a000",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_88bbb518ed46",
+       "text": "Frontend engineer at Quillstack (project-management software), May 2021 to present, building React and TypeScript components for the company's design system, including the date picker, data table and toast notifications.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of component development."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_448f61c972cc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_bb231457551d",
+       "text": "Audited the checkout and account-settings flows against WCAG 2.2 AA and fixed 37 defects, including focus order, colour contrast and form error announcements.",
+       "evidenceStrength": "high",
+       "notes": "Explicit audit and defect count."
+      },
+      {
+       "sourceId": "src_2971daff7ac0",
+       "text": "Reference check summary: the former engineering manager confirmed in writing that the candidate carried out the WCAG 2.2 AA audit of the checkout and account-settings flows in 2023 and fixed the defects it found.",
+       "evidenceStrength": "medium",
+       "notes": "External confirmation."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4dee8a3298fd",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_bf809823bc05",
+       "text": "Reviewed pull requests from other frontend engineers on the design-system repository as one of four code owners.",
+       "evidenceStrength": "medium",
+       "notes": "Code review activity, but no explicit pairing or mentoring."
+      }
+     ],
+     "missingEvidence": [
+      "No documented evidence of structured code review or pairing with junior engineers."
+     ]
+    },
+    {
+     "requirementId": "req_65084da3dd5c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_eadc56596b4e",
+       "text": "Added visual regression tests for 60 design-system components and unit tests for keyboard interaction on every interactive component.",
+       "evidenceStrength": "high",
+       "notes": "Quantitative test coverage."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_08ff212aadf5",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f2d1a2a3255a",
+       "text": "Wrote usage guidance, do-and-don't examples and prop tables for the design-system documentation site, and added a keyboard-interaction section to each interactive component's page.",
+       "evidenceStrength": "high",
+       "notes": "Direct documentation activity."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Builds and maintains React components in the company's design system using TypeScript.",
+     "supportingRequirementIds": [
+      "req_069fe199a000"
+     ],
+     "sourceIds": [
+      "src_88bbb518ed46"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Frontend engineer at Quillstack (project-management software), May 2021 to present, building React and TypeScript components for the company's design system, including the date picker, data table and toast notifications."
+    },
+    {
+     "claim": "Audits checkout and account-settings flows against WCAG 2.2 AA and fixes accessibility defects.",
+     "supportingRequirementIds": [
+      "req_448f61c972cc"
+     ],
+     "sourceIds": [
+      "src_bb231457551d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Audited the checkout and account-settings flows against WCAG 2.2 AA and fixed 37 defects, including focus order, colour contrast and form error announcements."
+    },
+    {
+     "claim": "Adds visual regression tests for design-system components and unit tests for keyboard interaction on every interactive component.",
+     "supportingRequirementIds": [
+      "req_65084da3dd5c"
+     ],
+     "sourceIds": [
+      "src_eadc56596b4e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Added visual regression tests for 60 design-system components and unit tests for keyboard interaction on every interactive component."
+    },
+    {
+     "claim": "Writes usage guidance, do-and-don't examples, prop tables, and keyboard-interaction sections for the design-system documentation site.",
+     "supportingRequirementIds": [
+      "req_08ff212aadf5"
+     ],
+     "sourceIds": [
+      "src_f2d1a2a3255a"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote usage guidance, do-and-don't examples and prop tables for the design-system documentation site, and added a keyboard-interaction section to each interactive component's page."
+    },
+    {
+     "claim": "Reviews pull requests from other frontend engineers on the design-system repository as one of four code owners.",
+     "supportingRequirementIds": [
+      "req_4dee8a3298fd"
+     ],
+     "sourceIds": [
+      "src_bf809823bc05"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Reviewed pull requests from other frontend engineers on the design-system repository as one of four code owners."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_4dee8a3298fd",
+     "severity": "medium",
+     "gap": "No documented evidence of structured code review or pairing with junior engineers."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_4743bcd942f2",
+     "text": "A natural mentor with infectious energy; our juniors would love learning from them. Warm, patient manner, and clearly someone who enjoys explaining things to people newer to the craft.",
+     "signalType": "subjective_feedback",
+     "jobRelatedBoundary": false,
+     "severity": "low",
+     "recommendedHandling": "Verify through structured pairing logs or mentor feedback from actual junior engineers."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_4dee8a3298fd",
+     "question": "Can you provide evidence of structured code review or pairing sessions with junior engineers, such as pairing logs, mentor feedback, or documentation of review outcomes?",
+     "evidenceTarget": "Documentation of mentoring activities or logs of pairing sessions."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that the candidate has performed structured code review or pairing with junior engineers.",
+    "Assess the quality and depth of the candidate’s component development, accessibility audit, testing, and documentation work.",
+    "Verify that the candidate’s experience aligns with the design-system team’s production deployment practices."
+   ],
+   "auditSummary": "The candidate demonstrates strong experience in React/TypeScript component development, WCAG 2.2 AA auditing, visual regression and unit testing, and component documentation. Evidence for mentoring junior engineers is lacking; further verification is required.",
+   "limitations": [
+    "Evidence is limited to the provided sources; no information on production deployment environments or real-world mentoring logs is available."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:38:14.849779+00:00"
+}

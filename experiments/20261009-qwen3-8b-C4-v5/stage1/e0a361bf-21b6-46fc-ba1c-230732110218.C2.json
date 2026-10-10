@@ -1,0 +1,508 @@
+{
+ "request_id": "e0a361bf-21b6-46fc-ba1c-230732110218.C2",
+ "case_id": "e0a361bf-21b6-46fc-ba1c-230732110218",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "ownership_family_licensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].notes",
+    "message": "ownership term(s) [LEAD] not licensed by the cited sources: leading",
+    "witness": {
+     "family": "LEAD",
+     "terms": [
+      "leading"
+     ],
+     "sourceIds": [
+      "src_0b23de540470"
+     ],
+     "sourceFamilies": [
+      "APPROVE"
+     ],
+     "text": "Directly supports the requirement for leading design reviews for changes to the invoicing pipeline."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.supportedClaims[1]",
+    "message": "2 schema error(s); first: $.hiringEvidencePacket.supportedClaims[1]: missing required property 'witness'",
+    "witness": {
+     "errors": [
+      "$.hiringEvidencePacket.supportedClaims[1]: missing required property 'witness'",
+      "$.hiringEvidencePacket.supportedClaims[1]: additional property 'w, witness' not allowed"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "ownership_family_licensed",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document an"
+  },
+  {
+   "rule": "hrgene.qualification_boundary",
+   "code": "downgrade",
+   "action": "downgrade_requirement_status",
+   "path": "",
+   "detail": "req_b0300c33c28c"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_41da7711e839978b",
+   "targetRoleTitle": "Senior Backend Engineer, Billing Platform",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "Designed and built the proration service in Go that recalculates subscription charges when customers change plan mid-cycle, with table-driven tests for each billing interval.",
+     "sourceIds": [
+      "src_3e73999bfd69"
+     ],
+     "requirementIds": [
+      "req_d19bd34ff0fe"
+     ],
+     "supportBoundary": "supported",
+     "witness": "built the proration service in Go that recalculates subscription charges when customers change plan mid-cycle, with table-driven tests for each billing interval."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "Wrote the PostgreSQL migrations that partitioned the invoice-line table by billing month and added a nightly reconciliation job comparing invoice totals with the payments ledger.",
+     "sourceIds": [
+      "src_848be566215f"
+     ],
+     "requirementIds": [
+      "req_3b41fad86c97"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the PostgreSQL migrations that partitioned the invoice-line table by billing month and added a nightly reconciliation job comparing invoice totals with the payments ledger."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off from the payments and finance-systems teams.",
+     "sourceIds": [
+      "src_0b23de540470"
+     ],
+     "requirementIds": [
+      "req_b0300c33c28c"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off from the payments and finance-systems teams."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_004",
+     "text": "Paired weekly with two engineers who joined the billing team in 2024 and reviewed their pull requests on the invoice renderer.",
+     "sourceIds": [
+      "src_2fee6047ba19"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Paired weekly with two engineers who joined the billing team in 2024 and reviewed their pull requests on the invoice renderer."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience with Go, PostgreSQL, design reviews, and migrations. They do not establish the candidate's on-call rotation support for the month-end invoice run."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's qualifications are supported by the provided evidence, but further human review is required to assess the full fit for the role."
+   },
+   "role": {
+    "roleTitle": "Senior Backend Engineer, Billing Platform",
+    "jobDescriptionSource": "jd_839f5288634dbd3c",
+    "requirementIds": [
+     "req_d19bd34ff0fe",
+     "req_3b41fad86c97",
+     "req_992300da21ce",
+     "req_b0300c33c28c",
+     "req_8e9ec5cfe34e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_41da7711e839978b",
+    "sources": [
+     "src_3e73999bfd69",
+     "src_848be566215f",
+     "src_0b23de540470",
+     "src_2fee6047ba19",
+     "src_0170c84a9fa9",
+     "src_f9a0b9bf7f2e",
+     "src_387bc7d73493",
+     "src_23092e5163d0"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_d19bd34ff0fe",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3e73999bfd69",
+       "text": "Backend Engineer, Ardent Ledger Software (February 2019 to July 2026): built the proration service in Go that recalculates subscription charges when customers change plan mid-cycle, with table-driven tests for each billing interval.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement for designing and building backend services for invoicing, proration, or tax calculation in Go or Java."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_3b41fad86c97",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_848be566215f",
+       "text": "Wrote the PostgreSQL migrations that partitioned the invoice-line table by billing month and added a nightly reconciliation job comparing invoice totals with the payments ledger.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement for working with PostgreSQL schemas and migrations for financial data."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_992300da21ce",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_387bc7d73493",
+       "text": "Reference check summary: Ardent Ledger's engineering director confirmed in writing that the candidate was promoted to level L5 (senior engineer) in April 2023 and held that level until leaving in July 2026, three years and four months in all; Ardent uses the title Backend Engineer at every level.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement for having worked at senior engineer level for at least two years."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_b0300c33c28c",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Cited evidence was removed by the validator; the requirement is not established by the remaining sources."
+     ]
+    },
+    {
+     "requirementId": "req_8e9ec5cfe34e",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_23092e5163d0",
+       "text": "Recruiter logistics note: the candidate is available for the system-design interview in the week of 19 October and asked for a laptop with Go 1.22 installed for the pairing exercise.",
+       "evidenceStrength": "low",
+       "notes": "Does not directly support the requirement for supporting the month-end invoice run as part of the billing on-call rotation."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence of on-call rotation support for the month-end invoice run"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Designed and built the proration service in Go that recalculates subscription charges when customers change plan mid-cycle, with table-driven tests for each billing interval.",
+     "supportingRequirementIds": [
+      "req_d19bd34ff0fe"
+     ],
+     "sourceIds": [
+      "src_3e73999bfd69"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Backend Engineer, Ardent Ledger Software (February 2019 to July 2026): built the proration service in Go that recalculates subscription charges when customers change plan mid-cycle, with table-driven tests for each billing interval."
+    },
+    {
+     "claim": "Wrote the PostgreSQL migrations that partitioned the invoice-line table by billing month and added a nightly reconciliation job comparing invoice totals with the payments ledger.",
+     "supportingRequirementIds": [
+      "req_3b41fad86c97"
+     ],
+     "sourceIds": [
+      "src_848be566215f"
+     ],
+     "evidenceStrength": "high",
+     "witness": ""
+    },
+    {
+     "claim": "Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off from the payments and finance-systems teams.",
+     "supportingRequirementIds": [
+      "req_b0300c33c28c"
+     ],
+     "sourceIds": [
+      "src_0b23de540470"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Ran the design review for moving tax calculation from a synchronous call to a queued job, writing the design document and collecting sign-off from the payments and finance-systems teams."
+    },
+    {
+     "claim": "Paired weekly with two engineers who joined the billing team in 2024 and reviewed their pull requests on the invoice renderer.",
+     "supportingRequirementIds": [],
+     "sourceIds": [
+      "src_2fee6047ba19"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Paired weekly with two engineers who joined the billing team in 2024 and reviewed their pull requests on the invoice renderer."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Supported the month-end invoice run as part of the billing on-call rotation.",
+     "reason": "The materials do not establish that the candidate supported the month-end invoice run as part of the billing on-call rotation.",
+     "requiredFollowUp": "Ask the candidate to confirm if they supported the month-end invoice run as part of the billing on-call rotation."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_8e9ec5cfe34e",
+     "severity": "medium",
+     "gap": "Evidence of on-call rotation support for the month-end invoice run"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_23092e5163d0",
+     "text": "Recruiter logistics note: the candidate is available for the system-design interview in the week of 19 October and asked for a laptop with Go 1.22 installed for the pairing exercise.",
+     "signalType": "availability",
+     "jobRelatedBoundary": "false",
+     "severity": "low",
+     "recommendedHandling": "Verify the candidate's availability and readiness for the system-design interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "question_001",
+     "requirementId": "req_8e9ec5cfe34e",
+     "question": "Can you confirm if you supported the month-end invoice run as part of the billing on-call rotation?",
+     "evidenceTarget": "Evidence of on-call rotation support for the month-end invoice run"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the candidate's on-call rotation support for the month-end invoice run.",
+    "Assess the candidate's fit for the role based on the provided evidence and gaps."
+   ],
+   "auditSummary": "The candidate's qualifications are supported by the provided evidence, but further human review is required to assess the full fit for the role. The materials do not establish the candidate's on-call rotation support for the month-end invoice run.",
+   "limitations": [
+    "The materials do not establish the candidate's on-call rotation support for the month-end invoice run."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

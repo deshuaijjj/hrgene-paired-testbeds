@@ -1,0 +1,266 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "0ebec5b1-571b-47a1-9c16-53076304d65e.C0",
+ "case_id": "0ebec5b1-571b-47a1-9c16-53076304d65e",
+ "condition": "C0",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7842,
+  "promptWords": 990
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 37.368
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2138,
+ "eval_count": 1789,
+ "prompt_eval_duration_ns": 17578000,
+ "eval_duration_ns": 31029787000,
+ "total_duration_ns": 37367019958,
+ "thinking": "We need to produce JSON with structure. Need to map requirements. We have evidence that candidate was second reviewer, not senior. So req_9c757cda2cd2 unsupported. Others partially? She drafted findings, attended committee, kept boundaries. But not senior reviewer. So requirement 9c757cda2cd2 unsupported. Others: she set scope? not mentioned. So req_a75f29d1c02c unsupported. req_92849c31892f partially? She attended committee with reviewer of record for four reviews, but not presented findings herself. So insufficient. req_addf57f34334 supported: performed validation testing. req_92b9d45c9dc2 supported: documented boundaries. So we need evidence map.\n\nAlso need unsupportedClaims: claim that she was senior reviewer? Actually claim: \"operating at senior level\" but not signed. So unsupported.\n\nWe need missingEvidenceGaps: requirement 9c757cda2cd2,  a75f29d1c02c, 92849c31892f.\n\nInterviewSignalRisks: note from recruiter: candidate said operating at senior level but not signed. risk: misrepresentation. severity high.\n\nFollowUpQuestions: ask if she ever signed a validation report, if she set scope, if she presented findings.\n\nHumanReviewChecklist: items.\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_502c6959c1e69c52\",\"targetRoleTitle\":\"Senior Quantitative Analyst, Model Validation\",\"professionalSummary\":[\"Associate‑grade Quantitative Analyst with three years of experience in a retail bank’s model validation function, specializing in credit risk model testing, findings drafting, and boundary documentation. Demonstrated ability to perform rigorous validation testing under the bank’s standard, maintain testing templates, and support senior reviewers in report preparation and committee presentations.\"],\"experienceHighlights\":[\"Performed validation testing on eleven credit risk model validations, including replication, benchmark comparison, and stability testing, with workbooks filed in the validation repository.\",\"Drafted findings sections and open items lists for validation reports, which were subsequently edited and signed by the reviewer of record.\",\"Attended the model risk committee with the reviewer of record for four reviews, contributing to discussions on findings and open items.\",\"Maintained and updated the review boundary section of each report in accordance with the 2024 validation standard update.\",\"Previously served as a graduate analyst in a consultancy’s risk practice, providing foundational analytical skills.\"],\"projectsAndWorkSamples\":[\"Work sample: test workbook and drafted findings section for a credit risk model validation, including validation repository references; the signed report bears the reviewer of record’s signature.\"],\"skills\":[\"Credit risk model validation\",\"Replication & benchmark testing\",\"Stability testing\",\"Validation report drafting\",\"Boundary documentation\",\"Testing template maintenance\",\"Committee presentation support\"],\"evidenceBoundary\":\"The provided materials establish the candidate’s experience as an associate‑grade reviewer who performed testing, drafted findings, maintained boundaries, and supported senior reviewers, but do not establish that she has served as the senior reviewer of record, set validation scope, or presented findings to the model risk committee.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Candidate lacks evidence of senior reviewer experience required for the role; human review recommended.\"},\"role\":{\"roleTitle\":\"Senior Quantitative Analyst, Model Validation\",\"jobDescriptionSource\":\"jd_2686b69b4d396052\",\"requirementIds\":[\"req_9c757cda2cd2\",\"req_a75f29d1c02c\",\"req_92849c31892f\",\"req_addf57f34334\",\"req_92b9d45c9dc2\"]},\"candidate\":{\"candidateId\":\"cand_502c6959c1e69c52\",\"sources\":[\"src_972b5d6caff0\",\"src_b2596078274f\",\"src_56c286ae2f57\",\"src_54ea26149c3f\",\"src_f12b386cfe5e\",\"src_9749fad160e0\",\"src_1ae7f6dd08e7\",\"src_b812f72e39af\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_9c757cda2cd2\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that candidate has signed a validation report as senior reviewer of record\"]},{\"requirementId\":\"req_a75f29d1c02c\",\"status\":\"insufficient_evidence\",\"evidence\":[],\"missingEvidence\":[\"Evidence that candidate set validation scope with model owners or supervised associate reviewers\"]},{\"requirementId\":\"req_92849c31892f\",\"status\":\"partial_evidence\",\"evidence\":[{\"sourceId\":\"src_56c286ae2f57\",\"text\":\"attended the model risk committee with the reviewer of record for four of the reviews\",\"evidenceStrength\":\"medium\",\"notes\":\"attended but no evidence of presenting findings\"}],\"missingEvidence\":[\"Evidence that candidate presented findings to the model risk committee\"]},{\"requirementId\":\"req_addf57f34334\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_b2596078274f\",\"text\":\"Performed the validation testing on those reviews under the bank's validation standard: replication of the model estimates, benchmark model comparison and stability testing, with the test workbooks filed in the validation repository.\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of testing\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_92b9d45c9dc2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_54ea26149c3f\",\"text\":\"Kept the review boundary section of each report current and maintained the validation function's testing template after the 2024 standard update.\",\"evidenceStrength\":\"high\",\"notes\":\"direct evidence of boundary documentation\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Performed validation testing on eleven credit risk model validations under the bank's validation standard.\",\"supportingRequirementIds\":[\"req_addf57f34334\"],\"sourceIds\":[\"src_b2596078274f\"],\"evidenceStrength\":\"high\",\"witness\":\"Performed the validation testing on those reviews under the bank's validation standard: replication of the model estimates, benchmark model comparison and stability testing, with the test workbooks filed in the validation repository.\"},{\"claim\":\"Drafted findings sections and open items lists for validation reports.\",\"supportingRequirementIds\":[\"req_92b9d45c9dc2\"],\"sourceIds\":[\"src_56c286ae2f57\"],\"evidenceStrength\":\"medium\",\"witness\":\"Drafted the findings sections and the open items list of the validation reports, which the reviewer of record edited and signed; attended the model risk committee with the reviewer of record for four of the reviews.\"}],\"unsupportedClaims\":[{\"claim\":\"Candidate has served as senior reviewer of record and signed validation reports.\",\"reason\":\"No evidence of signing a report as senior reviewer; recruiter note indicates she has not signed any report.\",\"requiredFollowUp\":\"Provide signed validation reports where candidate is listed as senior reviewer of record.\"},{\"claim\":\"Candidate set validation scope with model owners and supervised associate reviewers.\",\"reason\":\"No documentation of scope setting or supervision activities.\",\"requiredFollowUp\":\"Provide evidence of scope setting meetings or supervisory correspondence.\"}],\"missingEvidenceGaps\":[{\"gapId\":\"gap_1\",\"requirementId\":\"req_9c757cda2cd2\",\"severity\":\"high\",\"gap\":\"Evidence of candidate signing validation reports as senior reviewer of record.\"},{\"gapId\":\"gap_2\",\"requirementId\":\"req_a75f29d1c02c\",\"severity\":\"medium\",\"gap\":\"Evidence of scope setting and supervision of associate reviewers.\"},{\"gapId\":\"gap_3\",\"requirementId\":\"req_92849c31892f\",\"severity\":\"medium\",\"gap\":\"Evidence of candidate presenting findings to the model risk committee.\"}],\"interviewSignalRisks\":[{\"sourceId\":\"src_1ae7f6dd08e7\",\"text\":\"candidate said she has been 'operating at a senior level' and was 'effectively the senior reviewer' on most of the eleven reviews because the reviewer of record 'only signed'; asked whether she had signed a report herself, she said not yet.\",\"signalType\":\"misrepresentation\",\"jobRelatedBoundary\":\"true\",\"severity\":\"high\",\"recommendedHandling\":\"Verify signing authority and clarify role responsibilities during interview.\"}],\"followUpQuestions\":[{\"questionId\":\"q1\",\"requirementId\":\"req_9c757cda2cd2\",\"question\":\"Can you provide an example of a validation report where you signed as the senior reviewer of record?\",\"evidenceTarget\":\"Signed validation report with candidate listed as senior reviewer.\"},{\"questionId\":\"q2\",\"requirementId\":\"req_a75f29d1c02c\",\"question\":\"Describe a situation where you set the validation scope with model owners or supervised associate reviewers.\",\"evidenceTarget\":\"Documentation or testimony of scope setting or supervision.\"},{\"questionId\":\"q3\",\"requirementId\":\"req_92849c31892f\",\"question\":\"Have you presented validation findings to the model risk committee? If so, can you describe the presentation?\",\"evidenceTarget\":\"Record of presentation or meeting minutes.\"}],\"humanReviewChecklist\":[\"Confirm lack of senior reviewer signing evidence\",\"Assess candidate’s claim of senior level operation\",\"Determine if candidate meets minimum requirement of senior reviewer experience\",\"Evaluate risk of misrepresentation\",\"Decide whether to proceed with interview or reject\"]},\"auditSummary\":\"The evidence indicates the candidate has substantial associate‑grade validation experience but lacks documented senior reviewer authority, scope setting, and committee presentation required for the Senior Quantitative Analyst role. Human review is necessary to resolve these gaps and assess suitability.\",\"limitations\":[\"Evidence limited to provided resume, work sample, and notes; no external verification of signing authority or scope setting.\"]}",
+ "content_sha256": "1f5addcf1cf80df63694dbf97391b493be4c6746c47fec7b25f6b555c596ed43",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_502c6959c1e69c52",
+   "targetRoleTitle": "Senior Quantitative Analyst, Model Validation",
+   "professionalSummary": [
+    "Associate‑grade Quantitative Analyst with three years of experience in a retail bank’s model validation function, specializing in credit risk model testing, findings drafting, and boundary documentation. Demonstrated ability to perform rigorous validation testing under the bank’s standard, maintain testing templates, and support senior reviewers in report preparation and committee presentations."
+   ],
+   "experienceHighlights": [
+    "Performed validation testing on eleven credit risk model validations, including replication, benchmark comparison, and stability testing, with workbooks filed in the validation repository.",
+    "Drafted findings sections and open items lists for validation reports, which were subsequently edited and signed by the reviewer of record.",
+    "Attended the model risk committee with the reviewer of record for four reviews, contributing to discussions on findings and open items.",
+    "Maintained and updated the review boundary section of each report in accordance with the 2024 validation standard update.",
+    "Previously served as a graduate analyst in a consultancy’s risk practice, providing foundational analytical skills."
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample: test workbook and drafted findings section for a credit risk model validation, including validation repository references; the signed report bears the reviewer of record’s signature."
+   ],
+   "skills": [
+    "Credit risk model validation",
+    "Replication & benchmark testing",
+    "Stability testing",
+    "Validation report drafting",
+    "Boundary documentation",
+    "Testing template maintenance",
+    "Committee presentation support"
+   ],
+   "evidenceBoundary": "The provided materials establish the candidate’s experience as an associate‑grade reviewer who performed testing, drafted findings, maintained boundaries, and supported senior reviewers, but do not establish that she has served as the senior reviewer of record, set validation scope, or presented findings to the model risk committee."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Candidate lacks evidence of senior reviewer experience required for the role; human review recommended."
+   },
+   "role": {
+    "roleTitle": "Senior Quantitative Analyst, Model Validation",
+    "jobDescriptionSource": "jd_2686b69b4d396052",
+    "requirementIds": [
+     "req_9c757cda2cd2",
+     "req_a75f29d1c02c",
+     "req_92849c31892f",
+     "req_addf57f34334",
+     "req_92b9d45c9dc2"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_502c6959c1e69c52",
+    "sources": [
+     "src_972b5d6caff0",
+     "src_b2596078274f",
+     "src_56c286ae2f57",
+     "src_54ea26149c3f",
+     "src_f12b386cfe5e",
+     "src_9749fad160e0",
+     "src_1ae7f6dd08e7",
+     "src_b812f72e39af"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_9c757cda2cd2",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that candidate has signed a validation report as senior reviewer of record"
+     ]
+    },
+    {
+     "requirementId": "req_a75f29d1c02c",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "Evidence that candidate set validation scope with model owners or supervised associate reviewers"
+     ]
+    },
+    {
+     "requirementId": "req_92849c31892f",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_56c286ae2f57",
+       "text": "attended the model risk committee with the reviewer of record for four of the reviews",
+       "evidenceStrength": "medium",
+       "notes": "attended but no evidence of presenting findings"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that candidate presented findings to the model risk committee"
+     ]
+    },
+    {
+     "requirementId": "req_addf57f34334",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_b2596078274f",
+       "text": "Performed the validation testing on those reviews under the bank's validation standard: replication of the model estimates, benchmark model comparison and stability testing, with the test workbooks filed in the validation repository.",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of testing"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_92b9d45c9dc2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_54ea26149c3f",
+       "text": "Kept the review boundary section of each report current and maintained the validation function's testing template after the 2024 standard update.",
+       "evidenceStrength": "high",
+       "notes": "direct evidence of boundary documentation"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Performed validation testing on eleven credit risk model validations under the bank's validation standard.",
+     "supportingRequirementIds": [
+      "req_addf57f34334"
+     ],
+     "sourceIds": [
+      "src_b2596078274f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Performed the validation testing on those reviews under the bank's validation standard: replication of the model estimates, benchmark model comparison and stability testing, with the test workbooks filed in the validation repository."
+    },
+    {
+     "claim": "Drafted findings sections and open items lists for validation reports.",
+     "supportingRequirementIds": [
+      "req_92b9d45c9dc2"
+     ],
+     "sourceIds": [
+      "src_56c286ae2f57"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Drafted the findings sections and the open items list of the validation reports, which the reviewer of record edited and signed; attended the model risk committee with the reviewer of record for four of the reviews."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate has served as senior reviewer of record and signed validation reports.",
+     "reason": "No evidence of signing a report as senior reviewer; recruiter note indicates she has not signed any report.",
+     "requiredFollowUp": "Provide signed validation reports where candidate is listed as senior reviewer of record."
+    },
+    {
+     "claim": "Candidate set validation scope with model owners and supervised associate reviewers.",
+     "reason": "No documentation of scope setting or supervision activities.",
+     "requiredFollowUp": "Provide evidence of scope setting meetings or supervisory correspondence."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_9c757cda2cd2",
+     "severity": "high",
+     "gap": "Evidence of candidate signing validation reports as senior reviewer of record."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_a75f29d1c02c",
+     "severity": "medium",
+     "gap": "Evidence of scope setting and supervision of associate reviewers."
+    },
+    {
+     "gapId": "gap_3",
+     "requirementId": "req_92849c31892f",
+     "severity": "medium",
+     "gap": "Evidence of candidate presenting findings to the model risk committee."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_1ae7f6dd08e7",
+     "text": "candidate said she has been 'operating at a senior level' and was 'effectively the senior reviewer' on most of the eleven reviews because the reviewer of record 'only signed'; asked whether she had signed a report herself, she said not yet.",
+     "signalType": "misrepresentation",
+     "jobRelatedBoundary": "true",
+     "severity": "high",
+     "recommendedHandling": "Verify signing authority and clarify role responsibilities during interview."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_9c757cda2cd2",
+     "question": "Can you provide an example of a validation report where you signed as the senior reviewer of record?",
+     "evidenceTarget": "Signed validation report with candidate listed as senior reviewer."
+    },
+    {
+     "questionId": "q2",
+     "requirementId": "req_a75f29d1c02c",
+     "question": "Describe a situation where you set the validation scope with model owners or supervised associate reviewers.",
+     "evidenceTarget": "Documentation or testimony of scope setting or supervision."
+    },
+    {
+     "questionId": "q3",
+     "requirementId": "req_92849c31892f",
+     "question": "Have you presented validation findings to the model risk committee? If so, can you describe the presentation?",
+     "evidenceTarget": "Record of presentation or meeting minutes."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm lack of senior reviewer signing evidence",
+    "Assess candidate’s claim of senior level operation",
+    "Determine if candidate meets minimum requirement of senior reviewer experience",
+    "Evaluate risk of misrepresentation",
+    "Decide whether to proceed with interview or reject"
+   ]
+  },
+  "auditSummary": "The evidence indicates the candidate has substantial associate‑grade validation experience but lacks documented senior reviewer authority, scope setting, and committee presentation required for the Senior Quantitative Analyst role. Human review is necessary to resolve these gaps and assess suitability.",
+  "limitations": [
+   "Evidence limited to provided resume, work sample, and notes; no external verification of signing authority or scope setting."
+  ]
+ },
+ "finished_at": "2026-09-07T10:44:04.807813+00:00"
+}

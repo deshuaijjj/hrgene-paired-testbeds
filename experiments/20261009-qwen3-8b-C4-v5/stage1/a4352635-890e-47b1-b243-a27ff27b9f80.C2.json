@@ -1,0 +1,530 @@
+{
+ "request_id": "a4352635-890e-47b1-b243-a27ff27b9f80.C2",
+ "case_id": "a4352635-890e-47b1-b243-a27ff27b9f80",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its ownership term(s) [LEAD] (led) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_a4f776612791",
+     "family": "LEAD",
+     "terms": [
+      "led"
+     ],
+     "sourceIds": [
+      "src_1e23b3d931c9"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.ownership_scope",
+    "code": "requirement_ownership_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[4].status",
+    "message": "requirement marked supported but its ownership term(s) [MANAGE] (manages) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_fd6e26017e9c",
+     "family": "MANAGE",
+     "terms": [
+      "manages"
+     ],
+     "sourceIds": [
+      "src_8d49fc9f8491"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (go-live, live operation) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_a4f776612791",
+     "family": "PRODUCTION",
+     "terms": [
+      "go-live",
+      "live operation"
+     ],
+     "sourceIds": [
+      "src_1e23b3d931c9"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 2,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "req_a4f776612791: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.ownership_scope",
+   "code": "requirement_ownership_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[4]",
+   "detail": "req_fd6e26017e9c: supported -> partial_evidence"
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_2f4f2463bc6f5166",
+   "targetRoleTitle": "Implementation Project Manager, Hotel Systems",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Planned the replacement of the property management system across 12 hotels in three waves, with a schedule and a dependency log shared with the vendor, plus a readiness checklist for each wave.",
+     "sourceIds": [
+      "src_1cd2aa2c42c6"
+     ],
+     "requirementIds": [
+      "req_db669065b4e8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "planned the replacement of the property management system across 12 hotels in three waves, with a schedule and a dependency log shared with the vendor, plus a readiness checklist for each wave."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Coordinated the migration of guest profiles and future reservations with the vendor and ran reconciliation checks on record counts and deposit balances before each wave, signing off each reconciliation with the vendor.",
+     "sourceIds": [
+      "src_0ced8e010cfd"
+     ],
+     "requirementIds": [
+      "req_6534f81a0f76"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated the migration of guest profiles and future reservations with the vendor and ran reconciliation checks on record counts and deposit balances before each wave, signing off each reconciliation with the vendor."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Cut each wave over to the new property management system overnight, the last of the 12 hotels going live on 29 January 2024, and ran a two-week stabilisation desk after each wave.",
+     "sourceIds": [
+      "src_1e23b3d931c9"
+     ],
+     "requirementIds": [
+      "req_a4f776612791"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Cut each wave over to the new property management system overnight, the last of the 12 hotels going live on 29 January 2024, and ran a two-week stabilisation desk after each wave."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Organised front-desk and reservations training in a training copy of the new system, preloaded with practice bookings for each hotel, with sessions timed around shift patterns.",
+     "sourceIds": [
+      "src_a3e32c6f1f3b"
+     ],
+     "requirementIds": [
+      "req_109270147f5b"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Organised front-desk and reservations training in a training copy of the new system, preloaded with practice bookings for each hotel, with sessions timed around shift patterns."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience in planning multi-property system projects, coordinating data migration, leading system cut-over into live operation, organising staff training, and managing a project budget. They do not establish the candidate's ability to report variances to the IT director or the specific details of the stabilisation period."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate's experience and skills are well-documented, but further human review is required to assess the full extent of their qualifications and fit for the role."
+   },
+   "role": {
+    "roleTitle": "Implementation Project Manager, Hotel Systems",
+    "jobDescriptionSource": "jd_712a578ae05fccf2",
+    "requirementIds": [
+     "req_db669065b4e8",
+     "req_6534f81a0f76",
+     "req_a4f776612791",
+     "req_109270147f5b",
+     "req_fd6e26017e9c"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_2f4f2463bc6f5166",
+    "sources": [
+     "src_1cd2aa2c42c6",
+     "src_0ced8e010cfd",
+     "src_1e23b3d931c9",
+     "src_a3e32c6f1f3b",
+     "src_8d49fc9f8491",
+     "src_c4e1a93a189d",
+     "src_005d0cfafeb7",
+     "src_8888832ff894"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_db669065b4e8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1cd2aa2c42c6",
+       "text": "Systems Project Manager, Lindqvist Hotel Group, June 2020 to August 2024: planned the replacement of the property management system across 12 hotels in three waves, with a schedule and a dependency log shared with the vendor, plus a readiness checklist for each wave.",
+       "evidenceStrength": "high",
+       "notes": "The candidate planned the replacement of the property management system across 12 hotels in three waves, with a schedule and a dependency log shared with the vendor, plus a readiness checklist for each wave."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6534f81a0f76",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0ced8e010cfd",
+       "text": "Coordinated the migration of guest profiles and future reservations with the vendor and ran reconciliation checks on record counts and deposit balances before each wave, signing off each reconciliation with the vendor.",
+       "evidenceStrength": "high",
+       "notes": "The candidate coordinated the migration of guest profiles and future reservations with the vendor and ran reconciliation checks on record counts and deposit balances before each wave, signing off each reconciliation with the vendor."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a4f776612791",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_1e23b3d931c9",
+       "text": "Cut each wave over to the new property management system overnight, the last of the 12 hotels going live on 29 January 2024, and ran a two-week stabilisation desk after each wave.",
+       "evidenceStrength": "high",
+       "notes": "The candidate cut each wave over to the new property management system overnight, the last of the 12 hotels going live on 29 January 2024, and ran a two-week stabilisation desk after each wave."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's lead element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_109270147f5b",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a3e32c6f1f3b",
+       "text": "Organised front-desk and reservations training in a training copy of the new system, preloaded with practice bookings for each hotel, with sessions timed around shift patterns.",
+       "evidenceStrength": "high",
+       "notes": "The candidate organised front-desk and reservations training in a training copy of the new system, preloaded with practice bookings for each hotel, with sessions timed around shift patterns."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_fd6e26017e9c",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_8d49fc9f8491",
+       "text": "Kept the hardware and training lines of the project budget; the IT director held the overall budget. Reported spend on those two lines to the IT, director each month.",
+       "evidenceStrength": "high",
+       "notes": "The candidate kept the hardware and training lines of the project budget; the IT director held the overall budget. Reported spend on those two lines to the IT director each month."
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's manage element; verify before treating it as met."
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Planned the replacement of the property management system across 12 hotels in three waves, with a schedule and a dependency log shared with the vendor, plus a readiness checklist for each wave.",
+     "supportingRequirementIds": [
+      "req_db669065b4e8"
+     ],
+     "sourceIds": [
+      "src_1cd2aa2c42c6"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Systems Project Manager, Lindqvist Hotel Group, June 2020 to August 2024: planned the replacement of the property management system across 12 hotels in three waves, with a schedule and a dependency log shared with the vendor, plus a readiness checklist for each wave."
+    },
+    {
+     "claim": "Coordinated the migration of guest profiles and future reservations with the vendor and ran reconciliation checks on record counts and deposit balances before each wave, signing off each reconciliation with the vendor.",
+     "supportingRequirementIds": [
+      "req_6534f81a0f76"
+     ],
+     "sourceIds": [
+      "src_0ced8e010cfd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated the migration of guest profiles and future reservations with the vendor and ran reconciliation checks on record counts and deposit balances before each wave, signing off each reconciliation with the vendor."
+    },
+    {
+     "claim": "Cut each wave over to the new property management system overnight, the last of the 12 hotels going live on 29 January 2024, and ran a two-week stabilisation desk after each wave.",
+     "supportingRequirementIds": [
+      "req_a4f776612791"
+     ],
+     "sourceIds": [
+      "src_1e23b3d931c9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Cut each wave over to the new property management system overnight, the last of the 12 hotels going live on 29 January 2024, and ran a two-week stabilisation desk after each wave."
+    },
+    {
+     "claim": "Organised front-desk and reservations training in a training copy of the new system, preloaded with practice bookings for each hotel, with sessions timed around shift patterns.",
+     "supportingRequirementIds": [
+      "req_109270147f5b"
+     ],
+     "sourceIds": [
+      "src_a3e32c6f1f3b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Organised front-desk and reservations training in a training copy of the new system, preloaded with practice bookings for each hotel, with sessions timed around shift patterns."
+    },
+    {
+     "claim": "Kept the hardware and training lines of the project budget; the IT director held the overall budget. Reported spend on those two lines to the IT director each month.",
+     "supportingRequirementIds": [
+      "req_fd6e26017e9c"
+     ],
+     "sourceIds": [
+      "src_8d49fc9f8491"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Kept the hardware and training lines of the project budget; the IT director held the overall budget. Reported spend on those two lines to the IT director each month."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_005d0cfafeb7",
+     "text": "HR verification note: the former employer supplied the signed go-live certificates for all three waves; each names the candidate as project manager, and the wave-three certificate is dated 30 January 2024, the morning after the final overnight switch.",
+     "signalType": "verification",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Verify the signed go-live certificates and confirm the candidate's role as project manager in the final wave."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_a4f776612791",
+     "question": "Can you confirm the signed go-live approval and the stabilisation period for each wave?",
+     "evidenceTarget": "signed go-live approval and stabilisation period"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify the signed go-live certificates and confirm the candidate's role as project manager in the final wave.",
+    "Confirm the stabilisation period for each wave and the go-live approval process."
+   ],
+   "auditSummary": "The candidate's experience in planning multi-property system projects, coordinating data migration, leading system cut-over into live operation, organising staff training, and managing a project budget is well-documented. However, further human review is required to assess the full extent of their qualifications and fit for the role.",
+   "limitations": [
+    "The materials do not establish the candidate's ability to report variances to the IT director or the specific details of the stabilisation period."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

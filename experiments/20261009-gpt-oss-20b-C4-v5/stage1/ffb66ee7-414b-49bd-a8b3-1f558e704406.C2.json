@@ -1,0 +1,508 @@
+{
+ "request_id": "ffb66ee7-414b-49bd-a8b3-1f558e704406.C2",
+ "case_id": "ffb66ee7-414b-49bd-a8b3-1f558e704406",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Product Manager for Cards at Thornbury Building Society (Apr 2021‑Sep 2026) with ownership of the debit card backlog and a twelve‑month roadmap, refreshed quart"
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[1]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Collaborated with fraud risk and compliance teams to implement card scheme changes to dispute time limits, authoring user stories and acceptance criteria."
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[2]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Presented contactless‑limit and virtual‑card proposals to the society’s product committee, securing approval for delivery."
+    }
+   },
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[3]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Established card activation and declined‑payment dashboards with the data team, reviewing metrics at fortnightly product reviews."
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "8 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str",
+      "$.optimizedCv.professionalSummary[1]: expected type object, got str",
+      "$.optimizedCv.professionalSummary[2]: expected type object, got str",
+      "$.optimizedCv.professionalSummary[3]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 4,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Product Manager for Cards at Thornbury Building Society (Apr 2021‑Sep 2026) with ownership of the debit card backlog and"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[1]",
+   "detail": "Collaborated with fraud risk and compliance teams to implement card scheme changes to dispute time limits, authoring use"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[2]",
+   "detail": "Presented contactless‑limit and virtual‑card proposals to the society’s product committee, securing approval for deliver"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[3]",
+   "detail": "Established card activation and declined‑payment dashboards with the data team, reviewing metrics at fortnightly product"
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric,causal"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "why": "qualification"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_d0623d05c97ee9c2",
+   "targetRoleTitle": "Group Product Manager, Retail Payments",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit and address evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Group Product Manager, Retail Payments",
+    "jobDescriptionSource": "jd_d42982fbd133e5bd",
+    "requirementIds": [
+     "req_f5693f378417",
+     "req_5c036b80daa3",
+     "req_8254dcb1c12d",
+     "req_5ee017f0aa3b",
+     "req_52a82384515a"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_d0623d05c97ee9c2",
+    "sources": [
+     "src_87ab0a02faec",
+     "src_2ffc78c312e9",
+     "src_03df8fc15d8e",
+     "src_4a6aabf35964",
+     "src_fcdbd29698a3",
+     "src_769adf2e7a12",
+     "src_ac915a0ea71f",
+     "src_9fdaa9a03500"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f5693f378417",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_87ab0a02faec",
+       "text": "owned the debit card backlog and maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner",
+       "evidenceStrength": "high",
+       "notes": "directly states roadmap ownership and quarterly business case"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5c036b80daa3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_2ffc78c312e9",
+       "text": "Worked with the fraud risk and compliance teams to implement the card scheme's changes to dispute time limits, writing the user stories and acceptance criteria for the disputes journey",
+       "evidenceStrength": "high",
+       "notes": "shows collaboration with risk and compliance on scheme changes"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_8254dcb1c12d",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_03df8fc15d8e",
+       "text": "Presented the contactless-limit change and the virtual-card proposal to the society's product committee, which approved both for delivery",
+       "evidenceStrength": "high",
+       "notes": "demonstrates presentation to product committee"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_5ee017f0aa3b",
+     "status": "insufficient_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "No evidence of line management of product managers or senior group product manager role"
+     ]
+    },
+    {
+     "requirementId": "req_52a82384515a",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_4a6aabf35964",
+       "text": "Set up the card activation and declined-payment dashboards with the data team and reviewed them at the fortnightly product review",
+       "evidenceStrength": "high",
+       "notes": "provides metrics dashboards"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Owned the debit card backlog and maintained a twelve‑month roadmap, refreshing its business case each quarter with the finance business partner",
+     "supportingRequirementIds": [
+      "req_f5693f378417"
+     ],
+     "sourceIds": [
+      "src_87ab0a02faec"
+     ],
+     "evidenceStrength": "high",
+     "witness": "owned the debit card backlog and maintained the twelve-month card roadmap, refreshing its business case each quarter with the finance business partner"
+    },
+    {
+     "claim": "Collaborated with fraud risk and compliance teams to implement card scheme changes to dispute time limits, authoring user stories and acceptance criteria",
+     "supportingRequirementIds": [
+      "req_5c036b80daa3"
+     ],
+     "sourceIds": [
+      "src_2ffc78c312e9"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Worked with the fraud risk and compliance teams to implement the card scheme's changes to dispute time limits, writing the user stories and acceptance criteria for the disputes journey"
+    },
+    {
+     "claim": "Presented contactless‑limit and virtual‑card proposals to the product committee, securing approval for delivery",
+     "supportingRequirementIds": [
+      "req_8254dcb1c12d"
+     ],
+     "sourceIds": [
+      "src_03df8fc15d8e"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Presented the contactless-limit change and the virtual-card proposal to the society's product committee, which approved both for delivery"
+    },
+    {
+     "claim": "Set up card activation and declined‑payment dashboards with the data team, reviewing them at fortnightly product reviews",
+     "supportingRequirementIds": [
+      "req_52a82384515a"
+     ],
+     "sourceIds": [
+      "src_4a6aabf35964"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Set up the card activation and declined-payment dashboards with the data team and reviewed them at the fortnightly product review"
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Product Manager for Cards at Thornbury Building Society (Apr 2021‑Sep 2026) with ownership of the debit card backlog and a twelve‑month roadmap, refreshed quarterly with a business case.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Collaborated with fraud risk and compliance teams to implement card scheme changes to dispute time limits, authoring user stories and acceptance criteria.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Presented contactless‑limit and virtual‑card proposals to the society’s product committee, securing approval for delivery.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    },
+    {
+     "claim": "Established card activation and declined‑payment dashboards with the data team, reviewing metrics at fortnightly product reviews.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_5ee017f0aa3b",
+     "requirementId": "req_5ee017f0aa3b",
+     "severity": "high",
+     "gap": "No evidence of line management of product managers or senior group product manager role"
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q_5ee017f0aa3b",
+     "requirementId": "req_5ee017f0aa3b",
+     "question": "Can you describe any experience you have managing a team of product managers, including the number of direct reports and the scope of their responsibilities?",
+     "evidenceTarget": "Direct management experience and scope"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify line management experience and seniority level",
+    "Confirm that the candidate’s role as 'Head of Product (acting)' involved oversight of other product managers"
+   ],
+   "auditSummary": "The evidence establishes the candidate’s experience in product roadmap ownership, quarterly business case refresh, collaboration with risk and compliance on scheme changes, presentation to product committees, and metrics dashboard setup. However, there is no documented evidence that the candidate has held a group product manager or head‑of‑product role with line management of product managers, which is a key requirement for the target role. Human review is required to assess whether the candidate’s acting Head of Product role included such responsibilities or to obtain additional evidence.",
+   "limitations": [
+    "Limited to the provided sources",
+    "No evidence of group product manager role or line management"
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

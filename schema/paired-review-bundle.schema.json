@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jam.local/schemas/paired-review-bundle-model-output.v1.schema.json",
+  "title": "PairedReviewBundle model-authored output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "optimizedCv",
+    "hiringEvidencePacket"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "jam.hrgene_paired_review_bundle.model_output.v1"
+    },
+    "optimizedCv": {
+      "$ref": "#/$defs/optimizedCv"
+    },
+    "hiringEvidencePacket": {
+      "$ref": "../../../runtime/schemas/hiring-evidence-packet-model-output.v2.schema.json"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceIdArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^src_[a-f0-9]{12}$"
+      }
+    },
+    "requirementIdArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^req_[a-f0-9]{12}$"
+      }
+    },
+    "boundedClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claimId",
+        "text",
+        "sourceIds",
+        "requirementIds",
+        "supportBoundary"
+      ],
+      "properties": {
+        "claimId": {
+          "type": "string",
+          "pattern": "^cv_[a-z_]+_[a-f0-9]{8}$"
+        },
+        "text": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/sourceIdArray"
+        },
+        "requirementIds": {
+          "$ref": "#/$defs/requirementIdArray"
+        },
+        "supportBoundary": {
+          "enum": [
+            "supported",
+            "partial_evidence"
+          ]
+        }
+      }
+    },
+    "claimArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/boundedClaim"
+      }
+    },
+    "optimizedCv": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language",
+        "candidateId",
+        "targetRoleTitle",
+        "professionalSummary",
+        "experienceHighlights",
+        "projectsAndWorkSamples",
+        "skills",
+        "evidenceBoundary"
+      ],
+      "properties": {
+        "language": {
+          "const": "zh-CN"
+        },
+        "candidateId": {
+          "type": "string",
+          "pattern": "^cand_[a-f0-9]{16}$"
+        },
+        "targetRoleTitle": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "professionalSummary": {
+          "$ref": "#/$defs/claimArray"
+        },
+        "experienceHighlights": {
+          "$ref": "#/$defs/claimArray"
+        },
+        "projectsAndWorkSamples": {
+          "$ref": "#/$defs/claimArray"
+        },
+        "skills": {
+          "$ref": "#/$defs/claimArray"
+        },
+        "evidenceBoundary": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    }
+  }
+}

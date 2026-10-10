@@ -1,0 +1,334 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "8d7d47f5-cc1b-46a2-b3e2-9a484c45f292.C5",
+ "case_id": "8d7d47f5-cc1b-46a2-b3e2-9a484c45f292",
+ "condition": "C5",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 7808,
+  "promptWords": 960
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "qwen3:8b",
+ "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+ "format": "schema",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 90.599
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 1817,
+ "eval_count": 3177,
+ "prompt_eval_duration_ns": 2424829000,
+ "eval_duration_ns": 88124954000,
+ "total_duration_ns": 90596482542,
+ "thinking": null,
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_f50a1a36ae8b8860\",\n    \"targetRoleTitle\": \"Search Algorithm Engineer, Financial Reporting System\",\n    \"professionalSummary\": [\n      {\"claimId\": \"claim_1\", \"text\": \"Candidate has deployed ranking changes to the production search service and operates production relevance monitoring.\", \"sourceIds\": [\"src_a10ef9c08c29\", \"src_e5e5d0733015\"], \"requirementIds\": [\"req_c77e128eb1eb\"], \"supportBoundary\": \"supported\", \"witness\": \"Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer.\"}\n    ],\n    \"experienceHighlights\": [\n      {\"claimId\": \"claim_2\", \"text\": \"Candidate has developed and evaluated ranking models offline against the labelled query set.\", \"sourceIds\": [\"src_a3b8f69c802c\"], \"requirementIds\": [\"req_a4035ec8fbc7\"], \"supportBoundary\": \"supported\", \"witness\": \"Developed and evaluated ranking models for the reporting system's search service offline against the labelled query set (about 3,400 finance queries), improving offline nDCG in three consecutive model iterations.\"}\n    ],\n    \"projectsAndWorkSamples\": [\n      {\"claimId\": \"claim_3\", \"text\": \"Candidate has built the offline evaluation harness and the replay tool for the search service.\", \"sourceIds\": [\"src_c7a6a5d4a491\"], \"requirementIds\": [\"req_a4035ec8fbc7\"], \"supportBoundary\": \"supported\", \"witness\": \"Built the offline evaluation harness and the replay tool that scores a ranking model against logged queries copied from the production index into the development cluster.\"}\n    ],\n    \"skills\": [\n      {\"claimId\": \"claim_4\", \"text\": \"Candidate has documented model cards, known limitations and hand-over conditions for each ranking release.\", \"sourceIds\": [\"src_f676fc762de3\"], \"requirementIds\": [\"req_2b2820b84b39\"], \"supportBoundary\": \"supported\", \"witness\": \"Wrote the model card for each ranking iteration, listing the training queries, the offline metrics and the known limitation that document-type boosts were tuned only on logged queries, plus the hand-over notes for the platform team.\"}\n    ],\n    \"evidenceBoundary\": \"The materials establish that the candidate has deployed ranking changes to the production search service, operated production relevance monitoring, developed and evaluated ranking models offline, built the offline evaluation harness and replay tool, and documented model cards. They do not establish that the candidate ran live-traffic experiments with the platform team or coordinated releases with the finance-user team.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"The candidate has met several requirements for the role, but there are gaps in evidence for some key responsibilities.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Search Algorithm Engineer, Financial Reporting System\",\n      \"jobDescriptionSource\": \"jd_9b1a75f09cc25d78\",\n      \"requirementIds\": [\"req_c77e128eb1eb\", \"req_a4035ec8fbc7\", \"req_d9608e2a4114\", \"req_3f99e1c5c0c9\", \"req_2b2820b84b39\"]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_f50a1a36ae8b8860\",\n      \"sources\": [\"src_a3b8f69c802c\", \"src_c7a6a5d4a491\", \"src_a10ef9c08c29\", \"src_f676fc762de3\", \"src_77f8755b4288\", \"src_409aad648715\", \"src_e5e5d0733015\", \"src_04c36abce947\"]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_c77e128eb1eb\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a10ef9c08c29\",\n            \"text\": \"Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Candidate coordinated releases and the platform team deployed changes.\"\n          },\n          {\n            \"sourceId\": \"src_e5e5d0733015\",\n            \"text\": \"Hiring manager pre-read: the candidate's portfolio page says 'shipped three ranking models to production search'; the head of platform wants an engineer who has deployed and monitored ranking in production, so the packet should say who deployed what.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Candidate's portfolio indicates deployment to production.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_a4035ec8fbc7\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a3b8f69c802c\",\n            \"text\": \"Developed and evaluated ranking models for the reporting system's search service offline against the labelled query set (about 3,400 finance queries), improving offline nDCG in three consecutive model iterations.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Candidate developed and evaluated models offline.\"\n          },\n          {\n            \"sourceId\": \"src_c7a6a5d4a491\",\n            \"text\": \"Built the offline evaluation harness and the replay tool that scores a ranking model against logged queries copied from the production index into the development cluster.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Candidate built the evaluation harness and replay tool.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d9608e2a4114\",\n        \"status\": \"insufficient_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_04c36abce947\",\n            \"text\": \"Recruiter screen: candidate said the models 'are what runs in production today' and that he 'watched the relevance dashboards after each release'; asked who executed the releases, he named the platform team.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Candidate mentioned watching dashboards but did not run live experiments.\"\n          }\n        ],\n        \"missingEvidence\": [\"Evidence of running live-traffic experiments with the platform team\"]\n      },\n      {\n        \"requirementId\": \"req_3f99e1c5c0c9\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_a10ef9c08c29\",\n            \"text\": \"Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Candidate coordinated releases with the platform team.\"\n          }\n        ],\n        \"missingEvidence\": [\"Evidence of coordinating releases with the finance-user team\"]\n      },\n      {\n        \"requirementId\": \"req_2b2820b84b39\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_f676fc762de3\",\n            \"text\": \"Wrote the model card for each ranking iteration, listing the training queries, the offline metrics and the known limitation that document-type boosts were tuned only on logged queries, plus the hand-over notes for the platform team.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Candidate documented model cards and hand-over notes.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Candidate has deployed ranking changes to the production search service and operates production relevance monitoring.\",\n        \"supportingRequirementIds\": [\"req_c77e128eb1eb\"],\n        \"sourceIds\": [\"src_a10ef9c08c29\", \"src_e5e5d0733015\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer.\"\n      },\n      {\n        \"claim\": \"Candidate has developed and evaluated ranking models offline against the labelled query set.\",\n        \"supportingRequirementIds\": [\"req_a4035ec8fbc7\"],\n        \"sourceIds\": [\"src_a3b8f69c802c\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Developed and evaluated ranking models for the reporting system's search service offline against the labelled query set (about 3,400 finance queries), improving offline nDCG in three consecutive model iterations.\"\n      },\n      {\n        \"claim\": \"Candidate has built the offline evaluation harness and the replay tool for the search service.\",\n        \"supportingRequirementIds\": [\"req_a4035ec8fbc7\"],\n        \"sourceIds\": [\"src_c7a6a5d4a491\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Built the offline evaluation harness and the replay tool that scores a ranking model against logged queries copied from the production index into the development cluster.\"\n      },\n      {\n        \"claim\": \"Candidate has documented model cards, known limitations and hand-over conditions for each ranking release.\",\n        \"supportingRequirementIds\": [\"req_2b2820b84b39\"],\n        \"sourceIds\": [\"src_f676fc762de3\"],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the model card for each ranking iteration, listing the training queries, the offline metrics and the known limitation that document-type boosts were tuned only on logged queries, plus the hand-over notes for the platform team.\"\n      }\n    ],\n    \"unsupportedClaims\": [\n      {\n        \"claim\": \"Candidate has run live-traffic experiments with the platform team and recorded outcomes.\",\n        \"reason\": \"The materials do not establish that the candidate ran live-traffic experiments with the platform team.\",\n        \"requiredFollowUp\": \"Verify if the candidate ran live-traffic experiments with the platform team and recorded outcomes.\"\n      },\n      {\n        \"claim\": \"Candidate has coordinated releases with the finance-user team and recorded own responsibility boundaries.\",\n        \"reason\": \"The materials do not establish that the candidate coordinated releases with the finance-user team.\",\n        \"requiredFollowUp\": \"Verify if the candidate coordinated releases with the finance-user team and recorded own responsibility boundaries.\"\n      }\n    ],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_d9608e2a4114\",\n        \"severity\": \"medium\",\n        \"gap\": \"Evidence of running live-traffic experiments with the platform team is missing.\"\n      },\n      {\n        \"gapId\": \"gap_2\",\n        \"requirementId\": \"req_3f99e1c5c0c9\",\n        \"severity\": \"medium\",\n        \"gap\": \"Evidence of coordinating releases with the finance-user team is missing.\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_04c36abce947\",\n        \"text\": \"Candidate said the models 'are what runs in production today' and that he 'watched the relevance dashboards after each release'; asked who executed the releases, he named the platform team.\",\n        \"signalType\": \"job-related\",\n        \"jobRelatedBoundary\": \"Yes\",\n        \"severity\": \"medium\",\n        \"recommendedHandling\": \"Verify if the candidate ran live-traffic experiments with the platform team and recorded outcomes.\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q_1\",\n        \"requirementId\": \"req_d9608e2a4114\",\n        \"question\": \"Can you confirm if you ran live-traffic experiments with the platform team and recorded outcomes?\",\n        \"evidenceTarget\": \"Evidence of running live-traffic experiments with the platform team.\"\n      },\n      {\n        \"questionId\": \"q_2\",\n        \"requirementId\": \"req_3f99e1c5c0c9\",\n        \"question\": \"Can you confirm if you coordinated releases with the finance-user team and recorded your own responsibility boundaries?\",\n        \"evidenceTarget\": \"Evidence of coordinating releases with the finance-user team.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify if the candidate ran live-traffic experiments with the platform team and recorded outcomes.\",\n      \"Verify if the candidate coordinated releases with the finance-user team and recorded own responsibility boundaries.\"\n    ],\n    \"auditSummary\": \"The candidate has met several requirements for the role, including deploying ranking changes to the production search service, developing and evaluating ranking models offline, building the offline evaluation harness and replay tool, and documenting model cards. However, there is insufficient evidence for running live-traffic experiments with the platform team and coordinating releases with the finance-user team. Further verification is required to confirm these responsibilities.\",\n    \"limitations\": [\n      \"The materials do not establish that the candidate ran live-traffic experiments with the platform team.\",\n      \"The materials do not establish that the candidate coordinated releases with the finance-user team.\"\n    ]\n  }\n}",
+ "content_sha256": "89678f9315ff1abe86f2a2969a31ee9a018639e2e302f3dcd94693126d1c1bab",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_f50a1a36ae8b8860",
+   "targetRoleTitle": "Search Algorithm Engineer, Financial Reporting System",
+   "professionalSummary": [
+    {
+     "claimId": "claim_1",
+     "text": "Candidate has deployed ranking changes to the production search service and operates production relevance monitoring.",
+     "sourceIds": [
+      "src_a10ef9c08c29",
+      "src_e5e5d0733015"
+     ],
+     "requirementIds": [
+      "req_c77e128eb1eb"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_2",
+     "text": "Candidate has developed and evaluated ranking models offline against the labelled query set.",
+     "sourceIds": [
+      "src_a3b8f69c802c"
+     ],
+     "requirementIds": [
+      "req_a4035ec8fbc7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Developed and evaluated ranking models for the reporting system's search service offline against the labelled query set (about 3,400 finance queries), improving offline nDCG in three consecutive model iterations."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_3",
+     "text": "Candidate has built the offline evaluation harness and the replay tool for the search service.",
+     "sourceIds": [
+      "src_c7a6a5d4a491"
+     ],
+     "requirementIds": [
+      "req_a4035ec8fbc7"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built the offline evaluation harness and the replay tool that scores a ranking model against logged queries copied from the production index into the development cluster."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_4",
+     "text": "Candidate has documented model cards, known limitations and hand-over conditions for each ranking release.",
+     "sourceIds": [
+      "src_f676fc762de3"
+     ],
+     "requirementIds": [
+      "req_2b2820b84b39"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote the model card for each ranking iteration, listing the training queries, the offline metrics and the known limitation that document-type boosts were tuned only on logged queries, plus the hand-over notes for the platform team."
+    }
+   ],
+   "evidenceBoundary": "The materials establish that the candidate has deployed ranking changes to the production search service, operated production relevance monitoring, developed and evaluated ranking models offline, built the offline evaluation harness and replay tool, and documented model cards. They do not establish that the candidate ran live-traffic experiments with the platform team or coordinated releases with the finance-user team."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The candidate has met several requirements for the role, but there are gaps in evidence for some key responsibilities."
+   },
+   "role": {
+    "roleTitle": "Search Algorithm Engineer, Financial Reporting System",
+    "jobDescriptionSource": "jd_9b1a75f09cc25d78",
+    "requirementIds": [
+     "req_c77e128eb1eb",
+     "req_a4035ec8fbc7",
+     "req_d9608e2a4114",
+     "req_3f99e1c5c0c9",
+     "req_2b2820b84b39"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_f50a1a36ae8b8860",
+    "sources": [
+     "src_a3b8f69c802c",
+     "src_c7a6a5d4a491",
+     "src_a10ef9c08c29",
+     "src_f676fc762de3",
+     "src_77f8755b4288",
+     "src_409aad648715",
+     "src_e5e5d0733015",
+     "src_04c36abce947"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_c77e128eb1eb",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a10ef9c08c29",
+       "text": "Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer.",
+       "evidenceStrength": "high",
+       "notes": "Candidate coordinated releases and the platform team deployed changes."
+      },
+      {
+       "sourceId": "src_e5e5d0733015",
+       "text": "Hiring manager pre-read: the candidate's portfolio page says 'shipped three ranking models to production search'; the head of platform wants an engineer who has deployed and monitored ranking in production, so the packet should say who deployed what.",
+       "evidenceStrength": "medium",
+       "notes": "Candidate's portfolio indicates deployment to production."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a4035ec8fbc7",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a3b8f69c802c",
+       "text": "Developed and evaluated ranking models for the reporting system's search service offline against the labelled query set (about 3,400 finance queries), improving offline nDCG in three consecutive model iterations.",
+       "evidenceStrength": "high",
+       "notes": "Candidate developed and evaluated models offline."
+      },
+      {
+       "sourceId": "src_c7a6a5d4a491",
+       "text": "Built the offline evaluation harness and the replay tool that scores a ranking model against logged queries copied from the production index into the development cluster.",
+       "evidenceStrength": "high",
+       "notes": "Candidate built the evaluation harness and replay tool."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d9608e2a4114",
+     "status": "insufficient_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_04c36abce947",
+       "text": "Recruiter screen: candidate said the models 'are what runs in production today' and that he 'watched the relevance dashboards after each release'; asked who executed the releases, he named the platform team.",
+       "evidenceStrength": "medium",
+       "notes": "Candidate mentioned watching dashboards but did not run live experiments."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence of running live-traffic experiments with the platform team"
+     ]
+    },
+    {
+     "requirementId": "req_3f99e1c5c0c9",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_a10ef9c08c29",
+       "text": "Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer.",
+       "evidenceStrength": "high",
+       "notes": "Candidate coordinated releases with the platform team."
+      }
+     ],
+     "missingEvidence": [
+      "Evidence of coordinating releases with the finance-user team"
+     ]
+    },
+    {
+     "requirementId": "req_2b2820b84b39",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_f676fc762de3",
+       "text": "Wrote the model card for each ranking iteration, listing the training queries, the offline metrics and the known limitation that document-type boosts were tuned only on logged queries, plus the hand-over notes for the platform team.",
+       "evidenceStrength": "high",
+       "notes": "Candidate documented model cards and hand-over notes."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Candidate has deployed ranking changes to the production search service and operates production relevance monitoring.",
+     "supportingRequirementIds": [
+      "req_c77e128eb1eb"
+     ],
+     "sourceIds": [
+      "src_a10ef9c08c29",
+      "src_e5e5d0733015"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer."
+    },
+    {
+     "claim": "Candidate has developed and evaluated ranking models offline against the labelled query set.",
+     "supportingRequirementIds": [
+      "req_a4035ec8fbc7"
+     ],
+     "sourceIds": [
+      "src_a3b8f69c802c"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Developed and evaluated ranking models for the reporting system's search service offline against the labelled query set (about 3,400 finance queries), improving offline nDCG in three consecutive model iterations."
+    },
+    {
+     "claim": "Candidate has built the offline evaluation harness and the replay tool for the search service.",
+     "supportingRequirementIds": [
+      "req_a4035ec8fbc7"
+     ],
+     "sourceIds": [
+      "src_c7a6a5d4a491"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built the offline evaluation harness and the replay tool that scores a ranking model against logged queries copied from the production index into the development cluster."
+    },
+    {
+     "claim": "Candidate has documented model cards, known limitations and hand-over conditions for each ranking release.",
+     "supportingRequirementIds": [
+      "req_2b2820b84b39"
+     ],
+     "sourceIds": [
+      "src_f676fc762de3"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model card for each ranking iteration, listing the training queries, the offline metrics and the known limitation that document-type boosts were tuned only on logged queries, plus the hand-over notes for the platform team."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "Candidate has run live-traffic experiments with the platform team and recorded outcomes.",
+     "reason": "The materials do not establish that the candidate ran live-traffic experiments with the platform team.",
+     "requiredFollowUp": "Verify if the candidate ran live-traffic experiments with the platform team and recorded outcomes."
+    },
+    {
+     "claim": "Candidate has coordinated releases with the finance-user team and recorded own responsibility boundaries.",
+     "reason": "The materials do not establish that the candidate coordinated releases with the finance-user team.",
+     "requiredFollowUp": "Verify if the candidate coordinated releases with the finance-user team and recorded own responsibility boundaries."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_d9608e2a4114",
+     "severity": "medium",
+     "gap": "Evidence of running live-traffic experiments with the platform team is missing."
+    },
+    {
+     "gapId": "gap_2",
+     "requirementId": "req_3f99e1c5c0c9",
+     "severity": "medium",
+     "gap": "Evidence of coordinating releases with the finance-user team is missing."
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_04c36abce947",
+     "text": "Candidate said the models 'are what runs in production today' and that he 'watched the relevance dashboards after each release'; asked who executed the releases, he named the platform team.",
+     "signalType": "job-related",
+     "jobRelatedBoundary": "Yes",
+     "severity": "medium",
+     "recommendedHandling": "Verify if the candidate ran live-traffic experiments with the platform team and recorded outcomes."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_1",
+     "requirementId": "req_d9608e2a4114",
+     "question": "Can you confirm if you ran live-traffic experiments with the platform team and recorded outcomes?",
+     "evidenceTarget": "Evidence of running live-traffic experiments with the platform team."
+    },
+    {
+     "questionId": "q_2",
+     "requirementId": "req_3f99e1c5c0c9",
+     "question": "Can you confirm if you coordinated releases with the finance-user team and recorded your own responsibility boundaries?",
+     "evidenceTarget": "Evidence of coordinating releases with the finance-user team."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify if the candidate ran live-traffic experiments with the platform team and recorded outcomes.",
+    "Verify if the candidate coordinated releases with the finance-user team and recorded own responsibility boundaries."
+   ],
+   "auditSummary": "The candidate has met several requirements for the role, including deploying ranking changes to the production search service, developing and evaluating ranking models offline, building the offline evaluation harness and replay tool, and documenting model cards. However, there is insufficient evidence for running live-traffic experiments with the platform team and coordinating releases with the finance-user team. Further verification is required to confirm these responsibilities.",
+   "limitations": [
+    "The materials do not establish that the candidate ran live-traffic experiments with the platform team.",
+    "The materials do not establish that the candidate coordinated releases with the finance-user team."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T09:13:29.896398+00:00"
+}

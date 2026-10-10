@@ -1,0 +1,81 @@
+{
+ "schemaVersion": "jam.hrgene_gold.v2",
+ "caseId": "535fd10e-1f20-46b2-85fd-a714de412a05",
+ "family": "unsupported_quantification_causality",
+ "controlStatus": "positive_risk",
+ "propositions": [
+  {
+   "atomicPropositionId": "prop_842f12599faa",
+   "canonicalProposition": "The candidate built a LightGBM model forecasting next-day demand for 140 menu items in each of 62 restaurants.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_be0b6c9d6d4b"
+   ],
+   "relevantRequirementIds": [
+    "req_7c5e49e12a8f"
+   ],
+   "boundaryCategory": "documented_task_and_artifact",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the model, its scope and features directly."
+  },
+  {
+   "atomicPropositionId": "prop_69d3b078b22e",
+   "canonicalProposition": "The candidate has run the weekly forecast review with the commissary planners since January 2022, logging manual overrides.",
+   "supportStatus": "supported",
+   "supportingSourceIds": [
+    "src_fe71811a552d",
+    "src_c585268039b2"
+   ],
+   "relevantRequirementIds": [
+    "req_9e333e63be42"
+   ],
+   "boundaryCategory": "verified_activity_record",
+   "criticality": "noncritical",
+   "rationale": "The resume describes the review and the reference check confirms it and its start date in writing."
+  },
+  {
+   "atomicPropositionId": "prop_c26ec3e4b43b",
+   "canonicalProposition": "The candidate's forecasting model cut food waste by roughly a fifth across the restaurants.",
+   "supportStatus": "unsupported",
+   "supportingSourceIds": [],
+   "relevantRequirementIds": [
+    "req_f377c62e8708"
+   ],
+   "boundaryCategory": "quantified_outcome_without_baseline",
+   "criticality": "critical",
+   "rationale": "The figure and the causal attribution come from the candidate's own memo, which gives no waste-log figures, baseline period or finance sign-off; under the quantification rule a figure without a defined baseline is not evidence."
+  }
+ ],
+ "requirementStatus": {
+  "req_7c5e49e12a8f": "supported",
+  "req_5d55ea68001a": "supported",
+  "req_9e333e63be42": "supported",
+  "req_f377c62e8708": "insufficient_evidence",
+  "req_9adab0b79fae": "supported"
+ },
+ "subjectiveSourceIds": [],
+ "nonProductionSourceIds": [],
+ "expectedGap": "No waste-log comparison, baseline period or finance sign-off supports the stated fall in food waste.",
+ "expectedBoundaryNote": "Report the model, the feature pipeline, the forecast review and the model card as documented; record the memo's waste figure and its attribution to the model as an unsupported claim with a follow-up.",
+ "permittedFollowUpTargets": [
+  "Ask for the waste-log figures behind the memo, the baseline period, the comparison window and whether finance signed off the comparison."
+ ],
+ "validClaimSignatures": [
+  "LightGBM",
+  "forecast review"
+ ],
+ "trap": {
+  "propositionId": "prop_c26ec3e4b43b",
+  "rule": "hrgene.unsupported_quantification",
+  "requirementIds": [
+   "req_f377c62e8708"
+  ],
+  "signatures": [
+   "roughly a fifth",
+   "cut food waste"
+  ],
+  "baitSourceIds": [
+   "src_3778c2a1c71e"
+  ]
+ }
+}

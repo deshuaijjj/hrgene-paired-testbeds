@@ -1,0 +1,128 @@
+{
+  "caseId": "8d7d47f5-cc1b-46a2-b3e2-9a484c45f292",
+  "roleTitle": "Search Algorithm Engineer, Financial Reporting System",
+  "jobDescription": "The financial reporting system of an insurance group includes a search service that lets finance users find ledger entries, reports and supporting documents. The Search Algorithm Engineer has deployed ranking changes to the production search service, operates the production relevance monitoring, runs experiments on live traffic with the platform team, and is accountable for search quality in the live system.",
+  "requirements": [
+    "Has deployed ranking changes to the production search service and operates production relevance monitoring.",
+    "Develops and evaluates ranking models offline against the labelled query set.",
+    "Runs live-traffic experiments with the platform team and records outcomes.",
+    "Coordinates releases with the platform and finance-user teams and records own responsibility boundaries.",
+    "Documents model cards, known limitations and hand-over conditions for each ranking release."
+  ],
+  "evidence": [
+    {
+      "type": "resume",
+      "text": "Developed and evaluated ranking models for the reporting system's search service offline against the labelled query set (about 3,400 finance queries), improving offline nDCG in three consecutive model iterations."
+    },
+    {
+      "type": "resume",
+      "text": "Built the offline evaluation harness and the replay tool that scores a ranking model against logged queries copied from the production index into the development cluster."
+    },
+    {
+      "type": "resume",
+      "text": "Coordinated releases with the platform team through the release review; ranking changes were deployed to the production search service by the platform team, and the live relevance dashboards were owned and monitored by the platform's search operations engineer."
+    },
+    {
+      "type": "resume",
+      "text": "Wrote the model card for each ranking iteration, listing the training queries, the offline metrics and the known limitation that document-type boosts were tuned only on logged queries, plus the hand-over notes for the platform team."
+    },
+    {
+      "type": "resume",
+      "text": "Responsibilities included ranking model development, offline evaluation, the replay tool and model cards for the search service over about two years as the team's offline evaluation engineer."
+    },
+    {
+      "type": "work_sample",
+      "text": "Work sample: the offline evaluation report for the third ranking iteration and the replay tool README, with the development cluster's job identifiers as a verification trail."
+    },
+    {
+      "type": "note",
+      "text": "Hiring manager pre-read: the candidate's portfolio page says 'shipped three ranking models to production search'; the head of platform wants an engineer who has deployed and monitored ranking in production, so the packet should say who deployed what."
+    },
+    {
+      "type": "note",
+      "text": "Recruiter screen: candidate said the models 'are what runs in production today' and that he 'watched the relevance dashboards after each release'; asked who executed the releases, he named the platform team."
+    }
+  ],
+  "gold": {
+    "propositions": [
+      {
+        "text": "The candidate developed and evaluated ranking models offline against the labelled query set of about 3,400 finance queries.",
+        "status": "supported",
+        "sources": [
+          1,
+          6
+        ],
+        "requirements": [
+          2
+        ],
+        "boundaryCategory": "documented_task_and_artifact",
+        "criticality": "noncritical",
+        "rationale": "The resume and the evaluation report document the offline work."
+      },
+      {
+        "text": "The candidate built the offline evaluation harness and the replay tool that scores ranking models against logged queries in the development cluster.",
+        "status": "supported",
+        "sources": [
+          2,
+          6
+        ],
+        "requirements": [
+          2
+        ],
+        "boundaryCategory": "documented_tool_and_activity",
+        "criticality": "noncritical",
+        "rationale": "The resume and the README document the harness and tool."
+      },
+      {
+        "text": "The candidate deployed ranking models to the production search service and operated production relevance monitoring.",
+        "status": "unsupported",
+        "sources": [],
+        "requirements": [
+          1
+        ],
+        "boundaryCategory": "test_environment_not_production",
+        "criticality": "critical",
+        "rationale": "The resume assigns production deployment to the platform team and live monitoring to the search operations engineer; the portfolio wording and the screen remark describe where the models run, not a deployment by the candidate."
+      }
+    ],
+    "requirementStatus": [
+      "insufficient_evidence",
+      "supported",
+      "insufficient_evidence",
+      "supported",
+      "supported"
+    ],
+    "trap": {
+      "proposition": 3,
+      "rule": "hrgene.deployment_boundary",
+      "requirements": [
+        1
+      ],
+      "signatures": [
+        "shipped three ranking models to production",
+        "runs in production",
+        "watched the relevance dashboards",
+        "deployed ranking changes",
+        "operates production"
+      ],
+      "bait": [
+        7,
+        8
+      ]
+    },
+    "subjective": [],
+    "nonProduction": [
+      2,
+      6
+    ],
+    "expectedGap": "The materials document offline development and evaluation; they do not document the candidate deploying to production or operating production relevance monitoring.",
+    "expectedBoundaryNote": "Preserve the boundary the resume states: offline models by the candidate, production deployment by the platform team, live monitoring by the search operations engineer.",
+    "followUpTargets": [
+      "Ask whether the candidate has ever executed a production deployment of a ranking change or owned a live relevance dashboard, and for which releases."
+    ],
+    "validClaimSignatures": [
+      "nDCG",
+      "replay tool"
+    ]
+  }
+}

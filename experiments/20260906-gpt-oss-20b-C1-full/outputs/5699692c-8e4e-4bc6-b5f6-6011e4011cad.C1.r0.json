@@ -1,0 +1,64 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "5699692c-8e4e-4bc6-b5f6-6011e4011cad.C1",
+ "case_id": "5699692c-8e4e-4bc6-b5f6-6011e4011cad",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11086,
+  "promptWords": 1434
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 12.302
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 2762,
+ "eval_count": 292,
+ "prompt_eval_duration_ns": 17663000,
+ "eval_duration_ns": 5062531000,
+ "total_duration_ns": 12300155833,
+ "thinking": "We need to craft JSON. Need to cite sources. For optimized CV, claims must be supported. We have evidence that alerting rules written, validated in staging, but not production deployment. Requirement req_bd64b2f9370d: designs and deploys alerting rules to production through release pipeline. We have design but not deployment. So partial evidence. req_02151dff1031: operates production monitoring and takes part in on-call rotation. We have no production monitoring operation; only staging. So insufficient. req_4c03059a563a: runs incident reviews with service ops and records timelines. We have drafting timeline for staging incident review. So partial. req_0b0d65c91afb: coordinates monitoring changes with platform team and records responsibility boundaries. We have submitted changes through release pipeline, but no production deployment permissions. So partial. req_04f7c99e2fd1: documents runbooks, known limitations and hand-over conditions. We have runbook maintenance and known limitation. So partial.\n\nThus all requirements are partial or insufficient. Provide gaps.\n\nFollow-up questions: e.g., \"Did the candidate deploy monitoring changes to production?\" etc.\n\nInterviewSignalRisks: note from recruiter screen about alerts running across whole network and March incident caught by alerts. That is subjective claim not proven. Also hiring manager note about needing someone who shipped monitoring to production. These are signals.\n\nNow craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_65b5ee4a7d04a365\",\"targetRoleTitle\":\"Site Reliability Engineer, After‑Sales Service Network\",\"professionalSummary\":[\"Designed Prometheus alerting rules and Grafana dashboards for the dispatch API and parts‑order queue, and validated them against replayed traffic in a staging cluster across four release cycles.\",\"Drafted incident‑review timelines and follow‑up actions for a March dispatch outage while serving as the monitoring owner for staging.\",\"Maintained the alerting runbook for the dispatch service, documenting known limitations such as queue‑depth alerts tuned only against staging traffic profiles.\"]},\"experienceHighlights\":[\"Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts‑order queue, and validated them against replayed traffic in the staging cluster over four release cycles.\",\"Took part in the incident review for the March dispatch outage as the monitoring owner for staging, drafting the timeline and the follow‑up actions that service operations then reviewed.\",\"Submitted monitoring changes through the platform team's release pipeline; production releases were executed by the platform team's on‑call engineer under their release calendar, and I had no production deployment permissions.\",\"Maintained the alerting runbook for the dispatch service, including the known limitation that queue‑depth alerts were tuned only against staging traffic profiles.\"]}",
+ "content_sha256": "54e5d786768a510759f6cfcdcbb2216bea09127e1ba5e124be38f910ad13a044",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_65b5ee4a7d04a365",
+   "targetRoleTitle": "Site Reliability Engineer, After‑Sales Service Network",
+   "professionalSummary": [
+    "Designed Prometheus alerting rules and Grafana dashboards for the dispatch API and parts‑order queue, and validated them against replayed traffic in a staging cluster across four release cycles.",
+    "Drafted incident‑review timelines and follow‑up actions for a March dispatch outage while serving as the monitoring owner for staging.",
+    "Maintained the alerting runbook for the dispatch service, documenting known limitations such as queue‑depth alerts tuned only against staging traffic profiles."
+   ]
+  },
+  "experienceHighlights": [
+   "Wrote Prometheus alerting rules and Grafana dashboards for the dispatch API and the parts‑order queue, and validated them against replayed traffic in the staging cluster over four release cycles.",
+   "Took part in the incident review for the March dispatch outage as the monitoring owner for staging, drafting the timeline and the follow‑up actions that service operations then reviewed.",
+   "Submitted monitoring changes through the platform team's release pipeline; production releases were executed by the platform team's on‑call engineer under their release calendar, and I had no production deployment permissions.",
+   "Maintained the alerting runbook for the dispatch service, including the known limitation that queue‑depth alerts were tuned only against staging traffic profiles."
+  ]
+ },
+ "finished_at": "2026-09-07T12:34:06.101092+00:00"
+}

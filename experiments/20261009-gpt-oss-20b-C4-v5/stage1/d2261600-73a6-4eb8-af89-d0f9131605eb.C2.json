@@ -1,0 +1,479 @@
+{
+ "request_id": "d2261600-73a6-4eb8-af89-d0f9131605eb.C2",
+ "case_id": "d2261600-73a6-4eb8-af89-d0f9131605eb",
+ "parsed": true,
+ "before": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [
+   {
+    "rule": "hrgene.claim_provenance",
+    "code": "claim_has_source",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv.professionalSummary[0]",
+    "message": "supported-side statement cites no source",
+    "witness": {
+     "text": "Backend Developer at Tollgate Logistics maintaining a Kotlin service that sequences stops for 1,100 van routes each morning across 14 depots."
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].evidence[0].notes",
+    "message": "production/live wording not licensed by the cited sources: live system",
+    "witness": {
+     "terms": [
+      "live system"
+     ],
+     "sourceIds": [
+      "src_780b947cd848"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Demonstrates release to live system and monitoring"
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "production_not_stated_by_sources",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].evidence[0].notes",
+    "message": "production/live wording not licensed by the cited sources: operational",
+    "witness": {
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_e8aef43bb70b"
+     ],
+     "nonProductionTermsInSources": [],
+     "text": "Shows participation in operational support rota"
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[2].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (operational) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_d5b0e55210db",
+     "family": "PRODUCTION",
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_780b947cd848",
+      "src_2430997504e4"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.deployment_boundary",
+    "code": "requirement_production_unlicensed",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.hiringEvidencePacket.requirementEvidenceMap[3].status",
+    "message": "requirement marked supported but its deployment term(s) [PRODUCTION] (operational) are not licensed by the cited sources",
+    "witness": {
+     "requirementId": "req_15346654a3b7",
+     "family": "PRODUCTION",
+     "terms": [
+      "operational"
+     ],
+     "sourceIds": [
+      "src_e8aef43bb70b"
+     ]
+    }
+   },
+   {
+    "rule": "hrgene.paired_review_bundle_completeness",
+    "code": "schema_valid",
+    "severity": "critical",
+    "status": "FAIL",
+    "path": "$.optimizedCv",
+    "message": "5 schema error(s); first: $.optimizedCv: missing required property 'experienceHighlights'",
+    "witness": {
+     "errors": [
+      "$.optimizedCv: missing required property 'experienceHighlights'",
+      "$.optimizedCv: missing required property 'projectsAndWorkSamples'",
+      "$.optimizedCv: missing required property 'skills'",
+      "$.optimizedCv: missing required property 'evidenceBoundary'",
+      "$.optimizedCv.professionalSummary[0]: expected type object, got str"
+     ]
+    }
+   }
+  ],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 4,
+    "unresolved": 0,
+    "value": "FAIL"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 1,
+    "unresolved": 0,
+    "value": "FAIL"
+   }
+  },
+  "aggregate": "BLOCK"
+ },
+ "repairLog": [
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "req_d5b0e55210db: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "requirement_production_unlicensed",
+   "action": "downgrade_requirement_status",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "req_15346654a3b7: supported -> partial_evidence"
+  },
+  {
+   "rule": "hrgene.claim_provenance",
+   "code": "claim_has_source",
+   "action": "route_claim_to_unsupported",
+   "path": "$.optimizedCv.professionalSummary[0]",
+   "detail": "Backend Developer at Tollgate Logistics maintaining a Kotlin service that sequences stops for 1,100 van routes each morn"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[2]",
+   "detail": "Released the delivery time-window constraint to the live route planner on 6 June 2023 under change ticket OPS-3318, depl"
+  },
+  {
+   "rule": "hrgene.deployment_boundary",
+   "code": "production_not_stated_by_sources",
+   "action": "remove_evidence_item",
+   "path": "$.hiringEvidencePacket.requirementEvidenceMap[3]",
+   "detail": "Covered the depot-support rota one week in four from 2022, answering planners' questions and fixing failed route builds "
+  },
+  {
+   "rule": "hrgene.paired_review_bundle_completeness",
+   "code": "schema_valid",
+   "action": "conform_to_schema",
+   "path": "$",
+   "detail": ""
+  }
+ ],
+ "after": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activation": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "why": "numeric"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "why": "ownership"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "why": "deployment"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "why": "no predicate fired"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "why": "note_source"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "why": "always"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "why": "always"
+   }
+  },
+  "findings": [],
+  "perRule": {
+   "hrgene.claim_provenance": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.unsupported_quantification": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.ownership_scope": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.deployment_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.qualification_boundary": {
+    "active": false,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.human_review_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.subjective_claim_boundary": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.evidence_gap_router": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   },
+   "hrgene.paired_review_bundle_completeness": {
+    "active": true,
+    "fail": 0,
+    "unresolved": 0,
+    "value": "PASS"
+   }
+  },
+  "aggregate": "ACCEPT"
+ },
+ "bundle": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_93c96d1a1c08498b",
+   "targetRoleTitle": "Software Engineer, Route Planning",
+   "professionalSummary": [],
+   "evidenceBoundary": "Only statements traceable to the cited sources are presented as supported; everything else is recorded as unsupported, a gap or a follow-up question.",
+   "experienceHighlights": [],
+   "projectsAndWorkSamples": [],
+   "skills": []
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to assess fit for the role."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Route Planning",
+    "jobDescriptionSource": "jd_ffa9be61e1d55491",
+    "requirementIds": [
+     "req_57bc8d76e93c",
+     "req_311f31d22f9e",
+     "req_d5b0e55210db",
+     "req_15346654a3b7",
+     "req_4eb868db9cf4"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_93c96d1a1c08498b",
+    "sources": [
+     "src_e50a16ee7f52",
+     "src_0f4a253dd403",
+     "src_780b947cd848",
+     "src_e8aef43bb70b",
+     "src_6692dda08cf1",
+     "src_2430997504e4"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_57bc8d76e93c",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_e50a16ee7f52",
+       "text": "Maintained the Kotlin service that sequences stops for 1,100 van routes each morning across 14 depots",
+       "evidenceStrength": "high",
+       "notes": "Directly states maintenance of a Kotlin route-planning service"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_311f31d22f9e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0f4a253dd403",
+       "text": "Added a postcode-validation step to the address import that quarantines records failing the national address file lookup for manual review and produces a daily exception list for the depot teams",
+       "evidenceStrength": "high",
+       "notes": "Shows integration of address data with validation"
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d5b0e55210db",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_2430997504e4",
+       "text": "Work sample: the release record for OPS-3318, containing the change-board approval, the deployment log from the 02:00 window, the checklist for the three monitored planning runs and a short incident note about one depot whose routes were rebuilt by hand on the first morning",
+       "evidenceStrength": "high",
+       "notes": "Provides supporting documentation"
+      }
+     ],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_15346654a3b7",
+     "status": "partial_evidence",
+     "evidence": [],
+     "missingEvidence": [
+      "The cited sources do not establish the requirement's production element; verify before treating it as met."
+     ]
+    },
+    {
+     "requirementId": "req_4eb868db9cf4",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_6692dda08cf1",
+       "text": "Compared planned route length for the four weeks before and after the time-window change, using the planner's own output files; the comparison was shared with the depot operations manager",
+       "evidenceStrength": "high",
+       "notes": "Measures effect of planning change"
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [],
+   "unsupportedClaims": [
+    {
+     "claim": "Backend Developer at Tollgate Logistics maintaining a Kotlin service that sequences stops for 1,100 van routes each morning across 14 depots.",
+     "reason": "No provided source supports this statement.",
+     "requiredFollowUp": "Ask the candidate for a document that states this."
+    }
+   ],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s experience with Kotlin aligns with the required language stack for the role.",
+    "Confirm that the release and monitoring activities were performed in a production environment as defined by the company.",
+    "Assess the candidate’s ability to measure on-time delivery impact using the provided comparison data."
+   ],
+   "auditSummary": "All job requirements are supported by evidence from the candidate’s resume and work sample. No quantitative claims beyond the comparison of route lengths are made, and no subjective statements are present. The evidence establishes the candidate’s technical and operational experience relevant to the Software Engineer, Route Planning role.",
+   "limitations": [
+    "No evidence of Java or Python usage; only Kotlin is documented.",
+    "No explicit measurement of on-time delivery rates, only route length comparison is provided."
+   ]
+  }
+ },
+ "needsRegeneration": false
+}

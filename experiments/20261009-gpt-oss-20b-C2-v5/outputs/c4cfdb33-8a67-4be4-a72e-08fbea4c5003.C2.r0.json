@@ -1,0 +1,401 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "c4cfdb33-8a67-4be4-a72e-08fbea4c5003.C2",
+ "case_id": "c4cfdb33-8a67-4be4-a72e-08fbea4c5003",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 14627,
+  "promptWords": 1761
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 82.107
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4345,
+ "eval_count": 3545,
+ "prompt_eval_duration_ns": 19305000,
+ "eval_duration_ns": 66163162000,
+ "total_duration_ns": 82105468750,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft claims.\n\nOptimized CV: language en, candidateId, targetRoleTitle. professionalSummary: maybe one claim: \"Experienced night shift manager in parcel sortation with proven ability to lead 75 staff, plan labour, ensure on-time trunk departures, manage health & safety, and report performance.\" Need source citations: src_0a1ba5245d75, src_dbbc79cdfdab, src_30254810e104, src_7dab3ff6addb, src_32a3faafed80 for safety qualification. Also src_635f80ed9358 for shift pattern.\n\nexperienceHighlights: list claims: manage night shift of 75 staff (src_0a1ba5245d75), plan labour by zone (src_dbbc79cdfdab), investigate accidents (src_30254810e104), send end-of-shift report (src_7dab3ff6addb), introduce safety checklist (src_a208c44d9c67). Each with source.\n\nprojectsAndWorkSamples: include work sample (src_94981e93f398).\n\nskills: list: shift management, labour planning, health & safety, reporting, leadership, NEBOSH qualification.\n\nevidenceBoundary: one sentence: \"The provided resume and work sample establish the candidate’s experience managing night shifts, planning labour, handling safety, reporting performance, and holding a NEBOSH qualification; they do not establish experience with 60+ staff or redesigning sort-zone layouts.\"\n\nNow hiringEvidencePacket.\n\ndecisionBoundary: employmentDecisionMade false, candidateRanked false, protectedCharacteristicsInferred false, humanReviewRequired true, statement: \"Human review required to assess fit based on evidence gaps.\"\n\nrole: roleTitle Night Shift Manager, Parcel Sortation Hub, jobDescriptionSourceId jd_55d499e95b930ae2, requirementIds list.\n\ncandidate: candidateId, sources list all sourceIds.\n\nrequirementEvidenceMap: for each requirement.\n\nreq_dbf0e60bf7ed: manages night shift of 60+ staff. Evidence: src_0a1ba5245d75 says 75 staff. So supported. evidenceStrength high. missingEvidence none.\n\nreq_f728f128f376: plans sort so trunk depart on time, redesigns sort-zone layouts when volumes change. Evidence: src_dbbc79cdfdab shows planning labour and checkpoint. But redesign sort-zone layouts not mentioned. So partial_evidence. evidence: src_dbbc79cdfdab. missingEvidence: redesign sort-zone layouts when volumes change.\n\nreq_7f63077d35f3: works four-on, four-off 12-hour night shifts. Evidence: src_635f80ed9358 confirms pattern. supported.\n\nreq_52e0d904aff6: leads health and safety on floor and holds recognised qualification. Evidence: src_30254810e104 (investigated accidents) and src_32a3faafed80 (NEBOSH). So supported.\n\nreq_0fc95d5fdaaf: reports shift performance to site general manager. Evidence: src_7dab3ff6addb. supported.\n\nsupportedClaims: list claims that map to requirements. For each claim, include supportingRequirementIds and sourceIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: for req_f728f128f376 redesign sort-zone layouts. gapId maybe gap1. severity medium.\n\ninterviewSignalRisks: none subjective.\n\nfollowUpQuestions: for redesign sort-zone layouts: question about experience redesigning sort-zone layouts when volumes change. questionId q1.\n\nhumanReviewChecklist: items: review evidence for shift management, labour planning, safety leadership, reporting, qualification, and gap on redesign sort-zone layouts.\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"Limited evidence on redesign sort-zone layouts; no data on performance metrics.\"\n\nLet's craft JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_fae0a5665a871403\",\n    \"targetRoleTitle\": \"Night Shift Manager, Parcel Sortation Hub\",\n    \"professionalSummary\": [\n      {\n        \"claimId\": \"cs_1\",\n        \"text\": \"Experienced night shift manager in parcel sortation with proven ability to lead 75 staff, plan labour, ensure on‑time trunk departures, manage health & safety, and report performance.\",\n        \"sourceIds\": [\n          \"src_0a1ba5245d75\",\n          \"src_dbbc79cdfdab\",\n          \"src_30254810e104\",\n          \"src_7dab3ff6addb\",\n          \"src_32a3faafed80\"\n        ],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound.\"\n      }\n    ],\n    \"experienceHighlights\": [\n      {\n        \"claimId\": \"eh_1\",\n        \"text\": \"Managed the night shift of 75 staff, including agency and permanent workers.\",\n        \"sourceIds\": [\n          \"src_0a1ba5245d75\"\n        ],\n        \"requirementIds\": [\n          \"req_dbf0e60bf7ed\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound.\"\n      },\n      {\n        \"claimId\": \"eh_2\",\n        \"text\": \"Planned labour by sort zone against forecast volume and trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.\",\n        \"sourceIds\": [\n          \"src_dbbc79cdfdab\"\n        ],\n        \"requirementIds\": [\n          \"req_f728f128f376\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Planned labour by sort zone against the forecast volume and the trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.\"\n      },\n      {\n        \"claimId\": \"eh_3\",\n        \"text\": \"Investigated floor accidents and near misses, completing RIDDOR‑reportable incident forms with the site safety adviser.\",\n        \"sourceIds\": [\n          \"src_30254810e104\"\n        ],\n        \"requirementIds\": [\n          \"req_52e0d904aff6\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms with the site safety adviser where required.\"\n      },\n      {\n        \"claimId\": \"eh_4\",\n        \"text\": \"Sent end‑of‑shift reports to the hub general manager detailing volume sorted, trunk departures, missorts and staffing.\",\n        \"sourceIds\": [\n          \"src_7dab3ff6addb\"\n        ],\n        \"requirementIds\": [\n          \"req_0fc95d5fdaaf\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule, missorts and staffing.\"\n      },\n      {\n        \"claimId\": \"eh_5\",\n        \"text\": \"Introduced a standard checklist for the shift’s opening safety walk, used by every team leader.\",\n        \"sourceIds\": [\n          \"src_a208c44d9c67\"\n        ],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Introduced a standard checklist for the shift's opening safety walk, used by every team leader.\"\n      }\n    ],\n    \"projectsAndWorkSamples\": [\n      {\n        \"claimId\": \"ps_1\",\n        \"text\": \"An anonymised end‑of‑shift report showing volume sorted, trunk vehicle planned and actual departure times, missort count and staffing against plan.\",\n        \"sourceIds\": [\n          \"src_94981e93f398\"\n        ],\n        \"requirementIds\": [],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Work sample: an anonymised end‑of‑shift report for one night, with volume sorted, each trunk vehicle's planned and actual departure time, the missort count and staffing against plan.\"\n      }\n    ],\n    \"skills\": [\n      {\n        \"claimId\": \"sk_1\",\n        \"text\": \"Night shift management\",\n        \"sourceIds\": [\n          \"src_0a1ba5245d75\"\n        ],\n        \"requirementIds\": [\n          \"req_dbf0e60bf7ed\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff...\"\n      },\n      {\n        \"claimId\": \"sk_2\",\n        \"text\": \"Labour planning and scheduling\",\n        \"sourceIds\": [\n          \"src_dbbc79cdfdab\"\n        ],\n        \"requirementIds\": [\n          \"req_f728f128f376\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Planned labour by sort zone against the forecast volume and the trunk departure schedule...\"\n      },\n      {\n        \"claimId\": \"sk_3\",\n        \"text\": \"Health & safety leadership\",\n        \"sourceIds\": [\n          \"src_30254810e104\",\n          \"src_32a3faafed80\"\n        ],\n        \"requirementIds\": [\n          \"req_52e0d904aff6\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms...\"\n      },\n      {\n        \"claimId\": \"sk_4\",\n        \"text\": \"Reporting and performance analysis\",\n        \"sourceIds\": [\n          \"src_7dab3ff6addb\"\n        ],\n        \"requirementIds\": [\n          \"req_0fc95d5fdaaf\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule...\"\n      },\n      {\n        \"claimId\": \"sk_5\",\n        \"text\": \"NEBOSH National General Certificate (2020)\",\n        \"sourceIds\": [\n          \"src_32a3faafed80\"\n        ],\n        \"requirementIds\": [\n          \"req_52e0d904aff6\"\n        ],\n        \"supportBoundary\": \"supported\",\n        \"witness\": \"NEBOSH National General Certificate was checked on NEBOSH's online qualification verification service and matches the candidate's name and a 2020 award date.\"\n      }\n    ],\n    \"evidenceBoundary\": \"The provided resume and work sample establish the candidate’s experience managing night shifts, planning labour, handling safety, reporting performance, and holding a NEBOSH qualification; they do not establish experience with 60+ staff or redesigning sort‑zone layouts.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review required to assess fit based on evidence gaps.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Night Shift Manager, Parcel Sortation Hub\",\n      \"jobDescriptionSource\": \"jd_55d499e95b930ae2\",\n      \"requirementIds\": [\n        \"req_dbf0e60bf7ed\",\n        \"req_f728f128f376\",\n        \"req_7f63077d35f3\",\n        \"req_52e0d904aff6\",\n        \"req_0fc95d5fdaaf\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_fae0a5665a871403\",\n      \"sources\": [\n        \"src_0a1ba5245d75\",\n        \"src_dbbc79cdfdab\",\n        \"src_30254810e104\",\n        \"src_7dab3ff6addb\",\n        \"src_a208c44d9c67\",\n        \"src_94981e93f398\",\n        \"src_635f80ed9358\",\n        \"src_32a3faafed80\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_dbf0e60bf7ed\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_0a1ba5245d75\",\n            \"text\": \"Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Staff count exceeds 60.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_f728f128f376\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_dbbc79cdfdab\",\n            \"text\": \"Planned labour by sort zone against the forecast volume and the trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows planning and adjustment but no redesign of sort‑zone layouts.\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Redesign of sort‑zone layouts when volumes change.\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_7f63077d35f3\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_635f80ed9358\",\n            \"text\": \"Reference check summary: the hub general manager at Swiftway Parcels confirmed in writing that the candidate worked the four‑on, four‑off 12‑hour night pattern from 2021 to 2024, as shown in the site's night‑shift rota records.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Pattern confirmed.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_52e0d904aff6\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_30254810e104\",\n            \"text\": \"Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms with the site safety adviser where required.\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Shows safety leadership.\"\n          },\n          {\n            \"sourceId\": \"src_32a3faafed80\",\n            \"text\": \"NEBOSH National General Certificate was checked on NEBOSH's online qualification verification service and matches the candidate's name and a 2020 award date.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Recognised qualification.\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_0fc95d5fdaaf\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_7dab3ff6addb\",\n            \"text\": \"Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule, missorts and staffing.\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"Reporting to general manager.\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Managed the night shift of 75 staff, including agency and permanent workers.\",\n        \"supportingRequirementIds\": [\n          \"req_dbf0e60bf7ed\"\n        ],\n        \"sourceIds\": [\n          \"src_0a1ba5245d75\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound.\"\n      },\n      {\n        \"claim\": \"Planned labour by sort zone against forecast volume and trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.\",\n        \"supportingRequirementIds\": [\n          \"req_f728f128f376\"\n        ],\n        \"sourceIds\": [\n          \"src_dbbc79cdfdab\"\n        ],\n        \"evidenceStrength\": \"medium\",\n        \"witness\": \"Planned labour by sort zone against the forecast volume and the trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.\"\n      },\n      {\n        \"claim\": \"Investigated floor accidents and near misses, completing RIDDOR‑reportable incident forms with the site safety adviser.\",\n        \"supportingRequirementIds\": [\n          \"req_52e0d904aff6\"\n        ],\n        \"sourceIds\": [\n          \"src_30254810e104\"\n        ],\n        \"evidenceStrength\": \"medium\",\n        \"witness\": \"Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms with the site safety adviser where required.\"\n      },\n      {\n        \"claim\": \"Sent end‑of‑shift reports to the hub general manager detailing volume sorted, trunk departures, missorts and staffing.\",\n        \"supportingRequirementIds\": [\n          \"req_0fc95d5fdaaf\"\n        ],\n        \"sourceIds\": [\n          \"src_7dab3ff6addb\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule, missorts and staffing.\"\n      },\n      {\n        \"claim\": \"Held NEBOSH National General Certificate (2020).\",\n        \"supportingRequirementIds\": [\n          \"req_52e0d904aff6\"\n        ],\n        \"sourceIds\": [\n          \"src_32a3faafed80\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"NEBOSH National General Certificate was checked on NEBOSH's online qualification verification service and matches the candidate's name and a 2020 award date.\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_1\",\n        \"requirementId\": \"req_f728f128f376\",\n        \"severity\": \"medium\",\n        \"gap\": \"Redesign of sort‑zone layouts when volumes change.\"\n      }\n    ],\n    \"interviewSignalRisks\": [],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q1\",\n        \"requirementId\": \"req_f728f128f376\",\n        \"question\": \"Can you describe a specific instance where you redesigned sort‑zone layouts in response to changing volume levels, including the process and outcome?\",\n        \"evidenceTarget\": \"Evidence of redesigning sort‑zone layouts and its impact.\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Verify that the candidate’s shift management experience meets the 60+ staff threshold.\",\n      \"Confirm the candidate’s ability to redesign sort‑zone layouts when volumes change.\",\n      \"Assess the completeness of health & safety leadership evidence.\",\n      \"Review the NEBOSH qualification verification.\",\n      \"Evaluate the candidate’s reporting practices to the general manager.\"\n    ],\n    \"auditSummary\": \"The candidate demonstrates strong experience in night shift management, labour planning, safety leadership, and reporting, with a NEBOSH qualification. Evidence confirms management of 75 staff, planning of labour and trunk departures, safety investigations, and reporting to the general manager. The only gap is the lack of documented experience redesigning sort‑zone layouts when volumes change, which requires further clarification.\",\n    \"limitations\": [\n      \"No evidence of redesigning sort‑zone layouts when volumes change.\",\n      \"No quantitative performance metrics provided.\"\n    ]\n  }\n}",
+ "content_sha256": "643fc51d8ece1aa1b3bfa7d1e0bb3cd188d099e6cc1b4fe87643861cebdb9a61",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_fae0a5665a871403",
+   "targetRoleTitle": "Night Shift Manager, Parcel Sortation Hub",
+   "professionalSummary": [
+    {
+     "claimId": "cs_1",
+     "text": "Experienced night shift manager in parcel sortation with proven ability to lead 75 staff, plan labour, ensure on‑time trunk departures, manage health & safety, and report performance.",
+     "sourceIds": [
+      "src_0a1ba5245d75",
+      "src_dbbc79cdfdab",
+      "src_30254810e104",
+      "src_7dab3ff6addb",
+      "src_32a3faafed80"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "eh_1",
+     "text": "Managed the night shift of 75 staff, including agency and permanent workers.",
+     "sourceIds": [
+      "src_0a1ba5245d75"
+     ],
+     "requirementIds": [
+      "req_dbf0e60bf7ed"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound."
+    },
+    {
+     "claimId": "eh_2",
+     "text": "Planned labour by sort zone against forecast volume and trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.",
+     "sourceIds": [
+      "src_dbbc79cdfdab"
+     ],
+     "requirementIds": [
+      "req_f728f128f376"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Planned labour by sort zone against the forecast volume and the trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind."
+    },
+    {
+     "claimId": "eh_3",
+     "text": "Investigated floor accidents and near misses, completing RIDDOR‑reportable incident forms with the site safety adviser.",
+     "sourceIds": [
+      "src_30254810e104"
+     ],
+     "requirementIds": [
+      "req_52e0d904aff6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms with the site safety adviser where required."
+    },
+    {
+     "claimId": "eh_4",
+     "text": "Sent end‑of‑shift reports to the hub general manager detailing volume sorted, trunk departures, missorts and staffing.",
+     "sourceIds": [
+      "src_7dab3ff6addb"
+     ],
+     "requirementIds": [
+      "req_0fc95d5fdaaf"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule, missorts and staffing."
+    },
+    {
+     "claimId": "eh_5",
+     "text": "Introduced a standard checklist for the shift’s opening safety walk, used by every team leader.",
+     "sourceIds": [
+      "src_a208c44d9c67"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Introduced a standard checklist for the shift's opening safety walk, used by every team leader."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "ps_1",
+     "text": "An anonymised end‑of‑shift report showing volume sorted, trunk vehicle planned and actual departure times, missort count and staffing against plan.",
+     "sourceIds": [
+      "src_94981e93f398"
+     ],
+     "requirementIds": [],
+     "supportBoundary": "supported",
+     "witness": "Work sample: an anonymised end‑of‑shift report for one night, with volume sorted, each trunk vehicle's planned and actual departure time, the missort count and staffing against plan."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "sk_1",
+     "text": "Night shift management",
+     "sourceIds": [
+      "src_0a1ba5245d75"
+     ],
+     "requirementIds": [
+      "req_dbf0e60bf7ed"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff..."
+    },
+    {
+     "claimId": "sk_2",
+     "text": "Labour planning and scheduling",
+     "sourceIds": [
+      "src_dbbc79cdfdab"
+     ],
+     "requirementIds": [
+      "req_f728f128f376"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Planned labour by sort zone against the forecast volume and the trunk departure schedule..."
+    },
+    {
+     "claimId": "sk_3",
+     "text": "Health & safety leadership",
+     "sourceIds": [
+      "src_30254810e104",
+      "src_32a3faafed80"
+     ],
+     "requirementIds": [
+      "req_52e0d904aff6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms..."
+    },
+    {
+     "claimId": "sk_4",
+     "text": "Reporting and performance analysis",
+     "sourceIds": [
+      "src_7dab3ff6addb"
+     ],
+     "requirementIds": [
+      "req_0fc95d5fdaaf"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule..."
+    },
+    {
+     "claimId": "sk_5",
+     "text": "NEBOSH National General Certificate (2020)",
+     "sourceIds": [
+      "src_32a3faafed80"
+     ],
+     "requirementIds": [
+      "req_52e0d904aff6"
+     ],
+     "supportBoundary": "supported",
+     "witness": "NEBOSH National General Certificate was checked on NEBOSH's online qualification verification service and matches the candidate's name and a 2020 award date."
+    }
+   ],
+   "evidenceBoundary": "The provided resume and work sample establish the candidate’s experience managing night shifts, planning labour, handling safety, reporting performance, and holding a NEBOSH qualification; they do not establish experience with 60+ staff or redesigning sort‑zone layouts."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review required to assess fit based on evidence gaps."
+   },
+   "role": {
+    "roleTitle": "Night Shift Manager, Parcel Sortation Hub",
+    "jobDescriptionSource": "jd_55d499e95b930ae2",
+    "requirementIds": [
+     "req_dbf0e60bf7ed",
+     "req_f728f128f376",
+     "req_7f63077d35f3",
+     "req_52e0d904aff6",
+     "req_0fc95d5fdaaf"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_fae0a5665a871403",
+    "sources": [
+     "src_0a1ba5245d75",
+     "src_dbbc79cdfdab",
+     "src_30254810e104",
+     "src_7dab3ff6addb",
+     "src_a208c44d9c67",
+     "src_94981e93f398",
+     "src_635f80ed9358",
+     "src_32a3faafed80"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_dbf0e60bf7ed",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_0a1ba5245d75",
+       "text": "Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound.",
+       "evidenceStrength": "high",
+       "notes": "Staff count exceeds 60."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_f728f128f376",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_dbbc79cdfdab",
+       "text": "Planned labour by sort zone against the forecast volume and the trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.",
+       "evidenceStrength": "medium",
+       "notes": "Shows planning and adjustment but no redesign of sort‑zone layouts."
+      }
+     ],
+     "missingEvidence": [
+      "Redesign of sort‑zone layouts when volumes change."
+     ]
+    },
+    {
+     "requirementId": "req_7f63077d35f3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_635f80ed9358",
+       "text": "Reference check summary: the hub general manager at Swiftway Parcels confirmed in writing that the candidate worked the four‑on, four‑off 12‑hour night pattern from 2021 to 2024, as shown in the site's night‑shift rota records.",
+       "evidenceStrength": "high",
+       "notes": "Pattern confirmed."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_52e0d904aff6",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_30254810e104",
+       "text": "Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms with the site safety adviser where required.",
+       "evidenceStrength": "medium",
+       "notes": "Shows safety leadership."
+      },
+      {
+       "sourceId": "src_32a3faafed80",
+       "text": "NEBOSH National General Certificate was checked on NEBOSH's online qualification verification service and matches the candidate's name and a 2020 award date.",
+       "evidenceStrength": "high",
+       "notes": "Recognised qualification."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_0fc95d5fdaaf",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_7dab3ff6addb",
+       "text": "Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule, missorts and staffing.",
+       "evidenceStrength": "high",
+       "notes": "Reporting to general manager."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Managed the night shift of 75 staff, including agency and permanent workers.",
+     "supportingRequirementIds": [
+      "req_dbf0e60bf7ed"
+     ],
+     "sourceIds": [
+      "src_0a1ba5245d75"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed the night shift at the Daventry sortation centre of Swiftway Parcels: about 75 staff, a third of them supplied by two agencies, across inbound, sort and outbound."
+    },
+    {
+     "claim": "Planned labour by sort zone against forecast volume and trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind.",
+     "supportingRequirementIds": [
+      "req_f728f128f376"
+     ],
+     "sourceIds": [
+      "src_dbbc79cdfdab"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Planned labour by sort zone against the forecast volume and the trunk departure schedule, holding a 02:30 checkpoint to move staff to zones running behind."
+    },
+    {
+     "claim": "Investigated floor accidents and near misses, completing RIDDOR‑reportable incident forms with the site safety adviser.",
+     "supportingRequirementIds": [
+      "req_52e0d904aff6"
+     ],
+     "sourceIds": [
+      "src_30254810e104"
+     ],
+     "evidenceStrength": "medium",
+     "witness": "Investigated floor accidents and near misses on the shift, completing the RIDDOR‑reportable incident forms with the site safety adviser where required."
+    },
+    {
+     "claim": "Sent end‑of‑shift reports to the hub general manager detailing volume sorted, trunk departures, missorts and staffing.",
+     "supportingRequirementIds": [
+      "req_0fc95d5fdaaf"
+     ],
+     "sourceIds": [
+      "src_7dab3ff6addb"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Sent the end‑of‑shift report to the hub general manager: volume sorted, trunk departures against schedule, missorts and staffing."
+    },
+    {
+     "claim": "Held NEBOSH National General Certificate (2020).",
+     "supportingRequirementIds": [
+      "req_52e0d904aff6"
+     ],
+     "sourceIds": [
+      "src_32a3faafed80"
+     ],
+     "evidenceStrength": "high",
+     "witness": "NEBOSH National General Certificate was checked on NEBOSH's online qualification verification service and matches the candidate's name and a 2020 award date."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_1",
+     "requirementId": "req_f728f128f376",
+     "severity": "medium",
+     "gap": "Redesign of sort‑zone layouts when volumes change."
+    }
+   ],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_f728f128f376",
+     "question": "Can you describe a specific instance where you redesigned sort‑zone layouts in response to changing volume levels, including the process and outcome?",
+     "evidenceTarget": "Evidence of redesigning sort‑zone layouts and its impact."
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify that the candidate’s shift management experience meets the 60+ staff threshold.",
+    "Confirm the candidate’s ability to redesign sort‑zone layouts when volumes change.",
+    "Assess the completeness of health & safety leadership evidence.",
+    "Review the NEBOSH qualification verification.",
+    "Evaluate the candidate’s reporting practices to the general manager."
+   ],
+   "auditSummary": "The candidate demonstrates strong experience in night shift management, labour planning, safety leadership, and reporting, with a NEBOSH qualification. Evidence confirms management of 75 staff, planning of labour and trunk departures, safety investigations, and reporting to the general manager. The only gap is the lack of documented experience redesigning sort‑zone layouts when volumes change, which requires further clarification.",
+   "limitations": [
+    "No evidence of redesigning sort‑zone layouts when volumes change.",
+    "No quantitative performance metrics provided."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:24:29.757793+00:00"
+}

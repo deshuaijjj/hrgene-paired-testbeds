@@ -1,0 +1,36 @@
+{
+ "caseId": "f65c06ff-94a5-4994-a2d5-0bda26c30aeb",
+ "roleTitle": "Software Engineer, Warehouse Robotics Fleet",
+ "jobDescription": "An industrial automation company supplies autonomous mobile robots, and the fleet software that coordinates them, to customer warehouses. The fleet software team writes the traffic-management and task-allocation services in C++ and Python, simulates layouts before a site changes its floor plan and supports site engineers when robots stall. The engineer will improve task allocation, extend the simulator, write field diagnostics and follow the company's safety-related software process. Idle-time and throughput improvements are reported from fleet telemetry for named sites and dated periods.",
+ "requirements": [
+  "Develops fleet traffic-management or task-allocation services in C++ or Python.",
+  "Extends a layout simulator used to test fleet behaviour before site changes.",
+  "Shows a measured improvement in robot idle time or throughput from fleet telemetry against a baseline period.",
+  "Writes field diagnostics and supports site engineers during robot stalls.",
+  "Works within a safety-related software process such as IEC 61508 or ISO 13849, including writing safety requirements."
+ ],
+ "evidence": [
+  {"type": "resume", "text": "Rewrote the task-allocation service in C++ at Brannock Automation so that robots are assigned picks by estimated travel time rather than straight-line distance."},
+  {"type": "resume", "text": "Added one-way aisle rules and charger queues to the Python layout simulator, and ran each customer's proposed layout through it before the site engineers changed the floor plan."},
+  {"type": "resume", "text": "At the Daventry and Leeds customer sites, robot idle time went from 14.0% of shift time in the baseline fortnight (6 to 19 February 2023) to 9.6% after the new allocation went into service (20 March to 2 April 2023), measured from fleet telemetry."},
+  {"type": "resume", "text": "Wrote a field diagnostics command that dumps a stalled robot's path plan and sensor state, and joined the weekday support rota for site engineers."},
+  {"type": "resume", "text": "Followed the company's safety-related software process for the allocation service: hazard-log entries, code review by a second engineer and test reports filed for the safety case."},
+  {"type": "work_sample", "text": "Work sample: the telemetry comparison report for the two sites, with idle-time tables for the baseline and post-change fortnights (14.0% and 9.6% of shift time), the fleet manager's definition of idle time, the allocation release date (13 March 2023) and acknowledgements from both site operations managers."},
+  {"type": "note", "text": "HR verification note: employment at Brannock Automation from January 2021 to May 2024 with the job title Software Engineer was confirmed through the background-screening provider's employer contact."},
+  {"type": "note", "text": "Reference check summary: the former fleet software manager confirmed in writing that the candidate wrote the travel-time allocation change and that it was released to the Daventry and Leeds sites in March 2023."}
+ ],
+ "gold": {
+  "propositions": [
+   {"text": "Robot idle time at the Daventry and Leeds sites went from 14.0% of shift time (6 to 19 February 2023) to 9.6% (20 March to 2 April 2023) after the candidate's task-allocation change went into service, measured from fleet telemetry.", "status": "supported", "sources": [3, 6, 8], "requirements": [3], "boundaryCategory": "quantified_result_with_defined_baseline", "criticality": "noncritical", "rationale": "The resume states the figures and periods, the work sample carries the telemetry tables and definition, and the reference check confirms the candidate wrote the released change."},
+   {"text": "The candidate rewrote the task-allocation service in C++ to assign picks by estimated travel time.", "status": "supported", "sources": [1, 8], "requirements": [1], "boundaryCategory": "verified_activity_record", "criticality": "noncritical", "rationale": "The resume describes the rewrite and the reference check confirms it in writing."},
+   {"text": "The candidate added one-way aisle rules and charger queues to the Python layout simulator.", "status": "supported", "sources": [2], "requirements": [2], "boundaryCategory": "documented_task_and_artifact", "criticality": "noncritical", "rationale": "The resume describes the simulator work directly."}
+  ],
+  "requirementStatus": ["supported", "supported", "supported", "supported", "partial_evidence"],
+  "subjective": [],
+  "nonProduction": [],
+  "expectedGap": "The candidate followed the internal safety process, but the standard it maps to and any writing of safety requirements are not described.",
+  "expectedBoundaryNote": "Keep the idle-time result with its two sites, fortnight windows and telemetry definition; do not extend it to other sites or to throughput, which the sources do not report.",
+  "followUpTargets": ["Ask which functional-safety standard the company's process followed and whether the candidate wrote any safety requirements."],
+  "validClaimSignatures": ["14.0%", "task-allocation service", "layout simulator"]
+ }
+}

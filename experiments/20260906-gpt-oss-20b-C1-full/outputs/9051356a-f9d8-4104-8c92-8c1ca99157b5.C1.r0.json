@@ -1,0 +1,253 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "9051356a-f9d8-4104-8c92-8c1ca99157b5.C1",
+ "case_id": "9051356a-f9d8-4104-8c92-8c1ca99157b5",
+ "condition": "C1",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 11649,
+  "promptWords": 1535
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 45.263
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3168,
+ "eval_count": 1817,
+ "prompt_eval_duration_ns": 17920000,
+ "eval_duration_ns": 32431053000,
+ "total_duration_ns": 45256651625,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Let's craft optimizedCv with claims referencing sources. Use source ids. For each claim, include sourceIds. For evidenceBoundary: one or two sentences on what materials establish.\n\nRequirementEvidenceMap: list each requirement id with status and evidence.\n\nWe need to map evidence: from resume sources.\n\nLet's create claims:\n\nprofessionalSummary: maybe one claim: \"Project manager with three years experience leading cold storage warehouse automation projects under operator's project method.\" source src_a640bdd8e71d.\n\nexperienceHighlights: claim: \"Managed automation projects for two frozen-goods warehouses, including installation plans and phased aisle hand-overs.\" source src_a640bdd8e71d.\n\nAlso claim: \"Briefed warehouse shift teams on each phase per change briefing standard, with signed records.\" source src_8ec0bb6a78dd.\n\nClaim: \"Managed automation contractor under works contract, issuing site instructions and defect notices.\" source src_5d9209f25f6f.\n\nClaim: \"Prepared aisle hand-over acceptance packs, with acceptance recorded by warehouse manager.\" source src_29aac9ae535b.\n\nClaim: \"Authored closure reports with project boundary statements and acceptance test evidence.\" source src_521a5499b7df.\n\nprojectsAndWorkSamples: claim: \"Work sample includes installation plan, phase briefing records, aisle acceptance pack, closure report.\" source src_98da7116c5db.\n\nskills: maybe list: \"Project management, contractor management, change briefing, acceptance documentation.\" but need source. Could cite multiple sources.\n\nEvidenceBoundary: \"The provided resume and work sample documents confirm the candidate’s roles and deliverables as described; no additional claims are supported.\"\n\nNow requirementEvidenceMap:\n\nreq_c788691d96a2: evidence from src_a640bdd8e71d and src_98da7116c5db. status supported.\n\nreq_a3bc150346a0: evidence from src_8ec0bb6a78dd and src_39b95430e3f3. status supported.\n\nreq_437c764eeddc: evidence from src_5d9209f25f6f. status supported.\n\nreq_6e310f004077: evidence from src_29aac9ae535b. status supported.\n\nreq_31c50e06ae3e: evidence from src_521a5499b7df. status supported.\n\nAll supported.\n\nsupportedClaims: list each claim with supportingRequirementIds.\n\nunsupportedClaims: none.\n\nmissingEvidenceGaps: none.\n\ninterviewSignalRisks: maybe note about interview note? But no risk. Could leave empty.\n\nfollowUpQuestions: none.\n\nhumanReviewChecklist: maybe items: \"Verify that all deliverables were completed within project timelines.\" but not needed.\n\nauditSummary: brief.\n\nlimitations: maybe \"No evidence of production deployment or live operation status.\"\n\nLet's craft JSON.",
+ "content": "{\"schemaVersion\":\"jam.hrgene_paired_review_bundle.model_output.v2\",\"optimizedCv\":{\"language\":\"en\",\"candidateId\":\"cand_ab712865c6d308b9\",\"targetRoleTitle\":\"Project Manager, Cold Storage Warehouse Automation\",\"professionalSummary\":[\"Project manager with three years experience leading cold storage warehouse automation projects under the operator's project method. (src_a640bdd8e71d)\"],\"experienceHighlights\":[\"Managed automation projects for two frozen-goods warehouses, including installation plans and phased aisle hand-overs. (src_a640bdd8e71d)\",\"Briefed warehouse shift teams on each phase per the change briefing standard, with signed records. (src_8ec0bb6a78dd)\",\"Managed the automation contractor under the works contract, issuing site instructions and defect notices. (src_5d9209f25f6f)\",\"Prepared aisle hand-over acceptance packs, with acceptance recorded by the warehouse manager. (src_29aac9ae535b)\",\"Authored closure reports with project boundary statements and acceptance test evidence. (src_521a5499b7df)\"],\"projectsAndWorkSamples\":[\"Work sample includes installation plan, phase briefing records, aisle acceptance pack, and closure report. (src_98da7116c5db)\"],\"skills\":[\"Project management (src_a640bdd8e71d)\",\"Contractor management (src_5d9209f25f6f)\",\"Change briefing (src_8ec0bb6a78dd)\",\"Acceptance documentation (src_29aac9ae535b)\"],\"evidenceBoundary\":\"The provided resume and work sample documents confirm the candidate’s roles and deliverables as described; no additional claims are supported.\"},\"hiringEvidencePacket\":{\"decisionBoundary\":{\"employmentDecisionMade\":false,\"candidateRanked\":false,\"protectedCharacteristicsInferred\":false,\"humanReviewRequired\":true,\"statement\":\"Qualified human review is required before any employment decision.\"},\"role\":{\"roleTitle\":\"Project Manager, Cold Storage Warehouse Automation\",\"jobDescriptionSource\":\"jd_39532c8302146c63\",\"requirementIds\":[\"req_c788691d96a2\",\"req_a3bc150346a0\",\"req_437c764eeddc\",\"req_6e310f004077\",\"req_31c50e06ae3e\"]},\"candidate\":{\"candidateId\":\"cand_ab712865c6d308b9\",\"sources\":[\"src_a640bdd8e71d\",\"src_8ec0bb6a78dd\",\"src_5d9209f25f6f\",\"src_29aac9ae535b\",\"src_521a5499b7df\",\"src_98da7116c5db\",\"src_39b95430e3f3\",\"src_d920113701ba\"]},\"requirementEvidenceMap\":[{\"requirementId\":\"req_c788691d96a2\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_a640bdd8e71d\",\"text\":\"Project manager on a cold storage operator's automation programme for three years, running the automation projects for two frozen-goods warehouses under the operator's project method with their installation plans and phased aisle hand-overs.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct statement of role and deliverables.\"},{\"sourceId\":\"src_98da7116c5db\",\"text\":\"Work sample: one installation plan with its phased hand-over schedule, two signed phase briefing records, one aisle acceptance pack with the manager's acceptance and one closure report, with the programme repository references as a verification trail.\",\"evidenceStrength\":\"medium\",\"notes\":\"Provides tangible evidence of installation plan and hand-over schedule.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_a3bc150346a0\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_8ec0bb6a78dd\",\"text\":\"Briefed the warehouse shift teams before each phase under the change briefing standard, with the briefing records signed by the shift leads; fourteen phase briefings across the two warehouses.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of briefing activity.\"},{\"sourceId\":\"src_39b95430e3f3\",\"text\":\"Interviewer 1 note: asked to brief the panel as a night shift team on a sample phase, the candidate listed the three aisles closing and the dates, showed the new pick route on the layout, named the two tasks the shift would stop doing and the one it would start, and asked the shift lead to repeat the closure dates back.\",\"evidenceStrength\":\"medium\",\"notes\":\"Demonstrates briefing content and interaction.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_437c764eeddc\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_5d9209f25f6f\",\"text\":\"Managed the automation contractor under the works contract on both projects, with the contract records holding the site instructions and the twelve defect notices I issued with the contractor's responses.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of contractor management and defect notices.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_6e310f004077\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_29aac9ae535b\",\"text\":\"Prepared the aisle hand-over acceptance packs; the acceptance was the warehouse manager's, recorded on each pack together with which checks were mine and which the warehouse's.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of acceptance pack preparation and responsibility boundaries.\"}],\"missingEvidence\":[]},{\"requirementId\":\"req_31c50e06ae3e\",\"status\":\"supported\",\"evidence\":[{\"sourceId\":\"src_521a5499b7df\",\"text\":\"Wrote the closure report for each warehouse with the project boundary statement and the acceptance test evidence signed by the automation contractor and the warehouse manager.\",\"evidenceStrength\":\"high\",\"notes\":\"Direct evidence of closure report and acceptance test evidence.\"}],\"missingEvidence\":[]}],\"supportedClaims\":[{\"claim\":\"Project manager with three years experience leading cold storage warehouse automation projects under the operator's project method.\",\"supportingRequirementIds\":[\"req_c788691d96a2\"],\"sourceIds\":[\"src_a640bdd8e71d\"],\"evidenceStrength\":\"high\",\"witness\":\"Project manager on a cold storage operator's automation programme for three years, running the automation projects for two frozen-goods warehouses under the operator's project method with their installation plans and phased aisle hand-overs.\"},{\"claim\":\"Briefed warehouse shift teams on each phase per the change briefing standard, with signed records.\",\"supportingRequirementIds\":[\"req_a3bc150346a0\"],\"sourceIds\":[\"src_8ec0bb6a78dd\"],\"evidenceStrength\":\"high\",\"witness\":\"Briefed the warehouse shift teams before each phase under the change briefing standard, with the briefing records signed by the shift leads; fourteen phase briefings across the two warehouses.\"},{\"claim\":\"Managed the automation contractor under the works contract, issuing site instructions and defect notices.\",\"supportingRequirementIds\":[\"req_437c764eeddc\"],\"sourceIds\":[\"src_5d9209f25f6f\"],\"evidenceStrength\":\"high\",\"witness\":\"Managed the automation contractor under the works contract on both projects, with the contract records holding the site instructions and the twelve defect notices I issued with the contractor's responses.\"},{\"claim\":\"Prepared aisle hand-over acceptance packs, with acceptance recorded by the warehouse manager.\",\"supportingRequirementIds\":[\"req_6e310f004077\"],\"sourceIds\":[\"src_29aac9ae535b\"],\"evidenceStrength\":\"high\",\"witness\":\"Prepared the aisle hand-over acceptance packs; the acceptance was the warehouse manager's, recorded on each pack together with which checks were mine and which the warehouse's.\"},{\"claim\":\"Authored closure reports with project boundary statements and acceptance test evidence.\",\"supportingRequirementIds\":[\"req_31c50e06ae3e\"],\"sourceIds\":[\"src_521a5499b7df\"],\"evidenceStrength\":\"high\",\"witness\":\"Wrote the closure report for each warehouse with the project boundary statement and the acceptance test evidence signed by the automation contractor and the warehouse manager.\"}],\"unsupportedClaims\":[],\"missingEvidenceGaps\":[],\"interviewSignalRisks\":[],\"followUpQuestions\":[],\"humanReviewChecklist\":[\"Verify that all deliverables were completed within project timelines and that the acceptance packs were signed by the warehouse manager as stated.\"],\"auditSummary\":\"All job requirements are directly supported by the candidate’s resume and work sample documents. No evidence gaps or unsupported claims were identified. The evidence is high confidence based on explicit statements and corroborating notes.\",\"limitations\":[\"No evidence of production deployment or live operation status; all deliverables are described as plans, records, or reports.\"]} }",
+ "content_sha256": "38bf269d2f2b74fae2332ae27c03b9577151d0f0e09281b042d3cd286b5ac46b",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_ab712865c6d308b9",
+   "targetRoleTitle": "Project Manager, Cold Storage Warehouse Automation",
+   "professionalSummary": [
+    "Project manager with three years experience leading cold storage warehouse automation projects under the operator's project method. (src_a640bdd8e71d)"
+   ],
+   "experienceHighlights": [
+    "Managed automation projects for two frozen-goods warehouses, including installation plans and phased aisle hand-overs. (src_a640bdd8e71d)",
+    "Briefed warehouse shift teams on each phase per the change briefing standard, with signed records. (src_8ec0bb6a78dd)",
+    "Managed the automation contractor under the works contract, issuing site instructions and defect notices. (src_5d9209f25f6f)",
+    "Prepared aisle hand-over acceptance packs, with acceptance recorded by the warehouse manager. (src_29aac9ae535b)",
+    "Authored closure reports with project boundary statements and acceptance test evidence. (src_521a5499b7df)"
+   ],
+   "projectsAndWorkSamples": [
+    "Work sample includes installation plan, phase briefing records, aisle acceptance pack, and closure report. (src_98da7116c5db)"
+   ],
+   "skills": [
+    "Project management (src_a640bdd8e71d)",
+    "Contractor management (src_5d9209f25f6f)",
+    "Change briefing (src_8ec0bb6a78dd)",
+    "Acceptance documentation (src_29aac9ae535b)"
+   ],
+   "evidenceBoundary": "The provided resume and work sample documents confirm the candidate’s roles and deliverables as described; no additional claims are supported."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Qualified human review is required before any employment decision."
+   },
+   "role": {
+    "roleTitle": "Project Manager, Cold Storage Warehouse Automation",
+    "jobDescriptionSource": "jd_39532c8302146c63",
+    "requirementIds": [
+     "req_c788691d96a2",
+     "req_a3bc150346a0",
+     "req_437c764eeddc",
+     "req_6e310f004077",
+     "req_31c50e06ae3e"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_ab712865c6d308b9",
+    "sources": [
+     "src_a640bdd8e71d",
+     "src_8ec0bb6a78dd",
+     "src_5d9209f25f6f",
+     "src_29aac9ae535b",
+     "src_521a5499b7df",
+     "src_98da7116c5db",
+     "src_39b95430e3f3",
+     "src_d920113701ba"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_c788691d96a2",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_a640bdd8e71d",
+       "text": "Project manager on a cold storage operator's automation programme for three years, running the automation projects for two frozen-goods warehouses under the operator's project method with their installation plans and phased aisle hand-overs.",
+       "evidenceStrength": "high",
+       "notes": "Direct statement of role and deliverables."
+      },
+      {
+       "sourceId": "src_98da7116c5db",
+       "text": "Work sample: one installation plan with its phased hand-over schedule, two signed phase briefing records, one aisle acceptance pack with the manager's acceptance and one closure report, with the programme repository references as a verification trail.",
+       "evidenceStrength": "medium",
+       "notes": "Provides tangible evidence of installation plan and hand-over schedule."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_a3bc150346a0",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_8ec0bb6a78dd",
+       "text": "Briefed the warehouse shift teams before each phase under the change briefing standard, with the briefing records signed by the shift leads; fourteen phase briefings across the two warehouses.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of briefing activity."
+      },
+      {
+       "sourceId": "src_39b95430e3f3",
+       "text": "Interviewer 1 note: asked to brief the panel as a night shift team on a sample phase, the candidate listed the three aisles closing and the dates, showed the new pick route on the layout, named the two tasks the shift would stop doing and the one it would start, and asked the shift lead to repeat the closure dates back.",
+       "evidenceStrength": "medium",
+       "notes": "Demonstrates briefing content and interaction."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_437c764eeddc",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_5d9209f25f6f",
+       "text": "Managed the automation contractor under the works contract on both projects, with the contract records holding the site instructions and the twelve defect notices I issued with the contractor's responses.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of contractor management and defect notices."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_6e310f004077",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_29aac9ae535b",
+       "text": "Prepared the aisle hand-over acceptance packs; the acceptance was the warehouse manager's, recorded on each pack together with which checks were mine and which the warehouse's.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of acceptance pack preparation and responsibility boundaries."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_31c50e06ae3e",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_521a5499b7df",
+       "text": "Wrote the closure report for each warehouse with the project boundary statement and the acceptance test evidence signed by the automation contractor and the warehouse manager.",
+       "evidenceStrength": "high",
+       "notes": "Direct evidence of closure report and acceptance test evidence."
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Project manager with three years experience leading cold storage warehouse automation projects under the operator's project method.",
+     "supportingRequirementIds": [
+      "req_c788691d96a2"
+     ],
+     "sourceIds": [
+      "src_a640bdd8e71d"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Project manager on a cold storage operator's automation programme for three years, running the automation projects for two frozen-goods warehouses under the operator's project method with their installation plans and phased aisle hand-overs."
+    },
+    {
+     "claim": "Briefed warehouse shift teams on each phase per the change briefing standard, with signed records.",
+     "supportingRequirementIds": [
+      "req_a3bc150346a0"
+     ],
+     "sourceIds": [
+      "src_8ec0bb6a78dd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Briefed the warehouse shift teams before each phase under the change briefing standard, with the briefing records signed by the shift leads; fourteen phase briefings across the two warehouses."
+    },
+    {
+     "claim": "Managed the automation contractor under the works contract, issuing site instructions and defect notices.",
+     "supportingRequirementIds": [
+      "req_437c764eeddc"
+     ],
+     "sourceIds": [
+      "src_5d9209f25f6f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Managed the automation contractor under the works contract on both projects, with the contract records holding the site instructions and the twelve defect notices I issued with the contractor's responses."
+    },
+    {
+     "claim": "Prepared aisle hand-over acceptance packs, with acceptance recorded by the warehouse manager.",
+     "supportingRequirementIds": [
+      "req_6e310f004077"
+     ],
+     "sourceIds": [
+      "src_29aac9ae535b"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Prepared the aisle hand-over acceptance packs; the acceptance was the warehouse manager's, recorded on each pack together with which checks were mine and which the warehouse's."
+    },
+    {
+     "claim": "Authored closure reports with project boundary statements and acceptance test evidence.",
+     "supportingRequirementIds": [
+      "req_31c50e06ae3e"
+     ],
+     "sourceIds": [
+      "src_521a5499b7df"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the closure report for each warehouse with the project boundary statement and the acceptance test evidence signed by the automation contractor and the warehouse manager."
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [],
+   "interviewSignalRisks": [],
+   "followUpQuestions": [],
+   "humanReviewChecklist": [
+    "Verify that all deliverables were completed within project timelines and that the acceptance packs were signed by the warehouse manager as stated."
+   ],
+   "auditSummary": "All job requirements are directly supported by the candidate’s resume and work sample documents. No evidence gaps or unsupported claims were identified. The evidence is high confidence based on explicit statements and corroborating notes.",
+   "limitations": [
+    "No evidence of production deployment or live operation status; all deliverables are described as plans, records, or reports."
+   ]
+  }
+ },
+ "finished_at": "2026-09-07T12:58:36.630313+00:00"
+}

@@ -1,0 +1,257 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "ced938c8-394e-49da-b929-950198064eaf.C2",
+ "case_id": "ced938c8-394e-49da-b929-950198064eaf",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.ownership_scope",
+   "hrgene.deployment_boundary",
+   "hrgene.qualification_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 15077,
+  "promptWords": 1801
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "gpt-oss:20b",
+ "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 54.247
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 4343,
+ "eval_count": 2098,
+ "prompt_eval_duration_ns": 19893000,
+ "eval_duration_ns": 38566265000,
+ "total_duration_ns": 54245946083,
+ "thinking": "We need to produce JSON with schema. Need to cite sources. Provide claims. Ensure no subjective claims in CV. The work sample is negative, so we should not include it in CV. CV should restate evidence. Use evidenceBoundary. Provide hiringEvidencePacket with requirementEvidenceMap covering all requirements. Use evidence from sources. For each requirement, determine status. Let's analyze:\n\nreq_a9a6b7df5bf3: Builds weekly demand forecasts at store-SKU level in Python. Evidence: src_81a995c5bffd (resume). Also src_81a995c5bffd says building weekly store-SKU demand forecasts with gradient-boosted models in Python. So supported. status supported.\n\nreq_4099177c0e09: Measures forecast accuracy (WAPE, bias) and reports it by category. Evidence: src_3cc8fccb5cb0. It says reported weighted absolute percentage error and bias by category every week. So supported.\n\nreq_c660dfe781d6: Presents forecast recommendations to category directors and influences ordering decisions. Evidence: src_63efa90e75ac says sent weekly forecast exception list to category planning analysts, who took it into ordering meetings with category directors. That indicates influence? It says they took it into meetings. Not explicit influence. Might be partial evidence. Also src_4d515b8c6b28 reference confirms built and maintained models. But not presentation. So partial_evidence. Need follow-up question: evidence of presenting recommendations and influencing decisions.\n\nreq_10c4add9a1be: Maintains the feature pipeline for promotions and weather data. Evidence: src_538258e74974. Supported.\n\nreq_d2cf001578d9: Documents model assumptions for the supply planning team. Evidence: src_62494b3b18d7. Supported.\n\nThus requirementEvidenceMap entries.\n\nsupportedClaims: we can list claims that are supported: building forecasts, measuring accuracy, maintaining pipeline, documenting assumptions. Also maybe \"built and maintained store-SKU forecasting models\" from src_4d515b8c6b28. Provide claim text.\n\nunsupportedClaims: none? Maybe negative comment about presentation is subjective; we should not include as claim. So none.\n\nmissingEvidenceGaps: for req_c660dfe781d6: missing evidence of presentation and influence. So gap.\n\ninterviewSignalRisks: the negative comment is subjective. So we should list it as interviewSignalRisk. sourceId src_b56cb4d289bb. signalType subjective. severity medium? maybe medium. recommendedHandling: verify presentation skills in interview.\n\nfollowUpQuestions: for requirement c660dfe781d6: question about evidence of presenting forecast recommendations and influencing ordering decisions. Also maybe ask for specific example.\n\nhumanReviewChecklist: items like \"Review evidence gaps for presentation influence\", \"Assess subjective feedback\".\n\nauditSummary: paragraph summarizing evidence and gaps.\n\nlimitations: maybe \"Limited evidence on presentation influence\".\n\nNow produce JSON. Ensure all fields. Use language en. CandidateId and jobDescriptionSourceId verbatim. Provide optimizedCv with language, candidateId, targetRoleTitle, professionalSummary, experienceHighlights, projectsAndWorkSamples, skills, evidenceBoundary.\n\nProfessionalSummary: maybe \"Data scientist with experience building weekly store-SKU demand forecasts for chilled and fresh categories using gradient-boosted models in Python, measuring accuracy, maintaining feature pipelines, and documenting model assumptions.\"\n\nExperienceHighlights: list claims with evidence.\n\nProjectsAndWorkSamples: maybe none.\n\nSkills: Python, gradient-boosted models, forecasting, accuracy metrics, feature engineering, documentation.\n\nEvidenceBoundary: \"The provided resume and reference confirm the candidate's experience in building store-SKU forecasts, measuring accuracy, maintaining feature pipelines, and documenting assumptions. No evidence is provided for presentation influence or subjective business gravitas.\"\n\nNow produce JSON.",
+ "content": "{\n  \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n  \"optimizedCv\": {\n    \"language\": \"en\",\n    \"candidateId\": \"cand_7f882b3a76e368e1\",\n    \"targetRoleTitle\": \"Data Scientist, Fresh Food Demand Forecasting\",\n    \"professionalSummary\": [\n      \"Data scientist with experience building weekly store‑SKU demand forecasts for chilled and fresh categories using gradient‑boosted models in Python, measuring forecast accuracy, maintaining feature pipelines for promotions and weather data, and documenting model assumptions for supply planning.\"\n    ],\n    \"experienceHighlights\": [\n      \"Built weekly store‑SKU demand forecasts with gradient‑boosted models in Python for chilled and fresh categories (src_81a995c5bffd).\",\n      \"Reported weighted absolute percentage error (WAPE) and bias by category each week, flagging categories with sustained bias above five percent (src_3cc8fccb5cb0).\",\n      \"Maintained the feature pipeline that joins the promotions calendar and regional weather forecasts to sales history, with checks for missing promotion records before each training run (src_538258e74974).\",\n      \"Documented model assumptions for the supply planning team, covering bank‑holiday handling, promotion uplift and cold starts for new products (src_62494b3b18d7).\"\n    ],\n    \"projectsAndWorkSamples\": [],\n    \"skills\": [\n      \"Python\",\n      \"Gradient‑boosted models\",\n      \"Demand forecasting\",\n      \"Forecast accuracy metrics (WAPE, bias)\",\n      \"Feature engineering (promotions, weather)\",\n      \"Model documentation\"\n    ],\n    \"evidenceBoundary\": \"The provided resume and reference confirm the candidate’s experience in building store‑SKU forecasts, measuring accuracy, maintaining feature pipelines, and documenting assumptions. No evidence is provided for presentation influence or subjective business gravitas.\"\n  },\n  \"hiringEvidencePacket\": {\n    \"decisionBoundary\": {\n      \"employmentDecisionMade\": false,\n      \"candidateRanked\": false,\n      \"protectedCharacteristicsInferred\": false,\n      \"humanReviewRequired\": true,\n      \"statement\": \"Human review is required to evaluate evidence gaps and subjective signals.\"\n    },\n    \"role\": {\n      \"roleTitle\": \"Data Scientist, Fresh Food Demand Forecasting\",\n      \"jobDescriptionSource\": \"jd_8ac86b7d8353edaa\",\n      \"requirementIds\": [\n        \"req_a9a6b7df5bf3\",\n        \"req_4099177c0e09\",\n        \"req_c660dfe781d6\",\n        \"req_10c4add9a1be\",\n        \"req_d2cf001578d9\"\n      ]\n    },\n    \"candidate\": {\n      \"candidateId\": \"cand_7f882b3a76e368e1\",\n      \"sources\": [\n        \"src_81a995c5bffd\",\n        \"src_3cc8fccb5cb0\",\n        \"src_538258e74974\",\n        \"src_63efa90e75ac\",\n        \"src_62494b3b18d7\",\n        \"src_4d515b8c6b28\",\n        \"src_7713311e1df8\"\n      ]\n    },\n    \"requirementEvidenceMap\": [\n      {\n        \"requirementId\": \"req_a9a6b7df5bf3\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_81a995c5bffd\",\n            \"text\": \"building weekly store‑SKU demand forecasts with gradient‑boosted models in Python for the chilled and fresh categories\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_4099177c0e09\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_3cc8fccb5cb0\",\n            \"text\": \"Reported weighted absolute percentage error and bias by category every week, and flagged any category whose bias stayed above five percent for two weeks running\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_c660dfe781d6\",\n        \"status\": \"partial_evidence\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_63efa90e75ac\",\n            \"text\": \"Sent the weekly forecast exception list to the category planning analysts, who took it into the ordering meetings with the category directors\",\n            \"evidenceStrength\": \"medium\",\n            \"notes\": \"Evidence of data delivery to analysts, not explicit presentation or influence\"\n          }\n        ],\n        \"missingEvidence\": [\n          \"Evidence that the candidate presented forecast recommendations directly to category directors and influenced ordering decisions\"\n        ]\n      },\n      {\n        \"requirementId\": \"req_10c4add9a1be\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_538258e74974\",\n            \"text\": \"Maintained the feature pipeline that joins the promotions calendar and regional weather forecasts to the sales history, with checks for missing promotion records before each training run\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      },\n      {\n        \"requirementId\": \"req_d2cf001578d9\",\n        \"status\": \"supported\",\n        \"evidence\": [\n          {\n            \"sourceId\": \"src_62494b3b18d7\",\n            \"text\": \"Wrote the model assumptions page for the supply planning team, covering bank‑holiday handling, promotion uplift and cold starts for new products\",\n            \"evidenceStrength\": \"high\",\n            \"notes\": \"\"\n          }\n        ],\n        \"missingEvidence\": []\n      }\n    ],\n    \"supportedClaims\": [\n      {\n        \"claim\": \"Built weekly store‑SKU demand forecasts with gradient‑boosted models in Python for chilled and fresh categories\",\n        \"supportingRequirementIds\": [\n          \"req_a9a6b7df5bf3\"\n        ],\n        \"sourceIds\": [\n          \"src_81a995c5bffd\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"building weekly store‑SKU demand forecasts with gradient‑boosted models in Python for the chilled and fresh categories\"\n      },\n      {\n        \"claim\": \"Reported weighted absolute percentage error and bias by category each week\",\n        \"supportingRequirementIds\": [\n          \"req_4099177c0e09\"\n        ],\n        \"sourceIds\": [\n          \"src_3cc8fccb5cb0\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Reported weighted absolute percentage error and bias by category every week\"\n      },\n      {\n        \"claim\": \"Maintained the feature pipeline for promotions and weather data\",\n        \"supportingRequirementIds\": [\n          \"req_10c4add9a1be\"\n        ],\n        \"sourceIds\": [\n          \"src_538258e74974\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Maintained the feature pipeline that joins the promotions calendar and regional weather forecasts to the sales history\"\n      },\n      {\n        \"claim\": \"Documented model assumptions for the supply planning team\",\n        \"supportingRequirementIds\": [\n          \"req_d2cf001578d9\"\n        ],\n        \"sourceIds\": [\n          \"src_62494b3b18d7\"\n        ],\n        \"evidenceStrength\": \"high\",\n        \"witness\": \"Wrote the model assumptions page for the supply planning team\"\n      }\n    ],\n    \"unsupportedClaims\": [],\n    \"missingEvidenceGaps\": [\n      {\n        \"gapId\": \"gap_c660dfe781d6\",\n        \"requirementId\": \"req_c660dfe781d6\",\n        \"severity\": \"medium\",\n        \"gap\": \"No evidence that the candidate presented forecast recommendations directly to category directors or influenced ordering decisions\"\n      }\n    ],\n    \"interviewSignalRisks\": [\n      {\n        \"sourceId\": \"src_b56cb4d289bb\",\n        \"text\": \"Lacks gravitas with the business; far too quiet to win over our category directors. Seemed more at home with the charts than with the people in the room, and I could not picture them pushing back on a buyer.\",\n        \"signalType\": \"subjective\",\n        \"jobRelatedBoundary\": \"false\",\n        \"severity\": \"medium\",\n        \"recommendedHandling\": \"Verify presentation and stakeholder engagement skills during interview\"\n      }\n    ],\n    \"followUpQuestions\": [\n      {\n        \"questionId\": \"q1\",\n        \"requirementId\": \"req_c660dfe781d6\",\n        \"question\": \"Can you describe a specific instance where you presented forecast recommendations to category directors and how it influenced the ordering decision?\",\n        \"evidenceTarget\": \"Evidence of direct presentation and influence on ordering decisions\"\n      }\n    ],\n    \"humanReviewChecklist\": [\n      \"Confirm that the candidate has presented forecast recommendations to category directors.\",\n      \"Assess the impact of the candidate’s recommendations on ordering decisions.\",\n      \"Evaluate the subjective feedback regarding presentation gravitas in the interview context.\"\n    ],\n    \"auditSummary\": \"The candidate’s resume and reference provide strong evidence for building store‑SKU forecasts, measuring accuracy, maintaining feature pipelines, and documenting assumptions. Evidence for presenting recommendations to category directors and influencing ordering decisions is incomplete, requiring further verification. A subjective assessment of presentation gravitas is noted and should be explored in interview.\",\n    \"limitations\": [\n      \"Limited evidence on presentation influence.\",\n      \"Subjective feedback on presentation style is not quantifiable.\"\n    ]\n  }\n}",
+ "content_sha256": "70df4f637b7699fdb8eb7c5dd3b1d2f5725c2c48ef7a0f400f94629887ea250c",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_7f882b3a76e368e1",
+   "targetRoleTitle": "Data Scientist, Fresh Food Demand Forecasting",
+   "professionalSummary": [
+    "Data scientist with experience building weekly store‑SKU demand forecasts for chilled and fresh categories using gradient‑boosted models in Python, measuring forecast accuracy, maintaining feature pipelines for promotions and weather data, and documenting model assumptions for supply planning."
+   ],
+   "experienceHighlights": [
+    "Built weekly store‑SKU demand forecasts with gradient‑boosted models in Python for chilled and fresh categories (src_81a995c5bffd).",
+    "Reported weighted absolute percentage error (WAPE) and bias by category each week, flagging categories with sustained bias above five percent (src_3cc8fccb5cb0).",
+    "Maintained the feature pipeline that joins the promotions calendar and regional weather forecasts to sales history, with checks for missing promotion records before each training run (src_538258e74974).",
+    "Documented model assumptions for the supply planning team, covering bank‑holiday handling, promotion uplift and cold starts for new products (src_62494b3b18d7)."
+   ],
+   "projectsAndWorkSamples": [],
+   "skills": [
+    "Python",
+    "Gradient‑boosted models",
+    "Demand forecasting",
+    "Forecast accuracy metrics (WAPE, bias)",
+    "Feature engineering (promotions, weather)",
+    "Model documentation"
+   ],
+   "evidenceBoundary": "The provided resume and reference confirm the candidate’s experience in building store‑SKU forecasts, measuring accuracy, maintaining feature pipelines, and documenting assumptions. No evidence is provided for presentation influence or subjective business gravitas."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "Human review is required to evaluate evidence gaps and subjective signals."
+   },
+   "role": {
+    "roleTitle": "Data Scientist, Fresh Food Demand Forecasting",
+    "jobDescriptionSource": "jd_8ac86b7d8353edaa",
+    "requirementIds": [
+     "req_a9a6b7df5bf3",
+     "req_4099177c0e09",
+     "req_c660dfe781d6",
+     "req_10c4add9a1be",
+     "req_d2cf001578d9"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_7f882b3a76e368e1",
+    "sources": [
+     "src_81a995c5bffd",
+     "src_3cc8fccb5cb0",
+     "src_538258e74974",
+     "src_63efa90e75ac",
+     "src_62494b3b18d7",
+     "src_4d515b8c6b28",
+     "src_7713311e1df8"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_a9a6b7df5bf3",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_81a995c5bffd",
+       "text": "building weekly store‑SKU demand forecasts with gradient‑boosted models in Python for the chilled and fresh categories",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_4099177c0e09",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3cc8fccb5cb0",
+       "text": "Reported weighted absolute percentage error and bias by category every week, and flagged any category whose bias stayed above five percent for two weeks running",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_c660dfe781d6",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_63efa90e75ac",
+       "text": "Sent the weekly forecast exception list to the category planning analysts, who took it into the ordering meetings with the category directors",
+       "evidenceStrength": "medium",
+       "notes": "Evidence of data delivery to analysts, not explicit presentation or influence"
+      }
+     ],
+     "missingEvidence": [
+      "Evidence that the candidate presented forecast recommendations directly to category directors and influenced ordering decisions"
+     ]
+    },
+    {
+     "requirementId": "req_10c4add9a1be",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_538258e74974",
+       "text": "Maintained the feature pipeline that joins the promotions calendar and regional weather forecasts to the sales history, with checks for missing promotion records before each training run",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_d2cf001578d9",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_62494b3b18d7",
+       "text": "Wrote the model assumptions page for the supply planning team, covering bank‑holiday handling, promotion uplift and cold starts for new products",
+       "evidenceStrength": "high",
+       "notes": ""
+      }
+     ],
+     "missingEvidence": []
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "Built weekly store‑SKU demand forecasts with gradient‑boosted models in Python for chilled and fresh categories",
+     "supportingRequirementIds": [
+      "req_a9a6b7df5bf3"
+     ],
+     "sourceIds": [
+      "src_81a995c5bffd"
+     ],
+     "evidenceStrength": "high",
+     "witness": "building weekly store‑SKU demand forecasts with gradient‑boosted models in Python for the chilled and fresh categories"
+    },
+    {
+     "claim": "Reported weighted absolute percentage error and bias by category each week",
+     "supportingRequirementIds": [
+      "req_4099177c0e09"
+     ],
+     "sourceIds": [
+      "src_3cc8fccb5cb0"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Reported weighted absolute percentage error and bias by category every week"
+    },
+    {
+     "claim": "Maintained the feature pipeline for promotions and weather data",
+     "supportingRequirementIds": [
+      "req_10c4add9a1be"
+     ],
+     "sourceIds": [
+      "src_538258e74974"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Maintained the feature pipeline that joins the promotions calendar and regional weather forecasts to the sales history"
+    },
+    {
+     "claim": "Documented model assumptions for the supply planning team",
+     "supportingRequirementIds": [
+      "req_d2cf001578d9"
+     ],
+     "sourceIds": [
+      "src_62494b3b18d7"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote the model assumptions page for the supply planning team"
+    }
+   ],
+   "unsupportedClaims": [],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_c660dfe781d6",
+     "requirementId": "req_c660dfe781d6",
+     "severity": "medium",
+     "gap": "No evidence that the candidate presented forecast recommendations directly to category directors or influenced ordering decisions"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_b56cb4d289bb",
+     "text": "Lacks gravitas with the business; far too quiet to win over our category directors. Seemed more at home with the charts than with the people in the room, and I could not picture them pushing back on a buyer.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "false",
+     "severity": "medium",
+     "recommendedHandling": "Verify presentation and stakeholder engagement skills during interview"
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q1",
+     "requirementId": "req_c660dfe781d6",
+     "question": "Can you describe a specific instance where you presented forecast recommendations to category directors and how it influenced the ordering decision?",
+     "evidenceTarget": "Evidence of direct presentation and influence on ordering decisions"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Confirm that the candidate has presented forecast recommendations to category directors.",
+    "Assess the impact of the candidate’s recommendations on ordering decisions.",
+    "Evaluate the subjective feedback regarding presentation gravitas in the interview context."
+   ],
+   "auditSummary": "The candidate’s resume and reference provide strong evidence for building store‑SKU forecasts, measuring accuracy, maintaining feature pipelines, and documenting assumptions. Evidence for presenting recommendations to category directors and influencing ordering decisions is incomplete, requiring further verification. A subjective assessment of presentation gravitas is noted and should be explored in interview.",
+   "limitations": [
+    "Limited evidence on presentation influence.",
+    "Subjective feedback on presentation style is not quantifiable."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T04:28:10.540746+00:00"
+}

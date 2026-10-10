@@ -1,0 +1,302 @@
+{
+ "schema_version": "hrgene.v4.ollama_runner.output.v1",
+ "request_id": "ed44cb28-3c6a-4141-93d3-66ba2d73afde.C2",
+ "case_id": "ed44cb28-3c6a-4141-93d3-66ba2d73afde",
+ "condition": "C2",
+ "meta": {
+  "rulesetDigest": "sha256:2f0e01d2234f876f3f32f53bc1d3c7fa257e485f75452de7879b485a4d569dfd",
+  "activeRules": [
+   "hrgene.claim_provenance",
+   "hrgene.unsupported_quantification",
+   "hrgene.deployment_boundary",
+   "hrgene.human_review_boundary",
+   "hrgene.subjective_claim_boundary",
+   "hrgene.evidence_gap_router",
+   "hrgene.paired_review_bundle_completeness"
+  ],
+  "promptChars": 13538,
+  "promptWords": 1667
+ },
+ "repeat": 0,
+ "seed": 1,
+ "model": "qwen3:8b",
+ "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+ "format": "json",
+ "ok": true,
+ "attempts": [
+  {
+   "attempt": 1,
+   "ok": true,
+   "seconds": 80.131
+  }
+ ],
+ "done_reason": "stop",
+ "prompt_eval_count": 3307,
+ "eval_count": 2606,
+ "prompt_eval_duration_ns": 2886407000,
+ "eval_duration_ns": 76933799000,
+ "total_duration_ns": 80128891167,
+ "thinking": null,
+ "content": "{\n \"schemaVersion\": \"jam.hrgene_paired_review_bundle.model_output.v2\",\n \"optimizedCv\": {\n  \"language\": \"en\",\n  \"candidateId\": \"cand_f7f1cbfa20bc09c0\",\n  \"targetRoleTitle\": \"Software Engineer, Manufacturing Execution Systems\",\n  \"professionalSummary\": [\n    {\"claimId\": \"claim_001\", \"text\": \"The candidate has experience building data-collection services that read machine-state tags from line PLCs over OPC UA.\", \"sourceIds\": [\"src_eb8553907c2f\"], \"requirementIds\": [\"req_f5f492c8de40\"], \"supportBoundary\": \"supported\", \"witness\": \"wrote a C# downtime collector that reads machine-state tags from line PLCs over OPC UA and stores each stop event with a reason code.\"}\n  ],\n  \"experienceHighlights\": [\n    {\"claimId\": \"claim_002\", \"text\": \"The candidate built a line simulator that replays recorded tag streams for integration testing.\", \"sourceIds\": [\"src_3d110236f600\"], \"requirementIds\": [\"req_03940d29ab34\"], \"supportBoundary\": \"supported\", \"witness\": \"Built a line simulator that replays recorded tag streams, so the collector was integration-tested in CI before any trial on equipment, with failure cases for dropped connections and clock drift.\"}\n  ],\n  \"projectsAndWorkSamples\": [\n    {\"claimId\": \"claim_003\", \"text\": \"The candidate ran the collector for six weeks on the test-bench line and checked every logged stop against a hand-kept record of reason codes.\", \"sourceIds\": [\"src_21e8a9a80878\"], \"requirementIds\": [\"req_84a4a8d60f57\"], \"supportBoundary\": \"supported\", \"witness\": \"Ran the collector for six weeks on the test-bench line, a decommissioned slicer line kept for trials, checking every logged stop against a hand-kept record of reason codes.\"}\n  ],\n  \"skills\": [\n    {\"claimId\": \"claim_004\", \"text\": \"The candidate has built downtime and scrap reports for plant managers.\", \"sourceIds\": [\"src_1ef8e09040a8\"], \"requirementIds\": [\"req_f4c6348dd8d8\"], \"supportBoundary\": \"supported\", \"witness\": \"Wrote SQL reports of stop minutes and scrap by reason code from the test-bench data and reviewed the layout with the Ashby plant manager, who asked for scrap to be split by shift.\"}\n  ],\n  \"evidenceBoundary\": \"The materials establish the candidate's experience with OPC UA data collection, simulator testing, and report generation. They do not establish deployment on production lines or direct collaboration with controls engineers.\"\n },\n \"hiringEvidencePacket\": {\n  \"decisionBoundary\": {\n    \"employmentDecisionMade\": false,\n    \"candidateRanked\": false,\n    \"protectedCharacteristicsInferred\": false,\n    \"humanReviewRequired\": true,\n    \"statement\": \"The materials provide sufficient evidence to support some requirements but lack direct confirmation for others, necessitating human review.\"\n  },\n  \"role\": {\n    \"roleTitle\": \"Software Engineer, Manufacturing Execution Systems\",\n    \"jobDescriptionSource\": \"jd_96fd6ca75a7802ae\",\n    \"requirementIds\": [\"req_f5f492c8de40\", \"req_03940d29ab34\", \"req_84a4a8d60f57\", \"req_f4c6348dd8d8\", \"req_9fe5c66bfcd8\"]\n  },\n  \"candidate\": {\n    \"candidateId\": \"cand_f7f1cbfa20bc09c0\",\n    \"sources\": [\"src_eb8553907c2f\", \"src_3d110236f600\", \"src_21e8a9a80878\", \"src_b9c8e3d0d709\", \"src_1ef8e09040a8\", \"src_acd1c5aae1e5\", \"src_1b1ba7b823e4\", \"src_2d243d429bfe\"]\n  },\n  \"requirementEvidenceMap\": [\n    {\n      \"requirementId\": \"req_f5f492c8de40\",\n      \"status\": \"supported\",\n      \"evidence\": [\n        {\"sourceId\": \"src_eb8553907c2f\", \"text\": \"wrote a C# downtime collector that reads machine-state tags from line PLCs over OPC UA and stores each stop event with a reason code.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly supports the requirement.\"}\n      ],\n      \"missingEvidence\": []\n    },\n    {\n      \"requirementId\": \"req_03940d29ab34\",\n      \"status\": \"supported\",\n      \"evidence\": [\n        {\"sourceId\": \"src_3d110236f600\", \"text\": \"Built a line simulator that replays recorded tag streams, so the collector was integration-tested in CI before any trial on equipment, with failure cases for dropped connections and clock drift.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly supports the requirement.\"}\n      ],\n      \"missingEvidence\": []\n    },\n    {\n      \"requirementId\": \"req_84a4a8d60f57\",\n      \"status\": \"partial_evidence\",\n      \"evidence\": [\n        {\"sourceId\": \"src_21e8a9a80878\", \"text\": \"Ran the collector for six weeks on the test-bench line, a decommissioned slicer line kept for trials, checking every logged stop against a hand-kept record of reason codes.\", \"evidenceStrength\": \"medium\", \"notes\": \"The candidate ran the collector on a test-bench line, but the requirement asks for deployment on a running production line.\"}\n      ],\n      \"missingEvidence\": [\"Deployment on a running production line\"]\n    },\n    {\n      \"requirementId\": \"req_f4c6348dd8d8\",\n      \"status\": \"supported\",\n      \"evidence\": [\n        {\"sourceId\": \"src_1ef8e09040a8\", \"text\": \"Wrote SQL reports of stop minutes and scrap by reason code from the test-bench data and reviewed the layout with the Ashby plant manager, who asked for scrap to be split by shift.\", \"evidenceStrength\": \"high\", \"notes\": \"Directly supports the requirement.\"}\n      ],\n      \"missingEvidence\": []\n    },\n    {\n      \"requirementId\": \"req_9fe5c66bfcd8\",\n      \"status\": \"partial_evidence\",\n      \"evidence\": [\n        {\"sourceId\": \"src_acd1c5aae1e5\", \"text\": \"Work sample: the collector's design note, with the tag map agreed with the controls engineer for the test-bench slicer, a sequence diagram of the OPC UA subscription and the test plan for the simulator runs, with pass and fail results for each.\", \"evidenceStrength\": \"medium\", \"notes\": \"The candidate worked with a controls engineer on tag definitions, but the requirement asks for collaboration on PLC tag definitions and interface changes.\"}\n      ],\n      \"missingEvidence\": [\"Collaboration on PLC tag definitions and interface changes\"]\n    }\n  ],\n  \"supportedClaims\": [\n    {\"claim\": \"The candidate has experience building data-collection services that read machine-state tags from line PLCs over OPC UA.\", \"supportingRequirementIds\": [\"req_f5f492c8de40\"], \"sourceIds\": [\"src_eb8553907c2f\"], \"evidenceStrength\": \"high\", \"witness\": \"wrote a C# downtime collector that reads machine-state tags from line PLCs over OPC UA and stores each stop event with a reason code.\"},\n    {\"claim\": \"The candidate built a line simulator that replays recorded tag streams for integration testing.\", \"supportingRequirementIds\": [\"req_03940d29ab34\"], \"sourceIds\": [\"src_3d110236f600\"], \"evidenceStrength\": \"high\", \"witness\": \"Built a line simulator that replays recorded tag streams, so the collector was integration-tested in CI before any trial on equipment, with failure cases for dropped connections and clock drift.\"},\n    {\"claim\": \"The candidate has built downtime and scrap reports for plant managers.\", \"supportingRequirementIds\": [\"req_f4c6348dd8d8\"], \"sourceIds\": [\"src_1ef8e09040a8\"], \"evidenceStrength\": \"high\", \"witness\": \"Wrote SQL reports of stop minutes and scrap by reason code from the test-bench data and reviewed the layout with the Ash, plant manager, who asked for scrap to be split by shift.\"}\n  ],\n  \"unsupportedClaims\": [\n    {\"claim\": \"The candidate has deployed shop-floor software onto a running production line and supported operators during live shifts.\", \"reason\": \"The materials do not establish deployment on a running production line.\", \"requiredFollowUp\": \"Ask the candidate to confirm if the downtime collector is running on a running production line and if they supported operators during live shifts.\"}\n  ],\n  \"missingEvidenceGaps\": [\n    {\"gapId\": \"gap_001\", \"requirementId\": \"req_84a4a8d60f57\", \"severity\": \"medium\", \"gap\": \"Deployment on a running production line\"},\n    {\"gapId\": \"gap_002\", \"requirementId\": \"req_9fe5c66bfcd8\", \"severity\": \"medium\", \"gap\": \"Collaboration on PLC tag definitions and interface changes\"}\n  ],\n  \"interviewSignalRisks\": [\n    {\"sourceId\": \"src_b9c8e3d0d709\", \"text\": \"According to my plant manager, the downtime collector is now running on all nine production lines at the Ashby bakery and operators rely on it every shift.\", \"signalType\": \"subjective\", \"jobRelatedBoundary\": \"true\", \"severity\": \"medium\", \"recommendedHandling\": \"Ask the candidate to confirm if the downtime collector is running on a running production line and if they supported operators during live shifts.\"}\n  ],\n  \"followUpQuestions\": [\n    {\"questionId\": \"q_001\", \"requirementId\": \"req_84a4a8d60f57\", \"question\": \"Can you confirm if the downtime collector is running on a running production line and if you supported operators during live shifts?\", \"evidenceTarget\": \"Deployment on a running production line and support during live shifts\"},\n    {\"questionId\": \"q_002\", \"requirementId\": \"req_9fe5c66bfcd8\", \"question\": \"Can you confirm if you collaborated on PLC tag definitions and interface changes with controls engineers?\", \"evidenceTarget\": \"Collaboration on PLC tag definitions and interface changes\"}\n  ],\n  \"humanReviewChecklist\": [\n    \"Verify if the downtime collector is running on a running production line and if the candidate supported operators during live shifts.\",\n    \"Confirm if the candidate collaborated on PLC tag definitions and interface changes with controls engineers.\"\n  ],\n  \"auditSummary\": \"The materials provide sufficient evidence to support some requirements but lack direct confirmation for others, necessitating human review.\",\n  \"limitations\": [\n    \"The materials do not establish deployment on a running production line.\",\n    \"The materials do not establish collaboration on PLC tag definitions and interface changes.\"\n  ]\n }\n}",
+ "content_sha256": "2e5d1bd0c7650b3067f0c94dd4761b322c63dbd13236a3fa22056808e1dfcf86",
+ "parse_ok": true,
+ "parsed": {
+  "schemaVersion": "jam.hrgene_paired_review_bundle.model_output.v2",
+  "optimizedCv": {
+   "language": "en",
+   "candidateId": "cand_f7f1cbfa20bc09c0",
+   "targetRoleTitle": "Software Engineer, Manufacturing Execution Systems",
+   "professionalSummary": [
+    {
+     "claimId": "claim_001",
+     "text": "The candidate has experience building data-collection services that read machine-state tags from line PLCs over OPC UA.",
+     "sourceIds": [
+      "src_eb8553907c2f"
+     ],
+     "requirementIds": [
+      "req_f5f492c8de40"
+     ],
+     "supportBoundary": "supported",
+     "witness": "wrote a C# downtime collector that reads machine-state tags from line PLCs over OPC UA and stores each stop event with a reason code."
+    }
+   ],
+   "experienceHighlights": [
+    {
+     "claimId": "claim_002",
+     "text": "The candidate built a line simulator that replays recorded tag streams for integration testing.",
+     "sourceIds": [
+      "src_3d110236f600"
+     ],
+     "requirementIds": [
+      "req_03940d29ab34"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Built a line simulator that replays recorded tag streams, so the collector was integration-tested in CI before any trial on equipment, with failure cases for dropped connections and clock drift."
+    }
+   ],
+   "projectsAndWorkSamples": [
+    {
+     "claimId": "claim_003",
+     "text": "The candidate ran the collector for six weeks on the test-bench line and checked every logged stop against a hand-kept record of reason codes.",
+     "sourceIds": [
+      "src_21e8a9a80878"
+     ],
+     "requirementIds": [
+      "req_84a4a8d60f57"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Ran the collector for six weeks on the test-bench line, a decommissioned slicer line kept for trials, checking every logged stop against a hand-kept record of reason codes."
+    }
+   ],
+   "skills": [
+    {
+     "claimId": "claim_004",
+     "text": "The candidate has built downtime and scrap reports for plant managers.",
+     "sourceIds": [
+      "src_1ef8e09040a8"
+     ],
+     "requirementIds": [
+      "req_f4c6348dd8d8"
+     ],
+     "supportBoundary": "supported",
+     "witness": "Wrote SQL reports of stop minutes and scrap by reason code from the test-bench data and reviewed the layout with the Ashby plant manager, who asked for scrap to be split by shift."
+    }
+   ],
+   "evidenceBoundary": "The materials establish the candidate's experience with OPC UA data collection, simulator testing, and report generation. They do not establish deployment on production lines or direct collaboration with controls engineers."
+  },
+  "hiringEvidencePacket": {
+   "decisionBoundary": {
+    "employmentDecisionMade": false,
+    "candidateRanked": false,
+    "protectedCharacteristicsInferred": false,
+    "humanReviewRequired": true,
+    "statement": "The materials provide sufficient evidence to support some requirements but lack direct confirmation for others, necessitating human review."
+   },
+   "role": {
+    "roleTitle": "Software Engineer, Manufacturing Execution Systems",
+    "jobDescriptionSource": "jd_96fd6ca75a7802ae",
+    "requirementIds": [
+     "req_f5f492c8de40",
+     "req_03940d29ab34",
+     "req_84a4a8d60f57",
+     "req_f4c6348dd8d8",
+     "req_9fe5c66bfcd8"
+    ]
+   },
+   "candidate": {
+    "candidateId": "cand_f7f1cbfa20bc09c0",
+    "sources": [
+     "src_eb8553907c2f",
+     "src_3d110236f600",
+     "src_21e8a9a80878",
+     "src_b9c8e3d0d709",
+     "src_1ef8e09040a8",
+     "src_acd1c5aae1e5",
+     "src_1b1ba7b823e4",
+     "src_2d243d429bfe"
+    ]
+   },
+   "requirementEvidenceMap": [
+    {
+     "requirementId": "req_f5f492c8de40",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_eb8553907c2f",
+       "text": "wrote a C# downtime collector that reads machine-state tags from line PLCs over OPC UA and stores each stop event with a reason code.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_03940d29ab34",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_3d110236f600",
+       "text": "Built a line simulator that replays recorded tag streams, so the collector was integration-tested in CI before any trial on equipment, with failure cases for dropped connections and clock drift.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_84a4a8d60f57",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_21e8a9a80878",
+       "text": "Ran the collector for six weeks on the test-bench line, a decommissioned slicer line kept for trials, checking every logged stop against a hand-kept record of reason codes.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate ran the collector on a test-bench line, but the requirement asks for deployment on a running production line."
+      }
+     ],
+     "missingEvidence": [
+      "Deployment on a running production line"
+     ]
+    },
+    {
+     "requirementId": "req_f4c6348dd8d8",
+     "status": "supported",
+     "evidence": [
+      {
+       "sourceId": "src_1ef8e09040a8",
+       "text": "Wrote SQL reports of stop minutes and scrap by reason code from the test-bench data and reviewed the layout with the Ashby plant manager, who asked for scrap to be split by shift.",
+       "evidenceStrength": "high",
+       "notes": "Directly supports the requirement."
+      }
+     ],
+     "missingEvidence": []
+    },
+    {
+     "requirementId": "req_9fe5c66bfcd8",
+     "status": "partial_evidence",
+     "evidence": [
+      {
+       "sourceId": "src_acd1c5aae1e5",
+       "text": "Work sample: the collector's design note, with the tag map agreed with the controls engineer for the test-bench slicer, a sequence diagram of the OPC UA subscription and the test plan for the simulator runs, with pass and fail results for each.",
+       "evidenceStrength": "medium",
+       "notes": "The candidate worked with a controls engineer on tag definitions, but the requirement asks for collaboration on PLC tag definitions and interface changes."
+      }
+     ],
+     "missingEvidence": [
+      "Collaboration on PLC tag definitions and interface changes"
+     ]
+    }
+   ],
+   "supportedClaims": [
+    {
+     "claim": "The candidate has experience building data-collection services that read machine-state tags from line PLCs over OPC UA.",
+     "supportingRequirementIds": [
+      "req_f5f492c8de40"
+     ],
+     "sourceIds": [
+      "src_eb8553907c2f"
+     ],
+     "evidenceStrength": "high",
+     "witness": "wrote a C# downtime collector that reads machine-state tags from line PLCs over OPC UA and stores each stop event with a reason code."
+    },
+    {
+     "claim": "The candidate built a line simulator that replays recorded tag streams for integration testing.",
+     "supportingRequirementIds": [
+      "req_03940d29ab34"
+     ],
+     "sourceIds": [
+      "src_3d110236f600"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Built a line simulator that replays recorded tag streams, so the collector was integration-tested in CI before any trial on equipment, with failure cases for dropped connections and clock drift."
+    },
+    {
+     "claim": "The candidate has built downtime and scrap reports for plant managers.",
+     "supportingRequirementIds": [
+      "req_f4c6348dd8d8"
+     ],
+     "sourceIds": [
+      "src_1ef8e09040a8"
+     ],
+     "evidenceStrength": "high",
+     "witness": "Wrote SQL reports of stop minutes and scrap by reason code from the test-bench data and reviewed the layout with the Ash, plant manager, who asked for scrap to be split by shift."
+    }
+   ],
+   "unsupportedClaims": [
+    {
+     "claim": "The candidate has deployed shop-floor software onto a running production line and supported operators during live shifts.",
+     "reason": "The materials do not establish deployment on a running production line.",
+     "requiredFollowUp": "Ask the candidate to confirm if the downtime collector is running on a running production line and if they supported operators during live shifts."
+    }
+   ],
+   "missingEvidenceGaps": [
+    {
+     "gapId": "gap_001",
+     "requirementId": "req_84a4a8d60f57",
+     "severity": "medium",
+     "gap": "Deployment on a running production line"
+    },
+    {
+     "gapId": "gap_002",
+     "requirementId": "req_9fe5c66bfcd8",
+     "severity": "medium",
+     "gap": "Collaboration on PLC tag definitions and interface changes"
+    }
+   ],
+   "interviewSignalRisks": [
+    {
+     "sourceId": "src_b9c8e3d0d709",
+     "text": "According to my plant manager, the downtime collector is now running on all nine production lines at the Ashby bakery and operators rely on it every shift.",
+     "signalType": "subjective",
+     "jobRelatedBoundary": "true",
+     "severity": "medium",
+     "recommendedHandling": "Ask the candidate to confirm if the downtime collector is running on a running production line and if they supported operators during live shifts."
+    }
+   ],
+   "followUpQuestions": [
+    {
+     "questionId": "q_001",
+     "requirementId": "req_84a4a8d60f57",
+     "question": "Can you confirm if the downtime collector is running on a running production line and if you supported operators during live shifts?",
+     "evidenceTarget": "Deployment on a running production line and support during live shifts"
+    },
+    {
+     "questionId": "q_002",
+     "requirementId": "req_9fe5c66bfcd8",
+     "question": "Can you confirm if you collaborated on PLC tag definitions and interface changes with controls engineers?",
+     "evidenceTarget": "Collaboration on PLC tag definitions and interface changes"
+    }
+   ],
+   "humanReviewChecklist": [
+    "Verify if the downtime collector is running on a running production line and if the candidate supported operators during live shifts.",
+    "Confirm if the candidate collaborated on PLC tag definitions and interface changes with controls engineers."
+   ],
+   "auditSummary": "The materials provide sufficient evidence to support some requirements but lack direct confirmation for others, necessitating human review.",
+   "limitations": [
+    "The materials do not establish deployment on a running production line.",
+    "The materials do not establish collaboration on PLC tag definitions and interface changes."
+   ]
+  }
+ },
+ "finished_at": "2026-10-10T07:54:11.735448+00:00"
+}
