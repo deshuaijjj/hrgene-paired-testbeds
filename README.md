@@ -1,5 +1,7 @@
 # HRgene paired testbeds: a cue-confounded and a de-confounded testbed for LLM output repair
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23287375.svg)](https://doi.org/10.5281/zenodo.23287375)
+
 This repository accompanies the paper *Rethinking Synthetic Testbeds for LLM Output Repair: A Construction Cue and a Pre-registered De-confounded Test* (Yuxin Zhang, Xv Zhang, Jinxi Yang, Junjie Zhang, Man Yuan).
 
 It contains two synthetic hiring-review testbeds for one task, the validation-and-repair pipeline analysed in the paper (HRgene), the recorded outputs of three open-weight models, and all analysis code. In the **original testbed** (`benchmark/v4`) every planted unsupported claim (the bait) sits in a note-type source. In the **de-confounded testbed** (`benchmark/v5`) the bait sits in a note, a resume entry or the work sample, notes also carry valid evidence, and the cases were written without access to the validator. The second study was pre-registered (https://osf.io/8vejq) before any of its outputs were generated.
@@ -94,4 +96,4 @@ For Study 2's runs, absolute paths of the run machine in run configurations, sco
 
 ## Citation and contact
 
-See `CITATION.cff`. Corrections are issued as versioned releases; please open an issue in the repository.
+See `CITATION.cff`. Release v1.0.0 is archived on Zenodo: https://doi.org/10.5281/zenodo.23287375 (all versions: https://doi.org/10.5281/zenodo.23287374). Corrections are issued as versioned releases; please open an issue in the repository.

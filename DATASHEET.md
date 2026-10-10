@@ -44,7 +44,7 @@ Cases and gold of both testbeds were drafted by LLM agents (Anthropic Claude; no
 
 ## Distribution
 
-Public release on GitHub with an archived copy on Zenodo (URLs and DOI in the paper and in the repository description). Data: CC BY 4.0. Code: MIT. No third-party restrictions apply.
+Public release on GitHub (https://github.com/deshuaijjj/hrgene-paired-testbeds) with an archived copy of each release on Zenodo (v1.0.0: https://doi.org/10.5281/zenodo.23287375). Data: CC BY 4.0. Code: MIT. No third-party restrictions apply.
 
 ## Maintenance
 
